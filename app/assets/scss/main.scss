@@ -1,0 +1,84 @@
+@use "variables" as *;
+
+// Basix core
+@use "@dodlhuat/basix/css/properties";
+@use "@dodlhuat/basix/css/reset";
+@use "@dodlhuat/basix/css/typography";
+@use "@dodlhuat/basix/css/defaults";
+@use "@dodlhuat/basix/css/colors";
+@use "@dodlhuat/basix/css/icons";
+
+// Basix components used in this app
+@use "@dodlhuat/basix/css/push-menu";
+@use "@dodlhuat/basix/css/button";
+@use "@dodlhuat/basix/css/card";
+@use "@dodlhuat/basix/css/form";
+@use "@dodlhuat/basix/css/modal";
+@use "@dodlhuat/basix/css/toast";
+@use "@dodlhuat/basix/css/alert";
+@use "@dodlhuat/basix/css/badge";
+@use "@dodlhuat/basix/css/spinner";
+@use "@dodlhuat/basix/css/progress";
+@use "@dodlhuat/basix/css/tabs";
+@use "@dodlhuat/basix/css/switch";
+@use "@dodlhuat/basix/css/chips";
+@use "@dodlhuat/basix/css/stepper";
+@use "@dodlhuat/basix/css/bottom-sheet";
+@use "@dodlhuat/basix/css/dropdown";
+@use "@dodlhuat/basix/css/chart";
+@use "@dodlhuat/basix/css/calendar";
+@use "@dodlhuat/basix/css/checkbox";
+@use "@dodlhuat/basix/css/radiobutton";
+@use "@dodlhuat/basix/css/range-slider";
+@use "@dodlhuat/basix/css/scrollbar";
+@use "@dodlhuat/basix/css/placeholder";
+@use "@dodlhuat/basix/css/timeline";
+
+// Fonts
+@font-face {
+  font-family: 'Outfit';
+  src: url('/fonts/Outfit-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+
+// Global app layout
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  background: var(--background);
+  color: var(--primary-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+#__nuxt {
+  height: 100%;
+}
+
+.app-layout {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.push-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: $header-height;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page-content {
+  max-width: $app-max-width;
+  margin: 0 auto;
+  padding: calc($spacing * 1) $spacing calc($spacing * 2);
+}

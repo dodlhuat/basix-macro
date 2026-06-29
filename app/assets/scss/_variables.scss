@@ -1,0 +1,10 @@
+@forward "@dodlhuat/basix/css/parameters";
+@use "@dodlhuat/basix/css/parameters" as *;
+
+$app-max-width: 480px;
+$header-height: 3rem;
+
+$macro-protein: #ef4444;
+$macro-carbs:   #3b82f6;
+$macro-fat:     #f59e0b;
+$macro-calories: var(--accent-color);

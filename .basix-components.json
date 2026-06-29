@@ -1,0 +1,437 @@
+{
+  "version": "1.4.1",
+  "type": "css-js-design-system",
+  "note": "Basix is NOT a Vue component library. It provides CSS classes + vanilla JS controllers. In Vue: import SCSS for styling, wrap JS controllers in composables/onMounted.",
+  "fonts": {
+    "Outfit": "node_modules/@dodlhuat/basix/fonts/Outfit-VariableFont_wght.woff2",
+    "MaterialSymbolsOutlined": "node_modules/@dodlhuat/basix/fonts/MaterialSymbolsOutlined.woff2"
+  },
+  "cssTokens": {
+    "description": "CSS Custom Properties — light mode in :root, dark mode in [data-theme='dark']",
+    "colors": [
+      "--primary-text",
+      "--secondary-text",
+      "--divider",
+      "--accent-text",
+      "--error",
+      "--error-tint",
+      "--warning",
+      "--warning-tint",
+      "--success",
+      "--success-tint",
+      "--background",
+      "--primary-bg",
+      "--secondary-background",
+      "--accent-color",
+      "--accent-color-lighten",
+      "--accent-color-tint",
+      "--accent-color-text",
+      "--disabled",
+      "--primary-dark",
+      "--primary-light",
+      "--hover"
+    ],
+    "radii": [
+      "--radius-sm",
+      "--radius-md",
+      "--radius-lg",
+      "--radius-xl",
+      "--radius-full"
+    ],
+    "scssVars": {
+      "$spacing": "1rem",
+      "$border-radius": "0.4rem",
+      "$form-height": "2rem",
+      "$shadow": "0 1px 2px rgba(56,65,74,.15)"
+    }
+  },
+  "cssComponents": {
+    "accordion": {
+      "scss": "@dodlhuat/basix/css/accordion.scss",
+      "classes": [
+        "accordion",
+        "accordion-item",
+        "accordion-header",
+        "accordion-body"
+      ]
+    },
+    "alert": {
+      "scss": "@dodlhuat/basix/css/alert.scss",
+      "classes": [
+        "alert",
+        "alert-success",
+        "alert-error",
+        "alert-warning",
+        "alert-info"
+      ]
+    },
+    "badge": {
+      "scss": "@dodlhuat/basix/css/badge.scss",
+      "classes": [
+        "badge",
+        "badge-primary",
+        "badge-success",
+        "badge-error",
+        "badge-warning"
+      ]
+    },
+    "breadcrumb": {
+      "scss": "@dodlhuat/basix/css/breadcrumb.scss",
+      "classes": [
+        "breadcrumb"
+      ]
+    },
+    "button": {
+      "scss": "@dodlhuat/basix/css/button.scss",
+      "classes": [
+        "button",
+        "button-primary",
+        "button-outline",
+        "button-pill",
+        "button-sm",
+        "button-lg",
+        "button-icon",
+        "button-success",
+        "button-warning",
+        "button-error"
+      ],
+      "states": [
+        "active",
+        "is-loading"
+      ]
+    },
+    "card": {
+      "scss": "@dodlhuat/basix/css/card.scss",
+      "classes": [
+        "card",
+        "card-bordered",
+        "card-flat",
+        "card-hover",
+        "card-padding-sm",
+        "card-padding-lg",
+        "card-padding-none"
+      ]
+    },
+    "checkbox": {
+      "scss": "@dodlhuat/basix/css/checkbox.scss",
+      "classes": [
+        "checkbox"
+      ]
+    },
+    "chips": {
+      "scss": "@dodlhuat/basix/css/chips.scss",
+      "classes": [
+        "chips",
+        "chip",
+        "chip clickable",
+        "chip clickable selected"
+      ],
+      "note": "Interactive chips need 'clickable' class. Selected state uses 'selected' class (NOT 'chip-active'). Example: class='chip clickable' :class=\"{ 'selected': isActive }\""
+    },
+    "form": {
+      "scss": "@dodlhuat/basix/css/form.scss",
+      "classes": [
+        "form-group",
+        "input-group",
+        "select-group"
+      ]
+    },
+    "grid": {
+      "scss": "@dodlhuat/basix/css/grid.scss",
+      "classes": [
+        "grid",
+        "col",
+        "col-2",
+        "col-3",
+        "col-4"
+      ]
+    },
+    "icons": {
+      "scss": "@dodlhuat/basix/css/icons.scss",
+      "note": "Material Symbols Outlined via icon font, use <span class='icon'>icon_name</span>"
+    },
+    "modal": {
+      "scss": "@dodlhuat/basix/css/modal.scss",
+      "note": "Used via JS Modal class, not standalone CSS"
+    },
+    "placeholder": {
+      "scss": "@dodlhuat/basix/css/placeholder.scss",
+      "classes": [
+        "placeholder",
+        "placeholder-sm",
+        "placeholder-lg"
+      ]
+    },
+    "progress": {
+      "scss": "@dodlhuat/basix/css/progress.scss",
+      "classes": [
+        "progress",
+        "progress-bar",
+        "progress-bar accent",
+        "progress-bar success",
+        "progress-bar warning",
+        "progress-bar error",
+        "progress-bar animated"
+      ],
+      "skeleton": [
+        "skeleton",
+        "skeleton-text",
+        "skeleton-avatar"
+      ]
+    },
+    "radiobutton": {
+      "scss": "@dodlhuat/basix/css/radiobutton.scss",
+      "classes": [
+        "radiobutton"
+      ]
+    },
+    "spinner": {
+      "scss": "@dodlhuat/basix/css/spinner.scss",
+      "classes": [
+        "spinner",
+        "loading"
+      ]
+    },
+    "switch": {
+      "scss": "@dodlhuat/basix/css/switch.scss",
+      "classes": [
+        "switch"
+      ]
+    },
+    "table": {
+      "scss": "@dodlhuat/basix/css/table.scss",
+      "classes": [
+        "table",
+        "table-striped",
+        "table-bordered"
+      ]
+    },
+    "tabs": {
+      "scss": "@dodlhuat/basix/css/tabs.scss",
+      "note": "Used via JS Tabs class"
+    },
+    "timeline": {
+      "scss": "@dodlhuat/basix/css/timeline.scss",
+      "classes": [
+        "timeline",
+        "timeline-item"
+      ]
+    },
+    "toast": {
+      "scss": "@dodlhuat/basix/css/toast.scss",
+      "note": "Used via JS Toast class"
+    },
+    "tooltip": {
+      "scss": "@dodlhuat/basix/css/tooltip.scss",
+      "classes": [
+        "tooltip"
+      ],
+      "attrs": [
+        "data-tooltip"
+      ]
+    },
+    "typography": {
+      "scss": "@dodlhuat/basix/css/typography.scss",
+      "note": "Outfit font, heading/text utilities"
+    }
+  },
+  "jsControllers": {
+    "PushMenu": {
+      "import": "@dodlhuat/basix/js/push-menu.js",
+      "usage": "PushMenu.init() — static class. HTML: <nav class='push-menu'><div class='push-menu-panel' data-level='0'><ul>...</ul></div></nav>, <div class='push-content'>...</div>, <div class='push-menu-backdrop'></div>",
+      "api": [
+        "PushMenu.init()",
+        "PushMenu.open()",
+        "PushMenu.close()",
+        "PushMenu.isOpen()",
+        "PushMenu.pushToggle()",
+        "PushMenu.goBack()",
+        "PushMenu.refresh()",
+        "PushMenu.destroy()"
+      ],
+      "cssFile": "@dodlhuat/basix/css/push-menu.scss",
+      "requiredElements": [
+        "nav.push-menu",
+        ".push-content",
+        ".push-menu-backdrop",
+        ".main-header",
+        ".navigation-controls"
+      ]
+    },
+    "Modal": {
+      "import": "@dodlhuat/basix/js/modal.js",
+      "usage": "new Modal({ content, header?, footer?, closeable?, type? }) → modal.show() / modal.hide()",
+      "types": [
+        "default",
+        "success",
+        "error",
+        "warning",
+        "info"
+      ],
+      "api": [
+        "show()",
+        "hide()",
+        "updateContent(content)",
+        "isVisible()",
+        "destroy()"
+      ]
+    },
+    "Toast": {
+      "import": "@dodlhuat/basix/js/toast.js",
+      "usage": "new Toast({ content, header?, type?, closeable? }).show(ms?)",
+      "types": [
+        "success",
+        "error",
+        "warning",
+        "info"
+      ],
+      "api": [
+        "show(ms?)",
+        "hide()",
+        "destroy()"
+      ]
+    },
+    "Tabs": {
+      "import": "@dodlhuat/basix/js/tabs.js",
+      "usage": "new Tabs(elementOrSelector, { layout?, defaultTab?, menuPos?, onChange? })",
+      "layouts": [
+        "horizontal",
+        "vertical"
+      ],
+      "menuPos": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ],
+      "api": [
+        "goToTab(index)",
+        "getCurrentTab()",
+        "getTabCount()",
+        "enableTab(index)",
+        "disableTab(index)",
+        "destroy()"
+      ]
+    },
+    "Stepper": {
+      "import": "@dodlhuat/basix/js/stepper.js",
+      "usage": "new Stepper(elementOrSelector, { defaultStep?, clickable?, onChange? })",
+      "api": [
+        "next()",
+        "prev()",
+        "goTo(index)",
+        "setError(index)",
+        "clearError(index)",
+        "getStep()",
+        "getStepCount()",
+        "isFirst()",
+        "isLast()",
+        "destroy()"
+      ]
+    },
+    "Chart": {
+      "import": "@dodlhuat/basix/js/chart.js",
+      "usage": "new Chart(selector, { type, series, title?, subtitle?, height?, showLegend?, showGrid?, animate?, curve?, yMin?, yMax? })",
+      "types": [
+        "line",
+        "area",
+        "column",
+        "bar",
+        "pie"
+      ],
+      "curves": [
+        "smooth",
+        "linear",
+        "step"
+      ],
+      "api": [
+        "update(series)",
+        "setType(type)",
+        "destroy()"
+      ]
+    },
+    "Theme": {
+      "import": "@dodlhuat/basix/js/theme.js",
+      "usage": "Theme.init() — static class. Reads/writes [data-theme] on :root. Persists in localStorage.",
+      "api": [
+        "Theme.init()",
+        "Theme.getTheme()",
+        "Theme.setTheme('light'|'dark')",
+        "Theme.resetToSystem()",
+        "Theme.hasSavedPreference()"
+      ]
+    },
+    "BottomSheet": {
+      "import": "@dodlhuat/basix/js/bottom-sheet.js",
+      "usage": "new BottomSheet({ content, header?, footer?, closeable?, snapHeight?, onClose? })",
+      "snapHeights": [
+        "auto",
+        "half",
+        "full"
+      ],
+      "api": [
+        "show()",
+        "hide()",
+        "snapTo(height)",
+        "isVisible()",
+        "destroy()"
+      ]
+    },
+    "Dropdown": {
+      "import": "@dodlhuat/basix/js/dropdown.js",
+      "usage": "new Dropdown(selector, { closeOnSelect?, allowMultipleOpen? })",
+      "api": [
+        "toggle()",
+        "open()",
+        "close()",
+        "destroy()"
+      ]
+    },
+    "Select": {
+      "import": "@dodlhuat/basix/js/select.js",
+      "usage": "new Select(elementOrSelector) or Select.init(elementOrSelector)",
+      "api": [
+        "value()",
+        "destroy()"
+      ]
+    },
+    "RangeSlider": {
+      "import": "@dodlhuat/basix/js/range-slider.js",
+      "usage": "new RangeSlider(inputElement) or RangeSlider.initAll(selector?)",
+      "api": [
+        "destroy()",
+        "RangeSlider.initAll(selector?)"
+      ]
+    },
+    "Calendar": {
+      "import": "@dodlhuat/basix/js/calendar.js",
+      "cssFile": "@dodlhuat/basix/css/calendar.scss"
+    },
+    "Datepicker": {
+      "import": "@dodlhuat/basix/js/datepicker.js",
+      "cssFile": "@dodlhuat/basix/css/datepicker.scss"
+    },
+    "Popover": {
+      "import": "@dodlhuat/basix/js/popover.js",
+      "cssFile": "@dodlhuat/basix/css/popover.scss"
+    },
+    "Tooltip": {
+      "import": "@dodlhuat/basix/js/tooltip.js",
+      "cssFile": "@dodlhuat/basix/css/tooltip.scss"
+    },
+    "FlyoutMenu": {
+      "import": "@dodlhuat/basix/js/flyout-menu.js",
+      "cssFile": "@dodlhuat/basix/css/flyout-menu.scss"
+    },
+    "SidebarNav": {
+      "import": "@dodlhuat/basix/js/sidebar-nav.js",
+      "cssFile": "@dodlhuat/basix/css/sidebar-nav.scss"
+    }
+  },
+  "svgIcons": {
+    "file": "@dodlhuat/basix/svg-icons/icons.svg",
+    "usage": "<AppIcon name=\"icon-name\" size=\"1.5rem\" /> — uses /icons.svg sprite via <svg><use href=\"/icons.svg#name\"></use></svg>. Sprite has full Material Symbols set. Copy sprite from node_modules/@dodlhuat/basix/svg-icons/icons.svg to public/icons.svg.",
+    "component": "AppIcon (app/components/AppIcon.vue)",
+    "note": "DO NOT use <span class=\"icon\"> — Basix font is a 5KB subset without ligature support. Always use AppIcon component."
+  }
+}
