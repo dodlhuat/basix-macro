@@ -10,7 +10,7 @@
       <template v-if="result">
         <div class="body-fat__hero-body">
           <div class="body-fat__value-group">
-            <span class="body-fat__eyebrow">Körperfett</span>
+            <span class="body-fat__eyebrow">{{ $t('bodyFat.title') }}</span>
             <div class="body-fat__value-row">
               <span class="body-fat__value">{{ result.value.toFixed(1) }}</span>
               <span class="body-fat__unit">%</span>
@@ -30,7 +30,7 @@
       <template v-else>
         <div class="body-fat__hero-empty">
           <AppIcon name="monitor_weight" size="2rem" />
-          <p>Noch nicht berechnet</p>
+          <p>{{ $t('bodyFat.notCalculated') }}</p>
         </div>
       </template>
     </section>
@@ -40,9 +40,9 @@
       <div class="alert alert-info">
         <AppIcon name="person" size="1.125rem" />
         <span>
-          Bitte fülle zuerst dein
-          <NuxtLink to="/settings/profile" class="body-fat__profile-link">Profil</NuxtLink>
-          aus, um die Körperfett-Berechnung nutzen zu können.
+          {{ $t('bodyFat.noProfilePre') }}
+          <NuxtLink to="/settings/profile" class="body-fat__profile-link">{{ $t('bodyFat.noProfileLink') }}</NuxtLink>
+          {{ $t('bodyFat.noProfilePost') }}
         </span>
       </div>
     </div>
@@ -51,20 +51,20 @@
 
       <!-- ─── Input form ─────────────────────────────────────────────────────── -->
       <section class="body-fat__form" aria-label="Maße eingeben">
-        <p class="body-fat__section-label">Maße eingeben</p>
+        <p class="body-fat__section-label">{{ $t('bodyFat.measurements') }}</p>
 
         <!-- Height info chip (read-only, from profile) -->
         <div class="body-fat__height-info" aria-label="Körpergröße aus Profil">
           <AppIcon name="height" size="1rem" class="body-fat__height-icon" />
           <span class="body-fat__height-text">
-            Körpergröße: <strong>{{ userStore.user.height_cm }}&thinsp;cm</strong>
+            {{ $t('bodyFat.height') }}: <strong>{{ userStore.user.height_cm }}&thinsp;cm</strong>
           </span>
         </div>
 
         <!-- Neck + Waist (2-column) -->
         <div class="body-fat__form-row">
           <div class="form-group body-fat__form-group">
-            <label class="body-fat__field-label" for="bf-neck">Hals</label>
+            <label class="body-fat__field-label" for="bf-neck">{{ $t('bodyFat.neck') }}</label>
             <div class="input-group">
               <input
                 id="bf-neck"
@@ -77,12 +77,12 @@
                 placeholder="37.0"
                 class="body-fat__num-input"
                 aria-label="Halsumfang in Zentimeter"
-              />
+              >
               <span class="body-fat__input-unit" aria-hidden="true">cm</span>
             </div>
           </div>
           <div class="form-group body-fat__form-group">
-            <label class="body-fat__field-label" for="bf-waist">Taille</label>
+            <label class="body-fat__field-label" for="bf-waist">{{ $t('bodyFat.waist') }}</label>
             <div class="input-group">
               <input
                 id="bf-waist"
@@ -95,7 +95,7 @@
                 placeholder="84.0"
                 class="body-fat__num-input"
                 aria-label="Taillenumfang in Zentimeter"
-              />
+              >
               <span class="body-fat__input-unit" aria-hidden="true">cm</span>
             </div>
           </div>
@@ -107,7 +107,7 @@
             v-if="showHip"
             class="form-group body-fat__form-group body-fat__hip-group"
           >
-            <label class="body-fat__field-label" for="bf-hip">Hüfte</label>
+            <label class="body-fat__field-label" for="bf-hip">{{ $t('bodyFat.hip') }}</label>
             <div class="input-group">
               <input
                 id="bf-hip"
@@ -120,7 +120,7 @@
                 placeholder="95.0"
                 class="body-fat__num-input"
                 aria-label="Hüftumfang in Zentimeter"
-              />
+              >
               <span class="body-fat__input-unit" aria-hidden="true">cm</span>
             </div>
           </div>
@@ -137,25 +137,20 @@
           @click="handleCalc"
         >
           <AppIcon name="calculate" size="1rem" />
-          Berechnen
+          {{ $t('bodyFat.calculate') }}
         </button>
       </section>
 
       <!-- ─── Info card ──────────────────────────────────────────────────────── -->
       <section class="body-fat__info" aria-label="Über die Navy-Methode">
-        <p class="body-fat__section-label">Über die Navy-Methode</p>
-        <p class="body-fat__info-text">
-          Die US-Navy-Methode schätzt den Körperfettanteil anhand einfacher Körpermaße – ohne Geräte oder Spezialtechnik.
-          Sie kombiniert Hals- und Taillenumfang (bei Frauen zusätzlich Hüfte) mit der Körpergröße zu einer validierten Formel.
-        </p>
-        <p class="body-fat__info-text body-fat__info-text--muted">
-          Die Methode stammt vom U.S. Naval Health Research Center und gilt als zuverlässige Schätzung für gesunde Erwachsene mit einer Genauigkeit von ±&thinsp;3&thinsp;%.
-        </p>
+        <p class="body-fat__section-label">{{ $t('bodyFat.navyTitle') }}</p>
+        <p class="body-fat__info-text">{{ $t('bodyFat.navyDesc1') }}</p>
+        <p class="body-fat__info-text body-fat__info-text--muted">{{ $t('bodyFat.navyDesc2') }}</p>
       </section>
 
       <!-- ─── Category reference table ──────────────────────────────────────── -->
       <section class="body-fat__table-section" aria-label="Kategorie-Referenz">
-        <p class="body-fat__section-label">Kategorien ({{ genderLabel }})</p>
+        <p class="body-fat__section-label">{{ $t('bodyFat.categories') }} ({{ genderLabel }})</p>
         <ul class="body-fat__cat-list" role="list">
           <li
             v-for="row in categoryTable"
@@ -177,10 +172,11 @@
 <script setup lang="ts">
 import type { BodyFatCategory } from '~/composables/useBodyFat'
 
-definePageMeta({ title: 'Körperfett' })
+definePageMeta({ title: 'Body Fat' })
 
 const userStore = useUserStore()
 const { calcBodyFat } = useBodyFat()
+const { t } = useI18n()
 
 // ─── Input state ──────────────────────────────────────────────────────────────
 
@@ -232,13 +228,13 @@ function handleCalc() {
       hip_cm: showHip.value ? hip.value : undefined,
     })
     if (isNaN(raw.value) || raw.value < 0 || raw.value > 80) {
-      formError.value = 'Unplausibles Ergebnis – bitte prüfe die eingegebenen Maße.'
+      formError.value = t('bodyFat.errorResult')
       return
     }
     result.value = raw
   }
   catch {
-    formError.value = 'Ungültige Eingabe – bitte prüfe die eingegebenen Werte.'
+    formError.value = t('bodyFat.errorInput')
     result.value = null
   }
 }
@@ -280,28 +276,28 @@ interface CategoryRow {
   badgeClass: string
 }
 
-const maleCategoryTable: CategoryRow[] = [
-  { category: 'essential', label: 'Essenziell',   range: '< 6 %',     badgeClass: 'badge-error' },
-  { category: 'athlete',   label: 'Sportler',     range: '6 – 13 %',  badgeClass: 'badge-success' },
-  { category: 'fitness',   label: 'Fitness',      range: '14 – 17 %', badgeClass: 'badge-success' },
-  { category: 'average',   label: 'Durchschnitt', range: '18 – 24 %', badgeClass: 'badge-warning' },
-  { category: 'obese',     label: 'Übergewicht',  range: '≥ 25 %',    badgeClass: 'badge-error' },
-]
+const maleCategoryTable = computed<CategoryRow[]>(() => [
+  { category: 'essential', label: t('bodyFat.cat.essential'), range: '< 6 %',     badgeClass: 'badge-error' },
+  { category: 'athlete',   label: t('bodyFat.cat.athlete'),   range: '6 – 13 %',  badgeClass: 'badge-success' },
+  { category: 'fitness',   label: t('bodyFat.cat.fitness'),   range: '14 – 17 %', badgeClass: 'badge-success' },
+  { category: 'average',   label: t('bodyFat.cat.average'),   range: '18 – 24 %', badgeClass: 'badge-warning' },
+  { category: 'obese',     label: t('bodyFat.cat.obese'),     range: '≥ 25 %',    badgeClass: 'badge-error' },
+])
 
-const femaleCategoryTable: CategoryRow[] = [
-  { category: 'essential', label: 'Essenziell',   range: '< 14 %',    badgeClass: 'badge-error' },
-  { category: 'athlete',   label: 'Sportlich',    range: '14 – 20 %', badgeClass: 'badge-success' },
-  { category: 'fitness',   label: 'Fitness',      range: '21 – 24 %', badgeClass: 'badge-success' },
-  { category: 'average',   label: 'Durchschnitt', range: '25 – 31 %', badgeClass: 'badge-warning' },
-  { category: 'obese',     label: 'Übergewicht',  range: '≥ 32 %',    badgeClass: 'badge-error' },
-]
+const femaleCategoryTable = computed<CategoryRow[]>(() => [
+  { category: 'essential', label: t('bodyFat.cat.essential'), range: '< 14 %',    badgeClass: 'badge-error' },
+  { category: 'athlete',   label: t('bodyFat.cat.athleteF'),  range: '14 – 20 %', badgeClass: 'badge-success' },
+  { category: 'fitness',   label: t('bodyFat.cat.fitness'),   range: '21 – 24 %', badgeClass: 'badge-success' },
+  { category: 'average',   label: t('bodyFat.cat.average'),   range: '25 – 31 %', badgeClass: 'badge-warning' },
+  { category: 'obese',     label: t('bodyFat.cat.obese'),     range: '≥ 32 %',    badgeClass: 'badge-error' },
+])
 
 const categoryTable = computed<CategoryRow[]>(() =>
-  userStore.user?.gender === 'male' ? maleCategoryTable : femaleCategoryTable,
+  userStore.user?.gender === 'male' ? maleCategoryTable.value : femaleCategoryTable.value,
 )
 
 const genderLabel = computed(() =>
-  userStore.user?.gender === 'male' ? 'Männer' : 'Frauen',
+  userStore.user?.gender === 'male' ? t('profile.male') : t('profile.female'),
 )
 
 // ─── Lifecycle ────────────────────────────────────────────────────────────────

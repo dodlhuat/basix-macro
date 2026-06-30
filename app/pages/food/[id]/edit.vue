@@ -34,7 +34,7 @@
         </button>
       </div>
 
-      <form class="food-form__body" @submit.prevent="handleSave" novalidate>
+      <form class="food-form__body" novalidate @submit.prevent="handleSave">
 
         <!-- Name -->
         <div class="form-group" :class="{ 'food-form__field--error': errors.name }">
@@ -48,7 +48,7 @@
               autocomplete="off"
               :aria-invalid="!!errors.name"
               @blur="validateField('name')"
-            />
+            >
           </div>
           <p v-if="errors.name" class="food-form__error-msg" role="alert">{{ errors.name }}</p>
         </div>
@@ -63,7 +63,7 @@
               type="text"
               placeholder="z.B. Kaufland"
               autocomplete="off"
-            />
+            >
           </div>
         </div>
 
@@ -88,7 +88,7 @@
                 placeholder="0"
                 :aria-invalid="!!errors.calories_per_100g"
                 @blur="validateField('calories_per_100g')"
-              />
+              >
             </div>
             <p v-if="errors.calories_per_100g" class="food-form__error-msg" role="alert">
               {{ errors.calories_per_100g }}
@@ -111,7 +111,7 @@
                 placeholder="0"
                 :aria-invalid="!!errors.protein_per_100g"
                 @blur="validateField('protein_per_100g')"
-              />
+              >
             </div>
             <p v-if="errors.protein_per_100g" class="food-form__error-msg" role="alert">
               {{ errors.protein_per_100g }}
@@ -134,7 +134,7 @@
                 placeholder="0"
                 :aria-invalid="!!errors.carbs_per_100g"
                 @blur="validateField('carbs_per_100g')"
-              />
+              >
             </div>
             <p v-if="errors.carbs_per_100g" class="food-form__error-msg" role="alert">
               {{ errors.carbs_per_100g }}
@@ -157,7 +157,7 @@
                 placeholder="0"
                 :aria-invalid="!!errors.fat_per_100g"
                 @blur="validateField('fat_per_100g')"
-              />
+              >
             </div>
             <p v-if="errors.fat_per_100g" class="food-form__error-msg" role="alert">
               {{ errors.fat_per_100g }}
@@ -192,7 +192,7 @@
                 min="0"
                 step="0.1"
                 placeholder="0"
-              />
+              >
             </div>
           </div>
 
@@ -206,7 +206,7 @@
                 min="0"
                 step="0.1"
                 placeholder="0"
-              />
+              >
             </div>
           </div>
         </div>
@@ -221,7 +221,7 @@
               inputmode="numeric"
               placeholder="EAN/GTIN"
               autocomplete="off"
-            />
+            >
           </div>
         </div>
 

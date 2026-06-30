@@ -7,6 +7,7 @@ function applyTheme(theme: 'light' | 'dark') {
 }
 
 function saveTheme(theme: 'light' | 'dark') {
+  // eslint-disable-next-line no-empty
   try { localStorage.setItem(STORAGE_KEY, theme) } catch {}
 }
 

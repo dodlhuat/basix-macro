@@ -5,7 +5,7 @@
         <label for="push-menu-toggle" aria-label="Menü öffnen">
           <AppIcon name="menu" size="1.5rem" />
         </label>
-        <input id="push-menu-toggle" type="checkbox" @change="toggle" />
+        <input id="push-menu-toggle" type="checkbox" @change="toggle" >
       </div>
     </div>
     <div>
@@ -13,7 +13,7 @@
         <span class="wordmark-thin">basix</span><span class="wordmark-bold">makro</span>
       </div>
     </div>
-    <div class="last"></div>
+    <div class="last"/>
   </header>
 </template>
 

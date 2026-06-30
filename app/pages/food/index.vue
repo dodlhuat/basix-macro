@@ -10,15 +10,15 @@
           v-model="localQuery"
           type="search"
           class="food__search-input"
-          placeholder="Lebensmittel suchen …"
-          aria-label="Lebensmittel suchen"
+          :placeholder="$t('food.searchPlaceholder')"
+          :aria-label="$t('food.searchPlaceholder')"
           @input="handleSearch"
           @search="handleSearch"
-        />
+        >
         <button
           v-if="localQuery"
           class="button button-icon food__search-clear"
-          aria-label="Suche löschen"
+          :aria-label="$t('food.clearSearch')"
           @click="clearSearch"
         >
           <AppIcon name="close" size="1rem" />
@@ -46,7 +46,7 @@
       v-if="foodStore.items.length"
       class="food__list"
       role="list"
-      aria-label="Lebensmittelliste"
+      :aria-label="$t('food.listLabel')"
     >
       <li
         v-for="(item, idx) in foodStore.items"
@@ -69,7 +69,7 @@
           <button
             class="food__item-star"
             :class="{ 'food__item-star--active': item.is_favorite }"
-            :aria-label="item.is_favorite ? 'Aus Favoriten entfernen' : 'Zu Favoriten hinzufügen'"
+            :aria-label="item.is_favorite ? $t('food.star.remove') : $t('food.star.add')"
             :aria-pressed="item.is_favorite"
             @click.stop="foodStore.toggleFavorite(item.id)"
           >
@@ -81,7 +81,7 @@
 
           <button
             class="food__item-edit button button-icon"
-            :aria-label="`${item.name} bearbeiten`"
+            :aria-label="`${item.name} ${$t('food.editItem')}`"
             @click.stop="navigateTo(`/food/${item.id}/edit`)"
           >
             <AppIcon name="chevron_right" size="1.125rem" />
@@ -94,7 +94,7 @@
     <div v-if="localQuery" class="food__off">
       <div v-if="isOffLoading" class="food__off-loading">
         <span class="loading food__off-spinner" />
-        <span class="food__off-loading-text">Online suchen …</span>
+        <span class="food__off-loading-text">{{ $t('common.searchOnline') }}</span>
       </div>
       <template v-else-if="offResults.length">
         <p class="food__off-header">
@@ -128,33 +128,33 @@
     <div v-else-if="!localQuery || (!foodStore.items.length && !offResults.length && !isOffLoading)" class="food__empty">
       <template v-if="localQuery">
         <AppIcon name="search_off" size="2.5rem" class="food__empty-icon" />
-        <p class="food__empty-title">Keine Treffer</p>
-        <p class="food__empty-hint">Kein Lebensmittel gefunden für „{{ localQuery }}".</p>
+        <p class="food__empty-title">{{ $t('food.empty.noResults') }}</p>
+        <p class="food__empty-hint">{{ $t('food.empty.noResultsHint', { query: localQuery }) }}</p>
         <button class="button button-outline food__empty-action" @click="navigateTo('/food/add')">
           <AppIcon name="add" size="1rem" />
-          Neu anlegen
+          {{ $t('food.empty.addNew') }}
         </button>
       </template>
 
       <template v-else-if="foodStore.activeFilter === 'favorites'">
         <AppIcon name="star_border" size="2.5rem" class="food__empty-icon" />
-        <p class="food__empty-title">Keine Favoriten</p>
-        <p class="food__empty-hint">Tippe auf ★ bei einem Lebensmittel, um es zu speichern.</p>
+        <p class="food__empty-title">{{ $t('food.empty.favorites') }}</p>
+        <p class="food__empty-hint">{{ $t('food.empty.favoritesHint') }}</p>
       </template>
 
       <template v-else-if="foodStore.activeFilter === 'recent'">
         <AppIcon name="history" size="2.5rem" class="food__empty-icon" />
-        <p class="food__empty-title">Noch keine Aktivität</p>
-        <p class="food__empty-hint">Hier erscheinen Lebensmittel, die du kürzlich geloggt hast.</p>
+        <p class="food__empty-title">{{ $t('food.empty.recent') }}</p>
+        <p class="food__empty-hint">{{ $t('food.empty.recentHint') }}</p>
       </template>
 
       <template v-else>
         <AppIcon name="restaurant" size="2.5rem" class="food__empty-icon" />
-        <p class="food__empty-title">Noch keine Lebensmittel</p>
-        <p class="food__empty-hint">Lege dein erstes Lebensmittel an.</p>
+        <p class="food__empty-title">{{ $t('food.empty.food') }}</p>
+        <p class="food__empty-hint">{{ $t('food.empty.foodHint') }}</p>
         <button class="button button-primary food__empty-action" @click="navigateTo('/food/add')">
           <AppIcon name="add" size="1rem" />
-          Lebensmittel anlegen
+          {{ $t('food.empty.addNew') }}
         </button>
       </template>
     </div>
@@ -196,7 +196,7 @@
           </div>
           <button
             class="close button button-icon"
-            aria-label="Schließen"
+            :aria-label="$t('common.close')"
             @click="closeSheet"
           >
             <AppIcon name="close" size="1.25rem" />
@@ -207,7 +207,7 @@
 
           <!-- Meal chips -->
           <div class="food-sheet__section">
-            <p class="food-sheet__section-label">Mahlzeit</p>
+            <p class="food-sheet__section-label">{{ $t('diary.sheet.meal') }}</p>
             <div class="chips">
               <button
                 v-for="meal in MEALS"
@@ -223,7 +223,7 @@
 
           <!-- Amount control -->
           <div class="food-sheet__section">
-            <p class="food-sheet__section-label">Menge</p>
+            <p class="food-sheet__section-label">{{ $t('diary.sheet.amount') }}</p>
             <div class="food-sheet__amount">
               <button
                 class="button button-outline food-sheet__amount-btn"
@@ -243,7 +243,7 @@
                     step="1"
                     aria-label="Menge in Gramm"
                     class="food-sheet__amount-input"
-                  />
+                  >
                   <span class="food-sheet__amount-unit">g</span>
                 </div>
               </div>
@@ -268,21 +268,21 @@
                 class="food-sheet__nutrition-value"
                 style="color: #ef4444"
               >{{ sheetNutrition.protein }}g</span>
-              <span class="food-sheet__nutrition-label">Protein</span>
+              <span class="food-sheet__nutrition-label">{{ $t('common.protein') }}</span>
             </div>
             <div class="food-sheet__nutrition-item">
               <span
                 class="food-sheet__nutrition-value"
                 style="color: #3b82f6"
               >{{ sheetNutrition.carbs }}g</span>
-              <span class="food-sheet__nutrition-label">Kohlenhydrate</span>
+              <span class="food-sheet__nutrition-label">{{ $t('common.carbs') }}</span>
             </div>
             <div class="food-sheet__nutrition-item">
               <span
                 class="food-sheet__nutrition-value"
                 style="color: #f59e0b"
               >{{ sheetNutrition.fat }}g</span>
-              <span class="food-sheet__nutrition-label">Fett</span>
+              <span class="food-sheet__nutrition-label">{{ $t('common.fat') }}</span>
             </div>
           </div>
 
@@ -290,7 +290,7 @@
 
         <div class="bottom-sheet-footer">
           <div class="buttons">
-            <button class="button" @click="closeSheet">Abbrechen</button>
+            <button class="button" @click="closeSheet">{{ $t('common.cancel') }}</button>
             <button
               class="button button-primary"
               :disabled="isAdding"
@@ -299,7 +299,7 @@
               <span v-if="isAdding" class="loading" />
               <template v-else>
                 <AppIcon name="check" size="1rem" />
-                Hinzufügen
+                {{ $t('common.add') }}
               </template>
             </button>
           </div>
@@ -314,28 +314,29 @@
 import type { FoodItem } from '../../../db'
 import type { OFFProduct } from '../../composables/useOpenFoodFacts'
 
-definePageMeta({ title: 'Lebensmittel' })
+definePageMeta({ title: 'Foods' })
 
 const foodStore = useFoodStore()
 const { searchProducts, mapToFoodItem } = useOpenFoodFacts()
 const diaryStore = useDiaryStore()
 const route = useRoute()
 const router = useRouter()
+const { t } = useI18n()
 
 // ─── Filter config ─────────────────────────────────────────────────────────────
 
-const FILTERS = [
-  { key: 'all' as const,       label: 'Alle' },
-  { key: 'favorites' as const, label: 'Favoriten' },
-  { key: 'recent' as const,    label: 'Zuletzt' },
-]
+const FILTERS = computed(() => [
+  { key: 'all' as const,       label: t('food.filter.all') },
+  { key: 'favorites' as const, label: t('food.filter.favorites') },
+  { key: 'recent' as const,    label: t('food.filter.recent') },
+])
 
-const MEALS = [
-  { type: 'breakfast' as const, label: 'Frühstück' },
-  { type: 'lunch'     as const, label: 'Mittagessen' },
-  { type: 'dinner'    as const, label: 'Abendessen' },
-  { type: 'snack'     as const, label: 'Snacks' },
-]
+const MEALS = computed(() => [
+  { type: 'breakfast' as const, label: t('meal.breakfast') },
+  { type: 'lunch'     as const, label: t('meal.lunch') },
+  { type: 'dinner'    as const, label: t('meal.dinner') },
+  { type: 'snack'     as const, label: t('meal.snack') },
+])
 
 // ─── Search ────────────────────────────────────────────────────────────────────
 

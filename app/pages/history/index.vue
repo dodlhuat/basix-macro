@@ -3,14 +3,14 @@
 
     <!-- ─── Period tabs ─────────────────────────────────────────────────────── -->
     <section class="history__tabs">
-      <div class="chips" role="group" aria-label="Zeitraum wählen">
+      <div class="chips" role="group">
         <button
           class="chip clickable"
           :class="{ selected: period === 7 }"
           :aria-pressed="period === 7"
           @click="selectPeriod(7)"
         >
-          7 Tage
+          {{ $t('history.period["7"]') }}
         </button>
         <button
           class="chip clickable"
@@ -18,7 +18,7 @@
           :aria-pressed="period === 30"
           @click="selectPeriod(30)"
         >
-          30 Tage
+          {{ $t('history.period["30"]') }}
         </button>
         <button
           class="chip clickable"
@@ -26,7 +26,7 @@
           :aria-pressed="period === 90"
           @click="selectPeriod(90)"
         >
-          90 Tage
+          {{ $t('history.period["90"]') }}
         </button>
       </div>
     </section>
@@ -38,7 +38,7 @@
           <span class="history__stat-value">{{ avg.calories }}</span>
           <span class="history__stat-unit">kcal</span>
         </div>
-        <span class="history__stat-label">Ø Kalorien</span>
+        <span class="history__stat-label">{{ $t('history.avgCalories') }}</span>
       </div>
 
       <div class="history__stat-divider" aria-hidden="true" />
@@ -50,7 +50,7 @@
             :class="{ 'history__stat-value--streak': streak > 0 }"
           >{{ streak }}<template v-if="streak > 0"> 🔥</template></span>
         </div>
-        <span class="history__stat-label">Streak · Tage</span>
+        <span class="history__stat-label">{{ $t('history.streak') }}</span>
       </div>
 
       <div class="history__stat-divider" aria-hidden="true" />
@@ -60,7 +60,7 @@
           <span class="history__stat-value" :class="adherenceClass">{{ adherence }}</span>
           <span class="history__stat-unit">%</span>
         </div>
-        <span class="history__stat-label">Zielerreichung</span>
+        <span class="history__stat-label">{{ $t('history.adherence') }}</span>
       </div>
     </section>
 
@@ -107,17 +107,17 @@
 
       <div v-else class="history__chart-empty">
         <AppIcon name="bar_chart" size="1.5rem" />
-        <span>Keine Daten</span>
+        <span>{{ $t('history.noData') }}</span>
       </div>
     </section>
 
     <!-- ─── Macro averages ───────────────────────────────────────────────────── -->
     <section class="history__macros" aria-label="Durchschnittliche Makros">
-      <p class="history__section-label">Ø Makros pro Tag</p>
+      <p class="history__section-label">{{ $t('history.avgMacros') }}</p>
 
       <div class="history__macro-row">
         <div class="history__macro-head">
-          <span class="history__macro-name history__macro-name--protein">Protein</span>
+          <span class="history__macro-name history__macro-name--protein">{{ $t('common.protein') }}</span>
           <span class="history__macro-amount">
             {{ avg.protein_g }}g
             <span class="history__macro-detail">({{ Math.round(avg.protein_g * 4) }} kcal · {{ macroPerc.protein }}%)</span>
@@ -137,7 +137,7 @@
 
       <div class="history__macro-row">
         <div class="history__macro-head">
-          <span class="history__macro-name history__macro-name--carbs">Carbs</span>
+          <span class="history__macro-name history__macro-name--carbs">{{ $t('common.carbs') }}</span>
           <span class="history__macro-amount">
             {{ avg.carbs_g }}g
             <span class="history__macro-detail">({{ Math.round(avg.carbs_g * 4) }} kcal · {{ macroPerc.carbs }}%)</span>
@@ -157,7 +157,7 @@
 
       <div class="history__macro-row">
         <div class="history__macro-head">
-          <span class="history__macro-name history__macro-name--fat">Fett</span>
+          <span class="history__macro-name history__macro-name--fat">{{ $t('common.fat') }}</span>
           <span class="history__macro-amount">
             {{ avg.fat_g }}g
             <span class="history__macro-detail">({{ Math.round(avg.fat_g * 9) }} kcal · {{ macroPerc.fat }}%)</span>
@@ -178,7 +178,7 @@
 
     <!-- ─── Day list ─────────────────────────────────────────────────────────── -->
     <section class="history__list-section" aria-label="Tagesverlauf">
-      <p class="history__section-label">Verlauf</p>
+      <p class="history__section-label">{{ $t('history.history') }}</p>
 
       <!-- Empty state -->
       <div
@@ -187,8 +187,8 @@
         aria-live="polite"
       >
         <AppIcon name="bar_chart" size="2.5rem" class="history__empty-icon" />
-        <p class="history__empty-title">Noch keine Daten</p>
-        <p class="history__empty-hint">Trag deine ersten Mahlzeiten ein.</p>
+        <p class="history__empty-title">{{ $t('history.empty') }}</p>
+        <p class="history__empty-hint">{{ $t('history.emptyHint') }}</p>
       </div>
 
       <!-- Day list -->
@@ -233,12 +233,13 @@
 <script setup lang="ts">
 import type { DayTotal } from '~/composables/useStats'
 
-definePageMeta({ title: 'Verlauf' })
+definePageMeta({ title: 'Statistics' })
 
 const statsStore = useStatsStore()
 const userStore = useUserStore()
 const { calcAverage, calcMacroPercentages, calcAdherence } = useStats()
 const { streak } = useStreak()
+const { locale } = useI18n()
 
 const { period, days, loggedDays, isLoading } = storeToRefs(statsStore)
 
@@ -313,7 +314,8 @@ function dayDotClass(day: DayTotal): string {
 }
 
 function formatDate(dateStr: string): string {
-  return new Date(dateStr + 'T12:00:00').toLocaleDateString('de-DE', {
+  const loc = locale.value === 'en' ? 'en-US' : 'de-DE'
+  return new Date(dateStr + 'T12:00:00').toLocaleDateString(loc, {
     weekday: 'short',
     day: 'numeric',
     month: 'short',

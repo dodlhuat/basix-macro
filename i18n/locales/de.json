@@ -1,0 +1,331 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "diary": "Tagebuch",
+    "food": "Lebensmittel",
+    "recipes": "Rezepte",
+    "statistics": "Statistiken",
+    "weight": "Gewicht",
+    "bodyFat": "Körperfett",
+    "settings": "Einstellungen"
+  },
+  "common": {
+    "today": "Heute",
+    "back": "Zurück",
+    "save": "Speichern",
+    "saved": "Gespeichert ✓",
+    "cancel": "Abbrechen",
+    "add": "Hinzufügen",
+    "delete": "Löschen",
+    "close": "Schließen",
+    "next": "Weiter",
+    "start": "Los geht's",
+    "searchOnline": "Online suchen …",
+    "per100g": "pro 100 g",
+    "protein": "Protein",
+    "carbs": "Kohlenhydrate",
+    "fat": "Fett",
+    "calories": "Kalorien",
+    "noResults": "Keine Treffer",
+    "optional": "optional",
+    "retry": "Erneut versuchen",
+    "calculate": "Berechnen",
+    "loading": "Lade Daten",
+    "noData": "Keine Daten"
+  },
+  "meal": {
+    "breakfast": "Frühstück",
+    "lunch": "Mittagessen",
+    "dinner": "Abendessen",
+    "snack": "Snacks"
+  },
+  "dashboard": {
+    "dateNav": "Datumsnavigation",
+    "prevDay": "Vorheriger Tag",
+    "nextDay": "Nächster Tag",
+    "remaining": "verbleibend",
+    "overGoal": "Ziel überschritten",
+    "consumed": "verbraucht",
+    "goal": "Ziel",
+    "overGoalLabel": "+ {n} kcal über dem Ziel",
+    "water": "Wasser",
+    "streakDay": "Tag",
+    "streakDays": "Tage",
+    "emptyEntry": "Noch nichts eingetragen",
+    "addEntry": "Eintrag hinzufügen"
+  },
+  "diary": {
+    "title": "Eintrag hinzufügen",
+    "searchFood": "Lebensmittel suchen …",
+    "searchRecipe": "Rezept suchen …",
+    "clearSearch": "Suche löschen",
+    "scanBarcode": "Barcode scannen",
+    "filter": {
+      "all": "Alle",
+      "favorites": "Favoriten",
+      "recent": "Zuletzt",
+      "recipes": "Rezepte"
+    },
+    "empty": {
+      "favorites": "Keine Favoriten",
+      "favoritesHint": "Tippe auf ★ bei einem Lebensmittel, um es zu speichern.",
+      "recent": "Noch keine Aktivität",
+      "recentHint": "Hier erscheinen kürzlich geloggte Lebensmittel.",
+      "food": "Noch keine Lebensmittel",
+      "foodHint": "Leg zuerst Lebensmittel an.",
+      "recipeNotFound": "Kein Rezept gefunden",
+      "recipes": "Keine Rezepte",
+      "recipesHint": "Leg zuerst Rezepte an."
+    },
+    "createFood": "Neues Lebensmittel anlegen",
+    "sheet": {
+      "meal": "Mahlzeit",
+      "amount": "Menge",
+      "servings": "Portionen",
+      "ingredients": "Zutaten",
+      "portion": "Port."
+    },
+    "diaryPage": {
+      "backToDashboard": "Zurück zum Dashboard",
+      "overGoal": "Ziel überschritten",
+      "remaining": "verbleibend",
+      "consumed": "verbraucht",
+      "goal": "Ziel",
+      "overGoalLabel": "+ {n} kcal über dem Ziel",
+      "emptyEntry": "Noch nichts eingetragen",
+      "addEntry": "Eintrag hinzufügen"
+    }
+  },
+  "food": {
+    "title": "Lebensmittel",
+    "searchPlaceholder": "Lebensmittel suchen …",
+    "clearSearch": "Suche löschen",
+    "addNew": "Neues Lebensmittel",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "filter": {
+      "all": "Alle",
+      "favorites": "Favoriten",
+      "recent": "Zuletzt"
+    },
+    "empty": {
+      "noResults": "Keine Treffer",
+      "noResultsHint": "Kein Lebensmittel gefunden für «{query}».",
+      "favorites": "Keine Favoriten",
+      "favoritesHint": "Tippe auf ★ bei einem Lebensmittel, um es zu speichern.",
+      "recent": "Noch keine Aktivität",
+      "recentHint": "Hier erscheinen Lebensmittel, die du kürzlich geloggt hast.",
+      "food": "Noch keine Lebensmittel",
+      "foodHint": "Lege dein erstes Lebensmittel an.",
+      "addNew": "Lebensmittel anlegen"
+    },
+    "star": {
+      "add": "Zu Favoriten hinzufügen",
+      "remove": "Aus Favoriten entfernen"
+    },
+    "form": {
+      "title": "Neues Lebensmittel",
+      "name": "Name",
+      "brand": "Marke",
+      "nutrients": "Nährwerte pro 100g",
+      "further": "Weitere Angaben",
+      "fiber": "Ballaststoffe",
+      "sugar": "Zucker",
+      "barcode": "Barcode",
+      "errorName": "Name ist erforderlich.",
+      "errorValue": "Gib einen Wert ≥ 0 ein.",
+      "errorSave": "Speichern fehlgeschlagen. Bitte versuche es erneut.",
+      "macroCalc": "Makros ergeben {n} kcal",
+      "macroDeviation": "— abweichend von {n} kcal (Angabe)"
+    }
+  },
+  "scan": {
+    "cameraStarting": "Kamera wird gestartet …",
+    "retry": "Erneut versuchen",
+    "holdBarcode": "Barcode in das Feld halten",
+    "lookingUp": "Produkt wird gesucht …",
+    "manualInput": "Barcode manuell eingeben",
+    "foundTitle": "Produkt gefunden",
+    "notFoundTitle": "Produkt nicht gefunden",
+    "rescan": "Nochmal scannen",
+    "saveAndAdd": "Speichern & hinzufügen",
+    "addManually": "Manuell anlegen"
+  },
+  "weight": {
+    "title": "Gewicht",
+    "noEntry": "Noch kein Eintrag",
+    "chartHint": "Mindestens 2 Einträge für den Chart",
+    "addEntry": "Eintrag hinzufügen",
+    "weightLabel": "Gewicht",
+    "dateLabel": "Datum",
+    "datePlaceholder": "Datum wählen",
+    "notePlaceholder": "Notiz (optional)",
+    "history": "Verlauf",
+    "empty": "Noch keine Einträge",
+    "emptyHint": "Trage dein erstes Gewicht oben ein, um zu starten."
+  },
+  "history": {
+    "title": "Verlauf",
+    "avgCalories": "Ø Kalorien",
+    "streak": "Streak · Tage",
+    "adherence": "Zielerreichung",
+    "avgMacros": "Ø Makros pro Tag",
+    "history": "Verlauf",
+    "empty": "Noch keine Daten",
+    "emptyHint": "Trag deine ersten Mahlzeiten ein.",
+    "noData": "Keine Daten",
+    "period": {
+      "7": "7 Tage",
+      "30": "30 Tage",
+      "90": "90 Tage"
+    }
+  },
+  "bodyFat": {
+    "title": "Körperfett",
+    "notCalculated": "Noch nicht berechnet",
+    "fillProfile": "Bitte fülle zuerst dein",
+    "profile": "Profil",
+    "fillProfileSuffix": "aus, um die Körperfett-Berechnung nutzen zu können.",
+    "enterMeasurements": "Maße eingeben",
+    "height": "Körpergröße",
+    "neck": "Hals",
+    "waist": "Taille",
+    "hip": "Hüfte",
+    "calculate": "Berechnen",
+    "aboutNavy": "Über die Navy-Methode",
+    "navyText1": "Die US-Navy-Methode schätzt den Körperfettanteil anhand einfacher Körpermaße – ohne Geräte oder Spezialtechnik. Sie kombiniert Hals- und Taillenumfang (bei Frauen zusätzlich Hüfte) mit der Körpergröße zu einer validierten Formel.",
+    "navyText2": "Die Methode stammt vom U.S. Naval Health Research Center und gilt als zuverlässige Schätzung für gesunde Erwachsene mit einer Genauigkeit von ± 3 %.",
+    "categories": "Kategorien",
+    "men": "Männer",
+    "women": "Frauen",
+    "cat": {
+      "essential": "Essenziell",
+      "athleteMale": "Sportler",
+      "athleteFemale": "Sportlich",
+      "fitness": "Fitness",
+      "average": "Durchschnitt",
+      "obese": "Übergewicht"
+    },
+    "errorImplausible": "Unplausibles Ergebnis – bitte prüfe die eingegebenen Maße.",
+    "errorInvalid": "Ungültige Eingabe – bitte prüfe die eingegebenen Werte."
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "profile": "Profil",
+    "profileLabel": "Profil & Kalorienziel",
+    "adaptiveCalories": "Kalorienziel automatisch anpassen",
+    "adaptiveCaloriesSub": "Gleicht Ziel wöchentlich mit Gewichtsverlauf ab",
+    "lastAdjusted": "Zuletzt angepasst",
+    "dailyGoals": "Tägliche Ziele",
+    "waterGoal": "Wasserziel",
+    "waterGoalSub": "ml pro Tag",
+    "adjustInProfile": "Im Profil anpassen",
+    "display": "Darstellung",
+    "darkMode": "Dunkelmodus",
+    "units": "Einheiten",
+    "unitsSub": "Wirkt sich auf Gewichtsanzeigen aus",
+    "metric": "Metrisch",
+    "imperial": "Imperial",
+    "language": "Sprache",
+    "data": "Daten",
+    "exportJSON": "Export als JSON",
+    "exportCSV": "Export als CSV",
+    "deleteData": "Alle Daten löschen",
+    "about": "Über die App",
+    "privacy": "Datenschutz",
+    "deleteModal": {
+      "title": "Daten löschen",
+      "body": "Diese Aktion löscht alle lokalen Daten unwiderruflich. Dieser Vorgang kann nicht rückgängig gemacht werden.",
+      "confirm": "Alles löschen"
+    }
+  },
+  "profile": {
+    "title": "Profil bearbeiten",
+    "personal": "Persönliche Daten",
+    "name": "Name",
+    "gender": "Geschlecht",
+    "male": "Männlich",
+    "female": "Weiblich",
+    "other": "Divers",
+    "age": "Alter",
+    "height": "Größe (cm)",
+    "weight": "Gewicht (kg)",
+    "activityGoal": "Aktivität & Ziel",
+    "activityLevel": "Aktivitätslevel",
+    "goal": "Ziel",
+    "calorieGoal": "Kalorienziel",
+    "autoCalc": "Automatisch berechnet",
+    "calcAuto": "Automatisch berechnen",
+    "calorieGoalLabel": "Kalorienziel (kcal)",
+    "activity": {
+      "sedentary": "Kaum aktiv",
+      "light": "Leicht aktiv",
+      "moderate": "Mäßig aktiv",
+      "active": "Sehr aktiv",
+      "veryActive": "Extrem aktiv"
+    },
+    "activityDesc": {
+      "sedentary": "Bürojob, kein Sport",
+      "light": "1–3× Sport pro Woche",
+      "moderate": "3–5× Sport pro Woche",
+      "active": "6–7× intensiver Sport",
+      "veryActive": "Körperliche Arbeit + viel Sport"
+    },
+    "goals": {
+      "cut": "Cut",
+      "lightCut": "Leichter Cut",
+      "maintain": "Halten",
+      "leanBulk": "Lean Bulk",
+      "bulk": "Bulk"
+    },
+    "goalDesc": {
+      "cut": "500 g Fettverlust pro Woche. Empfohlen für max. 12 Wochen, dann Diätpause.",
+      "lightCut": "250 g Fettverlust pro Woche. Schonend, gut für Einsteiger, bis zu 20 Wochen.",
+      "maintain": "Kalorienbedarf exakt decken. Gewicht und Muskelmasse stabil halten.",
+      "leanBulk": "250 g Muskelaufbau pro Woche bei minimaler Fettzunahme. Empfohlen 8–16 Wochen.",
+      "bulk": "500 g Gewichtszunahme pro Woche, maximaler Muskelaufbau. Empfohlen 8–12 Wochen."
+    }
+  },
+  "onboarding": {
+    "title": "BasixMacro",
+    "subtitle": "Lass uns dein Profil einrichten",
+    "steps": ["Name", "Körper", "Aktivität", "Ziel"],
+    "step1Title": "Wie heißt du?",
+    "step2Title": "Deine Körperdaten",
+    "step3Title": "Wie aktiv bist du?",
+    "step4Title": "Was ist dein Ziel?",
+    "namePlaceholder": "Name eingeben",
+    "yourDailyNeeds": "Dein Tagesbedarf",
+    "adjustCalorieGoal": "Kalorienziel anpassen",
+    "adaptiveTitle": "Kalorienziel automatisch anpassen",
+    "adaptiveDesc": "Vergleicht deine Gewichtsentwicklung mit dem erwarteten Fortschritt und korrigiert das Ziel wöchentlich — erst nach 2 Wochen Tracking.",
+    "errorName": "Bitte gib deinen Namen ein.",
+    "errorBody": "Bitte fülle alle Körperdaten aus."
+  },
+  "recipes": {
+    "title": "Rezepte",
+    "searchPlaceholder": "Rezept suchen …",
+    "clearSearch": "Suche löschen",
+    "servings": "Portion | Portionen",
+    "empty": {
+      "noResults": "Keine Treffer",
+      "noResultsHint": "Kein Rezept für «{query}» gefunden.",
+      "noRecipes": "Noch keine Rezepte",
+      "noRecipesHint": "Erstelle dein erstes Rezept.",
+      "createBtn": "Rezept erstellen"
+    }
+  },
+  "camera": {
+    "denied": "Kamera-Zugriff verweigert. Bitte erlaube den Zugriff in den Browser-Einstellungen.",
+    "error": "Kamera konnte nicht gestartet werden."
+  },
+  "off": {
+    "networkError": "Netzwerkfehler",
+    "connectionFailed": "Verbindung fehlgeschlagen"
+  },
+  "adaptive": {
+    "raised": "erhöht",
+    "lowered": "gesenkt",
+    "toast": "Kalorienziel {dir} auf {goal} kcal ({delta} kcal)"
+  }
+}

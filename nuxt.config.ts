@@ -31,9 +31,22 @@ export default defineNuxtConfig({
   },
 
   modules: [
+    '@nuxt/eslint',
     '@pinia/nuxt',
     '@vite-pwa/nuxt',
+    '@nuxtjs/i18n',
   ],
+
+  i18n: {
+    strategy: 'no_prefix',
+    defaultLocale: 'de',
+    locales: [
+      { code: 'de', language: 'de-DE', file: 'de.json', name: 'Deutsch' },
+      { code: 'en', language: 'en-US', file: 'en.json', name: 'English' },
+    ],
+    langDir: 'locales/',
+    detectBrowserLanguage: false,
+  },
 
   css: ['~/assets/scss/main.scss'],
 

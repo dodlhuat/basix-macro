@@ -2,10 +2,10 @@
   <div class="dashboard page-content">
 
     <!-- Date navigation -->
-    <nav class="dashboard__date-nav" aria-label="Datumsnavigation">
+    <nav class="dashboard__date-nav" :aria-label="$t('dashboard.dateNav')">
       <button
         class="button button-icon dashboard__date-btn"
-        aria-label="Vorheriger Tag"
+        :aria-label="$t('dashboard.prevDay')"
         @click="prevDay"
       >
         <AppIcon name="chevron_left" />
@@ -14,13 +14,13 @@
       <div class="dashboard__date-center">
         <span class="dashboard__date-label">{{ formattedDate }}</span>
         <span v-if="streak > 0" class="chip dashboard__streak-chip">
-          🔥 {{ streak }} {{ streak === 1 ? 'Tag' : 'Tage' }}
+          🔥 {{ streak }} {{ streak === 1 ? $t('dashboard.streakDay') : $t('dashboard.streakDays') }}
         </span>
       </div>
 
       <button
         class="button button-icon dashboard__date-btn"
-        aria-label="Nächster Tag"
+        :aria-label="$t('dashboard.nextDay')"
         :disabled="isToday"
         @click="nextDay"
       >
@@ -33,7 +33,7 @@
           class="chip clickable dashboard__heute-chip"
           @click="goToToday"
         >
-          Heute
+          {{ $t('common.today') }}
         </button>
       </Transition>
     </nav>
@@ -46,19 +46,19 @@
             {{ isOverGoal ? 0 : remainingCalories }}
           </span>
           <span class="dashboard__remaining-label">
-            {{ isOverGoal ? 'Ziel überschritten' : 'verbleibend' }}
+            {{ isOverGoal ? $t('dashboard.overGoal') : $t('dashboard.remaining') }}
           </span>
         </div>
 
         <div class="dashboard__hero-stats">
           <div class="dashboard__stat">
             <span class="dashboard__stat-value">{{ Math.round(totalCalories) }}</span>
-            <span class="dashboard__stat-label">verbraucht</span>
+            <span class="dashboard__stat-label">{{ $t('dashboard.consumed') }}</span>
           </div>
           <div class="dashboard__stat-sep" aria-hidden="true" />
           <div class="dashboard__stat">
             <span class="dashboard__stat-value">{{ calorieGoal }}</span>
-            <span class="dashboard__stat-label">Ziel</span>
+            <span class="dashboard__stat-label">{{ $t('dashboard.goal') }}</span>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@
       </div>
 
       <p v-if="isOverGoal" class="dashboard__over-label">
-        + {{ Math.round(totalCalories - calorieGoal) }} kcal über dem Ziel
+        {{ $t('dashboard.overGoalLabel', { n: Math.round(totalCalories - calorieGoal) }) }}
       </p>
     </section>
 
@@ -110,7 +110,7 @@
     <section class="dashboard__water card card-bordered">
       <div class="dashboard__water-header">
         <AppIcon name="water_drop" class="dashboard__water-icon" />
-        <span class="dashboard__water-title">Wasser</span>
+        <span class="dashboard__water-title">{{ $t('dashboard.water') }}</span>
         <span class="dashboard__water-amount">
           {{ totalWater }}<span class="dashboard__water-unit">ml</span>
         </span>
@@ -128,22 +128,22 @@
       <div class="dashboard__water-actions">
         <button
           class="button button-outline button-sm dashboard__water-btn"
-          @click="addWaterAmount(250)"
           aria-label="250 ml Wasser hinzufügen"
+          @click="addWaterAmount(250)"
         >
           +250 ml
         </button>
         <button
           class="button button-outline button-sm dashboard__water-btn"
-          @click="addWaterAmount(500)"
           aria-label="500 ml Wasser hinzufügen"
+          @click="addWaterAmount(500)"
         >
           +500 ml
         </button>
         <button
           class="button button-outline button-sm dashboard__water-btn"
-          @click="addWaterAmount(1000)"
           aria-label="1 Liter Wasser hinzufügen"
+          @click="addWaterAmount(1000)"
         >
           +1 L
         </button>
@@ -198,7 +198,7 @@
           </li>
         </ul>
 
-        <p v-else class="dashboard__meal-empty">Noch nichts eingetragen</p>
+        <p v-else class="dashboard__meal-empty">{{ $t('dashboard.emptyEntry') }}</p>
       </div>
     </section>
 
@@ -208,7 +208,7 @@
   <Teleport to="body">
     <button
       class="dashboard__fab"
-      aria-label="Eintrag hinzufügen"
+      :aria-label="$t('dashboard.addEntry')"
       @click="openFab"
     >
       <AppIcon name="add" size="1.5rem" />
@@ -222,6 +222,7 @@ definePageMeta({ title: 'Dashboard' })
 const diaryStore = useDiaryStore()
 const userStore = useUserStore()
 const { streak } = useStreak()
+const { t, locale } = useI18n()
 
 // ─── Date state ───────────────────────────────────────────────────────────────
 
@@ -243,11 +244,12 @@ function toDateStr(d: Date): string {
 }
 
 const formattedDate = computed(() => {
+  const loc = locale.value === 'en' ? 'en-US' : 'de-DE'
   const d = new Date(currentDate.value + 'T00:00:00')
-  const weekday = d.toLocaleDateString('de-DE', { weekday: 'short' })
+  const weekday = d.toLocaleDateString(loc, { weekday: 'short' })
   const day = d.getDate()
-  const month = d.toLocaleDateString('de-DE', { month: 'long' })
-  return `${weekday} ${day}. ${month}`
+  const month = d.toLocaleDateString(loc, { month: 'long' })
+  return locale.value === 'en' ? `${weekday} ${month} ${day}` : `${weekday} ${day}. ${month}`
 })
 
 function prevDay() {
@@ -294,7 +296,7 @@ const isOverGoal = computed(() => totalCalories.value > calorieGoal.value)
 const macros = computed(() => [
   {
     key: 'protein',
-    label: 'Protein',
+    label: t('common.protein'),
     current: totalProtein.value,
     goal: proteinGoal.value,
     color: '#ef4444',
@@ -302,7 +304,7 @@ const macros = computed(() => [
   },
   {
     key: 'carbs',
-    label: 'Kohlenhydrate',
+    label: t('common.carbs'),
     current: totalCarbs.value,
     goal: carbsGoal.value,
     color: '#3b82f6',
@@ -310,7 +312,7 @@ const macros = computed(() => [
   },
   {
     key: 'fat',
-    label: 'Fett',
+    label: t('common.fat'),
     current: totalFat.value,
     goal: fatGoal.value,
     color: '#f59e0b',
@@ -330,15 +332,14 @@ async function addWaterAmount(amount: number) {
 
 // ─── Meal sections ────────────────────────────────────────────────────────────
 
-const MEALS = [
-  { type: 'breakfast' as const, label: 'Frühstück' },
-  { type: 'lunch'     as const, label: 'Mittagessen' },
-  { type: 'dinner'    as const, label: 'Abendessen' },
-  { type: 'snack'     as const, label: 'Snacks' },
-]
-
-const mealSections = computed(() =>
-  MEALS.map(m => {
+const mealSections = computed(() => {
+  const MEALS = [
+    { type: 'breakfast' as const, label: t('meal.breakfast') },
+    { type: 'lunch'     as const, label: t('meal.lunch') },
+    { type: 'dinner'    as const, label: t('meal.dinner') },
+    { type: 'snack'     as const, label: t('meal.snack') },
+  ]
+  return MEALS.map(m => {
     const entries = entryDetails.value.filter(e => e.meal_type === m.type)
     return {
       ...m,
@@ -346,7 +347,7 @@ const mealSections = computed(() =>
       totalKcal: entries.reduce((s, e) => s + e.calories_total, 0),
     }
   })
-)
+})
 
 function addEntry(mealType: string) {
   navigateTo(`/diary/add?meal=${mealType}&date=${currentDate.value}`)

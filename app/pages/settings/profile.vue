@@ -1,20 +1,21 @@
 <template>
   <div class="page-content">
-    <h1>Profil bearbeiten</h1>
+    <h1>{{ $t('profile.title') }}</h1>
 
     <div v-if="user" class="profile">
       <div class="card card-bordered profile__section">
-        <h2>Persönliche Daten</h2>
+        <h2>{{ $t('profile.personal') }}</h2>
 
         <div class="form-group">
-          <label for="name">Name</label>
-          <input id="name" v-model="form.name" type="text" />
+          <label for="name">{{ $t('profile.name') }}</label>
+          <input id="name" v-model="form.name" type="text" >
         </div>
 
         <div class="form-group">
-          <label>Geschlecht</label>
+          <label>{{ $t('profile.gender') }}</label>
           <div class="chips">
-            <button v-for="g in genderOptions" :key="g.value" type="button" class="chip clickable"
+            <button
+v-for="g in genderOptions" :key="g.value" type="button" class="chip clickable"
               :class="{ 'selected': form.gender === g.value }" @click="form.gender = g.value">
               {{ g.label }}
             </button>
@@ -23,28 +24,29 @@
 
         <div class="profile__row">
           <div class="form-group">
-            <label for="age">Alter</label>
-            <input id="age" v-model.number="form.age" type="number" min="10" max="100" />
+            <label for="age">{{ $t('profile.age') }}</label>
+            <input id="age" v-model.number="form.age" type="number" min="10" max="100" >
           </div>
           <div class="form-group">
-            <label for="height">Größe (cm)</label>
-            <input id="height" v-model.number="form.height_cm" type="number" min="100" max="250" />
+            <label for="height">{{ $t('profile.height') }}</label>
+            <input id="height" v-model.number="form.height_cm" type="number" min="100" max="250" >
           </div>
         </div>
 
         <div class="form-group">
-          <label for="weight">Gewicht (kg)</label>
-          <input id="weight" v-model.number="form.weight_kg" type="number" min="30" max="300" step="0.1" />
+          <label for="weight">{{ $t('profile.weight') }}</label>
+          <input id="weight" v-model.number="form.weight_kg" type="number" min="30" max="300" step="0.1" >
         </div>
       </div>
 
       <div class="card card-bordered profile__section">
-        <h2>Aktivität & Ziel</h2>
+        <h2>{{ $t('profile.activityGoal') }}</h2>
 
         <div class="form-group">
-          <label>Aktivitätslevel</label>
+          <label>{{ $t('profile.activityLevel') }}</label>
           <div class="chips" style="flex-wrap: wrap;">
-            <button v-for="a in activityOptions" :key="a.value" type="button" class="chip clickable"
+            <button
+v-for="a in activityOptions" :key="a.value" type="button" class="chip clickable"
               :class="{ 'selected': form.activity_level === a.value }" @click="form.activity_level = a.value">
               {{ a.label }}
             </button>
@@ -52,7 +54,7 @@
         </div>
 
         <div class="form-group">
-          <label>Ziel</label>
+          <label>{{ $t('profile.goal') }}</label>
           <div class="goal-options">
             <button
               v-for="g in goalOptions"
@@ -72,50 +74,52 @@
       </div>
 
       <div class="card card-bordered profile__section">
-        <h2>Kalorienziel</h2>
-        <p class="profile__hint">Automatisch berechnet: <strong>{{ autoCalories }} kcal</strong></p>
+        <h2>{{ $t('profile.calorieGoal') }}</h2>
+        <p class="profile__hint">{{ $t('profile.autoCalc') }}: <strong>{{ autoCalories }} kcal</strong></p>
 
         <div class="form-group">
-          <label for="calorie-goal">Kalorienziel (kcal)</label>
-          <input id="calorie-goal" v-model.number="form.calorie_goal" type="number" min="1200" max="6000" step="50" />
+          <label for="calorie-goal">{{ $t('profile.calorieGoalLabel') }}</label>
+          <input id="calorie-goal" v-model.number="form.calorie_goal" type="number" min="1200" max="6000" step="50" >
         </div>
 
         <button type="button" class="button button-outline" @click="resetToAuto">
-          Automatisch berechnen
+          {{ $t('profile.calcAuto') }}
         </button>
 
         <div class="profile__macros">
           <div class="form-group">
-            <label for="protein">Protein (g)</label>
-            <input id="protein" v-model.number="form.protein_goal_g" type="number" min="0" />
+            <label for="protein">{{ $t('common.protein') }} (g)</label>
+            <input id="protein" v-model.number="form.protein_goal_g" type="number" min="0" >
           </div>
           <div class="form-group">
-            <label for="carbs">Kohlenhydrate (g)</label>
-            <input id="carbs" v-model.number="form.carbs_goal_g" type="number" min="0" />
+            <label for="carbs">{{ $t('common.carbs') }} (g)</label>
+            <input id="carbs" v-model.number="form.carbs_goal_g" type="number" min="0" >
           </div>
           <div class="form-group">
-            <label for="fat">Fett (g)</label>
-            <input id="fat" v-model.number="form.fat_goal_g" type="number" min="0" />
+            <label for="fat">{{ $t('common.fat') }} (g)</label>
+            <input id="fat" v-model.number="form.fat_goal_g" type="number" min="0" >
           </div>
         </div>
       </div>
 
-      <p v-if="saved" class="profile__saved">Gespeichert ✓</p>
+      <p v-if="saved" class="profile__saved">{{ $t('common.saved') }}</p>
 
-      <button type="button" class="button button-primary" :class="{ 'is-loading': saving }" :disabled="saving"
+      <button
+type="button" class="button button-primary" :class="{ 'is-loading': saving }" :disabled="saving"
         @click="save">
-        Speichern
+        {{ $t('common.save') }}
       </button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-definePageMeta({ title: 'Profil' })
+definePageMeta({ title: 'Profile' })
 
 const userStore = useUserStore()
 const { calculate, calcMacros } = useCalorieCalculator()
 const { user } = storeToRefs(userStore)
+const { t } = useI18n()
 
 const saving = ref(false)
 const saved = ref(false)
@@ -134,27 +138,27 @@ const form = reactive({
   fat_goal_g: 0,
 })
 
-const genderOptions: { value: 'male' | 'female' | 'other', label: string }[] = [
-  { value: 'male', label: 'Männlich' },
-  { value: 'female', label: 'Weiblich' },
-  { value: 'other', label: 'Divers' },
-]
+const genderOptions = computed(() => [
+  { value: 'male' as const, label: t('profile.male') },
+  { value: 'female' as const, label: t('profile.female') },
+  { value: 'other' as const, label: t('profile.other') },
+])
 
-const activityOptions: { value: 'sedentary' | 'light' | 'moderate' | 'active' | 'very_active', label: string }[] = [
-  { value: 'sedentary',   label: 'Kaum aktiv' },
-  { value: 'light',       label: 'Leicht aktiv' },
-  { value: 'moderate',    label: 'Mäßig aktiv' },
-  { value: 'active',      label: 'Sehr aktiv' },
-  { value: 'very_active', label: 'Extrem aktiv' },
-]
+const activityOptions = computed(() => [
+  { value: 'sedentary' as const,   label: t('profile.activity.sedentary') },
+  { value: 'light' as const,       label: t('profile.activity.light') },
+  { value: 'moderate' as const,    label: t('profile.activity.moderate') },
+  { value: 'active' as const,      label: t('profile.activity.active') },
+  { value: 'very_active' as const, label: t('profile.activity.veryActive') },
+])
 
-const goalOptions: { value: 'cut' | 'light_cut' | 'maintain' | 'lean_bulk' | 'bulk', label: string, desc: string }[] = [
-  { value: 'cut',       label: 'Cut',          desc: '500 g Fettverlust pro Woche. Empfohlen für max. 12 Wochen, dann Diätpause.' },
-  { value: 'light_cut', label: 'Leichter Cut', desc: '250 g Fettverlust pro Woche. Schonend, gut für Einsteiger, bis zu 20 Wochen.' },
-  { value: 'maintain',  label: 'Halten',       desc: 'Kalorienbedarf exakt decken. Gewicht und Muskelmasse stabil halten.' },
-  { value: 'lean_bulk', label: 'Lean Bulk',    desc: '250 g Muskelaufbau pro Woche bei minimaler Fettzunahme. Empfohlen 8–16 Wochen.' },
-  { value: 'bulk',      label: 'Bulk',         desc: '500 g Gewichtszunahme pro Woche, maximaler Muskelaufbau. Empfohlen 8–12 Wochen.' },
-]
+const goalOptions = computed(() => [
+  { value: 'cut' as const,       label: t('profile.goals.cut'),      desc: t('profile.goalDesc.cut') },
+  { value: 'light_cut' as const, label: t('profile.goals.lightCut'), desc: t('profile.goalDesc.lightCut') },
+  { value: 'maintain' as const,  label: t('profile.goals.maintain'), desc: t('profile.goalDesc.maintain') },
+  { value: 'lean_bulk' as const, label: t('profile.goals.leanBulk'), desc: t('profile.goalDesc.leanBulk') },
+  { value: 'bulk' as const,      label: t('profile.goals.bulk'),     desc: t('profile.goalDesc.bulk') },
+])
 
 const autoCalories = computed(() => {
   if (!form.age || !form.height_cm || !form.weight_kg) return 0

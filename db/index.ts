@@ -20,6 +20,7 @@ export interface User {
   adaptive_calories_enabled: boolean
   adaptive_calories_last_adjusted_at?: string
   adaptive_calories_last_delta_kcal?: number
+  locale?: 'de' | 'en'
   created_at: string
   updated_at: string
   sync_status: 'local' | 'synced' | 'dirty'
@@ -123,6 +124,17 @@ class BasixMacroDatabase extends Dexie {
 
   constructor() {
     super('BasixMacroDB')
+
+    this.version(4).stores({
+      users: 'id, sync_status',
+      food_items: 'id, name, barcode, is_favorite, last_used_at, source, sync_status',
+      recipes: 'id, name, sync_status',
+      recipe_ingredients: 'id, recipe_id, food_item_id',
+      diary_entries: 'id, date, meal_type, food_item_id, recipe_id, sync_status',
+      weight_entries: 'id, date, sync_status',
+      water_entries: 'id, date, sync_status',
+      sync_queue: 'id, table_name, operation, created_at, retry_count',
+    })
 
     this.version(3).stores({
       users: 'id, sync_status',

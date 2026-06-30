@@ -40,7 +40,7 @@
               maxlength="100"
               autocomplete="off"
               @blur="handleSaveMeta"
-            />
+            >
           </div>
         </div>
 
@@ -66,7 +66,7 @@
                 class="recipe-edit__qty-input"
                 aria-label="Anzahl Portionen"
                 @blur="handleSaveMeta"
-              />
+              >
               <span class="recipe-edit__qty-unit">Portionen</span>
             </div>
             <button
@@ -269,7 +269,7 @@
                   aria-label="Lebensmittel suchen"
                   @input="handleIngSearch"
                   @search="handleIngSearch"
-                />
+                >
                 <button
                   v-if="ingSearchQuery"
                   class="button button-icon recipe-edit-sheet__search-clear"
@@ -380,7 +380,7 @@
                       step="1"
                       aria-label="Menge in Gramm"
                       class="recipe-edit-sheet__amount-input"
-                    />
+                    >
                     <span class="recipe-edit-sheet__amount-unit">g</span>
                   </div>
                 </div>
@@ -466,7 +466,7 @@
                   type="date"
                   class="recipe-log-sheet__date-input"
                   aria-label="Datum"
-                />
+                >
               </div>
             </div>
           </div>
@@ -506,7 +506,7 @@
                   step="0.5"
                   aria-label="Anzahl Portionen"
                   class="recipe-log-sheet__qty-input"
-                />
+                >
                 <span class="recipe-log-sheet__qty-unit">Portionen</span>
               </div>
               <button

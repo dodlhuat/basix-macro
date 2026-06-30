@@ -25,6 +25,10 @@ export const useUserStore = defineStore('user', () => {
     user.value = { ...user.value, [key]: value, updated_at: now, sync_status: 'dirty' }
   }
 
+  async function updateLocale(locale: 'de' | 'en'): Promise<void> {
+    await updateSetting('locale', locale)
+  }
+
   async function resetAllData(): Promise<void> {
     const { db } = await import('../../db')
     await Promise.all([
@@ -40,5 +44,5 @@ export const useUserStore = defineStore('user', () => {
     user.value = null
   }
 
-  return { user, isOnboarded, loadUser, saveUser, updateSetting, resetAllData }
+  return { user, isOnboarded, loadUser, saveUser, updateSetting, updateLocale, resetAllData }
 })

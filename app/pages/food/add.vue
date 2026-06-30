@@ -5,19 +5,19 @@
     <div class="food-form__header">
       <button
         class="button button-icon food-form__back"
-        aria-label="Zurück"
+        :aria-label="$t('common.back')"
         @click="router.back()"
       >
         <AppIcon name="arrow_back" size="1.25rem" />
       </button>
-      <h1 class="food-form__title">Neues Lebensmittel</h1>
+      <h1 class="food-form__title">{{ $t('food.addTitle') }}</h1>
     </div>
 
-    <form class="food-form__body" @submit.prevent="handleSave" novalidate>
+    <form class="food-form__body" novalidate @submit.prevent="handleSave">
 
       <!-- Name -->
       <div class="form-group" :class="{ 'food-form__field--error': errors.name }">
-        <label for="name">Name <span class="food-form__required" aria-hidden="true">*</span></label>
+        <label for="name">{{ $t('food.form.name') }} <span class="food-form__required" aria-hidden="true">*</span></label>
         <div class="input-group">
           <input
             id="name"
@@ -27,14 +27,14 @@
             autocomplete="off"
             :aria-invalid="!!errors.name"
             @blur="validateField('name')"
-          />
+          >
         </div>
         <p v-if="errors.name" class="food-form__error-msg" role="alert">{{ errors.name }}</p>
       </div>
 
       <!-- Brand -->
       <div class="form-group">
-        <label for="brand">Marke <span class="food-form__optional">(optional)</span></label>
+        <label for="brand">{{ $t('food.form.brand') }} <span class="food-form__optional">({{ $t('common.optional') }})</span></label>
         <div class="input-group">
           <input
             id="brand"
@@ -42,19 +42,19 @@
             type="text"
             placeholder="z.B. Kaufland"
             autocomplete="off"
-          />
+          >
         </div>
       </div>
 
       <!-- Main macros grid -->
-      <p class="food-form__section-title">Nährwerte pro 100g</p>
+      <p class="food-form__section-title">{{ $t('food.form.nutrientsPer100') }}</p>
 
       <div class="food-form__macro-grid">
 
         <div class="form-group" :class="{ 'food-form__field--error': errors.calories_per_100g }">
           <label for="calories">
             <span class="food-form__macro-dot food-form__macro-dot--kcal" aria-hidden="true" />
-            Kalorien <span class="food-form__unit">kcal</span>
+            {{ $t('common.calories') }} <span class="food-form__unit">kcal</span>
             <span class="food-form__required" aria-hidden="true">*</span>
           </label>
           <div class="input-group">
@@ -67,7 +67,7 @@
               placeholder="0"
               :aria-invalid="!!errors.calories_per_100g"
               @blur="validateField('calories_per_100g')"
-            />
+            >
           </div>
           <p v-if="errors.calories_per_100g" class="food-form__error-msg" role="alert">
             {{ errors.calories_per_100g }}
@@ -77,7 +77,7 @@
         <div class="form-group" :class="{ 'food-form__field--error': errors.protein_per_100g }">
           <label for="protein">
             <span class="food-form__macro-dot food-form__macro-dot--protein" aria-hidden="true" />
-            Protein <span class="food-form__unit">g</span>
+            {{ $t('common.protein') }} <span class="food-form__unit">g</span>
             <span class="food-form__required" aria-hidden="true">*</span>
           </label>
           <div class="input-group">
@@ -90,7 +90,7 @@
               placeholder="0"
               :aria-invalid="!!errors.protein_per_100g"
               @blur="validateField('protein_per_100g')"
-            />
+            >
           </div>
           <p v-if="errors.protein_per_100g" class="food-form__error-msg" role="alert">
             {{ errors.protein_per_100g }}
@@ -100,7 +100,7 @@
         <div class="form-group" :class="{ 'food-form__field--error': errors.carbs_per_100g }">
           <label for="carbs">
             <span class="food-form__macro-dot food-form__macro-dot--carbs" aria-hidden="true" />
-            Kohlenhydrate <span class="food-form__unit">g</span>
+            {{ $t('common.carbs') }} <span class="food-form__unit">g</span>
             <span class="food-form__required" aria-hidden="true">*</span>
           </label>
           <div class="input-group">
@@ -113,7 +113,7 @@
               placeholder="0"
               :aria-invalid="!!errors.carbs_per_100g"
               @blur="validateField('carbs_per_100g')"
-            />
+            >
           </div>
           <p v-if="errors.carbs_per_100g" class="food-form__error-msg" role="alert">
             {{ errors.carbs_per_100g }}
@@ -123,7 +123,7 @@
         <div class="form-group" :class="{ 'food-form__field--error': errors.fat_per_100g }">
           <label for="fat">
             <span class="food-form__macro-dot food-form__macro-dot--fat" aria-hidden="true" />
-            Fett <span class="food-form__unit">g</span>
+            {{ $t('common.fat') }} <span class="food-form__unit">g</span>
             <span class="food-form__required" aria-hidden="true">*</span>
           </label>
           <div class="input-group">
@@ -136,7 +136,7 @@
               placeholder="0"
               :aria-invalid="!!errors.fat_per_100g"
               @blur="validateField('fat_per_100g')"
-            />
+            >
           </div>
           <p v-if="errors.fat_per_100g" class="food-form__error-msg" role="alert">
             {{ errors.fat_per_100g }}
@@ -149,20 +149,20 @@
       <div v-if="macroCalories > 0" class="food-form__preview" role="status" aria-live="polite">
         <AppIcon name="info" size="0.9rem" class="food-form__preview-icon" />
         <span>
-          Makros ergeben
+          {{ $t('food.form.macroCalc') }}
           <strong>{{ macroCalories }} kcal</strong>
           <template v-if="calorieDeviation > 15">
-            — abweichend von {{ form.calories_per_100g || 0 }} kcal (Angabe)
+            — {{ $t('food.form.macroDeviation', { val: form.calories_per_100g || 0 }) }}
           </template>
         </span>
       </div>
 
       <!-- Optional fields -->
-      <p class="food-form__section-title">Weitere Angaben <span class="food-form__optional">(optional)</span></p>
+      <p class="food-form__section-title">{{ $t('food.form.optionalTitle') }} <span class="food-form__optional">({{ $t('common.optional') }})</span></p>
 
       <div class="food-form__macro-grid">
         <div class="form-group">
-          <label for="fiber">Ballaststoffe <span class="food-form__unit">g</span></label>
+          <label for="fiber">{{ $t('food.form.fiber') }} <span class="food-form__unit">g</span></label>
           <div class="input-group">
             <input
               id="fiber"
@@ -171,12 +171,12 @@
               min="0"
               step="0.1"
               placeholder="0"
-            />
+            >
           </div>
         </div>
 
         <div class="form-group">
-          <label for="sugar">Zucker <span class="food-form__unit">g</span></label>
+          <label for="sugar">{{ $t('food.form.sugar') }} <span class="food-form__unit">g</span></label>
           <div class="input-group">
             <input
               id="sugar"
@@ -185,7 +185,7 @@
               min="0"
               step="0.1"
               placeholder="0"
-            />
+            >
           </div>
         </div>
       </div>
@@ -200,7 +200,7 @@
             inputmode="numeric"
             placeholder="EAN/GTIN"
             autocomplete="off"
-          />
+          >
         </div>
       </div>
 
@@ -212,13 +212,13 @@
       <!-- Actions -->
       <div class="food-form__actions">
         <button type="button" class="button food-form__cancel" @click="router.back()">
-          Abbrechen
+          {{ $t('common.cancel') }}
         </button>
         <button type="submit" class="button button-primary food-form__save" :disabled="isSaving">
           <span v-if="isSaving" class="loading" />
           <template v-else>
             <AppIcon name="check" size="1rem" />
-            Speichern
+            {{ $t('common.save') }}
           </template>
         </button>
       </div>
@@ -228,11 +228,12 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({ title: 'Lebensmittel anlegen' })
+definePageMeta({ title: 'Add Food' })
 
 const foodStore = useFoodStore()
 const router = useRouter()
 const route = useRoute()
+const { t } = useI18n()
 
 // ─── Form state ───────────────────────────────────────────────────────────────
 
@@ -281,12 +282,12 @@ const REQUIRED_FIELDS = ['name', 'calories_per_100g', 'protein_per_100g', 'carbs
 
 function validateField(field: string) {
   if (field === 'name') {
-    errors.name = form.name.trim() ? '' : 'Name ist erforderlich.'
+    errors.name = form.name.trim() ? '' : t('food.form.errorName')
   } else {
     const val = (form as Record<string, unknown>)[field]
     errors[field] = val !== null && val !== undefined && Number(val) >= 0
       ? ''
-      : 'Gib einen Wert ≥ 0 ein.'
+      : t('food.form.errorValue')
   }
 }
 
@@ -321,7 +322,7 @@ async function handleSave() {
     })
     navigateTo('/food')
   } catch {
-    submitError.value = 'Speichern fehlgeschlagen. Bitte versuche es erneut.'
+    submitError.value = t('food.form.errorSave')
   } finally {
     isSaving.value = false
   }

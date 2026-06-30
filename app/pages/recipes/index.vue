@@ -10,13 +10,13 @@
           v-model="localQuery"
           type="search"
           class="recipe-list__search-input"
-          placeholder="Rezept suchen …"
-          aria-label="Rezept suchen"
-        />
+          :placeholder="$t('recipes.searchPlaceholder')"
+          :aria-label="$t('recipes.searchPlaceholder')"
+        >
         <button
           v-if="localQuery"
           class="button button-icon recipe-list__search-clear"
-          aria-label="Suche löschen"
+          :aria-label="$t('food.clearSearch')"
           @click="clearSearch"
         >
           <AppIcon name="close" size="1rem" />
@@ -43,7 +43,7 @@
           <span v-if="recipe.description" class="recipe-list__item-desc">{{ recipe.description }}</span>
           <span class="recipe-list__item-servings">
             <AppIcon name="group" size="0.8rem" />
-            {{ recipe.servings }} Portion{{ recipe.servings === 1 ? '' : 'en' }}
+            {{ $t('recipes.servings', { n: recipe.servings }) }}
           </span>
         </div>
         <AppIcon name="chevron_right" size="1.125rem" class="recipe-list__item-arrow" />
@@ -54,19 +54,19 @@
     <div v-else class="recipe-list__empty">
       <template v-if="localQuery">
         <AppIcon name="search_off" size="2.5rem" class="recipe-list__empty-icon" />
-        <p class="recipe-list__empty-title">Keine Treffer</p>
-        <p class="recipe-list__empty-hint">Kein Rezept für „{{ localQuery }}" gefunden.</p>
+        <p class="recipe-list__empty-title">{{ $t('food.empty.noResults') }}</p>
+        <p class="recipe-list__empty-hint">{{ $t('recipes.empty.noResultsHint', { query: localQuery }) }}</p>
       </template>
       <template v-else>
         <AppIcon name="menu_book" size="2.5rem" class="recipe-list__empty-icon" />
-        <p class="recipe-list__empty-title">Noch keine Rezepte</p>
-        <p class="recipe-list__empty-hint">Erstelle dein erstes Rezept.</p>
+        <p class="recipe-list__empty-title">{{ $t('recipes.empty.title') }}</p>
+        <p class="recipe-list__empty-hint">{{ $t('recipes.empty.hint') }}</p>
         <button
           class="button button-primary recipe-list__empty-action"
           @click="navigateTo('/recipes/add')"
         >
           <AppIcon name="add" size="1rem" />
-          Rezept erstellen
+          {{ $t('recipes.create') }}
         </button>
       </template>
     </div>
@@ -77,7 +77,7 @@
   <Teleport to="body">
     <button
       class="recipe-list__fab"
-      aria-label="Neues Rezept erstellen"
+      :aria-label="$t('recipes.create')"
       @click="navigateTo('/recipes/add')"
     >
       <AppIcon name="add" size="1.5rem" />
@@ -86,7 +86,7 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({ title: 'Rezepte' })
+definePageMeta({ title: 'Recipes' })
 
 const recipesStore = useRecipesStore()
 

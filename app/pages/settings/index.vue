@@ -1,16 +1,16 @@
 <template>
   <div class="page-content settings">
-    <h1>Einstellungen</h1>
+    <h1>{{ $t('settings.title') }}</h1>
 
     <!-- Sektion 1: Profil -->
     <div class="settings__group">
-      <p class="settings__section-title">Profil</p>
+      <p class="settings__section-title">{{ $t('settings.profile') }}</p>
       <div class="settings__section">
         <NuxtLink to="/settings/profile" class="settings__row settings__row--link">
           <div class="settings__row-left">
             <AppIcon name="person" size="1.25rem" class="settings__row-icon" />
             <div class="settings__row-info">
-              <span class="settings__row-label">Profil & Kalorienziel</span>
+              <span class="settings__row-label">{{ $t('settings.profileLabel') }}</span>
               <span v-if="user" class="settings__row-sub">{{ user.name }} · {{ user.calorie_goal }} kcal</span>
             </div>
           </div>
@@ -23,8 +23,8 @@
           <div class="settings__row-left">
             <AppIcon name="auto_graph" size="1.25rem" class="settings__row-icon" />
             <div class="settings__row-info">
-              <span class="settings__row-label">Kalorienziel automatisch anpassen</span>
-              <span class="settings__row-sub">Gleicht Ziel wöchentlich mit Gewichtsverlauf ab</span>
+              <span class="settings__row-label">{{ $t('settings.adaptiveCalories') }}</span>
+              <span class="settings__row-sub">{{ $t('settings.adaptiveCaloriesSub') }}</span>
             </div>
           </div>
           <div class="switch">
@@ -33,13 +33,13 @@
               type="checkbox"
               :checked="user?.adaptive_calories_enabled ?? false"
               @change="userStore.updateSetting('adaptive_calories_enabled', ($event.target as HTMLInputElement).checked)"
-            />
-            <label for="adaptive-calories-toggle"></label>
+            >
+            <label for="adaptive-calories-toggle"/>
           </div>
         </div>
 
         <div v-if="user?.adaptive_calories_last_adjusted_at" class="settings__adaptive-hint">
-          Zuletzt angepasst: {{ formatDate(user.adaptive_calories_last_adjusted_at) }}
+          {{ $t('settings.lastAdjusted') }}: {{ formatDate(user.adaptive_calories_last_adjusted_at) }}
           <template v-if="user.adaptive_calories_last_delta_kcal">
             ({{ user.adaptive_calories_last_delta_kcal > 0 ? '+' : '' }}{{ user.adaptive_calories_last_delta_kcal }} kcal)
           </template>
@@ -49,15 +49,15 @@
 
     <!-- Sektion 2: Tägliche Ziele -->
     <div class="settings__group">
-      <p class="settings__section-title">Tägliche Ziele</p>
+      <p class="settings__section-title">{{ $t('settings.dailyGoals') }}</p>
       <div class="settings__section">
         <!-- Wasserziel -->
         <div class="settings__row">
           <div class="settings__row-left">
             <AppIcon name="water_drop" size="1.25rem" class="settings__row-icon settings__row-icon--water" />
             <div class="settings__row-info">
-              <span class="settings__row-label">Wasserziel</span>
-              <span class="settings__row-sub">ml pro Tag</span>
+              <span class="settings__row-label">{{ $t('settings.waterGoal') }}</span>
+              <span class="settings__row-sub">{{ $t('settings.waterGoalSub') }}</span>
             </div>
           </div>
           <input
@@ -69,7 +69,7 @@
             step="100"
             @change="saveWaterGoal"
             @blur="saveWaterGoal"
-          />
+          >
         </div>
         <div class="settings__preset-chips">
           <button
@@ -88,20 +88,20 @@
 
         <!-- Makroziele (read-only) -->
         <div class="settings__row settings__row--macro">
-          <span class="settings__macro-name">Protein</span>
+          <span class="settings__macro-name">{{ $t('common.protein') }}</span>
           <span class="settings__macro-value">{{ user?.protein_goal_g ?? '—' }} g</span>
         </div>
         <div class="settings__row settings__row--macro settings__row--bordered">
-          <span class="settings__macro-name">Kohlenhydrate</span>
+          <span class="settings__macro-name">{{ $t('common.carbs') }}</span>
           <span class="settings__macro-value">{{ user?.carbs_goal_g ?? '—' }} g</span>
         </div>
         <div class="settings__row settings__row--macro settings__row--bordered">
-          <span class="settings__macro-name">Fett</span>
+          <span class="settings__macro-name">{{ $t('common.fat') }}</span>
           <span class="settings__macro-value">{{ user?.fat_goal_g ?? '—' }} g</span>
         </div>
         <div class="settings__macro-hint">
           <NuxtLink to="/settings/profile" class="settings__macro-link">
-            Im Profil anpassen
+            {{ $t('settings.adjustInProfile') }}
           </NuxtLink>
         </div>
       </div>
@@ -109,17 +109,17 @@
 
     <!-- Sektion 3: Darstellung -->
     <div class="settings__group">
-      <p class="settings__section-title">Darstellung</p>
+      <p class="settings__section-title">{{ $t('settings.display') }}</p>
       <div class="settings__section">
         <!-- Dunkelmodus -->
         <div class="settings__row">
           <div class="settings__row-left">
             <AppIcon name="dark_mode" size="1.25rem" class="settings__row-icon" />
-            <span class="settings__row-label">Dunkelmodus</span>
+            <span class="settings__row-label">{{ $t('settings.darkMode') }}</span>
           </div>
           <div class="switch">
-            <input id="dark-mode-toggle" type="checkbox" :checked="isDark" @change="toggleTheme" />
-            <label for="dark-mode-toggle"></label>
+            <input id="dark-mode-toggle" type="checkbox" :checked="isDark" @change="toggleTheme" >
+            <label for="dark-mode-toggle"/>
           </div>
         </div>
 
@@ -130,8 +130,8 @@
           <div class="settings__row-left">
             <AppIcon name="straighten" size="1.25rem" class="settings__row-icon" />
             <div class="settings__row-info">
-              <span class="settings__row-label">Einheiten</span>
-              <span class="settings__row-sub">Wirkt sich auf Gewichtsanzeigen aus</span>
+              <span class="settings__row-label">{{ $t('settings.units') }}</span>
+              <span class="settings__row-sub">{{ $t('settings.unitsSub') }}</span>
             </div>
           </div>
           <div class="chips settings__unit-chips">
@@ -141,7 +141,7 @@
               :class="{ 'selected': user?.unit_system === 'metric' }"
               @click="userStore.updateSetting('unit_system', 'metric')"
             >
-              Metrisch
+              {{ $t('settings.metric') }}
             </button>
             <button
               type="button"
@@ -149,7 +149,35 @@
               :class="{ 'selected': user?.unit_system === 'imperial' }"
               @click="userStore.updateSetting('unit_system', 'imperial')"
             >
-              Imperial
+              {{ $t('settings.imperial') }}
+            </button>
+          </div>
+        </div>
+
+        <div class="settings__section-divider" />
+
+        <!-- Sprache / Language -->
+        <div class="settings__row settings__row--stacked">
+          <div class="settings__row-left">
+            <AppIcon name="language" size="1.25rem" class="settings__row-icon" />
+            <span class="settings__row-label">{{ $t('settings.language') }}</span>
+          </div>
+          <div class="chips settings__unit-chips">
+            <button
+              type="button"
+              class="chip clickable"
+              :class="{ 'selected': currentLocale === 'de' }"
+              @click="changeLocale('de')"
+            >
+              DE
+            </button>
+            <button
+              type="button"
+              class="chip clickable"
+              :class="{ 'selected': currentLocale === 'en' }"
+              @click="changeLocale('en')"
+            >
+              EN
             </button>
           </div>
         </div>
@@ -158,12 +186,12 @@
 
     <!-- Sektion 4: Daten -->
     <div class="settings__group">
-      <p class="settings__section-title">Daten</p>
+      <p class="settings__section-title">{{ $t('settings.data') }}</p>
       <div class="settings__section">
         <button type="button" class="settings__row settings__row--action" @click="exportJSON">
           <div class="settings__row-left">
             <AppIcon name="download" size="1.25rem" class="settings__row-icon" />
-            <span class="settings__row-label">Export als JSON</span>
+            <span class="settings__row-label">{{ $t('settings.exportJSON') }}</span>
           </div>
           <AppIcon name="chevron_right" size="1.25rem" class="settings__row-chevron" />
         </button>
@@ -173,7 +201,7 @@
         <button type="button" class="settings__row settings__row--action" @click="exportCSV">
           <div class="settings__row-left">
             <AppIcon name="table_chart" size="1.25rem" class="settings__row-icon" />
-            <span class="settings__row-label">Export als CSV</span>
+            <span class="settings__row-label">{{ $t('settings.exportCSV') }}</span>
           </div>
           <AppIcon name="chevron_right" size="1.25rem" class="settings__row-chevron" />
         </button>
@@ -183,7 +211,7 @@
         <button type="button" class="settings__row settings__row--action settings__row--danger" @click="showResetModal = true">
           <div class="settings__row-left">
             <AppIcon name="delete_forever" size="1.25rem" class="settings__row-icon" />
-            <span class="settings__row-label">Alle Daten löschen</span>
+            <span class="settings__row-label">{{ $t('settings.deleteData') }}</span>
           </div>
           <AppIcon name="chevron_right" size="1.25rem" class="settings__row-chevron" />
         </button>
@@ -192,7 +220,7 @@
 
     <!-- Sektion 5: Über die App -->
     <div class="settings__group">
-      <p class="settings__section-title">Über die App</p>
+      <p class="settings__section-title">{{ $t('settings.about') }}</p>
       <div class="settings__section">
         <div class="settings__row">
           <div class="settings__row-left">
@@ -207,7 +235,7 @@
         <div class="settings__row">
           <div class="settings__row-left">
             <AppIcon name="privacy_tip" size="1.25rem" class="settings__row-icon" />
-            <span class="settings__row-label">Datenschutz</span>
+            <span class="settings__row-label">{{ $t('settings.privacy') }}</span>
           </div>
         </div>
       </div>
@@ -225,9 +253,9 @@
             <div class="settings__modal-icon-wrap">
               <AppIcon name="delete_forever" size="2rem" class="settings__modal-icon" />
             </div>
-            <h2 class="settings__modal-title">Daten löschen</h2>
+            <h2 class="settings__modal-title">{{ $t('settings.deleteModal.title') }}</h2>
             <p class="settings__modal-body">
-              Diese Aktion löscht alle lokalen Daten unwiderruflich. Dieser Vorgang kann nicht rückgängig gemacht werden.
+              {{ $t('settings.deleteModal.body') }}
             </p>
             <div class="settings__modal-actions">
               <button
@@ -236,7 +264,7 @@
                 :disabled="resetting"
                 @click="showResetModal = false"
               >
-                Abbrechen
+                {{ $t('common.cancel') }}
               </button>
               <button
                 type="button"
@@ -245,7 +273,7 @@
                 :disabled="resetting"
                 @click="confirmReset"
               >
-                Alles löschen
+                {{ $t('settings.deleteModal.confirm') }}
               </button>
             </div>
           </div>
@@ -256,12 +284,13 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({ title: 'Einstellungen' })
+definePageMeta({ title: 'Settings' })
 
 const userStore = useUserStore()
 const { user } = storeToRefs(userStore)
 const { isDark, toggleTheme } = useTheme()
 const { exportJSON, exportCSV } = useDataExport()
+const { locale: currentLocale, setLocale } = useI18n()
 
 const waterPresets = [1500, 2000, 2500, 3000]
 const waterGoalInput = ref(userStore.user?.water_goal_ml ?? 2000)
@@ -285,7 +314,13 @@ async function setWaterPreset(ml: number) {
 }
 
 function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })
+  const loc = currentLocale.value === 'en' ? 'en-US' : 'de-DE'
+  return new Date(iso).toLocaleDateString(loc, { day: '2-digit', month: '2-digit', year: 'numeric' })
+}
+
+async function changeLocale(lang: 'de' | 'en') {
+  await setLocale(lang)
+  await userStore.updateLocale(lang)
 }
 
 async function confirmReset() {

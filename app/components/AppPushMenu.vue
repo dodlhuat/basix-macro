@@ -5,49 +5,49 @@
         <li>
           <NuxtLink to="/" class="push-menu-item" @click="close">
             <AppIcon name="home" size="1.25rem" />
-            Dashboard
+            {{ $t('nav.dashboard') }}
           </NuxtLink>
         </li>
         <li>
           <NuxtLink :to="`/diary/${today}`" class="push-menu-item" @click="close">
             <AppIcon name="book" size="1.25rem" />
-            Tagebuch
+            {{ $t('nav.diary') }}
           </NuxtLink>
         </li>
         <li>
           <NuxtLink to="/food" class="push-menu-item" @click="close">
             <AppIcon name="nutrition" size="1.25rem" />
-            Lebensmittel
+            {{ $t('nav.food') }}
           </NuxtLink>
         </li>
         <li>
           <NuxtLink to="/recipes" class="push-menu-item" @click="close">
             <AppIcon name="menu_book" size="1.25rem" />
-            Rezepte
+            {{ $t('nav.recipes') }}
           </NuxtLink>
         </li>
         <li>
           <NuxtLink to="/history" class="push-menu-item" @click="close">
             <AppIcon name="bar_chart" size="1.25rem" />
-            Statistiken
+            {{ $t('nav.statistics') }}
           </NuxtLink>
         </li>
         <li>
           <NuxtLink to="/weight" class="push-menu-item" @click="close">
             <AppIcon name="monitor_weight" size="1.25rem" />
-            Gewicht
+            {{ $t('nav.weight') }}
           </NuxtLink>
         </li>
         <li>
           <NuxtLink to="/body-fat" class="push-menu-item" @click="close">
             <AppIcon name="straighten" size="1.25rem" />
-            Körperfett
+            {{ $t('nav.bodyFat') }}
           </NuxtLink>
         </li>
         <li>
           <NuxtLink to="/settings" class="push-menu-item" @click="close">
             <AppIcon name="settings" size="1.25rem" />
-            Einstellungen
+            {{ $t('nav.settings') }}
           </NuxtLink>
         </li>
       </ul>

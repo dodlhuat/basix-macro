@@ -27,14 +27,17 @@ export interface OFFResult {
 }
 
 export function useOpenFoodFacts() {
+  const { t, locale } = useI18n()
+  const lc = computed(() => locale.value === 'de' ? 'de' : 'en')
+
   async function lookupBarcode(barcode: string): Promise<OFFResult> {
     try {
       const response = await fetch(
-        `https://world.openfoodfacts.org/api/v2/product/${encodeURIComponent(barcode)}.json?fields=code,product_name,brands,serving_quantity,serving_size,nutriments`,
+        `https://world.openfoodfacts.org/api/v2/product/${encodeURIComponent(barcode)}.json?lc=${lc.value}&fields=code,product_name,brands,serving_quantity,serving_size,nutriments`,
       )
 
       if (!response.ok) {
-        return { found: false, error: 'Netzwerkfehler' }
+        return { found: false, error: t('off.networkError') }
       }
 
       const data = await response.json()
@@ -46,7 +49,7 @@ export function useOpenFoodFacts() {
       return { found: true, product: data.product as OFFProduct }
     }
     catch {
-      return { found: false, error: 'Verbindung fehlgeschlagen' }
+      return { found: false, error: t('off.connectionFailed') }
     }
   }
 
@@ -91,11 +94,11 @@ export function useOpenFoodFacts() {
 
   async function searchProducts(query: string): Promise<OFFProduct[]> {
     try {
-      const url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${encodeURIComponent(query)}&search_simple=1&action=process&json=1&page_size=10&fields=code,product_name,brands,serving_quantity,serving_size,nutriments`
+      const url = `https://search.openfoodfacts.org/search?q=${encodeURIComponent(query)}&page_size=10&langs=${lc.value}&fields=code,product_name,brands,serving_quantity,serving_size,nutriments`
       const response = await fetch(url)
       if (!response.ok) return []
-      const data = await response.json() as { products?: OFFProduct[] }
-      return (data.products ?? []).filter(p => p.product_name?.trim())
+      const data = await response.json() as { hits?: OFFProduct[] }
+      return (data.hits ?? []).filter(p => p.product_name?.trim())
     }
     catch {
       return []

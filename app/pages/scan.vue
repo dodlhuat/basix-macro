@@ -16,8 +16,8 @@
       v-if="barcodeState === 'idle' || barcodeState === 'requesting'"
       class="scanner__state-overlay"
     >
-      <div class="loading scanner__spinner" aria-label="Kamera wird gestartet" />
-      <p class="scanner__state-text">Kamera wird gestartet …</p>
+      <div class="loading scanner__spinner" :aria-label="$t('scan.cameraStarting')" />
+      <p class="scanner__state-text">{{ $t('scan.cameraStarting') }}</p>
     </div>
 
     <!-- ── Error state ──────────────────────────────────────────── -->
@@ -25,7 +25,7 @@
       <AppIcon name="error" size="2.5rem" class="scanner__error-icon" />
       <p class="scanner__state-text scanner__state-text--error">{{ barcodeError }}</p>
       <button class="button scanner__retry-btn" @click="retry">
-        Erneut versuchen
+        {{ $t('scan.retry') }}
       </button>
     </div>
 
@@ -48,7 +48,7 @@
         <div v-else class="scanner__processing-pulse" />
       </div>
 
-      <p class="scanner__hint">Barcode in das Feld halten</p>
+      <p class="scanner__hint">{{ $t('scan.holdBarcode') }}</p>
     </div>
 
     <!-- ── Processing label (floats below the frame) ───────────── -->
@@ -59,11 +59,11 @@
       role="status"
     >
       <div class="loading scanner__processing-spinner" />
-      <span>Produkt wird gesucht …</span>
+      <span>{{ $t('scan.lookingUp') }}</span>
     </div>
 
     <!-- ── Back button ──────────────────────────────────────────── -->
-    <button class="scanner__back" aria-label="Zurück" @click="goBack">
+    <button class="scanner__back" :aria-label="$t('common.back')" @click="goBack">
       <AppIcon name="arrow_back" size="1.25rem" />
     </button>
 
@@ -74,7 +74,7 @@
         class="scanner__manual-toggle"
         @click="openManualInput"
       >
-        Barcode manuell eingeben
+        {{ $t('scan.manualInput') }}
       </button>
       <div v-else class="scanner__manual-form">
         <div class="input-group scanner__manual-input-wrap">
@@ -87,7 +87,7 @@
             placeholder="EAN / GTIN …"
             aria-label="Barcode manuell eingeben"
             @keydown.enter="submitManual"
-          />
+          >
         </div>
         <button
           class="button button-primary scanner__manual-submit"
@@ -115,7 +115,7 @@
         class="scanner-sheet"
         role="dialog"
         :aria-modal="sheetMode !== 'hidden'"
-        :aria-label="sheetMode === 'found' ? 'Produkt gefunden' : 'Produkt nicht gefunden'"
+        :aria-label="sheetMode === 'found' ? $t('scan.foundTitle') : $t('scan.notFoundTitle')"
       >
         <div class="scanner-sheet__handle" aria-hidden="true" />
 
@@ -139,23 +139,23 @@
               </div>
               <div class="scanner-sheet__macro scanner-sheet__macro--protein">
                 <span class="scanner-sheet__macro-value">{{ offProduct.protein }}g</span>
-                <span class="scanner-sheet__macro-label">Protein</span>
+                <span class="scanner-sheet__macro-label">{{ $t('common.protein') }}</span>
               </div>
               <div class="scanner-sheet__macro scanner-sheet__macro--carbs">
                 <span class="scanner-sheet__macro-value">{{ offProduct.carbs }}g</span>
-                <span class="scanner-sheet__macro-label">Kohlenhydrate</span>
+                <span class="scanner-sheet__macro-label">{{ $t('common.carbs') }}</span>
               </div>
               <div class="scanner-sheet__macro scanner-sheet__macro--fat">
                 <span class="scanner-sheet__macro-value">{{ offProduct.fat }}g</span>
-                <span class="scanner-sheet__macro-label">Fett</span>
+                <span class="scanner-sheet__macro-label">{{ $t('common.fat') }}</span>
               </div>
             </div>
-            <p class="scanner-sheet__per-100">pro 100 g</p>
+            <p class="scanner-sheet__per-100">{{ $t('common.per100g') }}</p>
           </div>
 
           <div class="scanner-sheet__footer">
             <button class="button scanner-sheet__rescan" @click="rescan">
-              Nochmal scannen
+              {{ $t('scan.rescan') }}
             </button>
             <button
               class="button button-primary scanner-sheet__save"
@@ -165,7 +165,7 @@
               <span v-if="isSaving" class="loading" />
               <template v-else>
                 <AppIcon name="add" size="1rem" />
-                Speichern &amp; hinzufügen
+                {{ $t('scan.saveAndAdd') }}
               </template>
             </button>
           </div>
@@ -176,7 +176,7 @@
           <div class="scanner-sheet__header">
             <AppIcon name="error" size="1.375rem" class="scanner-sheet__not-found-icon" />
             <div class="scanner-sheet__product-info">
-              <p class="scanner-sheet__product-name">Produkt nicht gefunden</p>
+              <p class="scanner-sheet__product-name">{{ $t('scan.notFoundTitle') }}</p>
               <p class="scanner-sheet__product-brand">
                 Barcode: {{ scannedBarcode }}
               </p>
@@ -185,7 +185,7 @@
 
           <div class="scanner-sheet__footer">
             <button class="button scanner-sheet__rescan" @click="rescan">
-              Nochmal scannen
+              {{ $t('scan.rescan') }}
             </button>
             <NuxtLink
               :to="`/food/add?barcode=${encodeURIComponent(scannedBarcode)}`"
@@ -193,7 +193,7 @@
               @click="stopScanner"
             >
               <AppIcon name="add" size="1rem" />
-              Manuell anlegen
+              {{ $t('scan.addManually') }}
             </NuxtLink>
           </div>
         </template>

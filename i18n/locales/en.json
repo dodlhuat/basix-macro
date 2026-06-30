@@ -1,0 +1,331 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "diary": "Diary",
+    "food": "Foods",
+    "recipes": "Recipes",
+    "statistics": "Statistics",
+    "weight": "Weight",
+    "bodyFat": "Body Fat",
+    "settings": "Settings"
+  },
+  "common": {
+    "today": "Today",
+    "back": "Back",
+    "save": "Save",
+    "saved": "Saved ✓",
+    "cancel": "Cancel",
+    "add": "Add",
+    "delete": "Delete",
+    "close": "Close",
+    "next": "Next",
+    "start": "Let's go",
+    "searchOnline": "Searching online …",
+    "per100g": "per 100 g",
+    "protein": "Protein",
+    "carbs": "Carbs",
+    "fat": "Fat",
+    "calories": "Calories",
+    "noResults": "No results",
+    "optional": "optional",
+    "retry": "Try again",
+    "calculate": "Calculate",
+    "loading": "Loading data",
+    "noData": "No data"
+  },
+  "meal": {
+    "breakfast": "Breakfast",
+    "lunch": "Lunch",
+    "dinner": "Dinner",
+    "snack": "Snacks"
+  },
+  "dashboard": {
+    "dateNav": "Date navigation",
+    "prevDay": "Previous day",
+    "nextDay": "Next day",
+    "remaining": "remaining",
+    "overGoal": "Goal exceeded",
+    "consumed": "consumed",
+    "goal": "Goal",
+    "overGoalLabel": "+ {n} kcal above goal",
+    "water": "Water",
+    "streakDay": "day",
+    "streakDays": "days",
+    "emptyEntry": "Nothing logged yet",
+    "addEntry": "Add entry"
+  },
+  "diary": {
+    "title": "Add entry",
+    "searchFood": "Search food …",
+    "searchRecipe": "Search recipe …",
+    "clearSearch": "Clear search",
+    "scanBarcode": "Scan barcode",
+    "filter": {
+      "all": "All",
+      "favorites": "Favorites",
+      "recent": "Recent",
+      "recipes": "Recipes"
+    },
+    "empty": {
+      "favorites": "No favorites",
+      "favoritesHint": "Tap ★ on a food item to save it.",
+      "recent": "No activity yet",
+      "recentHint": "Recently logged foods will appear here.",
+      "food": "No foods yet",
+      "foodHint": "Add some foods first.",
+      "recipeNotFound": "No recipe found",
+      "recipes": "No recipes",
+      "recipesHint": "Add some recipes first."
+    },
+    "createFood": "Add new food",
+    "sheet": {
+      "meal": "Meal",
+      "amount": "Amount",
+      "servings": "Servings",
+      "ingredients": "Ingredients",
+      "portion": "srv."
+    },
+    "diaryPage": {
+      "backToDashboard": "Back to dashboard",
+      "overGoal": "Goal exceeded",
+      "remaining": "remaining",
+      "consumed": "consumed",
+      "goal": "Goal",
+      "overGoalLabel": "+ {n} kcal above goal",
+      "emptyEntry": "Nothing logged yet",
+      "addEntry": "Add entry"
+    }
+  },
+  "food": {
+    "title": "Foods",
+    "searchPlaceholder": "Search food …",
+    "clearSearch": "Clear search",
+    "addNew": "New food",
+    "save": "Save",
+    "cancel": "Cancel",
+    "filter": {
+      "all": "All",
+      "favorites": "Favorites",
+      "recent": "Recent"
+    },
+    "empty": {
+      "noResults": "No results",
+      "noResultsHint": "No food found for «{query}».",
+      "favorites": "No favorites",
+      "favoritesHint": "Tap ★ on a food item to save it.",
+      "recent": "No activity yet",
+      "recentHint": "Foods you have recently logged will appear here.",
+      "food": "No foods yet",
+      "foodHint": "Add your first food item.",
+      "addNew": "Add food"
+    },
+    "star": {
+      "add": "Add to favorites",
+      "remove": "Remove from favorites"
+    },
+    "form": {
+      "title": "New food",
+      "name": "Name",
+      "brand": "Brand",
+      "nutrients": "Nutritional values per 100g",
+      "further": "Additional info",
+      "fiber": "Fiber",
+      "sugar": "Sugar",
+      "barcode": "Barcode",
+      "errorName": "Name is required.",
+      "errorValue": "Enter a value ≥ 0.",
+      "errorSave": "Save failed. Please try again.",
+      "macroCalc": "Macros add up to {n} kcal",
+      "macroDeviation": "— deviating from {n} kcal (stated)"
+    }
+  },
+  "scan": {
+    "cameraStarting": "Starting camera …",
+    "retry": "Try again",
+    "holdBarcode": "Hold barcode in frame",
+    "lookingUp": "Looking up product …",
+    "manualInput": "Enter barcode manually",
+    "foundTitle": "Product found",
+    "notFoundTitle": "Product not found",
+    "rescan": "Scan again",
+    "saveAndAdd": "Save & add",
+    "addManually": "Add manually"
+  },
+  "weight": {
+    "title": "Weight",
+    "noEntry": "No entry yet",
+    "chartHint": "At least 2 entries required for chart",
+    "addEntry": "Add entry",
+    "weightLabel": "Weight",
+    "dateLabel": "Date",
+    "datePlaceholder": "Choose date",
+    "notePlaceholder": "Note (optional)",
+    "history": "History",
+    "empty": "No entries yet",
+    "emptyHint": "Log your first weight above to get started."
+  },
+  "history": {
+    "title": "Statistics",
+    "avgCalories": "Avg. kcal",
+    "streak": "Streak · days",
+    "adherence": "Adherence",
+    "avgMacros": "Avg. macros per day",
+    "history": "History",
+    "empty": "No data yet",
+    "emptyHint": "Log your first meals to get started.",
+    "noData": "No data",
+    "period": {
+      "7": "7 days",
+      "30": "30 days",
+      "90": "90 days"
+    }
+  },
+  "bodyFat": {
+    "title": "Body Fat",
+    "notCalculated": "Not yet calculated",
+    "fillProfile": "Please fill in your",
+    "profile": "Profile",
+    "fillProfileSuffix": "first to use the body fat calculator.",
+    "enterMeasurements": "Enter measurements",
+    "height": "Height",
+    "neck": "Neck",
+    "waist": "Waist",
+    "hip": "Hip",
+    "calculate": "Calculate",
+    "aboutNavy": "About the Navy Method",
+    "navyText1": "The US Navy method estimates body fat percentage using simple body measurements — no devices or special equipment needed. It combines neck and waist circumference (plus hip for women) with height in a validated formula.",
+    "navyText2": "The method was developed by the U.S. Naval Health Research Center and is considered a reliable estimate for healthy adults with an accuracy of ± 3 %.",
+    "categories": "Categories",
+    "men": "Men",
+    "women": "Women",
+    "cat": {
+      "essential": "Essential",
+      "athleteMale": "Athlete",
+      "athleteFemale": "Athletic",
+      "fitness": "Fitness",
+      "average": "Average",
+      "obese": "Obese"
+    },
+    "errorImplausible": "Implausible result – please check your measurements.",
+    "errorInvalid": "Invalid input – please check the entered values."
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": "Profile",
+    "profileLabel": "Profile & Calorie Goal",
+    "adaptiveCalories": "Auto-adjust calorie goal",
+    "adaptiveCaloriesSub": "Adjusts goal weekly based on weight progress",
+    "lastAdjusted": "Last adjusted",
+    "dailyGoals": "Daily Goals",
+    "waterGoal": "Water goal",
+    "waterGoalSub": "ml per day",
+    "adjustInProfile": "Adjust in profile",
+    "display": "Display",
+    "darkMode": "Dark mode",
+    "units": "Units",
+    "unitsSub": "Affects weight displays",
+    "metric": "Metric",
+    "imperial": "Imperial",
+    "language": "Language",
+    "data": "Data",
+    "exportJSON": "Export as JSON",
+    "exportCSV": "Export as CSV",
+    "deleteData": "Delete all data",
+    "about": "About",
+    "privacy": "Privacy",
+    "deleteModal": {
+      "title": "Delete data",
+      "body": "This action permanently deletes all local data and cannot be undone.",
+      "confirm": "Delete everything"
+    }
+  },
+  "profile": {
+    "title": "Edit profile",
+    "personal": "Personal data",
+    "name": "Name",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other",
+    "age": "Age",
+    "height": "Height (cm)",
+    "weight": "Weight (kg)",
+    "activityGoal": "Activity & Goal",
+    "activityLevel": "Activity level",
+    "goal": "Goal",
+    "calorieGoal": "Calorie goal",
+    "autoCalc": "Auto-calculated",
+    "calcAuto": "Calculate automatically",
+    "calorieGoalLabel": "Calorie goal (kcal)",
+    "activity": {
+      "sedentary": "Sedentary",
+      "light": "Lightly active",
+      "moderate": "Moderately active",
+      "active": "Very active",
+      "veryActive": "Extremely active"
+    },
+    "activityDesc": {
+      "sedentary": "Desk job, no exercise",
+      "light": "1–3× exercise per week",
+      "moderate": "3–5× exercise per week",
+      "active": "6–7× intense exercise",
+      "veryActive": "Physical work + lots of exercise"
+    },
+    "goals": {
+      "cut": "Cut",
+      "lightCut": "Light Cut",
+      "maintain": "Maintain",
+      "leanBulk": "Lean Bulk",
+      "bulk": "Bulk"
+    },
+    "goalDesc": {
+      "cut": "500 g fat loss per week. Recommended for max. 12 weeks, then diet break.",
+      "lightCut": "250 g fat loss per week. Gentle, good for beginners, up to 20 weeks.",
+      "maintain": "Match calorie needs exactly. Keep weight and muscle mass stable.",
+      "leanBulk": "250 g muscle gain per week with minimal fat gain. Recommended 8–16 weeks.",
+      "bulk": "500 g weight gain per week, maximum muscle growth. Recommended 8–12 weeks."
+    }
+  },
+  "onboarding": {
+    "title": "BasixMacro",
+    "subtitle": "Let's set up your profile",
+    "steps": ["Name", "Body", "Activity", "Goal"],
+    "step1Title": "What's your name?",
+    "step2Title": "Your body data",
+    "step3Title": "How active are you?",
+    "step4Title": "What's your goal?",
+    "namePlaceholder": "Enter name",
+    "yourDailyNeeds": "Your daily needs",
+    "adjustCalorieGoal": "Adjust calorie goal",
+    "adaptiveTitle": "Auto-adjust calorie goal",
+    "adaptiveDesc": "Compares your weight progress with expected results and adjusts the goal weekly — starting after 2 weeks of tracking.",
+    "errorName": "Please enter your name.",
+    "errorBody": "Please fill in all body data."
+  },
+  "recipes": {
+    "title": "Recipes",
+    "searchPlaceholder": "Search recipe …",
+    "clearSearch": "Clear search",
+    "servings": "serving | servings",
+    "empty": {
+      "noResults": "No results",
+      "noResultsHint": "No recipe found for «{query}».",
+      "noRecipes": "No recipes yet",
+      "noRecipesHint": "Create your first recipe.",
+      "createBtn": "Create recipe"
+    }
+  },
+  "camera": {
+    "denied": "Camera access denied. Please allow access in your browser settings.",
+    "error": "Could not start camera."
+  },
+  "off": {
+    "networkError": "Network error",
+    "connectionFailed": "Connection failed"
+  },
+  "adaptive": {
+    "raised": "raised",
+    "lowered": "lowered",
+    "toast": "Calorie goal {dir} to {goal} kcal ({delta} kcal)"
+  }
+}

@@ -18,7 +18,7 @@ export function useStreak() {
     today.setHours(0, 0, 0, 0)
 
     // Start from today; if today has no entries, check from yesterday
-    let checkDate = new Date(today)
+    const checkDate = new Date(today)
     if (!dateSet.has(toDateStr(checkDate))) {
       checkDate.setDate(checkDate.getDate() - 1)
     }

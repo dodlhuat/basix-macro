@@ -37,7 +37,7 @@
             class="recipe-add__text-input"
             maxlength="100"
             autocomplete="off"
-          />
+          >
         </div>
       </div>
 
@@ -62,7 +62,7 @@
               max="99"
               class="recipe-add__qty-input"
               aria-label="Anzahl Portionen"
-            />
+            >
             <span class="recipe-add__qty-unit">Portionen</span>
           </div>
           <button
@@ -134,7 +134,7 @@
             aria-label="Zutat suchen"
             @input="handleIngSearch"
             @search="handleIngSearch"
-          />
+          >
           <button
             v-if="ingSearchQuery"
             class="button button-icon recipe-add__search-clear"
@@ -341,7 +341,7 @@
                     step="1"
                     aria-label="Menge in Gramm"
                     class="recipe-add-sheet__amount-input"
-                  />
+                  >
                   <span class="recipe-add-sheet__amount-unit">g</span>
                 </div>
               </div>

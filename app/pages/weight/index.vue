@@ -35,7 +35,7 @@
       <template v-else>
         <div class="weight__hero-empty">
           <AppIcon name="monitor_weight" size="2rem" />
-          <p>Noch kein Eintrag</p>
+          <p>{{ $t('weight.noEntry') }}</p>
         </div>
       </template>
     </section>
@@ -81,16 +81,16 @@
       </template>
       <div v-else class="weight__chart-placeholder">
         <AppIcon name="show_chart" size="1.5rem" />
-        <span>Mindestens 2 Einträge für den Chart</span>
+        <span>{{ $t('weight.chartHint') }}</span>
       </div>
     </section>
 
     <!-- ─── Add entry form ───────────────────────────────────────────────────── -->
     <section class="weight__form">
-      <p class="weight__section-label">Eintrag hinzufügen</p>
+      <p class="weight__section-label">{{ $t('weight.addEntry') }}</p>
       <div class="weight__form-row">
         <div class="form-group weight__form-group">
-          <label class="weight__field-label" for="weight-input">Gewicht</label>
+          <label class="weight__field-label" for="weight-input">{{ $t('weight.weightLabel') }}</label>
           <div class="input-group">
             <input
               id="weight-input"
@@ -103,23 +103,23 @@
               placeholder="82.5"
               aria-label="Gewicht in Kilogramm"
               class="weight__weight-input"
-            />
+            >
             <span class="weight__input-unit">kg</span>
           </div>
         </div>
         <div class="form-group weight__form-group">
-          <label class="weight__field-label" for="weight-date">Datum</label>
+          <label class="weight__field-label" for="weight-date">{{ $t('weight.dateLabel') }}</label>
           <div class="input-group">
             <input
               id="weight-date"
               ref="dateInputRef"
               type="text"
               readonly
-              placeholder="Datum wählen"
+              :placeholder="$t('weight.datePlaceholder')"
               aria-label="Datum des Eintrags"
               aria-haspopup="dialog"
               class="weight__date-input"
-            />
+            >
           </div>
         </div>
       </div>
@@ -128,10 +128,10 @@
           <input
             v-model="newNote"
             type="text"
-            placeholder="Notiz (optional)"
+            :placeholder="$t('weight.notePlaceholder')"
             aria-label="Notiz"
             maxlength="200"
-          />
+          >
         </div>
       </div>
       <button
@@ -143,14 +143,14 @@
         <span v-if="isSaving" class="loading" aria-hidden="true" />
         <template v-else>
           <AppIcon name="check" size="1rem" />
-          Speichern
+          {{ $t('common.save') }}
         </template>
       </button>
     </section>
 
     <!-- ─── History list ─────────────────────────────────────────────────────── -->
     <section class="weight__history" aria-label="Verlauf">
-      <p class="weight__section-label">Verlauf</p>
+      <p class="weight__section-label">{{ $t('weight.history') }}</p>
       <ul
         v-if="recentEntries.length"
         class="weight__list"
@@ -191,8 +191,8 @@
       </ul>
       <div v-else class="weight__empty">
         <AppIcon name="monitor_weight" size="2.5rem" class="weight__empty-icon" />
-        <p class="weight__empty-title">Noch keine Einträge</p>
-        <p class="weight__empty-hint">Trage dein erstes Gewicht oben ein, um zu starten.</p>
+        <p class="weight__empty-title">{{ $t('weight.empty') }}</p>
+        <p class="weight__empty-hint">{{ $t('weight.emptyHint') }}</p>
       </div>
     </section>
 
@@ -200,11 +200,12 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({ title: 'Gewicht' })
+definePageMeta({ title: 'Weight' })
 
 const weightStore = useWeightStore()
 const userStore = useUserStore()
 const { calcBMI } = useBMI()
+const { locale } = useI18n()
 
 const { entries, latestEntry, chartData } = storeToRefs(weightStore)
 
@@ -375,7 +376,8 @@ async function handleDelete(id: string) {
 // ─── Formatting ───────────────────────────────────────────────────────────────
 
 function formatDate(dateStr: string): string {
-  return new Date(dateStr + 'T12:00:00').toLocaleDateString('de-DE', {
+  const loc = locale.value === 'en' ? 'en-US' : 'de-DE'
+  return new Date(dateStr + 'T12:00:00').toLocaleDateString(loc, {
     weekday: 'short',
     day: 'numeric',
     month: 'short',

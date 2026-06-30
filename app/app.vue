@@ -25,6 +25,7 @@ const { initPushMenu, close } = usePushMenu()
 const { initTheme } = useTheme()
 const userStore = useUserStore()
 const { checkAndAdjust } = useAdaptiveCalories()
+const { setLocale, t } = useI18n()
 
 const adaptiveToast = ref<string | null>(null)
 
@@ -35,13 +36,17 @@ function showToast(msg: string) {
 
 onMounted(async () => {
   await userStore.loadUser()
+  if (userStore.user?.locale) {
+    await setLocale(userStore.user.locale)
+  }
   await initTheme(userStore.user?.dark_mode)
   await initPushMenu()
 
   const result = await checkAndAdjust()
   if (result.adjusted && result.newGoal && result.deltaKcal) {
-    const dir = result.deltaKcal > 0 ? 'erhöht' : 'gesenkt'
-    showToast(`Kalorienziel ${dir} auf ${result.newGoal} kcal (${result.deltaKcal > 0 ? '+' : ''}${result.deltaKcal} kcal)`)
+    const dir = t(result.deltaKcal > 0 ? 'adaptive.raised' : 'adaptive.lowered')
+    const sign = result.deltaKcal > 0 ? '+' : ''
+    showToast(t('adaptive.toast', { dir, goal: result.newGoal, delta: `${sign}${result.deltaKcal}` }))
   }
 })
 </script>

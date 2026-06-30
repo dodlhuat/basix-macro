@@ -2,12 +2,12 @@
   <div class="onboarding">
     <div class="onboarding__header">
       <h1 class="onboarding__title">BasixMacro</h1>
-      <p class="onboarding__subtitle">Lass uns dein Profil einrichten</p>
+      <p class="onboarding__subtitle">{{ $t('onboarding.subtitle') }}</p>
     </div>
 
     <!-- Stepper: managed via Vue :class, no vanilla JS -->
     <div class="stepper">
-      <template v-for="(label, i) in ['Name', 'Körper', 'Aktivität', 'Ziel']" :key="i">
+      <template v-for="(label, i) in $tm('onboarding.steps') as string[]" :key="i">
         <div class="stepper-step" :class="{ active: currentStep === i, completed: currentStep > i }">
           <div class="stepper-indicator">
             <AppIcon v-if="currentStep > i" name="check" size="1rem" class="stepper-check" />
@@ -23,27 +23,27 @@
 
       <!-- Step 1: Name -->
       <div v-show="currentStep === 0" class="onboarding__step">
-        <h2>Wie heißt du?</h2>
+        <h2>{{ $t('onboarding.step1Title') }}</h2>
         <div class="form-group">
-          <label for="name">Dein Name</label>
+          <label for="name">{{ $t('profile.name') }}</label>
           <input
             id="name"
             v-model="form.name"
             type="text"
-            placeholder="Name eingeben"
+            :placeholder="$t('onboarding.namePlaceholder')"
             autocomplete="given-name"
             @keyup.enter="tryNext"
-          />
+          >
         </div>
         <p v-if="errors.name" class="onboarding__error">{{ errors.name }}</p>
       </div>
 
       <!-- Step 2: Physical data -->
       <div v-show="currentStep === 1" class="onboarding__step">
-        <h2>Deine Körperdaten</h2>
+        <h2>{{ $t('onboarding.step2Title') }}</h2>
 
         <div class="form-group">
-          <label>Geschlecht</label>
+          <label>{{ $t('profile.gender') }}</label>
           <div class="chips">
             <button
               v-for="g in genderOptions"
@@ -58,25 +58,25 @@
 
         <div class="onboarding__row">
           <div class="form-group">
-            <label for="age">Alter</label>
-            <input id="age" v-model.number="form.age" type="number" min="10" max="100" placeholder="Jahre" />
+            <label for="age">{{ $t('profile.age') }}</label>
+            <input id="age" v-model.number="form.age" type="number" min="10" max="100" placeholder="Jahre" >
           </div>
           <div class="form-group">
-            <label for="height">Größe (cm)</label>
-            <input id="height" v-model.number="form.height_cm" type="number" min="100" max="250" placeholder="cm" />
+            <label for="height">{{ $t('profile.height') }}</label>
+            <input id="height" v-model.number="form.height_cm" type="number" min="100" max="250" placeholder="cm" >
           </div>
         </div>
 
         <div class="form-group">
-          <label for="weight">Gewicht (kg)</label>
-          <input id="weight" v-model.number="form.weight_kg" type="number" min="30" max="300" step="0.1" placeholder="kg" />
+          <label for="weight">{{ $t('profile.weight') }}</label>
+          <input id="weight" v-model.number="form.weight_kg" type="number" min="30" max="300" step="0.1" placeholder="kg" >
         </div>
         <p v-if="errors.body" class="onboarding__error">{{ errors.body }}</p>
       </div>
 
       <!-- Step 3: Activity level -->
       <div v-show="currentStep === 2" class="onboarding__step">
-        <h2>Wie aktiv bist du?</h2>
+        <h2>{{ $t('onboarding.step3Title') }}</h2>
         <div class="onboarding__activity-list">
           <button
             v-for="a in activityOptions"
@@ -94,7 +94,7 @@
               <span>{{ a.desc }}</span>
             </span>
             <span class="onboarding__activity-bars" aria-hidden="true">
-              <span></span><span></span><span></span><span></span><span></span>
+              <span/><span/><span/><span/><span/>
             </span>
           </button>
         </div>
@@ -102,7 +102,7 @@
 
       <!-- Step 4: Goal + Result -->
       <div v-show="currentStep === 3" class="onboarding__step">
-        <h2>Was ist dein Ziel?</h2>
+        <h2>{{ $t('onboarding.step4Title') }}</h2>
         <div class="goal-options">
           <button
             v-for="g in goalOptions"
@@ -120,14 +120,14 @@
         </div>
 
         <div v-if="calculatedMacros" class="onboarding__result card card-bordered">
-          <p class="onboarding__result-title">Dein Tagesbedarf</p>
+          <p class="onboarding__result-title">{{ $t('onboarding.yourDailyNeeds') }}</p>
           <div class="onboarding__result-calories">
             <span class="onboarding__result-value">{{ calculatedMacros.calories }}</span>
             <span class="onboarding__result-unit">kcal</span>
           </div>
 
           <div class="form-group">
-            <label for="calorie-override">Kalorienziel anpassen</label>
+            <label for="calorie-override">{{ $t('onboarding.adjustCalorieGoal') }}</label>
             <input
               id="calorie-override"
               v-model.number="calorieOverride"
@@ -135,21 +135,21 @@
               min="1200"
               max="6000"
               step="50"
-            />
+            >
           </div>
 
           <div class="onboarding__macros">
             <div class="onboarding__macro">
               <span class="onboarding__macro-value">{{ finalMacros.protein_g }}g</span>
-              <span class="onboarding__macro-label">Protein</span>
+              <span class="onboarding__macro-label">{{ $t('common.protein') }}</span>
             </div>
             <div class="onboarding__macro">
               <span class="onboarding__macro-value">{{ finalMacros.carbs_g }}g</span>
-              <span class="onboarding__macro-label">Kohlenhydrate</span>
+              <span class="onboarding__macro-label">{{ $t('common.carbs') }}</span>
             </div>
             <div class="onboarding__macro">
               <span class="onboarding__macro-value">{{ finalMacros.fat_g }}g</span>
-              <span class="onboarding__macro-label">Fett</span>
+              <span class="onboarding__macro-label">{{ $t('common.fat') }}</span>
             </div>
           </div>
         </div>
@@ -157,14 +157,12 @@
         <!-- Adaptive calorie toggle -->
         <div class="onboarding__adaptive card card-bordered">
           <div class="onboarding__adaptive-text">
-            <p class="onboarding__adaptive-title">Kalorienziel automatisch anpassen</p>
-            <p class="onboarding__adaptive-desc">
-              Vergleicht deine Gewichtsentwicklung mit dem erwarteten Fortschritt und korrigiert das Ziel wöchentlich — erst nach 2 Wochen Tracking.
-            </p>
+            <p class="onboarding__adaptive-title">{{ $t('onboarding.adaptiveTitle') }}</p>
+            <p class="onboarding__adaptive-desc">{{ $t('onboarding.adaptiveDesc') }}</p>
           </div>
           <div class="switch">
-            <input id="adaptive-toggle" v-model="form.adaptive_calories_enabled" type="checkbox" />
-            <label for="adaptive-toggle"></label>
+            <input id="adaptive-toggle" v-model="form.adaptive_calories_enabled" type="checkbox" >
+            <label for="adaptive-toggle"/>
           </div>
         </div>
       </div>
@@ -178,13 +176,13 @@
         type="button"
         class="button button-outline"
         @click="goBack"
-      >Zurück</button>
+      >{{ $t('common.back') }}</button>
       <button
         v-if="!isLast"
         type="button"
         class="button button-primary"
         @click="tryNext"
-      >Weiter</button>
+      >{{ $t('common.next') }}</button>
       <button
         v-if="isLast"
         type="button"
@@ -192,7 +190,7 @@
         :class="{ 'is-loading': saving }"
         :disabled="saving"
         @click="finish"
-      >Los geht's</button>
+      >{{ $t('common.start') }}</button>
     </div>
   </div>
 </template>
@@ -206,6 +204,7 @@ const { calculate, calcMacros } = useCalorieCalculator()
 const userStore = useUserStore()
 const weightStore = useWeightStore()
 const router = useRouter()
+const { t } = useI18n()
 
 const STEPS = 4
 const { currentStep, isFirst, isLast, next, prev } = useStepper(STEPS)
@@ -224,27 +223,27 @@ const form = reactive({
   adaptive_calories_enabled: false,
 })
 
-const genderOptions: { value: 'male' | 'female' | 'other', label: string }[] = [
-  { value: 'male', label: 'Männlich' },
-  { value: 'female', label: 'Weiblich' },
-  { value: 'other', label: 'Divers' },
-]
+const genderOptions = computed(() => [
+  { value: 'male' as const, label: t('profile.male') },
+  { value: 'female' as const, label: t('profile.female') },
+  { value: 'other' as const, label: t('profile.other') },
+])
 
-const activityOptions: { value: 'sedentary' | 'light' | 'moderate' | 'active' | 'very_active', label: string, desc: string, icon: string }[] = [
-  { value: 'sedentary',   label: 'Kaum aktiv',      desc: 'Bürojob, kein Sport',              icon: 'chair' },
-  { value: 'light',       label: 'Leicht aktiv',     desc: '1–3× Sport pro Woche',             icon: 'directions_walk' },
-  { value: 'moderate',    label: 'Mäßig aktiv',      desc: '3–5× Sport pro Woche',             icon: 'directions_run' },
-  { value: 'active',      label: 'Sehr aktiv',       desc: '6–7× intensiver Sport',            icon: 'fitness_center' },
-  { value: 'very_active', label: 'Extrem aktiv',     desc: 'Körperliche Arbeit + viel Sport',  icon: 'sports' },
-]
+const activityOptions = computed(() => [
+  { value: 'sedentary' as const,   label: t('profile.activity.sedentary'), desc: t('profile.activityDesc.sedentary'), icon: 'chair' },
+  { value: 'light' as const,       label: t('profile.activity.light'),     desc: t('profile.activityDesc.light'),     icon: 'directions_walk' },
+  { value: 'moderate' as const,    label: t('profile.activity.moderate'),  desc: t('profile.activityDesc.moderate'),  icon: 'directions_run' },
+  { value: 'active' as const,      label: t('profile.activity.active'),    desc: t('profile.activityDesc.active'),    icon: 'fitness_center' },
+  { value: 'very_active' as const, label: t('profile.activity.veryActive'),desc: t('profile.activityDesc.veryActive'),icon: 'sports' },
+])
 
-const goalOptions: { value: 'cut' | 'light_cut' | 'maintain' | 'lean_bulk' | 'bulk', label: string, desc: string }[] = [
-  { value: 'cut',       label: 'Cut',          desc: '500 g Fettverlust pro Woche. Empfohlen für max. 12 Wochen, dann Diätpause.' },
-  { value: 'light_cut', label: 'Leichter Cut', desc: '250 g Fettverlust pro Woche. Schonend, gut für Einsteiger, bis zu 20 Wochen.' },
-  { value: 'maintain',  label: 'Halten',       desc: 'Kalorienbedarf exakt decken. Gewicht und Muskelmasse stabil halten.' },
-  { value: 'lean_bulk', label: 'Lean Bulk',    desc: '250 g Muskelaufbau pro Woche bei minimaler Fettzunahme. Empfohlen 8–16 Wochen.' },
-  { value: 'bulk',      label: 'Bulk',         desc: '500 g Gewichtszunahme pro Woche, maximaler Muskelaufbau. Empfohlen 8–12 Wochen.' },
-]
+const goalOptions = computed(() => [
+  { value: 'cut' as const,       label: t('profile.goals.cut'),      desc: t('profile.goalDesc.cut') },
+  { value: 'light_cut' as const, label: t('profile.goals.lightCut'), desc: t('profile.goalDesc.lightCut') },
+  { value: 'maintain' as const,  label: t('profile.goals.maintain'), desc: t('profile.goalDesc.maintain') },
+  { value: 'lean_bulk' as const, label: t('profile.goals.leanBulk'), desc: t('profile.goalDesc.leanBulk') },
+  { value: 'bulk' as const,      label: t('profile.goals.bulk'),     desc: t('profile.goalDesc.bulk') },
+])
 
 const calculatedMacros = computed(() => {
   if (!form.age || !form.height_cm || !form.weight_kg) return null
@@ -268,21 +267,21 @@ function validateStep(): boolean {
 
   if (currentStep.value === 0) {
     if (!form.name.trim()) {
-      errors.name = 'Bitte gib deinen Namen ein.'
+      errors.name = t('onboarding.errorName')
       return false
     }
   }
   if (currentStep.value === 1) {
     if (!form.age || form.age < 10 || form.age > 100) {
-      errors.body = 'Bitte gib ein gültiges Alter ein (10–100).'
+      errors.body = t('onboarding.errorBody')
       return false
     }
     if (!form.height_cm || form.height_cm < 100 || form.height_cm > 250) {
-      errors.body = 'Bitte gib eine gültige Größe ein (100–250 cm).'
+      errors.body = t('onboarding.errorBody')
       return false
     }
     if (!form.weight_kg || form.weight_kg < 30 || form.weight_kg > 300) {
-      errors.body = 'Bitte gib ein gültiges Gewicht ein (30–300 kg).'
+      errors.body = t('onboarding.errorBody')
       return false
     }
   }

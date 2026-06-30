@@ -5,13 +5,13 @@
     <div class="diary-add__header">
       <button
         class="button button-icon diary-add__back"
-        aria-label="Zurück"
+        :aria-label="$t('common.back')"
         @click="router.back()"
       >
         <AppIcon name="arrow_back" size="1.25rem" />
       </button>
       <div class="diary-add__title-group">
-        <h1 class="diary-add__title">Eintrag hinzufügen</h1>
+        <h1 class="diary-add__title">{{ $t('diary.title') }}</h1>
         <p class="diary-add__subtitle">{{ mealLabel }} · {{ formattedDate }}</p>
       </div>
     </div>
@@ -25,16 +25,16 @@
           v-model="localQuery"
           type="search"
           class="diary-add__search-input"
-          :placeholder="activeFilter === 'recipes' ? 'Rezept suchen …' : 'Lebensmittel suchen …'"
-          aria-label="Lebensmittel suchen"
+          :placeholder="activeFilter === 'recipes' ? $t('diary.searchRecipe') : $t('diary.searchFood')"
+          :aria-label="$t('diary.searchFood')"
           autofocus
           @input="handleSearch"
           @search="handleSearch"
-        />
+        >
         <button
           v-if="localQuery"
           class="button button-icon diary-add__search-clear"
-          aria-label="Suche löschen"
+          :aria-label="$t('diary.clearSearch')"
           @click="clearSearch"
         >
           <AppIcon name="close" size="1rem" />
@@ -42,7 +42,7 @@
       </div>
       <button
         class="button button-icon diary-add__scan-btn"
-        aria-label="Barcode scannen"
+        :aria-label="$t('diary.scanBarcode')"
         @click="navigateTo(`/scan?date=${paramDate}&meal=${paramMeal}`)"
       >
         <AppIcon name="qr_code_scanner" size="1.25rem" />
@@ -96,18 +96,18 @@
     <div v-else-if="activeFilter !== 'recipes' && !localQuery" class="diary-add__empty">
       <template v-if="activeFilter === 'favorites'">
         <AppIcon name="star_border" size="2.5rem" class="diary-add__empty-icon" />
-        <p class="diary-add__empty-title">Keine Favoriten</p>
-        <p class="diary-add__empty-hint">Tippe auf ★ bei einem Lebensmittel, um es zu speichern.</p>
+        <p class="diary-add__empty-title">{{ $t('diary.empty.favorites') }}</p>
+        <p class="diary-add__empty-hint">{{ $t('diary.empty.favoritesHint') }}</p>
       </template>
       <template v-else-if="activeFilter === 'recent'">
         <AppIcon name="history" size="2.5rem" class="diary-add__empty-icon" />
-        <p class="diary-add__empty-title">Noch keine Aktivität</p>
-        <p class="diary-add__empty-hint">Hier erscheinen kürzlich geloggte Lebensmittel.</p>
+        <p class="diary-add__empty-title">{{ $t('diary.empty.recent') }}</p>
+        <p class="diary-add__empty-hint">{{ $t('diary.empty.recentHint') }}</p>
       </template>
       <template v-else>
         <AppIcon name="restaurant" size="2.5rem" class="diary-add__empty-icon" />
-        <p class="diary-add__empty-title">Noch keine Lebensmittel</p>
-        <p class="diary-add__empty-hint">Leg zuerst Lebensmittel an.</p>
+        <p class="diary-add__empty-title">{{ $t('diary.empty.food') }}</p>
+        <p class="diary-add__empty-hint">{{ $t('diary.empty.foodHint') }}</p>
       </template>
     </div>
 
@@ -131,7 +131,7 @@
         <div class="diary-add__item-meta">
           <div class="diary-add__item-kcal-wrap">
             <span class="diary-add__item-kcal">{{ recipe.servings }}</span>
-            <span class="diary-add__item-kcal-unit">Port.</span>
+            <span class="diary-add__item-kcal-unit">{{ $t('diary.sheet.portion') }}</span>
           </div>
           <AppIcon name="chevron_right" size="1.125rem" class="diary-add__item-arrow" />
         </div>
@@ -141,15 +141,15 @@
     <!-- Recipe empty state -->
     <div v-else-if="activeFilter === 'recipes'" class="diary-add__empty">
       <AppIcon name="menu_book" size="2.5rem" class="diary-add__empty-icon" />
-      <p class="diary-add__empty-title">{{ localQuery ? 'Kein Rezept gefunden' : 'Keine Rezepte' }}</p>
-      <p v-if="!localQuery" class="diary-add__empty-hint">Leg zuerst Rezepte an.</p>
+      <p class="diary-add__empty-title">{{ localQuery ? $t('diary.empty.recipeNotFound') : $t('diary.empty.recipes') }}</p>
+      <p v-if="!localQuery" class="diary-add__empty-hint">{{ $t('diary.empty.recipesHint') }}</p>
     </div>
 
     <!-- OFF search results (only when query active, not in recipe mode) -->
     <div v-if="localQuery && activeFilter !== 'recipes'" class="diary-add__off">
       <div v-if="isOffLoading" class="diary-add__off-loading">
         <span class="loading diary-add__off-spinner" />
-        <span class="diary-add__off-loading-text">Online suchen …</span>
+        <span class="diary-add__off-loading-text">{{ $t('common.searchOnline') }}</span>
       </div>
       <template v-else-if="offResults.length">
         <p class="diary-add__off-header">
@@ -187,7 +187,7 @@
     <div v-if="activeFilter !== 'recipes'" class="diary-add__create">
       <NuxtLink to="/food/add" class="diary-add__create-link">
         <AppIcon name="add_circle_outline" size="1rem" />
-        Neues Lebensmittel anlegen
+        {{ $t('diary.createFood') }}
       </NuxtLink>
     </div>
 
@@ -206,7 +206,7 @@
         class="bottom-sheet"
         role="dialog"
         aria-modal="true"
-        aria-label="Eintrag hinzufügen"
+        :aria-label="$t('diary.title')"
       >
         <div class="bottom-sheet-handle" aria-hidden="true" />
 
@@ -219,7 +219,7 @@
           </div>
           <button
             class="close button button-icon"
-            aria-label="Schließen"
+            :aria-label="$t('common.close')"
             @click="closeSheet"
           >
             <AppIcon name="close" size="1.25rem" />
@@ -230,7 +230,7 @@
 
           <!-- Meal chips -->
           <div class="da-sheet__section">
-            <p class="da-sheet__section-label">Mahlzeit</p>
+            <p class="da-sheet__section-label">{{ $t('diary.sheet.meal') }}</p>
             <div class="chips">
               <button
                 v-for="meal in MEALS"
@@ -246,7 +246,7 @@
 
           <!-- Amount control -->
           <div class="da-sheet__section">
-            <p class="da-sheet__section-label">Menge</p>
+            <p class="da-sheet__section-label">{{ $t('diary.sheet.amount') }}</p>
             <div class="da-sheet__amount">
               <button
                 class="button button-outline da-sheet__amount-btn"
@@ -266,7 +266,7 @@
                     step="1"
                     aria-label="Menge in Gramm"
                     class="da-sheet__amount-input"
-                  />
+                  >
                   <span class="da-sheet__amount-unit">g</span>
                 </div>
               </div>
@@ -290,19 +290,19 @@
               <span class="da-sheet__nutrition-value" style="color: #ef4444">
                 {{ sheetNutrition.protein }}g
               </span>
-              <span class="da-sheet__nutrition-label">Protein</span>
+              <span class="da-sheet__nutrition-label">{{ $t('common.protein') }}</span>
             </div>
             <div class="da-sheet__nutrition-item">
               <span class="da-sheet__nutrition-value" style="color: #3b82f6">
                 {{ sheetNutrition.carbs }}g
               </span>
-              <span class="da-sheet__nutrition-label">Kohlenhydrate</span>
+              <span class="da-sheet__nutrition-label">{{ $t('common.carbs') }}</span>
             </div>
             <div class="da-sheet__nutrition-item">
               <span class="da-sheet__nutrition-value" style="color: #f59e0b">
                 {{ sheetNutrition.fat }}g
               </span>
-              <span class="da-sheet__nutrition-label">Fett</span>
+              <span class="da-sheet__nutrition-label">{{ $t('common.fat') }}</span>
             </div>
           </div>
 
@@ -310,7 +310,7 @@
 
         <div class="bottom-sheet-footer">
           <div class="buttons">
-            <button class="button" @click="closeSheet">Abbrechen</button>
+            <button class="button" @click="closeSheet">{{ $t('common.cancel') }}</button>
             <button
               class="button button-primary"
               :disabled="isAdding"
@@ -319,7 +319,7 @@
               <span v-if="isAdding" class="loading" />
               <template v-else>
                 <AppIcon name="check" size="1rem" />
-                Hinzufügen
+                {{ $t('common.add') }}
               </template>
             </button>
           </div>
@@ -352,9 +352,9 @@
           <div class="bottom-sheet-header has-divider">
             <div class="da-sheet__title-group">
               <p class="title">{{ selectedRecipe.name }}</p>
-              <p class="subtitle">{{ selectedRecipe.servings }} Portion{{ selectedRecipe.servings === 1 ? '' : 'en' }} · {{ selectedRecipe.ingredients.length }} Zutaten</p>
+              <p class="subtitle">{{ selectedRecipe.servings }} {{ $t('diary.sheet.servings') }} · {{ selectedRecipe.ingredients.length }} {{ $t('diary.sheet.ingredients') }}</p>
             </div>
-            <button class="close button button-icon" aria-label="Schließen" @click="closeRecipeSheet">
+            <button class="close button button-icon" :aria-label="$t('common.close')" @click="closeRecipeSheet">
               <AppIcon name="close" size="1.25rem" />
             </button>
           </div>
@@ -362,7 +362,7 @@
           <div class="bottom-sheet-body">
 
             <div class="da-sheet__section">
-              <p class="da-sheet__section-label">Portionen</p>
+              <p class="da-sheet__section-label">{{ $t('diary.sheet.servings') }}</p>
               <div class="da-sheet__amount">
                 <button
                   class="button button-outline da-sheet__amount-btn"
@@ -382,7 +382,7 @@
                       step="1"
                       aria-label="Anzahl Portionen"
                       class="da-sheet__amount-input"
-                    />
+                    >
                     <span class="da-sheet__amount-unit">Port.</span>
                   </div>
                 </div>
@@ -403,15 +403,15 @@
               </div>
               <div class="da-sheet__nutrition-item">
                 <span class="da-sheet__nutrition-value" style="color: #ef4444">{{ recipeSheetNutrition.protein }}g</span>
-                <span class="da-sheet__nutrition-label">Protein</span>
+                <span class="da-sheet__nutrition-label">{{ $t('common.protein') }}</span>
               </div>
               <div class="da-sheet__nutrition-item">
                 <span class="da-sheet__nutrition-value" style="color: #3b82f6">{{ recipeSheetNutrition.carbs }}g</span>
-                <span class="da-sheet__nutrition-label">Kohlenhydrate</span>
+                <span class="da-sheet__nutrition-label">{{ $t('common.carbs') }}</span>
               </div>
               <div class="da-sheet__nutrition-item">
                 <span class="da-sheet__nutrition-value" style="color: #f59e0b">{{ recipeSheetNutrition.fat }}g</span>
-                <span class="da-sheet__nutrition-label">Fett</span>
+                <span class="da-sheet__nutrition-label">{{ $t('common.fat') }}</span>
               </div>
             </div>
 
@@ -419,7 +419,7 @@
 
           <div class="bottom-sheet-footer">
             <div class="buttons">
-              <button class="button" @click="closeRecipeSheet">Abbrechen</button>
+              <button class="button" @click="closeRecipeSheet">{{ $t('common.cancel') }}</button>
               <button
                 class="button button-primary"
                 :disabled="isAddingRecipe"
@@ -428,7 +428,7 @@
                 <span v-if="isAddingRecipe" class="loading" />
                 <template v-else>
                   <AppIcon name="check" size="1rem" />
-                  Hinzufügen
+                  {{ $t('common.add') }}
                 </template>
               </button>
             </div>
@@ -445,7 +445,7 @@ import type { FoodItem } from '../../../db'
 import type { OFFProduct } from '../../composables/useOpenFoodFacts'
 import type { RecipeWithNutrition } from '../../stores/recipes'
 
-definePageMeta({ title: 'Eintrag hinzufügen' })
+definePageMeta({ title: 'Add entry' })
 
 const foodStore = useFoodStore()
 const diaryStore = useDiaryStore()
@@ -453,6 +453,7 @@ const recipesStore = useRecipesStore()
 const route = useRoute()
 const router = useRouter()
 const { searchProducts, mapToFoodItem } = useOpenFoodFacts()
+const { t, locale } = useI18n()
 
 // ─── Route params ──────────────────────────────────────────────────────────────
 
@@ -471,32 +472,33 @@ const paramDate = (route.query.date as string) || today
 
 // ─── Meal label + date display ─────────────────────────────────────────────────
 
-const MEALS = [
-  { type: 'breakfast' as const, label: 'Frühstück' },
-  { type: 'lunch'     as const, label: 'Mittagessen' },
-  { type: 'dinner'    as const, label: 'Abendessen' },
-  { type: 'snack'     as const, label: 'Snacks' },
-]
+const MEALS = computed(() => [
+  { type: 'breakfast' as const, label: t('meal.breakfast') },
+  { type: 'lunch'     as const, label: t('meal.lunch') },
+  { type: 'dinner'    as const, label: t('meal.dinner') },
+  { type: 'snack'     as const, label: t('meal.snack') },
+])
 
 const mealLabel = computed(() =>
-  MEALS.find(m => m.type === paramMeal)?.label ?? paramMeal,
+  MEALS.value.find(m => m.type === paramMeal)?.label ?? paramMeal,
 )
 
 const formattedDate = computed(() => {
+  const loc = locale.value === 'en' ? 'en-US' : 'de-DE'
   const d = new Date(paramDate + 'T00:00:00')
   const isToday = paramDate === today
-  if (isToday) return 'Heute'
-  return d.toLocaleDateString('de-DE', { day: 'numeric', month: 'long' })
+  if (isToday) return t('common.today')
+  return d.toLocaleDateString(loc, { day: 'numeric', month: 'long' })
 })
 
 // ─── Filter config ─────────────────────────────────────────────────────────────
 
-const FILTERS = [
-  { key: 'all' as const,       label: 'Alle' },
-  { key: 'favorites' as const, label: 'Favoriten' },
-  { key: 'recent' as const,    label: 'Zuletzt' },
-  { key: 'recipes' as const,   label: 'Rezepte' },
-]
+const FILTERS = computed(() => [
+  { key: 'all' as const,       label: t('diary.filter.all') },
+  { key: 'favorites' as const, label: t('diary.filter.favorites') },
+  { key: 'recent' as const,    label: t('diary.filter.recent') },
+  { key: 'recipes' as const,   label: t('diary.filter.recipes') },
+])
 
 const activeFilter = ref<'all' | 'favorites' | 'recent' | 'recipes'>('recent')
 
