@@ -112,9 +112,13 @@
           <div class="input-group">
             <input
               id="weight-date"
-              v-model="newDate"
-              type="date"
+              ref="dateInputRef"
+              type="text"
+              readonly
+              placeholder="Datum wählen"
               aria-label="Datum des Eintrags"
+              aria-haspopup="dialog"
+              class="weight__date-input"
             />
           </div>
         </div>
@@ -311,6 +315,8 @@ const gridWeights = computed(() => {
 const todayStr: string = new Date().toISOString().split('T')[0] ?? ''
 const newWeightStr = ref('')
 const newDate = ref(todayStr)
+const dateInputRef = ref<HTMLInputElement | null>(null)
+useBasixDatepicker(dateInputRef, newDate)
 const newNote = ref('')
 const isSaving = ref(false)
 
@@ -589,8 +595,8 @@ onMounted(async () => {
 }
 
 .weight__form-group {
-  // Override basix form-group bottom margin inside grid
   margin-bottom: 0;
+  min-width: 0;
 }
 
 .weight__field-label {
@@ -601,6 +607,10 @@ onMounted(async () => {
   letter-spacing: 0.07em;
   color: var(--secondary-text);
   margin-bottom: calc(#{$spacing} * 0.35);
+}
+
+.weight__date-input {
+  cursor: pointer;
 }
 
 .weight__weight-input {

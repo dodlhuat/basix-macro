@@ -25,7 +25,7 @@
           v-model="localQuery"
           type="search"
           class="diary-add__search-input"
-          placeholder="Lebensmittel suchen …"
+          :placeholder="activeFilter === 'recipes' ? 'Rezept suchen …' : 'Lebensmittel suchen …'"
           aria-label="Lebensmittel suchen"
           autofocus
           @input="handleSearch"
@@ -66,7 +66,7 @@
 
     <!-- Food list -->
     <ul
-      v-if="foodStore.items.length"
+      v-if="activeFilter !== 'recipes' && foodStore.items.length"
       class="diary-add__list"
       role="list"
       aria-label="Lebensmittelliste"
@@ -92,14 +92,9 @@
       </li>
     </ul>
 
-    <!-- Empty states -->
-    <div v-else class="diary-add__empty">
-      <template v-if="localQuery">
-        <AppIcon name="search_off" size="2.5rem" class="diary-add__empty-icon" />
-        <p class="diary-add__empty-title">Keine Treffer</p>
-        <p class="diary-add__empty-hint">Kein Lebensmittel für „{{ localQuery }}" gefunden.</p>
-      </template>
-      <template v-else-if="activeFilter === 'favorites'">
+    <!-- Empty states (only when not searching, not recipes) -->
+    <div v-else-if="activeFilter !== 'recipes' && !localQuery" class="diary-add__empty">
+      <template v-if="activeFilter === 'favorites'">
         <AppIcon name="star_border" size="2.5rem" class="diary-add__empty-icon" />
         <p class="diary-add__empty-title">Keine Favoriten</p>
         <p class="diary-add__empty-hint">Tippe auf ★ bei einem Lebensmittel, um es zu speichern.</p>
@@ -116,8 +111,80 @@
       </template>
     </div>
 
+    <!-- Recipe list -->
+    <ul
+      v-if="activeFilter === 'recipes' && filteredRecipes.length"
+      class="diary-add__list"
+      role="list"
+      aria-label="Rezeptliste"
+    >
+      <li
+        v-for="recipe in filteredRecipes"
+        :key="recipe.id"
+        class="diary-add__item"
+        @click="openRecipeSheet(recipe.id)"
+      >
+        <div class="diary-add__item-body">
+          <span class="diary-add__item-name">{{ recipe.name }}</span>
+          <span v-if="recipe.description" class="diary-add__item-brand">{{ recipe.description }}</span>
+        </div>
+        <div class="diary-add__item-meta">
+          <div class="diary-add__item-kcal-wrap">
+            <span class="diary-add__item-kcal">{{ recipe.servings }}</span>
+            <span class="diary-add__item-kcal-unit">Port.</span>
+          </div>
+          <AppIcon name="chevron_right" size="1.125rem" class="diary-add__item-arrow" />
+        </div>
+      </li>
+    </ul>
+
+    <!-- Recipe empty state -->
+    <div v-else-if="activeFilter === 'recipes'" class="diary-add__empty">
+      <AppIcon name="menu_book" size="2.5rem" class="diary-add__empty-icon" />
+      <p class="diary-add__empty-title">{{ localQuery ? 'Kein Rezept gefunden' : 'Keine Rezepte' }}</p>
+      <p v-if="!localQuery" class="diary-add__empty-hint">Leg zuerst Rezepte an.</p>
+    </div>
+
+    <!-- OFF search results (only when query active, not in recipe mode) -->
+    <div v-if="localQuery && activeFilter !== 'recipes'" class="diary-add__off">
+      <div v-if="isOffLoading" class="diary-add__off-loading">
+        <span class="loading diary-add__off-spinner" />
+        <span class="diary-add__off-loading-text">Online suchen …</span>
+      </div>
+      <template v-else-if="offResults.length">
+        <p class="diary-add__off-header">
+          <AppIcon name="public" size="0.875rem" />
+          Open Food Facts
+        </p>
+        <ul class="diary-add__list" role="list">
+          <li
+            v-for="product in offResults"
+            :key="product.code"
+            class="diary-add__item"
+            @click="addOffProduct(product)"
+          >
+            <div class="diary-add__item-body">
+              <span class="diary-add__item-name">{{ product.product_name }}</span>
+              <span v-if="product.brands" class="diary-add__item-brand">
+                {{ offBrand(product.brands) }}
+              </span>
+            </div>
+            <div class="diary-add__item-meta">
+              <div class="diary-add__item-kcal-wrap">
+                <span class="diary-add__item-kcal">
+                  {{ Math.round(product.nutriments['energy-kcal_100g'] ?? 0) }}
+                </span>
+                <span class="diary-add__item-kcal-unit">kcal</span>
+              </div>
+              <AppIcon name="add" size="1.125rem" class="diary-add__off-add-icon" />
+            </div>
+          </li>
+        </ul>
+      </template>
+    </div>
+
     <!-- Create new food link -->
-    <div class="diary-add__create">
+    <div v-if="activeFilter !== 'recipes'" class="diary-add__create">
       <NuxtLink to="/food/add" class="diary-add__create-link">
         <AppIcon name="add_circle_outline" size="1rem" />
         Neues Lebensmittel anlegen
@@ -260,18 +327,132 @@
 
       </div>
     </div>
+
+    <!-- Recipe bottom sheet -->
+    <div
+      class="bottom-sheet-wrapper"
+      :class="{ 'is-visible': recipeSheetVisible }"
+      :aria-hidden="!recipeSheetVisible"
+    >
+      <div class="bottom-sheet-backdrop" @click="closeRecipeSheet" />
+
+      <div
+        class="bottom-sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Rezept hinzufügen"
+      >
+        <div class="bottom-sheet-handle" aria-hidden="true" />
+
+        <div v-if="isRecipeLoading" class="da-sheet__loading">
+          <span class="loading" />
+        </div>
+
+        <template v-else-if="selectedRecipe">
+          <div class="bottom-sheet-header has-divider">
+            <div class="da-sheet__title-group">
+              <p class="title">{{ selectedRecipe.name }}</p>
+              <p class="subtitle">{{ selectedRecipe.servings }} Portion{{ selectedRecipe.servings === 1 ? '' : 'en' }} · {{ selectedRecipe.ingredients.length }} Zutaten</p>
+            </div>
+            <button class="close button button-icon" aria-label="Schließen" @click="closeRecipeSheet">
+              <AppIcon name="close" size="1.25rem" />
+            </button>
+          </div>
+
+          <div class="bottom-sheet-body">
+
+            <div class="da-sheet__section">
+              <p class="da-sheet__section-label">Portionen</p>
+              <div class="da-sheet__amount">
+                <button
+                  class="button button-outline da-sheet__amount-btn"
+                  :disabled="recipePortions <= 1"
+                  aria-label="Weniger Portionen"
+                  @click="recipePortions = Math.max(1, recipePortions - 1)"
+                >
+                  <AppIcon name="remove" size="1rem" />
+                </button>
+                <div class="form-group da-sheet__amount-group">
+                  <div class="input-group">
+                    <input
+                      v-model.number="recipePortions"
+                      type="number"
+                      min="1"
+                      max="99"
+                      step="1"
+                      aria-label="Anzahl Portionen"
+                      class="da-sheet__amount-input"
+                    />
+                    <span class="da-sheet__amount-unit">Port.</span>
+                  </div>
+                </div>
+                <button
+                  class="button button-outline da-sheet__amount-btn"
+                  aria-label="Mehr Portionen"
+                  @click="recipePortions = Math.min(99, recipePortions + 1)"
+                >
+                  <AppIcon name="add" size="1rem" />
+                </button>
+              </div>
+            </div>
+
+            <div v-if="recipeSheetNutrition" class="da-sheet__nutrition">
+              <div class="da-sheet__nutrition-item">
+                <span class="da-sheet__nutrition-value">{{ recipeSheetNutrition.calories }}</span>
+                <span class="da-sheet__nutrition-label">kcal</span>
+              </div>
+              <div class="da-sheet__nutrition-item">
+                <span class="da-sheet__nutrition-value" style="color: #ef4444">{{ recipeSheetNutrition.protein }}g</span>
+                <span class="da-sheet__nutrition-label">Protein</span>
+              </div>
+              <div class="da-sheet__nutrition-item">
+                <span class="da-sheet__nutrition-value" style="color: #3b82f6">{{ recipeSheetNutrition.carbs }}g</span>
+                <span class="da-sheet__nutrition-label">Kohlenhydrate</span>
+              </div>
+              <div class="da-sheet__nutrition-item">
+                <span class="da-sheet__nutrition-value" style="color: #f59e0b">{{ recipeSheetNutrition.fat }}g</span>
+                <span class="da-sheet__nutrition-label">Fett</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="bottom-sheet-footer">
+            <div class="buttons">
+              <button class="button" @click="closeRecipeSheet">Abbrechen</button>
+              <button
+                class="button button-primary"
+                :disabled="isAddingRecipe"
+                @click="handleAddRecipe"
+              >
+                <span v-if="isAddingRecipe" class="loading" />
+                <template v-else>
+                  <AppIcon name="check" size="1rem" />
+                  Hinzufügen
+                </template>
+              </button>
+            </div>
+          </div>
+        </template>
+
+      </div>
+    </div>
   </Teleport>
 </template>
 
 <script setup lang="ts">
 import type { FoodItem } from '../../../db'
+import type { OFFProduct } from '../../composables/useOpenFoodFacts'
+import type { RecipeWithNutrition } from '../../stores/recipes'
 
 definePageMeta({ title: 'Eintrag hinzufügen' })
 
 const foodStore = useFoodStore()
 const diaryStore = useDiaryStore()
+const recipesStore = useRecipesStore()
 const route = useRoute()
 const router = useRouter()
+const { searchProducts, mapToFoodItem } = useOpenFoodFacts()
 
 // ─── Route params ──────────────────────────────────────────────────────────────
 
@@ -314,15 +495,19 @@ const FILTERS = [
   { key: 'all' as const,       label: 'Alle' },
   { key: 'favorites' as const, label: 'Favoriten' },
   { key: 'recent' as const,    label: 'Zuletzt' },
+  { key: 'recipes' as const,   label: 'Rezepte' },
 ]
 
-const activeFilter = ref<'all' | 'favorites' | 'recent'>('recent')
+const activeFilter = ref<'all' | 'favorites' | 'recent' | 'recipes'>('recent')
 
-async function setFilter(key: 'all' | 'favorites' | 'recent') {
+async function setFilter(key: 'all' | 'favorites' | 'recent' | 'recipes') {
   activeFilter.value = key
   localQuery.value = ''
+  offResults.value = []
+  isOffLoading.value = false
   if (key === 'favorites') await foodStore.loadFavorites()
   else if (key === 'recent') await foodStore.loadRecent()
+  else if (key === 'recipes') await recipesStore.loadAll()
   else await foodStore.loadAll()
 }
 
@@ -330,26 +515,143 @@ async function setFilter(key: 'all' | 'favorites' | 'recent') {
 
 const localQuery = ref('')
 const searchInput = ref<HTMLInputElement | null>(null)
-let searchTimer: ReturnType<typeof setTimeout> | null = null
+let localTimer: ReturnType<typeof setTimeout> | null = null
+let offTimer: ReturnType<typeof setTimeout> | null = null
+
+// ─── OFF search ───────────────────────────────────────────────────────────────
+
+const offResults = ref<OFFProduct[]>([])
+const isOffLoading = ref(false)
+let offSearchId = 0
+
+async function runOffSearch(query: string) {
+  const id = ++offSearchId
+  const results = await searchProducts(query)
+  if (id !== offSearchId) return
+  offResults.value = results
+  isOffLoading.value = false
+}
 
 function handleSearch() {
-  if (searchTimer) clearTimeout(searchTimer)
-  searchTimer = setTimeout(async () => {
-    if (!localQuery.value.trim()) {
-      // Revert to active filter on clear
+  if (localTimer) clearTimeout(localTimer)
+  if (offTimer) clearTimeout(offTimer)
+
+  // In recipe mode: filter client-side, no DB/OFF search needed
+  if (activeFilter.value === 'recipes') return
+
+  const q = localQuery.value.trim()
+
+  if (!q) {
+    offResults.value = []
+    isOffLoading.value = false
+    localTimer = setTimeout(async () => {
       if (activeFilter.value === 'favorites') await foodStore.loadFavorites()
       else if (activeFilter.value === 'recent') await foodStore.loadRecent()
       else await foodStore.loadAll()
-    } else {
-      await foodStore.search(localQuery.value)
-    }
-  }, 300)
+    }, 300)
+    return
+  }
+
+  // Local DB: fast, short debounce
+  localTimer = setTimeout(() => foodStore.search(localQuery.value), 300)
+
+  // OFF API: slower, longer debounce
+  offResults.value = []
+  isOffLoading.value = true
+  offTimer = setTimeout(() => runOffSearch(q), 700)
 }
+
+const filteredRecipes = computed(() => {
+  const q = localQuery.value.trim().toLowerCase()
+  if (!q) return recipesStore.recipes
+  return recipesStore.recipes.filter(r => r.name.toLowerCase().includes(q))
+})
 
 function clearSearch() {
   localQuery.value = ''
+  offResults.value = []
+  isOffLoading.value = false
+  if (localTimer) clearTimeout(localTimer)
+  if (offTimer) clearTimeout(offTimer)
   handleSearch()
   searchInput.value?.focus()
+}
+
+function offBrand(brands: unknown): string {
+  if (Array.isArray(brands)) return String(brands[0] ?? '')
+  if (typeof brands === 'string') return brands.split(',')[0]?.trim() ?? ''
+  return ''
+}
+
+async function addOffProduct(product: OFFProduct) {
+  const existing = product.code ? await foodStore.findByBarcode(product.code) : undefined
+  let id: string
+  if (existing) {
+    id = existing.id
+  }
+  else {
+    id = await foodStore.addItem(mapToFoodItem(product))
+  }
+  const { db } = await import('../../../db')
+  const food = await db.food_items.get(id)
+  if (food) openSheet(food)
+}
+
+// ─── Recipe bottom sheet ──────────────────────────────────────────────────────
+
+const recipeSheetVisible = ref(false)
+const selectedRecipe = ref<RecipeWithNutrition | null>(null)
+const recipePortions = ref(1)
+const isRecipeLoading = ref(false)
+const isAddingRecipe = ref(false)
+
+const recipeSheetNutrition = computed(() => {
+  if (!selectedRecipe.value) return null
+  const f = recipePortions.value / selectedRecipe.value.servings
+  return {
+    calories: Math.round(selectedRecipe.value.total_calories * f),
+    protein:  +(selectedRecipe.value.total_protein_g * f).toFixed(1),
+    carbs:    +(selectedRecipe.value.total_carbs_g   * f).toFixed(1),
+    fat:      +(selectedRecipe.value.total_fat_g     * f).toFixed(1),
+  }
+})
+
+async function openRecipeSheet(id: string) {
+  isRecipeLoading.value = true
+  recipeSheetVisible.value = true
+  document.body.style.overflow = 'hidden'
+  const recipe = await recipesStore.loadRecipe(id)
+  selectedRecipe.value = recipe
+  recipePortions.value = 1
+  isRecipeLoading.value = false
+}
+
+function closeRecipeSheet() {
+  recipeSheetVisible.value = false
+  document.body.style.overflow = ''
+  setTimeout(() => { selectedRecipe.value = null }, 420)
+}
+
+async function handleAddRecipe() {
+  if (!selectedRecipe.value || isAddingRecipe.value) return
+  isAddingRecipe.value = true
+  try {
+    const factor = recipePortions.value / selectedRecipe.value.servings
+    for (const ing of selectedRecipe.value.ingredients) {
+      await diaryStore.addEntry({
+        date:         paramDate,
+        meal_type:    sheetMeal.value,
+        food_item_id: ing.food_item_id,
+        amount_g:     Math.round(ing.amount_g * factor),
+        food:         ing.food,
+      })
+    }
+    closeRecipeSheet()
+    router.back()
+  }
+  finally {
+    isAddingRecipe.value = false
+  }
 }
 
 // ─── Quick-add bottom sheet ────────────────────────────────────────────────────
@@ -402,7 +704,11 @@ async function handleAdd() {
       food:         selectedFood.value,
     })
     closeSheet()
-    router.back()
+    if (route.query.food_id) {
+      await navigateTo('/')
+    } else {
+      router.back()
+    }
   } finally {
     isAdding.value = false
   }
@@ -411,7 +717,10 @@ async function handleAdd() {
 // ─── Keyboard handler ──────────────────────────────────────────────────────────
 
 function onKeydown(e: KeyboardEvent) {
-  if (e.key === 'Escape' && sheetVisible.value) closeSheet()
+  if (e.key === 'Escape') {
+    if (recipeSheetVisible.value) closeRecipeSheet()
+    else if (sheetVisible.value) closeSheet()
+  }
 }
 
 // ─── Lifecycle ─────────────────────────────────────────────────────────────────
@@ -432,7 +741,9 @@ onMounted(async () => {
 onUnmounted(() => {
   window.removeEventListener('keydown', onKeydown)
   document.body.style.overflow = ''
-  if (searchTimer) clearTimeout(searchTimer)
+  if (localTimer) clearTimeout(localTimer)
+  if (offTimer) clearTimeout(offTimer)
+  offSearchId++
 })
 </script>
 
@@ -571,6 +882,12 @@ onUnmounted(() => {
   min-width: 0;
   padding: 0;
 
+  &:hover,
+  &:focus {
+    border-color: transparent;
+    box-shadow: none;
+  }
+
   &::placeholder {
     color: var(--secondary-text);
     opacity: 0.7;
@@ -581,12 +898,25 @@ onUnmounted(() => {
 
 .diary-add__search-clear {
   flex-shrink: 0;
-  color: var(--secondary-text);
-  padding: 0.2rem;
-  margin: -0.2rem;
-  transition: color 150ms ease;
+  width: 1.125rem;
+  height: 1.125rem;
+  min-width: unset;
+  min-height: unset;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--secondary-text);
+  color: var(--primary-bg);
+  opacity: 0.45;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transition: opacity 150ms ease;
 
-  &:hover { color: var(--primary-text); }
+  &:hover,
+  &:focus-visible {
+    opacity: 0.75;
+  }
 }
 
 // ─── Filter chips ─────────────────────────────────────────────────────────────
@@ -724,6 +1054,50 @@ onUnmounted(() => {
   line-height: 1.5;
 }
 
+// ─── OFF section ──────────────────────────────────────────────────────────────
+
+.diary-add__off {
+  display: flex;
+  flex-direction: column;
+  gap: calc(#{$spacing} * 0.5);
+}
+
+.diary-add__off-header {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--secondary-text);
+  padding: 0 calc(#{$spacing} * 0.25);
+}
+
+.diary-add__off-loading {
+  display: flex;
+  align-items: center;
+  gap: calc(#{$spacing} * 0.5);
+  padding: calc(#{$spacing} * 0.75) calc(#{$spacing} * 0.25);
+}
+
+.diary-add__off-spinner {
+  width: 1rem;
+  height: 1rem;
+  border-width: 2px;
+  flex-shrink: 0;
+}
+
+.diary-add__off-loading-text {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+}
+
+.diary-add__off-add-icon {
+  color: var(--accent-color);
+  opacity: 0.7;
+}
+
 // ─── Create new food link ─────────────────────────────────────────────────────
 
 .diary-add__create {
@@ -756,6 +1130,13 @@ onUnmounted(() => {
 }
 
 // ─── Quick-add sheet content ──────────────────────────────────────────────────
+
+.da-sheet__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(#{$spacing} * 2);
+}
 
 .da-sheet__title-group {
   flex: 1;

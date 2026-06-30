@@ -39,6 +39,12 @@
           </NuxtLink>
         </li>
         <li>
+          <NuxtLink to="/body-fat" class="push-menu-item" @click="close">
+            <AppIcon name="straighten" size="1.25rem" />
+            Körperfett
+          </NuxtLink>
+        </li>
+        <li>
           <NuxtLink to="/settings" class="push-menu-item" @click="close">
             <AppIcon name="settings" size="1.25rem" />
             Einstellungen

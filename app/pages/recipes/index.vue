@@ -188,12 +188,19 @@ onMounted(async () => {
 .recipe-list__search-input {
   flex: 1;
   border: none;
+  box-shadow: none;
   background: transparent;
   color: var(--primary-text);
   font-family: inherit;
   font-size: 0.9rem;
   outline: none;
   min-width: 0;
+
+  &:hover,
+  &:focus {
+    border-color: transparent;
+    box-shadow: none;
+  }
 
   &::placeholder {
     color: var(--secondary-text);

@@ -16,6 +16,34 @@
           </div>
           <AppIcon name="chevron_right" size="1.25rem" class="settings__row-chevron" />
         </NuxtLink>
+
+        <div class="settings__section-divider" />
+
+        <div class="settings__row">
+          <div class="settings__row-left">
+            <AppIcon name="auto_graph" size="1.25rem" class="settings__row-icon" />
+            <div class="settings__row-info">
+              <span class="settings__row-label">Kalorienziel automatisch anpassen</span>
+              <span class="settings__row-sub">Gleicht Ziel wöchentlich mit Gewichtsverlauf ab</span>
+            </div>
+          </div>
+          <div class="switch">
+            <input
+              id="adaptive-calories-toggle"
+              type="checkbox"
+              :checked="user?.adaptive_calories_enabled ?? false"
+              @change="userStore.updateSetting('adaptive_calories_enabled', ($event.target as HTMLInputElement).checked)"
+            />
+            <label for="adaptive-calories-toggle"></label>
+          </div>
+        </div>
+
+        <div v-if="user?.adaptive_calories_last_adjusted_at" class="settings__adaptive-hint">
+          Zuletzt angepasst: {{ formatDate(user.adaptive_calories_last_adjusted_at) }}
+          <template v-if="user.adaptive_calories_last_delta_kcal">
+            ({{ user.adaptive_calories_last_delta_kcal > 0 ? '+' : '' }}{{ user.adaptive_calories_last_delta_kcal }} kcal)
+          </template>
+        </div>
       </div>
     </div>
 
@@ -89,10 +117,10 @@
             <AppIcon name="dark_mode" size="1.25rem" class="settings__row-icon" />
             <span class="settings__row-label">Dunkelmodus</span>
           </div>
-          <label class="switch">
-            <input type="checkbox" :checked="isDark" @change="toggleTheme" />
-            <span></span>
-          </label>
+          <div class="switch">
+            <input id="dark-mode-toggle" type="checkbox" :checked="isDark" @change="toggleTheme" />
+            <label for="dark-mode-toggle"></label>
+          </div>
         </div>
 
         <div class="settings__section-divider" />
@@ -254,6 +282,10 @@ async function saveWaterGoal() {
 async function setWaterPreset(ml: number) {
   waterGoalInput.value = ml
   await userStore.updateSetting('water_goal_ml', ml)
+}
+
+function formatDate(iso: string): string {
+  return new Date(iso).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })
 }
 
 async function confirmReset() {
@@ -495,6 +527,13 @@ onMounted(() => userStore.loadUser())
   display: flex;
   gap: calc($spacing * 0.375);
   margin-left: calc(1.25rem + 0.7 * $spacing); // align with label (icon + gap)
+}
+
+// ─── Adaptive hint ────────────────────────────────────────────────
+.settings__adaptive-hint {
+  font-size: 0.75rem;
+  color: var(--secondary-text);
+  padding: 0 $spacing calc($spacing * 0.75);
 }
 
 // ─── Reset modal ──────────────────────────────────────────────────

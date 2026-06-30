@@ -303,7 +303,39 @@
                 </div>
               </li>
             </ul>
-            <div v-else-if="ingSearchQuery" class="recipe-edit-sheet__empty">
+
+            <!-- OFF search results -->
+            <div v-if="ingSearchQuery.trim()" class="recipe-edit-sheet__off">
+              <div v-if="isOffLoading" class="recipe-edit-sheet__off-loading">
+                <span class="loading recipe-edit-sheet__off-spinner" />
+                <span class="recipe-edit-sheet__off-loading-text">Online suchen …</span>
+              </div>
+              <template v-else-if="offResults.length">
+                <p class="recipe-edit-sheet__off-header">
+                  <AppIcon name="public" size="0.875rem" />
+                  Open Food Facts
+                </p>
+                <ul class="recipe-edit-sheet__results" role="list">
+                  <li
+                    v-for="product in offResults"
+                    :key="product.code"
+                    class="recipe-edit-sheet__result-item"
+                    @click="addOffProduct(product)"
+                  >
+                    <div class="recipe-edit-sheet__result-body">
+                      <span class="recipe-edit-sheet__result-name">{{ product.product_name }}</span>
+                      <span v-if="product.brands" class="recipe-edit-sheet__result-brand">{{ offBrand(product.brands) }}</span>
+                    </div>
+                    <div class="recipe-edit-sheet__result-meta">
+                      <span class="recipe-edit-sheet__result-kcal">{{ Math.round(product.nutriments['energy-kcal_100g'] ?? 0) }}</span>
+                      <span class="recipe-edit-sheet__result-kcal-unit">kcal</span>
+                      <AppIcon name="add" size="1.125rem" class="recipe-edit-sheet__off-add-icon" />
+                    </div>
+                  </li>
+                </ul>
+              </template>
+            </div>
+            <div v-else-if="ingSearchQuery && !offResults.length && !isOffLoading" class="recipe-edit-sheet__empty">
               <p>Kein Lebensmittel gefunden.</p>
             </div>
             <div v-else class="recipe-edit-sheet__empty">
@@ -579,12 +611,14 @@
 
 <script setup lang="ts">
 import type { FoodItem } from '../../../../db'
+import type { OFFProduct } from '../../../../composables/useOpenFoodFacts'
 
 definePageMeta({ title: 'Rezept bearbeiten' })
 
 const route = useRoute()
 const recipesStore = useRecipesStore()
 const foodStore = useFoodStore()
+const { searchProducts, mapToFoodItem } = useOpenFoodFacts()
 const diaryStore = useDiaryStore()
 
 // ─── Recipe data ───────────────────────────────────────────────────────────────
@@ -644,6 +678,19 @@ const ingSearchQuery       = ref('')
 const sheetSearchInput     = ref<HTMLInputElement | null>(null)
 let searchTimer: ReturnType<typeof setTimeout> | null = null
 
+const offResults = ref<OFFProduct[]>([])
+const isOffLoading = ref(false)
+let offSearchId = 0
+let offTimer: ReturnType<typeof setTimeout> | null = null
+
+async function runOffSearch(query: string) {
+  const id = ++offSearchId
+  const results = await searchProducts(query)
+  if (id !== offSearchId) return
+  offResults.value = results
+  isOffLoading.value = false
+}
+
 const ingSheetNutrition = computed(() => {
   if (!selectedFood.value || ingAmount.value <= 0) return null
   const f = ingAmount.value / 100
@@ -660,6 +707,8 @@ function openIngSheet() {
   editingIngredientId.value = null
   selectedFood.value        = null
   ingSearchQuery.value      = ''
+  offResults.value          = []
+  isOffLoading.value        = false
   ingAmount.value           = 100
   ingSheetVisible.value     = true
   document.body.style.overflow = 'hidden'
@@ -680,27 +729,62 @@ function closeIngSheet() {
   ingSheetVisible.value = false
   document.body.style.overflow = ''
   if (searchTimer) clearTimeout(searchTimer)
+  if (offTimer) clearTimeout(offTimer)
   setTimeout(() => {
     ingSheetPhase.value       = 'search'
     editingIngredientId.value = null
     selectedFood.value        = null
     ingSearchQuery.value      = ''
+    offResults.value          = []
+    isOffLoading.value        = false
   }, 420)
 }
 
 function handleIngSearch() {
   if (searchTimer) clearTimeout(searchTimer)
-  searchTimer = setTimeout(async () => {
-    if (ingSearchQuery.value.trim()) {
-      await foodStore.search(ingSearchQuery.value)
-    }
-  }, 300)
+  if (offTimer) clearTimeout(offTimer)
+
+  const q = ingSearchQuery.value.trim()
+
+  if (!q) {
+    offResults.value = []
+    isOffLoading.value = false
+    return
+  }
+
+  searchTimer = setTimeout(() => foodStore.search(ingSearchQuery.value), 300)
+
+  offResults.value = []
+  isOffLoading.value = true
+  offTimer = setTimeout(() => runOffSearch(q), 700)
 }
 
 function clearIngSearch() {
   ingSearchQuery.value = ''
+  offResults.value = []
+  isOffLoading.value = false
   if (searchTimer) clearTimeout(searchTimer)
+  if (offTimer) clearTimeout(offTimer)
   sheetSearchInput.value?.focus()
+}
+
+function offBrand(brands: unknown): string {
+  if (Array.isArray(brands)) return String(brands[0] ?? '')
+  if (typeof brands === 'string') return brands.split(',')[0]?.trim() ?? ''
+  return ''
+}
+
+async function addOffProduct(product: OFFProduct) {
+  const existing = product.code ? await foodStore.findByBarcode(product.code) : undefined
+  let id: string
+  if (existing) {
+    id = existing.id
+  } else {
+    id = await foodStore.addItem(mapToFoodItem(product))
+  }
+  const { db } = await import('../../../../db')
+  const food = await db.food_items.get(id)
+  if (food) selectFoodFromSheet(food)
 }
 
 function selectFoodFromSheet(food: FoodItem) {
@@ -837,6 +921,7 @@ onUnmounted(() => {
   window.removeEventListener('keydown', onKeydown)
   document.body.style.overflow = ''
   if (searchTimer) clearTimeout(searchTimer)
+  if (offTimer) clearTimeout(offTimer)
 })
 </script>
 
@@ -1249,6 +1334,50 @@ onUnmounted(() => {
   transition: color 150ms ease;
 
   &:hover { color: var(--primary-text); }
+}
+
+// ─── OFF section ──────────────────────────────────────────────────────────────
+
+.recipe-edit-sheet__off {
+  display: flex;
+  flex-direction: column;
+  gap: calc(#{$spacing} * 0.5);
+}
+
+.recipe-edit-sheet__off-header {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--secondary-text);
+  padding: 0 calc(#{$spacing} * 0.25);
+}
+
+.recipe-edit-sheet__off-loading {
+  display: flex;
+  align-items: center;
+  gap: calc(#{$spacing} * 0.5);
+  padding: calc(#{$spacing} * 0.75) calc(#{$spacing} * 0.25);
+}
+
+.recipe-edit-sheet__off-spinner {
+  width: 1rem;
+  height: 1rem;
+  border-width: 2px;
+  flex-shrink: 0;
+}
+
+.recipe-edit-sheet__off-loading-text {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+}
+
+.recipe-edit-sheet__off-add-icon {
+  color: var(--accent-color);
+  opacity: 0.7;
 }
 
 .recipe-edit-sheet__results {

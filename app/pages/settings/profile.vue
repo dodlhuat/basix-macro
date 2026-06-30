@@ -294,6 +294,7 @@ watch(user, (u) => {
     font-size: 0.78rem;
     color: var(--secondary-text);
     line-height: 1.4;
+    white-space: break-spaces;
   }
 
   &--selected {

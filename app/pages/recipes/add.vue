@@ -171,9 +171,41 @@
         </li>
       </ul>
 
+      <!-- OFF search results -->
+      <div v-if="ingSearchQuery.trim()" class="recipe-add__off">
+        <div v-if="isOffLoading" class="recipe-add__off-loading">
+          <span class="loading recipe-add__off-spinner" />
+          <span class="recipe-add__off-loading-text">Online suchen …</span>
+        </div>
+        <template v-else-if="offResults.length">
+          <p class="recipe-add__off-header">
+            <AppIcon name="public" size="0.875rem" />
+            Open Food Facts
+          </p>
+          <ul class="recipe-add__results" role="list">
+            <li
+              v-for="product in offResults"
+              :key="product.code"
+              class="recipe-add__result-item"
+              @click="addOffProduct(product)"
+            >
+              <div class="recipe-add__result-body">
+                <span class="recipe-add__result-name">{{ product.product_name }}</span>
+                <span v-if="product.brands" class="recipe-add__result-brand">{{ offBrand(product.brands) }}</span>
+              </div>
+              <div class="recipe-add__result-meta">
+                <span class="recipe-add__result-kcal">{{ Math.round(product.nutriments['energy-kcal_100g'] ?? 0) }}</span>
+                <span class="recipe-add__result-kcal-unit">kcal</span>
+                <AppIcon name="add" size="1.125rem" class="recipe-add__off-add-icon" />
+              </div>
+            </li>
+          </ul>
+        </template>
+      </div>
+
       <!-- No search results -->
       <div
-        v-else-if="ingSearchQuery.trim() && !foodStore.items.length"
+        v-if="ingSearchQuery.trim() && !foodStore.items.length && !offResults.length && !isOffLoading"
         class="recipe-add__search-empty"
       >
         <AppIcon name="search_off" size="1.5rem" class="recipe-add__search-empty-icon" />
@@ -375,12 +407,14 @@
 
 <script setup lang="ts">
 import type { FoodItem } from '../../../db'
+import type { OFFProduct } from '../../composables/useOpenFoodFacts'
 
 definePageMeta({ title: 'Neues Rezept' })
 
 const recipesStore = useRecipesStore()
 const foodStore = useFoodStore()
 const router = useRouter()
+const { searchProducts, mapToFoodItem } = useOpenFoodFacts()
 
 // ─── Step state ────────────────────────────────────────────────────────────────
 
@@ -457,19 +491,64 @@ const ingSearchQuery = ref('')
 const ingSearchInput = ref<HTMLInputElement | null>(null)
 let searchTimer: ReturnType<typeof setTimeout> | null = null
 
+const offResults = ref<OFFProduct[]>([])
+const isOffLoading = ref(false)
+let offSearchId = 0
+let offTimer: ReturnType<typeof setTimeout> | null = null
+
+async function runOffSearch(query: string) {
+  const id = ++offSearchId
+  const results = await searchProducts(query)
+  if (id !== offSearchId) return
+  offResults.value = results
+  isOffLoading.value = false
+}
+
 function handleIngSearch() {
   if (searchTimer) clearTimeout(searchTimer)
-  searchTimer = setTimeout(async () => {
-    if (ingSearchQuery.value.trim()) {
-      await foodStore.search(ingSearchQuery.value)
-    }
-  }, 300)
+  if (offTimer) clearTimeout(offTimer)
+
+  const q = ingSearchQuery.value.trim()
+
+  if (!q) {
+    offResults.value = []
+    isOffLoading.value = false
+    return
+  }
+
+  searchTimer = setTimeout(() => foodStore.search(ingSearchQuery.value), 300)
+
+  offResults.value = []
+  isOffLoading.value = true
+  offTimer = setTimeout(() => runOffSearch(q), 700)
 }
 
 function clearIngSearch() {
   ingSearchQuery.value = ''
+  offResults.value = []
+  isOffLoading.value = false
   if (searchTimer) clearTimeout(searchTimer)
+  if (offTimer) clearTimeout(offTimer)
   ingSearchInput.value?.focus()
+}
+
+function offBrand(brands: unknown): string {
+  if (Array.isArray(brands)) return String(brands[0] ?? '')
+  if (typeof brands === 'string') return brands.split(',')[0]?.trim() ?? ''
+  return ''
+}
+
+async function addOffProduct(product: OFFProduct) {
+  const existing = product.code ? await foodStore.findByBarcode(product.code) : undefined
+  let id: string
+  if (existing) {
+    id = existing.id
+  } else {
+    id = await foodStore.addItem(mapToFoodItem(product))
+  }
+  const { db } = await import('../../../db')
+  const food = await db.food_items.get(id)
+  if (food) selectFood(food)
 }
 
 // ─── Ingredient bottom sheet ───────────────────────────────────────────────────
@@ -546,6 +625,7 @@ onUnmounted(() => {
   window.removeEventListener('keydown', onKeydown)
   document.body.style.overflow = ''
   if (searchTimer) clearTimeout(searchTimer)
+  if (offTimer) clearTimeout(offTimer)
 })
 </script>
 
@@ -817,12 +897,19 @@ onUnmounted(() => {
 .recipe-add__search-input {
   flex: 1;
   border: none;
+  box-shadow: none;
   background: transparent;
   color: var(--primary-text);
   font-family: inherit;
   font-size: 0.9rem;
   outline: none;
   min-width: 0;
+
+  &:hover,
+  &:focus {
+    border-color: transparent;
+    box-shadow: none;
+  }
 
   &::placeholder {
     color: var(--secondary-text);
@@ -834,12 +921,69 @@ onUnmounted(() => {
 
 .recipe-add__search-clear {
   flex-shrink: 0;
-  color: var(--secondary-text);
-  padding: 0.2rem;
-  margin: -0.2rem;
-  transition: color 150ms ease;
+  width: 1.125rem;
+  height: 1.125rem;
+  min-width: unset;
+  min-height: unset;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--secondary-text);
+  color: var(--primary-bg);
+  opacity: 0.45;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 150ms ease;
 
-  &:hover { color: var(--primary-text); }
+  &:hover,
+  &:focus-visible {
+    opacity: 0.75;
+  }
+}
+
+// ─── OFF section ──────────────────────────────────────────────────────────────
+
+.recipe-add__off {
+  display: flex;
+  flex-direction: column;
+  gap: calc(#{$spacing} * 0.5);
+}
+
+.recipe-add__off-header {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--secondary-text);
+  padding: 0 calc(#{$spacing} * 0.25);
+}
+
+.recipe-add__off-loading {
+  display: flex;
+  align-items: center;
+  gap: calc(#{$spacing} * 0.5);
+  padding: calc(#{$spacing} * 0.75) calc(#{$spacing} * 0.25);
+}
+
+.recipe-add__off-spinner {
+  width: 1rem;
+  height: 1rem;
+  border-width: 2px;
+  flex-shrink: 0;
+}
+
+.recipe-add__off-loading-text {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+}
+
+.recipe-add__off-add-icon {
+  color: var(--accent-color);
+  opacity: 0.7;
 }
 
 // ─── Search results ───────────────────────────────────────────────────────────

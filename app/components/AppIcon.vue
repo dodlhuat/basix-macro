@@ -5,7 +5,7 @@
     aria-hidden="true"
     focusable="false"
   >
-    <use :href="`/icons.svg#${name}`" />
+    <use :href="`${base}/icons.svg#${name}`" />
   </svg>
 </template>
 
@@ -16,6 +16,8 @@ withDefaults(defineProps<{
 }>(), {
   size: '1.5rem',
 })
+
+const base = useRuntimeConfig().app.baseURL.replace(/\/$/, '')
 </script>
 
 <style scoped>

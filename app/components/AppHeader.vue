@@ -13,17 +13,12 @@
         <span class="wordmark-thin">basix</span><span class="wordmark-bold">makro</span>
       </div>
     </div>
-    <div class="last">
-      <button class="button button-icon" aria-label="Theme wechseln" @click="toggleTheme">
-        <AppIcon :name="isDark ? 'light_mode' : 'dark_mode'" size="1.5rem" />
-      </button>
-    </div>
+    <div class="last"></div>
   </header>
 </template>
 
 <script setup lang="ts">
 const { toggle } = usePushMenu()
-const { isDark, toggleTheme } = useTheme()
 </script>
 
 <style lang="scss" scoped>

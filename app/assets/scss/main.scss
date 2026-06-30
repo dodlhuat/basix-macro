@@ -27,6 +27,7 @@
 @use "@dodlhuat/basix/css/dropdown";
 @use "@dodlhuat/basix/css/chart";
 @use "@dodlhuat/basix/css/calendar";
+@use "@dodlhuat/basix/css/datepicker";
 @use "@dodlhuat/basix/css/checkbox";
 @use "@dodlhuat/basix/css/radiobutton";
 @use "@dodlhuat/basix/css/range-slider";
@@ -43,14 +44,18 @@
 }
 
 
+// Fix: Basix strips right border/radius from inputs followed by any sibling,
+// but only .input-addon gets the matching border box.
+// Restore only when followed by a span (unit label), not a button (e.g. search clear).
+.input-group:not(:has(> .input-addon)) input:not(:last-child):not(:has(~ button)) {
+  border-right: 1.5px solid var(--divider);
+  border-top-right-radius: calc($border-radius * 1.5);
+  border-bottom-right-radius: calc($border-radius * 1.5);
+}
+
 // Global app layout
 *, *::before, *::after {
   box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  overflow: hidden;
 }
 
 body {
@@ -58,27 +63,23 @@ body {
   background: var(--background);
   color: var(--primary-text);
   -webkit-font-smoothing: antialiased;
-}
-
-#__nuxt {
-  height: 100%;
+  overflow-x: hidden;
+  min-height: 100svh;
 }
 
 .app-layout {
-  height: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 100svh;
 }
 
 .push-content {
   flex: 1;
-  overflow-y: auto;
   padding-top: $header-height;
-  -webkit-overflow-scrolling: touch;
 }
 
 .page-content {
   max-width: $app-max-width;
   margin: 0 auto;
-  padding: calc($spacing * 1) $spacing calc($spacing * 2);
+  padding: calc($spacing * 1) $spacing calc($spacing * 2 + env(safe-area-inset-bottom, 0px));
 }

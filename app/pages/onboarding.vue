@@ -153,6 +153,20 @@
             </div>
           </div>
         </div>
+
+        <!-- Adaptive calorie toggle -->
+        <div class="onboarding__adaptive card card-bordered">
+          <div class="onboarding__adaptive-text">
+            <p class="onboarding__adaptive-title">Kalorienziel automatisch anpassen</p>
+            <p class="onboarding__adaptive-desc">
+              Vergleicht deine Gewichtsentwicklung mit dem erwarteten Fortschritt und korrigiert das Ziel wöchentlich — erst nach 2 Wochen Tracking.
+            </p>
+          </div>
+          <div class="switch">
+            <input id="adaptive-toggle" v-model="form.adaptive_calories_enabled" type="checkbox" />
+            <label for="adaptive-toggle"></label>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -190,6 +204,7 @@ definePageMeta({ layout: false })
 
 const { calculate, calcMacros } = useCalorieCalculator()
 const userStore = useUserStore()
+const weightStore = useWeightStore()
 const router = useRouter()
 
 const STEPS = 4
@@ -206,6 +221,7 @@ const form = reactive({
   weight_kg: null as number | null,
   activity_level: 'moderate' as 'sedentary' | 'light' | 'moderate' | 'active' | 'very_active',
   goal: 'maintain' as 'cut' | 'light_cut' | 'maintain' | 'lean_bulk' | 'bulk',
+  adaptive_calories_enabled: false,
 })
 
 const genderOptions: { value: 'male' | 'female' | 'other', label: string }[] = [
@@ -308,10 +324,14 @@ async function finish() {
     unit_system: 'metric',
     water_goal_ml: 2000,
     dark_mode: false,
+    adaptive_calories_enabled: form.adaptive_calories_enabled,
     created_at: now,
     updated_at: now,
     sync_status: 'local',
   })
+
+  const today = now.slice(0, 10)
+  await weightStore.addEntry(form.weight_kg, today)
 
   await router.replace('/')
 }
@@ -598,6 +618,33 @@ async function finish() {
       font-size: 0.7rem;
       color: var(--secondary-text);
     }
+  }
+
+  &__adaptive {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing;
+    padding: $spacing;
+  }
+
+  &__adaptive-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__adaptive-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: var(--primary-text);
+  }
+
+  &__adaptive-desc {
+    font-size: 0.78rem;
+    color: var(--secondary-text);
+    line-height: 1.45;
+    margin: 0;
   }
 
   &__nav {

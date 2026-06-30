@@ -74,7 +74,9 @@ export function useOpenFoodFacts() {
 
     return {
       name: product.product_name?.trim() || '',
-      brand: product.brands?.split(',')[0]?.trim() || undefined,
+      brand: Array.isArray(product.brands)
+        ? (product.brands[0] ?? undefined)
+        : (product.brands?.split(',')[0]?.trim() || undefined),
       barcode: product.code,
       calories_per_100g: Math.round(cal),
       protein_per_100g:  Math.round(prot  * 10) / 10,
@@ -87,5 +89,18 @@ export function useOpenFoodFacts() {
     }
   }
 
-  return { lookupBarcode, mapToFoodItem }
+  async function searchProducts(query: string): Promise<OFFProduct[]> {
+    try {
+      const url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${encodeURIComponent(query)}&search_simple=1&action=process&json=1&page_size=10&fields=code,product_name,brands,serving_quantity,serving_size,nutriments`
+      const response = await fetch(url)
+      if (!response.ok) return []
+      const data = await response.json() as { products?: OFFProduct[] }
+      return (data.products ?? []).filter(p => p.product_name?.trim())
+    }
+    catch {
+      return []
+    }
+  }
+
+  return { lookupBarcode, searchProducts, mapToFoodItem }
 }

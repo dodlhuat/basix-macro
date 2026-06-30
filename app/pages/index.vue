@@ -21,6 +21,7 @@
       <button
         class="button button-icon dashboard__date-btn"
         aria-label="Nächster Tag"
+        :disabled="isToday"
         @click="nextDay"
       >
         <AppIcon name="chevron_right" />
@@ -224,14 +225,21 @@ const { streak } = useStreak()
 
 // ─── Date state ───────────────────────────────────────────────────────────────
 
-const currentDate = ref<string>(new Date().toISOString().substring(0, 10))
+function toLocalDateStr(d: Date): string {
+  const y = d.getFullYear()
+  const m = String(d.getMonth() + 1).padStart(2, '0')
+  const day = String(d.getDate()).padStart(2, '0')
+  return `${y}-${m}-${day}`
+}
+
+const currentDate = ref<string>(toLocalDateStr(new Date()))
 
 const isToday = computed(() =>
-  currentDate.value === new Date().toISOString().split('T')[0]
+  currentDate.value === toLocalDateStr(new Date())
 )
 
 function toDateStr(d: Date): string {
-  return d.toISOString().substring(0, 10)
+  return toLocalDateStr(d)
 }
 
 const formattedDate = computed(() => {
@@ -255,7 +263,7 @@ function nextDay() {
 }
 
 function goToToday() {
-  currentDate.value = toDateStr(new Date())
+  currentDate.value = toLocalDateStr(new Date())
 }
 
 // ─── Store data ───────────────────────────────────────────────────────────────

@@ -90,8 +90,42 @@
       </li>
     </ul>
 
+    <!-- OFF search results -->
+    <div v-if="localQuery" class="food__off">
+      <div v-if="isOffLoading" class="food__off-loading">
+        <span class="loading food__off-spinner" />
+        <span class="food__off-loading-text">Online suchen …</span>
+      </div>
+      <template v-else-if="offResults.length">
+        <p class="food__off-header">
+          <AppIcon name="public" size="0.875rem" />
+          Open Food Facts
+        </p>
+        <ul class="food__list" role="list">
+          <li
+            v-for="product in offResults"
+            :key="product.code"
+            class="food__item food__off-item"
+            @click="addOffProduct(product)"
+          >
+            <div class="food__item-body">
+              <span class="food__item-name">{{ product.product_name }}</span>
+              <span v-if="product.brands" class="food__item-brand">{{ offBrand(product.brands) }}</span>
+            </div>
+            <div class="food__item-meta">
+              <div class="food__item-kcal-wrap">
+                <span class="food__item-kcal">{{ Math.round(product.nutriments['energy-kcal_100g'] ?? 0) }}</span>
+                <span class="food__item-kcal-unit">kcal</span>
+              </div>
+              <AppIcon name="add" size="1.125rem" class="food__off-add-icon" />
+            </div>
+          </li>
+        </ul>
+      </template>
+    </div>
+
     <!-- Empty states -->
-    <div v-else class="food__empty">
+    <div v-else-if="!localQuery || (!foodStore.items.length && !offResults.length && !isOffLoading)" class="food__empty">
       <template v-if="localQuery">
         <AppIcon name="search_off" size="2.5rem" class="food__empty-icon" />
         <p class="food__empty-title">Keine Treffer</p>
@@ -278,10 +312,12 @@
 
 <script setup lang="ts">
 import type { FoodItem } from '../../../db'
+import type { OFFProduct } from '../../composables/useOpenFoodFacts'
 
 definePageMeta({ title: 'Lebensmittel' })
 
 const foodStore = useFoodStore()
+const { searchProducts, mapToFoodItem } = useOpenFoodFacts()
 const diaryStore = useDiaryStore()
 const route = useRoute()
 const router = useRouter()
@@ -307,15 +343,47 @@ const localQuery = ref('')
 const searchInput = ref<HTMLInputElement | null>(null)
 let searchTimer: ReturnType<typeof setTimeout> | null = null
 
+// ─── OFF state ────────────────────────────────────────────────────────────────
+
+const offResults = ref<OFFProduct[]>([])
+const isOffLoading = ref(false)
+let offSearchId = 0
+let offTimer: ReturnType<typeof setTimeout> | null = null
+
+async function runOffSearch(query: string) {
+  const id = ++offSearchId
+  const results = await searchProducts(query)
+  if (id !== offSearchId) return
+  offResults.value = results
+  isOffLoading.value = false
+}
+
 function handleSearch() {
   if (searchTimer) clearTimeout(searchTimer)
-  searchTimer = setTimeout(() => {
-    foodStore.search(localQuery.value)
-  }, 300)
+  if (offTimer) clearTimeout(offTimer)
+
+  const q = localQuery.value.trim()
+
+  if (!q) {
+    offResults.value = []
+    isOffLoading.value = false
+    searchTimer = setTimeout(() => foodStore.search(''), 300)
+    return
+  }
+
+  searchTimer = setTimeout(() => foodStore.search(localQuery.value), 300)
+
+  offResults.value = []
+  isOffLoading.value = true
+  offTimer = setTimeout(() => runOffSearch(q), 700)
 }
 
 function clearSearch() {
   localQuery.value = ''
+  offResults.value = []
+  isOffLoading.value = false
+  if (searchTimer) clearTimeout(searchTimer)
+  if (offTimer) clearTimeout(offTimer)
   foodStore.search('')
   searchInput.value?.focus()
 }
@@ -325,6 +393,8 @@ function clearSearch() {
 async function setFilter(key: 'all' | 'favorites' | 'recent') {
   foodStore.activeFilter = key
   localQuery.value = ''
+  offResults.value = []
+  isOffLoading.value = false
   foodStore.searchQuery = ''
   if (key === 'favorites') await foodStore.loadFavorites()
   else if (key === 'recent') await foodStore.loadRecent()
@@ -406,6 +476,27 @@ async function handleAdd() {
   }
 }
 
+// ─── OFF helpers ──────────────────────────────────────────────────────────────
+
+function offBrand(brands: unknown): string {
+  if (Array.isArray(brands)) return String(brands[0] ?? '')
+  if (typeof brands === 'string') return brands.split(',')[0]?.trim() ?? ''
+  return ''
+}
+
+async function addOffProduct(product: OFFProduct) {
+  const existing = product.code ? await foodStore.findByBarcode(product.code) : undefined
+  let id: string
+  if (existing) {
+    id = existing.id
+  } else {
+    id = await foodStore.addItem(mapToFoodItem(product))
+  }
+  const { db } = await import('../../../db')
+  const food = await db.food_items.get(id)
+  if (food) openSheet(food)
+}
+
 // ─── Keyboard handler ──────────────────────────────────────────────────────────
 
 function onKeydown(e: KeyboardEvent) {
@@ -423,6 +514,7 @@ onUnmounted(() => {
   window.removeEventListener('keydown', onKeydown)
   document.body.style.overflow = ''
   if (searchTimer) clearTimeout(searchTimer)
+  if (offTimer) clearTimeout(offTimer)
 })
 </script>
 
@@ -503,12 +595,20 @@ onUnmounted(() => {
 .food__search-input {
   flex: 1;
   border: none;
+  box-shadow: none;
   background: transparent;
   color: var(--primary-text);
   font-family: inherit;
   font-size: 0.9rem;
   outline: none;
   min-width: 0;
+
+  // Focus ring is handled by .food__search-field :focus-within — suppress input-level styles
+  &:hover,
+  &:focus {
+    border-color: transparent;
+    box-shadow: none;
+  }
 
   &::placeholder {
     color: var(--secondary-text);
@@ -857,5 +957,53 @@ onUnmounted(() => {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   text-align: center;
+}
+
+// ─── OFF section ──────────────────────────────────────────────────────────────
+
+.food__off {
+  display: flex;
+  flex-direction: column;
+  gap: calc(#{$spacing} * 0.5);
+}
+
+.food__off-header {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--secondary-text);
+  padding: 0 calc(#{$spacing} * 0.25);
+}
+
+.food__off-loading {
+  display: flex;
+  align-items: center;
+  gap: calc(#{$spacing} * 0.5);
+  padding: calc(#{$spacing} * 0.75) calc(#{$spacing} * 0.25);
+}
+
+.food__off-spinner {
+  width: 1rem;
+  height: 1rem;
+  border-width: 2px;
+  flex-shrink: 0;
+}
+
+.food__off-loading-text {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+}
+
+.food__off-add-icon {
+  color: var(--accent-color);
+  flex-shrink: 0;
+}
+
+.food__off-item {
+  cursor: pointer;
 }
 </style>
