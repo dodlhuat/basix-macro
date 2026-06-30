@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "deploy": "nuxt generate && rsync -avz --delete .output/public/ world4you:web/basixmacro/",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "test": "vitest run",
