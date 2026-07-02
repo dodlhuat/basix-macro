@@ -8,7 +8,7 @@
 
     <!-- Not found -->
     <div v-else-if="!food" class="food-form__not-found">
-      <AppIcon name="error_outline" size="2.5rem" class="food-form__not-found-icon" />
+      <AppIcon name="error" size="2.5rem" class="food-form__not-found-icon" />
       <p>Lebensmittel nicht gefunden.</p>
       <button class="button button-outline" @click="navigateTo('/food')">Zurück</button>
     </div>
@@ -30,7 +30,7 @@
           aria-label="Lebensmittel löschen"
           @click="showDeleteModal = true"
         >
-          <AppIcon name="delete_outline" size="1.25rem" />
+          <AppIcon name="delete" size="1.25rem" />
         </button>
       </div>
 

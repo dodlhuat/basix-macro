@@ -118,6 +118,13 @@ function resetForm() {
   display: flex;
   flex-direction: column;
 
+  // Auth screens stay a single centered reading column even on wide
+  // viewports — just a wider one. No grid/multi-column treatment; a
+  // stretched-out login form looks worse, not better.
+  @media (min-width: $breakpoint-tablet) {
+    max-width: 30rem;
+  }
+
   &__back {
     align-self: flex-start;
     margin-bottom: calc($spacing * 0.75);

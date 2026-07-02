@@ -76,10 +76,44 @@ body {
 .push-content {
   flex: 1;
   padding-top: $header-height;
+
+  // Desktop: PushMenu becomes a permanent left sidebar (see AppPushMenu.vue),
+  // so the content column needs a permanent left offset instead of the
+  // mobile overlay's transform-based "push". Neutralize any leftover
+  // `.pushed` transform state too (e.g. resizing from mobile to desktop
+  // without a page reload, or reduced-motion setups) so content never
+  // visually shifts once the sidebar is permanently docked.
+  @media (min-width: $breakpoint-desktop) {
+    margin-left: $sidebar-width;
+
+    &.pushed {
+      transform: none;
+    }
+  }
 }
 
 .page-content {
   max-width: $app-max-width;
   margin: 0 auto;
   padding: calc($spacing * 1) $spacing calc($spacing * 2 + env(safe-area-inset-bottom, 0px));
+
+  // Tablet: content gets meaningfully more breathing room than the 480px
+  // phone column, without yet trying to be a multi-column desktop layout.
+  @media (min-width: $breakpoint-tablet) {
+    max-width: 640px;
+    padding-left: calc($spacing * 1.5);
+    padding-right: calc($spacing * 1.5);
+  }
+
+  // Desktop: sidebar nav has already claimed the left edge of the viewport
+  // (via .push-content's margin-left above), so this max-width/margin:auto
+  // centers the reading column within the *remaining* space. Individual
+  // pages (dashboard, food, recipes) widen further and/or go multi-column
+  // in their own scoped styles when a single column stops making sense.
+  @media (min-width: $breakpoint-desktop) {
+    max-width: 760px;
+    padding-top: calc($spacing * 1.5);
+    padding-left: calc($spacing * 2);
+    padding-right: calc($spacing * 2);
+  }
 }

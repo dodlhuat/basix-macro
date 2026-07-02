@@ -95,7 +95,7 @@
     <!-- Empty states (only when not searching, not recipes) -->
     <div v-else-if="activeFilter !== 'recipes' && !localQuery" class="diary-add__empty">
       <template v-if="activeFilter === 'favorites'">
-        <AppIcon name="star_border" size="2.5rem" class="diary-add__empty-icon" />
+        <AppIcon name="star" size="2.5rem" class="diary-add__empty-icon" />
         <p class="diary-add__empty-title">{{ $t('diary.empty.favorites') }}</p>
         <p class="diary-add__empty-hint">{{ $t('diary.empty.favoritesHint') }}</p>
       </template>
@@ -186,7 +186,7 @@
     <!-- Create new food link -->
     <div v-if="activeFilter !== 'recipes'" class="diary-add__create">
       <NuxtLink to="/food/add" class="diary-add__create-link">
-        <AppIcon name="add_circle_outline" size="1rem" />
+        <AppIcon name="add_circle" size="1rem" />
         {{ $t('diary.createFood') }}
       </NuxtLink>
     </div>

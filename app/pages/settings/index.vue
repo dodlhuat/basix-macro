@@ -153,7 +153,7 @@
 
         <div class="settings__row">
           <div class="settings__row-left">
-            <AppIcon name="auto_graph" size="1.25rem" class="settings__row-icon" />
+            <AppIcon name="show_chart" size="1.25rem" class="settings__row-icon" />
             <div class="settings__row-info">
               <span class="settings__row-label">{{ $t('settings.adaptiveCalories') }}</span>
               <span class="settings__row-sub">{{ $t('settings.adaptiveCaloriesSub') }}</span>

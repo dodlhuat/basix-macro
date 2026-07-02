@@ -349,6 +349,12 @@ async function finish() {
   padding: calc($spacing * 2) $spacing 0;
   gap: calc($spacing * 1.5);
 
+  // Stepper flow stays a single centered column even on wide viewports —
+  // just a wider one, matching the other auth-adjacent screens.
+  @media (min-width: $breakpoint-tablet) {
+    max-width: 34rem;
+  }
+
   &__header {
     text-align: center;
     flex-shrink: 0;

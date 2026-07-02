@@ -233,7 +233,7 @@
               :aria-label="`${ing.food.name} entfernen`"
               @click="handleRemoveIngredient(ing)"
             >
-              <AppIcon name="delete_outline" size="1.125rem" />
+              <AppIcon name="delete" size="1.125rem" />
             </button>
           </li>
         </ul>

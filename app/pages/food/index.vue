@@ -74,7 +74,7 @@
             @click.stop="foodStore.toggleFavorite(item.id)"
           >
             <AppIcon
-              :name="item.is_favorite ? 'star' : 'star_border'"
+              name="star"
               size="1.125rem"
             />
           </button>
@@ -171,7 +171,7 @@
       </template>
 
       <template v-else-if="foodStore.activeFilter === 'favorites'">
-        <AppIcon name="star_border" size="2.5rem" class="food__empty-icon" />
+        <AppIcon name="star" size="2.5rem" class="food__empty-icon" />
         <p class="food__empty-title">{{ $t('food.empty.favorites') }}</p>
         <p class="food__empty-hint">{{ $t('food.empty.favoritesHint') }}</p>
       </template>
@@ -1175,5 +1175,36 @@ onUnmounted(() => {
 
 .food__off-item {
   cursor: pointer;
+}
+
+// ─── Desktop: connected list → card grid ───────────────────────────────────
+// The single-column "connected list" (hairline dividers, shared rounded
+// outer corners) is a mobile-idiomatic pattern that reads as a wasted,
+// overly-tall column at desktop widths. At this breakpoint each item
+// becomes its own independent rounded card in a responsive grid instead —
+// the divider/seam background and first/last-child corner-rounding rules
+// stay untouched (and unused) below $breakpoint-desktop.
+// Placed at the end of the stylesheet (not right after `.food`) so it wins
+// the cascade over the unconditional `.food__list`/`.food__item` rules above,
+// which come later in source order than a media query placed near the top.
+@media (min-width: $breakpoint-desktop) {
+  .food {
+    max-width: 1080px;
+  }
+
+  .food__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: calc(#{$spacing} * 0.75);
+    background: transparent;
+  }
+
+  .food__item,
+  .food__item:first-child,
+  .food__item:last-child,
+  .food__item:only-child {
+    border-radius: var(--radius-lg);
+    box-shadow: $shadow;
+  }
 }
 </style>

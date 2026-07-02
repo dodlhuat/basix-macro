@@ -4,6 +4,17 @@
 $app-max-width: 480px;
 $header-height: 3rem;
 
+// ─── Responsive breakpoints ─────────────────────────────────────────────────
+// Mobile-first: base rules (no media query) target phones and must never change.
+// Everything above is additive, gated behind these min-width queries only.
+$breakpoint-tablet: 768px;   // large phones / small tablets — content gets more room
+$breakpoint-desktop: 1280px; // tablet landscape / desktop — persistent sidebar nav kicks in
+
+// Width of the persistent sidebar nav shown at $breakpoint-desktop and up.
+// Matches the mobile PushMenu overlay's own $menu-width (push-menu.scss) for
+// visual continuity between the two nav presentations of the same component.
+$sidebar-width: 280px;
+
 $macro-protein: #ef4444;
 $macro-carbs:   #3b82f6;
 $macro-fat:     #f59e0b;

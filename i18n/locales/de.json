@@ -101,6 +101,7 @@
   },
   "food": {
     "title": "Lebensmittel",
+    "addTitle": "Neues Lebensmittel",
     "searchPlaceholder": "Lebensmittel suchen …",
     "clearSearch": "Suche löschen",
     "addNew": "Neues Lebensmittel",
@@ -130,12 +131,14 @@
       "add": "Zu Favoriten hinzufügen",
       "remove": "Aus Favoriten entfernen"
     },
+    "listLabel": "Lebensmittelliste",
+    "editItem": "bearbeiten",
     "form": {
       "title": "Neues Lebensmittel",
       "name": "Name",
       "brand": "Marke",
-      "nutrients": "Nährwerte pro 100g",
-      "further": "Weitere Angaben",
+      "nutrientsPer100": "Nährwerte pro 100g",
+      "optionalTitle": "Weitere Angaben",
       "fiber": "Ballaststoffe",
       "sugar": "Zucker",
       "barcode": "Barcode",
@@ -190,31 +193,31 @@
   "bodyFat": {
     "title": "Körperfett",
     "notCalculated": "Noch nicht berechnet",
-    "fillProfile": "Bitte fülle zuerst dein",
-    "profile": "Profil",
-    "fillProfileSuffix": "aus, um die Körperfett-Berechnung nutzen zu können.",
-    "enterMeasurements": "Maße eingeben",
+    "noProfilePre": "Bitte fülle zuerst dein",
+    "noProfileLink": "Profil",
+    "noProfilePost": "aus, um die Körperfett-Berechnung nutzen zu können.",
+    "measurements": "Maße eingeben",
     "height": "Körpergröße",
     "neck": "Hals",
     "waist": "Taille",
     "hip": "Hüfte",
     "calculate": "Berechnen",
-    "aboutNavy": "Über die Navy-Methode",
-    "navyText1": "Die US-Navy-Methode schätzt den Körperfettanteil anhand einfacher Körpermaße – ohne Geräte oder Spezialtechnik. Sie kombiniert Hals- und Taillenumfang (bei Frauen zusätzlich Hüfte) mit der Körpergröße zu einer validierten Formel.",
-    "navyText2": "Die Methode stammt vom U.S. Naval Health Research Center und gilt als zuverlässige Schätzung für gesunde Erwachsene mit einer Genauigkeit von ± 3 %.",
+    "navyTitle": "Über die Navy-Methode",
+    "navyDesc1": "Die US-Navy-Methode schätzt den Körperfettanteil anhand einfacher Körpermaße – ohne Geräte oder Spezialtechnik. Sie kombiniert Hals- und Taillenumfang (bei Frauen zusätzlich Hüfte) mit der Körpergröße zu einer validierten Formel.",
+    "navyDesc2": "Die Methode stammt vom U.S. Naval Health Research Center und gilt als zuverlässige Schätzung für gesunde Erwachsene mit einer Genauigkeit von ± 3 %.",
     "categories": "Kategorien",
     "men": "Männer",
     "women": "Frauen",
     "cat": {
       "essential": "Essenziell",
-      "athleteMale": "Sportler",
-      "athleteFemale": "Sportlich",
+      "athlete": "Sportler",
+      "athleteF": "Sportlich",
       "fitness": "Fitness",
       "average": "Durchschnitt",
       "obese": "Übergewicht"
     },
-    "errorImplausible": "Unplausibles Ergebnis – bitte prüfe die eingegebenen Maße.",
-    "errorInvalid": "Ungültige Eingabe – bitte prüfe die eingegebenen Werte."
+    "errorResult": "Unplausibles Ergebnis – bitte prüfe die eingegebenen Maße.",
+    "errorInput": "Ungültige Eingabe – bitte prüfe die eingegebenen Werte."
   },
   "settings": {
     "title": "Einstellungen",
@@ -325,12 +328,12 @@
     "searchPlaceholder": "Rezept suchen …",
     "clearSearch": "Suche löschen",
     "servings": "Portion | Portionen",
+    "create": "Rezept erstellen",
     "empty": {
       "noResults": "Keine Treffer",
       "noResultsHint": "Kein Rezept für «{query}» gefunden.",
-      "noRecipes": "Noch keine Rezepte",
-      "noRecipesHint": "Erstelle dein erstes Rezept.",
-      "createBtn": "Rezept erstellen"
+      "title": "Noch keine Rezepte",
+      "hint": "Erstelle dein erstes Rezept."
     }
   },
   "camera": {

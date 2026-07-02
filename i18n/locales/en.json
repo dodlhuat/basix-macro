@@ -101,6 +101,7 @@
   },
   "food": {
     "title": "Foods",
+    "addTitle": "New food",
     "searchPlaceholder": "Search food …",
     "clearSearch": "Clear search",
     "addNew": "New food",
@@ -130,12 +131,14 @@
       "add": "Add to favorites",
       "remove": "Remove from favorites"
     },
+    "listLabel": "Food list",
+    "editItem": "edit",
     "form": {
       "title": "New food",
       "name": "Name",
       "brand": "Brand",
-      "nutrients": "Nutritional values per 100g",
-      "further": "Additional info",
+      "nutrientsPer100": "Nutritional values per 100g",
+      "optionalTitle": "Additional info",
       "fiber": "Fiber",
       "sugar": "Sugar",
       "barcode": "Barcode",
@@ -190,31 +193,31 @@
   "bodyFat": {
     "title": "Body Fat",
     "notCalculated": "Not yet calculated",
-    "fillProfile": "Please fill in your",
-    "profile": "Profile",
-    "fillProfileSuffix": "first to use the body fat calculator.",
-    "enterMeasurements": "Enter measurements",
+    "noProfilePre": "Please fill in your",
+    "noProfileLink": "Profile",
+    "noProfilePost": "first to use the body fat calculator.",
+    "measurements": "Enter measurements",
     "height": "Height",
     "neck": "Neck",
     "waist": "Waist",
     "hip": "Hip",
     "calculate": "Calculate",
-    "aboutNavy": "About the Navy Method",
-    "navyText1": "The US Navy method estimates body fat percentage using simple body measurements — no devices or special equipment needed. It combines neck and waist circumference (plus hip for women) with height in a validated formula.",
-    "navyText2": "The method was developed by the U.S. Naval Health Research Center and is considered a reliable estimate for healthy adults with an accuracy of ± 3 %.",
+    "navyTitle": "About the Navy Method",
+    "navyDesc1": "The US Navy method estimates body fat percentage using simple body measurements — no devices or special equipment needed. It combines neck and waist circumference (plus hip for women) with height in a validated formula.",
+    "navyDesc2": "The method was developed by the U.S. Naval Health Research Center and is considered a reliable estimate for healthy adults with an accuracy of ± 3 %.",
     "categories": "Categories",
     "men": "Men",
     "women": "Women",
     "cat": {
       "essential": "Essential",
-      "athleteMale": "Athlete",
-      "athleteFemale": "Athletic",
+      "athlete": "Athlete",
+      "athleteF": "Athletic",
       "fitness": "Fitness",
       "average": "Average",
       "obese": "Obese"
     },
-    "errorImplausible": "Implausible result – please check your measurements.",
-    "errorInvalid": "Invalid input – please check the entered values."
+    "errorResult": "Implausible result – please check your measurements.",
+    "errorInput": "Invalid input – please check the entered values."
   },
   "settings": {
     "title": "Settings",
@@ -325,12 +328,12 @@
     "searchPlaceholder": "Search recipe …",
     "clearSearch": "Clear search",
     "servings": "serving | servings",
+    "create": "Create recipe",
     "empty": {
       "noResults": "No results",
       "noResultsHint": "No recipe found for «{query}».",
-      "noRecipes": "No recipes yet",
-      "noRecipesHint": "Create your first recipe.",
-      "createBtn": "Create recipe"
+      "title": "No recipes yet",
+      "hint": "Create your first recipe."
     }
   },
   "camera": {

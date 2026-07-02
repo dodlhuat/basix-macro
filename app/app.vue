@@ -13,7 +13,7 @@
     <!-- Adaptive calories toast -->
     <Transition name="app-toast">
       <div v-if="adaptiveToast" class="app-toast" role="status" aria-live="polite">
-        <AppIcon name="auto_graph" size="1rem" class="app-toast__icon" />
+        <AppIcon name="show_chart" size="1rem" class="app-toast__icon" />
         <span class="app-toast__text">{{ adaptiveToast }}</span>
       </div>
     </Transition>
@@ -53,6 +53,15 @@ onMounted(async () => {
 
 <style lang="scss">
 @use "@dodlhuat/basix/css/parameters" as *;
+@use "~/assets/scss/variables" as *;
+
+// Desktop: nav is a permanent sidebar (see AppPushMenu.vue), there's nothing
+// to scrim behind — the mobile overlay backdrop must never appear here.
+@media (min-width: $breakpoint-desktop) {
+  .push-menu-backdrop {
+    display: none !important;
+  }
+}
 
 .app-toast {
   position: fixed;

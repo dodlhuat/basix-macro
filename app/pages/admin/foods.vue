@@ -71,7 +71,7 @@
             <span class="badge" :class="statusBadgeClass(s.status)">{{ statusLabel(s.status) }}</span>
             <AppIcon
               v-if="s.status === 'pending'"
-              name="expand_more"
+              name="keyboard_arrow_down"
               size="1.15rem"
               class="admin-foods__item-chevron"
               :class="{ 'admin-foods__item-chevron--open': expandedId === s.id }"
@@ -153,7 +153,7 @@
         <!-- Approved/rejected: delete -->
         <div v-else class="admin-foods__actions admin-foods__actions--reviewed">
           <button type="button" class="button button-outline admin-foods__delete-btn" @click="openDelete(s)">
-            <AppIcon name="delete_outline" size="1rem" />
+            <AppIcon name="delete" size="1rem" />
             {{ $t('common.delete') }}
           </button>
         </div>

@@ -904,4 +904,34 @@ watch(currentDate, date => diaryStore.loadForDate(date))
     outline-offset: 3px;
   }
 }
+
+// ─── Desktop: asymmetric 2-column grid ─────────────────────────────────────
+// The stacked mobile order (date nav → hero → macros → water → meals) is a
+// poor fit for a wide viewport — it leaves the page reading as one long,
+// oddly-wide column. Instead: a wide primary column (today's calories +
+// meals, the two things you actually scan first) and a narrower "at a
+// glance" rail (macros + water) beside it. `.dashboard.page-content` beats
+// the shared `.page-content` max-width via scoped-attribute specificity.
+// Placed at the end of the stylesheet so it reliably wins the cascade over
+// any of the unconditional per-section rules above.
+@media (min-width: $breakpoint-desktop) {
+  .dashboard {
+    max-width: 1080px;
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    grid-template-areas:
+      "nav    nav"
+      "hero   macros"
+      "water  macros"
+      "meals  meals";
+    align-items: start;
+    gap: calc(#{$spacing} * 1.25);
+  }
+
+  .dashboard__date-nav { grid-area: nav; }
+  .dashboard__hero     { grid-area: hero; }
+  .dashboard__macros   { grid-area: macros; height: 100%; }
+  .dashboard__water    { grid-area: water; }
+  .dashboard__meals    { grid-area: meals; }
+}
 </style>

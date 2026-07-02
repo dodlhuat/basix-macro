@@ -184,7 +184,7 @@
               :aria-label="`Eintrag vom ${formatDate(entry.date)} löschen`"
               @click="handleDelete(entry.id)"
             >
-              <AppIcon name="delete_outline" size="1.125rem" />
+              <AppIcon name="delete" size="1.125rem" />
             </button>
           </div>
         </li>

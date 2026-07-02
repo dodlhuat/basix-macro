@@ -373,4 +373,31 @@ onMounted(async () => {
     outline-offset: 3px;
   }
 }
+
+// ─── Desktop: connected list → card grid ───────────────────────────────────
+// Same treatment as the food list (app/pages/food/index.vue) — a single
+// hairline-divided column looks sparse and overly tall on wide viewports,
+// so each recipe becomes its own card in a responsive grid instead.
+// Placed at the end of the stylesheet so it wins the cascade over the
+// unconditional `.recipe-list__items`/`.recipe-list__item` rules above.
+@media (min-width: $breakpoint-desktop) {
+  .recipe-list {
+    max-width: 1080px;
+  }
+
+  .recipe-list__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: calc(#{$spacing} * 0.75);
+    background: transparent;
+  }
+
+  .recipe-list__item,
+  .recipe-list__item:first-child,
+  .recipe-list__item:last-child,
+  .recipe-list__item:only-child {
+    border-radius: var(--radius-lg);
+    box-shadow: $shadow;
+  }
+}
 </style>

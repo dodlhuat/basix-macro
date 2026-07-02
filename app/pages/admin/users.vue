@@ -44,7 +44,7 @@
             :aria-label="`${u.name} ${$t('common.delete')}`"
             @click.stop="openDeleteConfirm(u)"
           >
-            <AppIcon name="delete_outline" size="1.05rem" />
+            <AppIcon name="delete" size="1.05rem" />
           </button>
 
           <AppIcon name="chevron_right" size="1.05rem" class="admin-users__item-chevron" />
