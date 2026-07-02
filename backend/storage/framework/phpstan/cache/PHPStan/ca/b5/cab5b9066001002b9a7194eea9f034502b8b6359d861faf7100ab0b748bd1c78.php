@@ -325,7 +325,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php' => '9721e136d8af19c70ae4b2dd2f532d5fbf3c7424e192d40d9aa08976fa424734',
+      '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php' => '4ff7231b7892b0e5af510612d7640a4ccda2c6e6765c453914df90d4ea893935',
     ),
   ),
 ));

@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Models/WaterEntry.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Models\WaterEntry
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-2b04c999744b0490bc244c944c4798490d4bde55398a650ed813e378b6f17970',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-a07dbdc44aaac3674090abcfbefa5d28bb33474b7fc20775d12a38a9dffae9cf',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 9,
-    'endLine' => 37,
+    'endLine' => 38,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Database\\Eloquent\\Model',
@@ -135,9 +135,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'docComment' => NULL,
-        'startLine' => 33,
-        'endLine' => 36,
+        'docComment' => '/** @return BelongsTo<User, $this> */',
+        'startLine' => 34,
+        'endLine' => 37,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

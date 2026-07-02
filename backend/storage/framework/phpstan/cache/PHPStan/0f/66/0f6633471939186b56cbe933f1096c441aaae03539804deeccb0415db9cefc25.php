@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Http\Resources\UserResource
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-c1f636928ac5022fe349abf416990f0d9790d0032e43dec7d253f58dd9671bc1',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-5f1419a1b920802e42135a021ef9c75cffdec8ce102d51023363180050781a4c',
    'data' => 
   array (
     'locatedSource' => 
@@ -22,12 +22,14 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'isEnum' => false,
     'isBackedEnum' => false,
     'modifiers' => 0,
-    'docComment' => NULL,
+    'docComment' => '/**
+ * @mixin User
+ */',
     'attributes' => 
     array (
     ),
-    'startLine' => 8,
-    'endLine' => 23,
+    'startLine' => 12,
+    'endLine' => 27,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Http\\Resources\\Json\\JsonResource',
@@ -69,8 +71,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 13,
-            'endLine' => 13,
+            'startLine' => 17,
+            'endLine' => 17,
             'startColumn' => 29,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -93,8 +95,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'docComment' => '/**
  * @return array<string, mixed>
  */',
-        'startLine' => 13,
-        'endLine' => 22,
+        'startLine' => 17,
+        'endLine' => 26,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

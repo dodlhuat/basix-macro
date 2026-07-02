@@ -1,6 +1,8 @@
+const SKIP_PATHS = ['/onboarding', '/forgot-password', '/reset-password']
+
 export default defineNuxtRouteMiddleware(async (to) => {
   if (import.meta.server) return
-  if (to.path === '/onboarding') return
+  if (SKIP_PATHS.includes(to.path)) return
 
   const userStore = useUserStore()
   if (!userStore.isOnboarded) {

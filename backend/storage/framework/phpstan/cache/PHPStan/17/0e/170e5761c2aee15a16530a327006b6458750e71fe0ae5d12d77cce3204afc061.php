@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Models/GlobalFoodItem.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Models\GlobalFoodItem
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-af16c8d05d54bed7f64b00fc671ccb99cb71391c6925c0e63854c0f8bc9193ee',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-40369c90c8d1cf73136f0aed5901fe189035047cb831571256a819228820434e',
    'data' => 
   array (
     'locatedSource' => 
@@ -22,12 +22,14 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'isEnum' => false,
     'isBackedEnum' => false,
     'modifiers' => 0,
-    'docComment' => NULL,
+    'docComment' => '/**
+ * @property-read Carbon|null $reviewed_at
+ */',
     'attributes' => 
     array (
     ),
-    'startLine' => 10,
-    'endLine' => 49,
+    'startLine' => 15,
+    'endLine' => 59,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Database\\Eloquent\\Model',
@@ -56,20 +58,20 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '[\'id\', \'name\', \'brand\', \'barcode\', \'calories_per_100g\', \'protein_per_100g\', \'carbs_per_100g\', \'fat_per_100g\', \'fiber_per_100g\', \'sugar_per_100g\', \'status\', \'submitted_by\', \'reviewed_by\', \'reviewed_at\', \'rejection_reason\', \'source_food_item_id\']',
           'attributes' => 
           array (
-            'startLine' => 14,
-            'endLine' => 31,
-            'startTokenPos' => 51,
-            'startFilePos' => 306,
-            'endTokenPos' => 101,
-            'endFilePos' => 684,
+            'startLine' => 20,
+            'endLine' => 37,
+            'startTokenPos' => 65,
+            'startFilePos' => 484,
+            'endTokenPos' => 115,
+            'endFilePos' => 862,
           ),
         ),
         'docComment' => NULL,
         'attributes' => 
         array (
         ),
-        'startLine' => 14,
-        'endLine' => 31,
+        'startLine' => 20,
+        'endLine' => 37,
         'startColumn' => 5,
         'endColumn' => 6,
         'isPromoted' => false,
@@ -102,8 +104,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
         ),
         'docComment' => NULL,
-        'startLine' => 33,
-        'endLine' => 38,
+        'startLine' => 39,
+        'endLine' => 46,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -136,9 +138,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'docComment' => NULL,
-        'startLine' => 40,
-        'endLine' => 43,
+        'docComment' => '/** @return BelongsTo<User, $this> */',
+        'startLine' => 49,
+        'endLine' => 52,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -171,9 +173,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'docComment' => NULL,
-        'startLine' => 45,
-        'endLine' => 48,
+        'docComment' => '/** @return BelongsTo<User, $this> */',
+        'startLine' => 55,
+        'endLine' => 58,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

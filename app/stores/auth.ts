@@ -67,5 +67,27 @@ export const useAuthStore = defineStore('auth', () => {
     clearSession()
   }
 
-  return { token, user, isAuthenticated, isAdmin, hydrate, login, logout, clearSession }
+  /** Always resolves (the backend never reveals whether the email exists). */
+  async function requestPasswordReset(email: string): Promise<void> {
+    const { post } = useApi()
+    await post('/auth/forgot-password', { email })
+  }
+
+  async function confirmPasswordReset(token: string, email: string, password: string): Promise<void> {
+    const { post } = useApi()
+    await post('/auth/reset-password', { token, email, password })
+  }
+
+  return {
+    token,
+    user,
+    isAuthenticated,
+    isAdmin,
+    hydrate,
+    login,
+    logout,
+    clearSession,
+    requestPasswordReset,
+    confirmPasswordReset,
+  }
 })

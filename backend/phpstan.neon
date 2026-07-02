@@ -9,6 +9,13 @@ parameters:
 
     tmpDir: storage/framework/phpstan
 
+    # Shared alias for the model classes SyncService pushes/pulls generically —
+    # a concrete union lets Larastan resolve their common DB-backed properties
+    # (id, client_updated_at, deleted_at) accurately for code that only knows
+    # it's dealing with "some SyncService-eligible model".
+    typeAliases:
+        SyncableModel: '\App\Models\FoodItem|\App\Models\Recipe|\App\Models\RecipeIngredient|\App\Models\DiaryEntry|\App\Models\WeightEntry|\App\Models\WaterEntry'
+
     # Parallel worker processes produce no output at all in this environment
     # (they appear to fail to spawn/communicate), causing `analyse` to exit 1
     # with an empty report. Single-process mode is slower but actually works.

@@ -30,11 +30,13 @@ class Recipe extends Model
         ];
     }
 
+    /** @return BelongsTo<User, $this> */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
+    /** @return HasMany<RecipeIngredient, $this> */
     public function ingredients(): HasMany
     {
         return $this->hasMany(RecipeIngredient::class);

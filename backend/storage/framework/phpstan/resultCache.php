@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 return [
-	'lastFullAnalysisTime' => 1782992497,
+	'lastFullAnalysisTime' => 1782995401,
 	'meta' => array (
   'cacheVersion' => 'v13-packageDependencies',
   'phpstanVersion' => '2.2.3',
@@ -10,7 +10,7 @@ return [
   array (
   ),
   'phpVersion' => 80506,
-  'projectConfig' => '{conditionalTags: {Larastan\\Larastan\\Rules\\NoEnvCallsOutsideOfConfigRule: {phpstan.rules.rule: %noEnvCallsOutsideOfConfig%}, Larastan\\Larastan\\Rules\\NoModelMakeRule: {phpstan.rules.rule: %noModelMake%}, Larastan\\Larastan\\Rules\\NoUnnecessaryCollectionCallRule: {phpstan.rules.rule: %noUnnecessaryCollectionCall%}, Larastan\\Larastan\\Rules\\NoUnnecessaryEnumerableToArrayCallsRule: {phpstan.rules.rule: %noUnnecessaryEnumerableToArrayCalls%}, Larastan\\Larastan\\Rules\\OctaneCompatibilityRule: {phpstan.rules.rule: %checkOctaneCompatibility%}, Larastan\\Larastan\\Rules\\UnusedViewsRule: {phpstan.rules.rule: %checkUnusedViews%}, Larastan\\Larastan\\Rules\\NoMissingTranslationsRule: {phpstan.rules.rule: %checkMissingTranslations%}, Larastan\\Larastan\\Rules\\ModelAppendsRule: {phpstan.rules.rule: %checkModelAppends%}, Larastan\\Larastan\\Rules\\NoPublicModelScopeAndAccessorRule: {phpstan.rules.rule: %checkModelMethodVisibility%}, Larastan\\Larastan\\Rules\\NoAuthFacadeInRequestScopeRule: {phpstan.rules.rule: %checkAuthCallsWhenInRequestScope%}, Larastan\\Larastan\\Rules\\NoAuthHelperInRequestScopeRule: {phpstan.rules.rule: %checkAuthCallsWhenInRequestScope%}, Larastan\\Larastan\\ReturnTypes\\Helpers\\EnvFunctionDynamicFunctionReturnTypeExtension: {phpstan.broker.dynamicFunctionReturnTypeExtension: %generalizeEnvReturnType%}, Larastan\\Larastan\\ReturnTypes\\Helpers\\ConfigFunctionDynamicFunctionReturnTypeExtension: {phpstan.broker.dynamicFunctionReturnTypeExtension: %checkConfigTypes%}, Larastan\\Larastan\\ReturnTypes\\ConfigRepositoryDynamicMethodReturnTypeExtension: {phpstan.broker.dynamicMethodReturnTypeExtension: %checkConfigTypes%}, Larastan\\Larastan\\ReturnTypes\\ConfigFacadeCollectionDynamicStaticMethodReturnTypeExtension: {phpstan.broker.dynamicStaticMethodReturnTypeExtension: %checkConfigTypes%}, Larastan\\Larastan\\Rules\\ConfigCollectionRule: {phpstan.rules.rule: %checkConfigTypes%}}, parameters: {universalObjectCratesClasses: [Illuminate\\Http\\Request, Illuminate\\Support\\Optional], earlyTerminatingFunctionCalls: [abort, dd], mixinExcludeClasses: [Eloquent], bootstrapFiles: [bootstrap.php], checkOctaneCompatibility: false, noEnvCallsOutsideOfConfig: true, noModelMake: true, noUnnecessaryCollectionCall: true, noUnnecessaryCollectionCallOnly: [], noUnnecessaryCollectionCallExcept: [], noUnnecessaryEnumerableToArrayCalls: false, squashedMigrationsPath: [], databaseMigrationsPath: [], disableMigrationScan: false, disableSchemaScan: false, configDirectories: [], viewDirectories: [], translationDirectories: [], checkModelProperties: false, checkUnusedViews: false, checkMissingTranslations: false, checkModelAppends: true, checkModelMethodVisibility: false, generalizeEnvReturnType: false, checkConfigTypes: false, checkAuthCallsWhenInRequestScope: false, parseModelCastsMethod: false, enableMigrationCache: false, paths: [/Users/andibauer/Repositories/basix-macro/backend/app], level: 8, tmpDir: /Users/andibauer/Repositories/basix-macro/backend/storage/framework/phpstan}, rules: [Larastan\\Larastan\\Rules\\UselessConstructs\\NoUselessWithFunctionCallsRule, Larastan\\Larastan\\Rules\\UselessConstructs\\NoUselessValueFunctionCallsRule, Larastan\\Larastan\\Rules\\DeferrableServiceProviderMissingProvidesRule, Larastan\\Larastan\\Rules\\ConsoleCommand\\UndefinedArgumentOrOptionRule], services: {{class: Larastan\\Larastan\\Methods\\RelationForwardsCallsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ModelForwardsCallsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\EloquentBuilderForwardsCallsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\HigherOrderTapProxyExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\HigherOrderCollectionProxyExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\StorageMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ContractsMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\FacadesMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ManagersMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\AuthsMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ModelFactoryMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\RedirectResponseMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\MacroMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ViewWithMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Properties\\ModelAccessorExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\Properties\\ModelPropertyExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\Properties\\HigherOrderCollectionProxyPropertyExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\HigherOrderTapProxyExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Contracts\\Container\\Container}}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Container\\Container}}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Foundation\\Application}}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Contracts\\Foundation\\Application}}, {class: Larastan\\Larastan\\Properties\\ModelRelationsExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ModelOnlyDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ModelFactoryDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ModelDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AppMakeDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AuthExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\GuardDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AuthManagerExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\DateExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\GuardExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RequestFileExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RequestRouteExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RequestUserExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\EloquentBuilderExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RelationCollectionExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\TestCaseExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Support\\CollectionHelper}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\AuthExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\CollectExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\NowAndTodayExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ResponseExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ValidatorExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\LiteralExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\CollectionFilterRejectDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\CollectionWhereNotNullDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\NewModelQueryDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\FactoryDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: abort, negate: false}}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: abort, negate: true}}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: throw, negate: false}}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: throw, negate: true}}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\AppExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ValueExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\StrExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\TapExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\StorageDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Types\\GenericEloquentCollectionTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\Types\\ViewStringTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\Rules\\OctaneCompatibilityRule}, {class: Larastan\\Larastan\\Rules\\NoEnvCallsOutsideOfConfigRule, arguments: {configDirectories: %configDirectories%}}, {class: Larastan\\Larastan\\Rules\\NoModelMakeRule}, {class: Larastan\\Larastan\\Rules\\NoUnnecessaryCollectionCallRule, arguments: {onlyMethods: %noUnnecessaryCollectionCallOnly%, excludeMethods: %noUnnecessaryCollectionCallExcept%}}, {class: Larastan\\Larastan\\Rules\\NoUnnecessaryEnumerableToArrayCallsRule}, {class: Larastan\\Larastan\\Rules\\ModelAppendsRule}, {class: Larastan\\Larastan\\Rules\\NoPublicModelScopeAndAccessorRule}, {class: Larastan\\Larastan\\Types\\GenericEloquentBuilderTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AppEnvironmentReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {class: Illuminate\\Foundation\\Application}}, {class: Larastan\\Larastan\\ReturnTypes\\AppEnvironmentReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {class: Illuminate\\Contracts\\Foundation\\Application}}, {class: Larastan\\Larastan\\ReturnTypes\\AppFacadeEnvironmentReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Types\\ModelProperty\\ModelPropertyTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension], arguments: {active: %checkModelProperties%}}, {class: Larastan\\Larastan\\Types\\CollectionOf\\CollectionOfTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\Properties\\MigrationHelper, arguments: {databaseMigrationPath: %databaseMigrationsPath%, disableMigrationScan: %disableMigrationScan%, parser: @migrationsParser, reflectionProvider: @reflectionProvider}}, iamcalSqlParser: {class: Larastan\\Larastan\\SQL\\IamcalSqlParser, autowired: false}, sqlParserFactory: {class: Larastan\\Larastan\\SQL\\SqlParserFactory, arguments: {iamcalSqlParser: @iamcalSqlParser}}, sqlParser: {type: Larastan\\Larastan\\SQL\\SqlParser, factory: [@sqlParserFactory, create]}, {class: Larastan\\Larastan\\Properties\\SquashedMigrationHelper, arguments: {schemaPaths: %squashedMigrationsPath%, disableSchemaScan: %disableSchemaScan%}}, {class: Larastan\\Larastan\\Properties\\ModelCastHelper, arguments: {parser: @currentPhpVersionSimpleDirectParser, parseModelCastsMethod: %parseModelCastsMethod%}}, {class: Larastan\\Larastan\\Properties\\MigrationCache, arguments: {cacheDirectory: %tmpDir%, enabled: %enableMigrationCache%}}, {class: Larastan\\Larastan\\Properties\\ModelPropertyHelper}, {class: Larastan\\Larastan\\Rules\\ModelRuleHelper}, {class: Larastan\\Larastan\\Methods\\BuilderHelper, arguments: {checkProperties: %checkModelProperties%}}, {class: Larastan\\Larastan\\Rules\\RelationExistenceRule, tags: [phpstan.rules.rule]}, {class: Larastan\\Larastan\\Rules\\CheckDispatchArgumentTypesCompatibleWithClassConstructorRule, arguments: {dispatchableClass: Illuminate\\Foundation\\Bus\\Dispatchable}, tags: [phpstan.rules.rule]}, {class: Larastan\\Larastan\\Rules\\CheckDispatchArgumentTypesCompatibleWithClassConstructorRule, arguments: {dispatchableClass: Illuminate\\Foundation\\Events\\Dispatchable}, tags: [phpstan.rules.rule]}, {class: Larastan\\Larastan\\Properties\\Schema\\MySqlDataTypeToPhpTypeConverter}, {class: Larastan\\Larastan\\LarastanStubFilesExtension, tags: [phpstan.stubFilesExtension]}, {class: Larastan\\Larastan\\Rules\\UnusedViewsRule}, {class: Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedEmailViewCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedViewMakeCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedViewFacadeMakeCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedRouteFacadeViewCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedViewInAnotherViewCollector}, {class: Larastan\\Larastan\\Support\\ViewFileHelper, arguments: {viewDirectories: %viewDirectories%}}, {class: Larastan\\Larastan\\Support\\ViewParser, arguments: {parser: @currentPhpVersionSimpleDirectParser}}, {class: Larastan\\Larastan\\Rules\\NoMissingTranslationsRule, arguments: {translationDirectories: %translationDirectories%}}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationFunctionCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationTranslatorCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationFacadeCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationViewCollector}, {class: Larastan\\Larastan\\ReturnTypes\\ApplicationMakeDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerMakeDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\ArgumentDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\HasArgumentDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\OptionDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\HasOptionDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\TranslatorGetReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\LangGetReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\TransHelperReturnTypeExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\DoubleUnderscoreHelperReturnTypeExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AppMakeHelper}, {class: Larastan\\Larastan\\Internal\\ConsoleApplicationResolver}, {class: Larastan\\Larastan\\Internal\\ConsoleApplicationHelper}, {class: Larastan\\Larastan\\Support\\HigherOrderCollectionProxyHelper}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ConfigFunctionDynamicFunctionReturnTypeExtension}, {class: Larastan\\Larastan\\ReturnTypes\\ConfigRepositoryDynamicMethodReturnTypeExtension}, {class: Larastan\\Larastan\\ReturnTypes\\ConfigFacadeCollectionDynamicStaticMethodReturnTypeExtension}, {class: Larastan\\Larastan\\Support\\ConfigParser, arguments: {parser: @currentPhpVersionSimpleDirectParser, configPaths: %configDirectories%, treatPhpDocTypesAsCertain: %treatPhpDocTypesAsCertain%}}, {class: Larastan\\Larastan\\Internal\\ConfigHelper}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\EnvFunctionDynamicFunctionReturnTypeExtension}, {class: Larastan\\Larastan\\ReturnTypes\\FormRequestSafeDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\EloquentCollectionMapDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Rules\\NoAuthFacadeInRequestScopeRule}, {class: Larastan\\Larastan\\Rules\\NoAuthHelperInRequestScopeRule}, {class: Larastan\\Larastan\\Rules\\ConfigCollectionRule}, {class: Illuminate\\Filesystem\\Filesystem, autowired: self}, migrationsParser: {class: PHPStan\\Parser\\CachedParser, arguments: {originalParser: @currentPhpVersionSimpleDirectParser, cachedNodesByStringCountMax: %cache.nodesByStringCountMax%}, autowired: false}}}',
+  'projectConfig' => '{conditionalTags: {Larastan\\Larastan\\Rules\\NoEnvCallsOutsideOfConfigRule: {phpstan.rules.rule: %noEnvCallsOutsideOfConfig%}, Larastan\\Larastan\\Rules\\NoModelMakeRule: {phpstan.rules.rule: %noModelMake%}, Larastan\\Larastan\\Rules\\NoUnnecessaryCollectionCallRule: {phpstan.rules.rule: %noUnnecessaryCollectionCall%}, Larastan\\Larastan\\Rules\\NoUnnecessaryEnumerableToArrayCallsRule: {phpstan.rules.rule: %noUnnecessaryEnumerableToArrayCalls%}, Larastan\\Larastan\\Rules\\OctaneCompatibilityRule: {phpstan.rules.rule: %checkOctaneCompatibility%}, Larastan\\Larastan\\Rules\\UnusedViewsRule: {phpstan.rules.rule: %checkUnusedViews%}, Larastan\\Larastan\\Rules\\NoMissingTranslationsRule: {phpstan.rules.rule: %checkMissingTranslations%}, Larastan\\Larastan\\Rules\\ModelAppendsRule: {phpstan.rules.rule: %checkModelAppends%}, Larastan\\Larastan\\Rules\\NoPublicModelScopeAndAccessorRule: {phpstan.rules.rule: %checkModelMethodVisibility%}, Larastan\\Larastan\\Rules\\NoAuthFacadeInRequestScopeRule: {phpstan.rules.rule: %checkAuthCallsWhenInRequestScope%}, Larastan\\Larastan\\Rules\\NoAuthHelperInRequestScopeRule: {phpstan.rules.rule: %checkAuthCallsWhenInRequestScope%}, Larastan\\Larastan\\ReturnTypes\\Helpers\\EnvFunctionDynamicFunctionReturnTypeExtension: {phpstan.broker.dynamicFunctionReturnTypeExtension: %generalizeEnvReturnType%}, Larastan\\Larastan\\ReturnTypes\\Helpers\\ConfigFunctionDynamicFunctionReturnTypeExtension: {phpstan.broker.dynamicFunctionReturnTypeExtension: %checkConfigTypes%}, Larastan\\Larastan\\ReturnTypes\\ConfigRepositoryDynamicMethodReturnTypeExtension: {phpstan.broker.dynamicMethodReturnTypeExtension: %checkConfigTypes%}, Larastan\\Larastan\\ReturnTypes\\ConfigFacadeCollectionDynamicStaticMethodReturnTypeExtension: {phpstan.broker.dynamicStaticMethodReturnTypeExtension: %checkConfigTypes%}, Larastan\\Larastan\\Rules\\ConfigCollectionRule: {phpstan.rules.rule: %checkConfigTypes%}}, parameters: {universalObjectCratesClasses: [Illuminate\\Http\\Request, Illuminate\\Support\\Optional], earlyTerminatingFunctionCalls: [abort, dd], mixinExcludeClasses: [Eloquent], bootstrapFiles: [bootstrap.php], checkOctaneCompatibility: false, noEnvCallsOutsideOfConfig: true, noModelMake: true, noUnnecessaryCollectionCall: true, noUnnecessaryCollectionCallOnly: [], noUnnecessaryCollectionCallExcept: [], noUnnecessaryEnumerableToArrayCalls: false, squashedMigrationsPath: [], databaseMigrationsPath: [], disableMigrationScan: false, disableSchemaScan: false, configDirectories: [], viewDirectories: [], translationDirectories: [], checkModelProperties: false, checkUnusedViews: false, checkMissingTranslations: false, checkModelAppends: true, checkModelMethodVisibility: false, generalizeEnvReturnType: false, checkConfigTypes: false, checkAuthCallsWhenInRequestScope: false, parseModelCastsMethod: false, enableMigrationCache: false, paths: [/Users/andibauer/Repositories/basix-macro/backend/app], level: 8, tmpDir: /Users/andibauer/Repositories/basix-macro/backend/storage/framework/phpstan, typeAliases: {SyncableModel: \\App\\Models\\FoodItem|\\App\\Models\\Recipe|\\App\\Models\\RecipeIngredient|\\App\\Models\\DiaryEntry|\\App\\Models\\WeightEntry|\\App\\Models\\WaterEntry}}, rules: [Larastan\\Larastan\\Rules\\UselessConstructs\\NoUselessWithFunctionCallsRule, Larastan\\Larastan\\Rules\\UselessConstructs\\NoUselessValueFunctionCallsRule, Larastan\\Larastan\\Rules\\DeferrableServiceProviderMissingProvidesRule, Larastan\\Larastan\\Rules\\ConsoleCommand\\UndefinedArgumentOrOptionRule], services: {{class: Larastan\\Larastan\\Methods\\RelationForwardsCallsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ModelForwardsCallsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\EloquentBuilderForwardsCallsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\HigherOrderTapProxyExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\HigherOrderCollectionProxyExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\StorageMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ContractsMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\FacadesMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ManagersMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\AuthsMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ModelFactoryMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\RedirectResponseMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\MacroMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ViewWithMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Properties\\ModelAccessorExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\Properties\\ModelPropertyExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\Properties\\HigherOrderCollectionProxyPropertyExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\HigherOrderTapProxyExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Contracts\\Container\\Container}}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Container\\Container}}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Foundation\\Application}}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Contracts\\Foundation\\Application}}, {class: Larastan\\Larastan\\Properties\\ModelRelationsExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ModelOnlyDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ModelFactoryDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ModelDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AppMakeDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AuthExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\GuardDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AuthManagerExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\DateExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\GuardExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RequestFileExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RequestRouteExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RequestUserExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\EloquentBuilderExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RelationCollectionExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\TestCaseExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Support\\CollectionHelper}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\AuthExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\CollectExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\NowAndTodayExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ResponseExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ValidatorExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\LiteralExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\CollectionFilterRejectDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\CollectionWhereNotNullDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\NewModelQueryDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\FactoryDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: abort, negate: false}}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: abort, negate: true}}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: throw, negate: false}}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: throw, negate: true}}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\AppExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ValueExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\StrExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\TapExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\StorageDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Types\\GenericEloquentCollectionTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\Types\\ViewStringTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\Rules\\OctaneCompatibilityRule}, {class: Larastan\\Larastan\\Rules\\NoEnvCallsOutsideOfConfigRule, arguments: {configDirectories: %configDirectories%}}, {class: Larastan\\Larastan\\Rules\\NoModelMakeRule}, {class: Larastan\\Larastan\\Rules\\NoUnnecessaryCollectionCallRule, arguments: {onlyMethods: %noUnnecessaryCollectionCallOnly%, excludeMethods: %noUnnecessaryCollectionCallExcept%}}, {class: Larastan\\Larastan\\Rules\\NoUnnecessaryEnumerableToArrayCallsRule}, {class: Larastan\\Larastan\\Rules\\ModelAppendsRule}, {class: Larastan\\Larastan\\Rules\\NoPublicModelScopeAndAccessorRule}, {class: Larastan\\Larastan\\Types\\GenericEloquentBuilderTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AppEnvironmentReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {class: Illuminate\\Foundation\\Application}}, {class: Larastan\\Larastan\\ReturnTypes\\AppEnvironmentReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {class: Illuminate\\Contracts\\Foundation\\Application}}, {class: Larastan\\Larastan\\ReturnTypes\\AppFacadeEnvironmentReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Types\\ModelProperty\\ModelPropertyTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension], arguments: {active: %checkModelProperties%}}, {class: Larastan\\Larastan\\Types\\CollectionOf\\CollectionOfTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\Properties\\MigrationHelper, arguments: {databaseMigrationPath: %databaseMigrationsPath%, disableMigrationScan: %disableMigrationScan%, parser: @migrationsParser, reflectionProvider: @reflectionProvider}}, iamcalSqlParser: {class: Larastan\\Larastan\\SQL\\IamcalSqlParser, autowired: false}, sqlParserFactory: {class: Larastan\\Larastan\\SQL\\SqlParserFactory, arguments: {iamcalSqlParser: @iamcalSqlParser}}, sqlParser: {type: Larastan\\Larastan\\SQL\\SqlParser, factory: [@sqlParserFactory, create]}, {class: Larastan\\Larastan\\Properties\\SquashedMigrationHelper, arguments: {schemaPaths: %squashedMigrationsPath%, disableSchemaScan: %disableSchemaScan%}}, {class: Larastan\\Larastan\\Properties\\ModelCastHelper, arguments: {parser: @currentPhpVersionSimpleDirectParser, parseModelCastsMethod: %parseModelCastsMethod%}}, {class: Larastan\\Larastan\\Properties\\MigrationCache, arguments: {cacheDirectory: %tmpDir%, enabled: %enableMigrationCache%}}, {class: Larastan\\Larastan\\Properties\\ModelPropertyHelper}, {class: Larastan\\Larastan\\Rules\\ModelRuleHelper}, {class: Larastan\\Larastan\\Methods\\BuilderHelper, arguments: {checkProperties: %checkModelProperties%}}, {class: Larastan\\Larastan\\Rules\\RelationExistenceRule, tags: [phpstan.rules.rule]}, {class: Larastan\\Larastan\\Rules\\CheckDispatchArgumentTypesCompatibleWithClassConstructorRule, arguments: {dispatchableClass: Illuminate\\Foundation\\Bus\\Dispatchable}, tags: [phpstan.rules.rule]}, {class: Larastan\\Larastan\\Rules\\CheckDispatchArgumentTypesCompatibleWithClassConstructorRule, arguments: {dispatchableClass: Illuminate\\Foundation\\Events\\Dispatchable}, tags: [phpstan.rules.rule]}, {class: Larastan\\Larastan\\Properties\\Schema\\MySqlDataTypeToPhpTypeConverter}, {class: Larastan\\Larastan\\LarastanStubFilesExtension, tags: [phpstan.stubFilesExtension]}, {class: Larastan\\Larastan\\Rules\\UnusedViewsRule}, {class: Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedEmailViewCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedViewMakeCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedViewFacadeMakeCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedRouteFacadeViewCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedViewInAnotherViewCollector}, {class: Larastan\\Larastan\\Support\\ViewFileHelper, arguments: {viewDirectories: %viewDirectories%}}, {class: Larastan\\Larastan\\Support\\ViewParser, arguments: {parser: @currentPhpVersionSimpleDirectParser}}, {class: Larastan\\Larastan\\Rules\\NoMissingTranslationsRule, arguments: {translationDirectories: %translationDirectories%}}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationFunctionCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationTranslatorCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationFacadeCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationViewCollector}, {class: Larastan\\Larastan\\ReturnTypes\\ApplicationMakeDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerMakeDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\ArgumentDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\HasArgumentDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\OptionDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\HasOptionDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\TranslatorGetReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\LangGetReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\TransHelperReturnTypeExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\DoubleUnderscoreHelperReturnTypeExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AppMakeHelper}, {class: Larastan\\Larastan\\Internal\\ConsoleApplicationResolver}, {class: Larastan\\Larastan\\Internal\\ConsoleApplicationHelper}, {class: Larastan\\Larastan\\Support\\HigherOrderCollectionProxyHelper}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ConfigFunctionDynamicFunctionReturnTypeExtension}, {class: Larastan\\Larastan\\ReturnTypes\\ConfigRepositoryDynamicMethodReturnTypeExtension}, {class: Larastan\\Larastan\\ReturnTypes\\ConfigFacadeCollectionDynamicStaticMethodReturnTypeExtension}, {class: Larastan\\Larastan\\Support\\ConfigParser, arguments: {parser: @currentPhpVersionSimpleDirectParser, configPaths: %configDirectories%, treatPhpDocTypesAsCertain: %treatPhpDocTypesAsCertain%}}, {class: Larastan\\Larastan\\Internal\\ConfigHelper}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\EnvFunctionDynamicFunctionReturnTypeExtension}, {class: Larastan\\Larastan\\ReturnTypes\\FormRequestSafeDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\EloquentCollectionMapDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Rules\\NoAuthFacadeInRequestScopeRule}, {class: Larastan\\Larastan\\Rules\\NoAuthHelperInRequestScopeRule}, {class: Larastan\\Larastan\\Rules\\ConfigCollectionRule}, {class: Illuminate\\Filesystem\\Filesystem, autowired: self}, migrationsParser: {class: PHPStan\\Parser\\CachedParser, arguments: {originalParser: @currentPhpVersionSimpleDirectParser, cachedNodesByStringCountMax: %cache.nodesByStringCountMax%}, autowired: false}}}',
   'analysedPaths' => 
   array (
     0 => '/Users/andibauer/Repositories/basix-macro/backend/app',
@@ -1914,1179 +1914,6 @@ return [
 	'projectExtensionFiles' => array (
 ),
 	'errorsCallback' => static function (): array { return array (
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/FoodSubmissionController.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Http\\Controllers\\Api\\Admin\\FoodSubmissionController::index() has no return type specified.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/FoodSubmissionController.php',
-       'line' => 13,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/FoodSubmissionController.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 13,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.return',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Http\\Controllers\\Api\\Admin\\FoodSubmissionController::update() has no return type specified.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/FoodSubmissionController.php',
-       'line' => 24,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/FoodSubmissionController.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 24,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.return',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Cannot access property $id on App\\Models\\User|null.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/FoodSubmissionController.php',
-       'line' => 29,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/FoodSubmissionController.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 29,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.nonObject',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Http\\Controllers\\Api\\Admin\\FoodSubmissionController::destroy() has no return type specified.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/FoodSubmissionController.php',
-       'line' => 38,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/FoodSubmissionController.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 38,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.return',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/UserController.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Http\\Controllers\\Api\\Admin\\UserController::index() has no return type specified.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/UserController.php',
-       'line' => 14,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/UserController.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 14,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.return',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Http\\Controllers\\Api\\Admin\\UserController::store() has no return type specified.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/UserController.php',
-       'line' => 19,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/UserController.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 19,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.return',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Http\\Controllers\\Api\\Admin\\UserController::update() has no return type specified.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/UserController.php',
-       'line' => 31,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/UserController.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 31,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.return',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Http\\Controllers\\Api\\Admin\\UserController::destroy() has no return type specified.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/UserController.php',
-       'line' => 43,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/UserController.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 43,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.return',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Http\\Controllers\\Api\\AuthController::login() has no return type specified.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php',
-       'line' => 15,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 15,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.return',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Http\\Controllers\\Api\\AuthController::logout() has no return type specified.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php',
-       'line' => 33,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 33,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.return',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Cannot call method currentAccessToken() on App\\Models\\User|null.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php',
-       'line' => 35,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 35,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.nonObject',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Http\\Controllers\\Api\\AuthController::me() has no return type specified.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php',
-       'line' => 40,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 40,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.return',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/GlobalFoodController.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Http\\Controllers\\Api\\GlobalFoodController::index() has no return type specified.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/GlobalFoodController.php',
-       'line' => 12,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/GlobalFoodController.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 12,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.return',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/SyncController.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Http\\Controllers\\Api\\SyncController::sync() has no return type specified.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/SyncController.php',
-       'line' => 14,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/SyncController.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 14,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.return',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Cannot access property $id on App\\Models\\User|null.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/SyncController.php',
-       'line' => 16,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/SyncController.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 16,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.nonObject',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$id.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 16,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 16,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$name.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 17,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 17,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$brand.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 18,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 18,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$barcode.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 19,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 19,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$calories_per_100g.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 20,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 20,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    5 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$protein_per_100g.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 21,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 21,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    6 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$carbs_per_100g.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 22,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 22,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    7 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$fat_per_100g.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 23,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 23,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    8 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$fiber_per_100g.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 24,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 24,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    9 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$sugar_per_100g.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 25,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 25,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    10 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$status.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 26,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 26,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    11 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$submitted_by.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 27,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 27,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    12 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$reviewed_by.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 28,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 28,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    13 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$reviewed_at.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 29,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 29,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    14 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$rejection_reason.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 30,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 30,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    15 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$created_at.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 31,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 31,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    16 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\GlobalFoodItemResource::$updated_at.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'line' => 32,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 32,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\UserResource::$id.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php',
-       'line' => 16,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 16,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\UserResource::$name.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php',
-       'line' => 17,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 17,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\UserResource::$email.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php',
-       'line' => 18,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 18,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\UserResource::$role.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php',
-       'line' => 19,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 19,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property App\\Http\\Resources\\UserResource::$created_at.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php',
-       'line' => 20,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 20,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/DiaryEntry.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\DiaryEntry::user() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/DiaryEntry.php',
-       'line' => 41,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/DiaryEntry.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 41,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\DiaryEntry::foodItem() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/DiaryEntry.php',
-       'line' => 46,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/DiaryEntry.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 46,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\DiaryEntry::recipe() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/DiaryEntry.php',
-       'line' => 51,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/DiaryEntry.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 51,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/FoodItem.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\FoodItem::user() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/FoodItem.php',
-       'line' => 43,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/FoodItem.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 43,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\FoodItem::recipeIngredients() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/FoodItem.php',
-       'line' => 48,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/FoodItem.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 48,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/GlobalFoodItem.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Class App\\Models\\GlobalFoodItem uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types: TFactory',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/GlobalFoodItem.php',
-       'line' => 12,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/GlobalFoodItem.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 12,
-       'nodeType' => 'PhpParser\\Node\\Stmt\\TraitUse',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\GlobalFoodItem::submittedBy() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/GlobalFoodItem.php',
-       'line' => 40,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/GlobalFoodItem.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 40,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\GlobalFoodItem::reviewedBy() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/GlobalFoodItem.php',
-       'line' => 45,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/GlobalFoodItem.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 45,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/Recipe.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\Recipe::user() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/Recipe.php',
-       'line' => 33,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/Recipe.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 33,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\Recipe::ingredients() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/Recipe.php',
-       'line' => 38,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/Recipe.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 38,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\RecipeIngredient::user() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php',
-       'line' => 31,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 31,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\RecipeIngredient::recipe() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php',
-       'line' => 36,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 36,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\RecipeIngredient::foodItem() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php',
-       'line' => 41,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 41,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/User.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\User::profile() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasOne does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/User.php',
-       'line' => 35,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/User.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 35,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/UserProfile.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\UserProfile::user() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/UserProfile.php',
-       'line' => 49,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/UserProfile.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 49,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WaterEntry.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\WaterEntry::user() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WaterEntry.php',
-       'line' => 33,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WaterEntry.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 33,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WeightEntry.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Models\\WeightEntry::user() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WeightEntry.php',
-       'line' => 32,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WeightEntry.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 32,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Services\\SyncService::pushRows() has parameter $rows with no value type specified in iterable type array.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'line' => 63,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 63,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Services\\SyncService::pushRows() return type has no value type specified in iterable type array.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'line' => 63,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 63,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$client_updated_at.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'line' => 82,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 82,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Services\\SyncService::pullRows() return type has no value type specified in iterable type array.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'line' => 158,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 158,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Services\\SyncService::pushProfile() has parameter $data with no value type specified in iterable type array.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'line' => 168,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 168,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    5 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Services\\SyncService::pushProfile() return type has no value type specified in iterable type array.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'line' => 168,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 168,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    6 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Services\\SyncService::pullProfile() return type has no value type specified in iterable type array.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'line' => 201,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 201,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    7 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Services\\SyncService::serialize() return type has no value type specified in iterable type array.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'line' => 211,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 211,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    8 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$id.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'line' => 214,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 214,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    9 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$client_updated_at.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'line' => 217,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 217,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    10 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$deleted_at.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'line' => 218,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 218,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    11 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method App\\Services\\SyncService::serializeProfile() return type has no value type specified in iterable type array.',
-       'file' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'line' => 223,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 223,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
 ); },
 	'locallyIgnoredErrorsCallback' => static function (): array { return array (
 ); },
@@ -3095,6 +1922,18 @@ return [
 	'unmatchedLineIgnores' => array (
 ),
 	'collectedDataCallback' => static function (): array { return array (
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\PossiblyPureStaticCallCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Support\\Facades\\Password',
+        1 => 'sendResetLink',
+        2 => 54,
+      ),
+    ),
+  ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/SyncController.php' => 
   array (
     'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
@@ -3182,6 +2021,30 @@ return [
       ),
     ),
   ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/ForgotPasswordRequest.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Http\\Requests\\ForgotPasswordRequest',
+        1 => 'authorize',
+        2 => 'App\\Http\\Requests\\ForgotPasswordRequest',
+        3 => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        0 => 'App\\Http\\Requests\\ForgotPasswordRequest',
+        1 => 'rules',
+        2 => 'App\\Http\\Requests\\ForgotPasswordRequest',
+        3 => 
+        array (
+        ),
+      ),
+    ),
+  ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/LoginRequest.php' => 
   array (
     'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
@@ -3200,6 +2063,30 @@ return [
         0 => 'App\\Http\\Requests\\LoginRequest',
         1 => 'rules',
         2 => 'App\\Http\\Requests\\LoginRequest',
+        3 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/ResetPasswordRequest.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Http\\Requests\\ResetPasswordRequest',
+        1 => 'authorize',
+        2 => 'App\\Http\\Requests\\ResetPasswordRequest',
+        3 => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        0 => 'App\\Http\\Requests\\ResetPasswordRequest',
+        1 => 'rules',
+        2 => 'App\\Http\\Requests\\ResetPasswordRequest',
         3 => 
         array (
         ),
@@ -3787,6 +2674,24 @@ return [
       ),
     ),
   ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Providers/AppServiceProvider.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\PossiblyPureStaticCallCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Support\\Facades\\RateLimiter',
+        1 => 'for',
+        2 => 26,
+      ),
+      1 => 
+      array (
+        0 => 'Illuminate\\Support\\Facades\\RateLimiter',
+        1 => 'for',
+        2 => 30,
+      ),
+    ),
+  ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php' => 
   array (
     'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
@@ -3827,35 +2732,35 @@ return [
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/FoodSubmissionController.php' => 
   array (
-    'fileHash' => 'ba3c0a722e017d24669cc4cc501ec82da69005bbd522ebfa98d329c7d62826c9',
+    'fileHash' => 'dd0d53e51ebb7dab8d39cb210bb49cc39fbc542401255fc6afe186bae9230cfe',
     'dependentFiles' => 
     array (
     ),
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/UserController.php' => 
   array (
-    'fileHash' => 'fbad51e91597067f012515c5d47e66098d2c798029ede1c1e676ef86c558df4a',
+    'fileHash' => 'c95282a86baed36b5a797921eecd8200324e73df19cf0b36a0fb294e35f71e8e',
     'dependentFiles' => 
     array (
     ),
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php' => 
   array (
-    'fileHash' => 'dd426e74e8a74544b3ffa70cbb23fbfe6da2db8937e62cd9ca117c99261be3aa',
+    'fileHash' => 'd5c9fa1c5c643bea174d851957483e2e911703be6676a4477c4b79173c962142',
     'dependentFiles' => 
     array (
     ),
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/GlobalFoodController.php' => 
   array (
-    'fileHash' => 'bbaba3cc2bcd1a993b0e25b93932022714f42965ac606a6244419ee867f382ff',
+    'fileHash' => '16455715e549cd2007d5bf21d5abd5e6ca905903e7f331af6a4d9ba66b34bdfe',
     'dependentFiles' => 
     array (
     ),
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/SyncController.php' => 
   array (
-    'fileHash' => 'aba64bb0ae68d584a7dbb788e2ad9f4acf3b526fe9d4844c443096d3c7e3b867',
+    'fileHash' => '1982efdf4ab24b59f18f825f7fc508c33de2b4e5f889c51bc03fa502cad848fe',
     'dependentFiles' => 
     array (
     ),
@@ -3903,9 +2808,25 @@ return [
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/UserController.php',
     ),
   ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/ForgotPasswordRequest.php' => 
+  array (
+    'fileHash' => 'eada71c17748ce1baad6196e98c1df0dcf08c228d01f1da581b14cd9fb944eee',
+    'dependentFiles' => 
+    array (
+      0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php',
+    ),
+  ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/LoginRequest.php' => 
   array (
     'fileHash' => '9e9c0e9b6e038d6b8e007aaaa1cc43db280819c9bd0462c6fb28f40cb044bd20',
+    'dependentFiles' => 
+    array (
+      0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php',
+    ),
+  ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/ResetPasswordRequest.php' => 
+  array (
+    'fileHash' => 'd358741b5f79629d048e481fa72e917a79e7a87d92cf97bd0efd0f834919a394',
     'dependentFiles' => 
     array (
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php',
@@ -3921,7 +2842,7 @@ return [
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php' => 
   array (
-    'fileHash' => '7f1e958478d4a221ed4d0a9fd7ef0ee2ed5025dc859a1c66412c80502ecf3149',
+    'fileHash' => '82add257a529cb4c60f3526c928a8a4f99fb67fc26f9c013fee9863c76e9b95e',
     'dependentFiles' => 
     array (
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/FoodSubmissionController.php',
@@ -3930,7 +2851,7 @@ return [
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php' => 
   array (
-    'fileHash' => 'c1f636928ac5022fe349abf416990f0d9790d0032e43dec7d253f58dd9671bc1',
+    'fileHash' => '5f1419a1b920802e42135a021ef9c75cffdec8ce102d51023363180050781a4c',
     'dependentFiles' => 
     array (
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/UserController.php',
@@ -3944,16 +2865,18 @@ return [
     array (
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/FoodSubmissionController.php',
       1 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/GlobalFoodController.php',
-      2 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/DiaryEntry.php',
-      3 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/FoodItem.php',
-      4 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/GlobalFoodItem.php',
-      5 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/Recipe.php',
-      6 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php',
-      7 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/User.php',
-      8 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/UserProfile.php',
-      9 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WaterEntry.php',
-      10 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WeightEntry.php',
-      11 => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
+      2 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
+      3 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/DiaryEntry.php',
+      4 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/FoodItem.php',
+      5 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/GlobalFoodItem.php',
+      6 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/Recipe.php',
+      7 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php',
+      8 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/User.php',
+      9 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/UserProfile.php',
+      10 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WaterEntry.php',
+      11 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WeightEntry.php',
+      12 => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
+      13 => '/Users/andibauer/Repositories/basix-macro/backend/app/Support/Sync/SyncableTable.php',
     ),
     'usedTraitDependentFiles' => 
     array (
@@ -3969,55 +2892,60 @@ return [
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/DiaryEntry.php' => 
   array (
-    'fileHash' => '2c04b0a7baf50a239c120639b5d463c7e62fe9bc71714b9444420dae52de9aae',
+    'fileHash' => 'cea2768e4db38b253a1556d42223b315ecd19c9274608e3a8adf8484d09b3801',
     'dependentFiles' => 
     array (
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
+      1 => '/Users/andibauer/Repositories/basix-macro/backend/app/Support/Sync/SyncableTable.php',
     ),
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/FoodItem.php' => 
   array (
-    'fileHash' => 'eff40775530917796300a9f5f2ee05e140d993b388fcfe5e38e3086002b00fb5',
+    'fileHash' => 'dc9978c39af237b8227d92f26b383724c3a11c9d34ddce39c2f96e52b4db5acb',
     'dependentFiles' => 
     array (
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/DiaryEntry.php',
       1 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php',
       2 => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
+      3 => '/Users/andibauer/Repositories/basix-macro/backend/app/Support/Sync/SyncableTable.php',
     ),
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/GlobalFoodItem.php' => 
   array (
-    'fileHash' => 'af16c8d05d54bed7f64b00fc671ccb99cb71391c6925c0e63854c0f8bc9193ee',
+    'fileHash' => '40369c90c8d1cf73136f0aed5901fe189035047cb831571256a819228820434e',
     'dependentFiles' => 
     array (
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/FoodSubmissionController.php',
       1 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/GlobalFoodController.php',
-      2 => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
+      2 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php',
+      3 => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
     ),
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/Recipe.php' => 
   array (
-    'fileHash' => 'c9f529722aa3c91e93f2554e8bdb2e800f05437f644b569a2d1275da1b5a2d76',
+    'fileHash' => '976cdc8e2e5a210f543c2cff5cf90ad2746323f511a4e40ae6deda7d40875bbd',
     'dependentFiles' => 
     array (
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/DiaryEntry.php',
       1 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php',
       2 => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
+      3 => '/Users/andibauer/Repositories/basix-macro/backend/app/Support/Sync/SyncableTable.php',
     ),
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php' => 
   array (
-    'fileHash' => '5eda0220b41dbcac23b7f0ba186b8256d87958ab432521fa5f41e704bb97a836',
+    'fileHash' => 'ee9e4ede4fdf7dc94def243db03d36fa48fa4d07f6de2d85b8cf2d092161d05f',
     'dependentFiles' => 
     array (
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/FoodItem.php',
       1 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/Recipe.php',
       2 => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
+      3 => '/Users/andibauer/Repositories/basix-macro/backend/app/Support/Sync/SyncableTable.php',
     ),
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/User.php' => 
   array (
-    'fileHash' => '6fcd50980be17ff3207b1c9fa218faa7e0c911117a8c11159d014a36dca5c4f6',
+    'fileHash' => '7ba7681cdcb91a7c3d9577ba1cff4b6ac6428dc8a06052bb4c6002ace12982d1',
     'dependentFiles' => 
     array (
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Console/Commands/CreateAdminUser.php',
@@ -4026,19 +2954,21 @@ return [
       3 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php',
       4 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/SyncController.php',
       5 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Middleware/EnsureUserHasRole.php',
-      6 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/DiaryEntry.php',
-      7 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/FoodItem.php',
-      8 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/GlobalFoodItem.php',
-      9 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/Recipe.php',
-      10 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php',
-      11 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/UserProfile.php',
-      12 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WaterEntry.php',
-      13 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WeightEntry.php',
+      6 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php',
+      7 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/DiaryEntry.php',
+      8 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/FoodItem.php',
+      9 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/GlobalFoodItem.php',
+      10 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/Recipe.php',
+      11 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php',
+      12 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/UserProfile.php',
+      13 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WaterEntry.php',
+      14 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WeightEntry.php',
+      15 => '/Users/andibauer/Repositories/basix-macro/backend/app/Providers/AppServiceProvider.php',
     ),
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/UserProfile.php' => 
   array (
-    'fileHash' => 'e1de107db78e44b83b1ab4901340504ccf88615378278cfa2364137c988c7608',
+    'fileHash' => '092f38e254c212e14dc72da73d3f444c60b229351d93d9077136e0a99f6bda33',
     'dependentFiles' => 
     array (
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Models/User.php',
@@ -4047,30 +2977,32 @@ return [
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WaterEntry.php' => 
   array (
-    'fileHash' => '2b04c999744b0490bc244c944c4798490d4bde55398a650ed813e378b6f17970',
+    'fileHash' => 'a07dbdc44aaac3674090abcfbefa5d28bb33474b7fc20775d12a38a9dffae9cf',
     'dependentFiles' => 
     array (
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
+      1 => '/Users/andibauer/Repositories/basix-macro/backend/app/Support/Sync/SyncableTable.php',
     ),
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WeightEntry.php' => 
   array (
-    'fileHash' => '31f17758f501b72ebfd4ec2b0bbce55ca631f5d0e79dc99d20b20bd4b9e87962',
+    'fileHash' => '7712e12c502690925fc20215c3d5a4e6f62801803b06a2c39ccb1b3dd7144d39',
     'dependentFiles' => 
     array (
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php',
+      1 => '/Users/andibauer/Repositories/basix-macro/backend/app/Support/Sync/SyncableTable.php',
     ),
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Providers/AppServiceProvider.php' => 
   array (
-    'fileHash' => 'caf306ef6a25a547bbb7edd5508a39b51c365083eb6dd58378cf2242018e94c7',
+    'fileHash' => '44ad4b627185c3814a5de31a871e7797dd922619c5f96f46f06aec607635f872',
     'dependentFiles' => 
     array (
     ),
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php' => 
   array (
-    'fileHash' => '9721e136d8af19c70ae4b2dd2f532d5fbf3c7424e192d40d9aa08976fa424734',
+    'fileHash' => '4ff7231b7892b0e5af510612d7640a4ccda2c6e6765c453914df90d4ea893935',
     'dependentFiles' => 
     array (
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/SyncController.php',
@@ -4078,7 +3010,7 @@ return [
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Support/Sync/SyncableTable.php' => 
   array (
-    'fileHash' => 'c53935217b752543716b11ac702e8558dbfb07d8a6898e5dd93fa2b360a2ccb0',
+    'fileHash' => '5ffcbd83d97560891fa98c48cd616322778318203b03ae771b9c2fd0e173ce31',
     'dependentFiles' => 
     array (
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/SyncController.php',
@@ -4093,6 +3025,12 @@ return [
     1 => 'nesbot/carbon',
     2 => 'ramsey/uuid',
   ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php' => 
+  array (
+    0 => 'laravel/framework',
+    1 => 'symfony/http-foundation',
+    2 => 'laravel/sanctum',
+  ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/SyncController.php' => 
   array (
     0 => 'laravel/framework',
@@ -4100,22 +3038,11 @@ return [
     2 => 'laravel/sanctum',
     3 => 'nesbot/carbon',
   ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Console/Commands/CreateAdminUser.php' => 
-  array (
-    0 => 'symfony/console',
-    1 => 'laravel/framework',
-    2 => 'laravel/sanctum',
-  ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/UserController.php' => 
   array (
     0 => 'laravel/framework',
     1 => 'laravel/sanctum',
     2 => 'symfony/http-foundation',
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/Admin/FoodSubmissionUpdateRequest.php' => 
-  array (
-    0 => 'laravel/framework',
-    1 => 'symfony/http-foundation',
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/FoodSubmissionController.php' => 
   array (
@@ -4124,33 +3051,23 @@ return [
     2 => 'laravel/sanctum',
     3 => 'nesbot/carbon',
   ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/UserProfile.php' => 
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/GlobalFoodItem.php' => 
   array (
     0 => 'laravel/framework',
     1 => 'ramsey/uuid',
+    2 => 'laravel/sanctum',
+  ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Console/Commands/CreateAdminUser.php' => 
+  array (
+    0 => 'symfony/console',
+    1 => 'laravel/framework',
     2 => 'laravel/sanctum',
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php' => 
   array (
     0 => 'laravel/framework',
     1 => 'symfony/http-foundation',
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php' => 
-  array (
-    0 => 'laravel/framework',
-    1 => 'symfony/http-foundation',
-    2 => 'laravel/sanctum',
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/User.php' => 
-  array (
-    0 => 'laravel/framework',
-    1 => 'laravel/sanctum',
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/FoodItem.php' => 
-  array (
-    0 => 'laravel/framework',
-    1 => 'ramsey/uuid',
-    2 => 'laravel/sanctum',
+    2 => 'nesbot/carbon',
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/DiaryEntry.php' => 
   array (
@@ -4158,16 +3075,33 @@ return [
     1 => 'ramsey/uuid',
     2 => 'laravel/sanctum',
   ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/GlobalFoodItem.php' => 
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/UserProfile.php' => 
   array (
     0 => 'laravel/framework',
     1 => 'ramsey/uuid',
     2 => 'laravel/sanctum',
   ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/SyncRequest.php' => 
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/FoodItem.php' => 
+  array (
+    0 => 'laravel/framework',
+    1 => 'ramsey/uuid',
+    2 => 'laravel/sanctum',
+  ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/Admin/FoodSubmissionUpdateRequest.php' => 
   array (
     0 => 'laravel/framework',
     1 => 'symfony/http-foundation',
+  ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Models/User.php' => 
+  array (
+    0 => 'laravel/framework',
+    1 => 'laravel/sanctum',
+  ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Providers/AppServiceProvider.php' => 
+  array (
+    0 => 'laravel/framework',
+    1 => 'laravel/sanctum',
+    2 => 'symfony/http-foundation',
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php' => 
   array (
@@ -4181,12 +3115,12 @@ return [
     1 => 'ramsey/uuid',
     2 => 'laravel/sanctum',
   ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/GlobalFoodController.php' => 
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/SyncRequest.php' => 
   array (
     0 => 'laravel/framework',
     1 => 'symfony/http-foundation',
   ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/Admin/UpdateUserRequest.php' => 
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/GlobalFoodController.php' => 
   array (
     0 => 'laravel/framework',
     1 => 'symfony/http-foundation',
@@ -4196,6 +3130,11 @@ return [
     0 => 'laravel/framework',
     1 => 'ramsey/uuid',
     2 => 'laravel/sanctum',
+  ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/Admin/UpdateUserRequest.php' => 
+  array (
+    0 => 'laravel/framework',
+    1 => 'symfony/http-foundation',
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/WeightEntry.php' => 
   array (
@@ -4208,16 +3147,23 @@ return [
     0 => 'laravel/framework',
     1 => 'symfony/http-foundation',
   ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Middleware/EnsureUserHasRole.php' => 
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/ResetPasswordRequest.php' => 
   array (
     0 => 'laravel/framework',
     1 => 'symfony/http-foundation',
-    2 => 'laravel/sanctum',
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php' => 
   array (
     0 => 'laravel/framework',
     1 => 'symfony/http-foundation',
+    2 => 'laravel/sanctum',
+    3 => 'nesbot/carbon',
+  ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Middleware/EnsureUserHasRole.php' => 
+  array (
+    0 => 'laravel/framework',
+    1 => 'symfony/http-foundation',
+    2 => 'laravel/sanctum',
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/LoginRequest.php' => 
   array (
@@ -4227,11 +3173,12 @@ return [
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/Concerns/HasUuid.php' => 
   array (
   ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Support/Sync/SyncableTable.php' => 
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/ForgotPasswordRequest.php' => 
   array (
     0 => 'laravel/framework',
+    1 => 'symfony/http-foundation',
   ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Providers/AppServiceProvider.php' => 
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Support/Sync/SyncableTable.php' => 
   array (
     0 => 'laravel/framework',
   ),
@@ -4330,7 +3277,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => NULL,
+           'returnType' => 'Illuminate\\Http\\Resources\\Json\\AnonymousResourceCollection',
            'parameters' => 
           array (
             0 => 
@@ -4361,7 +3308,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => NULL,
+           'returnType' => 'App\\Http\\Resources\\GlobalFoodItemResource',
            'parameters' => 
           array (
             0 => 
@@ -4405,7 +3352,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => NULL,
+           'returnType' => 'Illuminate\\Http\\Response',
            'parameters' => 
           array (
             0 => 
@@ -4462,7 +3409,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => NULL,
+           'returnType' => 'Illuminate\\Http\\Resources\\Json\\AnonymousResourceCollection',
            'parameters' => 
           array (
           ),
@@ -4480,7 +3427,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => NULL,
+           'returnType' => 'Illuminate\\Http\\JsonResponse',
            'parameters' => 
           array (
             0 => 
@@ -4511,7 +3458,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => NULL,
+           'returnType' => 'App\\Http\\Resources\\UserResource',
            'parameters' => 
           array (
             0 => 
@@ -4555,7 +3502,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => NULL,
+           'returnType' => 'Illuminate\\Http\\Response',
            'parameters' => 
           array (
             0 => 
@@ -4612,7 +3559,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => NULL,
+           'returnType' => 'Illuminate\\Http\\JsonResponse',
            'parameters' => 
           array (
             0 => 
@@ -4643,7 +3590,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => NULL,
+           'returnType' => 'Illuminate\\Http\\Response',
            'parameters' => 
           array (
             0 => 
@@ -4674,13 +3621,75 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => NULL,
+           'returnType' => 'App\\Http\\Resources\\UserResource',
            'parameters' => 
           array (
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'request',
                'type' => 'Illuminate\\Http\\Request',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+               'phpDoc' => NULL,
+               'flags' => 0,
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'forgotPassword',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\Http\\JsonResponse',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'request',
+               'type' => 'App\\Http\\Requests\\ForgotPasswordRequest',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+               'phpDoc' => NULL,
+               'flags' => 0,
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'resetPassword',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\Http\\JsonResponse',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'request',
+               'type' => 'App\\Http\\Requests\\ResetPasswordRequest',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -4731,7 +3740,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => NULL,
+           'returnType' => 'Illuminate\\Http\\Resources\\Json\\AnonymousResourceCollection',
            'parameters' => 
           array (
             0 => 
@@ -4819,7 +3828,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => NULL,
+           'returnType' => 'Illuminate\\Http\\JsonResponse',
            'parameters' => 
           array (
             0 => 
@@ -5201,11 +4210,163 @@ return [
       ),
     )),
   ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/ForgotPasswordRequest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Http\\Requests\\ForgotPasswordRequest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'authorize',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'rules',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return array<string, ValidationRule|array<mixed>|string>
+     */',
+             'namespace' => 'App\\Http\\Requests',
+             'uses' => 
+            array (
+              'validationrule' => 'Illuminate\\Contracts\\Validation\\ValidationRule',
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/LoginRequest.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
        'name' => 'App\\Http\\Requests\\LoginRequest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'authorize',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'rules',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return array<string, ValidationRule|array<mixed>|string>
+     */',
+             'namespace' => 'App\\Http\\Requests',
+             'uses' => 
+            array (
+              'validationrule' => 'Illuminate\\Contracts\\Validation\\ValidationRule',
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/ResetPasswordRequest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Http\\Requests\\ResetPasswordRequest',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -5358,7 +4519,22 @@ return [
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
        'name' => 'App\\Http\\Resources\\GlobalFoodItemResource',
-       'phpDoc' => NULL,
+       'phpDoc' => 
+      \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+         'phpDocString' => '/**
+ * @mixin GlobalFoodItem
+ */',
+         'namespace' => 'App\\Http\\Resources',
+         'uses' => 
+        array (
+          'globalfooditem' => 'App\\Models\\GlobalFoodItem',
+          'request' => 'Illuminate\\Http\\Request',
+          'jsonresource' => 'Illuminate\\Http\\Resources\\Json\\JsonResource',
+        ),
+         'constUses' => 
+        array (
+        ),
+      )),
        'abstract' => false,
        'final' => false,
        'extends' => 'Illuminate\\Http\\Resources\\Json\\JsonResource',
@@ -5384,6 +4560,7 @@ return [
              'namespace' => 'App\\Http\\Resources',
              'uses' => 
             array (
+              'globalfooditem' => 'App\\Models\\GlobalFoodItem',
               'request' => 'Illuminate\\Http\\Request',
               'jsonresource' => 'Illuminate\\Http\\Resources\\Json\\JsonResource',
             ),
@@ -5429,7 +4606,22 @@ return [
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
        'name' => 'App\\Http\\Resources\\UserResource',
-       'phpDoc' => NULL,
+       'phpDoc' => 
+      \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+         'phpDocString' => '/**
+ * @mixin User
+ */',
+         'namespace' => 'App\\Http\\Resources',
+         'uses' => 
+        array (
+          'user' => 'App\\Models\\User',
+          'request' => 'Illuminate\\Http\\Request',
+          'jsonresource' => 'Illuminate\\Http\\Resources\\Json\\JsonResource',
+        ),
+         'constUses' => 
+        array (
+        ),
+      )),
        'abstract' => false,
        'final' => false,
        'extends' => 'Illuminate\\Http\\Resources\\Json\\JsonResource',
@@ -5455,6 +4647,7 @@ return [
              'namespace' => 'App\\Http\\Resources',
              'uses' => 
             array (
+              'user' => 'App\\Models\\User',
               'request' => 'Illuminate\\Http\\Request',
               'jsonresource' => 'Illuminate\\Http\\Resources\\Json\\JsonResource',
             ),
@@ -5618,7 +4811,20 @@ return [
         2 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'user',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return BelongsTo<User, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -5636,7 +4842,20 @@ return [
         3 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'foodItem',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return BelongsTo<FoodItem, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -5654,7 +4873,20 @@ return [
         4 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'recipe',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return BelongsTo<Recipe, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -5742,7 +4974,21 @@ return [
         2 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'user',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return BelongsTo<User, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+              'hasmany' => 'Illuminate\\Database\\Eloquent\\Relations\\HasMany',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -5760,7 +5006,21 @@ return [
         3 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'recipeIngredients',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return HasMany<RecipeIngredient, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+              'hasmany' => 'Illuminate\\Database\\Eloquent\\Relations\\HasMany',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -5786,7 +5046,25 @@ return [
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
        'name' => 'App\\Models\\GlobalFoodItem',
-       'phpDoc' => NULL,
+       'phpDoc' => 
+      \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+         'phpDocString' => '/**
+ * @property-read Carbon|null $reviewed_at
+ */',
+         'namespace' => 'App\\Models',
+         'uses' => 
+        array (
+          'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+          'globalfooditemfactory' => 'Database\\Factories\\GlobalFoodItemFactory',
+          'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
+          'model' => 'Illuminate\\Database\\Eloquent\\Model',
+          'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+          'carbon' => 'Illuminate\\Support\\Carbon',
+        ),
+         'constUses' => 
+        array (
+        ),
+      )),
        'abstract' => false,
        'final' => false,
        'extends' => 'Illuminate\\Database\\Eloquent\\Model',
@@ -5849,7 +5127,23 @@ return [
         2 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'submittedBy',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return BelongsTo<User, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+              'globalfooditemfactory' => 'Database\\Factories\\GlobalFoodItemFactory',
+              'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+              'carbon' => 'Illuminate\\Support\\Carbon',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -5867,7 +5161,23 @@ return [
         3 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'reviewedBy',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return BelongsTo<User, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+              'globalfooditemfactory' => 'Database\\Factories\\GlobalFoodItemFactory',
+              'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+              'carbon' => 'Illuminate\\Support\\Carbon',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -5955,7 +5265,21 @@ return [
         2 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'user',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return BelongsTo<User, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+              'hasmany' => 'Illuminate\\Database\\Eloquent\\Relations\\HasMany',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -5973,7 +5297,21 @@ return [
         3 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'ingredients',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return HasMany<RecipeIngredient, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+              'hasmany' => 'Illuminate\\Database\\Eloquent\\Relations\\HasMany',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -6061,7 +5399,20 @@ return [
         2 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'user',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return BelongsTo<User, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -6079,7 +5430,20 @@ return [
         3 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'recipe',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return BelongsTo<Recipe, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -6097,7 +5461,20 @@ return [
         4 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'foodItem',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return BelongsTo<FoodItem, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -6184,7 +5561,25 @@ return [
         1 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'profile',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return HasOne<UserProfile, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'userfactory' => 'Database\\Factories\\UserFactory',
+              'fillable' => 'Illuminate\\Database\\Eloquent\\Attributes\\Fillable',
+              'hidden' => 'Illuminate\\Database\\Eloquent\\Attributes\\Hidden',
+              'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
+              'hasone' => 'Illuminate\\Database\\Eloquent\\Relations\\HasOne',
+              'authenticatable' => 'Illuminate\\Foundation\\Auth\\User',
+              'notifiable' => 'Illuminate\\Notifications\\Notifiable',
+              'hasapitokens' => 'Laravel\\Sanctum\\HasApiTokens',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -6306,7 +5701,20 @@ return [
         2 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'user',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return BelongsTo<User, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -6394,7 +5802,20 @@ return [
         2 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'user',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return BelongsTo<User, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -6482,7 +5903,20 @@ return [
         2 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'user',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @return BelongsTo<User, $this> */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'hasuuid' => 'App\\Models\\Concerns\\HasUuid',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -6534,6 +5968,10 @@ return [
              'namespace' => 'App\\Providers',
              'uses' => 
             array (
+              'resetpassword' => 'Illuminate\\Auth\\Notifications\\ResetPassword',
+              'limit' => 'Illuminate\\Cache\\RateLimiting\\Limit',
+              'request' => 'Illuminate\\Http\\Request',
+              'ratelimiter' => 'Illuminate\\Support\\Facades\\RateLimiter',
               'serviceprovider' => 'Illuminate\\Support\\ServiceProvider',
             ),
              'constUses' => 
@@ -6565,6 +6003,10 @@ return [
              'namespace' => 'App\\Providers',
              'uses' => 
             array (
+              'resetpassword' => 'Illuminate\\Auth\\Notifications\\ResetPassword',
+              'limit' => 'Illuminate\\Cache\\RateLimiting\\Limit',
+              'request' => 'Illuminate\\Http\\Request',
+              'ratelimiter' => 'Illuminate\\Support\\Facades\\RateLimiter',
               'serviceprovider' => 'Illuminate\\Support\\ServiceProvider',
             ),
              'constUses' => 
@@ -6662,7 +6104,8 @@ return [
              'phpDocString' => '/**
      * Upsert incoming rows for one table, resolving conflicts via last-write-wins on `updated_at`.
      *
-     * @return array<int, array{id: ?string, status: string, server?: array}>
+     * @param  array<int, mixed>  $rows
+     * @return array<int, array{id: ?string, status: string, server?: array<string, mixed>}>
      */',
              'namespace' => 'App\\Services',
              'uses' => 
@@ -6831,7 +6274,7 @@ return [
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
-     * @return array<int, array>
+     * @return array<int, array<string, mixed>>
      */',
              'namespace' => 'App\\Services',
              'uses' => 
@@ -6910,7 +6353,33 @@ return [
         4 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'pushProfile',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @param  array<string, mixed>  $data
+     * @return array{status: string, server?: array<string, mixed>}
+     */',
+             'namespace' => 'App\\Services',
+             'uses' => 
+            array (
+              'diaryentry' => 'App\\Models\\DiaryEntry',
+              'fooditem' => 'App\\Models\\FoodItem',
+              'globalfooditem' => 'App\\Models\\GlobalFoodItem',
+              'recipe' => 'App\\Models\\Recipe',
+              'recipeingredient' => 'App\\Models\\RecipeIngredient',
+              'userprofile' => 'App\\Models\\UserProfile',
+              'waterentry' => 'App\\Models\\WaterEntry',
+              'weightentry' => 'App\\Models\\WeightEntry',
+              'syncabletable' => 'App\\Support\\Sync\\SyncableTable',
+              'carbon' => 'Carbon\\Carbon',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'arr' => 'Illuminate\\Support\\Arr',
+              'str' => 'Illuminate\\Support\\Str',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -6954,7 +6423,32 @@ return [
         5 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'pullProfile',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return array<string, mixed>|null
+     */',
+             'namespace' => 'App\\Services',
+             'uses' => 
+            array (
+              'diaryentry' => 'App\\Models\\DiaryEntry',
+              'fooditem' => 'App\\Models\\FoodItem',
+              'globalfooditem' => 'App\\Models\\GlobalFoodItem',
+              'recipe' => 'App\\Models\\Recipe',
+              'recipeingredient' => 'App\\Models\\RecipeIngredient',
+              'userprofile' => 'App\\Models\\UserProfile',
+              'waterentry' => 'App\\Models\\WaterEntry',
+              'weightentry' => 'App\\Models\\WeightEntry',
+              'syncabletable' => 'App\\Support\\Sync\\SyncableTable',
+              'carbon' => 'Carbon\\Carbon',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'arr' => 'Illuminate\\Support\\Arr',
+              'str' => 'Illuminate\\Support\\Str',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -7027,13 +6521,12 @@ return [
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
-     * @param  class-string<Model>  $modelClass
+     * @param  class-string<SyncableModel>  $modelClass
      * @param  string[]  $fillableFields  Domain fields the client is allowed to push (excludes id/user_id/timestamps)
      */',
              'namespace' => 'App\\Support\\Sync',
              'uses' => 
             array (
-              'model' => 'Illuminate\\Database\\Eloquent\\Model',
             ),
              'constUses' => 
             array (

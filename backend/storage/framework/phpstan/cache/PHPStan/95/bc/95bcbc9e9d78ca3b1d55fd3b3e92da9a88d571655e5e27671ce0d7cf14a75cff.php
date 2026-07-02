@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Http\Controllers\Api\AuthController
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-dd426e74e8a74544b3ffa70cbb23fbfe6da2db8937e62cd9ca117c99261be3aa',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-d5c9fa1c5c643bea174d851957483e2e911703be6676a4477c4b79173c962142',
    'data' => 
   array (
     'locatedSource' => 
@@ -26,8 +26,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'attributes' => 
     array (
     ),
-    'startLine' => 13,
-    'endLine' => 44,
+    'startLine' => 18,
+    'endLine' => 81,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'App\\Http\\Controllers\\Controller',
@@ -69,8 +69,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 15,
-            'endLine' => 15,
+            'startLine' => 20,
+            'endLine' => 20,
             'startColumn' => 27,
             'endColumn' => 47,
             'parameterIndex' => 0,
@@ -78,13 +78,21 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           ),
         ),
         'returnsReference' => false,
-        'returnType' => NULL,
+        'returnType' => 
+        array (
+          'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+          'data' => 
+          array (
+            'name' => 'Illuminate\\Http\\JsonResponse',
+            'isIdentifier' => false,
+          ),
+        ),
         'attributes' => 
         array (
         ),
         'docComment' => NULL,
-        'startLine' => 15,
-        'endLine' => 31,
+        'startLine' => 20,
+        'endLine' => 36,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => true,
@@ -122,8 +130,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 33,
-            'endLine' => 33,
+            'startLine' => 38,
+            'endLine' => 38,
             'startColumn' => 28,
             'endColumn' => 43,
             'parameterIndex' => 0,
@@ -131,13 +139,21 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           ),
         ),
         'returnsReference' => false,
-        'returnType' => NULL,
+        'returnType' => 
+        array (
+          'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+          'data' => 
+          array (
+            'name' => 'Illuminate\\Http\\Response',
+            'isIdentifier' => false,
+          ),
+        ),
         'attributes' => 
         array (
         ),
         'docComment' => NULL,
-        'startLine' => 33,
-        'endLine' => 38,
+        'startLine' => 38,
+        'endLine' => 45,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -175,8 +191,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 40,
-            'endLine' => 40,
+            'startLine' => 47,
+            'endLine' => 47,
             'startColumn' => 24,
             'endColumn' => 39,
             'parameterIndex' => 0,
@@ -184,16 +200,146 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           ),
         ),
         'returnsReference' => false,
-        'returnType' => NULL,
+        'returnType' => 
+        array (
+          'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+          'data' => 
+          array (
+            'name' => 'App\\Http\\Resources\\UserResource',
+            'isIdentifier' => false,
+          ),
+        ),
         'attributes' => 
         array (
         ),
         'docComment' => NULL,
-        'startLine' => 40,
-        'endLine' => 43,
+        'startLine' => 47,
+        'endLine' => 50,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
+        'isClosure' => false,
+        'isGenerator' => false,
+        'isVariadic' => false,
+        'modifiers' => 1,
+        'namespace' => 'App\\Http\\Controllers\\Api',
+        'declaringClassName' => 'App\\Http\\Controllers\\Api\\AuthController',
+        'implementingClassName' => 'App\\Http\\Controllers\\Api\\AuthController',
+        'currentClassName' => 'App\\Http\\Controllers\\Api\\AuthController',
+        'aliasName' => NULL,
+      ),
+      'forgotPassword' => 
+      array (
+        'name' => 'forgotPassword',
+        'parameters' => 
+        array (
+          'request' => 
+          array (
+            'name' => 'request',
+            'default' => NULL,
+            'type' => 
+            array (
+              'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+              'data' => 
+              array (
+                'name' => 'App\\Http\\Requests\\ForgotPasswordRequest',
+                'isIdentifier' => false,
+              ),
+            ),
+            'isVariadic' => false,
+            'byRef' => false,
+            'isPromoted' => false,
+            'attributes' => 
+            array (
+            ),
+            'startLine' => 52,
+            'endLine' => 52,
+            'startColumn' => 36,
+            'endColumn' => 65,
+            'parameterIndex' => 0,
+            'isOptional' => false,
+          ),
+        ),
+        'returnsReference' => false,
+        'returnType' => 
+        array (
+          'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+          'data' => 
+          array (
+            'name' => 'Illuminate\\Http\\JsonResponse',
+            'isIdentifier' => false,
+          ),
+        ),
+        'attributes' => 
+        array (
+        ),
+        'docComment' => NULL,
+        'startLine' => 52,
+        'endLine' => 61,
+        'startColumn' => 5,
+        'endColumn' => 5,
+        'couldThrow' => false,
+        'isClosure' => false,
+        'isGenerator' => false,
+        'isVariadic' => false,
+        'modifiers' => 1,
+        'namespace' => 'App\\Http\\Controllers\\Api',
+        'declaringClassName' => 'App\\Http\\Controllers\\Api\\AuthController',
+        'implementingClassName' => 'App\\Http\\Controllers\\Api\\AuthController',
+        'currentClassName' => 'App\\Http\\Controllers\\Api\\AuthController',
+        'aliasName' => NULL,
+      ),
+      'resetPassword' => 
+      array (
+        'name' => 'resetPassword',
+        'parameters' => 
+        array (
+          'request' => 
+          array (
+            'name' => 'request',
+            'default' => NULL,
+            'type' => 
+            array (
+              'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+              'data' => 
+              array (
+                'name' => 'App\\Http\\Requests\\ResetPasswordRequest',
+                'isIdentifier' => false,
+              ),
+            ),
+            'isVariadic' => false,
+            'byRef' => false,
+            'isPromoted' => false,
+            'attributes' => 
+            array (
+            ),
+            'startLine' => 63,
+            'endLine' => 63,
+            'startColumn' => 35,
+            'endColumn' => 63,
+            'parameterIndex' => 0,
+            'isOptional' => false,
+          ),
+        ),
+        'returnsReference' => false,
+        'returnType' => 
+        array (
+          'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+          'data' => 
+          array (
+            'name' => 'Illuminate\\Http\\JsonResponse',
+            'isIdentifier' => false,
+          ),
+        ),
+        'attributes' => 
+        array (
+        ),
+        'docComment' => NULL,
+        'startLine' => 63,
+        'endLine' => 80,
+        'startColumn' => 5,
+        'endColumn' => 5,
+        'couldThrow' => true,
         'isClosure' => false,
         'isGenerator' => false,
         'isVariadic' => false,

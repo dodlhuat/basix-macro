@@ -1358,7 +1358,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/app/Models/User.php' => '6fcd50980be17ff3207b1c9fa218faa7e0c911117a8c11159d014a36dca5c4f6',
+      '/Users/andibauer/Repositories/basix-macro/backend/app/Models/User.php' => '7ba7681cdcb91a7c3d9577ba1cff4b6ac6428dc8a06052bb4c6002ace12982d1',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/sanctum/src/HasApiTokens.php' => '7400600b832dc377ac5f51d051a917775f6efc0d2176a1de7bd7826499ae6509',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Eloquent/Factories/HasFactory.php' => 'b6cb2b164e90168e80963a5549541f5f3188a3ec8cfd368bf3611bd94fbd46a7',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Notifications/Notifiable.php' => '573fa9bb96fa392434450c9cd9deb8d4e40a5bb93c140a648267b48dfa0433ac',

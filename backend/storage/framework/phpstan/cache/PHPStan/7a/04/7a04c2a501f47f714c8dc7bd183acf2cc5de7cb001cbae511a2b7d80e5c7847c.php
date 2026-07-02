@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Models/UserProfile.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Models\UserProfile
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-e1de107db78e44b83b1ab4901340504ccf88615378278cfa2364137c988c7608',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-092f38e254c212e14dc72da73d3f444c60b229351d93d9077136e0a99f6bda33',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 9,
-    'endLine' => 53,
+    'endLine' => 54,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Database\\Eloquent\\Model',
@@ -135,9 +135,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'docComment' => NULL,
-        'startLine' => 49,
-        'endLine' => 52,
+        'docComment' => '/** @return BelongsTo<User, $this> */',
+        'startLine' => 50,
+        'endLine' => 53,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

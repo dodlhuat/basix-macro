@@ -7,16 +7,19 @@ use App\Http\Requests\Admin\StoreUserRequest;
 use App\Http\Requests\Admin\UpdateUserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(): AnonymousResourceCollection
     {
         return UserResource::collection(User::query()->orderBy('name')->get());
     }
 
-    public function store(StoreUserRequest $request)
+    public function store(StoreUserRequest $request): JsonResponse
     {
         $user = User::query()->create([
             'name' => $request->validated('name'),
@@ -28,7 +31,7 @@ class UserController extends Controller
         return (new UserResource($user))->response()->setStatusCode(201);
     }
 
-    public function update(UpdateUserRequest $request, User $user)
+    public function update(UpdateUserRequest $request, User $user): UserResource
     {
         $data = $request->validated();
         if (isset($data['password'])) {
@@ -40,7 +43,7 @@ class UserController extends Controller
         return new UserResource($user);
     }
 
-    public function destroy(User $user)
+    public function destroy(User $user): Response
     {
         $user->delete();
 

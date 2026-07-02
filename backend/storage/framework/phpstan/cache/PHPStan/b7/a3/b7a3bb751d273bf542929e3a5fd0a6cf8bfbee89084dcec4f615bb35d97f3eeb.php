@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/SyncController.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Http\Controllers\Api\SyncController
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-aba64bb0ae68d584a7dbb788e2ad9f4acf3b526fe9d4844c443096d3c7e3b867',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-1982efdf4ab24b59f18f825f7fc508c33de2b4e5f889c51bc03fa502cad848fe',
    'data' => 
   array (
     'locatedSource' => 
@@ -26,8 +26,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'attributes' => 
     array (
     ),
-    'startLine' => 10,
-    'endLine' => 44,
+    'startLine' => 12,
+    'endLine' => 48,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'App\\Http\\Controllers\\Controller',
@@ -62,8 +62,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 12,
-        'endLine' => 12,
+        'startLine' => 14,
+        'endLine' => 14,
         'startColumn' => 33,
         'endColumn' => 73,
         'isPromoted' => true,
@@ -100,8 +100,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 12,
-            'endLine' => 12,
+            'startLine' => 14,
+            'endLine' => 14,
             'startColumn' => 33,
             'endColumn' => 73,
             'parameterIndex' => 0,
@@ -114,8 +114,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
         ),
         'docComment' => NULL,
-        'startLine' => 12,
-        'endLine' => 12,
+        'startLine' => 14,
+        'endLine' => 14,
         'startColumn' => 5,
         'endColumn' => 77,
         'couldThrow' => false,
@@ -153,8 +153,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 14,
-            'endLine' => 14,
+            'startLine' => 16,
+            'endLine' => 16,
             'startColumn' => 26,
             'endColumn' => 45,
             'parameterIndex' => 0,
@@ -162,13 +162,21 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           ),
         ),
         'returnsReference' => false,
-        'returnType' => NULL,
+        'returnType' => 
+        array (
+          'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+          'data' => 
+          array (
+            'name' => 'Illuminate\\Http\\JsonResponse',
+            'isIdentifier' => false,
+          ),
+        ),
         'attributes' => 
         array (
         ),
         'docComment' => NULL,
-        'startLine' => 14,
-        'endLine' => 43,
+        'startLine' => 16,
+        'endLine' => 47,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

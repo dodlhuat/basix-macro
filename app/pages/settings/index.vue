@@ -28,7 +28,12 @@
             </div>
 
             <div class="form-group">
-              <label for="account-password">{{ $t('auth.password') }}</label>
+              <div class="settings__account-password-label">
+                <label for="account-password">{{ $t('auth.password') }}</label>
+                <NuxtLink to="/forgot-password" class="settings__account-forgot-link">
+                  {{ $t('auth.forgotPassword.title') }}
+                </NuxtLink>
+              </div>
               <div class="input-group">
                 <input
                   id="account-password"
@@ -784,6 +789,29 @@ onMounted(() => userStore.loadUser())
 .settings__account-submit {
   width: 100%;
   margin-top: calc($spacing * 0.15);
+}
+
+.settings__account-password-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: calc($spacing * 0.5);
+
+  label {
+    margin: 0;
+  }
+}
+
+.settings__account-forgot-link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--accent-color);
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:active {
+    opacity: 0.7;
+  }
 }
 
 .settings__account-caption {

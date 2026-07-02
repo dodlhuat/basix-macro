@@ -12,6 +12,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Providers',
          'uses' => 
         array (
+          'resetpassword' => 'Illuminate\\Auth\\Notifications\\ResetPassword',
+          'limit' => 'Illuminate\\Cache\\RateLimiting\\Limit',
+          'request' => 'Illuminate\\Http\\Request',
+          'ratelimiter' => 'Illuminate\\Support\\Facades\\RateLimiter',
           'serviceprovider' => 'Illuminate\\Support\\ServiceProvider',
         ),
          'className' => 'App\\Providers\\AppServiceProvider',
@@ -35,6 +39,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Providers',
          'uses' => 
         array (
+          'resetpassword' => 'Illuminate\\Auth\\Notifications\\ResetPassword',
+          'limit' => 'Illuminate\\Cache\\RateLimiting\\Limit',
+          'request' => 'Illuminate\\Http\\Request',
+          'ratelimiter' => 'Illuminate\\Support\\Facades\\RateLimiter',
           'serviceprovider' => 'Illuminate\\Support\\ServiceProvider',
         ),
          'className' => 'App\\Providers\\AppServiceProvider',
@@ -58,6 +66,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Providers',
          'uses' => 
         array (
+          'resetpassword' => 'Illuminate\\Auth\\Notifications\\ResetPassword',
+          'limit' => 'Illuminate\\Cache\\RateLimiting\\Limit',
+          'request' => 'Illuminate\\Http\\Request',
+          'ratelimiter' => 'Illuminate\\Support\\Facades\\RateLimiter',
           'serviceprovider' => 'Illuminate\\Support\\ServiceProvider',
         ),
          'className' => 'App\\Providers\\AppServiceProvider',
@@ -79,7 +91,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/app/Providers/AppServiceProvider.php' => 'caf306ef6a25a547bbb7edd5508a39b51c365083eb6dd58378cf2242018e94c7',
+      '/Users/andibauer/Repositories/basix-macro/backend/app/Providers/AppServiceProvider.php' => '44ad4b627185c3814a5de31a871e7797dd922619c5f96f46f06aec607635f872',
     ),
   ),
 ));

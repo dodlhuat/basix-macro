@@ -12,6 +12,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Http\\Resources',
          'uses' => 
         array (
+          'user' => 'App\\Models\\User',
           'request' => 'Illuminate\\Http\\Request',
           'jsonresource' => 'Illuminate\\Http\\Resources\\Json\\JsonResource',
         ),
@@ -36,6 +37,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Http\\Resources',
          'uses' => 
         array (
+          'user' => 'App\\Models\\User',
           'request' => 'Illuminate\\Http\\Request',
           'jsonresource' => 'Illuminate\\Http\\Resources\\Json\\JsonResource',
         ),
@@ -44,7 +46,31 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'templatePhpDocNodes' => 
         array (
         ),
-         'parent' => NULL,
+         'parent' => 
+        \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+           'namespace' => 'App\\Http\\Resources',
+           'uses' => 
+          array (
+            'user' => 'App\\Models\\User',
+            'request' => 'Illuminate\\Http\\Request',
+            'jsonresource' => 'Illuminate\\Http\\Resources\\Json\\JsonResource',
+          ),
+           'className' => 'App\\Http\\Resources\\UserResource',
+           'functionName' => NULL,
+           'templatePhpDocNodes' => 
+          array (
+          ),
+           'parent' => NULL,
+           'typeAliasesMap' => 
+          array (
+          ),
+           'bypassTypeAliases' => false,
+           'constUses' => 
+          array (
+          ),
+           'typeAliasClassName' => NULL,
+           'traitData' => NULL,
+        )),
          'typeAliasesMap' => 
         array (
         ),
@@ -58,7 +84,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php' => 'c1f636928ac5022fe349abf416990f0d9790d0032e43dec7d253f58dd9671bc1',
+      '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/UserResource.php' => '5f1419a1b920802e42135a021ef9c75cffdec8ce102d51023363180050781a4c',
     ),
   ),
 ));

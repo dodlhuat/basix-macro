@@ -6,10 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\GlobalFoodItemResource;
 use App\Models\GlobalFoodItem;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class GlobalFoodController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request): AnonymousResourceCollection
     {
         $query = GlobalFoodItem::query()->where('status', 'approved');
 

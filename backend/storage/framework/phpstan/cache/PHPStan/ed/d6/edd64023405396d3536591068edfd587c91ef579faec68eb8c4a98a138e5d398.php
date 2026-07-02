@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Providers/AppServiceProvider.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Providers\AppServiceProvider
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-caf306ef6a25a547bbb7edd5508a39b51c365083eb6dd58378cf2242018e94c7',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-44ad4b627185c3814a5de31a871e7797dd922619c5f96f46f06aec607635f872',
    'data' => 
   array (
     'locatedSource' => 
@@ -26,8 +26,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'attributes' => 
     array (
     ),
-    'startLine' => 7,
-    'endLine' => 24,
+    'startLine' => 11,
+    'endLine' => 41,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Support\\ServiceProvider',
@@ -67,8 +67,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'docComment' => '/**
  * Register any application services.
  */',
-        'startLine' => 12,
-        'endLine' => 15,
+        'startLine' => 16,
+        'endLine' => 19,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -104,8 +104,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'docComment' => '/**
  * Bootstrap any application services.
  */',
-        'startLine' => 20,
-        'endLine' => 23,
+        'startLine' => 24,
+        'endLine' => 40,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

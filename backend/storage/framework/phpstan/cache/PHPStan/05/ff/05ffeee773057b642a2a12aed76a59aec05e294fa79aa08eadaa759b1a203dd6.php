@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Models/WeightEntry.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Models\WeightEntry
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-31f17758f501b72ebfd4ec2b0bbce55ca631f5d0e79dc99d20b20bd4b9e87962',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-7712e12c502690925fc20215c3d5a4e6f62801803b06a2c39ccb1b3dd7144d39',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 9,
-    'endLine' => 36,
+    'endLine' => 37,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Database\\Eloquent\\Model',
@@ -135,9 +135,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'docComment' => NULL,
-        'startLine' => 32,
-        'endLine' => 35,
+        'docComment' => '/** @return BelongsTo<User, $this> */',
+        'startLine' => 33,
+        'endLine' => 36,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

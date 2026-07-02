@@ -6,11 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\FoodSubmissionUpdateRequest;
 use App\Http\Resources\GlobalFoodItemResource;
 use App\Models\GlobalFoodItem;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Http\Response;
 
 class FoodSubmissionController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request): AnonymousResourceCollection
     {
         $query = GlobalFoodItem::query();
 
@@ -21,12 +24,14 @@ class FoodSubmissionController extends Controller
         return GlobalFoodItemResource::collection($query->orderBy('created_at')->get());
     }
 
-    public function update(FoodSubmissionUpdateRequest $request, GlobalFoodItem $foodSubmission)
+    public function update(FoodSubmissionUpdateRequest $request, GlobalFoodItem $foodSubmission): GlobalFoodItemResource
     {
         $data = $request->validated();
 
         if (isset($data['status']) && $data['status'] !== 'pending') {
-            $data['reviewed_by'] = $request->user()->id;
+            /** @var User $user */
+            $user = $request->user();
+            $data['reviewed_by'] = $user->id;
             $data['reviewed_at'] = now();
         }
 
@@ -35,7 +40,7 @@ class FoodSubmissionController extends Controller
         return new GlobalFoodItemResource($foodSubmission);
     }
 
-    public function destroy(GlobalFoodItem $foodSubmission)
+    public function destroy(GlobalFoodItem $foodSubmission): Response
     {
         $foodSubmission->delete();
 

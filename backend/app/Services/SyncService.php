@@ -58,7 +58,8 @@ class SyncService
     /**
      * Upsert incoming rows for one table, resolving conflicts via last-write-wins on `updated_at`.
      *
-     * @return array<int, array{id: ?string, status: string, server?: array}>
+     * @param  array<int, mixed>  $rows
+     * @return array<int, array{id: ?string, status: string, server?: array<string, mixed>}>
      */
     public function pushRows(SyncableTable $table, int $userId, array $rows): array
     {
@@ -71,7 +72,7 @@ class SyncService
                 continue;
             }
 
-            /** @var Model|null $existing */
+            /** @var SyncableModel|null $existing */
             $existing = $table->modelClass::query()
                 ->where('id', $row['id'])
                 ->where('user_id', $userId)
@@ -153,7 +154,7 @@ class SyncService
     }
 
     /**
-     * @return array<int, array>
+     * @return array<int, array<string, mixed>>
      */
     public function pullRows(SyncableTable $table, int $userId, ?Carbon $since): array
     {
@@ -161,10 +162,14 @@ class SyncService
             ->where('user_id', $userId)
             ->when($since, fn ($query) => $query->where('updated_at', '>', $since))
             ->get()
-            ->map(fn (Model $model) => $this->serialize($table, $model))
+            ->map(fn ($model) => $this->serialize($table, $model))
             ->all();
     }
 
+    /**
+     * @param  array<string, mixed>  $data
+     * @return array{status: string, server?: array<string, mixed>}
+     */
     public function pushProfile(int $userId, array $data): array
     {
         if (empty($data['id']) || empty($data['updated_at'])) {
@@ -198,6 +203,9 @@ class SyncService
         return ['status' => 'applied'];
     }
 
+    /**
+     * @return array<string, mixed>|null
+     */
     public function pullProfile(int $userId, ?Carbon $since): ?array
     {
         $profile = UserProfile::query()
@@ -208,6 +216,10 @@ class SyncService
         return $profile ? $this->serializeProfile($profile) : null;
     }
 
+    /**
+     * @param  SyncableModel  $model
+     * @return array<string, mixed>
+     */
     private function serialize(SyncableTable $table, Model $model): array
     {
         return array_merge(
@@ -220,6 +232,9 @@ class SyncService
         );
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     private function serializeProfile(UserProfile $profile): array
     {
         return array_merge(

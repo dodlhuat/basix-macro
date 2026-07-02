@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Models/FoodItem.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Models\FoodItem
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-eff40775530917796300a9f5f2ee05e140d993b388fcfe5e38e3086002b00fb5',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-dc9978c39af237b8227d92f26b383724c3a11c9d34ddce39c2f96e52b4db5acb',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 10,
-    'endLine' => 52,
+    'endLine' => 54,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Database\\Eloquent\\Model',
@@ -135,9 +135,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'docComment' => NULL,
-        'startLine' => 43,
-        'endLine' => 46,
+        'docComment' => '/** @return BelongsTo<User, $this> */',
+        'startLine' => 44,
+        'endLine' => 47,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -170,9 +170,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'docComment' => NULL,
-        'startLine' => 48,
-        'endLine' => 51,
+        'docComment' => '/** @return HasMany<RecipeIngredient, $this> */',
+        'startLine' => 50,
+        'endLine' => 53,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

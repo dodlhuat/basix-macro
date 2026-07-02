@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-class Container_f4cdf0136e extends _PHPStan_48ec32058\Nette\DI\Container
+class Container_6f989238e3 extends _PHPStan_48ec32058\Nette\DI\Container
 {
 	protected $tags = [
 		'phpstan.broker.allowedSubTypesClassReflectionExtension' => ['017' => true, '018' => true],
@@ -3223,7 +3223,9 @@ class Container_f4cdf0136e extends _PHPStan_48ec32058\Nette\DI\Container
 	public function createService067(): PHPStan\Rules\Classes\LocalTypeAliasesCheck
 	{
 		return new PHPStan\Rules\Classes\LocalTypeAliasesCheck(
-			[],
+			[
+				'SyncableModel' => '\App\Models\FoodItem|\App\Models\Recipe|\App\Models\RecipeIngredient|\App\Models\DiaryEntry|\App\Models\WeightEntry|\App\Models\WaterEntry',
+			],
 			$this->getService('reflectionProvider'),
 			$this->getService('0144'),
 			$this->getService('082'),
@@ -5041,7 +5043,9 @@ class Container_f4cdf0136e extends _PHPStan_48ec32058\Nette\DI\Container
 	public function createService0336(): PHPStan\Type\UsefulTypeAliasResolver
 	{
 		return new PHPStan\Type\UsefulTypeAliasResolver(
-			[],
+			[
+				'SyncableModel' => '\App\Models\FoodItem|\App\Models\Recipe|\App\Models\RecipeIngredient|\App\Models\DiaryEntry|\App\Models\WeightEntry|\App\Models\WaterEntry',
+			],
 			$this->getService('0137'),
 			$this->getService('0144'),
 			$this->getService('reflectionProvider')
@@ -5920,7 +5924,7 @@ class Container_f4cdf0136e extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_f4cdf0136e $container)
+			public function __construct(Container_6f989238e3 $container)
 			{
 				$this->container = $container;
 			}
@@ -5968,7 +5972,7 @@ class Container_f4cdf0136e extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_f4cdf0136e $container)
+			public function __construct(Container_6f989238e3 $container)
 			{
 				$this->container = $container;
 			}
@@ -6026,7 +6030,7 @@ class Container_f4cdf0136e extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_f4cdf0136e $container)
+			public function __construct(Container_6f989238e3 $container)
 			{
 				$this->container = $container;
 			}
@@ -6093,7 +6097,7 @@ class Container_f4cdf0136e extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_f4cdf0136e $container)
+			public function __construct(Container_6f989238e3 $container)
 			{
 				$this->container = $container;
 			}
@@ -6113,7 +6117,7 @@ class Container_f4cdf0136e extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_f4cdf0136e $container)
+			public function __construct(Container_6f989238e3 $container)
 			{
 				$this->container = $container;
 			}
@@ -6138,7 +6142,7 @@ class Container_f4cdf0136e extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_f4cdf0136e $container)
+			public function __construct(Container_6f989238e3 $container)
 			{
 				$this->container = $container;
 			}
@@ -6158,7 +6162,7 @@ class Container_f4cdf0136e extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_f4cdf0136e $container)
+			public function __construct(Container_6f989238e3 $container)
 			{
 				$this->container = $container;
 			}
@@ -6178,7 +6182,7 @@ class Container_f4cdf0136e extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_f4cdf0136e $container)
+			public function __construct(Container_6f989238e3 $container)
 			{
 				$this->container = $container;
 			}
@@ -9698,7 +9702,7 @@ class Container_f4cdf0136e extends _PHPStan_48ec32058\Nette\DI\Container
 	}
 
 
-	public function createServiceContainer(): Container_f4cdf0136e
+	public function createServiceContainer(): Container_6f989238e3
 	{
 		return $this;
 	}
@@ -10189,7 +10193,9 @@ class Container_f4cdf0136e extends _PHPStan_48ec32058\Nette\DI\Container
 			],
 			'reportUnmatchedIgnoredErrors' => true,
 			'reportIgnoresWithoutComments' => false,
-			'typeAliases' => [],
+			'typeAliases' => [
+				'SyncableModel' => '\App\Models\FoodItem|\App\Models\Recipe|\App\Models\RecipeIngredient|\App\Models\DiaryEntry|\App\Models\WeightEntry|\App\Models\WaterEntry',
+			],
 			'universalObjectCratesClasses' => ['stdClass', 'Illuminate\Http\Request', 'Illuminate\Support\Optional'],
 			'stubFiles' => [
 				'phar:///Users/andibauer/Repositories/basix-macro/backend/vendor/phpstan/phpstan/phpstan.phar/stubs/Memcached.stub',
@@ -10356,119 +10362,59 @@ class Container_f4cdf0136e extends _PHPStan_48ec32058\Nette\DI\Container
 			'usedLevel' => '8',
 			'cliAutoloadFile' => null,
 			'env' => [
-				'APP_FAKER_LOCALE' => 'en_US',
 				'NVM_INC' => '/Users/andibauer/.nvm/versions/node/v24.14.1/include/node',
-				'MAIL_FROM_ADDRESS' => 'hello@example.com',
-				'MAIL_PORT' => '2525',
-				'NoDefaultCurrentDirectoryInExePath' => '1',
-				'AWS_USE_PATH_STYLE_ENDPOINT' => 'false',
-				'DB_HOST' => 'mariadb',
-				'LOG_STACK' => 'single',
 				'TERM_PROGRAM' => 'vscode',
-				'CLAUDE_CODE_ENTRYPOINT' => 'cli',
-				'CLAUDE_EFFORT' => 'high',
 				'PHP_BINARY' => '/opt/homebrew/Cellar/php/8.5.6/bin/php',
 				'NVM_CD_FLAGS' => '-q',
-				'COMPOSER_BINARY' => '/usr/local/bin/composer',
-				'SHELL' => '/bin/zsh',
 				'TERM' => 'xterm-256color',
-				'SESSION_DOMAIN' => 'null',
-				'CACHE_STORE' => 'database',
-				'DB_PORT' => '3306',
-				'TMPDIR' => '/var/folders/4n/7hl9fjf517v3vs7d4vgc4sfh0000gn/T/',
+				'SHELL' => '/bin/zsh',
+				'COMPOSER_BINARY' => '/usr/local/bin/composer',
 				'HOMEBREW_REPOSITORY' => '/opt/homebrew',
-				'CLAUDE_CODE_CHILD_SESSION' => '1',
-				'SESSION_DRIVER' => 'database',
-				'TERM_PROGRAM_VERSION' => '1.126.0',
+				'TMPDIR' => '/var/folders/4n/7hl9fjf517v3vs7d4vgc4sfh0000gn/T/',
 				'VSCODE_PYTHON_AUTOACTIVATE_GUARD' => '1',
-				'APP_FALLBACK_LOCALE' => 'en',
+				'TERM_PROGRAM_VERSION' => '1.126.0',
 				'FPATH' => '/opt/homebrew/share/zsh/site-functions:/opt/homebrew/share/zsh/site-functions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.9/functions',
-				'LOG_DEPRECATIONS_CHANNEL' => 'null',
-				'MallocNanoZone' => '0',
 				'ZDOTDIR' => '/Users/andibauer',
-				'APP_NAME' => 'Laravel',
-				'AWS_BUCKET' => '',
-				'MAIL_USERNAME' => 'null',
-				'GIT_TERMINAL_PROMPT' => '0',
+				'MallocNanoZone' => '0',
 				'COPILOT_DEBUG_NONCE' => '37e8cda85e183660920601e432defbf2',
-				'AI_AGENT' => 'claude-code_2-1-197_agent',
-				'GIT_EDITOR' => 'true',
-				'FRONTEND_URLS' => 'https://localhost:3000',
-				'USER' => 'andibauer',
+				'GIT_TERMINAL_PROMPT' => '0',
 				'NVM_DIR' => '/Users/andibauer/.nvm',
+				'USER' => 'andibauer',
 				'COMMAND_MODE' => 'unix2003',
-				'MEMCACHED_HOST' => '127.0.0.1',
-				'SSH_AUTH_SOCK' => '/var/run/com.apple.launchd.770uepjJSj/Listeners',
 				'CLAUDE_CODE_SSE_PORT' => '19125',
-				'FILESYSTEM_DISK' => 'local',
-				'APP_URL' => 'http://localhost',
-				'__CF_USER_TEXT_ENCODING' => '0x1F5:0x0:0x5C',
+				'SSH_AUTH_SOCK' => '/var/run/com.apple.launchd.770uepjJSj/Listeners',
 				'VSCODE_PROFILE_INITIALIZED' => '1',
-				'REDIS_CLIENT' => 'phpredis',
-				'COLUMNS' => '80',
-				'REDIS_HOST' => '127.0.0.1',
-				'MAIL_PASSWORD' => 'null',
-				'MAIL_MAILER' => 'log',
-				'DB_CONNECTION' => 'mariadb',
-				'PATH' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/bin:/Users/andibauer/.nvm/versions/node/v24.14.1/bin:/opt/homebrew/bin:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli:/Users/andibauer/.nvm/versions/node/v24.14.1/bin:/Users/andibauer/.claude/plugins/cache/claude-plugins-official/frontend-design/unknown/bin',
-				'DB_DATABASE' => 'laravel',
-				'REDIS_PASSWORD' => 'null',
+				'__CF_USER_TEXT_ENCODING' => '0x1F5:0x0:0x5C',
+				'PATH' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/bin:/Users/andibauer/.nvm/versions/node/v24.14.1/bin:/opt/homebrew/bin:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli:/Users/andibauer/.nvm/versions/node/v24.14.1/bin',
+				'_' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/bin/phpstan',
 				'LaunchInstanceID' => 'A4E1E98B-217B-488D-8A12-07A3527EEA40',
-				'_' => '/opt/homebrew/Cellar/php/8.5.6/bin/php',
-				'AWS_DEFAULT_REGION' => 'us-east-1',
-				'__CFBundleIdentifier' => 'com.microsoft.VSCode',
 				'USER_ZDOTDIR' => '/Users/andibauer',
+				'__CFBundleIdentifier' => 'com.microsoft.VSCode',
 				'PWD' => '/Users/andibauer/Repositories/basix-macro/backend',
-				'MAIL_FROM_NAME' => 'Laravel',
-				'SESSION_ENCRYPT' => 'false',
-				'DB_PASSWORD' => 'password',
-				'APP_LOCALE' => 'en',
-				'AWS_SECRET_ACCESS_KEY' => '',
-				'PHP_CLI_SERVER_WORKERS' => '4',
-				'BROADCAST_CONNECTION' => 'log',
-				'COMPOSER_DEV_MODE' => '1',
 				'LANG' => 'C.UTF-8',
-				'SESSION_PATH' => '/',
-				'XPC_FLAGS' => '0x0',
+				'COMPOSER_DEV_MODE' => '1',
 				'VSCODE_GIT_ASKPASS_EXTRA_ARGS' => '',
-				'APP_DEBUG' => 'true',
-				'APP_KEY' => 'base64:aWiIbq0mpA6MzeN4CjOJr3w/hLDfCj+fZOGPyzZHSFY=',
-				'LINES' => '50',
+				'XPC_FLAGS' => '0x0',
 				'XPC_SERVICE_NAME' => '0',
-				'AWS_ACCESS_KEY_ID' => '',
-				'SHELL_VERBOSITY' => '0',
 				'VSCODE_INJECTION' => '1',
-				'REDIS_PORT' => '6379',
-				'DB_USERNAME' => 'sail',
-				'LOG_LEVEL' => 'debug',
+				'SHELL_VERBOSITY' => '0',
+				'SHLVL' => '2',
 				'HOME' => '/Users/andibauer',
-				'SHLVL' => '4',
-				'LANGUAGE' => 'C',
 				'VSCODE_GIT_ASKPASS_MAIN' => '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js',
-				'CLAUDE_CODE_EXECPATH' => '/Users/andibauer/.nvm/versions/node/v24.14.1/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe',
-				'VITE_APP_NAME' => 'Laravel',
+				'LANGUAGE' => 'C',
 				'HOMEBREW_PREFIX' => '/opt/homebrew',
-				'LOG_CHANNEL' => 'stack',
 				'LOGNAME' => 'andibauer',
-				'MAIL_SCHEME' => 'null',
 				'VSCODE_GIT_IPC_HANDLE' => '/var/folders/4n/7hl9fjf517v3vs7d4vgc4sfh0000gn/T/vscode-git-aec171208b.sock',
-				'SESSION_LIFETIME' => '120',
-				'COREPACK_ENABLE_AUTO_PIN' => '0',
 				'NVM_BIN' => '/Users/andibauer/.nvm/versions/node/v24.14.1/bin',
-				'QUEUE_CONNECTION' => 'database',
-				'APP_ENV' => 'local',
-				'HOMEBREW_CELLAR' => '/opt/homebrew/Cellar',
-				'INFOPATH' => '/opt/homebrew/share/info:/opt/homebrew/share/info:',
-				'GIT_ASKPASS' => '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh',
 				'VSCODE_GIT_ASKPASS_NODE' => '/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)',
-				'CLAUDE_CODE_SESSION_ID' => '719d1bce-ad75-4935-8bfc-395333d3cb96',
-				'BCRYPT_ROUNDS' => '12',
+				'GIT_ASKPASS' => '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh',
+				'INFOPATH' => '/opt/homebrew/share/info:/opt/homebrew/share/info:',
+				'HOMEBREW_CELLAR' => '/opt/homebrew/Cellar',
 				'OSLogRateLimit' => '64',
 				'SECURITYSESSIONID' => '186a2',
-				'CLAUDECODE' => '1',
-				'MAIL_HOST' => '127.0.0.1',
-				'APP_MAINTENANCE_DRIVER' => 'file',
 				'COLORTERM' => 'truecolor',
+				'LINES' => '21',
+				'COLUMNS' => '130',
 			],
 		];
 	}

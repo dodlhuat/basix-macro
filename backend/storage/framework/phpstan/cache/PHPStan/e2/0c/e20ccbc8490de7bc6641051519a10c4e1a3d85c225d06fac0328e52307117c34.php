@@ -12,6 +12,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Http\\Resources',
          'uses' => 
         array (
+          'globalfooditem' => 'App\\Models\\GlobalFoodItem',
           'request' => 'Illuminate\\Http\\Request',
           'jsonresource' => 'Illuminate\\Http\\Resources\\Json\\JsonResource',
         ),
@@ -36,6 +37,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Http\\Resources',
          'uses' => 
         array (
+          'globalfooditem' => 'App\\Models\\GlobalFoodItem',
           'request' => 'Illuminate\\Http\\Request',
           'jsonresource' => 'Illuminate\\Http\\Resources\\Json\\JsonResource',
         ),
@@ -44,7 +46,31 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'templatePhpDocNodes' => 
         array (
         ),
-         'parent' => NULL,
+         'parent' => 
+        \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+           'namespace' => 'App\\Http\\Resources',
+           'uses' => 
+          array (
+            'globalfooditem' => 'App\\Models\\GlobalFoodItem',
+            'request' => 'Illuminate\\Http\\Request',
+            'jsonresource' => 'Illuminate\\Http\\Resources\\Json\\JsonResource',
+          ),
+           'className' => 'App\\Http\\Resources\\GlobalFoodItemResource',
+           'functionName' => NULL,
+           'templatePhpDocNodes' => 
+          array (
+          ),
+           'parent' => NULL,
+           'typeAliasesMap' => 
+          array (
+          ),
+           'bypassTypeAliases' => false,
+           'constUses' => 
+          array (
+          ),
+           'typeAliasClassName' => NULL,
+           'traitData' => NULL,
+        )),
          'typeAliasesMap' => 
         array (
         ),
@@ -58,7 +84,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php' => '7f1e958478d4a221ed4d0a9fd7ef0ee2ed5025dc859a1c66412c80502ecf3149',
+      '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php' => '82add257a529cb4c60f3526c928a8a4f99fb67fc26f9c013fee9863c76e9b95e',
     ),
   ),
 ));

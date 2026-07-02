@@ -54,4 +54,21 @@ class AuthTest extends TestCase
 
         $response->assertOk()->assertJsonPath('data.email', $user->email);
     }
+
+    public function test_login_is_rate_limited_after_five_attempts_per_minute(): void
+    {
+        $user = User::factory()->create(['password' => bcrypt('secret123')]);
+
+        for ($i = 0; $i < 5; $i++) {
+            $this->postJson('/api/auth/login', [
+                'email' => $user->email,
+                'password' => 'wrong-password',
+            ])->assertStatus(422);
+        }
+
+        $this->postJson('/api/auth/login', [
+            'email' => $user->email,
+            'password' => 'secret123',
+        ])->assertStatus(429);
+    }
 }

@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Http/Resources/GlobalFoodItemResource.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Http\Resources\GlobalFoodItemResource
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-7f1e958478d4a221ed4d0a9fd7ef0ee2ed5025dc859a1c66412c80502ecf3149',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-82add257a529cb4c60f3526c928a8a4f99fb67fc26f9c013fee9863c76e9b95e',
    'data' => 
   array (
     'locatedSource' => 
@@ -22,12 +22,14 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'isEnum' => false,
     'isBackedEnum' => false,
     'modifiers' => 0,
-    'docComment' => NULL,
+    'docComment' => '/**
+ * @mixin GlobalFoodItem
+ */',
     'attributes' => 
     array (
     ),
-    'startLine' => 8,
-    'endLine' => 35,
+    'startLine' => 12,
+    'endLine' => 39,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Http\\Resources\\Json\\JsonResource',
@@ -69,8 +71,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 13,
-            'endLine' => 13,
+            'startLine' => 17,
+            'endLine' => 17,
             'startColumn' => 29,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -93,8 +95,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'docComment' => '/**
  * @return array<string, mixed>
  */',
-        'startLine' => 13,
-        'endLine' => 34,
+        'startLine' => 17,
+        'endLine' => 38,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

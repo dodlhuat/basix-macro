@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Support/Sync/SyncableTable.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Support\Sync\SyncableTable
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-c53935217b752543716b11ac702e8558dbfb07d8a6898e5dd93fa2b360a2ccb0',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-5ffcbd83d97560891fa98c48cd616322778318203b03ae771b9c2fd0e173ce31',
    'data' => 
   array (
     'locatedSource' => 
@@ -26,8 +26,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'attributes' => 
     array (
     ),
-    'startLine' => 7,
-    'endLine' => 18,
+    'startLine' => 5,
+    'endLine' => 16,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -62,8 +62,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 14,
-        'endLine' => 14,
+        'startLine' => 12,
+        'endLine' => 12,
         'startColumn' => 9,
         'endColumn' => 35,
         'isPromoted' => true,
@@ -93,8 +93,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 15,
-        'endLine' => 15,
+        'startLine' => 13,
+        'endLine' => 13,
         'startColumn' => 9,
         'endColumn' => 42,
         'isPromoted' => true,
@@ -124,8 +124,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 16,
-        'endLine' => 16,
+        'startLine' => 14,
+        'endLine' => 14,
         'startColumn' => 9,
         'endColumn' => 45,
         'isPromoted' => true,
@@ -162,8 +162,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 14,
-            'endLine' => 14,
+            'startLine' => 12,
+            'endLine' => 12,
             'startColumn' => 9,
             'endColumn' => 35,
             'parameterIndex' => 0,
@@ -188,8 +188,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 15,
-            'endLine' => 15,
+            'startLine' => 13,
+            'endLine' => 13,
             'startColumn' => 9,
             'endColumn' => 42,
             'parameterIndex' => 1,
@@ -214,8 +214,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 16,
-            'endLine' => 16,
+            'startLine' => 14,
+            'endLine' => 14,
             'startColumn' => 9,
             'endColumn' => 45,
             'parameterIndex' => 2,
@@ -228,11 +228,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
         ),
         'docComment' => '/**
- * @param  class-string<Model>  $modelClass
+ * @param  class-string<SyncableModel>  $modelClass
  * @param  string[]  $fillableFields  Domain fields the client is allowed to push (excludes id/user_id/timestamps)
  */',
-        'startLine' => 13,
-        'endLine' => 17,
+        'startLine' => 11,
+        'endLine' => 15,
         'startColumn' => 5,
         'endColumn' => 8,
         'couldThrow' => false,

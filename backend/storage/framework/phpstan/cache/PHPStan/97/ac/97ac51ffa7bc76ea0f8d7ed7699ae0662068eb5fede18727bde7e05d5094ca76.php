@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Models/User.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Models\User
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-6fcd50980be17ff3207b1c9fa218faa7e0c911117a8c11159d014a36dca5c4f6',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-7ba7681cdcb91a7c3d9577ba1cff4b6ac6428dc8a06052bb4c6002ace12982d1',
    'data' => 
   array (
     'locatedSource' => 
@@ -69,7 +69,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       ),
     ),
     'startLine' => 15,
-    'endLine' => 44,
+    'endLine' => 45,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Foundation\\Auth\\User',
@@ -148,9 +148,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'docComment' => NULL,
-        'startLine' => 35,
-        'endLine' => 38,
+        'docComment' => '/** @return HasOne<UserProfile, $this> */',
+        'startLine' => 36,
+        'endLine' => 39,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -184,8 +184,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
         ),
         'docComment' => NULL,
-        'startLine' => 40,
-        'endLine' => 43,
+        'startLine' => 41,
+        'endLine' => 44,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

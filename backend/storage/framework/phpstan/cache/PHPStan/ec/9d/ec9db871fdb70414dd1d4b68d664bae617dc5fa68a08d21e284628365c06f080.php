@@ -12,7 +12,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Support\\Sync',
          'uses' => 
         array (
-          'model' => 'Illuminate\\Database\\Eloquent\\Model',
         ),
          'className' => 'App\\Support\\Sync\\SyncableTable',
          'functionName' => NULL,
@@ -35,7 +34,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Support\\Sync',
          'uses' => 
         array (
-          'model' => 'Illuminate\\Database\\Eloquent\\Model',
         ),
          'className' => 'App\\Support\\Sync\\SyncableTable',
          'functionName' => '__construct',
@@ -56,7 +54,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/app/Support/Sync/SyncableTable.php' => 'c53935217b752543716b11ac702e8558dbfb07d8a6898e5dd93fa2b360a2ccb0',
+      '/Users/andibauer/Repositories/basix-macro/backend/app/Support/Sync/SyncableTable.php' => '5ffcbd83d97560891fa98c48cd616322778318203b03ae771b9c2fd0e173ce31',
     ),
   ),
 ));

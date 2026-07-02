@@ -38,16 +38,19 @@ class DiaryEntry extends Model
         ];
     }
 
+    /** @return BelongsTo<User, $this> */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
+    /** @return BelongsTo<FoodItem, $this> */
     public function foodItem(): BelongsTo
     {
         return $this->belongsTo(FoodItem::class);
     }
 
+    /** @return BelongsTo<Recipe, $this> */
     public function recipe(): BelongsTo
     {
         return $this->belongsTo(Recipe::class);

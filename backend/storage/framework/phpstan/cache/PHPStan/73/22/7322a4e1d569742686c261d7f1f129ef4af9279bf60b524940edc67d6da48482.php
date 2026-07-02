@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/GlobalFoodController.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Http\Controllers\Api\GlobalFoodController
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-bbaba3cc2bcd1a993b0e25b93932022714f42965ac606a6244419ee867f382ff',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-16455715e549cd2007d5bf21d5abd5e6ca905903e7f331af6a4d9ba66b34bdfe',
    'data' => 
   array (
     'locatedSource' => 
@@ -26,8 +26,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'attributes' => 
     array (
     ),
-    'startLine' => 10,
-    'endLine' => 27,
+    'startLine' => 11,
+    'endLine' => 28,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'App\\Http\\Controllers\\Controller',
@@ -69,8 +69,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 12,
-            'endLine' => 12,
+            'startLine' => 13,
+            'endLine' => 13,
             'startColumn' => 27,
             'endColumn' => 42,
             'parameterIndex' => 0,
@@ -78,13 +78,21 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           ),
         ),
         'returnsReference' => false,
-        'returnType' => NULL,
+        'returnType' => 
+        array (
+          'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+          'data' => 
+          array (
+            'name' => 'Illuminate\\Http\\Resources\\Json\\AnonymousResourceCollection',
+            'isIdentifier' => false,
+          ),
+        ),
         'attributes' => 
         array (
         ),
         'docComment' => NULL,
-        'startLine' => 12,
-        'endLine' => 26,
+        'startLine' => 13,
+        'endLine' => 27,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
