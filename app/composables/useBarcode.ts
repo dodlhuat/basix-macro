@@ -48,8 +48,9 @@ async function startNativeScanner(
       detecting = true
       try {
         const results = await detector.detect(video)
-        if (results.length > 0 && !stopped) {
-          onDetected(results[0].rawValue)
+        const first = results[0]
+        if (first && !stopped) {
+          onDetected(first.rawValue)
         }
       }
       // eslint-disable-next-line no-empty

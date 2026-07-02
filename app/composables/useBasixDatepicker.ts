@@ -1,4 +1,5 @@
 import type { Ref } from 'vue'
+import type { DateRange } from '@dodlhuat/basix/js/datepicker.js'
 
 const DAYS_DE = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa']
 const MONTHS_DE = [
@@ -45,7 +46,10 @@ export function useBasixDatepicker(elRef: Ref<HTMLInputElement | null>, model: R
       startDay: 1,
       locales: { days: DAYS_DE, months: MONTHS_DE },
       format: toDisplay,
-      onSelect: (date: Date) => {
+      onSelect: (date: Date | DateRange) => {
+        // Configured with `mode: 'single'`, so the picker only ever selects a single Date —
+        // a DateRange would only occur in 'range' mode, which this composable doesn't support.
+        if (!(date instanceof Date)) return
         suppressWatch = true
         model.value = toYMD(date)
         nextTick(() => { suppressWatch = false })

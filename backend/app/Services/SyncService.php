@@ -222,9 +222,20 @@ class SyncService
      */
     private function serialize(SyncableTable $table, Model $model): array
     {
+        $attributes = Arr::only($model->toArray(), $table->fillableFields);
+
+        // toArray() serializes date-cast columns as full ISO timestamps, but the client
+        // stores (and queries by) a bare YYYY-MM-DD for `date` fields — re-derive it
+        // directly from the cast Carbon instance instead of the array-serialized form.
+        if (array_key_exists('date', $attributes)) {
+            /** @var Carbon $date */
+            $date = $model->getAttribute('date');
+            $attributes['date'] = $date->format('Y-m-d');
+        }
+
         return array_merge(
             ['id' => $model->id],
-            Arr::only($model->toArray(), $table->fillableFields),
+            $attributes,
             [
                 'updated_at' => optional($model->client_updated_at)->toISOString(),
                 'deleted_at' => optional($model->deleted_at)->toISOString(),

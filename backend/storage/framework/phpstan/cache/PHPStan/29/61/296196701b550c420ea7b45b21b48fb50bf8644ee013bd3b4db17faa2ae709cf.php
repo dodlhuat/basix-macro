@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Services\SyncService
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-4ff7231b7892b0e5af510612d7640a4ccda2c6e6765c453914df90d4ea893935',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-75c0a5f67a2397782577241baa82dc3c4d40fdf1076beda6a3c29039c75b3073',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 19,
-    'endLine' => 249,
+    'endLine' => 260,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -776,7 +776,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @return array<string, mixed>
  */',
         'startLine' => 223,
-        'endLine' => 233,
+        'endLine' => 244,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -814,8 +814,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 238,
-            'endLine' => 238,
+            'startLine' => 249,
+            'endLine' => 249,
             'startColumn' => 39,
             'endColumn' => 58,
             'parameterIndex' => 0,
@@ -838,8 +838,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'docComment' => '/**
  * @return array<string, mixed>
  */',
-        'startLine' => 238,
-        'endLine' => 248,
+        'startLine' => 249,
+        'endLine' => 259,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

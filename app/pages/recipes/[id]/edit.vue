@@ -611,7 +611,7 @@
 
 <script setup lang="ts">
 import type { FoodItem } from '../../../../db'
-import type { OFFProduct } from '../../../../composables/useOpenFoodFacts'
+import type { OFFProduct } from '../../../composables/useOpenFoodFacts'
 
 definePageMeta({ title: 'Rezept bearbeiten' })
 

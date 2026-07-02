@@ -213,4 +213,26 @@ class SyncTest extends TestCase
         $this->assertDatabaseCount('user_profiles', 1);
         $this->assertDatabaseHas('user_profiles', ['user_id' => $user->id, 'name' => 'From Device B']);
     }
+
+    public function test_pulled_date_fields_are_plain_dates_not_full_timestamps(): void
+    {
+        // The client stores/queries `date` on diary/weight/water entries as bare
+        // YYYY-MM-DD; Eloquent's default array serialization would otherwise turn
+        // the `date`-cast column into a full ISO timestamp on the way out.
+        $user = User::factory()->create();
+        $id = (string) Str::uuid();
+
+        $this->actingAs($user, 'sanctum')->postJson('/api/sync', [
+            'tables' => ['weight_entries' => [[
+                'id' => $id,
+                'date' => '2026-03-15',
+                'weight_kg' => 80,
+                'updated_at' => '2026-01-01T00:00:00.000Z',
+            ]]],
+        ])->assertOk();
+
+        $response = $this->actingAs($user, 'sanctum')->postJson('/api/sync', []);
+
+        $response->assertOk()->assertJsonPath('changes.weight_entries.0.date', '2026-03-15');
+    }
 }

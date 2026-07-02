@@ -1,6 +1,15 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { useOpenFoodFacts } from '../app/composables/useOpenFoodFacts'
 
+// useOpenFoodFacts() calls the real vue-i18n useI18n() composable, which requires an
+// active component instance — unavailable in this plain Vitest environment. Stub it
+// with the minimum the composable needs (a passthrough `t` and a static `locale`).
+// Vitest hoists vi.mock() above imports, so this applies before useOpenFoodFacts()
+// below ever calls the real useI18n().
+vi.mock('vue-i18n', () => ({
+  useI18n: () => ({ t: (key: string) => key, locale: { value: 'de' } }),
+}))
+
 const { lookupBarcode, mapToFoodItem } = useOpenFoodFacts()
 
 // ─── mapToFoodItem ────────────────────────────────────────────────────────────
