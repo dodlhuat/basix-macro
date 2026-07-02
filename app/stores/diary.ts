@@ -12,9 +12,9 @@ export const useDiaryStore = defineStore('diary', () => {
   async function loadForDate(date: string) {
     const { db } = await import('../../db')
     activeDate.value = date
-    const rawEntries = await db.diary_entries.where('date').equals(date).toArray()
+    const rawEntries = await db.diary_entries.where('date').equals(date).filter(e => !e.deleted_at).toArray()
     entries.value = rawEntries
-    waterEntries.value = await db.water_entries.where('date').equals(date).toArray()
+    waterEntries.value = await db.water_entries.where('date').equals(date).filter(w => !w.deleted_at).toArray()
 
     // Enrich entries with food/recipe names
     const details: DiaryEntryWithName[] = []
@@ -134,7 +134,10 @@ export const useDiaryStore = defineStore('diary', () => {
 
   async function deleteEntry(id: string) {
     const { db } = await import('../../db')
-    await db.diary_entries.delete(id)
+    const entry = await db.diary_entries.get(id)
+    if (!entry) return
+    const now = new Date().toISOString()
+    await db.diary_entries.put(markDeleted(entry, now))
     entries.value = entries.value.filter(e => e.id !== id)
     entryDetails.value = entryDetails.value.filter(e => e.id !== id)
   }

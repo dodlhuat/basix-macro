@@ -50,6 +50,25 @@
             {{ $t('nav.settings') }}
           </NuxtLink>
         </li>
+
+        <!-- Admin-Bereich: nur für Benutzer mit role 'admin' -->
+        <template v-if="authStore.isAdmin">
+          <li class="push-menu-section-label" aria-hidden="true">
+            <span class="push-menu-panel-title">{{ $t('nav.adminSection') }}</span>
+          </li>
+          <li>
+            <NuxtLink to="/admin/users" class="push-menu-item" @click="close">
+              <AppIcon name="group" size="1.25rem" />
+              {{ $t('nav.adminUsers') }}
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/admin/foods" class="push-menu-item" @click="close">
+              <AppIcon name="fact_check" size="1.25rem" />
+              {{ $t('nav.adminFoods') }}
+            </NuxtLink>
+          </li>
+        </template>
       </ul>
     </div>
   </nav>
@@ -57,11 +76,22 @@
 
 <script setup lang="ts">
 const { close } = usePushMenu()
-const today = new Date().toISOString().split('T')[0]
+const today = new Date().toISOString().substring(0, 10)
+const authStore = useAuthStore()
 </script>
 
 <style lang="scss" scoped>
+@use "@dodlhuat/basix/css/parameters" as *;
+
 .push-menu-item {
   gap: 0.75rem;
+}
+
+// Uppercase label separating regular nav from the admin-only section.
+// Reuses Basix's .push-menu-panel-title text treatment (see push-menu.scss),
+// just adds the padding it needs outside of a panel header context.
+.push-menu-section-label {
+  padding: calc($spacing * 1) calc($spacing * 1.5) calc($spacing * 0.4);
+  pointer-events: none;
 }
 </style>

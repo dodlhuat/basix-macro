@@ -10,14 +10,14 @@ export const useFoodStore = defineStore('food', () => {
 
   async function loadAll() {
     const { db } = await import('../../db')
-    items.value = await db.food_items.orderBy('name').toArray()
+    items.value = excludeDeleted(await db.food_items.orderBy('name').toArray())
   }
 
   async function loadFavorites(): Promise<void> {
     const { db } = await import('../../db')
     const all = await db.food_items.toArray()
     items.value = all
-      .filter(f => f.is_favorite)
+      .filter(f => f.is_favorite && !f.deleted_at)
       .sort((a, b) => a.name.localeCompare(b.name))
   }
 
@@ -26,6 +26,7 @@ export const useFoodStore = defineStore('food', () => {
     items.value = await db.food_items
       .orderBy('last_used_at')
       .reverse()
+      .filter(f => !f.deleted_at)
       .limit(30)
       .toArray()
   }
@@ -42,7 +43,7 @@ export const useFoodStore = defineStore('food', () => {
       } else if (activeFilter.value === 'recent') {
         await loadRecent()
       } else {
-        items.value = await db.food_items.orderBy('name').toArray()
+        items.value = excludeDeleted(await db.food_items.orderBy('name').toArray())
       }
       return
     }
@@ -50,8 +51,9 @@ export const useFoodStore = defineStore('food', () => {
     items.value = await db.food_items
       .filter(
         f =>
-          f.name.toLowerCase().includes(lower) ||
-          (f.brand ?? '').toLowerCase().includes(lower),
+          !f.deleted_at &&
+          (f.name.toLowerCase().includes(lower) ||
+            (f.brand ?? '').toLowerCase().includes(lower)),
       )
       .toArray()
   }
@@ -91,13 +93,16 @@ export const useFoodStore = defineStore('food', () => {
 
   async function deleteItem(id: string): Promise<void> {
     const { db } = await import('../../db')
-    await db.food_items.delete(id)
+    const item = await db.food_items.get(id)
+    if (!item) return
+    const now = new Date().toISOString()
+    await db.food_items.put(markDeleted(item, now))
     items.value = items.value.filter(f => f.id !== id)
   }
 
   async function findByBarcode(barcode: string): Promise<FoodItem | undefined> {
     const { db } = await import('../../db')
-    return db.food_items.where('barcode').equals(barcode).first()
+    return db.food_items.where('barcode').equals(barcode).filter(f => !f.deleted_at).first()
   }
 
   async function toggleFavorite(id: string): Promise<void> {

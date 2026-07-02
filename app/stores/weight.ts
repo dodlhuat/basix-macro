@@ -9,6 +9,7 @@ export const useWeightStore = defineStore('weight', () => {
     entries.value = await db.weight_entries
       .orderBy('date')
       .reverse()
+      .filter(w => !w.deleted_at)
       .toArray()
   }
 
@@ -31,7 +32,10 @@ export const useWeightStore = defineStore('weight', () => {
 
   async function deleteEntry(id: string): Promise<void> {
     const { db } = await import('../../db')
-    await db.weight_entries.delete(id)
+    const entry = await db.weight_entries.get(id)
+    if (!entry) return
+    const now = new Date().toISOString()
+    await db.weight_entries.put(markDeleted(entry, now))
     entries.value = entries.value.filter(e => e.id !== id)
   }
 

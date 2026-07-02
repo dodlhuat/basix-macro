@@ -3,6 +3,9 @@ import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt(
   {
+    ignores: ['backend/**'],
+  },
+  {
     rules: {
       // Vue 3 supports multiple root elements (fragments)
       'vue/no-multiple-template-root': 'off',

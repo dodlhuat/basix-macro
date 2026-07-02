@@ -24,6 +24,7 @@ export interface User {
   created_at: string
   updated_at: string
   sync_status: 'local' | 'synced' | 'dirty'
+  deleted_at?: string | null
 }
 
 export interface FoodItem {
@@ -37,12 +38,13 @@ export interface FoodItem {
   fat_per_100g: number
   fiber_per_100g?: number
   sugar_per_100g?: number
-  source: 'manual' | 'openfoodfacts' | 'user_barcode_link'
+  source: 'manual' | 'openfoodfacts' | 'user_barcode_link' | 'global'
   is_favorite: boolean
   last_used_at?: string
   created_at: string
   updated_at: string
   sync_status: 'local' | 'synced' | 'dirty'
+  deleted_at?: string | null
 }
 
 export interface Recipe {
@@ -54,6 +56,7 @@ export interface Recipe {
   created_at: string
   updated_at: string
   sync_status: 'local' | 'synced' | 'dirty'
+  deleted_at?: string | null
 }
 
 export interface RecipeIngredient {
@@ -62,6 +65,9 @@ export interface RecipeIngredient {
   food_item_id: string
   amount_g: number
   created_at: string
+  updated_at: string
+  sync_status: 'local' | 'synced' | 'dirty'
+  deleted_at?: string | null
 }
 
 export interface DiaryEntry {
@@ -80,6 +86,7 @@ export interface DiaryEntry {
   created_at: string
   updated_at: string
   sync_status: 'local' | 'synced' | 'dirty'
+  deleted_at?: string | null
 }
 
 export interface WeightEntry {
@@ -90,6 +97,7 @@ export interface WeightEntry {
   created_at: string
   updated_at: string
   sync_status: 'local' | 'synced' | 'dirty'
+  deleted_at?: string | null
 }
 
 export interface WaterEntry {
@@ -100,16 +108,7 @@ export interface WaterEntry {
   created_at: string
   updated_at: string
   sync_status: 'local' | 'synced' | 'dirty'
-}
-
-export interface SyncQueueItem {
-  id: string
-  table_name: string
-  record_id: string
-  operation: 'create' | 'update' | 'delete'
-  payload: string
-  created_at: string
-  retry_count: number
+  deleted_at?: string | null
 }
 
 class BasixMacroDatabase extends Dexie {
@@ -120,10 +119,40 @@ class BasixMacroDatabase extends Dexie {
   diary_entries!: Table<DiaryEntry>
   weight_entries!: Table<WeightEntry>
   water_entries!: Table<WaterEntry>
-  sync_queue!: Table<SyncQueueItem>
 
   constructor() {
     super('BasixMacroDB')
+
+    this.version(5).stores({
+      users: 'id, sync_status',
+      food_items: 'id, name, barcode, is_favorite, last_used_at, source, sync_status',
+      recipes: 'id, name, sync_status',
+      recipe_ingredients: 'id, recipe_id, food_item_id, sync_status',
+      diary_entries: 'id, date, meal_type, food_item_id, recipe_id, sync_status',
+      weight_entries: 'id, date, sync_status',
+      water_entries: 'id, date, sync_status',
+      sync_queue: null,
+    }).upgrade(async (tx) => {
+      const now = new Date().toISOString()
+      const tablesWithDeletedAt = [
+        'users',
+        'food_items',
+        'recipes',
+        'recipe_ingredients',
+        'diary_entries',
+        'weight_entries',
+        'water_entries',
+      ]
+      for (const tableName of tablesWithDeletedAt) {
+        await tx.table(tableName).toCollection().modify((row) => {
+          if (row.deleted_at === undefined) row.deleted_at = null
+        })
+      }
+      await tx.table('recipe_ingredients').toCollection().modify((row) => {
+        if (row.sync_status === undefined) row.sync_status = 'synced'
+        if (row.updated_at === undefined) row.updated_at = row.created_at ?? now
+      })
+    })
 
     this.version(4).stores({
       users: 'id, sync_status',

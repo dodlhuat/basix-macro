@@ -2,7 +2,134 @@
   <div class="page-content settings">
     <h1>{{ $t('settings.title') }}</h1>
 
-    <!-- Sektion 1: Profil -->
+    <!-- Sektion 1: Account -->
+    <div class="settings__group">
+      <p class="settings__section-title">{{ $t('settings.account.title') }}</p>
+      <div class="settings__section">
+        <!-- Ausgeloggt: Login-Formular -->
+        <template v-if="!authStore.isAuthenticated">
+          <form class="settings__account-form" novalidate @submit.prevent="handleLogin">
+            <p class="settings__account-intro">{{ $t('settings.account.loginIntro') }}</p>
+
+            <div class="form-group">
+              <label for="account-email">{{ $t('auth.email') }}</label>
+              <div class="input-group">
+                <input
+                  id="account-email"
+                  v-model.trim="loginEmail"
+                  type="email"
+                  autocomplete="email"
+                  inputmode="email"
+                  :placeholder="$t('auth.emailPlaceholder')"
+                  :disabled="loggingIn"
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="account-password">{{ $t('auth.password') }}</label>
+              <div class="input-group">
+                <input
+                  id="account-password"
+                  v-model="loginPassword"
+                  type="password"
+                  autocomplete="current-password"
+                  :placeholder="$t('auth.passwordPlaceholder')"
+                  :disabled="loggingIn"
+                  required
+                >
+              </div>
+            </div>
+
+            <div v-if="loginError" class="alert alert-error" role="alert">
+              {{ loginError }}
+            </div>
+
+            <button
+              type="submit"
+              class="button button-primary settings__account-submit"
+              :class="{ 'is-loading': loggingIn }"
+              :disabled="loggingIn"
+            >
+              {{ $t('auth.loginButton') }}
+            </button>
+          </form>
+        </template>
+
+        <!-- Eingeloggt: Identität, Sync-Status, Logout -->
+        <template v-else>
+          <p class="settings__account-caption">{{ $t('settings.account.loggedInAs') }}</p>
+          <div class="settings__row settings__row--identity">
+            <div class="settings__row-left">
+              <div class="settings__account-avatar" aria-hidden="true">{{ userInitials }}</div>
+              <div class="settings__row-info">
+                <span class="settings__row-label">{{ authStore.user?.name }}</span>
+                <span class="settings__row-sub">{{ authStore.user?.email }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings__section-divider" />
+
+          <div class="settings__row settings__row--macro">
+            <span class="settings__macro-name">{{ $t('settings.account.lastSynced') }}</span>
+            <span class="settings__macro-value">{{ lastSyncedLabel }}</span>
+          </div>
+
+          <div class="settings__section-divider" />
+
+          <button
+            type="button"
+            class="settings__row settings__row--action"
+            :class="{ 'settings__row--disabled': syncStore.isSyncing }"
+            :disabled="syncStore.isSyncing"
+            :aria-busy="syncStore.isSyncing"
+            @click="handleSyncNow"
+          >
+            <div class="settings__row-left">
+              <AppIcon
+                name="sync"
+                size="1.25rem"
+                class="settings__row-icon"
+                :class="{ 'settings__row-icon--spinning': syncStore.isSyncing }"
+              />
+              <div class="settings__row-info">
+                <span class="settings__row-label">{{ $t('settings.account.syncNow') }}</span>
+                <span class="settings__row-sub">{{ syncNowSubtitle }}</span>
+              </div>
+            </div>
+            <AppIcon v-if="!syncStore.isSyncing" name="chevron_right" size="1.25rem" class="settings__row-chevron" />
+          </button>
+
+          <template v-if="syncStore.syncError">
+            <div class="settings__section-divider" />
+            <div class="settings__account-sync-error">
+              <div class="alert alert-error" role="alert">
+                {{ syncStore.syncError }}
+              </div>
+            </div>
+          </template>
+
+          <div class="settings__section-divider" />
+
+          <button
+            type="button"
+            class="settings__row settings__row--action settings__row--danger"
+            :class="{ 'is-loading': loggingOut }"
+            :disabled="loggingOut"
+            @click="handleLogout"
+          >
+            <div class="settings__row-left">
+              <AppIcon name="logout" size="1.25rem" class="settings__row-icon" />
+              <span class="settings__row-label">{{ $t('settings.account.logoutButton') }}</span>
+            </div>
+          </button>
+        </template>
+      </div>
+    </div>
+
+    <!-- Sektion 2: Profil -->
     <div class="settings__group">
       <p class="settings__section-title">{{ $t('settings.profile') }}</p>
       <div class="settings__section">
@@ -47,7 +174,7 @@
       </div>
     </div>
 
-    <!-- Sektion 2: Tägliche Ziele -->
+    <!-- Sektion 3: Tägliche Ziele -->
     <div class="settings__group">
       <p class="settings__section-title">{{ $t('settings.dailyGoals') }}</p>
       <div class="settings__section">
@@ -107,7 +234,7 @@
       </div>
     </div>
 
-    <!-- Sektion 3: Darstellung -->
+    <!-- Sektion 4: Darstellung -->
     <div class="settings__group">
       <p class="settings__section-title">{{ $t('settings.display') }}</p>
       <div class="settings__section">
@@ -184,7 +311,7 @@
       </div>
     </div>
 
-    <!-- Sektion 4: Daten -->
+    <!-- Sektion 5: Daten -->
     <div class="settings__group">
       <p class="settings__section-title">{{ $t('settings.data') }}</p>
       <div class="settings__section">
@@ -218,7 +345,7 @@
       </div>
     </div>
 
-    <!-- Sektion 5: Über die App -->
+    <!-- Sektion 6: Über die App -->
     <div class="settings__group">
       <p class="settings__section-title">{{ $t('settings.about') }}</p>
       <div class="settings__section">
@@ -288,14 +415,66 @@ definePageMeta({ title: 'Settings' })
 
 const userStore = useUserStore()
 const { user } = storeToRefs(userStore)
+const authStore = useAuthStore()
+const syncStore = useSyncStore()
 const { isDark, toggleTheme } = useTheme()
 const { exportJSON, exportCSV } = useDataExport()
-const { locale: currentLocale, setLocale } = useI18n()
+const { locale: currentLocale, setLocale, t } = useI18n()
 
 const waterPresets = [1500, 2000, 2500, 3000]
 const waterGoalInput = ref(userStore.user?.water_goal_ml ?? 2000)
 const showResetModal = ref(false)
 const resetting = ref(false)
+
+// ─── Account / Login ────────────────────────────────────────────────
+const loginEmail = ref('')
+const loginPassword = ref('')
+const loginError = ref<string | null>(null)
+const loggingIn = ref(false)
+const loggingOut = ref(false)
+
+const userInitials = computed(() => {
+  const name = authStore.user?.name?.trim() ?? ''
+  if (!name) return '?'
+  const parts = name.split(/\s+/)
+  const first = parts[0] ?? ''
+  const last = parts.length > 1 ? (parts[parts.length - 1] ?? '') : ''
+  return `${first.charAt(0)}${last.charAt(0)}`.toUpperCase()
+})
+
+const lastSyncedLabel = computed(() => {
+  return syncStore.lastSyncedAt ? formatDate(syncStore.lastSyncedAt) : '—'
+})
+
+const syncNowSubtitle = computed(() => {
+  if (syncStore.isSyncing) return t('settings.account.syncingNow')
+  if (syncStore.pendingCount > 0) return t('settings.account.pendingChanges', { count: syncStore.pendingCount })
+  return t('settings.account.syncNowHint')
+})
+
+async function handleSyncNow() {
+  await syncStore.syncNow()
+}
+
+async function handleLogin() {
+  loginError.value = null
+  loggingIn.value = true
+  try {
+    await authStore.login(loginEmail.value, loginPassword.value)
+    loginPassword.value = ''
+  } catch (error) {
+    const err = error as { status: number | null, message: string }
+    loginError.value = err.status === null ? t('auth.offlineError') : (err.message || t('auth.loginError'))
+  } finally {
+    loggingIn.value = false
+  }
+}
+
+async function handleLogout() {
+  loggingOut.value = true
+  await authStore.logout()
+  loggingOut.value = false
+}
 
 watch(() => userStore.user?.water_goal_ml, (v) => {
   if (v) waterGoalInput.value = v
@@ -357,6 +536,7 @@ onMounted(() => userStore.loadUser())
   &:nth-child(4) { animation-delay: 0.14s; }
   &:nth-child(5) { animation-delay: 0.19s; }
   &:nth-child(6) { animation-delay: 0.24s; }
+  &:nth-child(7) { animation-delay: 0.29s; }
 }
 
 // ─── Section title (above card) ───────────────────────────────────
@@ -431,6 +611,21 @@ onMounted(() => userStore.loadUser())
   // Macro rows: tighter padding
   &--macro {
     padding: calc($spacing * 0.65) $spacing;
+  }
+
+  // Identity row (account avatar + name/email): no tap feedback
+  &--identity {
+    cursor: default;
+  }
+
+  // Disabled action row (sync-now placeholder): dimmed, no tap feedback
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+
+    &:active {
+      background: transparent;
+    }
   }
 }
 
@@ -571,6 +766,69 @@ onMounted(() => userStore.loadUser())
   padding: 0 $spacing calc($spacing * 0.75);
 }
 
+// ─── Account section ──────────────────────────────────────────────
+.settings__account-form {
+  display: flex;
+  flex-direction: column;
+  gap: calc($spacing * 0.85);
+  padding: $spacing;
+}
+
+.settings__account-intro {
+  font-size: 0.8rem;
+  color: var(--secondary-text);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.settings__account-submit {
+  width: 100%;
+  margin-top: calc($spacing * 0.15);
+}
+
+.settings__account-caption {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--secondary-text);
+  padding: calc($spacing * 0.875) $spacing 0;
+  margin: 0;
+}
+
+.settings__account-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  background: var(--accent-color-tint);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.settings__account-sync-error {
+  padding: calc($spacing * 0.625) $spacing calc($spacing * 0.875);
+
+  .alert {
+    margin: 0;
+  }
+}
+
+// Spin the sync icon while a sync round-trip is in flight
+.settings__row-icon--spinning {
+  animation: settings-sync-spin 0.9s linear infinite;
+}
+
+@keyframes settings-sync-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 // ─── Reset modal ──────────────────────────────────────────────────
 .settings__modal-backdrop {
   position: fixed;
@@ -679,6 +937,11 @@ onMounted(() => userStore.loadUser())
   .settings h1,
   .settings__group {
     animation: none;
+  }
+
+  .settings__row-icon--spinning {
+    animation: none;
+    opacity: 0.5;
   }
 
   .settings-modal-enter-active,

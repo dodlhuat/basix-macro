@@ -29,6 +29,23 @@ export const useUserStore = defineStore('user', () => {
     await updateSetting('locale', locale)
   }
 
+  /** Marks the local profile as successfully pushed, without changing its data. */
+  async function markSynced(): Promise<void> {
+    if (!user.value) return
+    const { db } = await import('../../db')
+    await db.users.update(user.value.id, { sync_status: 'synced' })
+    user.value = { ...user.value, sync_status: 'synced' }
+  }
+
+  /** Overwrites the local profile with a server-provided version (sync pull / conflict resolution). */
+  async function applyRemote(remote: Record<string, unknown>): Promise<void> {
+    if (!user.value) return
+    const { db } = await import('../../db')
+    const merged: User = { ...user.value, ...remote, id: user.value.id, sync_status: 'synced' }
+    await db.users.put(merged)
+    user.value = merged
+  }
+
   async function resetAllData(): Promise<void> {
     const { db } = await import('../../db')
     await Promise.all([
@@ -39,10 +56,9 @@ export const useUserStore = defineStore('user', () => {
       db.weight_entries.clear(),
       db.recipes.clear(),
       db.recipe_ingredients.clear(),
-      db.sync_queue.clear(),
     ])
     user.value = null
   }
 
-  return { user, isOnboarded, loadUser, saveUser, updateSetting, updateLocale, resetAllData }
+  return { user, isOnboarded, loadUser, saveUser, updateSetting, updateLocale, markSynced, applyRemote, resetAllData }
 })

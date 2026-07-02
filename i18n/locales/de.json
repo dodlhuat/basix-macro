@@ -7,7 +7,10 @@
     "statistics": "Statistiken",
     "weight": "Gewicht",
     "bodyFat": "Körperfett",
-    "settings": "Einstellungen"
+    "settings": "Einstellungen",
+    "adminSection": "Verwaltung",
+    "adminUsers": "Benutzer",
+    "adminFoods": "Lebensmittel-Freigaben"
   },
   "common": {
     "today": "Heute",
@@ -107,6 +110,10 @@
       "all": "Alle",
       "favorites": "Favoriten",
       "recent": "Zuletzt"
+    },
+    "global": {
+      "header": "Community-Datenbank",
+      "searching": "Datenbank wird durchsucht …"
     },
     "empty": {
       "noResults": "Keine Treffer",
@@ -211,6 +218,17 @@
   },
   "settings": {
     "title": "Einstellungen",
+    "account": {
+      "title": "Account",
+      "loginIntro": "Melde dich an, um deine Daten geräteübergreifend zu synchronisieren.",
+      "loggedInAs": "Angemeldet als",
+      "logoutButton": "Abmelden",
+      "syncNow": "Jetzt synchronisieren",
+      "syncNowHint": "Manuell synchronisieren",
+      "syncingNow": "Synchronisiere …",
+      "pendingChanges": "{count} ausstehende Änderungen",
+      "lastSynced": "Zuletzt synchronisiert"
+    },
     "profile": "Profil",
     "profileLabel": "Profil & Kalorienziel",
     "adaptiveCalories": "Kalorienziel automatisch anpassen",
@@ -327,5 +345,113 @@
     "raised": "erhöht",
     "lowered": "gesenkt",
     "toast": "Kalorienziel {dir} auf {goal} kcal ({delta} kcal)"
+  },
+  "auth": {
+    "email": "E-Mail",
+    "emailPlaceholder": "du{'@'}beispiel.de",
+    "password": "Passwort",
+    "passwordPlaceholder": "Passwort eingeben",
+    "loginButton": "Anmelden",
+    "loginError": "Diese Zugangsdaten sind ungültig.",
+    "offlineError": "Keine Verbindung zum Server. Bitte überprüfe deine Internetverbindung."
+  },
+  "admin": {
+    "users": {
+      "title": "Benutzer",
+      "you": "Du",
+      "role": {
+        "admin": "Admin",
+        "user": "Nutzer"
+      },
+      "empty": {
+        "title": "Noch keine Benutzer",
+        "hint": "Angelegte Benutzer erscheinen hier."
+      },
+      "add": {
+        "title": "Neuer Benutzer",
+        "cta": "Benutzer hinzufügen"
+      },
+      "edit": {
+        "title": "Benutzer bearbeiten"
+      },
+      "form": {
+        "name": "Name",
+        "email": "E-Mail",
+        "password": "Passwort",
+        "passwordHintAdd": "Mindestens 8 Zeichen.",
+        "passwordHintEdit": "Leer lassen, um das aktuelle Passwort zu behalten.",
+        "role": "Rolle",
+        "roleLockedSelf": "Du kannst deine eigene Rolle nicht ändern.",
+        "errorName": "Name ist erforderlich.",
+        "errorEmail": "Gib eine gültige E-Mail-Adresse ein.",
+        "errorPassword": "Mindestens 8 Zeichen."
+      },
+      "delete": {
+        "title": "Benutzer löschen",
+        "body": "Dies löscht das Konto von {name} unwiderruflich. Dieser Vorgang kann nicht rückgängig gemacht werden.",
+        "confirm": "Benutzer löschen"
+      },
+      "toast": {
+        "created": "Benutzer erstellt",
+        "updated": "Benutzer aktualisiert",
+        "deleted": "Benutzer gelöscht"
+      },
+      "errors": {
+        "loadFailed": "Benutzer konnten nicht geladen werden.",
+        "saveFailed": "Speichern fehlgeschlagen. Bitte versuche es erneut.",
+        "deleteFailed": "Löschen fehlgeschlagen. Bitte versuche es erneut."
+      }
+    },
+    "foods": {
+      "title": "Lebensmittel-Freigaben",
+      "filter": {
+        "pending": "Ausstehend",
+        "approved": "Freigegeben",
+        "rejected": "Abgelehnt"
+      },
+      "status": {
+        "pending": "Ausstehend",
+        "approved": "Freigegeben",
+        "rejected": "Abgelehnt"
+      },
+      "approve": "Freigeben",
+      "reject": "Ablehnen",
+      "empty": {
+        "pending": {
+          "title": "Keine ausstehenden Einreichungen",
+          "hint": "Neue Einreichungen aus der Community erscheinen hier."
+        },
+        "approved": {
+          "title": "Keine freigegebenen Einreichungen",
+          "hint": "Freigegebene Einreichungen erscheinen hier."
+        },
+        "rejected": {
+          "title": "Keine abgelehnten Einreichungen",
+          "hint": "Abgelehnte Einreichungen erscheinen hier."
+        }
+      },
+      "rejectSheet": {
+        "title": "Einreichung ablehnen",
+        "reasonLabel": "Grund",
+        "reasonPlaceholder": "Erkläre dem Einreicher, was nicht stimmt …",
+        "errorRequired": "Bitte gib einen Grund ein.",
+        "confirm": "Ablehnen"
+      },
+      "delete": {
+        "title": "Einreichung löschen",
+        "body": "Dies löscht diese Einreichung unwiderruflich. Dieser Vorgang kann nicht rückgängig gemacht werden.",
+        "confirm": "Löschen"
+      },
+      "toast": {
+        "approved": "Einreichung freigegeben",
+        "rejected": "Einreichung abgelehnt",
+        "deleted": "Einreichung gelöscht"
+      },
+      "errors": {
+        "loadFailed": "Einreichungen konnten nicht geladen werden.",
+        "saveFailed": "Speichern fehlgeschlagen. Bitte versuche es erneut.",
+        "deleteFailed": "Löschen fehlgeschlagen. Bitte versuche es erneut."
+      }
+    }
   }
 }

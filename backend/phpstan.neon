@@ -1,0 +1,17 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - app
+
+    level: 8
+
+    tmpDir: storage/framework/phpstan
+
+    # Parallel worker processes produce no output at all in this environment
+    # (they appear to fail to spawn/communicate), causing `analyse` to exit 1
+    # with an empty report. Single-process mode is slower but actually works.
+    parallel:
+        maximumNumberOfProcesses: 1
+        jobSize: 1

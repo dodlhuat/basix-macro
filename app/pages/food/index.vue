@@ -90,31 +90,65 @@
       </li>
     </ul>
 
+    <!-- Global/community search results -->
+    <div v-if="showGlobalSection" class="food__global">
+      <div v-if="isGlobalLoading" class="food__global-loading">
+        <span class="loading food__global-spinner" />
+        <span class="food__global-loading-text">{{ $t('food.global.searching') }}</span>
+      </div>
+      <template v-else-if="mergedResults.global.length">
+        <p class="food__global-header">
+          <AppIcon name="verified" size="0.875rem" />
+          {{ $t('food.global.header') }}
+        </p>
+        <ul class="food__list" role="list">
+          <li
+            v-for="item in mergedResults.global"
+            :key="item.id"
+            class="food__item food__global-item"
+            @click="addGlobalFoodItem(item)"
+          >
+            <div class="food__item-body">
+              <span class="food__item-name">{{ item.name }}</span>
+              <span v-if="item.brand" class="food__item-brand">{{ item.brand }}</span>
+            </div>
+            <div class="food__item-meta">
+              <div class="food__item-kcal-wrap">
+                <span class="food__item-kcal">{{ Math.round(item.calories_per_100g) }}</span>
+                <span class="food__item-kcal-unit">kcal</span>
+              </div>
+              <AppIcon name="add" size="1.125rem" class="food__global-add-icon" />
+            </div>
+          </li>
+        </ul>
+      </template>
+    </div>
+
     <!-- OFF search results -->
-    <div v-if="localQuery" class="food__off">
+    <div v-if="showOffSection" class="food__off">
       <div v-if="isOffLoading" class="food__off-loading">
         <span class="loading food__off-spinner" />
         <span class="food__off-loading-text">{{ $t('common.searchOnline') }}</span>
       </div>
-      <template v-else-if="offResults.length">
+      <template v-else-if="mergedResults.off.length">
         <p class="food__off-header">
           <AppIcon name="public" size="0.875rem" />
           Open Food Facts
         </p>
         <ul class="food__list" role="list">
           <li
-            v-for="product in offResults"
-            :key="product.code"
+            v-for="entry in mergedResults.off"
+            :key="entry.product.code"
             class="food__item food__off-item"
-            @click="addOffProduct(product)"
+            @click="addOffProduct(entry.product)"
           >
             <div class="food__item-body">
-              <span class="food__item-name">{{ product.product_name }}</span>
-              <span v-if="product.brands" class="food__item-brand">{{ offBrand(product.brands) }}</span>
+              <span class="food__item-name">{{ entry.product.product_name }}</span>
+              <span v-if="entry.product.brands" class="food__item-brand">{{ offBrand(entry.product.brands) }}</span>
             </div>
             <div class="food__item-meta">
               <div class="food__item-kcal-wrap">
-                <span class="food__item-kcal">{{ Math.round(product.nutriments['energy-kcal_100g'] ?? 0) }}</span>
+                <span class="food__item-kcal">{{ Math.round(entry.product.nutriments['energy-kcal_100g'] ?? 0) }}</span>
                 <span class="food__item-kcal-unit">kcal</span>
               </div>
               <AppIcon name="add" size="1.125rem" class="food__off-add-icon" />
@@ -125,7 +159,7 @@
     </div>
 
     <!-- Empty states -->
-    <div v-else-if="!localQuery || (!foodStore.items.length && !offResults.length && !isOffLoading)" class="food__empty">
+    <div v-if="showEmptyState" class="food__empty">
       <template v-if="localQuery">
         <AppIcon name="search_off" size="2.5rem" class="food__empty-icon" />
         <p class="food__empty-title">{{ $t('food.empty.noResults') }}</p>
@@ -313,11 +347,14 @@
 <script setup lang="ts">
 import type { FoodItem } from '../../../db'
 import type { OFFProduct } from '../../composables/useOpenFoodFacts'
+import type { GlobalFoodResult } from '../../composables/useGlobalFoodSearch'
 
 definePageMeta({ title: 'Foods' })
 
 const foodStore = useFoodStore()
 const { searchProducts, mapToFoodItem } = useOpenFoodFacts()
+const { searchGlobalFoods } = useGlobalFoodSearch()
+const authStore = useAuthStore()
 const diaryStore = useDiaryStore()
 const route = useRoute()
 const router = useRouter()
@@ -359,15 +396,72 @@ async function runOffSearch(query: string) {
   isOffLoading.value = false
 }
 
+// ─── Global/community food state ───────────────────────────────────────────────
+
+const globalResults = ref<GlobalFoodResult[]>([])
+const isGlobalLoading = ref(false)
+let globalSearchId = 0
+let globalTimer: ReturnType<typeof setTimeout> | null = null
+
+async function runGlobalSearch(query: string) {
+  const id = ++globalSearchId
+  const results = await searchGlobalFoods(query)
+  if (id !== globalSearchId) return
+  globalResults.value = results
+  isGlobalLoading.value = false
+}
+
+// OFFProduct uses different field names (code/product_name/brands) than the shared
+// { name, brand, barcode } shape mergeSearchResults() dedupes on — adapt it, keeping
+// the original product attached so the template/handlers can still use it directly.
+const offAdapted = computed(() => offResults.value.map(product => ({
+  name:    product.product_name,
+  brand:   offBrand(product.brands),
+  barcode: product.code,
+  product,
+})))
+
+// Local, global and OFF results deduped in priority order local > global > off.
+// Logged-out users never get a global search, so OFF results must render exactly as
+// before (undeduped) for them — only dedupe OFF once there's actually a global list to dedupe against.
+const mergedResults = computed(() => {
+  if (!authStore.isAuthenticated) {
+    return { local: foodStore.items, global: [] as GlobalFoodResult[], off: offAdapted.value }
+  }
+  return mergeSearchResults(foodStore.items, globalResults.value, offAdapted.value)
+})
+
+const showGlobalSection = computed(() =>
+  authStore.isAuthenticated
+  && !!localQuery.value
+  && (isGlobalLoading.value || mergedResults.value.global.length > 0),
+)
+
+const showOffSection = computed(() =>
+  !!localQuery.value && (isOffLoading.value || mergedResults.value.off.length > 0),
+)
+
+const showEmptyState = computed(() => {
+  if (localQuery.value) {
+    return !foodStore.items.length
+      && !isGlobalLoading.value && !mergedResults.value.global.length
+      && !isOffLoading.value && !mergedResults.value.off.length
+  }
+  return !foodStore.items.length
+})
+
 function handleSearch() {
   if (searchTimer) clearTimeout(searchTimer)
   if (offTimer) clearTimeout(offTimer)
+  if (globalTimer) clearTimeout(globalTimer)
 
   const q = localQuery.value.trim()
 
   if (!q) {
     offResults.value = []
     isOffLoading.value = false
+    globalResults.value = []
+    isGlobalLoading.value = false
     searchTimer = setTimeout(() => foodStore.search(''), 300)
     return
   }
@@ -377,14 +471,23 @@ function handleSearch() {
   offResults.value = []
   isOffLoading.value = true
   offTimer = setTimeout(() => runOffSearch(q), 700)
+
+  if (authStore.isAuthenticated) {
+    globalResults.value = []
+    isGlobalLoading.value = true
+    globalTimer = setTimeout(() => runGlobalSearch(q), 400)
+  }
 }
 
 function clearSearch() {
   localQuery.value = ''
   offResults.value = []
   isOffLoading.value = false
+  globalResults.value = []
+  isGlobalLoading.value = false
   if (searchTimer) clearTimeout(searchTimer)
   if (offTimer) clearTimeout(offTimer)
+  if (globalTimer) clearTimeout(globalTimer)
   foodStore.search('')
   searchInput.value?.focus()
 }
@@ -396,6 +499,8 @@ async function setFilter(key: 'all' | 'favorites' | 'recent') {
   localQuery.value = ''
   offResults.value = []
   isOffLoading.value = false
+  globalResults.value = []
+  isGlobalLoading.value = false
   foodStore.searchQuery = ''
   if (key === 'favorites') await foodStore.loadFavorites()
   else if (key === 'recent') await foodStore.loadRecent()
@@ -498,6 +603,21 @@ async function addOffProduct(product: OFFProduct) {
   if (food) openSheet(food)
 }
 
+// ─── Global/community food helpers ─────────────────────────────────────────────
+
+async function addGlobalFoodItem(item: GlobalFoodResult) {
+  const existing = item.barcode ? await foodStore.findByBarcode(item.barcode) : undefined
+  let id: string
+  if (existing) {
+    id = existing.id
+  } else {
+    id = await foodStore.addItem(mapGlobalFoodToFoodItem(item))
+  }
+  const { db } = await import('../../../db')
+  const food = await db.food_items.get(id)
+  if (food) openSheet(food)
+}
+
 // ─── Keyboard handler ──────────────────────────────────────────────────────────
 
 function onKeydown(e: KeyboardEvent) {
@@ -516,6 +636,7 @@ onUnmounted(() => {
   document.body.style.overflow = ''
   if (searchTimer) clearTimeout(searchTimer)
   if (offTimer) clearTimeout(offTimer)
+  if (globalTimer) clearTimeout(globalTimer)
 })
 </script>
 
@@ -958,6 +1079,54 @@ onUnmounted(() => {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   text-align: center;
+}
+
+// ─── Global/community section ─────────────────────────────────────────────────
+
+.food__global {
+  display: flex;
+  flex-direction: column;
+  gap: calc(#{$spacing} * 0.5);
+}
+
+.food__global-header {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--accent-color);
+  padding: 0 calc(#{$spacing} * 0.25);
+}
+
+.food__global-loading {
+  display: flex;
+  align-items: center;
+  gap: calc(#{$spacing} * 0.5);
+  padding: calc(#{$spacing} * 0.75) calc(#{$spacing} * 0.25);
+}
+
+.food__global-spinner {
+  width: 1rem;
+  height: 1rem;
+  border-width: 2px;
+  flex-shrink: 0;
+}
+
+.food__global-loading-text {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+}
+
+.food__global-add-icon {
+  color: var(--accent-color);
+  flex-shrink: 0;
+}
+
+.food__global-item {
+  cursor: pointer;
 }
 
 // ─── OFF section ──────────────────────────────────────────────────────────────

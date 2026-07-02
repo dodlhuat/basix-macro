@@ -22,6 +22,13 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
 
+  runtimeConfig: {
+    public: {
+      // Base URL of the Laravel backend API, e.g. https://api.basixmacro.example/api
+      apiBase: 'http://localhost/api',
+    },
+  },
+
   devServer: {
     https: {
       key: `${mkcertDir}/dev.pem`,

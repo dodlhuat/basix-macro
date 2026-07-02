@@ -27,16 +27,16 @@ export const useRecipesStore = defineStore('recipes', () => {
 
   async function loadAll() {
     const { db } = await import('../../db')
-    recipes.value = await db.recipes.orderBy('name').toArray()
+    recipes.value = excludeDeleted(await db.recipes.orderBy('name').toArray())
   }
 
   async function loadRecipe(id: string): Promise<RecipeWithNutrition | null> {
     const { db } = await import('../../db')
     const recipe = await db.recipes.get(id)
-    if (!recipe) return null
+    if (!recipe || recipe.deleted_at) return null
 
     const rawIngredients = await db.recipe_ingredients
-      .where('recipe_id').equals(id).toArray()
+      .where('recipe_id').equals(id).filter(i => !i.deleted_at).toArray()
 
     const ingredients: RecipeIngredientDetail[] = []
     for (const ing of rawIngredients) {
@@ -105,8 +105,13 @@ export const useRecipesStore = defineStore('recipes', () => {
 
   async function deleteRecipe(id: string): Promise<void> {
     const { db } = await import('../../db')
-    await db.recipe_ingredients.where('recipe_id').equals(id).delete()
-    await db.recipes.delete(id)
+    const now = new Date().toISOString()
+    const recipe = await db.recipes.get(id)
+    if (recipe) await db.recipes.put(markDeleted(recipe, now))
+    const ingredients = await db.recipe_ingredients.where('recipe_id').equals(id).toArray()
+    for (const ingredient of ingredients) {
+      await db.recipe_ingredients.put(markDeleted(ingredient, now))
+    }
     recipes.value = recipes.value.filter(r => r.id !== id)
     if (activeRecipe.value?.id === id) activeRecipe.value = null
   }
@@ -116,12 +121,15 @@ export const useRecipesStore = defineStore('recipes', () => {
   async function addIngredient(recipe_id: string, food_item_id: string, amount_g: number): Promise<string> {
     const { db } = await import('../../db')
     const id = crypto.randomUUID()
+    const now = new Date().toISOString()
     await db.recipe_ingredients.add({
       id,
       recipe_id,
       food_item_id,
       amount_g,
-      created_at: new Date().toISOString(),
+      created_at: now,
+      updated_at: now,
+      sync_status: 'local',
     })
     await loadRecipe(recipe_id)
     return id
@@ -129,13 +137,14 @@ export const useRecipesStore = defineStore('recipes', () => {
 
   async function updateIngredient(id: string, amount_g: number): Promise<void> {
     const { db } = await import('../../db')
-    await db.recipe_ingredients.update(id, { amount_g })
+    await db.recipe_ingredients.update(id, { amount_g, updated_at: new Date().toISOString(), sync_status: 'dirty' })
     if (activeRecipe.value) await loadRecipe(activeRecipe.value.id)
   }
 
   async function removeIngredient(id: string, recipe_id: string): Promise<void> {
     const { db } = await import('../../db')
-    await db.recipe_ingredients.delete(id)
+    const ingredient = await db.recipe_ingredients.get(id)
+    if (ingredient) await db.recipe_ingredients.put(markDeleted(ingredient, new Date().toISOString()))
     await loadRecipe(recipe_id)
   }
 

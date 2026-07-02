@@ -7,7 +7,10 @@
     "statistics": "Statistics",
     "weight": "Weight",
     "bodyFat": "Body Fat",
-    "settings": "Settings"
+    "settings": "Settings",
+    "adminSection": "Admin",
+    "adminUsers": "Users",
+    "adminFoods": "Food Submissions"
   },
   "common": {
     "today": "Today",
@@ -107,6 +110,10 @@
       "all": "All",
       "favorites": "Favorites",
       "recent": "Recent"
+    },
+    "global": {
+      "header": "Community database",
+      "searching": "Searching database …"
     },
     "empty": {
       "noResults": "No results",
@@ -211,6 +218,17 @@
   },
   "settings": {
     "title": "Settings",
+    "account": {
+      "title": "Account",
+      "loginIntro": "Log in to sync your data across devices.",
+      "loggedInAs": "Logged in as",
+      "logoutButton": "Log out",
+      "syncNow": "Sync now",
+      "syncNowHint": "Sync manually",
+      "syncingNow": "Syncing …",
+      "pendingChanges": "{count} pending changes",
+      "lastSynced": "Last synced"
+    },
     "profile": "Profile",
     "profileLabel": "Profile & Calorie Goal",
     "adaptiveCalories": "Auto-adjust calorie goal",
@@ -327,5 +345,113 @@
     "raised": "raised",
     "lowered": "lowered",
     "toast": "Calorie goal {dir} to {goal} kcal ({delta} kcal)"
+  },
+  "auth": {
+    "email": "Email",
+    "emailPlaceholder": "you{'@'}example.com",
+    "password": "Password",
+    "passwordPlaceholder": "Enter password",
+    "loginButton": "Log in",
+    "loginError": "These credentials are invalid.",
+    "offlineError": "No connection to the server. Please check your internet connection."
+  },
+  "admin": {
+    "users": {
+      "title": "Users",
+      "you": "You",
+      "role": {
+        "admin": "Admin",
+        "user": "User"
+      },
+      "empty": {
+        "title": "No users yet",
+        "hint": "Users you create will show up here."
+      },
+      "add": {
+        "title": "New user",
+        "cta": "Add user"
+      },
+      "edit": {
+        "title": "Edit user"
+      },
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "password": "Password",
+        "passwordHintAdd": "At least 8 characters.",
+        "passwordHintEdit": "Leave blank to keep the current password.",
+        "role": "Role",
+        "roleLockedSelf": "You can't change your own role.",
+        "errorName": "Name is required.",
+        "errorEmail": "Enter a valid email address.",
+        "errorPassword": "At least 8 characters."
+      },
+      "delete": {
+        "title": "Delete user",
+        "body": "This permanently deletes {name}'s account. This cannot be undone.",
+        "confirm": "Delete user"
+      },
+      "toast": {
+        "created": "User created",
+        "updated": "User updated",
+        "deleted": "User deleted"
+      },
+      "errors": {
+        "loadFailed": "Could not load users.",
+        "saveFailed": "Save failed. Please try again.",
+        "deleteFailed": "Delete failed. Please try again."
+      }
+    },
+    "foods": {
+      "title": "Food Submissions",
+      "filter": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "rejected": "Rejected"
+      },
+      "status": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "rejected": "Rejected"
+      },
+      "approve": "Approve",
+      "reject": "Reject",
+      "empty": {
+        "pending": {
+          "title": "No pending submissions",
+          "hint": "New community submissions will show up here."
+        },
+        "approved": {
+          "title": "No approved submissions",
+          "hint": "Submissions you approve will show up here."
+        },
+        "rejected": {
+          "title": "No rejected submissions",
+          "hint": "Submissions you reject will show up here."
+        }
+      },
+      "rejectSheet": {
+        "title": "Reject submission",
+        "reasonLabel": "Reason",
+        "reasonPlaceholder": "Let the submitter know what's wrong …",
+        "errorRequired": "Please enter a reason.",
+        "confirm": "Reject"
+      },
+      "delete": {
+        "title": "Delete submission",
+        "body": "This permanently deletes this submission. This cannot be undone.",
+        "confirm": "Delete"
+      },
+      "toast": {
+        "approved": "Submission approved",
+        "rejected": "Submission rejected",
+        "deleted": "Submission deleted"
+      },
+      "errors": {
+        "loadFailed": "Could not load submissions.",
+        "saveFailed": "Save failed. Please try again.",
+        "deleteFailed": "Delete failed. Please try again."
+      }
+    }
   }
 }

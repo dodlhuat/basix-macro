@@ -6,5 +6,9 @@ export const useSyncStore = defineStore('sync', () => {
   const pendingCount = ref(0)
   const syncError = ref<string | null>(null)
 
-  return { isSyncing, lastSyncedAt, pendingCount, syncError }
+  async function syncNow(options: { full?: boolean } = {}) {
+    return performSync(options)
+  }
+
+  return { isSyncing, lastSyncedAt, pendingCount, syncError, syncNow }
 })
