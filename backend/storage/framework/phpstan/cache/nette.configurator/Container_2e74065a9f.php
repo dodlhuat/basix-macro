@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-class Container_1d939b17d4 extends _PHPStan_48ec32058\Nette\DI\Container
+class Container_2e74065a9f extends _PHPStan_48ec32058\Nette\DI\Container
 {
 	protected $tags = [
 		'phpstan.broker.allowedSubTypesClassReflectionExtension' => ['017' => true, '018' => true],
@@ -3223,7 +3223,9 @@ class Container_1d939b17d4 extends _PHPStan_48ec32058\Nette\DI\Container
 	public function createService067(): PHPStan\Rules\Classes\LocalTypeAliasesCheck
 	{
 		return new PHPStan\Rules\Classes\LocalTypeAliasesCheck(
-			[],
+			[
+				'SyncableModel' => '\App\Models\FoodItem|\App\Models\Recipe|\App\Models\RecipeIngredient|\App\Models\DiaryEntry|\App\Models\WeightEntry|\App\Models\WaterEntry',
+			],
 			$this->getService('reflectionProvider'),
 			$this->getService('0144'),
 			$this->getService('082'),
@@ -5041,7 +5043,9 @@ class Container_1d939b17d4 extends _PHPStan_48ec32058\Nette\DI\Container
 	public function createService0336(): PHPStan\Type\UsefulTypeAliasResolver
 	{
 		return new PHPStan\Type\UsefulTypeAliasResolver(
-			[],
+			[
+				'SyncableModel' => '\App\Models\FoodItem|\App\Models\Recipe|\App\Models\RecipeIngredient|\App\Models\DiaryEntry|\App\Models\WeightEntry|\App\Models\WaterEntry',
+			],
 			$this->getService('0137'),
 			$this->getService('0144'),
 			$this->getService('reflectionProvider')
@@ -5920,7 +5924,7 @@ class Container_1d939b17d4 extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_1d939b17d4 $container)
+			public function __construct(Container_2e74065a9f $container)
 			{
 				$this->container = $container;
 			}
@@ -5968,7 +5972,7 @@ class Container_1d939b17d4 extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_1d939b17d4 $container)
+			public function __construct(Container_2e74065a9f $container)
 			{
 				$this->container = $container;
 			}
@@ -6026,7 +6030,7 @@ class Container_1d939b17d4 extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_1d939b17d4 $container)
+			public function __construct(Container_2e74065a9f $container)
 			{
 				$this->container = $container;
 			}
@@ -6093,7 +6097,7 @@ class Container_1d939b17d4 extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_1d939b17d4 $container)
+			public function __construct(Container_2e74065a9f $container)
 			{
 				$this->container = $container;
 			}
@@ -6113,7 +6117,7 @@ class Container_1d939b17d4 extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_1d939b17d4 $container)
+			public function __construct(Container_2e74065a9f $container)
 			{
 				$this->container = $container;
 			}
@@ -6138,7 +6142,7 @@ class Container_1d939b17d4 extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_1d939b17d4 $container)
+			public function __construct(Container_2e74065a9f $container)
 			{
 				$this->container = $container;
 			}
@@ -6158,7 +6162,7 @@ class Container_1d939b17d4 extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_1d939b17d4 $container)
+			public function __construct(Container_2e74065a9f $container)
 			{
 				$this->container = $container;
 			}
@@ -6178,7 +6182,7 @@ class Container_1d939b17d4 extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_1d939b17d4 $container)
+			public function __construct(Container_2e74065a9f $container)
 			{
 				$this->container = $container;
 			}
@@ -9698,7 +9702,7 @@ class Container_1d939b17d4 extends _PHPStan_48ec32058\Nette\DI\Container
 	}
 
 
-	public function createServiceContainer(): Container_1d939b17d4
+	public function createServiceContainer(): Container_2e74065a9f
 	{
 		return $this;
 	}
@@ -10189,7 +10193,9 @@ class Container_1d939b17d4 extends _PHPStan_48ec32058\Nette\DI\Container
 			],
 			'reportUnmatchedIgnoredErrors' => true,
 			'reportIgnoresWithoutComments' => false,
-			'typeAliases' => [],
+			'typeAliases' => [
+				'SyncableModel' => '\App\Models\FoodItem|\App\Models\Recipe|\App\Models\RecipeIngredient|\App\Models\DiaryEntry|\App\Models\WeightEntry|\App\Models\WaterEntry',
+			],
 			'universalObjectCratesClasses' => ['stdClass', 'Illuminate\Http\Request', 'Illuminate\Support\Optional'],
 			'stubFiles' => [
 				'phar:///Users/andibauer/Repositories/basix-macro/backend/vendor/phpstan/phpstan/phpstan.phar/stubs/Memcached.stub',
@@ -10370,24 +10376,24 @@ class Container_1d939b17d4 extends _PHPStan_48ec32058\Nette\DI\Container
 				'HOMEBREW_REPOSITORY' => '/opt/homebrew',
 				'TMPDIR' => '/var/folders/4n/7hl9fjf517v3vs7d4vgc4sfh0000gn/T/',
 				'VSCODE_PYTHON_AUTOACTIVATE_GUARD' => '1',
-				'TERM_PROGRAM_VERSION' => '1.126.0',
+				'TERM_PROGRAM_VERSION' => '1.128.0',
 				'FPATH' => '/opt/homebrew/share/zsh/site-functions:/opt/homebrew/share/zsh/site-functions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.9/functions',
 				'ZDOTDIR' => '/Users/andibauer',
 				'MallocNanoZone' => '0',
 				'GIT_EDITOR' => 'true',
-				'AI_AGENT' => 'claude-code_2-1-197_agent',
+				'AI_AGENT' => 'claude-code_2-1-212_agent',
 				'COPILOT_DEBUG_NONCE' => '37e8cda85e183660920601e432defbf2',
 				'GIT_TERMINAL_PROMPT' => '0',
 				'NVM_DIR' => '/Users/andibauer/.nvm',
 				'USER' => 'andibauer',
 				'COMMAND_MODE' => 'unix2003',
-				'CLAUDE_CODE_SSE_PORT' => '19125',
-				'SSH_AUTH_SOCK' => '/var/run/com.apple.launchd.770uepjJSj/Listeners',
+				'CLAUDE_CODE_SSE_PORT' => '63975',
+				'SSH_AUTH_SOCK' => '/var/run/com.apple.launchd.7A4bGwx9Pz/Listeners',
 				'VSCODE_PROFILE_INITIALIZED' => '1',
 				'__CF_USER_TEXT_ENCODING' => '0x1F5:0x0:0x5C',
 				'PATH' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/bin:/Users/andibauer/.nvm/versions/node/v24.14.1/bin:/opt/homebrew/bin:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli:/Users/andibauer/.nvm/versions/node/v24.14.1/bin:/Users/andibauer/.claude/plugins/cache/claude-plugins-official/frontend-design/unknown/bin',
 				'_' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/bin/phpstan',
-				'LaunchInstanceID' => 'A4E1E98B-217B-488D-8A12-07A3527EEA40',
+				'LaunchInstanceID' => '84BAD1BC-1118-41A4-8C7F-26DE4C457039',
 				'USER_ZDOTDIR' => '/Users/andibauer',
 				'__CFBundleIdentifier' => 'com.microsoft.VSCode',
 				'PWD' => '/Users/andibauer/Repositories/basix-macro/backend',
@@ -10408,7 +10414,7 @@ class Container_1d939b17d4 extends _PHPStan_48ec32058\Nette\DI\Container
 				'VSCODE_GIT_IPC_HANDLE' => '/var/folders/4n/7hl9fjf517v3vs7d4vgc4sfh0000gn/T/vscode-git-aec171208b.sock',
 				'COREPACK_ENABLE_AUTO_PIN' => '0',
 				'NVM_BIN' => '/Users/andibauer/.nvm/versions/node/v24.14.1/bin',
-				'CLAUDE_CODE_SESSION_ID' => '719d1bce-ad75-4935-8bfc-395333d3cb96',
+				'CLAUDE_CODE_SESSION_ID' => '66b248a9-4716-412c-9d9e-dc9782017ce4',
 				'VSCODE_GIT_ASKPASS_NODE' => '/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)',
 				'GIT_ASKPASS' => '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh',
 				'INFOPATH' => '/opt/homebrew/share/info:/opt/homebrew/share/info:',

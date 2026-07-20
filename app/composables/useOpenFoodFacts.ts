@@ -4,7 +4,7 @@ export interface OFFProduct {
   brands?: string
   serving_quantity?: number   // grams per serving (e.g. 30 for a 30g portion)
   serving_size?: string       // human label (e.g. "30 g")
-  nutriments: {
+  nutriments?: {
     'energy-kcal_100g'?: number
     'energy-kcal_serving'?: number
     proteins_100g?: number
@@ -54,7 +54,7 @@ export function useOpenFoodFacts() {
   }
 
   function mapToFoodItem(product: OFFProduct) {
-    const n = product.nutriments
+    const n = product.nutriments ?? {}
     const sq = product.serving_quantity   // g per serving, used for fallback
 
     // Prefer _100g values; if missing, normalize _serving → per 100g using serving_quantity
@@ -94,10 +94,8 @@ export function useOpenFoodFacts() {
 
   async function searchProducts(query: string): Promise<OFFProduct[]> {
     try {
-      const url = `https://search.openfoodfacts.org/search?q=${encodeURIComponent(query)}&page_size=10&langs=${lc.value}&fields=code,product_name,brands,serving_quantity,serving_size,nutriments`
-      const response = await fetch(url)
-      if (!response.ok) return []
-      const data = await response.json() as { hits?: OFFProduct[] }
+      const { get } = useApi()
+      const data = await get<{ hits?: OFFProduct[] }>('/food-search', { q: query, langs: lc.value })
       return (data.hits ?? []).filter(p => p.product_name?.trim())
     }
     catch {

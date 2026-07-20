@@ -497,5 +497,20 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
+    '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/FoodSearchController.php' => 
+    array (
+      0 => '0157cdd22ce34293d659bedc04bf705b84ab0ed2db6dc8c6f59773121a111294',
+      1 => 
+      array (
+        0 => 'app\\http\\controllers\\api\\foodsearchcontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\http\\controllers\\api\\index',
+      ),
+      3 => 
+      array (
+      ),
+    ),
   ),
 ));

@@ -148,7 +148,7 @@
             </div>
             <div class="food__item-meta">
               <div class="food__item-kcal-wrap">
-                <span class="food__item-kcal">{{ Math.round(entry.product.nutriments['energy-kcal_100g'] ?? 0) }}</span>
+                <span class="food__item-kcal">{{ Math.round(entry.product.nutriments?.['energy-kcal_100g'] ?? 0) }}</span>
                 <span class="food__item-kcal-unit">kcal</span>
               </div>
               <AppIcon name="add" size="1.125rem" class="food__off-add-icon" />

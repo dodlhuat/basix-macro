@@ -448,7 +448,7 @@ const userInitials = computed(() => {
 })
 
 const lastSyncedLabel = computed(() => {
-  return syncStore.lastSyncedAt ? formatDate(syncStore.lastSyncedAt) : '—'
+  return syncStore.lastSyncedAt ? formatDateTime(syncStore.lastSyncedAt) : '—'
 })
 
 const syncNowSubtitle = computed(() => {
@@ -500,6 +500,17 @@ async function setWaterPreset(ml: number) {
 function formatDate(iso: string): string {
   const loc = currentLocale.value === 'en' ? 'en-US' : 'de-DE'
   return new Date(iso).toLocaleDateString(loc, { day: '2-digit', month: '2-digit', year: 'numeric' })
+}
+
+function formatDateTime(iso: string): string {
+  const loc = currentLocale.value === 'en' ? 'en-US' : 'de-DE'
+  return new Date(iso).toLocaleString(loc, {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  })
 }
 
 async function changeLocale(lang: 'de' | 'en') {

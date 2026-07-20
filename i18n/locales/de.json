@@ -55,7 +55,8 @@
     "streakDay": "Tag",
     "streakDays": "Tage",
     "emptyEntry": "Noch nichts eingetragen",
-    "addEntry": "Eintrag hinzufügen"
+    "addEntry": "Eintrag hinzufügen",
+    "editEntry": "{name} bearbeiten"
   },
   "diary": {
     "title": "Eintrag hinzufügen",
@@ -86,7 +87,9 @@
       "amount": "Menge",
       "servings": "Portionen",
       "ingredients": "Zutaten",
-      "portion": "Port."
+      "portion": "Port.",
+      "decrease": "Verringern",
+      "increase": "Erhöhen"
     },
     "diaryPage": {
       "backToDashboard": "Zurück zum Dashboard",
@@ -96,7 +99,8 @@
       "goal": "Ziel",
       "overGoalLabel": "+ {n} kcal über dem Ziel",
       "emptyEntry": "Noch nichts eingetragen",
-      "addEntry": "Eintrag hinzufügen"
+      "addEntry": "Eintrag hinzufügen",
+      "editEntry": "{name} bearbeiten"
     }
   },
   "food": {

@@ -172,7 +172,7 @@
             <div class="diary-add__item-meta">
               <div class="diary-add__item-kcal-wrap">
                 <span class="diary-add__item-kcal">
-                  {{ Math.round(product.nutriments['energy-kcal_100g'] ?? 0) }}
+                  {{ Math.round(product.nutriments?.['energy-kcal_100g'] ?? 0) }}
                 </span>
                 <span class="diary-add__item-kcal-unit">kcal</span>
               </div>

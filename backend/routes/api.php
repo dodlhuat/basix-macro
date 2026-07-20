@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\Admin\FoodSubmissionController;
 use App\Http\Controllers\Api\Admin\UserController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\FoodSearchController;
 use App\Http\Controllers\Api\GlobalFoodController;
 use App\Http\Controllers\Api\SyncController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,7 @@ Route::prefix('auth')->group(function () {
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/sync', [SyncController::class, 'sync']);
     Route::get('/global-foods', [GlobalFoodController::class, 'index']);
+    Route::get('/food-search', [FoodSearchController::class, 'index']);
 
     Route::prefix('admin')->middleware('role:admin')->group(function () {
         Route::get('/users', [UserController::class, 'index']);

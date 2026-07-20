@@ -9,6 +9,15 @@ export const useDiaryStore = defineStore('diary', () => {
   const entryDetails = ref<DiaryEntryWithName[]>([])
   const activeDate = ref<string>(new Date().toISOString().substring(0, 10))
 
+  // Sync runs in the background (interval, reconnect, manual button) and can pull in
+  // entries logged on another device — reload whatever date is currently on screen once
+  // a sync finishes, so it doesn't keep showing stale pre-sync data until the user
+  // navigates away and back.
+  const syncStore = useSyncStore()
+  watch(() => syncStore.isSyncing, (isSyncing, wasSyncing) => {
+    if (wasSyncing && !isSyncing) void loadForDate(activeDate.value)
+  })
+
   async function loadForDate(date: string) {
     const { db } = await import('../../db')
     activeDate.value = date
@@ -132,6 +141,31 @@ export const useDiaryStore = defineStore('diary', () => {
     await loadForDate(params.date)
   }
 
+  async function updateEntryQuantity(id: string, newQuantity: number) {
+    const { db } = await import('../../db')
+    const entry = await db.diary_entries.get(id)
+    if (!entry) return
+
+    const isRecipe = !!entry.recipe_id
+    const oldQuantity = isRecipe ? entry.servings : entry.amount_g
+    if (oldQuantity <= 0 || newQuantity <= 0) return
+
+    const factor = newQuantity / oldQuantity
+    const now = new Date().toISOString()
+
+    await db.diary_entries.update(id, {
+      ...(isRecipe ? { servings: newQuantity } : { amount_g: newQuantity }),
+      calories_total: entry.calories_total * factor,
+      protein_total_g: entry.protein_total_g * factor,
+      carbs_total_g: entry.carbs_total_g * factor,
+      fat_total_g: entry.fat_total_g * factor,
+      updated_at: now,
+      sync_status: 'dirty',
+    })
+
+    await loadForDate(entry.date)
+  }
+
   async function deleteEntry(id: string) {
     const { db } = await import('../../db')
     const entry = await db.diary_entries.get(id)
@@ -156,6 +190,7 @@ export const useDiaryStore = defineStore('diary', () => {
     addWater,
     addEntry,
     addRecipeEntry,
+    updateEntryQuantity,
     deleteEntry,
   }
 })

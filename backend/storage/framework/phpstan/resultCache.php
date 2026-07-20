@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 return [
-	'lastFullAnalysisTime' => 1782995401,
+	'lastFullAnalysisTime' => 1784315391,
 	'meta' => array (
   'cacheVersion' => 'v13-packageDependencies',
   'phpstanVersion' => '2.2.3',
@@ -2751,6 +2751,13 @@ return [
     array (
     ),
   ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/FoodSearchController.php' => 
+  array (
+    'fileHash' => '0157cdd22ce34293d659bedc04bf705b84ab0ed2db6dc8c6f59773121a111294',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/GlobalFoodController.php' => 
   array (
     'fileHash' => '16455715e549cd2007d5bf21d5abd5e6ca905903e7f331af6a4d9ba66b34bdfe',
@@ -2773,8 +2780,9 @@ return [
       0 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/FoodSubmissionController.php',
       1 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/Admin/UserController.php',
       2 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/AuthController.php',
-      3 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/GlobalFoodController.php',
-      4 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/SyncController.php',
+      3 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/FoodSearchController.php',
+      4 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/GlobalFoodController.php',
+      5 => '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/SyncController.php',
     ),
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Middleware/EnsureUserHasRole.php' => 
@@ -3108,6 +3116,11 @@ return [
     0 => 'laravel/framework',
     1 => 'ramsey/uuid',
     2 => 'laravel/sanctum',
+  ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/FoodSearchController.php' => 
+  array (
+    0 => 'laravel/framework',
+    1 => 'symfony/http-foundation',
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/Recipe.php' => 
   array (
@@ -3690,6 +3703,78 @@ return [
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'request',
                'type' => 'App\\Http\\Requests\\ResetPasswordRequest',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+               'phpDoc' => NULL,
+               'flags' => 0,
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/FoodSearchController.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Http\\Controllers\\Api\\FoodSearchController',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'App\\Http\\Controllers\\Controller',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'index',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return array{hits: array<int, array<string, mixed>>}
+     */',
+             'namespace' => 'App\\Http\\Controllers\\Api',
+             'uses' => 
+            array (
+              'controller' => 'App\\Http\\Controllers\\Controller',
+              'request' => 'Illuminate\\Http\\Request',
+              'http' => 'Illuminate\\Support\\Facades\\Http',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'request',
+               'type' => 'Illuminate\\Http\\Request',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,

@@ -1,0 +1,10 @@
+# Shared-hosting passthrough: this app's document root can't be pointed at
+# public/ directly (no subdomain SSL available for that), so it lives at
+# https://andibauer.at/basixmacro-api/ instead, one level above public/.
+# This forwards every request down into public/, whose own .htaccess then
+# does Laravel's normal front-controller routing. Anything outside public/
+# (.env, app/, vendor/, ...) is never reachable through this rewrite, since
+# every path gets remapped into public/ before Apache resolves it.
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/basixmacro-api/public/
+RewriteRule ^(.*)$ public/$1 [L]

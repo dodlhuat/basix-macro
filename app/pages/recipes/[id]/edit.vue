@@ -327,7 +327,7 @@
                       <span v-if="product.brands" class="recipe-edit-sheet__result-brand">{{ offBrand(product.brands) }}</span>
                     </div>
                     <div class="recipe-edit-sheet__result-meta">
-                      <span class="recipe-edit-sheet__result-kcal">{{ Math.round(product.nutriments['energy-kcal_100g'] ?? 0) }}</span>
+                      <span class="recipe-edit-sheet__result-kcal">{{ Math.round(product.nutriments?.['energy-kcal_100g'] ?? 0) }}</span>
                       <span class="recipe-edit-sheet__result-kcal-unit">kcal</span>
                       <AppIcon name="add" size="1.125rem" class="recipe-edit-sheet__off-add-icon" />
                     </div>

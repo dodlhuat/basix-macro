@@ -180,21 +180,97 @@
             v-for="entry in meal.entries"
             :key="entry.id"
             class="dashboard__entry"
+            :class="{ 'dashboard__entry--editing': editingEntryId === entry.id }"
           >
-            <div class="dashboard__entry-info">
-              <span class="dashboard__entry-name">{{ entry.food_item_name }}</span>
-              <span class="dashboard__entry-amount">{{ entry.amount_g }} g</span>
-            </div>
-            <div class="dashboard__entry-right">
-              <span class="dashboard__entry-kcal">{{ Math.round(entry.calories_total) }} kcal</span>
-              <button
-                class="button button-icon button-sm dashboard__entry-delete"
-                :aria-label="`${entry.food_item_name} löschen`"
-                @click="removeEntry(entry.id)"
+            <Transition name="entry-edit" mode="out-in">
+              <div
+                v-if="editingEntryId !== entry.id"
+                key="normal"
+                class="dashboard__entry-row"
               >
-                <AppIcon name="delete" size="1rem" />
-              </button>
-            </div>
+                <div class="dashboard__entry-info">
+                  <span class="dashboard__entry-name">{{ entry.food_item_name }}</span>
+                  <span class="dashboard__entry-amount">
+                    {{ isRecipeEntry(entry) ? `${entry.servings} ${$t('diary.sheet.portion')}` : `${entry.amount_g} g` }}
+                  </span>
+                </div>
+                <div class="dashboard__entry-right">
+                  <span class="dashboard__entry-kcal">{{ Math.round(entry.calories_total) }} kcal</span>
+                  <button
+                    class="button button-icon button-sm dashboard__entry-edit-toggle"
+                    :aria-label="$t('dashboard.editEntry', { name: entry.food_item_name })"
+                    @click="startEdit(entry)"
+                  >
+                    <AppIcon name="edit" size="1rem" />
+                  </button>
+                  <button
+                    class="button button-icon button-sm dashboard__entry-delete"
+                    :aria-label="`${entry.food_item_name} löschen`"
+                    @click="removeEntry(entry.id)"
+                  >
+                    <AppIcon name="delete" size="1rem" />
+                  </button>
+                </div>
+              </div>
+
+              <div
+                v-else
+                key="edit"
+                class="dashboard__entry-edit-row"
+              >
+                <div class="dashboard__entry-edit-top">
+                  <span class="dashboard__entry-edit-label">
+                    {{ isRecipeEntry(entry) ? $t('diary.sheet.servings') : $t('diary.sheet.amount') }}
+                  </span>
+                  <div class="dashboard__entry-edit-stepper">
+                    <button
+                      class="button button-outline dashboard__entry-edit-step-btn"
+                      :disabled="editQuantity - stepFor(entry) < 1"
+                      :aria-label="$t('diary.sheet.decrease')"
+                      @click="adjustEditQuantity(entry, -stepFor(entry))"
+                    >
+                      <AppIcon name="remove" size="1rem" />
+                    </button>
+                    <div class="form-group dashboard__entry-edit-group">
+                      <div class="input-group">
+                        <input
+                          v-model.number="editQuantity"
+                          type="number"
+                          min="1"
+                          :max="maxFor(entry)"
+                          step="1"
+                          :aria-label="isRecipeEntry(entry) ? $t('diary.sheet.servings') : $t('diary.sheet.amount')"
+                          class="dashboard__entry-edit-input"
+                        >
+                        <span class="dashboard__entry-edit-unit">
+                          {{ isRecipeEntry(entry) ? $t('diary.sheet.portion') : 'g' }}
+                        </span>
+                      </div>
+                    </div>
+                    <button
+                      class="button button-outline dashboard__entry-edit-step-btn"
+                      :disabled="editQuantity + stepFor(entry) > maxFor(entry)"
+                      :aria-label="$t('diary.sheet.increase')"
+                      @click="adjustEditQuantity(entry, stepFor(entry))"
+                    >
+                      <AppIcon name="add" size="1rem" />
+                    </button>
+                  </div>
+                </div>
+                <div class="dashboard__entry-edit-actions">
+                  <button
+                    class="button button-sm button-primary"
+                    :disabled="!isEditQuantityValid"
+                    @click="saveEdit(entry.id)"
+                  >
+                    {{ $t('common.save') }}
+                  </button>
+                  <button class="button button-sm button-outline" @click="cancelEdit">
+                    {{ $t('common.cancel') }}
+                  </button>
+                </div>
+              </div>
+            </Transition>
           </li>
         </ul>
 
@@ -217,6 +293,8 @@
 </template>
 
 <script setup lang="ts">
+import type { DiaryEntryWithName } from '~/stores/diary'
+
 definePageMeta({ title: 'Dashboard' })
 
 const diaryStore = useDiaryStore()
@@ -357,6 +435,49 @@ async function removeEntry(id: string) {
   await diaryStore.deleteEntry(id)
 }
 
+// ─── Inline quantity edit ──────────────────────────────────────────────────────
+
+const editingEntryId = ref<string | null>(null)
+const editQuantity = ref<number>(0)
+
+function isRecipeEntry(entry: DiaryEntryWithName): boolean {
+  return !!entry.recipe_id
+}
+
+function stepFor(entry: DiaryEntryWithName): number {
+  return isRecipeEntry(entry) ? 1 : 10
+}
+
+function maxFor(entry: DiaryEntryWithName): number {
+  return isRecipeEntry(entry) ? 99 : 9999
+}
+
+function startEdit(entry: DiaryEntryWithName): void {
+  editingEntryId.value = entry.id
+  editQuantity.value = isRecipeEntry(entry) ? entry.servings : entry.amount_g
+}
+
+function cancelEdit(): void {
+  editingEntryId.value = null
+}
+
+function adjustEditQuantity(entry: DiaryEntryWithName, delta: number): void {
+  editQuantity.value = Math.min(
+    maxFor(entry),
+    Math.max(1, editQuantity.value + delta)
+  )
+}
+
+const isEditQuantityValid = computed(() =>
+  Number.isFinite(editQuantity.value) && editQuantity.value > 0
+)
+
+async function saveEdit(id: string): Promise<void> {
+  if (!isEditQuantityValid.value) return
+  await diaryStore.updateEntryQuantity(id, editQuantity.value)
+  editingEntryId.value = null
+}
+
 // ─── FAB — time-based meal suggestion ─────────────────────────────────────────
 
 function getMealSuggestion(): string {
@@ -409,6 +530,11 @@ watch(currentDate, date => diaryStore.loadForDate(date))
   }
 
   .progress-bar {
+    transition: none !important;
+  }
+
+  .dashboard__entry-row,
+  .dashboard__entry-edit-row {
     transition: none !important;
   }
 }
@@ -793,14 +919,24 @@ watch(currentDate, date => diaryStore.loadForDate(date))
 }
 
 .dashboard__entry {
+  border-top: 1px solid var(--divider);
+  overflow: hidden;
+
+  &:first-child { border-top: none; }
+
+  &--editing {
+    border-top-color: transparent;
+    border-radius: $border-radius;
+    margin: 0.15rem 0;
+  }
+}
+
+.dashboard__entry-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: $spacing;
   padding: 0.4rem 0;
-  border-top: 1px solid var(--divider);
-
-  &:first-child { border-top: none; }
 }
 
 .dashboard__entry-info {
@@ -838,6 +974,20 @@ watch(currentDate, date => diaryStore.loadForDate(date))
   white-space: nowrap;
 }
 
+.dashboard__entry-edit-toggle {
+  color: var(--secondary-text);
+  opacity: 0.5;
+  transition: opacity 150ms ease, color 150ms ease;
+  padding: 0.15rem;
+  margin: -0.15rem;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+    color: var(--accent-color);
+  }
+}
+
 .dashboard__entry-delete {
   color: var(--secondary-text);
   opacity: 0.5;
@@ -850,6 +1000,97 @@ watch(currentDate, date => diaryStore.loadForDate(date))
     opacity: 1;
     color: var(--error);
   }
+}
+
+// ─── Inline quantity edit row ──────────────────────────────────────────────────
+
+.dashboard__entry-edit-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.6rem 0.7rem;
+  background: var(--accent-color-tint);
+  border-radius: $border-radius;
+}
+
+.dashboard__entry-edit-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dashboard__entry-edit-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--secondary-text);
+  flex-shrink: 0;
+}
+
+.dashboard__entry-edit-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.dashboard__entry-edit-step-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard__entry-edit-group {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.dashboard__entry-edit-input {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.dashboard__entry-edit-unit {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--secondary-text);
+  padding-right: calc(#{$spacing} * 0.5);
+  flex-shrink: 0;
+}
+
+.dashboard__entry-edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+// ─── Entry row transition (delete ↔ edit swap) ─────────────────────────────────
+
+.entry-edit-enter-active,
+.entry-edit-leave-active {
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.entry-edit-enter-from,
+.entry-edit-leave-to {
+  opacity: 0;
+  transform: translateX(6px);
 }
 
 // ─── Empty state ──────────────────────────────────────────────────────────────

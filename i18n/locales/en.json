@@ -55,7 +55,8 @@
     "streakDay": "day",
     "streakDays": "days",
     "emptyEntry": "Nothing logged yet",
-    "addEntry": "Add entry"
+    "addEntry": "Add entry",
+    "editEntry": "Edit {name}"
   },
   "diary": {
     "title": "Add entry",
@@ -86,7 +87,9 @@
       "amount": "Amount",
       "servings": "Servings",
       "ingredients": "Ingredients",
-      "portion": "srv."
+      "portion": "srv.",
+      "decrease": "Decrease",
+      "increase": "Increase"
     },
     "diaryPage": {
       "backToDashboard": "Back to dashboard",
@@ -96,7 +99,8 @@
       "goal": "Goal",
       "overGoalLabel": "+ {n} kcal above goal",
       "emptyEntry": "Nothing logged yet",
-      "addEntry": "Add entry"
+      "addEntry": "Add entry",
+      "editEntry": "Edit {name}"
     }
   },
   "food": {

@@ -150,11 +150,14 @@
             v-for="entry in meal.entries"
             :key="entry.id"
             class="diary__entry"
-            :class="{ 'diary__entry--confirming': confirmingDeleteId === entry.id }"
+            :class="{
+              'diary__entry--confirming': confirmingDeleteId === entry.id,
+              'diary__entry--editing': editingEntryId === entry.id,
+            }"
           >
             <Transition name="entry-confirm" mode="out-in">
               <div
-                v-if="confirmingDeleteId !== entry.id"
+                v-if="confirmingDeleteId !== entry.id && editingEntryId !== entry.id"
                 key="normal"
                 class="diary__entry-row"
               >
@@ -167,6 +170,13 @@
                 <div class="diary__entry-right">
                   <span class="diary__entry-kcal">{{ Math.round(entry.calories_total) }} kcal</span>
                   <button
+                    class="button button-icon button-sm diary__entry-edit-toggle"
+                    :aria-label="$t('diary.diaryPage.editEntry', { name: entry.food_item_name })"
+                    @click="startEdit(entry)"
+                  >
+                    <AppIcon name="edit" size="1rem" />
+                  </button>
+                  <button
                     class="button button-icon button-sm diary__entry-delete"
                     :aria-label="`${entry.food_item_name} löschen`"
                     @click="requestDelete(entry.id)"
@@ -177,7 +187,7 @@
               </div>
 
               <div
-                v-else
+                v-else-if="confirmingDeleteId === entry.id"
                 key="confirm"
                 class="diary__entry-confirm-row"
               >
@@ -194,6 +204,64 @@
                     @click="cancelDelete"
                   >
                     Abbrechen
+                  </button>
+                </div>
+              </div>
+
+              <div
+                v-else
+                key="edit"
+                class="diary__entry-edit-row"
+              >
+                <div class="diary__entry-edit-top">
+                  <span class="diary__entry-edit-label">
+                    {{ isRecipeEntry(entry) ? $t('diary.sheet.servings') : $t('diary.sheet.amount') }}
+                  </span>
+                  <div class="diary__entry-edit-stepper">
+                    <button
+                      class="button button-outline diary__entry-edit-step-btn"
+                      :disabled="editQuantity - stepFor(entry) < 1"
+                      :aria-label="$t('diary.sheet.decrease')"
+                      @click="adjustEditQuantity(entry, -stepFor(entry))"
+                    >
+                      <AppIcon name="remove" size="1rem" />
+                    </button>
+                    <div class="form-group diary__entry-edit-group">
+                      <div class="input-group">
+                        <input
+                          v-model.number="editQuantity"
+                          type="number"
+                          min="1"
+                          :max="maxFor(entry)"
+                          step="1"
+                          :aria-label="isRecipeEntry(entry) ? $t('diary.sheet.servings') : $t('diary.sheet.amount')"
+                          class="diary__entry-edit-input"
+                        >
+                        <span class="diary__entry-edit-unit">
+                          {{ isRecipeEntry(entry) ? $t('diary.sheet.portion') : 'g' }}
+                        </span>
+                      </div>
+                    </div>
+                    <button
+                      class="button button-outline diary__entry-edit-step-btn"
+                      :disabled="editQuantity + stepFor(entry) > maxFor(entry)"
+                      :aria-label="$t('diary.sheet.increase')"
+                      @click="adjustEditQuantity(entry, stepFor(entry))"
+                    >
+                      <AppIcon name="add" size="1rem" />
+                    </button>
+                  </div>
+                </div>
+                <div class="diary__entry-edit-actions">
+                  <button
+                    class="button button-sm button-primary"
+                    :disabled="!isEditQuantityValid"
+                    @click="saveEdit(entry.id)"
+                  >
+                    {{ $t('common.save') }}
+                  </button>
+                  <button class="button button-sm button-outline" @click="cancelEdit">
+                    {{ $t('common.cancel') }}
                   </button>
                 </div>
               </div>
@@ -255,6 +323,8 @@
 </template>
 
 <script setup lang="ts">
+import type { DiaryEntryWithName } from '~/stores/diary'
+
 definePageMeta({ title: 'Tagebuch' })
 
 const route = useRoute()
@@ -406,6 +476,7 @@ function addEntry(mealType: MealType): void {
 const confirmingDeleteId = ref<string | null>(null)
 
 function requestDelete(id: string): void {
+  editingEntryId.value = null
   confirmingDeleteId.value = id
 }
 
@@ -416,6 +487,50 @@ async function confirmDelete(id: string): Promise<void> {
 
 function cancelDelete(): void {
   confirmingDeleteId.value = null
+}
+
+// ─── Inline quantity edit ────────────────────────────────────────────────────
+
+const editingEntryId = ref<string | null>(null)
+const editQuantity = ref<number>(0)
+
+function isRecipeEntry(entry: DiaryEntryWithName): boolean {
+  return !!entry.recipe_id
+}
+
+function stepFor(entry: DiaryEntryWithName): number {
+  return isRecipeEntry(entry) ? 1 : 10
+}
+
+function maxFor(entry: DiaryEntryWithName): number {
+  return isRecipeEntry(entry) ? 99 : 9999
+}
+
+function startEdit(entry: DiaryEntryWithName): void {
+  confirmingDeleteId.value = null
+  editingEntryId.value = entry.id
+  editQuantity.value = isRecipeEntry(entry) ? entry.servings : entry.amount_g
+}
+
+function cancelEdit(): void {
+  editingEntryId.value = null
+}
+
+function adjustEditQuantity(entry: DiaryEntryWithName, delta: number): void {
+  editQuantity.value = Math.min(
+    maxFor(entry),
+    Math.max(1, editQuantity.value + delta)
+  )
+}
+
+const isEditQuantityValid = computed(() =>
+  Number.isFinite(editQuantity.value) && editQuantity.value > 0
+)
+
+async function saveEdit(id: string): Promise<void> {
+  if (!isEditQuantityValid.value) return
+  await diaryStore.updateEntryQuantity(id, editQuantity.value)
+  editingEntryId.value = null
 }
 
 // ─── Data loading ──────────────────────────────────────────────────────────────
@@ -453,7 +568,8 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   }
 
   .diary__entry-row,
-  .diary__entry-confirm-row {
+  .diary__entry-confirm-row,
+  .diary__entry-edit-row {
     transition: none !important;
   }
 }
@@ -791,7 +907,8 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
     border-top: none;
   }
 
-  &--confirming {
+  &--confirming,
+  &--editing {
     border-top-color: transparent;
     border-radius: $border-radius;
     margin: 0.15rem 0;
@@ -850,6 +967,20 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   white-space: nowrap;
 }
 
+.diary__entry-edit-toggle {
+  color: var(--secondary-text);
+  opacity: 0.45;
+  transition: opacity 150ms ease, color 150ms ease;
+  padding: 0.15rem;
+  margin: -0.15rem;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+    color: var(--accent-color);
+  }
+}
+
 .diary__entry-delete {
   color: var(--secondary-text);
   opacity: 0.45;
@@ -862,6 +993,84 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
     opacity: 1;
     color: var(--error);
   }
+}
+
+/* ─── Inline quantity edit row ───────────────────────────────────────────────── */
+
+.diary__entry-edit-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.55rem 0.75rem;
+  background: var(--accent-color-tint);
+  border-radius: $border-radius;
+}
+
+.diary__entry-edit-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.diary__entry-edit-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--secondary-text);
+  flex-shrink: 0;
+}
+
+.diary__entry-edit-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.diary__entry-edit-step-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diary__entry-edit-group {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.diary__entry-edit-input {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.diary__entry-edit-unit {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--secondary-text);
+  padding-right: calc(#{$spacing} * 0.5);
+  flex-shrink: 0;
+}
+
+.diary__entry-edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
 }
 
 .diary__entry-confirm-label {
