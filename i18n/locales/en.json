@@ -226,7 +226,13 @@
       "obese": "Obese"
     },
     "errorResult": "Implausible result – please check your measurements.",
-    "errorInput": "Invalid input – please check the entered values."
+    "errorInput": "Invalid input – please check the entered values.",
+    "chartHint": "At least 2 entries required for chart",
+    "previewTag": "Preview",
+    "saveEntry": "Save entry",
+    "history": "History",
+    "empty": "No entries yet",
+    "emptyHint": "Calculate and save your first measurement to get started."
   },
   "settings": {
     "title": "Settings",

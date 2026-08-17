@@ -359,7 +359,7 @@
             <AppIcon name="info" size="1.25rem" class="settings__row-icon" />
             <div class="settings__row-info">
               <span class="settings__row-label">BasixMacro</span>
-              <span class="settings__row-sub">Version 1.0.0</span>
+              <span class="settings__row-sub">Version 1.1.0</span>
             </div>
           </div>
         </div>

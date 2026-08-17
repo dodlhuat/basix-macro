@@ -226,7 +226,13 @@
       "obese": "Übergewicht"
     },
     "errorResult": "Unplausibles Ergebnis – bitte prüfe die eingegebenen Maße.",
-    "errorInput": "Ungültige Eingabe – bitte prüfe die eingegebenen Werte."
+    "errorInput": "Ungültige Eingabe – bitte prüfe die eingegebenen Werte.",
+    "chartHint": "Mindestens 2 Einträge für den Chart",
+    "previewTag": "Vorschau",
+    "saveEntry": "Eintrag speichern",
+    "history": "Verlauf",
+    "empty": "Noch keine Einträge",
+    "emptyHint": "Berechne und speichere deine erste Messung, um zu starten."
   },
   "settings": {
     "title": "Einstellungen",
