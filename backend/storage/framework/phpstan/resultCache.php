@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 return [
-	'lastFullAnalysisTime' => 1784315391,
+	'lastFullAnalysisTime' => 1786959983,
 	'meta' => array (
   'cacheVersion' => 'v13-packageDependencies',
   'phpstanVersion' => '2.2.3',
@@ -20,7 +20,7 @@ return [
   ),
   'composerLocks' => 
   array (
-    '/Users/andibauer/Repositories/basix-macro/backend/composer.lock' => '0fed0f3c2e7da4cd645056a379ab379e0483cbcdba9bbf13ae6cbb3d85cfd980',
+    '/Users/andibauer/Repositories/basix-macro/backend/composer.lock' => '348d24ad498e4a7edd96eec714502bbe95cbc918fa9e0c559dfb1c01981e0f09',
   ),
   'composerInstalled' => 
   array (
@@ -178,9 +178,9 @@ return [
         ),
         'guzzlehttp/guzzle' => 
         array (
-          'pretty_version' => '7.13.1',
-          'version' => '7.13.1.0',
-          'reference' => '55901a76dfd2006a0cc012b9e3c5b487f796478d',
+          'pretty_version' => '7.15.3',
+          'version' => '7.15.3.0',
+          'reference' => 'ae311b8f045ea93ce7b1c9cdb7cec06c53f944bc',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../guzzlehttp/guzzle',
           'aliases' => 
@@ -190,9 +190,9 @@ return [
         ),
         'guzzlehttp/promises' => 
         array (
-          'pretty_version' => '2.5.0',
-          'version' => '2.5.0.0',
-          'reference' => '4360e982f87f5f258bf872d094647791db2f4c8e',
+          'pretty_version' => '2.5.2',
+          'version' => '2.5.2.0',
+          'reference' => '2823687acff28b2dbe67b2508a6b300e2c3fa4ce',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../guzzlehttp/promises',
           'aliases' => 
@@ -202,9 +202,9 @@ return [
         ),
         'guzzlehttp/psr7' => 
         array (
-          'pretty_version' => '2.12.3',
-          'version' => '2.12.3.0',
-          'reference' => '7ec62dc3f44aa218487dbed81a9bf9bc647be55d',
+          'pretty_version' => '2.13.0',
+          'version' => '2.13.0.0',
+          'reference' => 'dad89620b7a6edb60c15858442eb2e408b45d8f4',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../guzzlehttp/psr7',
           'aliases' => 
@@ -253,7 +253,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/broadcasting' => 
@@ -261,7 +261,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/bus' => 
@@ -269,7 +269,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/cache' => 
@@ -277,7 +277,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/collections' => 
@@ -285,7 +285,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/concurrency' => 
@@ -293,7 +293,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/conditionable' => 
@@ -301,7 +301,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/config' => 
@@ -309,7 +309,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/console' => 
@@ -317,7 +317,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/container' => 
@@ -325,7 +325,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/contracts' => 
@@ -333,7 +333,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/cookie' => 
@@ -341,7 +341,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/database' => 
@@ -349,7 +349,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/encryption' => 
@@ -357,7 +357,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/events' => 
@@ -365,7 +365,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/filesystem' => 
@@ -373,7 +373,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/hashing' => 
@@ -381,7 +381,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/http' => 
@@ -389,7 +389,15 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
+          ),
+        ),
+        'illuminate/image' => 
+        array (
+          'dev_requirement' => false,
+          'replaced' => 
+          array (
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/json-schema' => 
@@ -397,7 +405,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/log' => 
@@ -405,7 +413,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/macroable' => 
@@ -413,7 +421,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/mail' => 
@@ -421,7 +429,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/notifications' => 
@@ -429,7 +437,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/pagination' => 
@@ -437,7 +445,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/pipeline' => 
@@ -445,7 +453,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/process' => 
@@ -453,7 +461,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/queue' => 
@@ -461,7 +469,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/redis' => 
@@ -469,7 +477,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/reflection' => 
@@ -477,7 +485,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/routing' => 
@@ -485,7 +493,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/session' => 
@@ -493,7 +501,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/support' => 
@@ -501,7 +509,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/testing' => 
@@ -509,7 +517,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/translation' => 
@@ -517,7 +525,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/validation' => 
@@ -525,7 +533,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'illuminate/view' => 
@@ -533,7 +541,7 @@ return [
           'dev_requirement' => false,
           'replaced' => 
           array (
-            0 => 'v13.18.0',
+            0 => 'v13.25.0',
           ),
         ),
         'kodova/hamcrest-php' => 
@@ -570,9 +578,9 @@ return [
         ),
         'laravel/framework' => 
         array (
-          'pretty_version' => 'v13.18.0',
-          'version' => '13.18.0.0',
-          'reference' => '138e5806ed7e4e21591948b661119d3810f052cf',
+          'pretty_version' => 'v13.25.0',
+          'version' => '13.25.0.0',
+          'reference' => 'ed36fe882bd4eed4e6ff75343cbad8dbda03fdba',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework',
           'aliases' => 
@@ -594,9 +602,9 @@ return [
         ),
         'laravel/pao' => 
         array (
-          'pretty_version' => 'v1.1.2',
-          'version' => '1.1.2.0',
-          'reference' => '41b3c61ebeddce52a446afe6d21e0b02983fb2f6',
+          'pretty_version' => 'v1.1.4',
+          'version' => '1.1.4.0',
+          'reference' => '5aee99c8c37565e9c457c33f4d36aa363a389dc8',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/pao',
           'aliases' => 
@@ -606,9 +614,9 @@ return [
         ),
         'laravel/pint' => 
         array (
-          'pretty_version' => 'v1.29.3',
-          'version' => '1.29.3.0',
-          'reference' => 'da1d1111a6aa2e082d2a388b194afe1ba0a05d14',
+          'pretty_version' => 'v1.30.5',
+          'version' => '1.30.5.0',
+          'reference' => 'fe4148c503a0e266353d61396b79bbf7f35122df',
           'type' => 'project',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/pint',
           'aliases' => 
@@ -630,9 +638,9 @@ return [
         ),
         'laravel/sail' => 
         array (
-          'pretty_version' => 'v1.63.0',
-          'version' => '1.63.0.0',
-          'reference' => '51bbce3f803c1d386cabbb44e618c955a12ff5fc',
+          'pretty_version' => 'v1.66.0',
+          'version' => '1.66.0.0',
+          'reference' => 'ebf286104306c50c8fd060cbc57de35b9dffa779',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/sail',
           'aliases' => 
@@ -642,9 +650,9 @@ return [
         ),
         'laravel/sanctum' => 
         array (
-          'pretty_version' => 'v4.3.2',
-          'version' => '4.3.2.0',
-          'reference' => '2a9bccc18e9907808e0018dd15fa643937886b1e',
+          'pretty_version' => 'v4.3.3',
+          'version' => '4.3.3.0',
+          'reference' => 'fee27a573d1a013af3721d86153a65e0b11927e6',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/sanctum',
           'aliases' => 
@@ -678,9 +686,9 @@ return [
         ),
         'league/commonmark' => 
         array (
-          'pretty_version' => '2.8.2',
-          'version' => '2.8.2.0',
-          'reference' => '59fb075d2101740c337c7216e3f32b36c204218b',
+          'pretty_version' => '2.10.0',
+          'version' => '2.10.0.0',
+          'reference' => 'd2d1aa8b35e072966c89bc0c66cf926e56767dc4',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../league/commonmark',
           'aliases' => 
@@ -762,9 +770,9 @@ return [
         ),
         'mockery/mockery' => 
         array (
-          'pretty_version' => '1.6.12',
-          'version' => '1.6.12.0',
-          'reference' => '1f4efdd7d3beafe9807b08156dfcb176d18f1699',
+          'pretty_version' => '1.6.13',
+          'version' => '1.6.13.0',
+          'reference' => '9cb54414cdcd2ec5ca292e7ba19dba3a3444885d',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../mockery/mockery',
           'aliases' => 
@@ -794,9 +802,9 @@ return [
         ),
         'myclabs/deep-copy' => 
         array (
-          'pretty_version' => '1.13.4',
-          'version' => '1.13.4.0',
-          'reference' => '07d290f0c47959fd5eed98c95ee5602db07e0b6a',
+          'pretty_version' => '1.14.0',
+          'version' => '1.14.0.0',
+          'reference' => '8680aa248f8e07bc8fb43f56f0f5fc77a0c96aae',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../myclabs/deep-copy',
           'aliases' => 
@@ -830,9 +838,9 @@ return [
         ),
         'nette/utils' => 
         array (
-          'pretty_version' => 'v4.1.4',
-          'version' => '4.1.4.0',
-          'reference' => '7da6c396d7ebe142bc857c20479d5e70a5e1aac7',
+          'pretty_version' => 'v4.1.5',
+          'version' => '4.1.5.0',
+          'reference' => 'b043439dbdf954e6c28b5ea7e34b0100f83165e0',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../nette/utils',
           'aliases' => 
@@ -842,9 +850,9 @@ return [
         ),
         'nikic/php-parser' => 
         array (
-          'pretty_version' => 'v5.7.0',
-          'version' => '5.7.0.0',
-          'reference' => 'dca41cd15c2ac9d055ad70dbfd011130757d1f82',
+          'pretty_version' => 'v5.8.0',
+          'version' => '5.8.0.0',
+          'reference' => '044a6a392ff8ad0d61f14370a5fbbd0a0107152f',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../nikic/php-parser',
           'aliases' => 
@@ -854,9 +862,9 @@ return [
         ),
         'nunomaduro/collision' => 
         array (
-          'pretty_version' => 'v8.9.4',
-          'version' => '8.9.4.0',
-          'reference' => '716af8f95a470e9094cfca09ed897b023be191a5',
+          'pretty_version' => 'v8.9.5',
+          'version' => '8.9.5.0',
+          'reference' => 'fb53eacd509a1d303858e2d20cfebf2d630254ec',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../nunomaduro/collision',
           'aliases' => 
@@ -926,9 +934,9 @@ return [
         ),
         'phpunit/php-code-coverage' => 
         array (
-          'pretty_version' => '12.5.7',
-          'version' => '12.5.7.0',
-          'reference' => '186dab580576598076de6818596d12b61801880e',
+          'pretty_version' => '14.3.1',
+          'version' => '14.3.1.0',
+          'reference' => '6ce313bb110384148d1dc7695a99175f59529069',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../phpunit/php-code-coverage',
           'aliases' => 
@@ -938,9 +946,9 @@ return [
         ),
         'phpunit/php-file-iterator' => 
         array (
-          'pretty_version' => '6.0.1',
-          'version' => '6.0.1.0',
-          'reference' => '3d1cd096ef6bea4bf2762ba586e35dbd317cbfd5',
+          'pretty_version' => '7.0.1',
+          'version' => '7.0.1.0',
+          'reference' => '3ccaa29123548190af12fee7af078dcd7f3ddfab',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../phpunit/php-file-iterator',
           'aliases' => 
@@ -950,9 +958,9 @@ return [
         ),
         'phpunit/php-invoker' => 
         array (
-          'pretty_version' => '6.0.0',
-          'version' => '6.0.0.0',
-          'reference' => '12b54e689b07a25a9b41e57736dfab6ec9ae5406',
+          'pretty_version' => '7.0.0',
+          'version' => '7.0.0.0',
+          'reference' => '42e5c5cae0c65df12d1b1a3ab52bf3f50f244d88',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../phpunit/php-invoker',
           'aliases' => 
@@ -962,9 +970,9 @@ return [
         ),
         'phpunit/php-text-template' => 
         array (
-          'pretty_version' => '5.0.0',
-          'version' => '5.0.0.0',
-          'reference' => 'e1367a453f0eda562eedb4f659e13aa900d66c53',
+          'pretty_version' => '6.0.0',
+          'version' => '6.0.0.0',
+          'reference' => 'a47af19f93f76aa3368303d752aa5272ca3299f4',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../phpunit/php-text-template',
           'aliases' => 
@@ -974,9 +982,9 @@ return [
         ),
         'phpunit/php-timer' => 
         array (
-          'pretty_version' => '8.0.0',
-          'version' => '8.0.0.0',
-          'reference' => 'f258ce36aa457f3aa3339f9ed4c81fc66dc8c2cc',
+          'pretty_version' => '9.0.0',
+          'version' => '9.0.0.0',
+          'reference' => 'a0e12065831f6ab0d83120dc61513eb8d9a966f6',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../phpunit/php-timer',
           'aliases' => 
@@ -986,9 +994,9 @@ return [
         ),
         'phpunit/phpunit' => 
         array (
-          'pretty_version' => '12.5.30',
-          'version' => '12.5.30.0',
-          'reference' => '900400a5b616d6fb306f9549f6da33ba615d3fbb',
+          'pretty_version' => '13.3.1',
+          'version' => '13.3.1.0',
+          'reference' => 'fc024931d6ad047404e9d86536735923fe63a06b',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../phpunit/phpunit',
           'aliases' => 
@@ -1216,9 +1224,9 @@ return [
         ),
         'sebastian/cli-parser' => 
         array (
-          'pretty_version' => '4.2.1',
-          'version' => '4.2.1.0',
-          'reference' => '7d05781b13f7dec9043a629a21d086ed74582a15',
+          'pretty_version' => '5.0.1',
+          'version' => '5.0.1.0',
+          'reference' => 'eeb759ad3146b7096fb59c3195d39e071cd409e3',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../sebastian/cli-parser',
           'aliases' => 
@@ -1228,9 +1236,9 @@ return [
         ),
         'sebastian/comparator' => 
         array (
-          'pretty_version' => '7.1.8',
-          'version' => '7.1.8.0',
-          'reference' => '7c65c1e79836812819705b473a90c12399542485',
+          'pretty_version' => '8.4.0',
+          'version' => '8.4.0.0',
+          'reference' => '3b070e608146cba00fd6fd1f0ffba89e5a8897fb',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../sebastian/comparator',
           'aliases' => 
@@ -1240,9 +1248,9 @@ return [
         ),
         'sebastian/complexity' => 
         array (
-          'pretty_version' => '5.0.0',
-          'version' => '5.0.0.0',
-          'reference' => 'bad4316aba5303d0221f43f8cee37eb58d384bbb',
+          'pretty_version' => '6.0.0',
+          'version' => '6.0.0.0',
+          'reference' => 'c5651c795c98093480df79350cb050813fc7a2f3',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../sebastian/complexity',
           'aliases' => 
@@ -1252,9 +1260,9 @@ return [
         ),
         'sebastian/diff' => 
         array (
-          'pretty_version' => '7.0.0',
-          'version' => '7.0.0.0',
-          'reference' => '7ab1ea946c012266ca32390913653d844ecd085f',
+          'pretty_version' => '9.0.0',
+          'version' => '9.0.0.0',
+          'reference' => 'a3fb6a298a265ff487a91bbea46e03cd01dbb226',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../sebastian/diff',
           'aliases' => 
@@ -1264,9 +1272,9 @@ return [
         ),
         'sebastian/environment' => 
         array (
-          'pretty_version' => '8.1.2',
-          'version' => '8.1.2.0',
-          'reference' => '9d32c685773823b1983e256ae4ecd48a10d6e439',
+          'pretty_version' => '9.3.2',
+          'version' => '9.3.2.0',
+          'reference' => '6c9e487c9eb706a8d258102a1c0b0a3e53e86c2e',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../sebastian/environment',
           'aliases' => 
@@ -1276,9 +1284,9 @@ return [
         ),
         'sebastian/exporter' => 
         array (
-          'pretty_version' => '7.0.3',
-          'version' => '7.0.3.0',
-          'reference' => 'c5e21b5de653ce0a769fb36f5cdfcb5e7a32cf23',
+          'pretty_version' => '8.2.1',
+          'version' => '8.2.1.0',
+          'reference' => '24a3b69bba4a12ab615fca9d34680c5598d9ab7a',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../sebastian/exporter',
           'aliases' => 
@@ -1286,11 +1294,35 @@ return [
           ),
           'dev_requirement' => true,
         ),
+        'sebastian/file-filter' => 
+        array (
+          'pretty_version' => '1.0.0',
+          'version' => '1.0.0.0',
+          'reference' => '33a26f394330f6faa7684bb9cc73afb7727aae93',
+          'type' => 'library',
+          'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../sebastian/file-filter',
+          'aliases' => 
+          array (
+          ),
+          'dev_requirement' => true,
+        ),
+        'sebastian/git-state' => 
+        array (
+          'pretty_version' => '1.0.0',
+          'version' => '1.0.0.0',
+          'reference' => '792a952e0eba55b6960a48aeceb9f371aad1f76b',
+          'type' => 'library',
+          'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../sebastian/git-state',
+          'aliases' => 
+          array (
+          ),
+          'dev_requirement' => true,
+        ),
         'sebastian/global-state' => 
         array (
-          'pretty_version' => '8.0.3',
-          'version' => '8.0.3.0',
-          'reference' => 'b164d3274d6537ab462591c5755f76a8f5b1aae9',
+          'pretty_version' => '9.0.1',
+          'version' => '9.0.1.0',
+          'reference' => 'ba68ba79da690cf7eddefd3ce5b78b20b9ba9945',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../sebastian/global-state',
           'aliases' => 
@@ -1300,9 +1332,9 @@ return [
         ),
         'sebastian/lines-of-code' => 
         array (
-          'pretty_version' => '4.0.1',
-          'version' => '4.0.1.0',
-          'reference' => 'd543b8ef219dcd8da262cbb958639a96bedba10e',
+          'pretty_version' => '5.0.2',
+          'version' => '5.0.2.0',
+          'reference' => 'd1b6f8fce682505dbd048977f1abedf1b8ad3ff8',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../sebastian/lines-of-code',
           'aliases' => 
@@ -1312,9 +1344,9 @@ return [
         ),
         'sebastian/object-enumerator' => 
         array (
-          'pretty_version' => '7.0.0',
-          'version' => '7.0.0.0',
-          'reference' => '1effe8e9b8e068e9ae228e542d5d11b5d16db894',
+          'pretty_version' => '8.1.0',
+          'version' => '8.1.0.0',
+          'reference' => '511064ecde82bd747e2ba2fab3dda8d977b59576',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../sebastian/object-enumerator',
           'aliases' => 
@@ -1324,9 +1356,9 @@ return [
         ),
         'sebastian/object-reflector' => 
         array (
-          'pretty_version' => '5.0.0',
-          'version' => '5.0.0.0',
-          'reference' => '4bfa827c969c98be1e527abd576533293c634f6a',
+          'pretty_version' => '6.1.0',
+          'version' => '6.1.0.0',
+          'reference' => 'f71bbcdc4f95456b4622810bec64eb06372e25b2',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../sebastian/object-reflector',
           'aliases' => 
@@ -1336,9 +1368,9 @@ return [
         ),
         'sebastian/recursion-context' => 
         array (
-          'pretty_version' => '7.0.1',
-          'version' => '7.0.1.0',
-          'reference' => '0b01998a7d5b1f122911a66bebcb8d46f0c82d8c',
+          'pretty_version' => '8.0.1',
+          'version' => '8.0.1.0',
+          'reference' => '32dba72f2b4642d6a93db22d6c0a9280ff2e3ca0',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../sebastian/recursion-context',
           'aliases' => 
@@ -1348,9 +1380,9 @@ return [
         ),
         'sebastian/type' => 
         array (
-          'pretty_version' => '6.0.4',
-          'version' => '6.0.4.0',
-          'reference' => '82ff822c2edc46724be9f7411d3163021f602773',
+          'pretty_version' => '7.0.2',
+          'version' => '7.0.2.0',
+          'reference' => 'bd1df467864cb95140414059a535b2d906173fcf',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../sebastian/type',
           'aliases' => 
@@ -1360,9 +1392,9 @@ return [
         ),
         'sebastian/version' => 
         array (
-          'pretty_version' => '6.0.0',
-          'version' => '6.0.0.0',
-          'reference' => '3e6ccf7657d4f0a59200564b08cead899313b53c',
+          'pretty_version' => '7.0.0',
+          'version' => '7.0.0.0',
+          'reference' => 'ad37a5552c8e2b88572249fdc19b6da7792e021b',
           'type' => 'library',
           'install_path' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../sebastian/version',
           'aliases' => 
@@ -3111,16 +3143,16 @@ return [
     1 => 'laravel/sanctum',
     2 => 'symfony/http-foundation',
   ),
+  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/FoodSearchController.php' => 
+  array (
+    0 => 'laravel/framework',
+    1 => 'symfony/http-foundation',
+  ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/RecipeIngredient.php' => 
   array (
     0 => 'laravel/framework',
     1 => 'ramsey/uuid',
     2 => 'laravel/sanctum',
-  ),
-  '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/FoodSearchController.php' => 
-  array (
-    0 => 'laravel/framework',
-    1 => 'symfony/http-foundation',
   ),
   '/Users/andibauer/Repositories/basix-macro/backend/app/Models/Recipe.php' => 
   array (
