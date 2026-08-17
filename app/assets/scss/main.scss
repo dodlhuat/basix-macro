@@ -35,6 +35,21 @@
 @use "@dodlhuat/basix/css/placeholder";
 @use "@dodlhuat/basix/css/timeline";
 
+// Basix 1.5 dropped the --radius-* custom properties in favor of compile-time
+// $radius-* SCSS vars, but this app's scoped styles reference var(--radius-*)
+// throughout (per the "Basix tokens for all design values" rule). Restore them
+// as custom properties so existing var(--radius-*) usages keep working.
+// --radius-full has no $radius-* equivalent (basix's own .button-pill now just
+// uses $radius-xl) — 9999px keeps its original meaning of "fully round
+// regardless of element size", which a fixed rem value can't guarantee.
+:root {
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-xl: #{$radius-xl};
+  --radius-full: 9999px;
+}
+
 // Fonts
 @font-face {
   font-family: 'Outfit';

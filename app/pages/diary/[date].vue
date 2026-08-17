@@ -17,7 +17,7 @@
         <Transition name="badge-fade">
           <span
             v-if="isToday"
-            class="badge badge-primary diary__today-badge"
+            class="badge badge-info diary__today-badge"
             aria-label="Heutiger Tag"
           >Heute</span>
         </Transition>

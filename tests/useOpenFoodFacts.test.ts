@@ -10,7 +10,7 @@ vi.mock('vue-i18n', () => ({
   useI18n: () => ({ t: (key: string) => key, locale: { value: 'de' } }),
 }))
 
-const { lookupBarcode, mapToFoodItem } = useOpenFoodFacts()
+const { lookupBarcode, mapToFoodItem, hasCalories } = useOpenFoodFacts()
 
 // ─── mapToFoodItem ────────────────────────────────────────────────────────────
 
@@ -116,6 +116,39 @@ describe('mapToFoodItem', () => {
       nutriments: { 'energy-kcal_serving': 200 },
     }
     expect(mapToFoodItem(p).calories_per_100g).toBe(0)
+  })
+})
+
+// ─── hasCalories ──────────────────────────────────────────────────────────────
+
+describe('hasCalories', () => {
+  it('is true when energy-kcal_100g is positive', () => {
+    expect(hasCalories({ code: '1', product_name: 'A', nutriments: { 'energy-kcal_100g': 50 } })).toBe(true)
+  })
+
+  it('is false when nutriments is missing entirely', () => {
+    expect(hasCalories({ code: '1', product_name: 'A' })).toBe(false)
+  })
+
+  it('is false when energy-kcal_100g is 0', () => {
+    expect(hasCalories({ code: '1', product_name: 'A', nutriments: { 'energy-kcal_100g': 0 } })).toBe(false)
+  })
+
+  it('is false when nutriments has no energy fields at all', () => {
+    expect(hasCalories({ code: '1', product_name: 'A', nutriments: { proteins_100g: 10 } })).toBe(false)
+  })
+
+  it('is true via energy-kcal_serving when serving_quantity is set', () => {
+    expect(hasCalories({
+      code: '1',
+      product_name: 'A',
+      serving_quantity: 30,
+      nutriments: { 'energy-kcal_serving': 120 },
+    })).toBe(true)
+  })
+
+  it('is false via energy-kcal_serving without serving_quantity', () => {
+    expect(hasCalories({ code: '1', product_name: 'A', nutriments: { 'energy-kcal_serving': 120 } })).toBe(false)
   })
 })
 

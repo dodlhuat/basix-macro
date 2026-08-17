@@ -81,7 +81,7 @@ export function useGlobalFoodSearch() {
     try {
       const { get } = useApi()
       const response = await get<{ data: GlobalFoodResult[] }>('/global-foods', { q: query })
-      return response.data ?? []
+      return (response.data ?? []).filter(item => item.calories_per_100g > 0)
     } catch {
       return []
     }

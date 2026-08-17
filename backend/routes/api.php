@@ -16,10 +16,13 @@ Route::prefix('auth')->group(function () {
     Route::post('/reset-password', [AuthController::class, 'resetPassword'])->middleware('throttle:auth');
 });
 
+// Stateless proxy to the public Open Food Facts API — no user data involved,
+// so it stays available to guests who never created a backend account.
+Route::get('/food-search', [FoodSearchController::class, 'index']);
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/sync', [SyncController::class, 'sync']);
     Route::get('/global-foods', [GlobalFoodController::class, 'index']);
-    Route::get('/food-search', [FoodSearchController::class, 'index']);
 
     Route::prefix('admin')->middleware('role:admin')->group(function () {
         Route::get('/users', [UserController::class, 'index']);

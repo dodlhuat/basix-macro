@@ -92,16 +92,24 @@ export function useOpenFoodFacts() {
     }
   }
 
+  function hasCalories(product: OFFProduct): boolean {
+    const n = product.nutriments
+    if (!n) return false
+    if ((n['energy-kcal_100g'] ?? 0) > 0) return true
+    const sq = product.serving_quantity
+    return (n['energy-kcal_serving'] ?? 0) > 0 && !!sq && sq > 0
+  }
+
   async function searchProducts(query: string): Promise<OFFProduct[]> {
     try {
       const { get } = useApi()
       const data = await get<{ hits?: OFFProduct[] }>('/food-search', { q: query, langs: lc.value })
-      return (data.hits ?? []).filter(p => p.product_name?.trim())
+      return (data.hits ?? []).filter(p => p.product_name?.trim() && hasCalories(p))
     }
     catch {
       return []
     }
   }
 
-  return { lookupBarcode, searchProducts, mapToFoodItem }
+  return { lookupBarcode, searchProducts, mapToFoodItem, hasCalories }
 }

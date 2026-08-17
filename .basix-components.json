@@ -1,5 +1,5 @@
 {
-  "version": "1.4.1",
+  "version": "1.5.3",
   "type": "css-js-design-system",
   "note": "Basix is NOT a Vue component library. It provides CSS classes + vanilla JS controllers. In Vue: import SCSS for styling, wrap JS controllers in composables/onMounted.",
   "fonts": {
@@ -12,12 +12,14 @@
       "--primary-text",
       "--secondary-text",
       "--divider",
-      "--accent-text",
       "--error",
+      "--error-text",
       "--error-tint",
       "--warning",
+      "--warning-text",
       "--warning-tint",
       "--success",
+      "--success-text",
       "--success-tint",
       "--background",
       "--primary-bg",
@@ -26,23 +28,46 @@
       "--accent-color-lighten",
       "--accent-color-tint",
       "--accent-color-text",
+      "--link-color",
+      "--on-accent",
       "--disabled",
       "--primary-dark",
       "--primary-light",
       "--hover"
     ],
-    "radii": [
-      "--radius-sm",
-      "--radius-md",
-      "--radius-lg",
-      "--radius-xl",
-      "--radius-full"
-    ],
+    "colorsChangedIn1.5": {
+      "removed": "--accent-text (use --on-accent for text drawn on an accent-colored background, or --accent-color-text for accent-tinted text on normal backgrounds)",
+      "added": ["--error-text", "--success-text", "--warning-text", "--link-color", "--on-accent"]
+    },
+    "radii": {
+      "note": "Basix 1.5 REMOVED these as runtime CSS custom properties — it now only exposes compile-time $radius-* SCSS vars (see scssVars below), and basix's own components (e.g. .button-pill) use those directly. This app still uses var(--radius-*) throughout its scoped styles per the 'Basix tokens for all design values' rule, so app/assets/scss/main.scss re-declares them as CSS custom properties (mapped 1:1 from $radius-sm/md/lg/xl, plus a 9999px --radius-full basix has no equivalent for). New UI work can keep using var(--radius-sm|md|lg|xl|full) safely — just know it's an app-level shim now, not upstream basix.",
+      "vars": ["--radius-sm", "--radius-md", "--radius-lg", "--radius-xl", "--radius-full"],
+      "definedIn": "app/assets/scss/main.scss"
+    },
     "scssVars": {
       "$spacing": "1rem",
       "$border-radius": "0.4rem",
       "$form-height": "2rem",
-      "$shadow": "0 1px 2px rgba(56,65,74,.15)"
+      "$shadow": "0 1px 2px rgba(56,65,74,.15)",
+      "$radius-xs": "calc($border-radius * 0.5)",
+      "$radius-sm": "calc($border-radius * 0.75)",
+      "$radius-md": "calc($border-radius * 1.5)",
+      "$radius-lg": "calc($border-radius * 2)",
+      "$radius-panel": "calc($border-radius * 2.5)",
+      "$radius-xl": "calc($border-radius * 4)",
+      "$bp-sm": "480px",
+      "$bp-md": "768px",
+      "$bp-lg": "1024px",
+      "$tint-subtle": "8%",
+      "$tint-medium": "12%",
+      "$tint-strong": "20%",
+      "$duration-fast": "0.15s",
+      "$duration-base": "0.22s",
+      "$duration-slow": "0.3s",
+      "$ease-standard": "cubic-bezier(0.2, 0, 0, 1)",
+      "$ease-spring": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "$ease-out-soft": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "note": "All new in 1.5 (parameters.scss). Already available anywhere via `@use \"~/assets/scss/variables\" as *` — app/assets/scss/_variables.scss already forwards @dodlhuat/basix/css/parameters. Use $duration-*/$ease-* for transitions/animations instead of inventing new values (premium-mobile-ui-designer agent: use these for motion work)."
     }
   },
   "cssComponents": {
@@ -69,17 +94,31 @@
       "scss": "@dodlhuat/basix/css/badge.scss",
       "classes": [
         "badge",
-        "badge-primary",
+        "badge-info",
         "badge-success",
         "badge-error",
-        "badge-warning"
-      ]
+        "badge-warning",
+        "badge-solid",
+        "badge-outline"
+      ],
+      "note": "1.5 RENAMED badge-primary → badge-info (base .badge is now the neutral/default look; badge-info is the accent-tinted variant). badge-primary silently matches no rule anymore (falls back to bare .badge styling, no crash — just wrong color). badge-solid/badge-outline are modifiers, combine with a color class, e.g. class=\"badge badge-solid badge-success\"."
     },
     "breadcrumb": {
       "scss": "@dodlhuat/basix/css/breadcrumb.scss",
       "classes": [
         "breadcrumb"
       ]
+    },
+    "chat-bubbles": {
+      "scss": "@dodlhuat/basix/css/chat-bubbles.scss",
+      "classes": [
+        "chat",
+        "chat-avatar",
+        "chat-bubble",
+        "chat-message",
+        "chat-time"
+      ],
+      "note": "New in 1.5, CSS-only (no JS controller)."
     },
     "button": {
       "scss": "@dodlhuat/basix/css/button.scss",
@@ -115,8 +154,9 @@
     "checkbox": {
       "scss": "@dodlhuat/basix/css/checkbox.scss",
       "classes": [
-        "checkbox"
-      ]
+        "styled-checkbox"
+      ],
+      "note": "Actual class is styled-checkbox, not checkbox (corrected — not currently used anywhere in this app)."
     },
     "chips": {
       "scss": "@dodlhuat/basix/css/chips.scss",
@@ -182,8 +222,9 @@
     "radiobutton": {
       "scss": "@dodlhuat/basix/css/radiobutton.scss",
       "classes": [
-        "radiobutton"
-      ]
+        "radio-button-container"
+      ],
+      "note": "Actual class is radio-button-container, not radiobutton (corrected — not currently used anywhere in this app)."
     },
     "spinner": {
       "scss": "@dodlhuat/basix/css/spinner.scss",
@@ -201,10 +242,18 @@
     "table": {
       "scss": "@dodlhuat/basix/css/table.scss",
       "classes": [
-        "table",
+        "table-wrapper",
         "table-striped",
-        "table-bordered"
-      ]
+        "table-borderless",
+        "table-compact",
+        "table-controls",
+        "pagination",
+        "pagination-buttons",
+        "pagination-info",
+        "page-btn"
+      ],
+      "note": "1.5 added pagination CSS + a new Table JS controller (not present in 1.4). table-bordered is gone (table-borderless is the new inverse-named class). Not imported in main.scss yet — @use it before building any data table.",
+      "jsController": "see jsControllers.Table below"
     },
     "tabs": {
       "scss": "@dodlhuat/basix/css/tabs.scss",
@@ -426,6 +475,79 @@
     "SidebarNav": {
       "import": "@dodlhuat/basix/js/sidebar-nav.js",
       "cssFile": "@dodlhuat/basix/css/sidebar-nav.scss"
+    },
+    "Carousel": {
+      "import": "@dodlhuat/basix/js/carousel.js",
+      "cssFile": "@dodlhuat/basix/css/carousel.scss",
+      "usage": "new Carousel(elementOrSelector, { loop?, autoPlay?, autoPlayInterval?, iconBasePath? })",
+      "addedIn": "1.5"
+    },
+    "ColorPicker": {
+      "import": "@dodlhuat/basix/js/color-picker.js",
+      "cssFile": "@dodlhuat/basix/css/color-picker.scss",
+      "usage": "new ColorPicker(container, { value?, onChange?(hex, rgb) })",
+      "addedIn": "1.5"
+    },
+    "ContextMenu": {
+      "import": "@dodlhuat/basix/js/context-menu.js",
+      "cssFile": "@dodlhuat/basix/css/context-menu.scss",
+      "usage": "items: { label, icon?, shortcut?, disabled?, destructive?, action?(target), submenu? } | 'separator' | { group }. Options: { spritePath? }",
+      "addedIn": "1.5"
+    },
+    "Editor": {
+      "import": "@dodlhuat/basix/js/editor.js",
+      "cssFile": "@dodlhuat/basix/css/editor.scss",
+      "usage": "new Editor({ simple?, root? }) — rich text editor with undo/redo",
+      "addedIn": "1.5"
+    },
+    "FileUploader": {
+      "import": "@dodlhuat/basix/js/file-uploader.js",
+      "cssFile": "@dodlhuat/basix/css/file-uploader.scss",
+      "usage": "new FileUploader({ uploadUrl?, maxFileSize?, allowedTypes? })",
+      "addedIn": "1.5"
+    },
+    "MasonryGallery": {
+      "import": "@dodlhuat/basix/js/gallery.js",
+      "cssFile": "@dodlhuat/basix/css/gallery.scss",
+      "usage": "new MasonryGallery(container, { fetchFunction(): Promise<ImageData[]>, minColumnWidth?, scrollThreshold?, loaderSelector?, reload?, enableLightbox? })",
+      "addedIn": "1.5"
+    },
+    "GroupPicker": {
+      "import": "@dodlhuat/basix/js/group-picker.js",
+      "cssFile": "@dodlhuat/basix/css/group-picker.scss",
+      "usage": "groups: { id, label, subgroups?: { id, label }[] }[] → selection: { parentGroups, subgroups: { groupId, subgroupId }[] }",
+      "addedIn": "1.5"
+    },
+    "Lightbox": {
+      "import": "@dodlhuat/basix/js/lightbox.js",
+      "cssFile": "@dodlhuat/basix/css/lightbox.scss",
+      "usage": "new Lightbox({ src?, alt?, caption?, closeable?, images?: {src,alt?,caption?}[], startIndex?, onOpen?, onClose?, iconBasePath? })",
+      "addedIn": "1.5"
+    },
+    "Table": {
+      "import": "@dodlhuat/basix/js/table.js",
+      "cssFile": "@dodlhuat/basix/css/table.scss",
+      "usage": "new Table(container, { data?: Record<string, string|number|boolean>[], columns?: { key, label, sortable? }[], pageSize? })",
+      "addedIn": "1.5",
+      "note": "Not imported in main.scss yet."
+    },
+    "TimeSpanPicker": {
+      "import": "@dodlhuat/basix/js/timepicker.js",
+      "cssFile": "@dodlhuat/basix/css/timepicker.scss",
+      "usage": "new TimeSpanPicker(container, { onChange?(start, end), defaultStart?, defaultEnd?, fromString?, toLabel? })",
+      "addedIn": "1.5"
+    },
+    "TreeComponent": {
+      "import": "@dodlhuat/basix/js/tree.js",
+      "cssFile": "@dodlhuat/basix/css/tree.scss",
+      "usage": "TreeNode(label, type: 'file'|'folder', children?) trees, mounted via TreeComponent. Options: { onSelect?(node) }",
+      "addedIn": "1.5"
+    },
+    "VirtualDropdown": {
+      "import": "@dodlhuat/basix/js/virtual-dropdown.js",
+      "cssFile": "@dodlhuat/basix/css/virtual-dropdown.scss",
+      "usage": "new VirtualDropdown({ container, options: {label,value}[], multiSelect?, searchable?, placeholder?, renderLimit?, itemHeight?, onSelect?(values), selectedLabel?(count) }) — virtualized/windowed list, use over Select/Dropdown for large option sets",
+      "addedIn": "1.5"
     }
   },
   "svgIcons": {

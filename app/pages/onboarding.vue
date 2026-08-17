@@ -13,7 +13,7 @@
             <AppIcon v-if="currentStep > i" name="check" size="1rem" class="stepper-check" />
             <template v-else>{{ i + 1 }}</template>
           </div>
-          <div class="stepper-label"><span class="stepper-title">{{ label }}</span></div>
+          <div class="stepper-label"><span class="stepper-title">{{ $rt(label) }}</span></div>
         </div>
         <div v-if="i < 3" class="stepper-connector" :class="{ completed: currentStep > i }" />
       </template>
