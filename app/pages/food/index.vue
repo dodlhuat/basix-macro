@@ -173,7 +173,11 @@
       <template v-else-if="foodStore.activeFilter === 'favorites'">
         <AppIcon name="star" size="2.5rem" class="food__empty-icon" />
         <p class="food__empty-title">{{ $t('food.empty.favorites') }}</p>
-        <p class="food__empty-hint">{{ $t('food.empty.favoritesHint') }}</p>
+        <i18n-t keypath="food.empty.favoritesHint" tag="p" class="food__empty-hint">
+          <template #icon>
+            <AppIcon name="star" size="0.9rem" class="food__empty-hint-icon" />
+          </template>
+        </i18n-t>
       </template>
 
       <template v-else-if="foodStore.activeFilter === 'recent'">
@@ -926,6 +930,11 @@ onUnmounted(() => {
   color: var(--secondary-text);
   max-width: 22ch;
   line-height: 1.5;
+}
+
+.food__empty-hint-icon {
+  color: #f59e0b;
+  vertical-align: -0.15em;
 }
 
 .food__empty-action {

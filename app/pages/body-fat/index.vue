@@ -20,9 +20,9 @@
             <span
               class="badge"
               :class="badgeClass"
-              :aria-label="`Kategorie: ${result.label}`"
+              :aria-label="`Kategorie: ${resultLabel}`"
             >
-              {{ result.label }}
+              {{ resultLabel }}
             </span>
           </div>
         </div>
@@ -214,7 +214,7 @@ watch([neckStr, waistStr, hipStr], () => {
 
 // ─── Result ───────────────────────────────────────────────────────────────────
 
-const result = ref<{ value: number; category: BodyFatCategory; label: string } | null>(null)
+const result = ref<{ value: number; category: BodyFatCategory } | null>(null)
 
 function handleCalc() {
   if (!canCalc.value || !userStore.user) return
@@ -294,6 +294,13 @@ const femaleCategoryTable = computed<CategoryRow[]>(() => [
 
 const categoryTable = computed<CategoryRow[]>(() =>
   userStore.user?.gender === 'male' ? maleCategoryTable.value : femaleCategoryTable.value,
+)
+
+// Translated label for the current result's category — reuses the same
+// gender-aware category→label mapping as the reference table below, instead
+// of baking a hardcoded-German label into the calculation result itself.
+const resultLabel = computed(() =>
+  categoryTable.value.find(row => row.category === result.value?.category)?.label ?? '',
 )
 
 const genderLabel = computed(() =>

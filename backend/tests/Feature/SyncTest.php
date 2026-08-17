@@ -235,4 +235,60 @@ class SyncTest extends TestCase
 
         $response->assertOk()->assertJsonPath('changes.weight_entries.0.date', '2026-03-15');
     }
+
+    public function test_push_creates_a_body_fat_entry_scoped_to_the_authenticated_user(): void
+    {
+        $user = User::factory()->create();
+        $id = (string) Str::uuid();
+
+        $response = $this->actingAs($user, 'sanctum')->postJson('/api/sync', [
+            'tables' => [
+                'body_fat_entries' => [[
+                    'id' => $id,
+                    'date' => '2026-03-15',
+                    'gender' => 'male',
+                    'height_cm' => 180,
+                    'neck_cm' => 38,
+                    'waist_cm' => 85,
+                    'body_fat_percent' => 15.4,
+                    'category' => 'fitness',
+                    'updated_at' => '2026-01-01T00:00:00.000Z',
+                ]],
+            ],
+        ]);
+
+        $response->assertOk()->assertJsonPath('push_results.body_fat_entries.0.status', 'applied');
+        $this->assertDatabaseHas('body_fat_entries', [
+            'id' => $id,
+            'user_id' => $user->id,
+            'category' => 'fitness',
+        ]);
+    }
+
+    public function test_pulled_body_fat_entry_round_trips_with_a_plain_date(): void
+    {
+        $user = User::factory()->create();
+        $id = (string) Str::uuid();
+
+        $this->actingAs($user, 'sanctum')->postJson('/api/sync', [
+            'tables' => ['body_fat_entries' => [[
+                'id' => $id,
+                'date' => '2026-03-15',
+                'gender' => 'female',
+                'height_cm' => 165,
+                'neck_cm' => 32,
+                'waist_cm' => 70,
+                'hip_cm' => 95,
+                'body_fat_percent' => 22.1,
+                'category' => 'average',
+                'updated_at' => '2026-01-01T00:00:00.000Z',
+            ]]],
+        ])->assertOk();
+
+        $response = $this->actingAs($user, 'sanctum')->postJson('/api/sync', []);
+
+        $response->assertOk()
+            ->assertJsonPath('changes.body_fat_entries.0.date', '2026-03-15')
+            ->assertJsonPath('changes.body_fat_entries.0.hip_cm', 95);
+    }
 }

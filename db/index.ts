@@ -111,6 +111,26 @@ export interface WaterEntry {
   deleted_at?: string | null
 }
 
+// Stores both the raw measurements and the computed result, so entries stay
+// self-contained/reproducible even if the profile's gender/height or the
+// formula itself changes later (same rationale as DiaryEntry storing both
+// inputs and calorie/macro totals rather than just the totals).
+export interface BodyFatEntry {
+  id: string
+  date: string
+  gender: 'male' | 'female' | 'other'
+  height_cm: number
+  neck_cm: number
+  waist_cm: number
+  hip_cm?: number
+  body_fat_percent: number
+  category: 'essential' | 'athlete' | 'fitness' | 'average' | 'obese'
+  created_at: string
+  updated_at: string
+  sync_status: 'local' | 'synced' | 'dirty'
+  deleted_at?: string | null
+}
+
 class BasixMacroDatabase extends Dexie {
   users!: Table<User>
   food_items!: Table<FoodItem>
@@ -119,9 +139,21 @@ class BasixMacroDatabase extends Dexie {
   diary_entries!: Table<DiaryEntry>
   weight_entries!: Table<WeightEntry>
   water_entries!: Table<WaterEntry>
+  body_fat_entries!: Table<BodyFatEntry>
 
   constructor() {
     super('BasixMacroDB')
+
+    this.version(6).stores({
+      users: 'id, sync_status',
+      food_items: 'id, name, barcode, is_favorite, last_used_at, source, sync_status',
+      recipes: 'id, name, sync_status',
+      recipe_ingredients: 'id, recipe_id, food_item_id, sync_status',
+      diary_entries: 'id, date, meal_type, food_item_id, recipe_id, sync_status',
+      weight_entries: 'id, date, sync_status',
+      water_entries: 'id, date, sync_status',
+      body_fat_entries: 'id, date, sync_status',
+    })
 
     this.version(5).stores({
       users: 'id, sync_status',

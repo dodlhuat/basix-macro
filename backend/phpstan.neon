@@ -14,7 +14,7 @@ parameters:
     # (id, client_updated_at, deleted_at) accurately for code that only knows
     # it's dealing with "some SyncService-eligible model".
     typeAliases:
-        SyncableModel: '\App\Models\FoodItem|\App\Models\Recipe|\App\Models\RecipeIngredient|\App\Models\DiaryEntry|\App\Models\WeightEntry|\App\Models\WaterEntry'
+        SyncableModel: '\App\Models\FoodItem|\App\Models\Recipe|\App\Models\RecipeIngredient|\App\Models\DiaryEntry|\App\Models\WeightEntry|\App\Models\WaterEntry|\App\Models\BodyFatEntry'
 
     # Parallel worker processes produce no output at all in this environment
     # (they appear to fail to spawn/communicate), causing `analyse` to exit 1

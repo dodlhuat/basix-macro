@@ -50,6 +50,22 @@
   --radius-full: 9999px;
 }
 
+// Macro/meal/water color tokens as custom properties, mirroring the
+// --radius-* shim above: $macro-*/$meal-*/$water-color in _variables.scss
+// are the single canonical source, this just makes them consumable at
+// runtime (inline `:style` bindings, `<script>` computed values) without
+// re-typing the hex anywhere else.
+:root {
+  --macro-protein: #{$macro-protein};
+  --macro-carbs: #{$macro-carbs};
+  --macro-fat: #{$macro-fat};
+  --meal-breakfast: #{$meal-breakfast};
+  --meal-lunch: #{$meal-lunch};
+  --meal-dinner: #{$meal-dinner};
+  --meal-snack: #{$meal-snack};
+  --water-color: #{$water-color};
+}
+
 // Fonts
 @font-face {
   font-family: 'Outfit';

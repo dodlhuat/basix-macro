@@ -11,7 +11,6 @@ export interface BodyFatInput {
 export interface BodyFatResult {
   value: number
   category: BodyFatCategory
-  label: string
 }
 
 export function useBodyFat() {
@@ -48,54 +47,23 @@ export function useBodyFat() {
     const value = Math.round(raw * 10) / 10
 
     let category: BodyFatCategory
-    let label: string
 
     if (gender === 'male') {
-      if (value < 6) {
-        category = 'essential'
-        label = 'Essenziell'
-      }
-      else if (value < 14) {
-        category = 'athlete'
-        label = 'Sportler'
-      }
-      else if (value < 18) {
-        category = 'fitness'
-        label = 'Fitness'
-      }
-      else if (value < 25) {
-        category = 'average'
-        label = 'Durchschnitt'
-      }
-      else {
-        category = 'obese'
-        label = 'Übergewicht'
-      }
+      if (value < 6) category = 'essential'
+      else if (value < 14) category = 'athlete'
+      else if (value < 18) category = 'fitness'
+      else if (value < 25) category = 'average'
+      else category = 'obese'
     }
     else {
-      if (value < 14) {
-        category = 'essential'
-        label = 'Essenziell'
-      }
-      else if (value < 21) {
-        category = 'athlete'
-        label = 'Sportlich'
-      }
-      else if (value < 25) {
-        category = 'fitness'
-        label = 'Fitness'
-      }
-      else if (value < 32) {
-        category = 'average'
-        label = 'Durchschnitt'
-      }
-      else {
-        category = 'obese'
-        label = 'Übergewicht'
-      }
+      if (value < 14) category = 'essential'
+      else if (value < 21) category = 'athlete'
+      else if (value < 25) category = 'fitness'
+      else if (value < 32) category = 'average'
+      else category = 'obese'
     }
 
-    return { value, category, label }
+    return { value, category }
   }
 
   return { calcBodyFat }

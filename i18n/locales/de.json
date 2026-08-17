@@ -16,7 +16,7 @@
     "today": "Heute",
     "back": "Zurück",
     "save": "Speichern",
-    "saved": "Gespeichert ✓",
+    "saved": "Gespeichert",
     "cancel": "Abbrechen",
     "add": "Hinzufügen",
     "delete": "Löschen",
@@ -56,7 +56,12 @@
     "streakDays": "Tage",
     "emptyEntry": "Noch nichts eingetragen",
     "addEntry": "Eintrag hinzufügen",
-    "editEntry": "{name} bearbeiten"
+    "editEntry": "{name} bearbeiten",
+    "now": "Jetzt",
+    "paceMarkerLabel": "Gleichmäßiger Tagesverlauf bis jetzt: {n} kcal",
+    "paceOnTrack": "Bislang etwa im gleichmäßigen Tagesverlauf",
+    "paceAhead": "Bislang {n} kcal mehr als bei gleichmäßigem Tagesverlauf",
+    "paceBehind": "Bislang {n} kcal weniger als bei gleichmäßigem Tagesverlauf"
   },
   "diary": {
     "title": "Eintrag hinzufügen",
@@ -72,7 +77,7 @@
     },
     "empty": {
       "favorites": "Keine Favoriten",
-      "favoritesHint": "Tippe auf ★ bei einem Lebensmittel, um es zu speichern.",
+      "favoritesHint": "Tippe auf {icon} bei einem Lebensmittel, um es zu speichern.",
       "recent": "Noch keine Aktivität",
       "recentHint": "Hier erscheinen kürzlich geloggte Lebensmittel.",
       "food": "Noch keine Lebensmittel",
@@ -124,7 +129,7 @@
       "noResults": "Keine Treffer",
       "noResultsHint": "Kein Lebensmittel gefunden für «{query}».",
       "favorites": "Keine Favoriten",
-      "favoritesHint": "Tippe auf ★ bei einem Lebensmittel, um es zu speichern.",
+      "favoritesHint": "Tippe auf {icon} bei einem Lebensmittel, um es zu speichern.",
       "recent": "Noch keine Aktivität",
       "recentHint": "Hier erscheinen Lebensmittel, die du kürzlich geloggt hast.",
       "food": "Noch keine Lebensmittel",

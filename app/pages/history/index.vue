@@ -48,7 +48,13 @@
           <span
             class="history__stat-value"
             :class="{ 'history__stat-value--streak': streak > 0 }"
-          >{{ streak }}<template v-if="streak > 0"> 🔥</template></span>
+          >{{ streak }}</span>
+          <AppIcon
+            v-if="streak > 0"
+            name="local_fire_department"
+            size="1.1rem"
+            class="history__streak-icon"
+          />
         </div>
         <span class="history__stat-label">{{ $t('history.streak') }}</span>
       </div>
@@ -432,6 +438,11 @@ onMounted(async () => {
   &--streak  { color: var(--accent-color); }
   &--success { color: var(--success); }
   &--warning { color: var(--warning); }
+}
+
+.history__streak-icon {
+  color: var(--accent-color);
+  align-self: center;
 }
 
 .history__stat-unit {

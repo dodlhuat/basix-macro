@@ -97,7 +97,11 @@
       <template v-if="activeFilter === 'favorites'">
         <AppIcon name="star" size="2.5rem" class="diary-add__empty-icon" />
         <p class="diary-add__empty-title">{{ $t('diary.empty.favorites') }}</p>
-        <p class="diary-add__empty-hint">{{ $t('diary.empty.favoritesHint') }}</p>
+        <i18n-t keypath="diary.empty.favoritesHint" tag="p" class="diary-add__empty-hint">
+          <template #icon>
+            <AppIcon name="star" size="0.9rem" class="diary-add__empty-hint-icon" />
+          </template>
+        </i18n-t>
       </template>
       <template v-else-if="activeFilter === 'recent'">
         <AppIcon name="history" size="2.5rem" class="diary-add__empty-icon" />
@@ -1054,6 +1058,11 @@ onUnmounted(() => {
   color: var(--secondary-text);
   max-width: 22ch;
   line-height: 1.5;
+}
+
+.diary-add__empty-hint-icon {
+  color: #f59e0b;
+  vertical-align: -0.15em;
 }
 
 // ─── OFF section ──────────────────────────────────────────────────────────────

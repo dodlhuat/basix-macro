@@ -16,7 +16,7 @@
     "today": "Today",
     "back": "Back",
     "save": "Save",
-    "saved": "Saved ✓",
+    "saved": "Saved",
     "cancel": "Cancel",
     "add": "Add",
     "delete": "Delete",
@@ -56,7 +56,12 @@
     "streakDays": "days",
     "emptyEntry": "Nothing logged yet",
     "addEntry": "Add entry",
-    "editEntry": "Edit {name}"
+    "editEntry": "Edit {name}",
+    "now": "Now",
+    "paceMarkerLabel": "Even pace across the day: {n} kcal by now",
+    "paceOnTrack": "So far, about an even pace across the day",
+    "paceAhead": "So far, {n} kcal more than an even pace",
+    "paceBehind": "So far, {n} kcal less than an even pace"
   },
   "diary": {
     "title": "Add entry",
@@ -72,7 +77,7 @@
     },
     "empty": {
       "favorites": "No favorites",
-      "favoritesHint": "Tap ★ on a food item to save it.",
+      "favoritesHint": "Tap {icon} on a food item to save it.",
       "recent": "No activity yet",
       "recentHint": "Recently logged foods will appear here.",
       "food": "No foods yet",
@@ -124,7 +129,7 @@
       "noResults": "No results",
       "noResultsHint": "No food found for «{query}».",
       "favorites": "No favorites",
-      "favoritesHint": "Tap ★ on a food item to save it.",
+      "favoritesHint": "Tap {icon} on a food item to save it.",
       "recent": "No activity yet",
       "recentHint": "Foods you have recently logged will appear here.",
       "food": "No foods yet",

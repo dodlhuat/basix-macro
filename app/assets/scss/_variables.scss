@@ -19,3 +19,15 @@ $macro-protein: #ef4444;
 $macro-carbs:   #3b82f6;
 $macro-fat:     #f59e0b;
 $macro-calories: var(--accent-color);
+
+// Meal-type accents (dashboard meal-section left border) and the water
+// tracker's droplet color — canonical hex lives here only. main.scss exposes
+// these as CSS custom properties (`--meal-*`, `--water-color`) the same way
+// it already does for $radius-*, so components can consume them via
+// var(--meal-breakfast) etc. instead of re-typing hex in scoped styles or
+// script `<script>` blocks.
+$meal-breakfast: #f59e0b;
+$meal-lunch:     #22c55e;
+$meal-dinner:    #3b82f6;
+$meal-snack:     #a855f7;
+$water-color:    #60a5fa;

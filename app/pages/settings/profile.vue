@@ -102,7 +102,10 @@ v-for="a in activityOptions" :key="a.value" type="button" class="chip clickable"
         </div>
       </div>
 
-      <p v-if="saved" class="profile__saved">{{ $t('common.saved') }}</p>
+      <p v-if="saved" class="profile__saved">
+        {{ $t('common.saved') }}
+        <AppIcon name="check_circle" size="1rem" class="profile__saved-icon" />
+      </p>
 
       <button
 type="button" class="button button-primary" :class="{ 'is-loading': saving }" :disabled="saving"
@@ -246,10 +249,17 @@ watch(user, (u) => {
   }
 
   &__saved {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
     color: var(--success);
     font-weight: 600;
-    text-align: center;
     margin: 0;
+  }
+
+  &__saved-icon {
+    color: var(--success);
   }
 }
 

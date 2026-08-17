@@ -1,11 +1,12 @@
 export function useDataExport() {
   async function exportJSON(): Promise<void> {
     const { db } = await import('../../db')
-    const [diary, water, weight, food] = await Promise.all([
+    const [diary, water, weight, food, bodyFat] = await Promise.all([
       db.diary_entries.toArray(),
       db.water_entries.toArray(),
       db.weight_entries.toArray(),
       db.food_items.toArray(),
+      db.body_fat_entries.toArray(),
     ])
 
     const payload = {
@@ -14,6 +15,7 @@ export function useDataExport() {
       water_entries: water,
       weight_entries: weight,
       food_items: food,
+      body_fat_entries: bodyFat,
     }
 
     const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' })

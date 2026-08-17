@@ -14,7 +14,8 @@
       <div class="dashboard__date-center">
         <span class="dashboard__date-label">{{ formattedDate }}</span>
         <span v-if="streak > 0" class="chip dashboard__streak-chip">
-          🔥 {{ streak }} {{ streak === 1 ? $t('dashboard.streakDay') : $t('dashboard.streakDays') }}
+          <AppIcon name="local_fire_department" size="0.9rem" class="dashboard__streak-icon" />
+          {{ streak }} {{ streak === 1 ? $t('dashboard.streakDay') : $t('dashboard.streakDays') }}
         </span>
       </div>
 
@@ -39,243 +40,310 @@
     </nav>
 
     <!-- Calorie hero -->
-    <section class="dashboard__hero" :class="{ 'dashboard__hero--over': isOverGoal }">
-      <div class="dashboard__hero-body">
-        <div class="dashboard__remaining">
-          <span class="dashboard__remaining-number">
-            {{ isOverGoal ? 0 : remainingCalories }}
-          </span>
-          <span class="dashboard__remaining-label">
-            {{ isOverGoal ? $t('dashboard.overGoal') : $t('dashboard.remaining') }}
-          </span>
-        </div>
-
-        <div class="dashboard__hero-stats">
-          <div class="dashboard__stat">
-            <span class="dashboard__stat-value">{{ Math.round(totalCalories) }}</span>
-            <span class="dashboard__stat-label">{{ $t('dashboard.consumed') }}</span>
+    <section class="dashboard__hero" :class="{ 'dashboard__hero--over': isOverGoal }" :aria-busy="isLoading">
+      <template v-if="isLoading">
+        <div class="dashboard__hero-body">
+          <div class="dashboard__remaining">
+            <span class="skeleton dashboard__skel-number" />
+            <span class="skeleton-text dashboard__skel-label" />
           </div>
-          <div class="dashboard__stat-sep" aria-hidden="true" />
-          <div class="dashboard__stat">
-            <span class="dashboard__stat-value">{{ calorieGoal }}</span>
-            <span class="dashboard__stat-label">{{ $t('dashboard.goal') }}</span>
+          <div class="dashboard__hero-stats">
+            <span class="skeleton-text dashboard__skel-stat" />
+            <span class="skeleton-text dashboard__skel-stat" />
           </div>
         </div>
-      </div>
+        <div class="skeleton dashboard__skel-progress" />
+      </template>
 
-      <div class="progress dashboard__hero-progress">
-        <div
-          class="progress-bar"
-          :class="isOverGoal ? 'error' : 'accent'"
-          :style="{ width: caloriePercent + '%' }"
-          role="progressbar"
-          :aria-valuenow="Math.round(totalCalories)"
-          :aria-valuemax="calorieGoal"
-        />
-      </div>
+      <template v-else>
+        <div class="dashboard__hero-body">
+          <div class="dashboard__remaining">
+            <span class="dashboard__remaining-number" :class="{ 'dashboard__remaining-number--over': isOverGoal }">
+              {{ remainingCalories }}
+            </span>
+            <span class="dashboard__remaining-label">{{ $t('dashboard.remaining') }}</span>
+          </div>
 
-      <p v-if="isOverGoal" class="dashboard__over-label">
-        {{ $t('dashboard.overGoalLabel', { n: Math.round(totalCalories - calorieGoal) }) }}
-      </p>
+          <div class="dashboard__hero-stats">
+            <div class="dashboard__stat">
+              <span class="dashboard__stat-value">{{ Math.round(totalCalories) }}</span>
+              <span class="dashboard__stat-label">{{ $t('dashboard.consumed') }}</span>
+            </div>
+            <div class="dashboard__stat-sep" aria-hidden="true" />
+            <div class="dashboard__stat">
+              <span class="dashboard__stat-value">{{ calorieGoal }}</span>
+              <span class="dashboard__stat-label">{{ $t('dashboard.goal') }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="progress dashboard__hero-progress">
+          <div
+            class="progress-bar"
+            :class="isOverGoal ? 'error' : 'accent'"
+            :style="{ width: caloriePercent + '%' }"
+            role="progressbar"
+            :aria-valuenow="Math.round(totalCalories)"
+            :aria-valuemax="calorieGoal"
+          />
+          <div
+            v-if="expectedCaloriePercent !== null"
+            class="dashboard__pace-marker"
+            :style="{ left: expectedCaloriePercent + '%' }"
+            :aria-label="$t('dashboard.paceMarkerLabel', { n: expectedCalories })"
+            role="img"
+          />
+        </div>
+
+        <p v-if="paceStatus" class="dashboard__pace-caption">
+          <AppIcon name="info" size="0.85rem" class="dashboard__pace-icon" />
+          <span>
+            {{
+              paceStatus === 'on-track'
+                ? $t('dashboard.paceOnTrack')
+                : paceStatus === 'ahead'
+                  ? $t('dashboard.paceAhead', { n: paceDeltaAbs })
+                  : $t('dashboard.paceBehind', { n: paceDeltaAbs })
+            }}
+          </span>
+        </p>
+      </template>
     </section>
 
     <!-- Macro bars -->
-    <section class="dashboard__macros">
-      <div
-        v-for="macro in macros"
-        :key="macro.key"
-        class="dashboard__macro"
-      >
-        <div class="dashboard__macro-header">
-          <span class="dashboard__macro-dot" :style="{ backgroundColor: macro.color }" aria-hidden="true" />
-          <span class="dashboard__macro-label">{{ macro.label }}</span>
-          <span class="dashboard__macro-value">
-            {{ Math.round(macro.current) }}<span class="dashboard__macro-unit">g</span>
-            <span class="dashboard__macro-goal">/ {{ macro.goal }}g</span>
-          </span>
+    <section class="dashboard__macros" :aria-busy="isLoading">
+      <template v-if="isLoading">
+        <div v-for="n in 3" :key="n" class="dashboard__macro">
+          <div class="dashboard__macro-header">
+            <span class="skeleton dashboard__skel-dot" />
+            <span class="skeleton-text dashboard__skel-macro-label" />
+          </div>
+          <div class="skeleton dashboard__skel-macro-bar" />
         </div>
-        <div class="progress dashboard__macro-bar">
-          <div
-            class="progress-bar"
-            :style="{ width: macro.percent + '%', backgroundColor: macro.color }"
-            role="progressbar"
-            :aria-valuenow="Math.round(macro.current)"
-            :aria-valuemax="macro.goal"
-          />
+      </template>
+
+      <template v-else>
+        <div
+          v-for="macro in macros"
+          :key="macro.key"
+          class="dashboard__macro"
+        >
+          <div class="dashboard__macro-header">
+            <span class="dashboard__macro-dot" :style="{ backgroundColor: macro.color }" aria-hidden="true" />
+            <span class="dashboard__macro-label">{{ macro.label }}</span>
+            <span class="dashboard__macro-value">
+              {{ Math.round(macro.current) }}<span class="dashboard__macro-unit">g</span>
+              <span class="dashboard__macro-goal">/ {{ macro.goal }}g</span>
+            </span>
+          </div>
+          <div class="progress dashboard__macro-bar">
+            <div
+              class="progress-bar"
+              :style="{ width: macro.percent + '%', backgroundColor: macro.color }"
+              role="progressbar"
+              :aria-valuenow="Math.round(macro.current)"
+              :aria-valuemax="macro.goal"
+            />
+          </div>
         </div>
-      </div>
+      </template>
     </section>
 
     <!-- Water tracker -->
-    <section class="dashboard__water card card-bordered">
-      <div class="dashboard__water-header">
-        <AppIcon name="water_drop" class="dashboard__water-icon" />
-        <span class="dashboard__water-title">{{ $t('dashboard.water') }}</span>
-        <span class="dashboard__water-amount">
-          {{ totalWater }}<span class="dashboard__water-unit">ml</span>
-        </span>
-        <span class="dashboard__water-goal">/ {{ WATER_GOAL }} ml</span>
-      </div>
-      <div class="progress dashboard__water-progress">
-        <div
-          class="progress-bar accent"
-          :style="{ width: waterPercent + '%' }"
-          role="progressbar"
-          :aria-valuenow="totalWater"
-          :aria-valuemax="WATER_GOAL"
-        />
-      </div>
-      <div class="dashboard__water-actions">
-        <button
-          class="button button-outline button-sm dashboard__water-btn"
-          aria-label="250 ml Wasser hinzufügen"
-          @click="addWaterAmount(250)"
-        >
-          +250 ml
-        </button>
-        <button
-          class="button button-outline button-sm dashboard__water-btn"
-          aria-label="500 ml Wasser hinzufügen"
-          @click="addWaterAmount(500)"
-        >
-          +500 ml
-        </button>
-        <button
-          class="button button-outline button-sm dashboard__water-btn"
-          aria-label="1 Liter Wasser hinzufügen"
-          @click="addWaterAmount(1000)"
-        >
-          +1 L
-        </button>
-      </div>
+    <section class="dashboard__water" :aria-busy="isLoading">
+      <template v-if="isLoading">
+        <div class="dashboard__water-header">
+          <span class="skeleton dashboard__skel-dot" />
+          <span class="skeleton-text dashboard__skel-water-title" />
+        </div>
+        <div class="skeleton dashboard__skel-progress" />
+      </template>
+
+      <template v-else>
+        <div class="dashboard__water-header">
+          <AppIcon name="water_drop" class="dashboard__water-icon" />
+          <span class="dashboard__water-title">{{ $t('dashboard.water') }}</span>
+          <span class="dashboard__water-amount">
+            {{ totalWater }}<span class="dashboard__water-unit">ml</span>
+          </span>
+          <span class="dashboard__water-goal">/ {{ WATER_GOAL }} ml</span>
+        </div>
+        <div class="progress dashboard__water-progress">
+          <div
+            class="progress-bar accent"
+            :style="{ width: waterPercent + '%' }"
+            role="progressbar"
+            :aria-valuenow="totalWater"
+            :aria-valuemax="WATER_GOAL"
+          />
+        </div>
+        <div class="dashboard__water-actions">
+          <button
+            class="button button-outline button-sm dashboard__water-btn"
+            aria-label="250 ml Wasser hinzufügen"
+            @click="addWaterAmount(250)"
+          >
+            +250 ml
+          </button>
+          <button
+            class="button button-outline button-sm dashboard__water-btn"
+            aria-label="500 ml Wasser hinzufügen"
+            @click="addWaterAmount(500)"
+          >
+            +500 ml
+          </button>
+          <button
+            class="button button-outline button-sm dashboard__water-btn"
+            aria-label="1 Liter Wasser hinzufügen"
+            @click="addWaterAmount(1000)"
+          >
+            +1 L
+          </button>
+        </div>
+      </template>
     </section>
 
     <!-- Meal sections -->
-    <section class="dashboard__meals">
-      <div
-        v-for="meal in mealSections"
-        :key="meal.type"
-        class="dashboard__meal"
-        :class="`dashboard__meal--${meal.type}`"
-      >
-        <div class="dashboard__meal-header">
-          <span class="dashboard__meal-name">{{ meal.label }}</span>
-          <span
-            v-if="meal.entries.length"
-            class="dashboard__meal-kcal"
-          >
-            {{ Math.round(meal.totalKcal) }} kcal
-          </span>
-          <button
-            class="button button-icon button-sm dashboard__meal-add"
-            :aria-label="`${meal.label} Eintrag hinzufügen`"
-            @click="addEntry(meal.type)"
-          >
-            <AppIcon name="add" />
-          </button>
+    <section class="dashboard__meals" :aria-busy="isLoading">
+      <template v-if="isLoading">
+        <div v-for="n in 4" :key="n" class="dashboard__meal">
+          <span class="skeleton-text dashboard__skel-meal-label" />
+          <div class="skeleton dashboard__skel-meal-entry" />
         </div>
+      </template>
 
-        <ul v-if="meal.entries.length" class="dashboard__entries" role="list">
-          <li
-            v-for="entry in meal.entries"
-            :key="entry.id"
-            class="dashboard__entry"
-            :class="{ 'dashboard__entry--editing': editingEntryId === entry.id }"
-          >
-            <Transition name="entry-edit" mode="out-in">
-              <div
-                v-if="editingEntryId !== entry.id"
-                key="normal"
-                class="dashboard__entry-row"
-              >
-                <div class="dashboard__entry-info">
-                  <span class="dashboard__entry-name">{{ entry.food_item_name }}</span>
-                  <span class="dashboard__entry-amount">
-                    {{ isRecipeEntry(entry) ? `${entry.servings} ${$t('diary.sheet.portion')}` : `${entry.amount_g} g` }}
-                  </span>
-                </div>
-                <div class="dashboard__entry-right">
-                  <span class="dashboard__entry-kcal">{{ Math.round(entry.calories_total) }} kcal</span>
-                  <button
-                    class="button button-icon button-sm dashboard__entry-edit-toggle"
-                    :aria-label="$t('dashboard.editEntry', { name: entry.food_item_name })"
-                    @click="startEdit(entry)"
-                  >
-                    <AppIcon name="edit" size="1rem" />
-                  </button>
-                  <button
-                    class="button button-icon button-sm dashboard__entry-delete"
-                    :aria-label="`${entry.food_item_name} löschen`"
-                    @click="removeEntry(entry.id)"
-                  >
-                    <AppIcon name="delete" size="1rem" />
-                  </button>
-                </div>
-              </div>
+      <template v-else>
+        <div
+          v-for="meal in mealSections"
+          :key="meal.type"
+          class="dashboard__meal"
+          :class="[
+            `dashboard__meal--${meal.type}`,
+            { 'dashboard__meal--current': meal.type === currentMealType },
+          ]"
+        >
+          <div class="dashboard__meal-header">
+            <span class="dashboard__meal-name">{{ meal.label }}</span>
+            <span v-if="meal.type === currentMealType" class="dashboard__meal-now">
+              {{ $t('dashboard.now') }}
+            </span>
+            <span
+              v-if="meal.entries.length"
+              class="dashboard__meal-kcal"
+            >
+              {{ Math.round(meal.totalKcal) }} kcal
+            </span>
+            <button
+              class="button button-icon button-sm dashboard__meal-add"
+              :aria-label="`${meal.label} Eintrag hinzufügen`"
+              @click="addEntry(meal.type)"
+            >
+              <AppIcon name="add" />
+            </button>
+          </div>
 
-              <div
-                v-else
-                key="edit"
-                class="dashboard__entry-edit-row"
-              >
-                <div class="dashboard__entry-edit-top">
-                  <span class="dashboard__entry-edit-label">
-                    {{ isRecipeEntry(entry) ? $t('diary.sheet.servings') : $t('diary.sheet.amount') }}
-                  </span>
-                  <div class="dashboard__entry-edit-stepper">
+          <ul v-if="meal.entries.length" class="dashboard__entries" role="list">
+            <li
+              v-for="entry in meal.entries"
+              :key="entry.id"
+              class="dashboard__entry"
+              :class="{ 'dashboard__entry--editing': editingEntryId === entry.id }"
+            >
+              <Transition name="entry-edit" mode="out-in">
+                <div
+                  v-if="editingEntryId !== entry.id"
+                  key="normal"
+                  class="dashboard__entry-row"
+                >
+                  <div class="dashboard__entry-info">
+                    <span class="dashboard__entry-name">{{ entry.food_item_name }}</span>
+                    <span class="dashboard__entry-amount">
+                      {{ isRecipeEntry(entry) ? `${entry.servings} ${$t('diary.sheet.portion')}` : `${entry.amount_g} g` }}
+                    </span>
+                  </div>
+                  <div class="dashboard__entry-right">
+                    <span class="dashboard__entry-kcal">{{ Math.round(entry.calories_total) }} kcal</span>
                     <button
-                      class="button button-outline dashboard__entry-edit-step-btn"
-                      :disabled="editQuantity - stepFor(entry) < 1"
-                      :aria-label="$t('diary.sheet.decrease')"
-                      @click="adjustEditQuantity(entry, -stepFor(entry))"
+                      class="button button-icon button-sm dashboard__entry-edit-toggle"
+                      :aria-label="$t('dashboard.editEntry', { name: entry.food_item_name })"
+                      @click="startEdit(entry)"
                     >
-                      <AppIcon name="remove" size="1rem" />
+                      <AppIcon name="edit" size="1rem" />
                     </button>
-                    <div class="form-group dashboard__entry-edit-group">
-                      <div class="input-group">
-                        <input
-                          v-model.number="editQuantity"
-                          type="number"
-                          min="1"
-                          :max="maxFor(entry)"
-                          step="1"
-                          :aria-label="isRecipeEntry(entry) ? $t('diary.sheet.servings') : $t('diary.sheet.amount')"
-                          class="dashboard__entry-edit-input"
-                        >
-                        <span class="dashboard__entry-edit-unit">
-                          {{ isRecipeEntry(entry) ? $t('diary.sheet.portion') : 'g' }}
-                        </span>
-                      </div>
-                    </div>
                     <button
-                      class="button button-outline dashboard__entry-edit-step-btn"
-                      :disabled="editQuantity + stepFor(entry) > maxFor(entry)"
-                      :aria-label="$t('diary.sheet.increase')"
-                      @click="adjustEditQuantity(entry, stepFor(entry))"
+                      class="button button-icon button-sm dashboard__entry-delete"
+                      :aria-label="`${entry.food_item_name} löschen`"
+                      @click="removeEntry(entry.id)"
                     >
-                      <AppIcon name="add" size="1rem" />
+                      <AppIcon name="delete" size="1rem" />
                     </button>
                   </div>
                 </div>
-                <div class="dashboard__entry-edit-actions">
-                  <button
-                    class="button button-sm button-primary"
-                    :disabled="!isEditQuantityValid"
-                    @click="saveEdit(entry.id)"
-                  >
-                    {{ $t('common.save') }}
-                  </button>
-                  <button class="button button-sm button-outline" @click="cancelEdit">
-                    {{ $t('common.cancel') }}
-                  </button>
-                </div>
-              </div>
-            </Transition>
-          </li>
-        </ul>
 
-        <p v-else class="dashboard__meal-empty">{{ $t('dashboard.emptyEntry') }}</p>
-      </div>
+                <div
+                  v-else
+                  key="edit"
+                  class="dashboard__entry-edit-row"
+                >
+                  <div class="dashboard__entry-edit-top">
+                    <span class="dashboard__entry-edit-label">
+                      {{ isRecipeEntry(entry) ? $t('diary.sheet.servings') : $t('diary.sheet.amount') }}
+                    </span>
+                    <div class="dashboard__entry-edit-stepper">
+                      <button
+                        class="button button-outline dashboard__entry-edit-step-btn"
+                        :disabled="editQuantity - stepFor(entry) < 1"
+                        :aria-label="$t('diary.sheet.decrease')"
+                        @click="adjustEditQuantity(entry, -stepFor(entry))"
+                      >
+                        <AppIcon name="remove" size="1rem" />
+                      </button>
+                      <div class="form-group dashboard__entry-edit-group">
+                        <div class="input-group">
+                          <input
+                            v-model.number="editQuantity"
+                            type="number"
+                            min="1"
+                            :max="maxFor(entry)"
+                            step="1"
+                            :aria-label="isRecipeEntry(entry) ? $t('diary.sheet.servings') : $t('diary.sheet.amount')"
+                            class="dashboard__entry-edit-input"
+                          >
+                          <span class="dashboard__entry-edit-unit">
+                            {{ isRecipeEntry(entry) ? $t('diary.sheet.portion') : 'g' }}
+                          </span>
+                        </div>
+                      </div>
+                      <button
+                        class="button button-outline dashboard__entry-edit-step-btn"
+                        :disabled="editQuantity + stepFor(entry) > maxFor(entry)"
+                        :aria-label="$t('diary.sheet.increase')"
+                        @click="adjustEditQuantity(entry, stepFor(entry))"
+                      >
+                        <AppIcon name="add" size="1rem" />
+                      </button>
+                    </div>
+                  </div>
+                  <div class="dashboard__entry-edit-actions">
+                    <button
+                      class="button button-sm button-primary"
+                      :disabled="!isEditQuantityValid"
+                      @click="saveEdit(entry.id)"
+                    >
+                      {{ $t('common.save') }}
+                    </button>
+                    <button class="button button-sm button-outline" @click="cancelEdit">
+                      {{ $t('common.cancel') }}
+                    </button>
+                  </div>
+                </div>
+              </Transition>
+            </li>
+          </ul>
+
+          <p v-else class="dashboard__meal-empty">{{ $t('dashboard.emptyEntry') }}</p>
+        </div>
+      </template>
     </section>
 
   </div>
@@ -361,23 +429,69 @@ const WATER_GOAL  = 2000
 
 // ─── Calorie hero ─────────────────────────────────────────────────────────────
 
+// Signed — negative once over goal (e.g. "-180"), replacing the old
+// clamp-to-0 + separate red caption with a single headline number.
 const remainingCalories = computed(() =>
-  Math.max(0, calorieGoal.value - Math.round(totalCalories.value))
+  Math.round(calorieGoal.value - totalCalories.value)
 )
 const caloriePercent = computed(() =>
   Math.min(100, (totalCalories.value / calorieGoal.value) * 100)
 )
 const isOverGoal = computed(() => totalCalories.value > calorieGoal.value)
 
+// ─── Pace indicator ───────────────────────────────────────────────────────────
+// Compares calories consumed so far against what a steady, evenly-paced day
+// would predict "by this hour" — only meaningful while viewing today (a past
+// day is already decided, a future one has no "now"). The eating window is a
+// deliberately simple 07:00–22:00 model (covers breakfast through the tail
+// end of snack hours) rather than assuming intake is spread across the full
+// 24h clock.
+const PACE_WINDOW_START_HOUR = 7
+const PACE_WINDOW_END_HOUR = 22
+const PACE_TOLERANCE_KCAL = 75 // inside this band from the expected value counts as "on track"
+
+const expectedCaloriePercent = computed<number | null>(() => {
+  if (!isToday.value) return null
+  const now = new Date()
+  const hourFraction = now.getHours() + now.getMinutes() / 60
+  const span = PACE_WINDOW_END_HOUR - PACE_WINDOW_START_HOUR
+  const progress = (hourFraction - PACE_WINDOW_START_HOUR) / span
+  return Math.min(100, Math.max(0, progress * 100))
+})
+
+const expectedCalories = computed<number | null>(() =>
+  expectedCaloriePercent.value === null
+    ? null
+    : Math.round((expectedCaloriePercent.value / 100) * calorieGoal.value)
+)
+
+const paceDelta = computed<number | null>(() =>
+  expectedCalories.value === null ? null : Math.round(totalCalories.value - expectedCalories.value)
+)
+
+const paceStatus = computed<'ahead' | 'behind' | 'on-track' | null>(() => {
+  if (paceDelta.value === null) return null
+  if (paceDelta.value > PACE_TOLERANCE_KCAL) return 'ahead'
+  if (paceDelta.value < -PACE_TOLERANCE_KCAL) return 'behind'
+  return 'on-track'
+})
+
+// Template-friendly non-null magnitude — `paceStatus` already guards the
+// caption to only render once `paceDelta` is a real number.
+const paceDeltaAbs = computed(() => Math.abs(paceDelta.value ?? 0))
+
 // ─── Macros ───────────────────────────────────────────────────────────────────
 
+// Colors read from the --macro-* custom properties (app/assets/scss/main.scss),
+// which are themselves generated from the single canonical $macro-* SCSS vars
+// in _variables.scss — no hex re-typed here.
 const macros = computed(() => [
   {
     key: 'protein',
     label: t('common.protein'),
     current: totalProtein.value,
     goal: proteinGoal.value,
-    color: '#ef4444',
+    color: 'var(--macro-protein)',
     percent: Math.min(100, (totalProtein.value / proteinGoal.value) * 100),
   },
   {
@@ -385,7 +499,7 @@ const macros = computed(() => [
     label: t('common.carbs'),
     current: totalCarbs.value,
     goal: carbsGoal.value,
-    color: '#3b82f6',
+    color: 'var(--macro-carbs)',
     percent: Math.min(100, (totalCarbs.value / carbsGoal.value) * 100),
   },
   {
@@ -393,7 +507,7 @@ const macros = computed(() => [
     label: t('common.fat'),
     current: totalFat.value,
     goal: fatGoal.value,
-    color: '#f59e0b',
+    color: 'var(--macro-fat)',
     percent: Math.min(100, (totalFat.value / fatGoal.value) * 100),
   },
 ])
@@ -478,14 +592,28 @@ async function saveEdit(id: string): Promise<void> {
   editingEntryId.value = null
 }
 
-// ─── FAB — time-based meal suggestion ─────────────────────────────────────────
+// ─── Current / suggested meal (time-of-day heuristic) ─────────────────────────
 
-function getMealSuggestion(): string {
-  const h = new Date().getHours()
+function mealTypeForHour(h: number): string {
   if (h >= 6  && h < 11) return 'breakfast'
   if (h >= 11 && h < 15) return 'lunch'
   if (h >= 15 && h < 20) return 'dinner'
   return 'snack'
+}
+
+// The "current" meal by real-world clock time — only meaningful while
+// viewing today. Drives both the meal-list highlight below and the FAB
+// suggestion. On a past/future day there is no "now", so this is null.
+const currentMealType = computed<string | null>(() =>
+  isToday.value ? mealTypeForHour(new Date().getHours()) : null
+)
+
+function getMealSuggestion(): string {
+  if (currentMealType.value) return currentMealType.value
+  // Viewing a day that isn't today: real-world clock time tells us nothing
+  // useful about that day, so suggest the first meal that has no entries yet.
+  const firstEmpty = mealSections.value.find(m => m.entries.length === 0)
+  return firstEmpty ? firstEmpty.type : 'snack'
 }
 
 function openFab() {
@@ -494,8 +622,16 @@ function openFab() {
 
 // ─── Load data ────────────────────────────────────────────────────────────────
 
-onMounted(() => diaryStore.loadForDate(currentDate.value))
-watch(currentDate, date => diaryStore.loadForDate(date))
+const isLoading = ref(true)
+
+async function loadDate(date: string) {
+  isLoading.value = true
+  await diaryStore.loadForDate(date)
+  isLoading.value = false
+}
+
+onMounted(() => loadDate(currentDate.value))
+watch(currentDate, date => loadDate(date))
 </script>
 
 <style lang="scss" scoped>
@@ -514,6 +650,9 @@ watch(currentDate, date => diaryStore.loadForDate(date))
   }
 }
 
+// The overshoot (0% → 70% past-full-scale → 100% settle) is the textbook use
+// case for Basix 1.5's $ease-spring — kept as a keyframe (rather than a plain
+// transition) since the mid-point overshoot needs an explicit frame.
 @keyframes fabPop {
   0%   { opacity: 0; transform: scale(0.6); }
   70%  { transform: scale(1.08); }
@@ -529,8 +668,11 @@ watch(currentDate, date => diaryStore.loadForDate(date))
     animation: none !important;
   }
 
-  .progress-bar {
+  .progress-bar,
+  .skeleton,
+  .skeleton-text {
     transition: none !important;
+    animation: none !important;
   }
 
   .dashboard__entry-row,
@@ -576,6 +718,9 @@ watch(currentDate, date => diaryStore.loadForDate(date))
 }
 
 .dashboard__streak-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
   font-size: 0.7rem;
   font-weight: 600;
   padding: 0.15rem 0.55rem;
@@ -583,6 +728,10 @@ watch(currentDate, date => diaryStore.loadForDate(date))
   color: var(--accent-color);
   border-radius: var(--radius-full);
   pointer-events: none;
+}
+
+.dashboard__streak-icon {
+  color: var(--accent-color);
 }
 
 .dashboard__heute-chip {
@@ -596,7 +745,7 @@ watch(currentDate, date => diaryStore.loadForDate(date))
 
 .heute-fade-enter-active,
 .heute-fade-leave-active {
-  transition: opacity 200ms ease, transform 200ms ease;
+  transition: opacity $duration-base $ease-standard, transform $duration-base $ease-standard;
 }
 
 .heute-fade-enter-from,
@@ -615,7 +764,7 @@ watch(currentDate, date => diaryStore.loadForDate(date))
   );
   border-radius: var(--radius-xl);
   padding: calc(#{$spacing} * 1.25) calc(#{$spacing} * 1.5);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fadeSlideUp 500ms $ease-out-soft both;
 
   &--over {
     background: linear-gradient(
@@ -646,6 +795,14 @@ watch(currentDate, date => diaryStore.loadForDate(date))
   line-height: 1;
   letter-spacing: -0.04em;
   color: var(--primary-text);
+  transition: color $duration-base $ease-standard;
+
+  // Over goal: the number itself goes negative and red (e.g. "-180") instead
+  // of clamping to 0 with a separate caption below — one signed headline
+  // number reads faster than two disjoint pieces of text.
+  &--over {
+    color: var(--error);
+  }
 }
 
 .dashboard__remaining-label {
@@ -695,21 +852,61 @@ watch(currentDate, date => diaryStore.loadForDate(date))
 }
 
 .dashboard__hero-progress {
+  position: relative; // anchors the pace marker below
   height: 6px;
   border-radius: var(--radius-full);
-  overflow: hidden;
+  // Basix's own `.progress` sets `overflow: hidden` — explicitly override it
+  // here (higher specificity via the scoped attribute wins) so the pace
+  // marker can ride slightly above the bar instead of being clipped.
+  overflow: visible;
 
   .progress-bar {
-    transition: width 700ms cubic-bezier(0.25, 1, 0.5, 1);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    transition: width 700ms $ease-out-soft;
   }
 }
 
-.dashboard__over-label {
+// A thin vertical tick showing where calorie intake "should" be by this
+// point in the day (see the pace computeds in <script>), so the remaining
+// number reads as on-track/ahead/behind rather than a flat total. Only
+// rendered for today — see `expectedCaloriePercent`.
+.dashboard__pace-marker {
+  position: absolute;
+  top: -3px;
+  width: 2px;
+  height: 12px;
+  margin-left: -1px;
+  background: var(--primary-text);
+  opacity: 0.45;
+  border-radius: var(--radius-full);
+  pointer-events: none;
+}
+
+// Deliberately low-key: this is a descriptive comparison against an artificial
+// even-pace model (eat lunch late and you'll always look "behind" in the
+// morning, even landing exactly on goal by day's end), never a judgment —
+// so no warning/success colour-coding, no bold weight. The `info` icon does
+// the "this is just an FYI" work instead of a red/amber tone. Same treatment
+// regardless of ahead/behind/on-track so the visual never implies good vs. bad.
+.dashboard__pace-caption {
+  display: flex;
+  align-items: flex-start; // text can wrap to 2 lines at narrow widths — keep
+  // the icon pinned to the first line's cap-height instead of drifting to
+  // the vertical centre of the whole block.
+  gap: 0.35rem;
   margin-top: calc(#{$spacing} * 0.5);
   font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--error);
-  text-align: right;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--secondary-text);
+}
+
+.dashboard__pace-icon {
+  flex-shrink: 0;
+  margin-top: 0.15rem; // optical alignment with the first line of text
+  color: var(--accent-color);
+  opacity: 0.8;
 }
 
 // ─── Macro bars ───────────────────────────────────────────────────────────────
@@ -721,7 +918,7 @@ watch(currentDate, date => diaryStore.loadForDate(date))
   display: flex;
   flex-direction: column;
   gap: calc(#{$spacing} * 0.9);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 80ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 80ms both;
 }
 
 .dashboard__macro {
@@ -774,15 +971,20 @@ watch(currentDate, date => diaryStore.loadForDate(date))
   overflow: hidden;
 
   .progress-bar {
-    transition: width 700ms cubic-bezier(0.25, 1, 0.5, 1) 100ms;
+    transition: width 700ms $ease-out-soft 100ms;
     border-radius: var(--radius-full);
   }
 }
 
 // ─── Water tracker ────────────────────────────────────────────────────────────
+// Plain panel matching .dashboard__macros — was the one boxy `.card
+// .card-bordered` leftover on an otherwise card-grid-free dashboard.
 
 .dashboard__water {
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 160ms both;
+  background: var(--primary-bg);
+  border-radius: var(--radius-xl);
+  padding: $spacing calc(#{$spacing} * 1.25);
+  animation: fadeSlideUp 500ms $ease-out-soft 160ms both;
 }
 
 .dashboard__water-header {
@@ -793,7 +995,7 @@ watch(currentDate, date => diaryStore.loadForDate(date))
 }
 
 .dashboard__water-icon {
-  color: #60a5fa;
+  color: var(--water-color);
   flex-shrink: 0;
 }
 
@@ -830,7 +1032,7 @@ watch(currentDate, date => diaryStore.loadForDate(date))
   margin-bottom: calc(#{$spacing} * 0.875);
 
   .progress-bar {
-    transition: width 700ms cubic-bezier(0.25, 1, 0.5, 1) 200ms;
+    transition: width 700ms $ease-out-soft 200ms;
   }
 }
 
@@ -854,12 +1056,13 @@ watch(currentDate, date => diaryStore.loadForDate(date))
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: var(--divider);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 240ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 240ms both;
 }
 
 .dashboard__meal {
   background: var(--primary-bg);
   padding: calc(#{$spacing} * 0.875) calc(#{$spacing} * 1.125);
+  transition: background-color $duration-base $ease-standard;
 
   &:first-child { border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
   &:last-child  { border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
@@ -867,10 +1070,17 @@ watch(currentDate, date => diaryStore.loadForDate(date))
   // Meal type accent — left border strip
   border-left: 3px solid transparent;
 
-  &--breakfast { border-left-color: #f59e0b; }
-  &--lunch     { border-left-color: #22c55e; }
-  &--dinner    { border-left-color: #3b82f6; }
-  &--snack     { border-left-color: #a855f7; }
+  &--breakfast { border-left-color: var(--meal-breakfast); }
+  &--lunch     { border-left-color: var(--meal-lunch); }
+  &--dinner    { border-left-color: var(--meal-dinner); }
+  &--snack     { border-left-color: var(--meal-snack); }
+
+  // Today's active meal (by time-of-day, see `currentMealType`) — a subtle
+  // accent wash rather than a loud badge, so it reads at a glance without
+  // competing with the entries themselves.
+  &--current {
+    background: var(--accent-color-tint);
+  }
 }
 
 .dashboard__meal-header {
@@ -889,6 +1099,19 @@ watch(currentDate, date => diaryStore.loadForDate(date))
   flex: 1;
 }
 
+.dashboard__meal-now {
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-color);
+  background: var(--primary-bg);
+  border: 1px solid var(--accent-color);
+  border-radius: var(--radius-full);
+  padding: 0.1rem 0.45rem;
+}
+
 .dashboard__meal-kcal {
   font-size: 0.8rem;
   font-weight: 600;
@@ -899,12 +1122,12 @@ watch(currentDate, date => diaryStore.loadForDate(date))
   color: var(--accent-color);
   margin: -0.25rem;
   flex-shrink: 0;
+  transition: transform $duration-base $ease-standard;
 
   &:hover,
   &:focus-visible {
     transform: scale(1.15);
   }
-  transition: transform 200ms ease;
 }
 
 // ─── Meal entries ─────────────────────────────────────────────────────────────
@@ -977,7 +1200,7 @@ watch(currentDate, date => diaryStore.loadForDate(date))
 .dashboard__entry-edit-toggle {
   color: var(--secondary-text);
   opacity: 0.5;
-  transition: opacity 150ms ease, color 150ms ease;
+  transition: opacity $duration-fast $ease-standard, color $duration-fast $ease-standard;
   padding: 0.15rem;
   margin: -0.15rem;
 
@@ -991,7 +1214,7 @@ watch(currentDate, date => diaryStore.loadForDate(date))
 .dashboard__entry-delete {
   color: var(--secondary-text);
   opacity: 0.5;
-  transition: opacity 150ms ease, color 150ms ease;
+  transition: opacity $duration-fast $ease-standard, color $duration-fast $ease-standard;
   padding: 0.15rem;
   margin: -0.15rem;
 
@@ -1084,7 +1307,7 @@ watch(currentDate, date => diaryStore.loadForDate(date))
 
 .entry-edit-enter-active,
 .entry-edit-leave-active {
-  transition: opacity 160ms ease, transform 160ms ease;
+  transition: opacity $duration-fast $ease-standard, transform $duration-fast $ease-standard;
 }
 
 .entry-edit-enter-from,
@@ -1122,8 +1345,8 @@ watch(currentDate, date => diaryStore.loadForDate(date))
   box-shadow:
     0 4px 12px rgba(0, 0, 0, 0.18),
     0 1px 4px rgba(0, 0, 0, 0.12);
-  animation: fabPop 400ms cubic-bezier(0.22, 1, 0.36, 1) 350ms both;
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  animation: fabPop 400ms $ease-spring 350ms both;
+  transition: transform $duration-base $ease-standard, box-shadow $duration-base $ease-standard;
   z-index: 50;
 
   &:hover,
@@ -1144,6 +1367,67 @@ watch(currentDate, date => diaryStore.loadForDate(date))
     outline: 2px solid var(--accent-color);
     outline-offset: 3px;
   }
+}
+
+// ─── Skeleton loading state ────────────────────────────────────────────────
+// Shown while `diaryStore.loadForDate()` is in flight (initial mount and any
+// date change), sized to roughly match each section's real content so
+// nothing visibly jumps once the data lands. Uses Basix's `.skeleton` /
+// `.skeleton-text` shimmer classes (progress.scss) — only the width/height
+// per placeholder is custom.
+
+.dashboard__skel-number {
+  width: 60%;
+  height: clamp(2.6rem, 12vw, 3.5rem);
+  border-radius: var(--radius-md);
+}
+
+.dashboard__skel-label {
+  width: 40%;
+  margin-top: 0.4rem;
+}
+
+.dashboard__skel-stat {
+  width: 3rem;
+}
+
+.dashboard__skel-progress {
+  width: 100%;
+  height: 6px;
+  margin-top: calc(#{$spacing} * 0.875);
+}
+
+.dashboard__skel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dashboard__skel-macro-label {
+  width: 45%;
+}
+
+.dashboard__skel-macro-bar {
+  width: 100%;
+  height: 5px;
+  margin-top: 0.35rem;
+}
+
+.dashboard__skel-water-title {
+  width: 35%;
+}
+
+.dashboard__skel-meal-label {
+  display: block;
+  width: 30%;
+  height: 0.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.dashboard__skel-meal-entry {
+  width: 100%;
+  height: 2rem;
 }
 
 // ─── Desktop: asymmetric 2-column grid ─────────────────────────────────────

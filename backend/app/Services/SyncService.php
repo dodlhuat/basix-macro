@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\BodyFatEntry;
 use App\Models\DiaryEntry;
 use App\Models\FoodItem;
 use App\Models\GlobalFoodItem;
@@ -48,6 +49,10 @@ class SyncService
             ]),
             new SyncableTable('weight_entries', WeightEntry::class, [
                 'date', 'weight_kg', 'note',
+            ]),
+            new SyncableTable('body_fat_entries', BodyFatEntry::class, [
+                'date', 'gender', 'height_cm', 'neck_cm', 'waist_cm', 'hip_cm',
+                'body_fat_percent', 'category',
             ]),
             new SyncableTable('water_entries', WaterEntry::class, [
                 'date', 'amount_ml', 'logged_at',
