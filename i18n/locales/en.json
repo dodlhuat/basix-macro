@@ -94,7 +94,10 @@
       "ingredients": "Ingredients",
       "portion": "srv.",
       "decrease": "Decrease",
-      "increase": "Increase"
+      "increase": "Increase",
+      "logMode": "How to log?",
+      "logModeRecipe": "As recipe",
+      "logModeItems": "Individual items"
     },
     "diaryPage": {
       "backToDashboard": "Back to dashboard",

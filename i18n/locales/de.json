@@ -94,7 +94,10 @@
       "ingredients": "Zutaten",
       "portion": "Port.",
       "decrease": "Verringern",
-      "increase": "Erhöhen"
+      "increase": "Erhöhen",
+      "logMode": "Wie hinzufügen?",
+      "logModeRecipe": "Als Rezept",
+      "logModeItems": "Einzelne Zutaten"
     },
     "diaryPage": {
       "backToDashboard": "Zurück zum Dashboard",

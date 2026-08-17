@@ -155,28 +155,28 @@
         <span class="loading diary-add__off-spinner" />
         <span class="diary-add__off-loading-text">{{ $t('common.searchOnline') }}</span>
       </div>
-      <template v-else-if="offResults.length">
+      <template v-else-if="dedupedOff.length">
         <p class="diary-add__off-header">
           <AppIcon name="public" size="0.875rem" />
           Open Food Facts
         </p>
         <ul class="diary-add__list" role="list">
           <li
-            v-for="product in offResults"
-            :key="product.code"
+            v-for="entry in dedupedOff"
+            :key="entry.product.code"
             class="diary-add__item"
-            @click="addOffProduct(product)"
+            @click="addOffProduct(entry.product)"
           >
             <div class="diary-add__item-body">
-              <span class="diary-add__item-name">{{ product.product_name }}</span>
-              <span v-if="product.brands" class="diary-add__item-brand">
-                {{ offBrand(product.brands) }}
+              <span class="diary-add__item-name">{{ entry.product.product_name }}</span>
+              <span v-if="entry.product.brands" class="diary-add__item-brand">
+                {{ offBrand(entry.product.brands) }}
               </span>
             </div>
             <div class="diary-add__item-meta">
               <div class="diary-add__item-kcal-wrap">
                 <span class="diary-add__item-kcal">
-                  {{ Math.round(product.nutriments?.['energy-kcal_100g'] ?? 0) }}
+                  {{ Math.round(entry.product.nutriments?.['energy-kcal_100g'] ?? 0) }}
                 </span>
                 <span class="diary-add__item-kcal-unit">kcal</span>
               </div>
@@ -366,6 +366,28 @@
           <div class="bottom-sheet-body">
 
             <div class="da-sheet__section">
+              <p class="da-sheet__section-label">{{ $t('diary.sheet.logMode') }}</p>
+              <div class="chips" role="group">
+                <button
+                  type="button"
+                  class="chip clickable"
+                  :class="{ selected: logMode === 'recipe' }"
+                  @click="logMode = 'recipe'"
+                >
+                  {{ $t('diary.sheet.logModeRecipe') }}
+                </button>
+                <button
+                  type="button"
+                  class="chip clickable"
+                  :class="{ selected: logMode === 'items' }"
+                  @click="logMode = 'items'"
+                >
+                  {{ $t('diary.sheet.logModeItems') }}
+                </button>
+              </div>
+            </div>
+
+            <div class="da-sheet__section">
               <p class="da-sheet__section-label">{{ $t('diary.sheet.servings') }}</p>
               <div class="da-sheet__amount">
                 <button
@@ -448,6 +470,7 @@
 import type { FoodItem } from '../../../db'
 import type { OFFProduct } from '../../composables/useOpenFoodFacts'
 import type { RecipeWithNutrition } from '../../stores/recipes'
+import { mergeSearchResults } from '../../composables/useGlobalFoodSearch'
 
 definePageMeta({ title: 'Add entry' })
 
@@ -589,6 +612,22 @@ function offBrand(brands: unknown): string {
   return ''
 }
 
+// OFFProduct uses different field names (code/product_name/brands) than the shared
+// { name, brand, barcode } shape mergeSearchResults() dedupes on — adapt it, keeping
+// the original product attached so the template/handlers can still use it directly.
+// No global-food-database search on this page (see food/index.vue for that), so
+// `global` is always empty — this only dedupes local (own) items against OFF.
+const offAdapted = computed(() => offResults.value.map(product => ({
+  name:    product.product_name,
+  brand:   offBrand(product.brands),
+  barcode: product.code,
+  product,
+})))
+
+const dedupedOff = computed(() =>
+  mergeSearchResults(foodStore.items, [], offAdapted.value).off,
+)
+
 async function addOffProduct(product: OFFProduct) {
   const existing = product.code ? await foodStore.findByBarcode(product.code) : undefined
   let id: string
@@ -611,6 +650,12 @@ const recipePortions = ref(1)
 const isRecipeLoading = ref(false)
 const isAddingRecipe = ref(false)
 
+// 'recipe' = one combined diary_entries row (recipe_id, servings, totals) via
+// addRecipeEntry(). 'items' = the recipe exploded into one row per ingredient
+// via addEntry() — matches this page's pre-existing (only) behavior, kept for
+// anyone who wants per-ingredient editing/deletion in the diary.
+const logMode = ref<'recipe' | 'items'>('recipe')
+
 const recipeSheetNutrition = computed(() => {
   if (!selectedRecipe.value) return null
   const f = recipePortions.value / selectedRecipe.value.servings
@@ -629,6 +674,7 @@ async function openRecipeSheet(id: string) {
   const recipe = await recipesStore.loadRecipe(id)
   selectedRecipe.value = recipe
   recipePortions.value = 1
+  logMode.value = 'recipe'
   isRecipeLoading.value = false
 }
 
@@ -642,15 +688,28 @@ async function handleAddRecipe() {
   if (!selectedRecipe.value || isAddingRecipe.value) return
   isAddingRecipe.value = true
   try {
-    const factor = recipePortions.value / selectedRecipe.value.servings
-    for (const ing of selectedRecipe.value.ingredients) {
-      await diaryStore.addEntry({
-        date:         paramDate,
-        meal_type:    sheetMeal.value,
-        food_item_id: ing.food_item_id,
-        amount_g:     Math.round(ing.amount_g * factor),
-        food:         ing.food,
+    if (logMode.value === 'recipe') {
+      await diaryStore.addRecipeEntry({
+        date:                   paramDate,
+        meal_type:              sheetMeal.value,
+        recipe_id:              selectedRecipe.value.id,
+        servings:               recipePortions.value,
+        calories_per_serving:   selectedRecipe.value.calories_per_serving,
+        protein_per_serving_g:  selectedRecipe.value.protein_per_serving_g,
+        carbs_per_serving_g:    selectedRecipe.value.carbs_per_serving_g,
+        fat_per_serving_g:      selectedRecipe.value.fat_per_serving_g,
       })
+    } else {
+      const factor = recipePortions.value / selectedRecipe.value.servings
+      for (const ing of selectedRecipe.value.ingredients) {
+        await diaryStore.addEntry({
+          date:         paramDate,
+          meal_type:    sheetMeal.value,
+          food_item_id: ing.food_item_id,
+          amount_g:     Math.round(ing.amount_g * factor),
+          food:         ing.food,
+        })
+      }
     }
     closeRecipeSheet()
     router.back()
