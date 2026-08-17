@@ -46,7 +46,7 @@ export function useDataExport() {
   }
 
   function today(): string {
-    return new Date().toISOString().split('T')[0] ?? ''
+    return toLocalDateStr(new Date())
   }
 
   return { exportJSON, exportCSV }

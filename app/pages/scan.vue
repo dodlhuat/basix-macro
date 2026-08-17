@@ -249,7 +249,7 @@ const offProduct = ref<OffDisplayProduct | null>(null)
 // ─── Return-to params (passed in from diary/add) ──────────────────────────────
 
 const fromDate = computed(
-  () => (route.query.date as string) || new Date().toISOString().substring(0, 10),
+  () => (route.query.date as string) || toLocalDateStr(new Date()),
 )
 const fromMeal = computed(() => (route.query.meal as string) || 'snack')
 

@@ -372,13 +372,6 @@ const { t, locale } = useI18n()
 
 // ─── Date state ───────────────────────────────────────────────────────────────
 
-function toLocalDateStr(d: Date): string {
-  const y = d.getFullYear()
-  const m = String(d.getMonth() + 1).padStart(2, '0')
-  const day = String(d.getDate()).padStart(2, '0')
-  return `${y}-${m}-${day}`
-}
-
 const currentDate = ref<string>(toLocalDateStr(new Date()))
 
 const isToday = computed(() =>

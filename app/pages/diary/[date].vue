@@ -336,7 +336,7 @@ const userStore = useUserStore()
 const date = computed(() => route.params.date as string)
 
 const isToday = computed(() =>
-  date.value === new Date().toISOString().substring(0, 10)
+  date.value === toLocalDateStr(new Date())
 )
 
 const formattedWeekday = computed(() =>
@@ -354,13 +354,13 @@ const formattedDayMonth = computed(() =>
 function prevDay(): void {
   const d = new Date(date.value + 'T00:00:00')
   d.setDate(d.getDate() - 1)
-  navigateTo('/diary/' + d.toISOString().substring(0, 10))
+  navigateTo('/diary/' + toLocalDateStr(d))
 }
 
 function nextDay(): void {
   const d = new Date(date.value + 'T00:00:00')
   d.setDate(d.getDate() + 1)
-  navigateTo('/diary/' + d.toISOString().substring(0, 10))
+  navigateTo('/diary/' + toLocalDateStr(d))
 }
 
 // ─── Store refs ───────────────────────────────────────────────────────────────

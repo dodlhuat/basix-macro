@@ -20,7 +20,7 @@ export const useStatsStore = defineStore('stats', () => {
     for (let i = p - 1; i >= 0; i--) {
       const d = new Date(today)
       d.setDate(d.getDate() - i)
-      dateStrings.push(d.toISOString().substring(0, 10))
+      dateStrings.push(toLocalDateStr(d))
     }
 
     // Aggregate diary entries per day

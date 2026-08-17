@@ -5,13 +5,6 @@
 export function useStreak() {
   const streak = ref(0)
 
-  function toDateStr(d: Date): string {
-    const y = d.getFullYear()
-    const m = String(d.getMonth() + 1).padStart(2, '0')
-    const day = String(d.getDate()).padStart(2, '0')
-    return `${y}-${m}-${day}`
-  }
-
   async function calculateStreak() {
     const { db } = await import('../../db')
     const allEntries = await db.diary_entries.toArray()
@@ -22,12 +15,12 @@ export function useStreak() {
 
     // Start from today; if today has no entries, check from yesterday
     const checkDate = new Date(today)
-    if (!dateSet.has(toDateStr(checkDate))) {
+    if (!dateSet.has(toLocalDateStr(checkDate))) {
       checkDate.setDate(checkDate.getDate() - 1)
     }
 
     let count = 0
-    while (dateSet.has(toDateStr(checkDate))) {
+    while (dateSet.has(toLocalDateStr(checkDate))) {
       count++
       checkDate.setDate(checkDate.getDate() - 1)
     }

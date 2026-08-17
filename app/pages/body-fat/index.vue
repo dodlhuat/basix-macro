@@ -395,7 +395,7 @@ function handleCalc() {
 // the number before it becomes a permanent history row avoids polluting
 // the chart/history with mistaken one-off readings.
 
-const todayStr: string = new Date().toISOString().split('T')[0] ?? ''
+const todayStr: string = toLocalDateStr(new Date())
 const isSaving = ref(false)
 const justSaved = ref(false)
 

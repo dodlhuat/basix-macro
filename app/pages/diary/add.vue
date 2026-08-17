@@ -461,7 +461,7 @@ const { t, locale } = useI18n()
 
 // ─── Route params ──────────────────────────────────────────────────────────────
 
-const today = new Date().toISOString().substring(0, 10)
+const today = toLocalDateStr(new Date())
 
 function getDefaultMeal(): 'breakfast' | 'lunch' | 'dinner' | 'snack' {
   const h = new Date().getHours()

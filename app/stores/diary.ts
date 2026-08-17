@@ -7,7 +7,7 @@ export const useDiaryStore = defineStore('diary', () => {
   const entries = ref<DiaryEntry[]>([])
   const waterEntries = ref<WaterEntry[]>([])
   const entryDetails = ref<DiaryEntryWithName[]>([])
-  const activeDate = ref<string>(new Date().toISOString().substring(0, 10))
+  const activeDate = ref<string>(toLocalDateStr(new Date()))
 
   // Sync runs in the background (interval, reconnect, manual button) and can pull in
   // entries logged on another device — reload whatever date is currently on screen once

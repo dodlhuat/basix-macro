@@ -83,7 +83,7 @@
 
 <script setup lang="ts">
 const { close } = usePushMenu()
-const today = new Date().toISOString().substring(0, 10)
+const today = toLocalDateStr(new Date())
 const authStore = useAuthStore()
 </script>
 

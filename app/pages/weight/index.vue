@@ -313,7 +313,7 @@ const gridWeights = computed(() => {
 
 // ─── Form state ───────────────────────────────────────────────────────────────
 
-const todayStr: string = new Date().toISOString().split('T')[0] ?? ''
+const todayStr: string = toLocalDateStr(new Date())
 const newWeightStr = ref('')
 const newDate = ref(todayStr)
 const dateInputRef = ref<HTMLInputElement | null>(null)

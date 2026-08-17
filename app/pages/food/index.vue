@@ -534,7 +534,7 @@ const sheetMeal = ref<'breakfast' | 'lunch' | 'dinner' | 'snack'>(
   (paramMeal as 'breakfast' | 'lunch' | 'dinner' | 'snack') || getDefaultMeal(),
 )
 const sheetDate = ref<string>(
-  paramDate || new Date().toISOString().substring(0, 10),
+  paramDate || toLocalDateStr(new Date()),
 )
 
 const sheetNutrition = computed(() => {

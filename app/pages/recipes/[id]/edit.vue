@@ -835,13 +835,13 @@ function getDefaultMeal(): 'breakfast' | 'lunch' | 'dinner' | 'snack' {
 }
 
 const logSheetVisible = ref(false)
-const logDate         = ref(new Date().toISOString().substring(0, 10))
+const logDate         = ref(toLocalDateStr(new Date()))
 const logMeal         = ref<'breakfast' | 'lunch' | 'dinner' | 'snack'>(getDefaultMeal())
 const logServings     = ref(1)
 const isLogging       = ref(false)
 
 function openLogSheet() {
-  logDate.value         = new Date().toISOString().substring(0, 10)
+  logDate.value         = toLocalDateStr(new Date())
   logMeal.value         = getDefaultMeal()
   logServings.value     = recipe.value?.servings ?? 1
   logSheetVisible.value = true
