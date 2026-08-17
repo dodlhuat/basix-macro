@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Console/Seeds/SeederMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Database\Console\Seeds\SeederMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-b2bebee42b284189f1ccaf62df11b0af9fc11ddc620db5c0dc145cbffad1aa7c-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-742ace635a1540a9a8a9a0592065d5afc04bc3a4713fc2a1fe6965d0ea860860-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -63,28 +63,28 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Database\\Console\\Seeds\\SeederMakeCommand',
         'implementingClassName' => 'Illuminate\\Database\\Console\\Seeds\\SeederMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:seeder\'',
+          'code' => '\'make:seeder {name : The name of the seeder}\'',
           'attributes' => 
           array (
             'startLine' => 17,
             'endLine' => 17,
             'startTokenPos' => 50,
-            'startFilePos' => 356,
+            'startFilePos' => 382,
             'endTokenPos' => 50,
-            'endFilePos' => 368,
+            'endFilePos' => 426,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
@@ -94,7 +94,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'startLine' => 17,
         'endLine' => 17,
         'startColumn' => 5,
-        'endColumn' => 36,
+        'endColumn' => 73,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -117,9 +117,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 24,
             'endLine' => 24,
             'startTokenPos' => 61,
-            'startFilePos' => 483,
+            'startFilePos' => 541,
             'endTokenPos' => 61,
-            'endFilePos' => 509,
+            'endFilePos' => 567,
           ),
         ),
         'docComment' => '/**
@@ -156,9 +156,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 31,
             'endLine' => 31,
             'startTokenPos' => 72,
-            'startFilePos' => 619,
+            'startFilePos' => 677,
             'endTokenPos' => 72,
-            'endFilePos' => 626,
+            'endFilePos' => 684,
           ),
         ),
         'docComment' => '/**

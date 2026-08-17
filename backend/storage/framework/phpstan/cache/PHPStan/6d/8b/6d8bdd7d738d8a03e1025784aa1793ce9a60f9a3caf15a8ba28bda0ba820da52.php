@@ -317,6 +317,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'confirmprompt' => 'Laravel\\Prompts\\ConfirmPrompt',
           'multisearchprompt' => 'Laravel\\Prompts\\MultiSearchPrompt',
           'multiselectprompt' => 'Laravel\\Prompts\\MultiSelectPrompt',
+          'numberprompt' => 'Laravel\\Prompts\\NumberPrompt',
           'passwordprompt' => 'Laravel\\Prompts\\PasswordPrompt',
           'pauseprompt' => 'Laravel\\Prompts\\PausePrompt',
           'prompt' => 'Laravel\\Prompts\\Prompt',
@@ -360,6 +361,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'confirmprompt' => 'Laravel\\Prompts\\ConfirmPrompt',
           'multisearchprompt' => 'Laravel\\Prompts\\MultiSearchPrompt',
           'multiselectprompt' => 'Laravel\\Prompts\\MultiSelectPrompt',
+          'numberprompt' => 'Laravel\\Prompts\\NumberPrompt',
           'passwordprompt' => 'Laravel\\Prompts\\PasswordPrompt',
           'pauseprompt' => 'Laravel\\Prompts\\PausePrompt',
           'prompt' => 'Laravel\\Prompts\\Prompt',
@@ -403,6 +405,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'confirmprompt' => 'Laravel\\Prompts\\ConfirmPrompt',
           'multisearchprompt' => 'Laravel\\Prompts\\MultiSearchPrompt',
           'multiselectprompt' => 'Laravel\\Prompts\\MultiSelectPrompt',
+          'numberprompt' => 'Laravel\\Prompts\\NumberPrompt',
           'passwordprompt' => 'Laravel\\Prompts\\PasswordPrompt',
           'pauseprompt' => 'Laravel\\Prompts\\PausePrompt',
           'prompt' => 'Laravel\\Prompts\\Prompt',
@@ -463,6 +466,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'confirmprompt' => 'Laravel\\Prompts\\ConfirmPrompt',
           'multisearchprompt' => 'Laravel\\Prompts\\MultiSearchPrompt',
           'multiselectprompt' => 'Laravel\\Prompts\\MultiSelectPrompt',
+          'numberprompt' => 'Laravel\\Prompts\\NumberPrompt',
           'passwordprompt' => 'Laravel\\Prompts\\PasswordPrompt',
           'pauseprompt' => 'Laravel\\Prompts\\PausePrompt',
           'prompt' => 'Laravel\\Prompts\\Prompt',
@@ -506,6 +510,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'confirmprompt' => 'Laravel\\Prompts\\ConfirmPrompt',
           'multisearchprompt' => 'Laravel\\Prompts\\MultiSearchPrompt',
           'multiselectprompt' => 'Laravel\\Prompts\\MultiSelectPrompt',
+          'numberprompt' => 'Laravel\\Prompts\\NumberPrompt',
           'passwordprompt' => 'Laravel\\Prompts\\PasswordPrompt',
           'pauseprompt' => 'Laravel\\Prompts\\PausePrompt',
           'prompt' => 'Laravel\\Prompts\\Prompt',
@@ -549,6 +554,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'confirmprompt' => 'Laravel\\Prompts\\ConfirmPrompt',
           'multisearchprompt' => 'Laravel\\Prompts\\MultiSearchPrompt',
           'multiselectprompt' => 'Laravel\\Prompts\\MultiSelectPrompt',
+          'numberprompt' => 'Laravel\\Prompts\\NumberPrompt',
           'passwordprompt' => 'Laravel\\Prompts\\PasswordPrompt',
           'pauseprompt' => 'Laravel\\Prompts\\PausePrompt',
           'prompt' => 'Laravel\\Prompts\\Prompt',
@@ -592,6 +598,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'confirmprompt' => 'Laravel\\Prompts\\ConfirmPrompt',
           'multisearchprompt' => 'Laravel\\Prompts\\MultiSearchPrompt',
           'multiselectprompt' => 'Laravel\\Prompts\\MultiSelectPrompt',
+          'numberprompt' => 'Laravel\\Prompts\\NumberPrompt',
           'passwordprompt' => 'Laravel\\Prompts\\PasswordPrompt',
           'pauseprompt' => 'Laravel\\Prompts\\PausePrompt',
           'prompt' => 'Laravel\\Prompts\\Prompt',
@@ -635,6 +642,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'confirmprompt' => 'Laravel\\Prompts\\ConfirmPrompt',
           'multisearchprompt' => 'Laravel\\Prompts\\MultiSearchPrompt',
           'multiselectprompt' => 'Laravel\\Prompts\\MultiSelectPrompt',
+          'numberprompt' => 'Laravel\\Prompts\\NumberPrompt',
           'passwordprompt' => 'Laravel\\Prompts\\PasswordPrompt',
           'pauseprompt' => 'Laravel\\Prompts\\PausePrompt',
           'prompt' => 'Laravel\\Prompts\\Prompt',
@@ -678,6 +686,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'confirmprompt' => 'Laravel\\Prompts\\ConfirmPrompt',
           'multisearchprompt' => 'Laravel\\Prompts\\MultiSearchPrompt',
           'multiselectprompt' => 'Laravel\\Prompts\\MultiSelectPrompt',
+          'numberprompt' => 'Laravel\\Prompts\\NumberPrompt',
           'passwordprompt' => 'Laravel\\Prompts\\PasswordPrompt',
           'pauseprompt' => 'Laravel\\Prompts\\PausePrompt',
           'prompt' => 'Laravel\\Prompts\\Prompt',
@@ -721,6 +730,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'confirmprompt' => 'Laravel\\Prompts\\ConfirmPrompt',
           'multisearchprompt' => 'Laravel\\Prompts\\MultiSearchPrompt',
           'multiselectprompt' => 'Laravel\\Prompts\\MultiSelectPrompt',
+          'numberprompt' => 'Laravel\\Prompts\\NumberPrompt',
           'passwordprompt' => 'Laravel\\Prompts\\PasswordPrompt',
           'pauseprompt' => 'Laravel\\Prompts\\PausePrompt',
           'prompt' => 'Laravel\\Prompts\\Prompt',
@@ -897,6 +907,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -930,12 +941,53 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           4 => NULL,
         ),
       )),
+      '7d72556ead7c7124f6b67e73203f32c9' => 
+      \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+         'namespace' => 'Illuminate\\Console\\Concerns',
+         'uses' => 
+        array (
+          'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
+          'outputstyle' => 'Illuminate\\Console\\OutputStyle',
+          'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
+          'str' => 'Illuminate\\Support\\Str',
+          'outputformatterstyle' => 'Symfony\\Component\\Console\\Formatter\\OutputFormatterStyle',
+          'table' => 'Symfony\\Component\\Console\\Helper\\Table',
+          'inputinterface' => 'Symfony\\Component\\Console\\Input\\InputInterface',
+          'outputinterface' => 'Symfony\\Component\\Console\\Output\\OutputInterface',
+          'choicequestion' => 'Symfony\\Component\\Console\\Question\\ChoiceQuestion',
+          'question' => 'Symfony\\Component\\Console\\Question\\Question',
+        ),
+         'className' => 'Illuminate\\Console\\Command',
+         'functionName' => 'input',
+         'templatePhpDocNodes' => 
+        array (
+        ),
+         'parent' => NULL,
+         'typeAliasesMap' => 
+        array (
+        ),
+         'bypassTypeAliases' => false,
+         'constUses' => 
+        array (
+        ),
+         'typeAliasClassName' => 'Illuminate\\Console\\Concerns\\InteractsWithIO',
+         'traitData' => 
+        array (
+          0 => '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Console/Command.php',
+          1 => 'Illuminate\\Console\\Command',
+          2 => 'Illuminate\\Console\\Concerns\\InteractsWithIO',
+          3 => NULL,
+          4 => NULL,
+        ),
+      )),
       'fe76c685e4c5574f343c50a088306162' => 
       \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
          'namespace' => 'Illuminate\\Console\\Concerns',
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -975,6 +1027,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1014,6 +1067,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1053,6 +1107,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1092,6 +1147,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1131,6 +1187,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1170,6 +1227,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1209,6 +1267,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1248,6 +1307,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1287,6 +1347,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1326,6 +1387,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1365,6 +1427,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1404,6 +1467,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1443,6 +1507,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1583,6 +1648,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1622,6 +1688,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1661,6 +1728,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1700,6 +1768,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1739,6 +1808,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1778,6 +1848,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1817,6 +1888,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1856,6 +1928,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1895,6 +1968,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1934,6 +2008,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -1973,6 +2048,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -2012,6 +2088,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -2051,6 +2128,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -2090,6 +2168,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'closure' => 'Closure',
+          'commandinput' => 'Illuminate\\Console\\CommandInput',
           'outputstyle' => 'Illuminate\\Console\\OutputStyle',
           'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
           'str' => 'Illuminate\\Support\\Str',
@@ -2793,6 +2872,43 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'typeAliasClassName' => NULL,
          'traitData' => NULL,
       )),
+      '1066af2d241d358cacc10017f3b6b826' => 
+      \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+         'namespace' => 'Illuminate\\Console',
+         'uses' => 
+        array (
+          'aliases' => 'Illuminate\\Console\\Attributes\\Aliases',
+          'description' => 'Illuminate\\Console\\Attributes\\Description',
+          'help' => 'Illuminate\\Console\\Attributes\\Help',
+          'hidden' => 'Illuminate\\Console\\Attributes\\Hidden',
+          'signature' => 'Illuminate\\Console\\Attributes\\Signature',
+          'usage' => 'Illuminate\\Console\\Attributes\\Usage',
+          'factory' => 'Illuminate\\Console\\View\\Components\\Factory',
+          'isolatable' => 'Illuminate\\Contracts\\Console\\Isolatable',
+          'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
+          'reflectionclass' => 'ReflectionClass',
+          'symfonycommand' => 'Symfony\\Component\\Console\\Command\\Command',
+          'inputinterface' => 'Symfony\\Component\\Console\\Input\\InputInterface',
+          'inputoption' => 'Symfony\\Component\\Console\\Input\\InputOption',
+          'outputinterface' => 'Symfony\\Component\\Console\\Output\\OutputInterface',
+          'throwable' => 'Throwable',
+        ),
+         'className' => 'Illuminate\\Console\\Command',
+         'functionName' => 'configureDefaults',
+         'templatePhpDocNodes' => 
+        array (
+        ),
+         'parent' => NULL,
+         'typeAliasesMap' => 
+        array (
+        ),
+         'bypassTypeAliases' => false,
+         'constUses' => 
+        array (
+        ),
+         'typeAliasClassName' => NULL,
+         'traitData' => NULL,
+      )),
       '139b9b8a60ff2e3f9754d7d3e2f13d39' => 
       \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
          'namespace' => 'Illuminate\\Console',
@@ -3277,13 +3393,13 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Console/Command.php' => '946c8c781b146395b5e81269d851d4a9678e34aa75d2792574686981c3cb1428',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Console/Command.php' => 'ae08f9779c96b9c8d9bc3c81c14b7fbca440d318841f65d232d934f54eaacc3d',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php' => '5d183902da1b6e9ac7f07b573c98094f514f0fc9edd96ae7fecf3cc7e4d9fc62',
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/ConfiguresPrompts.php' => '5c2b13b80b5cb1b96926daac6e400e0dfa971e3cc709d2cb624b802babf22858',
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/HasParameters.php' => '22e973525cd606a721f500ccd8950b956fd2360301f3e3fb0b964bfb37d7bb62',
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/InteractsWithIO.php' => 'df2cda3a62b98915ab72eb4361b57cbd878f9d77c49976a7327adfc6bcdd7606',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/ConfiguresPrompts.php' => '04614179908a9986969fea07249320214ba04b47d1413485b945439199c33214',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/HasParameters.php' => 'c742ab61aea375c877316a5570d1d44fb0c27a8d4e53c7795e2dcb6f3ff19bc3',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/InteractsWithIO.php' => '78802c58d38ea7687aea50e80a3313c0ef48ae30b5e533dc389674ef176af081',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/InteractsWithSignals.php' => 'b5cbab30713dd9b48178b8ad13186fb62f9d9fbdf0407a8827b9c84a5773cb28',
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/PromptsForMissingInput.php' => 'c1700d58d8c29ad63cddd62e6aa4d23a27a1bb0d457efa1fd92533701b633924',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/PromptsForMissingInput.php' => '8c0c476b208b3491c202d05f706a12d8c34d63d958bbdc53b5cad287fcf2368e',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php' => '6dd85b1e28b55ebeee678f9ca423dfb8375e1342bc42d8658da6321bdf97b3c0',
     ),
   ),

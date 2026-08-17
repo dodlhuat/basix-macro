@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Contracts/Auth/Authenticatable.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Contracts\Auth\Authenticatable
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-2e77879a3194ca97b95b4746209592eca3fe6a3330e99b372bc7bbb4a60c5c06-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-ae84661715f066c1debb5f04ad011c0f33352f184bb93b39a554e2bc1d39e62a-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -183,7 +183,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'docComment' => '/**
  * Get the token value for the "remember me" session.
  *
- * @return string
+ * @return string|null
  */',
         'startLine' => 40,
         'endLine' => 40,

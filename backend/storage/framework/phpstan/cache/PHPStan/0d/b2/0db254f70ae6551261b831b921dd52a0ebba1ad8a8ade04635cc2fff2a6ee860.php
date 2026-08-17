@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\UpCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-3b0af3830462e0bfa8609a47ab99b186c283f4b199e5a8387bf5f03c19450e29-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-21696410fd928646040d0b3360a72dd9fb8575e49d106d19b7657e28f96ca500-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -63,11 +63,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\UpCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\UpCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
@@ -78,13 +78,13 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 18,
             'endLine' => 18,
             'startTokenPos' => 55,
-            'startFilePos' => 362,
+            'startFilePos' => 388,
             'endTokenPos' => 55,
-            'endFilePos' => 365,
+            'endFilePos' => 391,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
@@ -94,7 +94,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'startLine' => 18,
         'endLine' => 18,
         'startColumn' => 5,
-        'endColumn' => 27,
+        'endColumn' => 32,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -117,9 +117,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 25,
             'endLine' => 25,
             'startTokenPos' => 66,
-            'startFilePos' => 480,
+            'startFilePos' => 506,
             'endTokenPos' => 66,
-            'endFilePos' => 526,
+            'endFilePos' => 552,
           ),
         ),
         'docComment' => '/**

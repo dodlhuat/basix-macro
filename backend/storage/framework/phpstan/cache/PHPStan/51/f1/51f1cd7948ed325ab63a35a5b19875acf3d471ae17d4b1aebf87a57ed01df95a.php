@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/PromptsForMissingInput.php-presentSymbols
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-c1700d58d8c29ad63cddd62e6aa4d23a27a1bb0d457efa1fd92533701b633924-8.5.6',
+   'variableKey' => 'v2-8c0c476b208b3491c202d05f706a12d8c34d63d958bbdc53b5cad287fcf2368e-8.5.6',
    'data' => 
   array (
     'classes' => 

@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php-presentSymbols
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-d035330410f5356cc6a58a6e28e89579f7915fbfe348d4e414a0dfcf4d5ba193-8.5.6',
+   'variableKey' => 'v2-cd71b48e3efb62acf35fb8300a5fd31d461eaee7b8662ba05361a484377e6c14-8.5.6',
    'data' => 
   array (
     'classes' => 

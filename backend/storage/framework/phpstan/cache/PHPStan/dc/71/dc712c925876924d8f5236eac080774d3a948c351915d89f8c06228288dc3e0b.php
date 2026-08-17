@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Support/Facades/Validator.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Support\Facades\Validator
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-9edc7dc24bd76aeb2a4107386606ceb2a5cf6ccfbcaf4954ffe56e8e44f1dd7c-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-dca6df2d548cc4cbfb509cfb27a242aae7ac79a656fa3981c361e2904deda2b2-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -31,6 +31,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @method static void replacer(string $rule, \\Closure|string $replacer)
  * @method static void includeUnvalidatedArrayKeys()
  * @method static void excludeUnvalidatedArrayKeys()
+ * @method static void fakeDnsLookups(bool $value = true)
  * @method static void resolver(\\Closure $resolver)
  * @method static \\Illuminate\\Contracts\\Translation\\Translator getTranslator()
  * @method static \\Illuminate\\Validation\\PresenceVerifierInterface getPresenceVerifier()
@@ -43,8 +44,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'attributes' => 
     array (
     ),
-    'startLine' => 23,
-    'endLine' => 34,
+    'startLine' => 24,
+    'endLine' => 35,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Support\\Facades\\Facade',
@@ -78,8 +79,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 30,
-        'endLine' => 33,
+        'startLine' => 31,
+        'endLine' => 34,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

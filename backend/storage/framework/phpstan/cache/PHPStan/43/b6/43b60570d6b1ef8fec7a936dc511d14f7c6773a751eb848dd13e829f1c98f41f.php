@@ -6039,7 +6039,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php' => 'f7ea950c1f0381766bf8ee78401688f16b871b573f181b38cc3e84bea2c9a867',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php' => 'f595b5029d751c5ca2d602247af4befd94d5bdc28b9c189b5b9af09bbfb0a01d',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Eloquent/Relations/Concerns/InteractsWithDictionary.php' => '339952973ea62669745b6505c3bf1b887a7e4d39d25fd657d816e654ae7b1426',
     ),
   ),

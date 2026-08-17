@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Reflection/Traits/ReflectsClosures.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Support\Traits\ReflectsClosures
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-4d423d1cc3170c4f64eb58a49f80bc7d841684c63ad46c9a97ffab5d82c9e365-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-bf84433c121beb6267435ca7ff7bd48fd94d61624e4a8ecde6ed7665e6825fa5-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 13,
-    'endLine' => 126,
+    'endLine' => 125,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -273,7 +273,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @throws \\ReflectionException
  */',
         'startLine' => 106,
-        'endLine' => 125,
+        'endLine' => 124,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

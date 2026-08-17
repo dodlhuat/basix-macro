@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php-presentSymbols
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-178bc125060a98b0d709b60c57215a030487e45b765833f1865ab32d3913b6a5-8.5.6',
+   'variableKey' => 'v2-c15c96d806f6406643e35e5442780692934f1d4ffd6e3aeb7ff45f7df5b4156c-8.5.6',
    'data' => 
   array (
     'classes' => 

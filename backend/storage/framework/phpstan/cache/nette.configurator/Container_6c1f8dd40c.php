@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-class Container_2e74065a9f extends _PHPStan_48ec32058\Nette\DI\Container
+class Container_6c1f8dd40c extends _PHPStan_48ec32058\Nette\DI\Container
 {
 	protected $tags = [
 		'phpstan.broker.allowedSubTypesClassReflectionExtension' => ['017' => true, '018' => true],
@@ -5924,7 +5924,7 @@ class Container_2e74065a9f extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_2e74065a9f $container)
+			public function __construct(Container_6c1f8dd40c $container)
 			{
 				$this->container = $container;
 			}
@@ -5972,7 +5972,7 @@ class Container_2e74065a9f extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_2e74065a9f $container)
+			public function __construct(Container_6c1f8dd40c $container)
 			{
 				$this->container = $container;
 			}
@@ -6030,7 +6030,7 @@ class Container_2e74065a9f extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_2e74065a9f $container)
+			public function __construct(Container_6c1f8dd40c $container)
 			{
 				$this->container = $container;
 			}
@@ -6097,7 +6097,7 @@ class Container_2e74065a9f extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_2e74065a9f $container)
+			public function __construct(Container_6c1f8dd40c $container)
 			{
 				$this->container = $container;
 			}
@@ -6117,7 +6117,7 @@ class Container_2e74065a9f extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_2e74065a9f $container)
+			public function __construct(Container_6c1f8dd40c $container)
 			{
 				$this->container = $container;
 			}
@@ -6142,7 +6142,7 @@ class Container_2e74065a9f extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_2e74065a9f $container)
+			public function __construct(Container_6c1f8dd40c $container)
 			{
 				$this->container = $container;
 			}
@@ -6162,7 +6162,7 @@ class Container_2e74065a9f extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_2e74065a9f $container)
+			public function __construct(Container_6c1f8dd40c $container)
 			{
 				$this->container = $container;
 			}
@@ -6182,7 +6182,7 @@ class Container_2e74065a9f extends _PHPStan_48ec32058\Nette\DI\Container
 			private $container;
 
 
-			public function __construct(Container_2e74065a9f $container)
+			public function __construct(Container_6c1f8dd40c $container)
 			{
 				$this->container = $container;
 			}
@@ -9702,7 +9702,7 @@ class Container_2e74065a9f extends _PHPStan_48ec32058\Nette\DI\Container
 	}
 
 
-	public function createServiceContainer(): Container_2e74065a9f
+	public function createServiceContainer(): Container_6c1f8dd40c
 	{
 		return $this;
 	}
@@ -10363,49 +10363,55 @@ class Container_2e74065a9f extends _PHPStan_48ec32058\Nette\DI\Container
 			'cliAutoloadFile' => null,
 			'env' => [
 				'NVM_INC' => '/Users/andibauer/.nvm/versions/node/v24.14.1/include/node',
+				'MANPATH' => '/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man:/Library/Developer/CommandLineTools/usr/share/man:/Library/Developer/CommandLineTools/Toolchains/XcodeDefault.xctoolchain/usr/share/man:',
+				'CLAUDE_CODE_MESSAGING_TOKEN' => '79ac2aa36994205a99ead1a15c4c8598',
 				'NoDefaultCurrentDirectoryInExePath' => '1',
-				'CLAUDE_EFFORT' => 'high',
 				'CLAUDE_CODE_ENTRYPOINT' => 'cli',
 				'TERM_PROGRAM' => 'vscode',
+				'CLAUDE_EFFORT' => 'high',
 				'PHP_BINARY' => '/opt/homebrew/Cellar/php/8.5.6/bin/php',
 				'NVM_CD_FLAGS' => '-q',
-				'TERM' => 'xterm-256color',
 				'SHELL' => '/bin/zsh',
+				'TERM' => 'xterm-256color',
 				'COMPOSER_BINARY' => '/usr/local/bin/composer',
+				'MAKEFLAGS' => '',
 				'CLAUDE_CODE_CHILD_SESSION' => '1',
-				'HOMEBREW_REPOSITORY' => '/opt/homebrew',
 				'TMPDIR' => '/var/folders/4n/7hl9fjf517v3vs7d4vgc4sfh0000gn/T/',
+				'HOMEBREW_REPOSITORY' => '/opt/homebrew',
+				'CLAUDE_PID' => '4031',
 				'VSCODE_PYTHON_AUTOACTIVATE_GUARD' => '1',
-				'TERM_PROGRAM_VERSION' => '1.128.0',
+				'TERM_PROGRAM_VERSION' => '1.133.0',
 				'FPATH' => '/opt/homebrew/share/zsh/site-functions:/opt/homebrew/share/zsh/site-functions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.9/functions',
 				'ZDOTDIR' => '/Users/andibauer',
 				'MallocNanoZone' => '0',
 				'GIT_EDITOR' => 'true',
-				'AI_AGENT' => 'claude-code_2-1-212_agent',
+				'AI_AGENT' => 'claude-code_2-1-233_agent',
 				'COPILOT_DEBUG_NONCE' => '37e8cda85e183660920601e432defbf2',
 				'GIT_TERMINAL_PROMPT' => '0',
-				'NVM_DIR' => '/Users/andibauer/.nvm',
 				'USER' => 'andibauer',
+				'NVM_DIR' => '/Users/andibauer/.nvm',
 				'COMMAND_MODE' => 'unix2003',
+				'SSH_AUTH_SOCK' => '/var/run/com.apple.launchd.5HPnVBoJe6/Listeners',
 				'CLAUDE_CODE_SSE_PORT' => '63975',
-				'SSH_AUTH_SOCK' => '/var/run/com.apple.launchd.7A4bGwx9Pz/Listeners',
 				'VSCODE_PROFILE_INITIALIZED' => '1',
 				'__CF_USER_TEXT_ENCODING' => '0x1F5:0x0:0x5C',
+				'MAKELEVEL' => '1',
+				'MFLAGS' => '',
 				'PATH' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/bin:/Users/andibauer/.nvm/versions/node/v24.14.1/bin:/opt/homebrew/bin:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand:/Users/andibauer/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli:/Users/andibauer/.nvm/versions/node/v24.14.1/bin:/Users/andibauer/.claude/plugins/cache/claude-plugins-official/frontend-design/unknown/bin',
 				'_' => '/Users/andibauer/Repositories/basix-macro/backend/vendor/bin/phpstan',
-				'LaunchInstanceID' => '84BAD1BC-1118-41A4-8C7F-26DE4C457039',
-				'USER_ZDOTDIR' => '/Users/andibauer',
+				'LaunchInstanceID' => 'DC62021C-0279-463A-B157-021FF78846AF',
 				'__CFBundleIdentifier' => 'com.microsoft.VSCode',
+				'USER_ZDOTDIR' => '/Users/andibauer',
 				'PWD' => '/Users/andibauer/Repositories/basix-macro/backend',
 				'LANG' => 'C.UTF-8',
 				'COMPOSER_DEV_MODE' => '1',
-				'VSCODE_GIT_ASKPASS_EXTRA_ARGS' => '',
 				'XPC_FLAGS' => '0x0',
+				'VSCODE_GIT_ASKPASS_EXTRA_ARGS' => '',
 				'XPC_SERVICE_NAME' => '0',
 				'VSCODE_INJECTION' => '1',
 				'SHELL_VERBOSITY' => '0',
-				'SHLVL' => '3',
 				'HOME' => '/Users/andibauer',
+				'SHLVL' => '4',
 				'VSCODE_GIT_ASKPASS_MAIN' => '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js',
 				'LANGUAGE' => 'C',
 				'CLAUDE_CODE_EXECPATH' => '/Users/andibauer/.nvm/versions/node/v24.14.1/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe',
@@ -10414,13 +10420,14 @@ class Container_2e74065a9f extends _PHPStan_48ec32058\Nette\DI\Container
 				'VSCODE_GIT_IPC_HANDLE' => '/var/folders/4n/7hl9fjf517v3vs7d4vgc4sfh0000gn/T/vscode-git-aec171208b.sock',
 				'COREPACK_ENABLE_AUTO_PIN' => '0',
 				'NVM_BIN' => '/Users/andibauer/.nvm/versions/node/v24.14.1/bin',
-				'CLAUDE_CODE_SESSION_ID' => '66b248a9-4716-412c-9d9e-dc9782017ce4',
-				'VSCODE_GIT_ASKPASS_NODE' => '/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)',
-				'GIT_ASKPASS' => '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh',
 				'INFOPATH' => '/opt/homebrew/share/info:/opt/homebrew/share/info:',
 				'HOMEBREW_CELLAR' => '/opt/homebrew/Cellar',
+				'CLAUDE_CODE_SESSION_ID' => 'c0fdde3b-99d8-44ef-8f93-7baa6c6fbab1',
+				'VSCODE_GIT_ASKPASS_NODE' => '/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)',
+				'GIT_ASKPASS' => '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh',
 				'OSLogRateLimit' => '64',
 				'CLAUDECODE' => '1',
+				'CLAUDE_CODE_MESSAGING_SOCKET' => '/tmp/cc-socks/4031.sock',
 				'SECURITYSESSIONID' => '186a2',
 				'COLORTERM' => 'truecolor',
 				'LINES' => '50',

@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php-presentSymbols
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-950ade3507d371cb2c8e773beab1361f489dee316cc2fef0fc5c9da4ecb98fa4-8.5.6',
+   'variableKey' => 'v2-eb9c731b8ac0f90d20e4f1687e559ce2c70fb77df00c5fef46464a1457d7d7f8-8.5.6',
    'data' => 
   array (
     'classes' => 

@@ -6571,6 +6571,143 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  */',
         ),
       )),
+      '7b6b789745c70dd1d00c54e0a21c4ac0' => 
+      \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+         'namespace' => 'Illuminate\\Support\\Traits',
+         'uses' => 
+        array (
+          'backedenum' => 'BackedEnum',
+          'cachingiterator' => 'CachingIterator',
+          'closure' => 'Closure',
+          'exception' => 'Exception',
+          'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
+          'jsonable' => 'Illuminate\\Contracts\\Support\\Jsonable',
+          'arr' => 'Illuminate\\Support\\Arr',
+          'collection' => 'Illuminate\\Support\\Collection',
+          'enumerable' => 'Illuminate\\Support\\Enumerable',
+          'higherordercollectionproxy' => 'Illuminate\\Support\\HigherOrderCollectionProxy',
+          'jsonserializable' => 'JsonSerializable',
+          'unexpectedvalueexception' => 'UnexpectedValueException',
+          'unitenum' => 'UnitEnum',
+        ),
+         'className' => 'Illuminate\\Support\\Collection',
+         'functionName' => 'reduceInto',
+         'templatePhpDocNodes' => 
+        array (
+          'TReduceIntoInitial' => 
+          array (
+            0 => '@template',
+            1 => 
+            \PHPStan\PhpDocParser\Ast\PhpDoc\TemplateTagValueNode::__set_state(array(
+               'name' => 'TReduceIntoInitial',
+               'bound' => NULL,
+               'default' => NULL,
+               'lowerBound' => NULL,
+               'description' => '',
+               'attributes' => 
+              array (
+                'startLine' => 4,
+                'endLine' => 4,
+              ),
+            )),
+          ),
+        ),
+         'parent' => 
+        \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+           'namespace' => 'Illuminate\\Support\\Traits',
+           'uses' => 
+          array (
+            'backedenum' => 'BackedEnum',
+            'cachingiterator' => 'CachingIterator',
+            'closure' => 'Closure',
+            'exception' => 'Exception',
+            'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
+            'jsonable' => 'Illuminate\\Contracts\\Support\\Jsonable',
+            'arr' => 'Illuminate\\Support\\Arr',
+            'collection' => 'Illuminate\\Support\\Collection',
+            'enumerable' => 'Illuminate\\Support\\Enumerable',
+            'higherordercollectionproxy' => 'Illuminate\\Support\\HigherOrderCollectionProxy',
+            'jsonserializable' => 'JsonSerializable',
+            'unexpectedvalueexception' => 'UnexpectedValueException',
+            'unitenum' => 'UnitEnum',
+          ),
+           'className' => 'Illuminate\\Support\\Collection',
+           'functionName' => NULL,
+           'templatePhpDocNodes' => 
+          array (
+            'TKey' => 
+            array (
+              0 => '@template',
+              1 => 
+              \PHPStan\PhpDocParser\Ast\PhpDoc\TemplateTagValueNode::__set_state(array(
+                 'name' => 'TKey',
+                 'bound' => 
+                \PHPStan\PhpDocParser\Ast\Type\IdentifierTypeNode::__set_state(array(
+                   'name' => 'array-key',
+                   'attributes' => 
+                  array (
+                    'startLine' => 2,
+                    'endLine' => 2,
+                  ),
+                )),
+                 'default' => NULL,
+                 'lowerBound' => NULL,
+                 'description' => '',
+                 'attributes' => 
+                array (
+                  'startLine' => 2,
+                  'endLine' => 2,
+                ),
+              )),
+            ),
+            'TValue' => 
+            array (
+              0 => '@template-covariant',
+              1 => 
+              \PHPStan\PhpDocParser\Ast\PhpDoc\TemplateTagValueNode::__set_state(array(
+                 'name' => 'TValue',
+                 'bound' => NULL,
+                 'default' => NULL,
+                 'lowerBound' => NULL,
+                 'description' => '',
+                 'attributes' => 
+                array (
+                  'startLine' => 4,
+                  'endLine' => 4,
+                ),
+              )),
+            ),
+          ),
+           'parent' => NULL,
+           'typeAliasesMap' => 
+          array (
+          ),
+           'bypassTypeAliases' => false,
+           'constUses' => 
+          array (
+          ),
+           'typeAliasClassName' => 'Illuminate\\Support\\Traits\\EnumeratesValues',
+           'traitData' => NULL,
+        )),
+         'typeAliasesMap' => 
+        array (
+        ),
+         'bypassTypeAliases' => false,
+         'constUses' => 
+        array (
+        ),
+         'typeAliasClassName' => 'Illuminate\\Support\\Traits\\EnumeratesValues',
+         'traitData' => 
+        array (
+          0 => '/Users/andibauer/Repositories/basix-macro/backend/vendor/larastan/larastan/stubs/common/Collection.stub',
+          1 => 'Illuminate\\Support\\Collection',
+          2 => 'Illuminate\\Support\\Traits\\EnumeratesValues',
+          3 => NULL,
+          4 => '/**
+ * @use \\Illuminate\\Support\\Traits\\EnumeratesValues<TKey, TValue>
+ */',
+        ),
+      )),
       'f89e968ae55f25fa00ce747a030d63d3' => 
       \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
          'namespace' => 'Illuminate\\Support\\Traits',
@@ -16571,6 +16708,143 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  */',
         ),
       )),
+      '28dded72a613b657d4a6ded51942dec5' => 
+      \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+         'namespace' => 'Illuminate\\Support\\Traits',
+         'uses' => 
+        array (
+          'backedenum' => 'BackedEnum',
+          'cachingiterator' => 'CachingIterator',
+          'closure' => 'Closure',
+          'exception' => 'Exception',
+          'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
+          'jsonable' => 'Illuminate\\Contracts\\Support\\Jsonable',
+          'arr' => 'Illuminate\\Support\\Arr',
+          'collection' => 'Illuminate\\Support\\Collection',
+          'enumerable' => 'Illuminate\\Support\\Enumerable',
+          'higherordercollectionproxy' => 'Illuminate\\Support\\HigherOrderCollectionProxy',
+          'jsonserializable' => 'JsonSerializable',
+          'unexpectedvalueexception' => 'UnexpectedValueException',
+          'unitenum' => 'UnitEnum',
+        ),
+         'className' => 'Illuminate\\Support\\LazyCollection',
+         'functionName' => 'reduceInto',
+         'templatePhpDocNodes' => 
+        array (
+          'TReduceIntoInitial' => 
+          array (
+            0 => '@template',
+            1 => 
+            \PHPStan\PhpDocParser\Ast\PhpDoc\TemplateTagValueNode::__set_state(array(
+               'name' => 'TReduceIntoInitial',
+               'bound' => NULL,
+               'default' => NULL,
+               'lowerBound' => NULL,
+               'description' => '',
+               'attributes' => 
+              array (
+                'startLine' => 4,
+                'endLine' => 4,
+              ),
+            )),
+          ),
+        ),
+         'parent' => 
+        \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+           'namespace' => 'Illuminate\\Support\\Traits',
+           'uses' => 
+          array (
+            'backedenum' => 'BackedEnum',
+            'cachingiterator' => 'CachingIterator',
+            'closure' => 'Closure',
+            'exception' => 'Exception',
+            'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
+            'jsonable' => 'Illuminate\\Contracts\\Support\\Jsonable',
+            'arr' => 'Illuminate\\Support\\Arr',
+            'collection' => 'Illuminate\\Support\\Collection',
+            'enumerable' => 'Illuminate\\Support\\Enumerable',
+            'higherordercollectionproxy' => 'Illuminate\\Support\\HigherOrderCollectionProxy',
+            'jsonserializable' => 'JsonSerializable',
+            'unexpectedvalueexception' => 'UnexpectedValueException',
+            'unitenum' => 'UnitEnum',
+          ),
+           'className' => 'Illuminate\\Support\\LazyCollection',
+           'functionName' => NULL,
+           'templatePhpDocNodes' => 
+          array (
+            'TKey' => 
+            array (
+              0 => '@template',
+              1 => 
+              \PHPStan\PhpDocParser\Ast\PhpDoc\TemplateTagValueNode::__set_state(array(
+                 'name' => 'TKey',
+                 'bound' => 
+                \PHPStan\PhpDocParser\Ast\Type\IdentifierTypeNode::__set_state(array(
+                   'name' => 'array-key',
+                   'attributes' => 
+                  array (
+                    'startLine' => 2,
+                    'endLine' => 2,
+                  ),
+                )),
+                 'default' => NULL,
+                 'lowerBound' => NULL,
+                 'description' => '',
+                 'attributes' => 
+                array (
+                  'startLine' => 2,
+                  'endLine' => 2,
+                ),
+              )),
+            ),
+            'TValue' => 
+            array (
+              0 => '@template-covariant',
+              1 => 
+              \PHPStan\PhpDocParser\Ast\PhpDoc\TemplateTagValueNode::__set_state(array(
+                 'name' => 'TValue',
+                 'bound' => NULL,
+                 'default' => NULL,
+                 'lowerBound' => NULL,
+                 'description' => '',
+                 'attributes' => 
+                array (
+                  'startLine' => 4,
+                  'endLine' => 4,
+                ),
+              )),
+            ),
+          ),
+           'parent' => NULL,
+           'typeAliasesMap' => 
+          array (
+          ),
+           'bypassTypeAliases' => false,
+           'constUses' => 
+          array (
+          ),
+           'typeAliasClassName' => 'Illuminate\\Support\\Traits\\EnumeratesValues',
+           'traitData' => NULL,
+        )),
+         'typeAliasesMap' => 
+        array (
+        ),
+         'bypassTypeAliases' => false,
+         'constUses' => 
+        array (
+        ),
+         'typeAliasClassName' => 'Illuminate\\Support\\Traits\\EnumeratesValues',
+         'traitData' => 
+        array (
+          0 => '/Users/andibauer/Repositories/basix-macro/backend/vendor/larastan/larastan/stubs/common/Collection.stub',
+          1 => 'Illuminate\\Support\\LazyCollection',
+          2 => 'Illuminate\\Support\\Traits\\EnumeratesValues',
+          3 => NULL,
+          4 => '/**
+ * @use \\Illuminate\\Support\\Traits\\EnumeratesValues<TKey, TValue>
+ */',
+        ),
+      )),
       '4f0a9ee4348d1f067147d41da99c64e4' => 
       \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
          'namespace' => 'Illuminate\\Support\\Traits',
@@ -19477,7 +19751,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     1 => 
     array (
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/larastan/larastan/stubs/common/Collection.stub' => '44e72f7258c4c85b42b110e61f526ea149e4ca62b03af14330d47da3bfbec2d7',
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php' => 'a8e249064d66f677b5fe41135fce5553b397adb8a44bc9aee12a2ef2396d005d',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php' => '0f63970fdbf87049008cdc983987ea9cd41f9d9d334f5674ace0b26be9921234',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Conditionable/Traits/Conditionable.php' => '5697fdba0acb78ca0b4e122e5c459cd5d97d000ed9b14fed31271cb7ffd44225',
     ),
   ),

@@ -770,6 +770,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -898,7 +899,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -935,7 +936,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -972,7 +973,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1009,7 +1010,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1046,7 +1047,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1083,7 +1084,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1120,7 +1121,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1199,7 +1200,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1236,7 +1237,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1273,7 +1274,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1310,7 +1311,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1389,7 +1390,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1493,7 +1494,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1530,7 +1531,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1609,7 +1610,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1646,7 +1647,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1683,7 +1684,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1720,7 +1721,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1757,7 +1758,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1794,7 +1795,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1831,7 +1832,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1868,7 +1869,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1905,7 +1906,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -1942,7 +1943,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -2049,7 +2050,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -2111,7 +2112,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -2148,7 +2149,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -2185,7 +2186,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -2222,7 +2223,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -2259,7 +2260,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'date' => 'Illuminate\\Support\\Facades\\Date',
           'number' => 'Illuminate\\Support\\Number',
-          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'stdclass' => 'stdClass',
         ),
          'className' => 'Illuminate\\Http\\Request',
@@ -2291,6 +2292,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2327,6 +2329,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2363,6 +2366,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2399,6 +2403,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2435,6 +2440,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2471,6 +2477,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2507,6 +2514,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2543,6 +2551,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2579,6 +2588,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2615,6 +2625,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2651,6 +2662,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2687,6 +2699,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2723,6 +2736,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2759,6 +2773,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2795,6 +2810,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2831,6 +2847,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2867,6 +2884,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2897,12 +2915,50 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           4 => NULL,
         ),
       )),
+      'bce850f6dc0c1ad48d271b08939b2fd9' => 
+      \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+         'namespace' => 'Illuminate\\Http\\Concerns',
+         'uses' => 
+        array (
+          'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
+          'arr' => 'Illuminate\\Support\\Arr',
+          'fluent' => 'Illuminate\\Support\\Fluent',
+          'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
+          'interactswithdata' => 'Illuminate\\Support\\Traits\\InteractsWithData',
+          'splfileinfo' => 'SplFileInfo',
+          'inputbag' => 'Symfony\\Component\\HttpFoundation\\InputBag',
+        ),
+         'className' => 'Illuminate\\Http\\Request',
+         'functionName' => 'image',
+         'templatePhpDocNodes' => 
+        array (
+        ),
+         'parent' => NULL,
+         'typeAliasesMap' => 
+        array (
+        ),
+         'bypassTypeAliases' => false,
+         'constUses' => 
+        array (
+        ),
+         'typeAliasClassName' => 'Illuminate\\Http\\Concerns\\InteractsWithInput',
+         'traitData' => 
+        array (
+          0 => '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Http/Request.php',
+          1 => 'Illuminate\\Http\\Request',
+          2 => 'Illuminate\\Http\\Concerns\\InteractsWithInput',
+          3 => NULL,
+          4 => NULL,
+        ),
+      )),
       '882e48ec9ba76aed142653b5bb05121f' => 
       \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
          'namespace' => 'Illuminate\\Http\\Concerns',
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2939,6 +2995,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -2975,6 +3032,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'uses' => 
         array (
           'uploadedfile' => 'Illuminate\\Http\\UploadedFile',
+          'image' => 'Illuminate\\Image\\Image',
           'arr' => 'Illuminate\\Support\\Arr',
           'fluent' => 'Illuminate\\Support\\Fluent',
           'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
@@ -7652,9 +7710,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Http/Concerns/CanBePrecognitive.php' => '2101e3beeaedb2395ab44547778ccd036de559eaa5a2c1e80095d48cfa5cf64f',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Http/Concerns/InteractsWithContentTypes.php' => '1bc6c23b516e4bab9ef47083f56ce6f08544e941f3862c8cd5fb79b00e261328',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Http/Concerns/InteractsWithFlashData.php' => 'f1e1cfc096426ec1002825015f43b034aadbb1787391bb1077fb1a7adc3c486d',
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Http/Concerns/InteractsWithInput.php' => 'a4a7ca36f738937cfec50b1632dc92295c70d1cb6f8a555074958b4c06a2379e',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Http/Concerns/InteractsWithInput.php' => 'd54b58a6ad1a284acc548bae4d163c96282013da2491b2c16b1d211f9bb8866a',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Support/Traits/Dumpable.php' => '5ee524eba6728c03ac2743fb83643d2178f7a632664167f92d87323c10206ad8',
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Support/Traits/InteractsWithData.php' => '4c774da8f03dc5f3b08c79beac0700e9b64ced809b57261a7723b4f2f1d4b3a9',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Support/Traits/InteractsWithData.php' => 'dbf55c811a92f40534849941d51cbcd4c995fe1c36e9b8b754faf50c3442a085',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Conditionable/Traits/Conditionable.php' => '5697fdba0acb78ca0b4e122e5c459cd5d97d000ed9b14fed31271cb7ffd44225',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php' => '6dd85b1e28b55ebeee678f9ca423dfb8375e1342bc42d8658da6321bdf97b3c0',
     ),

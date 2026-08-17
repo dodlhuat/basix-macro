@@ -2347,7 +2347,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     1 => 
     array (
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/JsonResource.php' => '457b9dc19bbeec84c2a40313019dc80ac11b8caa6507f5d35c09e31b3deba229',
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Http/Resources/ConditionallyLoadsAttributes.php' => '74aef2c332d8ad4a2d2d83b03663a6cb74e21f0b2cdc7af5e106491aef729c2e',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Http/Resources/ConditionallyLoadsAttributes.php' => '3fb410061f6996c53ccdc37073e2eb2e18b63bd29c426c9202830a56857baada',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Http/Resources/DelegatesToResource.php' => '1e4b67dd454556d33b2f273ebafbb451866aca460958d95a97f53b33e8635f87',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php' => 'b90103bc7248a11bd7629c525e064a45a50dd93ae0d836bcb79937e63f0b3568',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php' => '6dd85b1e28b55ebeee678f9ca423dfb8375e1342bc42d8658da6321bdf97b3c0',

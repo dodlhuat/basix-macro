@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Validation/Factory.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Validation\Factory
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-bf1f88ba0aa9d732e65534e6283e437024b488b30c1111d4d85c4684acd28505-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-45cfa4024e81d144dd15c815981a43dba14d31d1cdd37690953bf720cf2fd613-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 11,
-    'endLine' => 334,
+    'endLine' => 345,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -1459,6 +1459,68 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'currentClassName' => 'Illuminate\\Validation\\Factory',
         'aliasName' => NULL,
       ),
+      'fakeDnsLookups' => 
+      array (
+        'name' => 'fakeDnsLookups',
+        'parameters' => 
+        array (
+          'value' => 
+          array (
+            'name' => 'value',
+            'default' => 
+            array (
+              'code' => 'true',
+              'attributes' => 
+              array (
+                'startLine' => 276,
+                'endLine' => 276,
+                'startTokenPos' => 861,
+                'startFilePos' => 7775,
+                'endTokenPos' => 861,
+                'endFilePos' => 7778,
+              ),
+            ),
+            'type' => NULL,
+            'isVariadic' => false,
+            'byRef' => false,
+            'isPromoted' => false,
+            'attributes' => 
+            array (
+            ),
+            'startLine' => 276,
+            'endLine' => 276,
+            'startColumn' => 36,
+            'endColumn' => 48,
+            'parameterIndex' => 0,
+            'isOptional' => true,
+          ),
+        ),
+        'returnsReference' => false,
+        'returnType' => NULL,
+        'attributes' => 
+        array (
+        ),
+        'docComment' => '/**
+ * Fake the DNS lookups performed by validation rules so they always succeed.
+ *
+ * @param  bool  $value
+ * @return void
+ */',
+        'startLine' => 276,
+        'endLine' => 279,
+        'startColumn' => 5,
+        'endColumn' => 5,
+        'couldThrow' => false,
+        'isClosure' => false,
+        'isGenerator' => false,
+        'isVariadic' => false,
+        'modifiers' => 1,
+        'namespace' => 'Illuminate\\Validation',
+        'declaringClassName' => 'Illuminate\\Validation\\Factory',
+        'implementingClassName' => 'Illuminate\\Validation\\Factory',
+        'currentClassName' => 'Illuminate\\Validation\\Factory',
+        'aliasName' => NULL,
+      ),
       'resolver' => 
       array (
         'name' => 'resolver',
@@ -1483,8 +1545,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 276,
-            'endLine' => 276,
+            'startLine' => 287,
+            'endLine' => 287,
             'startColumn' => 30,
             'endColumn' => 46,
             'parameterIndex' => 0,
@@ -1502,8 +1564,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Closure  $resolver
  * @return void
  */',
-        'startLine' => 276,
-        'endLine' => 279,
+        'startLine' => 287,
+        'endLine' => 290,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1533,8 +1595,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return \\Illuminate\\Contracts\\Translation\\Translator
  */',
-        'startLine' => 286,
-        'endLine' => 289,
+        'startLine' => 297,
+        'endLine' => 300,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1564,8 +1626,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return \\Illuminate\\Validation\\PresenceVerifierInterface
  */',
-        'startLine' => 296,
-        'endLine' => 299,
+        'startLine' => 307,
+        'endLine' => 310,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1603,8 +1665,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 307,
-            'endLine' => 307,
+            'startLine' => 318,
+            'endLine' => 318,
             'startColumn' => 41,
             'endColumn' => 83,
             'parameterIndex' => 0,
@@ -1622,8 +1684,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Validation\\PresenceVerifierInterface  $presenceVerifier
  * @return void
  */',
-        'startLine' => 307,
-        'endLine' => 310,
+        'startLine' => 318,
+        'endLine' => 321,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1653,8 +1715,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return \\Illuminate\\Contracts\\Container\\Container|null
  */',
-        'startLine' => 317,
-        'endLine' => 320,
+        'startLine' => 328,
+        'endLine' => 331,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1692,8 +1754,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 328,
-            'endLine' => 328,
+            'startLine' => 339,
+            'endLine' => 339,
             'startColumn' => 34,
             'endColumn' => 53,
             'parameterIndex' => 0,
@@ -1711,8 +1773,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Contracts\\Container\\Container  $container
  * @return $this
  */',
-        'startLine' => 328,
-        'endLine' => 333,
+        'startLine' => 339,
+        'endLine' => 344,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\OptimizeClearCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-7c38216a8181ef0a96c7cde1d09ad77a01a499d530486237eebe50ae36325143-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-0b3dd0c003c8a45581aa324fb3d987dd9b7fa08efec20e9cc543f4ab351051a7-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -39,16 +39,16 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'startLine' => 11,
               'endLine' => 11,
               'startTokenPos' => 38,
-              'startFilePos' => 275,
+              'startFilePos' => 261,
               'endTokenPos' => 38,
-              'endFilePos' => 290,
+              'endFilePos' => 276,
             ),
           ),
         ),
       ),
     ),
     'startLine' => 11,
-    'endLine' => 83,
+    'endLine' => 71,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -63,28 +63,28 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\OptimizeClearCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\OptimizeClearCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'optimize:clear\'',
+          'code' => '\'optimize:clear {--e|except= : The commands to skip}\'',
           'attributes' => 
           array (
             'startLine' => 19,
             'endLine' => 19,
             'startTokenPos' => 60,
-            'startFilePos' => 436,
+            'startFilePos' => 448,
             'endTokenPos' => 60,
-            'endFilePos' => 451,
+            'endFilePos' => 500,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
@@ -94,7 +94,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'startLine' => 19,
         'endLine' => 19,
         'startColumn' => 5,
-        'endColumn' => 39,
+        'endColumn' => 81,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -117,9 +117,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 26,
             'endLine' => 26,
             'startTokenPos' => 71,
-            'startFilePos' => 566,
+            'startFilePos' => 615,
             'endTokenPos' => 71,
-            'endFilePos' => 600,
+            'endFilePos' => 649,
           ),
         ),
         'docComment' => '/**
@@ -200,37 +200,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'isGenerator' => false,
         'isVariadic' => false,
         'modifiers' => 1,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\OptimizeClearCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\OptimizeClearCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\OptimizeClearCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command arguments.
- *
- * @return array
- */',
-        'startLine' => 77,
-        'endLine' => 82,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
         'namespace' => 'Illuminate\\Foundation\\Console',
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\OptimizeClearCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\OptimizeClearCommand',

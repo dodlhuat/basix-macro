@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\DownCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-0d17b6a838a4f33de657d4d578b3328c35493fb4f510269bf78115a2e0b036a3-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-5108b25ac024c472c41b23e5686e786376a59f2ea3c9658c73fd15b965297c8a-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 

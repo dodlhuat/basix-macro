@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Console/Factories/FactoryMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Database\Console\Factories\FactoryMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-d7c383a94a4c13b95f484909d8f0482f6461f64ac42c21ecb5dc9855820fe313-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-2f0c68ea6933ac6bc0edcd7d76725e69252314f535eb2062ff7de4859211cbd9-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'make:factory\'',
             'attributes' => 
             array (
-              'startLine' => 11,
-              'endLine' => 11,
-              'startTokenPos' => 38,
-              'startFilePos' => 280,
-              'endTokenPos' => 38,
-              'endFilePos' => 293,
+              'startLine' => 10,
+              'endLine' => 10,
+              'startTokenPos' => 33,
+              'startFilePos' => 231,
+              'endTokenPos' => 33,
+              'endFilePos' => 244,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 11,
-    'endLine' => 144,
+    'startLine' => 10,
+    'endLine' => 133,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\GeneratorCommand',
@@ -63,38 +63,40 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Database\\Console\\Factories\\FactoryMakeCommand',
         'implementingClassName' => 'Illuminate\\Database\\Console\\Factories\\FactoryMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:factory\'',
+          'code' => '\'make:factory
+                    {name : The name of the factory}
+                    {--m|model= : The name of the model}\'',
           'attributes' => 
           array (
-            'startLine' => 19,
-            'endLine' => 19,
-            'startTokenPos' => 60,
-            'startFilePos' => 446,
-            'endTokenPos' => 60,
-            'endFilePos' => 459,
+            'startLine' => 18,
+            'endLine' => 20,
+            'startTokenPos' => 55,
+            'startFilePos' => 423,
+            'endTokenPos' => 55,
+            'endFilePos' => 546,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 19,
-        'endLine' => 19,
+        'startLine' => 18,
+        'endLine' => 20,
         'startColumn' => 5,
-        'endColumn' => 37,
+        'endColumn' => 58,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -114,12 +116,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Create a new model factory\'',
           'attributes' => 
           array (
-            'startLine' => 26,
-            'endLine' => 26,
-            'startTokenPos' => 71,
-            'startFilePos' => 574,
-            'endTokenPos' => 71,
-            'endFilePos' => 601,
+            'startLine' => 27,
+            'endLine' => 27,
+            'startTokenPos' => 66,
+            'startFilePos' => 661,
+            'endTokenPos' => 66,
+            'endFilePos' => 688,
           ),
         ),
         'docComment' => '/**
@@ -130,8 +132,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 26,
-        'endLine' => 26,
+        'startLine' => 27,
+        'endLine' => 27,
         'startColumn' => 5,
         'endColumn' => 58,
         'isPromoted' => false,
@@ -153,12 +155,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Factory\'',
           'attributes' => 
           array (
-            'startLine' => 33,
-            'endLine' => 33,
-            'startTokenPos' => 82,
-            'startFilePos' => 711,
-            'endTokenPos' => 82,
-            'endFilePos' => 719,
+            'startLine' => 34,
+            'endLine' => 34,
+            'startTokenPos' => 77,
+            'startFilePos' => 798,
+            'endTokenPos' => 77,
+            'endFilePos' => 806,
           ),
         ),
         'docComment' => '/**
@@ -169,8 +171,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 33,
-        'endLine' => 33,
+        'startLine' => 34,
+        'endLine' => 34,
         'startColumn' => 5,
         'endColumn' => 32,
         'isPromoted' => false,
@@ -199,8 +201,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 40,
-        'endLine' => 43,
+        'startLine' => 41,
+        'endLine' => 44,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -230,8 +232,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 51,
-            'endLine' => 51,
+            'startLine' => 52,
+            'endLine' => 52,
             'startColumn' => 40,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -249,8 +251,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $stub
  * @return string
  */',
-        'startLine' => 51,
-        'endLine' => 56,
+        'startLine' => 52,
+        'endLine' => 57,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -280,8 +282,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 64,
-            'endLine' => 64,
+            'startLine' => 65,
+            'endLine' => 65,
             'startColumn' => 35,
             'endColumn' => 39,
             'parameterIndex' => 0,
@@ -299,8 +301,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $name
  * @return string
  */',
-        'startLine' => 64,
-        'endLine' => 93,
+        'startLine' => 65,
+        'endLine' => 94,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -330,8 +332,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 101,
-            'endLine' => 101,
+            'startLine' => 102,
+            'endLine' => 102,
             'startColumn' => 32,
             'endColumn' => 36,
             'parameterIndex' => 0,
@@ -349,8 +351,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $name
  * @return string
  */',
-        'startLine' => 101,
-        'endLine' => 106,
+        'startLine' => 102,
+        'endLine' => 107,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -380,8 +382,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 114,
-            'endLine' => 114,
+            'startLine' => 115,
+            'endLine' => 115,
             'startColumn' => 39,
             'endColumn' => 43,
             'parameterIndex' => 0,
@@ -399,39 +401,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $name
  * @return string
  */',
-        'startLine' => 114,
-        'endLine' => 131,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Database\\Console\\Factories',
-        'declaringClassName' => 'Illuminate\\Database\\Console\\Factories\\FactoryMakeCommand',
-        'implementingClassName' => 'Illuminate\\Database\\Console\\Factories\\FactoryMakeCommand',
-        'currentClassName' => 'Illuminate\\Database\\Console\\Factories\\FactoryMakeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command options.
- *
- * @return array
- */',
-        'startLine' => 138,
-        'endLine' => 143,
+        'startLine' => 115,
+        'endLine' => 132,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

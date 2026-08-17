@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\TraitMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-2ef5ed920eae1cc22f11bbd6d03b1ceef8eb9f996bf9455525344a7dbb4f03f2-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-c1b5a587e300382f13dfe3780599df833db4ffe77345a91ff3bab3dd893c0ec2-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'make:trait\'',
             'attributes' => 
             array (
-              'startLine' => 9,
-              'endLine' => 9,
-              'startTokenPos' => 28,
-              'startFilePos' => 209,
-              'endTokenPos' => 28,
-              'endFilePos' => 220,
+              'startLine' => 8,
+              'endLine' => 8,
+              'startTokenPos' => 23,
+              'startFilePos' => 160,
+              'endTokenPos' => 23,
+              'endFilePos' => 171,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 9,
-    'endLine' => 82,
+    'startLine' => 8,
+    'endLine' => 71,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\GeneratorCommand',
@@ -63,38 +63,40 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\TraitMakeCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\TraitMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:trait\'',
+          'code' => '\'make:trait
+                    {name : The name of the trait}
+                    {--f|force : Create the trait even if the trait already exists}\'',
           'attributes' => 
           array (
-            'startLine' => 17,
-            'endLine' => 17,
-            'startTokenPos' => 50,
-            'startFilePos' => 371,
-            'endTokenPos' => 50,
-            'endFilePos' => 382,
+            'startLine' => 16,
+            'endLine' => 18,
+            'startTokenPos' => 45,
+            'startFilePos' => 348,
+            'endTokenPos' => 45,
+            'endFilePos' => 494,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 17,
-        'endLine' => 17,
+        'startLine' => 16,
+        'endLine' => 18,
         'startColumn' => 5,
-        'endColumn' => 35,
+        'endColumn' => 85,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -114,12 +116,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Create a new trait\'',
           'attributes' => 
           array (
-            'startLine' => 24,
-            'endLine' => 24,
-            'startTokenPos' => 61,
-            'startFilePos' => 497,
-            'endTokenPos' => 61,
-            'endFilePos' => 516,
+            'startLine' => 25,
+            'endLine' => 25,
+            'startTokenPos' => 56,
+            'startFilePos' => 609,
+            'endTokenPos' => 56,
+            'endFilePos' => 628,
           ),
         ),
         'docComment' => '/**
@@ -130,8 +132,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 24,
-        'endLine' => 24,
+        'startLine' => 25,
+        'endLine' => 25,
         'startColumn' => 5,
         'endColumn' => 50,
         'isPromoted' => false,
@@ -153,12 +155,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Trait\'',
           'attributes' => 
           array (
-            'startLine' => 31,
-            'endLine' => 31,
-            'startTokenPos' => 72,
-            'startFilePos' => 626,
-            'endTokenPos' => 72,
-            'endFilePos' => 632,
+            'startLine' => 32,
+            'endLine' => 32,
+            'startTokenPos' => 67,
+            'startFilePos' => 738,
+            'endTokenPos' => 67,
+            'endFilePos' => 744,
           ),
         ),
         'docComment' => '/**
@@ -169,8 +171,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 31,
-        'endLine' => 31,
+        'startLine' => 32,
+        'endLine' => 32,
         'startColumn' => 5,
         'endColumn' => 30,
         'isPromoted' => false,
@@ -199,8 +201,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 38,
-        'endLine' => 41,
+        'startLine' => 39,
+        'endLine' => 42,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -230,8 +232,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 49,
-            'endLine' => 49,
+            'startLine' => 50,
+            'endLine' => 50,
             'startColumn' => 40,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -249,8 +251,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $stub
  * @return string
  */',
-        'startLine' => 49,
-        'endLine' => 54,
+        'startLine' => 50,
+        'endLine' => 55,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -280,8 +282,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 62,
-            'endLine' => 62,
+            'startLine' => 63,
+            'endLine' => 63,
             'startColumn' => 44,
             'endColumn' => 57,
             'parameterIndex' => 0,
@@ -299,39 +301,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rootNamespace
  * @return string
  */',
-        'startLine' => 62,
-        'endLine' => 69,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\TraitMakeCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\TraitMakeCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\TraitMakeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command arguments.
- *
- * @return array
- */',
-        'startLine' => 76,
-        'endLine' => 81,
+        'startLine' => 63,
+        'endLine' => 70,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

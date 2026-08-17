@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/ReloadCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\ReloadCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-4379c84064a8c41426e6c1a37cc4a4cebb143b37246b202838637806f38c9193-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-474dd4e85187d49a7526f3e3b765c2c9a20ca26d9ba5a1e8bc7ef6ad9f9761d5-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -39,16 +39,16 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'startLine' => 11,
               'endLine' => 11,
               'startTokenPos' => 38,
-              'startFilePos' => 275,
+              'startFilePos' => 261,
               'endTokenPos' => 38,
-              'endFilePos' => 282,
+              'endFilePos' => 268,
             ),
           ),
         ),
       ),
     ),
     'startLine' => 11,
-    'endLine' => 79,
+    'endLine' => 67,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -63,28 +63,28 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\ReloadCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\ReloadCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'reload\'',
+          'code' => '\'reload {--e|except= : The commands to skip}\'',
           'attributes' => 
           array (
             'startLine' => 19,
             'endLine' => 19,
             'startTokenPos' => 60,
-            'startFilePos' => 421,
+            'startFilePos' => 433,
             'endTokenPos' => 60,
-            'endFilePos' => 428,
+            'endFilePos' => 477,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
@@ -94,7 +94,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'startLine' => 19,
         'endLine' => 19,
         'startColumn' => 5,
-        'endColumn' => 31,
+        'endColumn' => 73,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -117,9 +117,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 26,
             'endLine' => 26,
             'startTokenPos' => 71,
-            'startFilePos' => 543,
+            'startFilePos' => 592,
             'endTokenPos' => 71,
-            'endFilePos' => 567,
+            'endFilePos' => 616,
           ),
         ),
         'docComment' => '/**
@@ -200,37 +200,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'isGenerator' => false,
         'isVariadic' => false,
         'modifiers' => 1,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\ReloadCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\ReloadCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\ReloadCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command arguments.
- *
- * @return array
- */',
-        'startLine' => 73,
-        'endLine' => 78,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
         'namespace' => 'Illuminate\\Foundation\\Console',
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\ReloadCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\ReloadCommand',

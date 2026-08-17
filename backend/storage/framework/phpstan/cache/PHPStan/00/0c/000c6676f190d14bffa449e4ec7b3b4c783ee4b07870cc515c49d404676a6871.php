@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/CodeCoverage.php' => 
     array (
-      0 => 'f20e5bec828186e050e7e40526555d26940e7f74131bb4e8bb6ad575b6f45aaf',
+      0 => 'cdee1ce96c952c6d0a685e44a08462f4116e6417dd0a1de64056f67cc0317c39',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\codecoverage',
@@ -15,15 +15,15 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\__construct',
-        1 => 'sebastianbergmann\\codecoverage\\__serialize',
-        2 => 'sebastianbergmann\\codecoverage\\getreport',
-        3 => 'sebastianbergmann\\codecoverage\\clear',
-        4 => 'sebastianbergmann\\codecoverage\\clearcache',
-        5 => 'sebastianbergmann\\codecoverage\\filter',
-        6 => 'sebastianbergmann\\codecoverage\\getdata',
-        7 => 'sebastianbergmann\\codecoverage\\setdata',
-        8 => 'sebastianbergmann\\codecoverage\\gettests',
-        9 => 'sebastianbergmann\\codecoverage\\settests',
+        1 => 'sebastianbergmann\\codecoverage\\getreport',
+        2 => 'sebastianbergmann\\codecoverage\\clear',
+        3 => 'sebastianbergmann\\codecoverage\\clearcache',
+        4 => 'sebastianbergmann\\codecoverage\\filter',
+        5 => 'sebastianbergmann\\codecoverage\\getdata',
+        6 => 'sebastianbergmann\\codecoverage\\setdata',
+        7 => 'sebastianbergmann\\codecoverage\\gettests',
+        8 => 'sebastianbergmann\\codecoverage\\settests',
+        9 => 'sebastianbergmann\\codecoverage\\parseerrors',
         10 => 'sebastianbergmann\\codecoverage\\start',
         11 => 'sebastianbergmann\\codecoverage\\stop',
         12 => 'sebastianbergmann\\codecoverage\\append',
@@ -45,18 +45,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         28 => 'sebastianbergmann\\codecoverage\\disablebranchandpathcoverage',
         29 => 'sebastianbergmann\\codecoverage\\collectsbranchandpathcoverage',
         30 => 'sebastianbergmann\\codecoverage\\validate',
-        31 => 'sebastianbergmann\\codecoverage\\driverispcov',
-        32 => 'sebastianbergmann\\codecoverage\\driverisxdebug',
-        33 => 'sebastianbergmann\\codecoverage\\applycoversandusesfilter',
-        34 => 'sebastianbergmann\\codecoverage\\applyfilter',
-        35 => 'sebastianbergmann\\codecoverage\\applyexecutablelinesfilter',
-        36 => 'sebastianbergmann\\codecoverage\\applyignoredlinesfilter',
-        37 => 'sebastianbergmann\\codecoverage\\adduncoveredfilesfromfilter',
-        38 => 'sebastianbergmann\\codecoverage\\performunintentionallycoveredcodecheck',
-        39 => 'sebastianbergmann\\codecoverage\\getallowedlines',
-        40 => 'sebastianbergmann\\codecoverage\\processunintentionallycoveredunits',
-        41 => 'sebastianbergmann\\codecoverage\\targetmapper',
-        42 => 'sebastianbergmann\\codecoverage\\analyser',
+        31 => 'sebastianbergmann\\codecoverage\\driverinformation',
+        32 => 'sebastianbergmann\\codecoverage\\adduncoveredfilesfromfilter',
+        33 => 'sebastianbergmann\\codecoverage\\targetmapper',
+        34 => 'sebastianbergmann\\codecoverage\\analyser',
       ),
       3 => 
       array (
@@ -64,7 +56,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Data/ProcessedBranchCoverageData.php' => 
     array (
-      0 => '516e0c417f1b1f74255379a5bd6069e570025e2be393b25c383eb594e1cacda1',
+      0 => '5e249944306fdc6b41cb02c183d8bb534a6155253bedb2baf44c56aacfd70531',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\data\\processedbranchcoveragedata',
@@ -74,7 +66,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'sebastianbergmann\\codecoverage\\data\\fromxdebugcoverage',
         1 => 'sebastianbergmann\\codecoverage\\data\\__construct',
         2 => 'sebastianbergmann\\codecoverage\\data\\merge',
-        3 => 'sebastianbergmann\\codecoverage\\data\\recordhit',
+        3 => 'sebastianbergmann\\codecoverage\\data\\withremappedtestindexes',
+        4 => 'sebastianbergmann\\codecoverage\\data\\recordhit',
       ),
       3 => 
       array (
@@ -82,7 +75,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Data/ProcessedClassType.php' => 
     array (
-      0 => 'da72a64c62caa682037202676b02684661b693661c1c9d11d294c258dd97d585',
+      0 => '5de95bd950db1b05f96019b28c479fd7345f1f23d1b87a0e857f63bfe46c8731',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\data\\processedclasstype',
@@ -97,25 +90,33 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Data/ProcessedCodeCoverageData.php' => 
     array (
-      0 => 'fdcafe14c618011d15a988da0e5d28029469e0926174192dc640993679ab40cd',
+      0 => '7ac9239b587a68112931a188358d1e11d772e1751d63514027c07d15bd215605',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\data\\processedcodecoveragedata',
       ),
       2 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\data\\initializeunseendata',
-        1 => 'sebastianbergmann\\codecoverage\\data\\markcodeasexecutedbytestcase',
-        2 => 'sebastianbergmann\\codecoverage\\data\\setlinecoverage',
-        3 => 'sebastianbergmann\\codecoverage\\data\\linecoverage',
-        4 => 'sebastianbergmann\\codecoverage\\data\\setfunctioncoverage',
-        5 => 'sebastianbergmann\\codecoverage\\data\\functioncoverage',
-        6 => 'sebastianbergmann\\codecoverage\\data\\coveredfiles',
-        7 => 'sebastianbergmann\\codecoverage\\data\\renamefile',
-        8 => 'sebastianbergmann\\codecoverage\\data\\merge',
-        9 => 'sebastianbergmann\\codecoverage\\data\\priorityforline',
-        10 => 'sebastianbergmann\\codecoverage\\data\\initpreviouslyunseenfunction',
-        11 => 'sebastianbergmann\\codecoverage\\data\\initpreviouslyseenfunction',
+        0 => 'sebastianbergmann\\codecoverage\\data\\__construct',
+        1 => 'sebastianbergmann\\codecoverage\\data\\collectshitcounts',
+        2 => 'sebastianbergmann\\codecoverage\\data\\initializeunseendata',
+        3 => 'sebastianbergmann\\codecoverage\\data\\markcodeasexecutedbytestcase',
+        4 => 'sebastianbergmann\\codecoverage\\data\\setlinecoverage',
+        5 => 'sebastianbergmann\\codecoverage\\data\\linecoverage',
+        6 => 'sebastianbergmann\\codecoverage\\data\\setfunctioncoverage',
+        7 => 'sebastianbergmann\\codecoverage\\data\\functioncoverage',
+        8 => 'sebastianbergmann\\codecoverage\\data\\coveredfiles',
+        9 => 'sebastianbergmann\\codecoverage\\data\\settestids',
+        10 => 'sebastianbergmann\\codecoverage\\data\\testids',
+        11 => 'sebastianbergmann\\codecoverage\\data\\renamefile',
+        12 => 'sebastianbergmann\\codecoverage\\data\\merge',
+        13 => 'sebastianbergmann\\codecoverage\\data\\sortlinecoverage',
+        14 => 'sebastianbergmann\\codecoverage\\data\\testindex',
+        15 => 'sebastianbergmann\\codecoverage\\data\\withtestindexesremappedtothisobject',
+        16 => 'sebastianbergmann\\codecoverage\\data\\priorityforline',
+        17 => 'sebastianbergmann\\codecoverage\\data\\priorityforvalue',
+        18 => 'sebastianbergmann\\codecoverage\\data\\initpreviouslyunseenfunction',
+        19 => 'sebastianbergmann\\codecoverage\\data\\initpreviouslyseenfunction',
       ),
       3 => 
       array (
@@ -123,7 +124,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Data/ProcessedFunctionCoverageData.php' => 
     array (
-      0 => '4f01f090b01c95a056f630b6f66e2a8aa8b45465f355e0b30c957d3390c6460e',
+      0 => 'bdb72e1048866e574e4f8f0f5be13c2aea92e6b23a1f07e0e557edecad2a110d',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\data\\processedfunctioncoveragedata',
@@ -133,8 +134,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'sebastianbergmann\\codecoverage\\data\\fromxdebugcoverage',
         1 => 'sebastianbergmann\\codecoverage\\data\\__construct',
         2 => 'sebastianbergmann\\codecoverage\\data\\merge',
-        3 => 'sebastianbergmann\\codecoverage\\data\\recordbranchhit',
-        4 => 'sebastianbergmann\\codecoverage\\data\\recordpathhit',
+        3 => 'sebastianbergmann\\codecoverage\\data\\withremappedtestindexes',
+        4 => 'sebastianbergmann\\codecoverage\\data\\recordbranchhit',
+        5 => 'sebastianbergmann\\codecoverage\\data\\recordpathhit',
       ),
       3 => 
       array (
@@ -142,7 +144,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Data/ProcessedFunctionType.php' => 
     array (
-      0 => '5a8aebb1a0f6a930170b2a23fb840b332a8a64c7cb7c0921f3673f9c900044e4',
+      0 => 'ce7190d49631306e39135ec97520267cc4898f1ca3e008abfcfa178c530c7090',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\data\\processedfunctiontype',
@@ -157,7 +159,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Data/ProcessedMethodType.php' => 
     array (
-      0 => 'dcd90e1b458524c25634712a6c40df39d6943afbaf8e4a17d6132e87d69fdadf',
+      0 => 'ba01ca143061bd371da162fa846c986c1df8146fcce363b370043fc2793977e8',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\data\\processedmethodtype',
@@ -172,7 +174,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Data/ProcessedPathCoverageData.php' => 
     array (
-      0 => '64769a3d1e444f5413e7aeb0ba5481a4a24c4c8a146c788605351892a5507434',
+      0 => '3aede3a358136e4f581af8e42fac68c502c09e8a5b59a177b7549b4e49e8f227',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\data\\processedpathcoveragedata',
@@ -182,7 +184,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'sebastianbergmann\\codecoverage\\data\\fromxdebugcoverage',
         1 => 'sebastianbergmann\\codecoverage\\data\\__construct',
         2 => 'sebastianbergmann\\codecoverage\\data\\merge',
-        3 => 'sebastianbergmann\\codecoverage\\data\\recordhit',
+        3 => 'sebastianbergmann\\codecoverage\\data\\withremappedtestindexes',
+        4 => 'sebastianbergmann\\codecoverage\\data\\recordhit',
       ),
       3 => 
       array (
@@ -190,7 +193,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Data/ProcessedTraitType.php' => 
     array (
-      0 => 'f99136a6f105a9594e12dfb01243c46f2c373277dc4bccdf0f0eefdfd4331b88',
+      0 => '80bdda8e47205f03ca68250a2365d51d9f94f84f6ae2bf01e035b588ce4d9173',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\data\\processedtraittype',
@@ -205,27 +208,33 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Data/RawCodeCoverageData.php' => 
     array (
-      0 => 'e3985d43220d8e15cc23355ac74db0af8111c86c2074f220c7e4c88a87561159',
+      0 => 'e74ccef2af76717701a29fccb5edae540cb92a3d0a67ea0a3b9a8bdee3063d96',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\data\\rawcodecoveragedata',
       ),
       2 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\data\\fromxdebugwithoutpathcoverage',
+        0 => 'sebastianbergmann\\codecoverage\\data\\fromlinecoverage',
         1 => 'sebastianbergmann\\codecoverage\\data\\fromxdebugwithpathcoverage',
-        2 => 'sebastianbergmann\\codecoverage\\data\\fromuncoveredfile',
-        3 => 'sebastianbergmann\\codecoverage\\data\\__construct',
-        4 => 'sebastianbergmann\\codecoverage\\data\\clear',
-        5 => 'sebastianbergmann\\codecoverage\\data\\linecoverage',
-        6 => 'sebastianbergmann\\codecoverage\\data\\functioncoverage',
-        7 => 'sebastianbergmann\\codecoverage\\data\\removecoveragedataforfile',
-        8 => 'sebastianbergmann\\codecoverage\\data\\keeplinecoveragedataonlyforlines',
-        9 => 'sebastianbergmann\\codecoverage\\data\\markexecutablelinebybranch',
-        10 => 'sebastianbergmann\\codecoverage\\data\\keepfunctioncoveragedataonlyforlines',
-        11 => 'sebastianbergmann\\codecoverage\\data\\removecoveragedataforlines',
-        12 => 'sebastianbergmann\\codecoverage\\data\\skipemptylines',
-        13 => 'sebastianbergmann\\codecoverage\\data\\getemptylinesforfile',
+        2 => 'sebastianbergmann\\codecoverage\\data\\fromlineandbranchcoverage',
+        3 => 'sebastianbergmann\\codecoverage\\data\\fromuncoveredfile',
+        4 => 'sebastianbergmann\\codecoverage\\data\\__construct',
+        5 => 'sebastianbergmann\\codecoverage\\data\\clear',
+        6 => 'sebastianbergmann\\codecoverage\\data\\linecoverage',
+        7 => 'sebastianbergmann\\codecoverage\\data\\functioncoverage',
+        8 => 'sebastianbergmann\\codecoverage\\data\\removecoveragedataforfile',
+        9 => 'sebastianbergmann\\codecoverage\\data\\keeplinecoveragedataonlyforlines',
+        10 => 'sebastianbergmann\\codecoverage\\data\\addmissingexecutablelines',
+        11 => 'sebastianbergmann\\codecoverage\\data\\marklinesasnotexecutable',
+        12 => 'sebastianbergmann\\codecoverage\\data\\markexecutablelinebybranch',
+        13 => 'sebastianbergmann\\codecoverage\\data\\keepfunctioncoveragedataonlyforlines',
+        14 => 'sebastianbergmann\\codecoverage\\data\\removecoveragedataforlines',
+        15 => 'sebastianbergmann\\codecoverage\\data\\skipemptylines',
+        16 => 'sebastianbergmann\\codecoverage\\data\\branchisconfinedtolines',
+        17 => 'sebastianbergmann\\codecoverage\\data\\branchtoucheslines',
+        18 => 'sebastianbergmann\\codecoverage\\data\\removebranchanddependentpaths',
+        19 => 'sebastianbergmann\\codecoverage\\data\\getemptylinesforfile',
       ),
       3 => 
       array (
@@ -233,22 +242,23 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Driver/Driver.php' => 
     array (
-      0 => '808eea30a4748a7d1ed8b94495db355c8f08e735072b43a62fee7fed19e7d4a1',
+      0 => 'f183967551468ba88fd6996ec1c01c6c4f5cddbd37348b74f41627bb4190e4d4',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\driver\\driver',
       ),
       2 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\driver\\cancollectbranchandpathcoverage',
-        1 => 'sebastianbergmann\\codecoverage\\driver\\collectsbranchandpathcoverage',
-        2 => 'sebastianbergmann\\codecoverage\\driver\\enablebranchandpathcoverage',
-        3 => 'sebastianbergmann\\codecoverage\\driver\\disablebranchandpathcoverage',
-        4 => 'sebastianbergmann\\codecoverage\\driver\\ispcov',
-        5 => 'sebastianbergmann\\codecoverage\\driver\\isxdebug',
-        6 => 'sebastianbergmann\\codecoverage\\driver\\nameandversion',
-        7 => 'sebastianbergmann\\codecoverage\\driver\\start',
-        8 => 'sebastianbergmann\\codecoverage\\driver\\stop',
+        0 => 'sebastianbergmann\\codecoverage\\driver\\granularity',
+        1 => 'sebastianbergmann\\codecoverage\\driver\\setgranularity',
+        2 => 'sebastianbergmann\\codecoverage\\driver\\name',
+        3 => 'sebastianbergmann\\codecoverage\\driver\\version',
+        4 => 'sebastianbergmann\\codecoverage\\driver\\nameandversion',
+        5 => 'sebastianbergmann\\codecoverage\\driver\\start',
+        6 => 'sebastianbergmann\\codecoverage\\driver\\stop',
+        7 => 'sebastianbergmann\\codecoverage\\driver\\collectshitcounts',
+        8 => 'sebastianbergmann\\codecoverage\\driver\\cancollectbranchcoverage',
+        9 => 'sebastianbergmann\\codecoverage\\driver\\cancollectpathcoverage',
       ),
       3 => 
       array (
@@ -256,7 +266,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Driver/PcovDriver.php' => 
     array (
-      0 => 'd8b75613c038889bbac147ab977f9b845a0b2e9d687e4070af0b9aa01ee13ca3',
+      0 => '053ec34e1f6eefec75bbfc30577f0733037f4951cba8ec2d5b986d4e92cbb00c',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\driver\\',
@@ -267,8 +277,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'sebastianbergmann\\codecoverage\\driver\\__construct',
         1 => 'sebastianbergmann\\codecoverage\\driver\\start',
         2 => 'sebastianbergmann\\codecoverage\\driver\\stop',
-        3 => 'sebastianbergmann\\codecoverage\\driver\\nameandversion',
-        4 => 'sebastianbergmann\\codecoverage\\driver\\ispcov',
+        3 => 'sebastianbergmann\\codecoverage\\driver\\name',
+        4 => 'sebastianbergmann\\codecoverage\\driver\\version',
         5 => 'sebastianbergmann\\codecoverage\\driver\\ensurepcovisavailable',
       ),
       3 => 
@@ -278,15 +288,16 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Driver/Selector.php' => 
     array (
-      0 => '11f4d3f294a24a9986fef20dde0be53f11eec06e4911915cc34ea38d7574609a',
+      0 => 'd2fb3ac1752f1c9e219fc04f143393aae9d6117e787c43b5426ff4c25d8aa7f5',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\driver\\selector',
       ),
       2 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\driver\\forlinecoverage',
-        1 => 'sebastianbergmann\\codecoverage\\driver\\forlineandpathcoverage',
+        0 => 'sebastianbergmann\\codecoverage\\driver\\select',
+        1 => 'sebastianbergmann\\codecoverage\\driver\\forlinecoverage',
+        2 => 'sebastianbergmann\\codecoverage\\driver\\forlineandpathcoverage',
       ),
       3 => 
       array (
@@ -294,7 +305,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Driver/XdebugDriver.php' => 
     array (
-      0 => '18cc77058b81e4c6c8a1ba0581e9dad0aa67316993112149d6a06909845adc0f',
+      0 => '3a061039a27d499b6873becfd37920493bc2c0548922a3bab78cc4dcd680ee4d',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\driver\\xdebugdriver',
@@ -302,12 +313,15 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\driver\\__construct',
-        1 => 'sebastianbergmann\\codecoverage\\driver\\cancollectbranchandpathcoverage',
-        2 => 'sebastianbergmann\\codecoverage\\driver\\start',
-        3 => 'sebastianbergmann\\codecoverage\\driver\\stop',
-        4 => 'sebastianbergmann\\codecoverage\\driver\\nameandversion',
-        5 => 'sebastianbergmann\\codecoverage\\driver\\isxdebug',
-        6 => 'sebastianbergmann\\codecoverage\\driver\\ensurexdebugisavailable',
+        1 => 'sebastianbergmann\\codecoverage\\driver\\start',
+        2 => 'sebastianbergmann\\codecoverage\\driver\\stop',
+        3 => 'sebastianbergmann\\codecoverage\\driver\\name',
+        4 => 'sebastianbergmann\\codecoverage\\driver\\version',
+        5 => 'sebastianbergmann\\codecoverage\\driver\\cancollectbranchcoverage',
+        6 => 'sebastianbergmann\\codecoverage\\driver\\cancollectpathcoverage',
+        7 => 'sebastianbergmann\\codecoverage\\driver\\ensurewithpathcoverage',
+        8 => 'sebastianbergmann\\codecoverage\\driver\\ensurewithoutpathcoverage',
+        9 => 'sebastianbergmann\\codecoverage\\driver\\ensurexdebugisavailable',
       ),
       3 => 
       array (
@@ -315,7 +329,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php' => 
     array (
-      0 => '046212e05cd796be430aa31fdac0431f76b30c802f704a24cb96b6d409533356',
+      0 => '967ed9f6253a0b9d2814e63e87b0b3fe3c7cd497f3d3f8cedaab0785df949323',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\branchandpathcoveragenotsupportedexception',
@@ -329,7 +343,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php' => 
     array (
-      0 => 'e916d5636221ed6c40424999623cfa72ae5c907b314233670c77f2756710d557',
+      0 => 'bb60264ef4d9d13e39c383dc7d07281981e4b042fce6583d5609aa0ec57c59d4',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\util\\directorycouldnotbecreatedexception',
@@ -343,7 +357,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/Exception.php' => 
     array (
-      0 => '799788626b80979bb15e2f7ce05086d4f04d5fde3468cb388aaeddb930da1d97',
+      0 => '3297122a358ee719b6bd98dbaff09dc892e2e00368f334697598365afd22e8a1',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\exception',
@@ -357,7 +371,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php' => 
     array (
-      0 => '79b0c3d2f8949e20c0c7d15a415c71ec555c4c9724aed19fa68800278ecfe606',
+      0 => '21392f4d5ffb1c83eca67022b36ce12149476a5ae367173d449ef37b15f846e1',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\filecouldnotbewrittenexception',
@@ -371,7 +385,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php' => 
     array (
-      0 => 'ae7e909a849ac96bf9b0b3053619ca1fdf4980763869785366272387a34dd959',
+      0 => '24e083e4784f5a0c47a51c5cb6201b29bcfb499d1e908452743f8106a8bc9dc1',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\invalidargumentexception',
@@ -385,7 +399,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/InvalidCodeCoverageTargetException.php' => 
     array (
-      0 => '657bc0b8a8f80bb9eb104bede15d06a9de5d928f5026a4c0a2a9c8eb36d045cb',
+      0 => '5263a48650186a19af34923acd1e61e7ad7fc18ce9b198b7a7e37dfb3ca799de',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\test\\target\\invalidcodecoveragetargetexception',
@@ -398,39 +412,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php' => 
-    array (
-      0 => '1bbb84df2dd05ae0728d7b7e9f4d65f3221aa84694766a94f70da1ad2a179bc0',
-      1 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\nocodecoveragedriveravailableexception',
-      ),
-      2 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\__construct',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php' => 
-    array (
-      0 => 'c97baa75f88cb63d516dae862a0eaaba1ecf40339f56b8d304f7c0bb3423c596',
-      1 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\nocodecoveragedriverwithpathcoveragesupportavailableexception',
-      ),
-      2 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\__construct',
-      ),
-      3 => 
-      array (
-      ),
-    ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php' => 
     array (
-      0 => '8bf7638ad904071b99372e1b606d83e799ae3ba6fd026ad1a68f6902e3b7c171',
+      0 => '260cb37888d66ad072f1d5abe912c1975b264660c1df68a45c71fddd5616f103',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\parserexception',
@@ -444,7 +428,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php' => 
     array (
-      0 => 'd5ede23f8a8ccc208c8558317e023978176c9c4e8d1914eb7cae19035eab3e26',
+      0 => 'ee4dfe7947646380923237d157b3ea3bf9226ea59ee3845da991b02f55393950',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\pathexistsbutisnotdirectoryexception',
@@ -459,7 +443,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php' => 
     array (
-      0 => '47853372d98b78939e4c27faf4d86553e561f13dd21b3bfa37350df01ab830a7',
+      0 => 'd070e4fe50b59995a1df4792ce6cf2ee0d730f201f868f1f8971206414452feb',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\driver\\pcovnotavailableexception',
@@ -474,7 +458,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php' => 
     array (
-      0 => 'c1717dd6713b2c9c1ec411e77be31acd2eca1e4481e12c965fe4e8e5710e257e',
+      0 => '2ceafdfc8863c87440ac2f11ae9c4ecb5fc611e1ab9fb03e153b4ca4bdced5aa',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\reflectionexception',
@@ -488,7 +472,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php' => 
     array (
-      0 => 'cecad0be2fd84b3575dcf9eb9b0266e37dd0f34219acf7173119103d9440c259',
+      0 => '1b85608d60d8913f8bbd5b73a43d582e6aca6156d1e62b24ccc02b5e7c1ae93c',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\reportalreadyfinalizedexception',
@@ -503,7 +487,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php' => 
     array (
-      0 => '3aa7cd1ab84e05eeea722ea87f5ebd99f48bae3728f1ef0825b8e1e775f8a6f1',
+      0 => '4c7a734b6178d3acd626e3fd295424970ea11bc49f0c6ecb1329dba4fb1e633c',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysiscachenotconfiguredexception',
@@ -517,7 +501,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php' => 
     array (
-      0 => 'acfaa27384c13e8171602ca0bc83a3ca4753c5917c684020435e2f3a261afdbb',
+      0 => '34ac1abe2d16c4e489aa6896958bafc48a0bff93fd22040409f507ff7707c21e',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\testidmissingexception',
@@ -532,7 +516,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php' => 
     array (
-      0 => 'd12c99da378e7ceb895d881438ee234246b017a015ecb3ae70fd697b73aee99f',
+      0 => '1a6ab89fdc5522d470e4781a5f86271715b9ce384a283eead617cf8ffaaba066',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\unintentionallycoveredcodeexception',
@@ -549,7 +533,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php' => 
     array (
-      0 => '5fe9befc493f4106a09b82939042554ade876f2ff3d92ed453e907c9d1fa610d',
+      0 => '133faf57f63e7ec1fd045e72f44fd47ccd46c2d07fc517c9fb16078176d9feff',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\writeoperationfailedexception',
@@ -564,7 +548,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php' => 
     array (
-      0 => '52bbb9e9b875a29e65f4834cbfca9486a3d9274d6b4437594b602e391b9241f1',
+      0 => 'd48a185d9e2b7e023dd8b098ba9a29991173440fc71f279c872d5e5e1c4becb1',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\driver\\xdebugnotavailableexception',
@@ -579,7 +563,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php' => 
     array (
-      0 => 'd767ba19673df8def5579eec40c59617a9c21fb357fa7ddc50b0cf04de70ea38',
+      0 => 'a8159e7583954d29400ecfca435aa3e4588ff2d9dcfe2d2db86edce3ff12b4c4',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\driver\\xdebugnotenabledexception',
@@ -594,7 +578,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/XdebugVersionNotSupportedException.php' => 
     array (
-      0 => '4d42cac91ed9c92ddd04377836d4c4b60b52a6f0af128019c1d81e5444611515',
+      0 => 'd24a106915fce87c1e83627c63b5472d03b91df6335118d573ce97123f28a24c',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\driver\\xdebugversionnotsupportedexception',
@@ -609,7 +593,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php' => 
     array (
-      0 => 'bd49a1e741d16b349c7b66e24ba01980293d707709e1f3d1c987ec75873046c7',
+      0 => 'ee0615d1d80da85f68dcf4d9a6014c324eedaa262262d23f26490cfa0dfcc873',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\xmlexception',
@@ -623,7 +607,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Filter.php' => 
     array (
-      0 => '2c386fefb29c1cae1bbf6c6d50049d2ed2ad806b72be653f20d9b3d51fa3e063',
+      0 => '025ac3e480db70c07f97066e0c216d5cea08019181a204fbb39991e172278bbd',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\filter',
@@ -643,7 +627,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Node/AbstractNode.php' => 
     array (
-      0 => '9a7aa071c374fc782a241242346e77533e0d318e1a7eacb4605ebd0d9453a26a',
+      0 => 'c1d2561dec9146ad6e1a959b01385ee0d7d38c5695d2d0197a6e995126107089',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\node\\abstractnode',
@@ -663,34 +647,43 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         10 => 'sebastianbergmann\\codecoverage\\node\\percentageoftestedmethods',
         11 => 'sebastianbergmann\\codecoverage\\node\\percentageoftestedfunctionsandmethods',
         12 => 'sebastianbergmann\\codecoverage\\node\\percentageofexecutedlines',
-        13 => 'sebastianbergmann\\codecoverage\\node\\percentageofexecutedbranches',
-        14 => 'sebastianbergmann\\codecoverage\\node\\percentageofexecutedpaths',
-        15 => 'sebastianbergmann\\codecoverage\\node\\numberofclassesandtraits',
-        16 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedclassesandtraits',
-        17 => 'sebastianbergmann\\codecoverage\\node\\classesandtraits',
-        18 => 'sebastianbergmann\\codecoverage\\node\\numberoffunctionsandmethods',
-        19 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedfunctionsandmethods',
-        20 => 'sebastianbergmann\\codecoverage\\node\\cyclomaticcomplexity',
-        21 => 'sebastianbergmann\\codecoverage\\node\\classes',
-        22 => 'sebastianbergmann\\codecoverage\\node\\traits',
-        23 => 'sebastianbergmann\\codecoverage\\node\\functions',
-        24 => 'sebastianbergmann\\codecoverage\\node\\linesofcode',
-        25 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablelines',
-        26 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedlines',
-        27 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablebranches',
-        28 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedbranches',
-        29 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablepaths',
-        30 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedpaths',
-        31 => 'sebastianbergmann\\codecoverage\\node\\numberofclasses',
-        32 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedclasses',
-        33 => 'sebastianbergmann\\codecoverage\\node\\numberoftraits',
-        34 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedtraits',
-        35 => 'sebastianbergmann\\codecoverage\\node\\numberofmethods',
-        36 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedmethods',
-        37 => 'sebastianbergmann\\codecoverage\\node\\numberoffunctions',
-        38 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedfunctions',
-        39 => 'sebastianbergmann\\codecoverage\\node\\processid',
-        40 => 'sebastianbergmann\\codecoverage\\node\\processpath',
+        13 => 'sebastianbergmann\\codecoverage\\node\\percentageofexecutedlinesbytestsize',
+        14 => 'sebastianbergmann\\codecoverage\\node\\percentageofexecutedbranches',
+        15 => 'sebastianbergmann\\codecoverage\\node\\percentageofexecutedpaths',
+        16 => 'sebastianbergmann\\codecoverage\\node\\numberofclassesandtraits',
+        17 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedclassesandtraits',
+        18 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedclassesandtraitsbytestsize',
+        19 => 'sebastianbergmann\\codecoverage\\node\\classesandtraits',
+        20 => 'sebastianbergmann\\codecoverage\\node\\numberoffunctionsandmethods',
+        21 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedfunctionsandmethods',
+        22 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedfunctionsandmethodsbytestsize',
+        23 => 'sebastianbergmann\\codecoverage\\node\\cyclomaticcomplexity',
+        24 => 'sebastianbergmann\\codecoverage\\node\\classes',
+        25 => 'sebastianbergmann\\codecoverage\\node\\traits',
+        26 => 'sebastianbergmann\\codecoverage\\node\\functions',
+        27 => 'sebastianbergmann\\codecoverage\\node\\linesofcode',
+        28 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablelines',
+        29 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedlines',
+        30 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedlinesbytestsize',
+        31 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablebranches',
+        32 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedbranches',
+        33 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablepaths',
+        34 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedpaths',
+        35 => 'sebastianbergmann\\codecoverage\\node\\numberoffileswithoutbranchcoveragedata',
+        36 => 'sebastianbergmann\\codecoverage\\node\\numberofclasses',
+        37 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedclasses',
+        38 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedclassesbytestsize',
+        39 => 'sebastianbergmann\\codecoverage\\node\\numberoftraits',
+        40 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedtraits',
+        41 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedtraitsbytestsize',
+        42 => 'sebastianbergmann\\codecoverage\\node\\numberofmethods',
+        43 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedmethods',
+        44 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedmethodsbytestsize',
+        45 => 'sebastianbergmann\\codecoverage\\node\\numberoffunctions',
+        46 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedfunctions',
+        47 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedfunctionsbytestsize',
+        48 => 'sebastianbergmann\\codecoverage\\node\\processid',
+        49 => 'sebastianbergmann\\codecoverage\\node\\processpath',
       ),
       3 => 
       array (
@@ -698,7 +691,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Node/Builder.php' => 
     array (
-      0 => '8033a7d4c29c80b4bece6e1e674c8957017d37e609daf08752b45f153c2232ea',
+      0 => 'f3d38dd1a077d8f4846f7fd062a068b778033e77e646c26dd038e70bffd17819',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\node\\builder',
@@ -707,9 +700,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'sebastianbergmann\\codecoverage\\node\\__construct',
         1 => 'sebastianbergmann\\codecoverage\\node\\build',
-        2 => 'sebastianbergmann\\codecoverage\\node\\additems',
-        3 => 'sebastianbergmann\\codecoverage\\node\\builddirectorystructure',
-        4 => 'sebastianbergmann\\codecoverage\\node\\reducepaths',
+        2 => 'sebastianbergmann\\codecoverage\\node\\testdatabytestindex',
+        3 => 'sebastianbergmann\\codecoverage\\node\\additems',
+        4 => 'sebastianbergmann\\codecoverage\\node\\builddirectorystructure',
       ),
       3 => 
       array (
@@ -717,7 +710,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Node/CrapIndex.php' => 
     array (
-      0 => '939435c9b597e5a060e3b6caeee7c89253aa1cc73f7ed8e342c919ece867926f',
+      0 => '437084bea3a68c79a84c9e46beee12be08af93e7edc11c323ce09d76dc19b418',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\node\\crapindex',
@@ -733,7 +726,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Node/Directory.php' => 
     array (
-      0 => '46ae89f1a99de4830b51241d8eaca4c9a68186d3f80b30e8440185c9daf33abe',
+      0 => 'df5f43de6c01bc7763056f9bfa2e0102e08350910e99fe82629a9a2db7fd7f5f',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\node\\directory',
@@ -753,18 +746,24 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         10 => 'sebastianbergmann\\codecoverage\\node\\linesofcode',
         11 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablelines',
         12 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedlines',
-        13 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablebranches',
-        14 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedbranches',
-        15 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablepaths',
-        16 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedpaths',
-        17 => 'sebastianbergmann\\codecoverage\\node\\numberofclasses',
-        18 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedclasses',
-        19 => 'sebastianbergmann\\codecoverage\\node\\numberoftraits',
-        20 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedtraits',
-        21 => 'sebastianbergmann\\codecoverage\\node\\numberofmethods',
-        22 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedmethods',
-        23 => 'sebastianbergmann\\codecoverage\\node\\numberoffunctions',
-        24 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedfunctions',
+        13 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedlinesbytestsize',
+        14 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablebranches',
+        15 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedbranches',
+        16 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablepaths',
+        17 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedpaths',
+        18 => 'sebastianbergmann\\codecoverage\\node\\numberoffileswithoutbranchcoveragedata',
+        19 => 'sebastianbergmann\\codecoverage\\node\\numberofclasses',
+        20 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedclasses',
+        21 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedclassesbytestsize',
+        22 => 'sebastianbergmann\\codecoverage\\node\\numberoftraits',
+        23 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedtraits',
+        24 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedtraitsbytestsize',
+        25 => 'sebastianbergmann\\codecoverage\\node\\numberofmethods',
+        26 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedmethods',
+        27 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedmethodsbytestsize',
+        28 => 'sebastianbergmann\\codecoverage\\node\\numberoffunctions',
+        29 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedfunctions',
+        30 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedfunctionsbytestsize',
       ),
       3 => 
       array (
@@ -772,42 +771,53 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Node/File.php' => 
     array (
-      0 => '8ae4be60785989b5847ec29e60d0625336e2d8151d9cb19857638cab1dfb2106',
+      0 => '4435e8d58db6bd6d58965628218be83c67570f8ec875fc8c02928fc586903842',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\node\\file',
       ),
       2 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\node\\__construct',
-        1 => 'sebastianbergmann\\codecoverage\\node\\count',
-        2 => 'sebastianbergmann\\codecoverage\\node\\sha1',
-        3 => 'sebastianbergmann\\codecoverage\\node\\linecoveragedata',
-        4 => 'sebastianbergmann\\codecoverage\\node\\functioncoveragedata',
-        5 => 'sebastianbergmann\\codecoverage\\node\\testdata',
-        6 => 'sebastianbergmann\\codecoverage\\node\\classes',
-        7 => 'sebastianbergmann\\codecoverage\\node\\traits',
-        8 => 'sebastianbergmann\\codecoverage\\node\\functions',
-        9 => 'sebastianbergmann\\codecoverage\\node\\linesofcode',
-        10 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablelines',
-        11 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedlines',
-        12 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablebranches',
-        13 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedbranches',
-        14 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablepaths',
-        15 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedpaths',
-        16 => 'sebastianbergmann\\codecoverage\\node\\numberofclasses',
-        17 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedclasses',
-        18 => 'sebastianbergmann\\codecoverage\\node\\numberoftraits',
-        19 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedtraits',
-        20 => 'sebastianbergmann\\codecoverage\\node\\numberofmethods',
-        21 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedmethods',
-        22 => 'sebastianbergmann\\codecoverage\\node\\numberoffunctions',
-        23 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedfunctions',
-        24 => 'sebastianbergmann\\codecoverage\\node\\calculatestatistics',
-        25 => 'sebastianbergmann\\codecoverage\\node\\processclasses',
-        26 => 'sebastianbergmann\\codecoverage\\node\\processtraits',
-        27 => 'sebastianbergmann\\codecoverage\\node\\processfunctions',
-        28 => 'sebastianbergmann\\codecoverage\\node\\newmethod',
+        0 => 'sebastianbergmann\\codecoverage\\node\\sizebitbytestindex',
+        1 => 'sebastianbergmann\\codecoverage\\node\\__construct',
+        2 => 'sebastianbergmann\\codecoverage\\node\\count',
+        3 => 'sebastianbergmann\\codecoverage\\node\\sha1',
+        4 => 'sebastianbergmann\\codecoverage\\node\\linecoveragedata',
+        5 => 'sebastianbergmann\\codecoverage\\node\\functioncoveragedata',
+        6 => 'sebastianbergmann\\codecoverage\\node\\testdata',
+        7 => 'sebastianbergmann\\codecoverage\\node\\rawclasses',
+        8 => 'sebastianbergmann\\codecoverage\\node\\rawtraits',
+        9 => 'sebastianbergmann\\codecoverage\\node\\classes',
+        10 => 'sebastianbergmann\\codecoverage\\node\\traits',
+        11 => 'sebastianbergmann\\codecoverage\\node\\functions',
+        12 => 'sebastianbergmann\\codecoverage\\node\\linesofcode',
+        13 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablelines',
+        14 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedlines',
+        15 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedlinesbytestsize',
+        16 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablebranches',
+        17 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedbranches',
+        18 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutablepaths',
+        19 => 'sebastianbergmann\\codecoverage\\node\\numberofexecutedpaths',
+        20 => 'sebastianbergmann\\codecoverage\\node\\hasbranchcoveragedata',
+        21 => 'sebastianbergmann\\codecoverage\\node\\collectshitcounts',
+        22 => 'sebastianbergmann\\codecoverage\\node\\numberoffileswithoutbranchcoveragedata',
+        23 => 'sebastianbergmann\\codecoverage\\node\\numberofclasses',
+        24 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedclasses',
+        25 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedclassesbytestsize',
+        26 => 'sebastianbergmann\\codecoverage\\node\\numberoftraits',
+        27 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedtraits',
+        28 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedtraitsbytestsize',
+        29 => 'sebastianbergmann\\codecoverage\\node\\numberofmethods',
+        30 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedmethods',
+        31 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedmethodsbytestsize',
+        32 => 'sebastianbergmann\\codecoverage\\node\\numberoffunctions',
+        33 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedfunctions',
+        34 => 'sebastianbergmann\\codecoverage\\node\\numberoftestedfunctionsbytestsize',
+        35 => 'sebastianbergmann\\codecoverage\\node\\calculatestatistics',
+        36 => 'sebastianbergmann\\codecoverage\\node\\processclasses',
+        37 => 'sebastianbergmann\\codecoverage\\node\\processtraits',
+        38 => 'sebastianbergmann\\codecoverage\\node\\processfunctions',
+        39 => 'sebastianbergmann\\codecoverage\\node\\newmethod',
       ),
       3 => 
       array (
@@ -815,7 +825,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Node/Iterator.php' => 
     array (
-      0 => '621b257c395b97c9981b03176c708b206097189159b4bc0d756dee595ffa1800',
+      0 => '2086f021e959ce2b1e5b0bcad67999860f30c1678e8cf05dd925d34c5845dfc3',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\node\\iterator',
@@ -837,7 +847,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Clover.php' => 
     array (
-      0 => '76b5d6f645d56d21a3a09a0660c2a4fcaa1bc6e94123aee1f6c01f58ad1e01a8',
+      0 => 'ae9ffa25c84a8ed43edced41ead3a0079bf1c91367d70c92760e12e8eb3bab2d',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\clover',
@@ -852,7 +862,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Cobertura.php' => 
     array (
-      0 => '00df9376c02d23d25224032381ebb14de68a8deec41106d71247b1c63709acc7',
+      0 => '8d470cd90fcb19dece33560d4b9915088ab34bf2195507b394aee3796ff8a4b3',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\cobertura',
@@ -867,7 +877,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Crap4j.php' => 
     array (
-      0 => 'fdf255a68324424f3c9250c417217121fa97b9e84b98ef373e0f46e63f7563b3',
+      0 => '3f807fee938146a613773539df42eb8f53fe73697298e3e0e70d529dedad173a',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\crap4j',
@@ -885,7 +895,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/Colors.php' => 
     array (
-      0 => '15721015df302e5b499f835fb7b1564174fbd3bbf026fbf6cd0c5f3221a6ce37',
+      0 => 'fd5eb2dc41efe12d06d5d1912e90208c19aa3eb12bad285a5b558d68dfc7879c',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\html\\colors',
@@ -896,10 +906,23 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         1 => 'sebastianbergmann\\codecoverage\\report\\html\\from',
         2 => 'sebastianbergmann\\codecoverage\\report\\html\\__construct',
         3 => 'sebastianbergmann\\codecoverage\\report\\html\\successlow',
-        4 => 'sebastianbergmann\\codecoverage\\report\\html\\successmedium',
-        5 => 'sebastianbergmann\\codecoverage\\report\\html\\successhigh',
-        6 => 'sebastianbergmann\\codecoverage\\report\\html\\warning',
-        7 => 'sebastianbergmann\\codecoverage\\report\\html\\danger',
+        4 => 'sebastianbergmann\\codecoverage\\report\\html\\successlowdark',
+        5 => 'sebastianbergmann\\codecoverage\\report\\html\\successmedium',
+        6 => 'sebastianbergmann\\codecoverage\\report\\html\\successmediumdark',
+        7 => 'sebastianbergmann\\codecoverage\\report\\html\\successhigh',
+        8 => 'sebastianbergmann\\codecoverage\\report\\html\\successhighdark',
+        9 => 'sebastianbergmann\\codecoverage\\report\\html\\successbar',
+        10 => 'sebastianbergmann\\codecoverage\\report\\html\\successbardark',
+        11 => 'sebastianbergmann\\codecoverage\\report\\html\\warning',
+        12 => 'sebastianbergmann\\codecoverage\\report\\html\\warningdark',
+        13 => 'sebastianbergmann\\codecoverage\\report\\html\\warningbar',
+        14 => 'sebastianbergmann\\codecoverage\\report\\html\\warningbardark',
+        15 => 'sebastianbergmann\\codecoverage\\report\\html\\danger',
+        16 => 'sebastianbergmann\\codecoverage\\report\\html\\dangerdark',
+        17 => 'sebastianbergmann\\codecoverage\\report\\html\\dangerbar',
+        18 => 'sebastianbergmann\\codecoverage\\report\\html\\dangerbardark',
+        19 => 'sebastianbergmann\\codecoverage\\report\\html\\breadcrumbs',
+        20 => 'sebastianbergmann\\codecoverage\\report\\html\\breadcrumbsdark',
       ),
       3 => 
       array (
@@ -907,7 +930,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/CustomCssFile.php' => 
     array (
-      0 => '719d9b68ea77c102365892c8fbca1a30c527a8c308276bcc03b9efde700fb04f',
+      0 => '2e54ed357fd806e6c1f51953b3d6205bedc62a56118e44834991558ff2d98bff',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\html\\customcssfile',
@@ -925,7 +948,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/Facade.php' => 
     array (
-      0 => '9b688176ef303a736a9ed0d6374bf3d686338c24451bfc19063bd083b216db2b',
+      0 => 'c5e7c1fad2ca26383b9a89b0e5d8f6ff174dd5288795207b0ff5e281ee8efa71',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\html\\facade',
@@ -934,9 +957,13 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\html\\__construct',
         1 => 'sebastianbergmann\\codecoverage\\report\\html\\process',
-        2 => 'sebastianbergmann\\codecoverage\\report\\html\\copyfiles',
-        3 => 'sebastianbergmann\\codecoverage\\report\\html\\rendercss',
-        4 => 'sebastianbergmann\\codecoverage\\report\\html\\directory',
+        2 => 'sebastianbergmann\\codecoverage\\report\\html\\testsizes',
+        3 => 'sebastianbergmann\\codecoverage\\report\\html\\renderfileview',
+        4 => 'sebastianbergmann\\codecoverage\\report\\html\\renderclassview',
+        5 => 'sebastianbergmann\\codecoverage\\report\\html\\buildfiletoclassmap',
+        6 => 'sebastianbergmann\\codecoverage\\report\\html\\copyfiles',
+        7 => 'sebastianbergmann\\codecoverage\\report\\html\\rendercss',
+        8 => 'sebastianbergmann\\codecoverage\\report\\html\\directory',
       ),
       3 => 
       array (
@@ -944,7 +971,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/Renderer.php' => 
     array (
-      0 => '8cd487de49f00246e8fcb43167288486a1c0917e8fb17fec92cbd4e76fc1d246',
+      0 => '4114fb402c71b6ab9a985852eb3f85a9b16a00290ffe916a40bf91ff147a3b1f',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\html\\renderer',
@@ -952,16 +979,35 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\html\\__construct',
-        1 => 'sebastianbergmann\\codecoverage\\report\\html\\renderitemtemplate',
-        2 => 'sebastianbergmann\\codecoverage\\report\\html\\setcommontemplatevariables',
-        3 => 'sebastianbergmann\\codecoverage\\report\\html\\escapehtml',
-        4 => 'sebastianbergmann\\codecoverage\\report\\html\\breadcrumbs',
-        5 => 'sebastianbergmann\\codecoverage\\report\\html\\activebreadcrumb',
-        6 => 'sebastianbergmann\\codecoverage\\report\\html\\inactivebreadcrumb',
-        7 => 'sebastianbergmann\\codecoverage\\report\\html\\pathtoroot',
-        8 => 'sebastianbergmann\\codecoverage\\report\\html\\coveragebar',
-        9 => 'sebastianbergmann\\codecoverage\\report\\html\\colorlevel',
-        10 => 'sebastianbergmann\\codecoverage\\report\\html\\runtimestring',
+        1 => 'sebastianbergmann\\codecoverage\\report\\html\\setfiletoclassmap',
+        2 => 'sebastianbergmann\\codecoverage\\report\\html\\template',
+        3 => 'sebastianbergmann\\codecoverage\\report\\html\\templatenamefortier',
+        4 => 'sebastianbergmann\\codecoverage\\report\\html\\renderitemtemplate',
+        5 => 'sebastianbergmann\\codecoverage\\report\\html\\rendersummary',
+        6 => 'sebastianbergmann\\codecoverage\\report\\html\\setcommontemplatevariables',
+        7 => 'sebastianbergmann\\codecoverage\\report\\html\\testsizefilter',
+        8 => 'sebastianbergmann\\codecoverage\\report\\html\\classviewtarget',
+        9 => 'sebastianbergmann\\codecoverage\\report\\html\\escapehtml',
+        10 => 'sebastianbergmann\\codecoverage\\report\\html\\viewswitcher',
+        11 => 'sebastianbergmann\\codecoverage\\report\\html\\breadcrumbs',
+        12 => 'sebastianbergmann\\codecoverage\\report\\html\\activebreadcrumb',
+        13 => 'sebastianbergmann\\codecoverage\\report\\html\\inactivebreadcrumb',
+        14 => 'sebastianbergmann\\codecoverage\\report\\html\\pathtoroot',
+        15 => 'sebastianbergmann\\codecoverage\\report\\html\\coveragebar',
+        16 => 'sebastianbergmann\\codecoverage\\report\\html\\thresholdslegend',
+        17 => 'sebastianbergmann\\codecoverage\\report\\html\\linecoveragelegend',
+        18 => 'sebastianbergmann\\codecoverage\\report\\html\\branchcoveragelegend',
+        19 => 'sebastianbergmann\\codecoverage\\report\\html\\colorlevel',
+        20 => 'sebastianbergmann\\codecoverage\\report\\html\\buildcoveragedatajson',
+        21 => 'sebastianbergmann\\codecoverage\\report\\html\\coveragedatajsonfor',
+        22 => 'sebastianbergmann\\codecoverage\\report\\html\\coveragedatajsonforclassnode',
+        23 => 'sebastianbergmann\\codecoverage\\report\\html\\coveragedatajsonforfunctionormethod',
+        24 => 'sebastianbergmann\\codecoverage\\report\\html\\renderline',
+        25 => 'sebastianbergmann\\codecoverage\\report\\html\\popoverattributes',
+        26 => 'sebastianbergmann\\codecoverage\\report\\html\\createpopovercontentfortest',
+        27 => 'sebastianbergmann\\codecoverage\\report\\html\\runtimestring',
+        28 => 'sebastianbergmann\\codecoverage\\report\\html\\metrics',
+        29 => 'sebastianbergmann\\codecoverage\\report\\html\\metric',
       ),
       3 => 
       array (
@@ -969,7 +1015,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Dashboard.php' => 
     array (
-      0 => '057b9dd5ab31b754e139ed6dbac7cce18d6979f920780b754c357689754c4c71',
+      0 => 'e87d051c893b776ed7518bcb3456bad7441e5880281df4c2f32eee02be6b3c7b',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\html\\dashboard',
@@ -977,11 +1023,13 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\html\\render',
-        1 => 'sebastianbergmann\\codecoverage\\report\\html\\activebreadcrumb',
-        2 => 'sebastianbergmann\\codecoverage\\report\\html\\complexity',
-        3 => 'sebastianbergmann\\codecoverage\\report\\html\\coveragedistribution',
-        4 => 'sebastianbergmann\\codecoverage\\report\\html\\insufficientcoverage',
-        5 => 'sebastianbergmann\\codecoverage\\report\\html\\projectrisks',
+        1 => 'sebastianbergmann\\codecoverage\\report\\html\\classviewtarget',
+        2 => 'sebastianbergmann\\codecoverage\\report\\html\\activebreadcrumb',
+        3 => 'sebastianbergmann\\codecoverage\\report\\html\\classitems',
+        4 => 'sebastianbergmann\\codecoverage\\report\\html\\methoditems',
+        5 => 'sebastianbergmann\\codecoverage\\report\\html\\classcraptable',
+        6 => 'sebastianbergmann\\codecoverage\\report\\html\\methodcraptable',
+        7 => 'sebastianbergmann\\codecoverage\\report\\html\\craptable',
       ),
       3 => 
       array (
@@ -989,7 +1037,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Directory.php' => 
     array (
-      0 => '50b0bd5241cce0504c1a48aa003dd79626e596c206d093a8492ed808ec300f91',
+      0 => '46cd19258f9168c5ba71eae186f735660fb2b6aa5d27decc93edd0e229031ab0',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\html\\directory',
@@ -997,7 +1045,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\html\\render',
-        1 => 'sebastianbergmann\\codecoverage\\report\\html\\renderitem',
+        1 => 'sebastianbergmann\\codecoverage\\report\\html\\itemdata',
+        2 => 'sebastianbergmann\\codecoverage\\report\\html\\renderitem',
       ),
       3 => 
       array (
@@ -1005,7 +1054,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/File.php' => 
     array (
-      0 => '9e38e76b5e52eda9c10e13f842c7e71b4d8530c2c1093a543c34fd3a835a3472',
+      0 => '8e357253e3c27a5781df8855ce2f558b9e296cc9ceaf1ac23234e8e1d2f13412',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\html\\file',
@@ -1013,25 +1062,24 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\html\\render',
-        1 => 'sebastianbergmann\\codecoverage\\report\\html\\renderitems',
-        2 => 'sebastianbergmann\\codecoverage\\report\\html\\rendertraitorclassitems',
-        3 => 'sebastianbergmann\\codecoverage\\report\\html\\renderfunctionitems',
-        4 => 'sebastianbergmann\\codecoverage\\report\\html\\renderfunctionormethoditem',
-        5 => 'sebastianbergmann\\codecoverage\\report\\html\\rendersourcewithlinecoverage',
-        6 => 'sebastianbergmann\\codecoverage\\report\\html\\rendersourcewithbranchcoverage',
-        7 => 'sebastianbergmann\\codecoverage\\report\\html\\rendersourcewithpathcoverage',
-        8 => 'sebastianbergmann\\codecoverage\\report\\html\\renderbranchstructure',
-        9 => 'sebastianbergmann\\codecoverage\\report\\html\\renderbranchlines',
-        10 => 'sebastianbergmann\\codecoverage\\report\\html\\renderpathstructure',
-        11 => 'sebastianbergmann\\codecoverage\\report\\html\\renderpathlines',
-        12 => 'sebastianbergmann\\codecoverage\\report\\html\\renderline',
-        13 => 'sebastianbergmann\\codecoverage\\report\\html\\loadfile',
-        14 => 'sebastianbergmann\\codecoverage\\report\\html\\abbreviateclassname',
-        15 => 'sebastianbergmann\\codecoverage\\report\\html\\abbreviatemethodname',
-        16 => 'sebastianbergmann\\codecoverage\\report\\html\\createpopovercontentfortest',
-        17 => 'sebastianbergmann\\codecoverage\\report\\html\\iscomment',
-        18 => 'sebastianbergmann\\codecoverage\\report\\html\\isinlinehtml',
-        19 => 'sebastianbergmann\\codecoverage\\report\\html\\iskeyword',
+        1 => 'sebastianbergmann\\codecoverage\\report\\html\\nodedata',
+        2 => 'sebastianbergmann\\codecoverage\\report\\html\\renderitems',
+        3 => 'sebastianbergmann\\codecoverage\\report\\html\\rendertraitorclassitems',
+        4 => 'sebastianbergmann\\codecoverage\\report\\html\\renderfunctionitems',
+        5 => 'sebastianbergmann\\codecoverage\\report\\html\\renderfunctionormethoditem',
+        6 => 'sebastianbergmann\\codecoverage\\report\\html\\coveragedatajsonforclassortrait',
+        7 => 'sebastianbergmann\\codecoverage\\report\\html\\highlightedsourcefor',
+        8 => 'sebastianbergmann\\codecoverage\\report\\html\\rendersourcewithlinecoverage',
+        9 => 'sebastianbergmann\\codecoverage\\report\\html\\renderviewtabs',
+        10 => 'sebastianbergmann\\codecoverage\\report\\html\\rendersourcewithbranchcoverage',
+        11 => 'sebastianbergmann\\codecoverage\\report\\html\\rendersourcewithpathcoverage',
+        12 => 'sebastianbergmann\\codecoverage\\report\\html\\renderbranchstructure',
+        13 => 'sebastianbergmann\\codecoverage\\report\\html\\renderpathstructure',
+        14 => 'sebastianbergmann\\codecoverage\\report\\html\\controlflowgraph',
+        15 => 'sebastianbergmann\\codecoverage\\report\\html\\sortedbystartline',
+        16 => 'sebastianbergmann\\codecoverage\\report\\html\\abbreviateclassname',
+        17 => 'sebastianbergmann\\codecoverage\\report\\html\\abbreviatemethodname',
+        18 => 'sebastianbergmann\\codecoverage\\report\\html\\startline',
       ),
       3 => 
       array (
@@ -1039,7 +1087,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/OpenClover.php' => 
     array (
-      0 => '902dc31ce5b1f28d0d9f00aecd5d56dc4a8a048038582bec27e876db40d4e811',
+      0 => 'd6f96d75b7f6f8cc8348ef4413d285994d06ad453516996c1d0f66eba081f914',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\openclover',
@@ -1052,24 +1100,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/PHP.php' => 
-    array (
-      0 => '9cc2a534b8122f0774ec742e810972f719154b5779330572824496785194f20b',
-      1 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\report\\php',
-      ),
-      2 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\report\\process',
-      ),
-      3 => 
-      array (
-      ),
-    ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Text.php' => 
     array (
-      0 => 'e2f7b97615393b569fb0435f5ef5d2736cfd0892b716a963431350f40248e563',
+      0 => '1e1cefcde0259a97f28e277ae732943d9b7a078aeca4cfafcbf0d4a803e04da0',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\text',
@@ -1088,7 +1121,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Thresholds.php' => 
     array (
-      0 => 'a72cf1745557ecd1a08d2cbb9abb81b9a592b068e48f7da275297d3b027714cd',
+      0 => 'd75c824dc6e1091cfc585a9144a516cc011456664bfac0b65945ece9db080a3f',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\thresholds',
@@ -1107,7 +1140,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Xml/BuildInformation.php' => 
     array (
-      0 => 'a51046cc02a6f7a1ffeb76430ecdd98f1fda0afbbdec8db4ef2a0f499582dba4',
+      0 => '87bc9438aff1a90d5a739233bd1257cc1605abc9b3767dcfbd217ac9225f89cf',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\xml\\buildinformation',
@@ -1122,7 +1155,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Xml/Coverage.php' => 
     array (
-      0 => '64f85c27effafd23ec8488f7ca5a63b136ecbb01292dcfc180a3f7f69ff5cd83',
+      0 => '9da3b66eb3c0760122e1656e557ec0b47a67dc490536519b2e8f4afd607b85bc',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\xml\\coverage',
@@ -1138,7 +1171,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Xml/Directory.php' => 
     array (
-      0 => '094e817c03cbf6183fc80770aa6b454705ca600c8583acce5bc1265062cc2b90',
+      0 => 'e773bdced3a0ecee0cdbf947ae78b5b9d73e3cb6bceeee04659a2f577955f218',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\xml\\directory',
@@ -1152,7 +1185,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Xml/Facade.php' => 
     array (
-      0 => '3324ae5f9721f2171b631db2be1e51dcea337d52a213c67d58a32b5044d5c672',
+      0 => '64bdfbcfd031a0dc0ab312b8696a2f1b45dbbd24cfc000985993f94c7db88d8f',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\xml\\facade',
@@ -1178,7 +1211,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Xml/File.php' => 
     array (
-      0 => '159e230a52a6b0961f3827e677e13a48a9fc9a0246ae582030665b4ca94faf4b',
+      0 => 'd8e838a2fd87f4fc4a0cc96feb2ac445bd218c7a9cce7a81e1782fb264a01533',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\xml\\file',
@@ -1196,7 +1229,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Xml/Method.php' => 
     array (
-      0 => 'fc8fd80f99a46cf2567698622772df7ca0482bb8f2cd7dc8edfae3fe6d2240e0',
+      0 => 'b0107e5e2b2964d2964fce27b77332f594f987c5079931cb969dc1f1cd062922',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\xml\\method',
@@ -1211,7 +1244,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Xml/Node.php' => 
     array (
-      0 => '6da5f5cf8f4e9cb4e6c79017ef48903773f13056f5b4742a061a1e2aa9b21560',
+      0 => 'b9fef552f22cd9ae8ac067d6aad738afd97b04ba0bf030a97876dd6630b08eda',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\xml\\node',
@@ -1230,7 +1263,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Xml/Project.php' => 
     array (
-      0 => '013fa9a398d4a25425a9cac293a46427d3659f3c82b40a8e66dd38b5fd3f52e6',
+      0 => '5a69ac1cc156aa5fc2db2c749b6edc48d5d0fe2cb38e0d0730cbfc18369c1f99',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\xml\\project',
@@ -1251,7 +1284,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Xml/Report.php' => 
     array (
-      0 => 'be32342657f52df8ecaf11dfed12e09aea16e9e9e44255c26aa5cf2ba1318933',
+      0 => '0504dff074310e928f5c834a56cc462d1768252a63b2435a372de91bad8d176a',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\xml\\report',
@@ -1271,7 +1304,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Xml/Source.php' => 
     array (
-      0 => 'bb1b231168c346ce1200641b9df25307eb6a610e0b9c56737908b7fb4e15058c',
+      0 => 'd678a81ce2c0f5dc58ad1604a714bc2b68b036b838cd2821f830553c88f70c87',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\xml\\source',
@@ -1287,7 +1320,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Xml/Tests.php' => 
     array (
-      0 => '73b3e03cf438b8057f01df2ef9f5477c7bdf9ab73392af4b226fb3b2c1b8f5ca',
+      0 => '60f843d2f905de78002f624709e6c6b66cfdd2075f91f99bfbaadc8936cda55f',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\xml\\tests',
@@ -1303,7 +1336,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Xml/Totals.php' => 
     array (
-      0 => '5d1124787671ad518032dc4301fbddc6328497035795f4fc31bc048e261938cb',
+      0 => '54e7b05ffed4421e3ef74417f1a1bc1969d0a7227adf5d81e1f86f17e4a4652e',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\xml\\totals',
@@ -1324,7 +1357,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Xml/Unit.php' => 
     array (
-      0 => '39eb1314d063d2e46bd2709c3cda20a6072c3f154236061a05be368fd5b09c4c',
+      0 => '07b610c73f54e7acd3fdecd113c47221938dcb6062f6f4d53c1e1113833787ff',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\report\\xml\\unit',
@@ -1340,7 +1373,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/CacheWarmer.php' => 
     array (
-      0 => 'd9d6c28004c686f5d67ae615b4a80e5842a845ad6c029396f36e956529d6c551',
+      0 => '9bd9a2fc4a82f48c2a1d1c98eefd2390839a7e6fb238dcf6eadbda234527806a',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\cachewarmer',
@@ -1355,7 +1388,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/CachingSourceAnalyser.php' => 
     array (
-      0 => '878fce23a0791a41048f27649f4ace3459ad725a17daa3db1674c0a5dfee8cce',
+      0 => '4c61e6e650c94b494a0980cd823d124a8fff1b96ee8da2e1112481b97113ba3d',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\cachingsourceanalyser',
@@ -1376,7 +1409,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/FileAnalyser.php' => 
     array (
-      0 => 'bbde3436c94df68a25d021ceaf96f4895bb37b4d95e5ab1906b3823db0769adc',
+      0 => '348bc5741181d84ae162d1c71a5cdf19b6a4c8bd93f9ebf929dace6ac498dbee',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\fileanalyser',
@@ -1385,6 +1418,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\__construct',
         1 => 'sebastianbergmann\\codecoverage\\staticanalysis\\analyse',
+        2 => 'sebastianbergmann\\codecoverage\\staticanalysis\\parseerrors',
       ),
       3 => 
       array (
@@ -1392,15 +1426,17 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/ParsingSourceAnalyser.php' => 
     array (
-      0 => 'd4905323351aa4052141e1998167e929809e37f67fc2e1ac9dfb38da7ab14c61',
+      0 => 'f7686bde196becef826e469f98a3d5c7bc9e15460b3e560a1ca91c5411b221d8',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\parsingsourceanalyser',
       ),
       2 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\analyse',
-        1 => 'sebastianbergmann\\codecoverage\\staticanalysis\\findlinesignoredbylinebasedannotations',
+        0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\__construct',
+        1 => 'sebastianbergmann\\codecoverage\\staticanalysis\\analyse',
+        2 => 'sebastianbergmann\\codecoverage\\staticanalysis\\resultforfilethatcannotbeparsed',
+        3 => 'sebastianbergmann\\codecoverage\\staticanalysis\\findlinesignoredbylinebasedannotations',
       ),
       3 => 
       array (
@@ -1408,7 +1444,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/SourceAnalyser.php' => 
     array (
-      0 => 'd30c42c56fd0374fd23c5ea79dbfa7b11335e7f53da12ac08d86f681137f3846',
+      0 => '4a9d33a1d79175c8e042767c2e8697c34be8be1d91715f3c268a8e11d97485b5',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\sourceanalyser',
@@ -1423,7 +1459,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/Value/AnalysisResult.php' => 
     array (
-      0 => '970f695d0799dc0ff8f281f77814dbde84d9cf2e61ad42d192da32246be42964',
+      0 => '47457860b07435f0c60c4dcddc3ffa75fbdbc26093872af9d956e7df58594489',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\analysisresult',
@@ -1437,7 +1473,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         4 => 'sebastianbergmann\\codecoverage\\staticanalysis\\functions',
         5 => 'sebastianbergmann\\codecoverage\\staticanalysis\\linesofcode',
         6 => 'sebastianbergmann\\codecoverage\\staticanalysis\\executablelines',
-        7 => 'sebastianbergmann\\codecoverage\\staticanalysis\\ignoredlines',
+        7 => 'sebastianbergmann\\codecoverage\\staticanalysis\\branchoperatorlines',
+        8 => 'sebastianbergmann\\codecoverage\\staticanalysis\\deadlines',
+        9 => 'sebastianbergmann\\codecoverage\\staticanalysis\\ignoredlines',
+        10 => 'sebastianbergmann\\codecoverage\\staticanalysis\\wasparsed',
+        11 => 'sebastianbergmann\\codecoverage\\staticanalysis\\parseerror',
       ),
       3 => 
       array (
@@ -1445,7 +1485,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/Value/Class_.php' => 
     array (
-      0 => '62fcf44eafd2aba3e46975743297f94ce0f8634701e2c069b4cb7badd330acb4',
+      0 => '459fe2e77e0bae09ff4b1c6a6e35f084cae7d290b1dcc9a9d14ca903990d67bd',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\class_',
@@ -1472,7 +1512,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/Value/Function_.php' => 
     array (
-      0 => '6e33bd80b14392cb02e9bb22c3b6fab224673cc96cdb66ea3d662fca09219bbc',
+      0 => 'c5eafe03722ce00357bfdc278b76f373312a702e5dda7efcf3d32624f2c6465a',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\function_',
@@ -1495,7 +1535,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/Value/Interface_.php' => 
     array (
-      0 => 'b7972076a937cbed0880258c43925a491bb664ab17c3b223231d9864559227b4',
+      0 => 'b0eb0840df638e51cdee6393a1f84fbf10b7e41aed1b8affe25f0f822940eb0d',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\interface_',
@@ -1517,7 +1557,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/Value/LinesOfCode.php' => 
     array (
-      0 => 'c146bb36dc51436c8636eb46dc2a52b6bf8158bd3706ce8e044bd9a5d25e9e5c',
+      0 => '7e48ddca9816a7f24fc0b41b2edbe53cdb4828f3a15295ede98892e2b16ed579',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\linesofcode',
@@ -1535,7 +1575,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/Value/Method.php' => 
     array (
-      0 => 'a541006be056b645b48d5d08ecfaeed2089da366c29739dddafb8dd281f2256e',
+      0 => 'b54e633353bc43a4e5edeaaeaee6135c456fb6f1c5c1e4d143e8fee2ea6e480a',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\method',
@@ -1556,7 +1596,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/Value/Trait_.php' => 
     array (
-      0 => '62eaf1cc63b5f88a9f4a6a0dbca026df01d3ba6b7f408db0d27e5e9768990b69',
+      0 => 'aef7ad195546831e3df329909ad49c4a9bb605d1be5f28e63069cc3bafed7193',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\trait_',
@@ -1580,7 +1620,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/Value/Visibility.php' => 
     array (
-      0 => '0b051fb10fc7e619940e778d8e2c1a1c505f2f4e5aeb16ed6f0514942260bdb6',
+      0 => 'e522cbeaff94440e16d5d8f932e5e3ca51426d9a387e2aeb81fbc6d1303f56b1',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\visibility',
@@ -1594,7 +1634,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/Visitor/AttributeParentConnectingVisitor.php' => 
     array (
-      0 => '60382a9ff8e5147e23599ceb6373aed8bcd843cb5c8f53cf5949f2247b1e7971',
+      0 => '24058dead97cdd9c455bd658868c01621de555c0b6c8e01d409b798bd21d3f35',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\attributeparentconnectingvisitor',
@@ -1612,7 +1652,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/Visitor/CodeUnitFindingVisitor.php' => 
     array (
-      0 => 'f85981b0fe95fc79e235810843bc63095f6e2b8ecc9cf81d38dee8cd09ab194a',
+      0 => 'a5ae1915f2b28ef4ce98019eaacf269a71b8fc76e1b2844151026707edcd704c',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\codeunitfindingvisitor',
@@ -1633,13 +1673,16 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         11 => 'sebastianbergmann\\codecoverage\\staticanalysis\\processinterface',
         12 => 'sebastianbergmann\\codecoverage\\staticanalysis\\processclass',
         13 => 'sebastianbergmann\\codecoverage\\staticanalysis\\processtrait',
-        14 => 'sebastianbergmann\\codecoverage\\staticanalysis\\processmethods',
-        15 => 'sebastianbergmann\\codecoverage\\staticanalysis\\processfunction',
-        16 => 'sebastianbergmann\\codecoverage\\staticanalysis\\namespace',
-        17 => 'sebastianbergmann\\codecoverage\\staticanalysis\\uniontypeasstring',
-        18 => 'sebastianbergmann\\codecoverage\\staticanalysis\\intersectiontypeasstring',
-        19 => 'sebastianbergmann\\codecoverage\\staticanalysis\\typeasstring',
-        20 => 'sebastianbergmann\\codecoverage\\staticanalysis\\postprocessclassortrait',
+        14 => 'sebastianbergmann\\codecoverage\\staticanalysis\\traituses',
+        15 => 'sebastianbergmann\\codecoverage\\staticanalysis\\processmethods',
+        16 => 'sebastianbergmann\\codecoverage\\staticanalysis\\processfunction',
+        17 => 'sebastianbergmann\\codecoverage\\staticanalysis\\startline',
+        18 => 'sebastianbergmann\\codecoverage\\staticanalysis\\endline',
+        19 => 'sebastianbergmann\\codecoverage\\staticanalysis\\namespace',
+        20 => 'sebastianbergmann\\codecoverage\\staticanalysis\\uniontypeasstring',
+        21 => 'sebastianbergmann\\codecoverage\\staticanalysis\\intersectiontypeasstring',
+        22 => 'sebastianbergmann\\codecoverage\\staticanalysis\\typeasstring',
+        23 => 'sebastianbergmann\\codecoverage\\staticanalysis\\settraits',
       ),
       3 => 
       array (
@@ -1647,7 +1690,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/Visitor/ExecutableLinesFindingVisitor.php' => 
     array (
-      0 => '1db22da3e24a90b5db71fa12d07382177e24a7b39985a2f70b439e7b6c9cf6d3',
+      0 => 'd8f6368ebd8dbf17d221530a1b80919a441d0f155e634b10d410375891215f73',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\executablelinesfindingvisitor',
@@ -1656,9 +1699,31 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\__construct',
         1 => 'sebastianbergmann\\codecoverage\\staticanalysis\\enternode',
-        2 => 'sebastianbergmann\\codecoverage\\staticanalysis\\aftertraverse',
-        3 => 'sebastianbergmann\\codecoverage\\staticanalysis\\executablelinesgroupedbybranch',
-        4 => 'sebastianbergmann\\codecoverage\\staticanalysis\\setlinebranch',
+        2 => 'sebastianbergmann\\codecoverage\\staticanalysis\\leavenode',
+        3 => 'sebastianbergmann\\codecoverage\\staticanalysis\\aftertraverse',
+        4 => 'sebastianbergmann\\codecoverage\\staticanalysis\\executablelinesgroupedbybranch',
+        5 => 'sebastianbergmann\\codecoverage\\staticanalysis\\branchoperatorlines',
+        6 => 'sebastianbergmann\\codecoverage\\staticanalysis\\collectmatchingcomments',
+        7 => 'sebastianbergmann\\codecoverage\\staticanalysis\\stripmultilinestringinterior',
+        8 => 'sebastianbergmann\\codecoverage\\staticanalysis\\isalwaysignored',
+        9 => 'sebastianbergmann\\codecoverage\\staticanalysis\\entermatch',
+        10 => 'sebastianbergmann\\codecoverage\\staticanalysis\\entercallableorclasslike',
+        11 => 'sebastianbergmann\\codecoverage\\staticanalysis\\linesprotectedfromclassbodyunset',
+        12 => 'sebastianbergmann\\codecoverage\\staticanalysis\\enterpropertyhook',
+        13 => 'sebastianbergmann\\codecoverage\\staticanalysis\\enterarrowfunction',
+        14 => 'sebastianbergmann\\codecoverage\\staticanalysis\\enterternary',
+        15 => 'sebastianbergmann\\codecoverage\\staticanalysis\\entercoalesce',
+        16 => 'sebastianbergmann\\codecoverage\\staticanalysis\\enterconditional',
+        17 => 'sebastianbergmann\\codecoverage\\staticanalysis\\entercase',
+        18 => 'sebastianbergmann\\codecoverage\\staticanalysis\\enterfor',
+        19 => 'sebastianbergmann\\codecoverage\\staticanalysis\\entercatch',
+        20 => 'sebastianbergmann\\codecoverage\\staticanalysis\\enterdefault',
+        21 => 'sebastianbergmann\\codecoverage\\staticanalysis\\markparameterlinesforunset',
+        22 => 'sebastianbergmann\\codecoverage\\staticanalysis\\markrangeforunset',
+        23 => 'sebastianbergmann\\codecoverage\\staticanalysis\\setlinebranch',
+        24 => 'sebastianbergmann\\codecoverage\\staticanalysis\\matchconditionhasnoopcode',
+        25 => 'sebastianbergmann\\codecoverage\\staticanalysis\\issideeffectfreeexpressionstatement',
+        26 => 'sebastianbergmann\\codecoverage\\staticanalysis\\stripblankandcommentonlylines',
       ),
       3 => 
       array (
@@ -1666,7 +1731,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/Visitor/IgnoredLinesFindingVisitor.php' => 
     array (
-      0 => 'b5353ee78f26d55cff6c36128c5496bbc784a3eab057b5f457eccde7b01fec70',
+      0 => '053cea65e751cf94fcbfdbf9ef63058128484bea119507c54923a93f4104cb99',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\ignoredlinesfindingvisitor',
@@ -1682,9 +1747,765 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/Class_.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Util/Filesystem.php' => 
     array (
-      0 => 'e4ebf4b49ad97fc8f7b73dc1c9ddcc9bc17c6668fb70093207748bf666a9e616',
+      0 => '740f2859e1af073f5266da46ae24cd9499cf004c8540c89f3d0a54e128d0ca7c',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\util\\filesystem',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\util\\createdirectory',
+        1 => 'sebastianbergmann\\codecoverage\\util\\write',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Util/Percentage.php' => 
+    array (
+      0 => 'af12ad51040195cdb49d9a7ad55e41efc20540c2363164e77bc17f3364d17ae1',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\util\\percentage',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\util\\fromfractionandtotal',
+        1 => 'sebastianbergmann\\codecoverage\\util\\__construct',
+        2 => 'sebastianbergmann\\codecoverage\\util\\asfloat',
+        3 => 'sebastianbergmann\\codecoverage\\util\\asstring',
+        4 => 'sebastianbergmann\\codecoverage\\util\\asstringwithoutpercentsign',
+        5 => 'sebastianbergmann\\codecoverage\\util\\asfixedwidthstring',
+        6 => 'sebastianbergmann\\codecoverage\\util\\asfloatroundedtowardszero',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Util/Xml.php' => 
+    array (
+      0 => 'e8029b361eb18cd75c167b459fa1dbe061a35e8c2e51f6ab11a05a6c1a20e7f0',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\util\\xml',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\util\\asstring',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Version.php' => 
+    array (
+      0 => 'a20ed0bfa7a4cda73e582506fff1a023cc0031610436847c0a0d0571c3fdea03',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\version',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\id',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Data/HitMap.php' => 
+    array (
+      0 => '1d579d7c671c0c26c021a5df3af538bbb8c123d652afd46dea7cae17c316339d',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\data\\hitmap',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\data\\merge',
+        1 => 'sebastianbergmann\\codecoverage\\data\\withremappedtestindexes',
+        2 => 'sebastianbergmann\\codecoverage\\data\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Driver/Granularity.php' => 
+    array (
+      0 => '4ca355f8acfe597fece2de1be76ec21b7d675486f0b5dc337b028e3ed8b1f106',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\driver\\granularity',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/BranchCoverageNotSupportedException.php' => 
+    array (
+      0 => 'c256e1e1d81ade754d804049ccd428f080913d5ca28469fbbe12643124653d22',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\branchcoveragenotsupportedexception',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/DriverMismatchException.php' => 
+    array (
+      0 => '32d7525769745f26952d178f27e4193a62701c71880168f5814c010c9518c4d0',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\drivermismatchexception',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/EmptyPathListException.php' => 
+    array (
+      0 => '7e5b4ac9d291a86b07dc5008a26a5f2fda00a439c6938cffcce9d3ef757c69c1',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\emptypathlistexception',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeReadException.php' => 
+    array (
+      0 => '0bcabb6af31f14b21ed6449e78af9afaa33d6d01ae8172a8cd9a53a64b0a1040',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\filecouldnotbereadexception',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/GitInformationMismatchException.php' => 
+    array (
+      0 => '336d5c13b83bf360d3aa57cb4ec9be66dc2f583126a0438f166f2ee94f236518',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\gitinformationmismatchexception',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/InvalidCoverageDataException.php' => 
+    array (
+      0 => '810f7cb76daa81321fdf079f55280c4dd6f2e40a22902d4666956f8e150b51b1',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\invalidcoveragedataexception',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/MethodNotImplementedException.php' => 
+    array (
+      0 => 'c3db6a393af7b0c8c34808dc19c5684ce5e6899814077d4caef7646efdf01944',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\methodnotimplementedexception',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/MixedGitInformationException.php' => 
+    array (
+      0 => '469ebe09ad13b1f594c6023022089334d09d62fba4ca0407e2237927f0797d46',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\mixedgitinformationexception',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/NoSupportedDriverAvailableException.php' => 
+    array (
+      0 => 'b53bdec672dda154616e6ac8304e12fb9cd9109860a80a45059143ec84cb7e58',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\nosupporteddriveravailableexception',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/PathCoverageNotSupportedException.php' => 
+    array (
+      0 => '83abb57503093ba6d30d58c70a86d695147cd54574a6b7ebc1608905e5bbfde1',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\pathcoveragenotsupportedexception',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/PharPrefixCouldNotBeStrippedException.php' => 
+    array (
+      0 => '4590a17fccfe3f33ee0af19fe77aa97e0b0a4eeb1a96b7003eddf1c53841c8ea',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\pharprefixcouldnotbestrippedexception',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/RuntimeMismatchException.php' => 
+    array (
+      0 => '62bdfb6302f9fdd7b5e7d1c2a46a6f4b5ab6250c83696a9be1aba6f97f44b6ef',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\runtimemismatchexception',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Exception/VersionMismatchException.php' => 
+    array (
+      0 => '39638acded1b778b9bd28a94a1eb83eee7b08b43ddeb1dec2460da5850ae3a2c',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\versionmismatchexception',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/FilterProcessor.php' => 
+    array (
+      0 => 'ff763b18c378c45454dddda63d287f99ce16f369d7295ba2e5f0d9c1a9f831a1',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\filterprocessor',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\applycoversandusesfilter',
+        1 => 'sebastianbergmann\\codecoverage\\applyfilter',
+        2 => 'sebastianbergmann\\codecoverage\\applyexecutablelinesfilter',
+        3 => 'sebastianbergmann\\codecoverage\\applyignoredlinesfilter',
+        4 => 'sebastianbergmann\\codecoverage\\uncoveredfilesfromfilter',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Node/FileCoverageData.php' => 
+    array (
+      0 => '42dd014126c07ed230f68fe92ce60fab1a406f35f5c6977b4e104d6b1307ba07',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\node\\filecoveragedata',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\node\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Facade.php' => 
+    array (
+      0 => '59f92d7869f07a5c173d0127e0c08587a7e4880a1e4e57f112d8eded7c557892',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\facade',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\fromobject',
+        1 => 'sebastianbergmann\\codecoverage\\report\\fromserializeddata',
+        2 => 'sebastianbergmann\\codecoverage\\report\\__construct',
+        3 => 'sebastianbergmann\\codecoverage\\report\\renderhtml',
+        4 => 'sebastianbergmann\\codecoverage\\report\\renderxml',
+        5 => 'sebastianbergmann\\codecoverage\\report\\renderclover',
+        6 => 'sebastianbergmann\\codecoverage\\report\\renderopenclover',
+        7 => 'sebastianbergmann\\codecoverage\\report\\rendercobertura',
+        8 => 'sebastianbergmann\\codecoverage\\report\\rendercrap4j',
+        9 => 'sebastianbergmann\\codecoverage\\report\\summary',
+        10 => 'sebastianbergmann\\codecoverage\\report\\rendertext',
+        11 => 'sebastianbergmann\\codecoverage\\report\\buildreport',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/ClassView/Builder.php' => 
+    array (
+      0 => '5f89ea02c597f8f9674e78370abd18aa661edb98a104d162edd3b4d2f97070f0',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\builder',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\build',
+        1 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\reduceroot',
+        2 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\collectregistries',
+        3 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\ensurenamespaceexists',
+        4 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\resolvetraits',
+        5 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\resolveparents',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/ClassView/Node/ClassNode.php' => 
+    array (
+      0 => 'ddfcf4b33664dfbb7b4d6e6e850d2acebb28761dc1f35b2b7cf51c53d2553bcd',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\classnode',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\__construct',
+        1 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\classname',
+        2 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\shortname',
+        3 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\namespace',
+        4 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\filepath',
+        5 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\startline',
+        6 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\endline',
+        7 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\class_',
+        8 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\filenode',
+        9 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\traitsections',
+        10 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\parentsections',
+        11 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\parent',
+        12 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\allmethods',
+        13 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofexecutablelines',
+        14 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofexecutedlines',
+        15 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofexecutedlinesbytestsize',
+        16 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofexecutablebranches',
+        17 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofexecutedbranches',
+        18 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofexecutablepaths',
+        19 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofexecutedpaths',
+        20 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofmethods',
+        21 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberoftestedmethods',
+        22 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberoftestedmethodsbytestsize',
+        23 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\percentageofexecutedlines',
+        24 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\percentageofexecutedbranches',
+        25 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\percentageofexecutedpaths',
+        26 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\percentageoftestedmethods',
+        27 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\percentageoftestedclasses',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/ClassView/Node/NamespaceNode.php' => 
+    array (
+      0 => '42da18f89c06134c1d42d5bdd8dda068607b89be5d5543ed8a8c7f27b93de347',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\namespacenode',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\__construct',
+        1 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\name',
+        2 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\namespace',
+        3 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\parent',
+        4 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\promotetoroot',
+        5 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\id',
+        6 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\pathasarray',
+        7 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\addnamespace',
+        8 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\addclass',
+        9 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\childnamespaces',
+        10 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\classes',
+        11 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofexecutablelines',
+        12 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofexecutedlines',
+        13 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofexecutedlinesbytestsize',
+        14 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofexecutablebranches',
+        15 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofexecutedbranches',
+        16 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofexecutablepaths',
+        17 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofexecutedpaths',
+        18 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofclasses',
+        19 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberoftestedclasses',
+        20 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberoftestedclassesbytestsize',
+        21 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberofmethods',
+        22 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberoftestedmethods',
+        23 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\numberoftestedmethodsbytestsize',
+        24 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\percentageofexecutedlines',
+        25 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\percentageofexecutedbranches',
+        26 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\percentageofexecutedpaths',
+        27 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\percentageoftestedmethods',
+        28 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\percentageoftestedclasses',
+        29 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\allclasstypes',
+        30 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\iterate',
+        31 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\classesinsubtree',
+        32 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\traitsinsubtree',
+        33 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\methodsinsubtree',
+        34 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\resetcounters',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/ClassView/Node/ParentSection.php' => 
+    array (
+      0 => '14a4e61f6f102b119f0607ab33d667d8cde0c43c1dbd7787735de49d4d432fcf',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\parentsection',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/ClassView/Node/TraitSection.php' => 
+    array (
+      0 => '2daea257520c07236500f24a01ac3f25d726b68463a6cd8c592ef7c3332b89f6',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\traitsection',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\node\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/ClassView/Renderer/Class_.php' => 
+    array (
+      0 => '0530a23f4f3bfade22432ed73e758c2b7954bf15d360ad58e65524d953f784c2',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\class_',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\render',
+        1 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\setcommontemplatevariablesforclass',
+        2 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\breadcrumbsforclass',
+        3 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\nodedata',
+        4 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\renderitems',
+        5 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\rendermethoditem',
+        6 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\rendersourcesections',
+        7 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\rendersectionheader',
+        8 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\rendersourcesection',
+        9 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\pathtorootforclass',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/ClassView/Renderer/Dashboard.php' => 
+    array (
+      0 => '51f06befb2c23848c7f036c682bd2e01365eb4e3abc9650eaedc770e00d74057',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\dashboard',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\render',
+        1 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\setcommontemplatevariablesfornamespace',
+        2 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\breadcrumbsfordashboard',
+        3 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\classitems',
+        4 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\methoditems',
+        5 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\classcraptable',
+        6 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\methodcraptable',
+        7 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\methodlink',
+        8 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\classpagelinks',
+        9 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\craptable',
+        10 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\pathtorootfornamespace',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/ClassView/Renderer/Namespace_.php' => 
+    array (
+      0 => 'c9ba97f6b156d64629a06fcbe594e1c56ff68f0c6d455fcdfcd78edf081f9573',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\namespace_',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\render',
+        1 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\setcommontemplatevariablesfornamespace',
+        2 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\breadcrumbsfornamespace',
+        3 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\itemdata',
+        4 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\renderitem',
+        5 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\renderclassitem',
+        6 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\coveragedatajsonfornamespace',
+        7 => 'sebastianbergmann\\codecoverage\\report\\html\\classview\\renderer\\pathtorootfornamespace',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/ControlFlowGraph.php' => 
+    array (
+      0 => '58ea6203edfae09835947510435702a0f218ae1e4bcedc0ffd7f86cd753dd7f3',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\controlflowgraph',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\__construct',
+        1 => 'sebastianbergmann\\codecoverage\\report\\html\\rendersvg',
+        2 => 'sebastianbergmann\\codecoverage\\report\\html\\generatedot',
+        3 => 'sebastianbergmann\\codecoverage\\report\\html\\buildedgepathclasses',
+        4 => 'sebastianbergmann\\codecoverage\\report\\html\\dottosvg',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/BubbleChart.php' => 
+    array (
+      0 => '0704b3a67c39ff8b1f147be768d2d1a02eca0b78aee0e6090f7ecaa70379a0a5',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\bubblechart',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\__construct',
+        1 => 'sebastianbergmann\\codecoverage\\report\\html\\render',
+        2 => 'sebastianbergmann\\codecoverage\\report\\html\\colorlevel',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/SyntaxHighlighter.php' => 
+    array (
+      0 => '55f5068e76160e6ac56416a67d8eb93f267f7c9311016b00c5291c8c58d78b56',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\syntaxhighlighter',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\highlight',
+        1 => 'sebastianbergmann\\codecoverage\\report\\html\\iscomment',
+        2 => 'sebastianbergmann\\codecoverage\\report\\html\\isinlinehtml',
+        3 => 'sebastianbergmann\\codecoverage\\report\\html\\iskeyword',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Html/Views.php' => 
+    array (
+      0 => 'dfbf1f86465e9d12d248037d3e28ec7b590f78a3bbe1eb1668743400bc0001c0',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\views',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\html\\fileview',
+        1 => 'sebastianbergmann\\codecoverage\\report\\html\\classview',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Report/Summary.php' => 
+    array (
+      0 => '611554428f4897a1bff85b151d003076dd5c8fb2eff3c3f87f5b251d870f5434',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\summary',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\report\\__construct',
+        1 => 'sebastianbergmann\\codecoverage\\report\\numberofexecutablelines',
+        2 => 'sebastianbergmann\\codecoverage\\report\\numberofexecutedlines',
+        3 => 'sebastianbergmann\\codecoverage\\report\\linecoverageaspercentage',
+        4 => 'sebastianbergmann\\codecoverage\\report\\hasbranchandpathcoverage',
+        5 => 'sebastianbergmann\\codecoverage\\report\\numberofexecutablebranches',
+        6 => 'sebastianbergmann\\codecoverage\\report\\numberofexecutedbranches',
+        7 => 'sebastianbergmann\\codecoverage\\report\\branchcoverageaspercentage',
+        8 => 'sebastianbergmann\\codecoverage\\report\\numberofexecutablepaths',
+        9 => 'sebastianbergmann\\codecoverage\\report\\numberofexecutedpaths',
+        10 => 'sebastianbergmann\\codecoverage\\report\\pathcoverageaspercentage',
+        11 => 'sebastianbergmann\\codecoverage\\report\\numberoffileswithoutbranchcoveragedata',
+        12 => 'sebastianbergmann\\codecoverage\\report\\asstring',
+        13 => 'sebastianbergmann\\codecoverage\\report\\percentage',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Serialization/Merger.php' => 
+    array (
+      0 => '4653279b88556ebde5c1907ea07432fc4f0128ad65da6cfe1378de33821c68d1',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\merger',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\merge',
+        1 => 'sebastianbergmann\\codecoverage\\serialization\\assertphpversionmatches',
+        2 => 'sebastianbergmann\\codecoverage\\serialization\\assertdrivermatches',
+        3 => 'sebastianbergmann\\codecoverage\\serialization\\assertgitinformationmatches',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Serialization/Serializer.php' => 
+    array (
+      0 => 'd1e9af01248776eb7c5c7619d4cefb2361e9436b6112381e116c41f3c60e35f6',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\serializer',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\serialize',
+        1 => 'sebastianbergmann\\codecoverage\\serialization\\strippharprefix',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Serialization/Unserializer.php' => 
+    array (
+      0 => '4b9a851a2f97628dc64ddb15289b8998a97cf25b018f5910c42e9e81b1f996ab',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\unserializer',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\serialization\\unserialize',
+        1 => 'sebastianbergmann\\codecoverage\\serialization\\validate',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/Registry.php' => 
+    array (
+      0 => '1eae82e7e66bab522f55eb95649e9a50355c4bd943a850f4ba20f7cd6c0e9317',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\registry',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\analyser',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/StaticAnalysis/Visitor/DeadCodeFindingVisitor.php' => 
+    array (
+      0 => '94511e344e3d30277d05b2d2c0cd42db1417dc88a41d793baf545441776aae23',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\deadcodefindingvisitor',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\staticanalysis\\enternode',
+        1 => 'sebastianbergmann\\codecoverage\\staticanalysis\\deadlines',
+        2 => 'sebastianbergmann\\codecoverage\\staticanalysis\\handleif',
+        3 => 'sebastianbergmann\\codecoverage\\staticanalysis\\handleternary',
+        4 => 'sebastianbergmann\\codecoverage\\staticanalysis\\markstatementsafterterminator',
+        5 => 'sebastianbergmann\\codecoverage\\staticanalysis\\markblock',
+        6 => 'sebastianbergmann\\codecoverage\\staticanalysis\\markrange',
+        7 => 'sebastianbergmann\\codecoverage\\staticanalysis\\isterminator',
+        8 => 'sebastianbergmann\\codecoverage\\staticanalysis\\switchalwaysterminates',
+        9 => 'sebastianbergmann\\codecoverage\\staticanalysis\\expressionterminates',
+        10 => 'sebastianbergmann\\codecoverage\\staticanalysis\\infiniteloopterminates',
+        11 => 'sebastianbergmann\\codecoverage\\staticanalysis\\forloopsforever',
+        12 => 'sebastianbergmann\\codecoverage\\staticanalysis\\ifalwaysterminates',
+        13 => 'sebastianbergmann\\codecoverage\\staticanalysis\\alwaysterminates',
+        14 => 'sebastianbergmann\\codecoverage\\staticanalysis\\containslabel',
+        15 => 'sebastianbergmann\\codecoverage\\staticanalysis\\statementsof',
+        16 => 'sebastianbergmann\\codecoverage\\staticanalysis\\forbodyisunreachable',
+        17 => 'sebastianbergmann\\codecoverage\\staticanalysis\\isliteraltrue',
+        18 => 'sebastianbergmann\\codecoverage\\staticanalysis\\isliteralfalse',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/Class_.php' => 
+    array (
+      0 => '04aaef7d844f7e84891f615d35116d7bc452b68b556acd3236896e3d418ccf3e',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\test\\target\\class_',
@@ -1702,9 +2523,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/ClassesThatExtendClass.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/ClassesThatExtendClass.php' => 
     array (
-      0 => 'aa157b63e203ca3cb4d709439d95b7ee6c6a58742be3ad35792e003c8f9dc357',
+      0 => '423c5d669cadc45171ecf93e284b399aa1b80d23c83b7d709a9849ccef0286cc',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\test\\target\\classesthatextendclass',
@@ -1722,9 +2543,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/ClassesThatImplementInterface.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/ClassesThatImplementInterface.php' => 
     array (
-      0 => '8888741bd5ffa4e093f144236535b26a1c6805aa677f930b94de5bb25afb091e',
+      0 => '761bd31435e07ab40e648ab79d693ea30ccb58bfc1609aa293bf09bea11d8c23',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\test\\target\\classesthatimplementinterface',
@@ -1742,9 +2563,69 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/Function_.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/Directory.php' => 
     array (
-      0 => '4ab9ba6813ebfd28260ebb3c0b1193c1861b5531ab6b89f18e57ac33fe49abce',
+      0 => 'fbf06e9f8d0819f6ff9671dcad4018a3797f213f411b63c17d2f166913a9fa9a',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\test\\target\\directory',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\test\\target\\__construct',
+        1 => 'sebastianbergmann\\codecoverage\\test\\target\\isdirectory',
+        2 => 'sebastianbergmann\\codecoverage\\test\\target\\path',
+        3 => 'sebastianbergmann\\codecoverage\\test\\target\\key',
+        4 => 'sebastianbergmann\\codecoverage\\test\\target\\target',
+        5 => 'sebastianbergmann\\codecoverage\\test\\target\\description',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/DirectoryRecursively.php' => 
+    array (
+      0 => '60d50ece214834b10f09d7293ad3436f61b0b13fae76c231dd34d6198c835b68',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\test\\target\\directoryrecursively',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\test\\target\\__construct',
+        1 => 'sebastianbergmann\\codecoverage\\test\\target\\isdirectoryrecursively',
+        2 => 'sebastianbergmann\\codecoverage\\test\\target\\path',
+        3 => 'sebastianbergmann\\codecoverage\\test\\target\\key',
+        4 => 'sebastianbergmann\\codecoverage\\test\\target\\target',
+        5 => 'sebastianbergmann\\codecoverage\\test\\target\\description',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/File.php' => 
+    array (
+      0 => 'af8bdc8cce2c096b4916f16716e0db9544578b2969029219ca2d8e13e36421fa',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\test\\target\\file',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\codecoverage\\test\\target\\__construct',
+        1 => 'sebastianbergmann\\codecoverage\\test\\target\\isfile',
+        2 => 'sebastianbergmann\\codecoverage\\test\\target\\path',
+        3 => 'sebastianbergmann\\codecoverage\\test\\target\\key',
+        4 => 'sebastianbergmann\\codecoverage\\test\\target\\target',
+        5 => 'sebastianbergmann\\codecoverage\\test\\target\\description',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/Function_.php' => 
+    array (
+      0 => 'cda3c95390de4c45ff421534ee73059f748cfc8c5ee5a62dc4687aeb49fe3ba0',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\test\\target\\function_',
@@ -1762,9 +2643,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/MapBuilder.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/MapBuilder.php' => 
     array (
-      0 => '454099affe96ee70f56d3ab745c8532d71d4c330115075b36dd8c0e16140eee1',
+      0 => '72940f0242af16e640d7a204a36ca2a3956c9766d4f01328aa8dccef6e9ef9fb',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\test\\target\\mapbuilder',
@@ -1782,9 +2663,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/Mapper.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/Mapper.php' => 
     array (
-      0 => 'cba5196946411414a45c8f4700b46762a8482e0876773d043c73682aaeb80bce',
+      0 => 'dcce13997c68c83699f13211e0586553f1a88d22b47a1db6315c27f6c12e220e',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\test\\target\\mapper',
@@ -1800,9 +2681,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/Method.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/Method.php' => 
     array (
-      0 => 'a7bdfe9302297db253c37cb2afec13cd936bbe6a0cd2973e9743849ed40c7ec2',
+      0 => '411a5757ae269b0d90d960728c2f44c200f4d9a16b0e687a67413a13b50d970e',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\test\\target\\method',
@@ -1821,9 +2702,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/Namespace_.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/Namespace_.php' => 
     array (
-      0 => '103b5109f27ea7cc408647b9e1e6d8d94bf88e034e9573b54fa39087f84a5b78',
+      0 => 'ac582eef279e4e2358d14b066dcfeca97b299335866b8269b0cf1c53928d0bc7',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\test\\target\\namespace_',
@@ -1841,9 +2722,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/Target.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/Target.php' => 
     array (
-      0 => 'a8acf9a1787a4f66030a8d35ed19713c2ce610840b150164b813cb98944caab2',
+      0 => '6114598d4db53271d55cf37083333370255fb5cf501fbfb30874691faa668a62',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\test\\target\\target',
@@ -1857,22 +2738,28 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         4 => 'sebastianbergmann\\codecoverage\\test\\target\\forclassesthatextendclass',
         5 => 'sebastianbergmann\\codecoverage\\test\\target\\forfunction',
         6 => 'sebastianbergmann\\codecoverage\\test\\target\\fortrait',
-        7 => 'sebastianbergmann\\codecoverage\\test\\target\\isnamespace',
-        8 => 'sebastianbergmann\\codecoverage\\test\\target\\isclass',
-        9 => 'sebastianbergmann\\codecoverage\\test\\target\\ismethod',
-        10 => 'sebastianbergmann\\codecoverage\\test\\target\\isclassesthatimplementinterface',
-        11 => 'sebastianbergmann\\codecoverage\\test\\target\\isclassesthatextendclass',
-        12 => 'sebastianbergmann\\codecoverage\\test\\target\\isfunction',
-        13 => 'sebastianbergmann\\codecoverage\\test\\target\\istrait',
-        14 => 'sebastianbergmann\\codecoverage\\test\\target\\key',
-        15 => 'sebastianbergmann\\codecoverage\\test\\target\\target',
-        16 => 'sebastianbergmann\\codecoverage\\test\\target\\description',
+        7 => 'sebastianbergmann\\codecoverage\\test\\target\\forfile',
+        8 => 'sebastianbergmann\\codecoverage\\test\\target\\fordirectory',
+        9 => 'sebastianbergmann\\codecoverage\\test\\target\\fordirectoryrecursively',
+        10 => 'sebastianbergmann\\codecoverage\\test\\target\\isnamespace',
+        11 => 'sebastianbergmann\\codecoverage\\test\\target\\isclass',
+        12 => 'sebastianbergmann\\codecoverage\\test\\target\\ismethod',
+        13 => 'sebastianbergmann\\codecoverage\\test\\target\\isclassesthatimplementinterface',
+        14 => 'sebastianbergmann\\codecoverage\\test\\target\\isclassesthatextendclass',
+        15 => 'sebastianbergmann\\codecoverage\\test\\target\\isfunction',
+        16 => 'sebastianbergmann\\codecoverage\\test\\target\\istrait',
+        17 => 'sebastianbergmann\\codecoverage\\test\\target\\isfile',
+        18 => 'sebastianbergmann\\codecoverage\\test\\target\\isdirectory',
+        19 => 'sebastianbergmann\\codecoverage\\test\\target\\isdirectoryrecursively',
+        20 => 'sebastianbergmann\\codecoverage\\test\\target\\key',
+        21 => 'sebastianbergmann\\codecoverage\\test\\target\\target',
+        22 => 'sebastianbergmann\\codecoverage\\test\\target\\description',
       ),
       3 => 
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/TargetCollection.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/TargetCollection.php' => 
     array (
       0 => 'be0a20c7297f5e819665e2d160dab171382e17310cead04d3ff4ef9ffe120792',
       1 => 
@@ -1893,9 +2780,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/TargetCollectionIterator.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/TargetCollectionIterator.php' => 
     array (
-      0 => 'be0cea9cd4dbb55b7686acf09b5a94477b451f91c0f0061c69eac51491527808',
+      0 => '09b19611c885adbb63826e6f8553d9d054227913deb643afa259d11e33338737',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\test\\target\\targetcollectioniterator',
@@ -1913,7 +2800,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/TargetCollectionValidator.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/TargetCollectionValidator.php' => 
     array (
       0 => '846fde60381a87aafa257c809767d9d64073f6d4d001d1fb72fd27ba06efec30',
       1 => 
@@ -1928,9 +2815,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/Trait_.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/Trait_.php' => 
     array (
-      0 => '597c9650710baaf42fd0a46d51d455e6f5acb3a7e1df070b416c566929d40b3d',
+      0 => '61c6af6fd79cf8321bc9e37c2c7cdc3515f0a11beff13d436c91a40a8b679e15',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\test\\target\\trait_',
@@ -1948,7 +2835,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/ValidationFailure.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/ValidationFailure.php' => 
     array (
       0 => '04b6ff40e8786c8b024258f6af704a386b925b93234040830157b6879437dd27',
       1 => 
@@ -1965,7 +2852,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/ValidationResult.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/ValidationResult.php' => 
     array (
       0 => '1582f27fb29bcc9883cb2535790af448cd3d739c92aa8d0a7acd7a0366b9144e',
       1 => 
@@ -1983,7 +2870,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Target/ValidationSuccess.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/Target/ValidationSuccess.php' => 
     array (
       0 => '828ab6c367c017c51e1589fba8dbcd4a15cac4107435bfae733bbb10b103f387',
       1 => 
@@ -1998,258 +2885,142 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/TestSize/Known.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/TestSize.php' => 
     array (
-      0 => 'dacc8a1d062b9c3854e5e3449c792a77e3c1a4dc6638d961471833858369a09e',
+      0 => 'ff9167aef6c43d22afbfaf044823dac243d0e89b17459d393b2af86a71786d0e',
       1 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\testsize\\known',
+        0 => 'sebastianbergmann\\codecoverage\\test\\testsize',
       ),
       2 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\testsize\\isknown',
-        1 => 'sebastianbergmann\\codecoverage\\test\\testsize\\isgreaterthan',
+        0 => 'sebastianbergmann\\codecoverage\\test\\isknown',
+        1 => 'sebastianbergmann\\codecoverage\\test\\isunknown',
+        2 => 'sebastianbergmann\\codecoverage\\test\\issmall',
+        3 => 'sebastianbergmann\\codecoverage\\test\\ismedium',
+        4 => 'sebastianbergmann\\codecoverage\\test\\islarge',
+        5 => 'sebastianbergmann\\codecoverage\\test\\isgreaterthan',
+        6 => 'sebastianbergmann\\codecoverage\\test\\asstring',
+        7 => 'sebastianbergmann\\codecoverage\\test\\order',
       ),
       3 => 
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/TestSize/Large.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/TestSizes.php' => 
     array (
-      0 => '10a27a5de44d878451c9587f4a3c8235b0926a2dc07ca21f04d0229717ddcc81',
+      0 => 'a7cdea7037beb5baea928cbf4b81c226616f36987bf67599973b53cfccce9f0d',
       1 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\testsize\\large',
+        0 => 'sebastianbergmann\\codecoverage\\test\\testsizes',
       ),
       2 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\testsize\\islarge',
-        1 => 'sebastianbergmann\\codecoverage\\test\\testsize\\isgreaterthan',
-        2 => 'sebastianbergmann\\codecoverage\\test\\testsize\\asstring',
+        0 => 'sebastianbergmann\\codecoverage\\test\\bitfor',
+        1 => 'sebastianbergmann\\codecoverage\\test\\__construct',
       ),
       3 => 
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/TestSize/Medium.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Test/TestStatus.php' => 
     array (
-      0 => 'e948a6e8dce720a014275db6167e926488baa1d297e5855bbc3afb5ace48ec90',
+      0 => 'ebfbd99e4d91c70a9feb367d8546e6911f9f7ca748269eca5f2d01b26a25a97a',
       1 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\testsize\\medium',
+        0 => 'sebastianbergmann\\codecoverage\\test\\teststatus',
       ),
       2 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\testsize\\ismedium',
-        1 => 'sebastianbergmann\\codecoverage\\test\\testsize\\isgreaterthan',
-        2 => 'sebastianbergmann\\codecoverage\\test\\testsize\\asstring',
+        0 => 'sebastianbergmann\\codecoverage\\test\\isknown',
+        1 => 'sebastianbergmann\\codecoverage\\test\\isunknown',
+        2 => 'sebastianbergmann\\codecoverage\\test\\issuccess',
+        3 => 'sebastianbergmann\\codecoverage\\test\\isfailure',
+        4 => 'sebastianbergmann\\codecoverage\\test\\asstring',
       ),
       3 => 
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/TestSize/Small.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/UnintentionallyCoveredCodeChecker.php' => 
     array (
-      0 => '4ecb2d15e61e81bbe8eda54418672ea5d8122bcf3bbb42867169b7399eda20e7',
+      0 => '0c70b4cbcfb1379886ce011c44a8b84c0b91853189c2a6578c54cab99c420078',
       1 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\testsize\\small',
+        0 => 'sebastianbergmann\\codecoverage\\unintentionallycoveredcodechecker',
       ),
       2 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\testsize\\issmall',
-        1 => 'sebastianbergmann\\codecoverage\\test\\testsize\\isgreaterthan',
-        2 => 'sebastianbergmann\\codecoverage\\test\\testsize\\asstring',
+        0 => 'sebastianbergmann\\codecoverage\\check',
+        1 => 'sebastianbergmann\\codecoverage\\process',
+        2 => 'sebastianbergmann\\codecoverage\\allowedlines',
+        3 => 'sebastianbergmann\\codecoverage\\hasmethodleveltargets',
       ),
       3 => 
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/TestSize/TestSize.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Util/EnsuresUtf8.php' => 
     array (
-      0 => 'f4a4e182cce7fef53a9840b4831ae0b983780722ca88d74bc1ebf3ae9e26edf3',
+      0 => 'd7d72af3adbc4b6caf2353ee384112bd8587de60ceb077ad6b14f0b0c3f5301a',
       1 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\testsize\\testsize',
+        0 => 'sebastianbergmann\\codecoverage\\util\\ensuresutf8',
       ),
       2 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\testsize\\unknown',
-        1 => 'sebastianbergmann\\codecoverage\\test\\testsize\\small',
-        2 => 'sebastianbergmann\\codecoverage\\test\\testsize\\medium',
-        3 => 'sebastianbergmann\\codecoverage\\test\\testsize\\large',
-        4 => 'sebastianbergmann\\codecoverage\\test\\testsize\\isknown',
-        5 => 'sebastianbergmann\\codecoverage\\test\\testsize\\isunknown',
-        6 => 'sebastianbergmann\\codecoverage\\test\\testsize\\issmall',
-        7 => 'sebastianbergmann\\codecoverage\\test\\testsize\\ismedium',
-        8 => 'sebastianbergmann\\codecoverage\\test\\testsize\\islarge',
-        9 => 'sebastianbergmann\\codecoverage\\test\\testsize\\asstring',
+        0 => 'sebastianbergmann\\codecoverage\\util\\ensureutf8',
       ),
       3 => 
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/TestSize/Unknown.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Util/PathReducer.php' => 
     array (
-      0 => '44ad90911b896d97b4ac4b3d17a1b44ecdd38bb4f785390636f97c8d7a08a36b',
+      0 => '219371be67bc6306797970c7e952c5c80998d739bf4dfce3d7f340ae95e7a3ba',
       1 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\testsize\\unknown',
+        0 => 'sebastianbergmann\\codecoverage\\util\\pathreducer',
       ),
       2 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\testsize\\isunknown',
-        1 => 'sebastianbergmann\\codecoverage\\test\\testsize\\asstring',
+        0 => 'sebastianbergmann\\codecoverage\\util\\reduce',
       ),
       3 => 
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/TestStatus/Failure.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Util/Phar.php' => 
     array (
-      0 => '152df5b213388f52901236750128b0599191159d9e5d0b2319498477e46e64a3',
+      0 => 'a77824f8b98a60226c8fe9094f3b7b9808d235a95df665ed770f1afe47963793',
       1 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\failure',
+        0 => 'sebastianbergmann\\codecoverage\\util\\phar',
       ),
       2 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\isfailure',
-        1 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\asstring',
+        0 => 'sebastianbergmann\\codecoverage\\util\\isbundled',
       ),
       3 => 
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/TestStatus/Known.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Util/PhpParserVersion.php' => 
     array (
-      0 => '1aeebad749f855180985c368662c71af3476d0f998091651c5d67af68ae43a92',
+      0 => '7c3cdee3f693624911ccfd42ae59782638e973652b8f5b03a6aeab7748a2b8e0',
       1 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\known',
+        0 => 'sebastianbergmann\\codecoverage\\util\\phpparserversion',
       ),
       2 => 
       array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\isknown',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/TestStatus/Success.php' => 
-    array (
-      0 => 'e62a90ab5d6bee6f4d717e11ca7a0ff28c586eeeaea4dd58aedc1c3736685dfd',
-      1 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\success',
-      ),
-      2 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\issuccess',
-        1 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\asstring',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/TestStatus/TestStatus.php' => 
-    array (
-      0 => 'e746f0a4050a5f9df137e61526ac7436dfd299e0cafb9ac800830a4f990b67e8',
-      1 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\teststatus',
-      ),
-      2 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\unknown',
-        1 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\success',
-        2 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\failure',
-        3 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\isknown',
-        4 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\isunknown',
-        5 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\issuccess',
-        6 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\isfailure',
-        7 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\asstring',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/TestStatus/Unknown.php' => 
-    array (
-      0 => 'f7c5e6411ad78543df16ea786e2d25b06890a51a02199badaef409d9b9a8a033',
-      1 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\unknown',
-      ),
-      2 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\isunknown',
-        1 => 'sebastianbergmann\\codecoverage\\test\\teststatus\\asstring',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Util/Filesystem.php' => 
-    array (
-      0 => '9e02a4cb598d29ecb809171b35cf447bdf66bdbe0e8fedd576239b8a0ceff56a',
-      1 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\util\\filesystem',
-      ),
-      2 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\util\\createdirectory',
-        1 => 'sebastianbergmann\\codecoverage\\util\\write',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Util/Percentage.php' => 
-    array (
-      0 => '40bd811e51e0ca6eca296a45de9e6365114ee64965c15051c8406fb4e7e4734b',
-      1 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\util\\percentage',
-      ),
-      2 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\util\\fromfractionandtotal',
-        1 => 'sebastianbergmann\\codecoverage\\util\\__construct',
-        2 => 'sebastianbergmann\\codecoverage\\util\\asfloat',
-        3 => 'sebastianbergmann\\codecoverage\\util\\asstring',
-        4 => 'sebastianbergmann\\codecoverage\\util\\asfixedwidthstring',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Util/Xml.php' => 
-    array (
-      0 => 'ab18dd724048f95693334f97221d0a888e8f4c0c0c100479008558c9926add36',
-      1 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\util\\xml',
-      ),
-      2 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\util\\asstring',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-code-coverage/src/Version.php' => 
-    array (
-      0 => 'bc36dc6e17d39a21541f03e4d82eba915fbf1de01bec5d3fede934c1f429723d',
-      1 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\version',
-      ),
-      2 => 
-      array (
-        0 => 'sebastianbergmann\\codecoverage\\id',
+        0 => 'sebastianbergmann\\codecoverage\\util\\id',
+        1 => 'sebastianbergmann\\codecoverage\\util\\isexact',
+        2 => 'sebastianbergmann\\codecoverage\\util\\versionfrommanifest',
+        3 => 'sebastianbergmann\\codecoverage\\util\\detect',
+        4 => 'sebastianbergmann\\codecoverage\\util\\versionfromcomposer',
+        5 => 'sebastianbergmann\\codecoverage\\util\\isexactversion',
+        6 => 'sebastianbergmann\\codecoverage\\util\\versionfrompharmanifest',
       ),
       3 => 
       array (

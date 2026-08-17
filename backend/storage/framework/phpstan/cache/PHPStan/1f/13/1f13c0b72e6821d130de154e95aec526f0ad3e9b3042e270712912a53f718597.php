@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/version/src/Version.php' => 
     array (
-      0 => '2ab7b3ab0b5f49c32cbf6c0837372b362447c6efca5d836c2911018a5ebe3551',
+      0 => '3c59be46233f70604b1afbcbf784589176c330f5e8e7a1b4e6f39aa94d729a55',
       1 => 
       array (
         0 => 'sebastianbergmann\\version',

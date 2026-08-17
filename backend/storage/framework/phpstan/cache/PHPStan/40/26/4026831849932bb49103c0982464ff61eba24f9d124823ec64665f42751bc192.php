@@ -6433,6 +6433,144 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'typeAliasClassName' => NULL,
          'traitData' => NULL,
       )),
+      'fc71f928ee407788590c20143a8a1d2b' => 
+      \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+         'namespace' => 'Illuminate\\Http\\Client',
+         'uses' => 
+        array (
+          'closure' => 'Closure',
+          'exception' => 'Exception',
+          'client' => 'GuzzleHttp\\Client',
+          'cookiejar' => 'GuzzleHttp\\Cookie\\CookieJar',
+          'connectexception' => 'GuzzleHttp\\Exception\\ConnectException',
+          'requestexception' => 'GuzzleHttp\\Exception\\RequestException',
+          'transferexception' => 'GuzzleHttp\\Exception\\TransferException',
+          'handlerstack' => 'GuzzleHttp\\HandlerStack',
+          'middleware' => 'GuzzleHttp\\Middleware',
+          'eachpromise' => 'GuzzleHttp\\Promise\\EachPromise',
+          'promiseinterface' => 'GuzzleHttp\\Promise\\PromiseInterface',
+          'uritemplate' => 'GuzzleHttp\\UriTemplate\\UriTemplate',
+          'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
+          'connectionfailed' => 'Illuminate\\Http\\Client\\Events\\ConnectionFailed',
+          'requestsending' => 'Illuminate\\Http\\Client\\Events\\RequestSending',
+          'responsereceived' => 'Illuminate\\Http\\Client\\Events\\ResponseReceived',
+          'fluentpromise' => 'Illuminate\\Http\\Client\\Promises\\FluentPromise',
+          'lazypromise' => 'Illuminate\\Http\\Client\\Promises\\LazyPromise',
+          'arr' => 'Illuminate\\Support\\Arr',
+          'collection' => 'Illuminate\\Support\\Collection',
+          'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
+          'conditionable' => 'Illuminate\\Support\\Traits\\Conditionable',
+          'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
+          'invalidargumentexception' => 'InvalidArgumentException',
+          'jsonserializable' => 'JsonSerializable',
+          'messageinterface' => 'Psr\\Http\\Message\\MessageInterface',
+          'requestinterface' => 'Psr\\Http\\Message\\RequestInterface',
+          'streaminterface' => 'Psr\\Http\\Message\\StreamInterface',
+          'vardumper' => 'Symfony\\Component\\VarDumper\\VarDumper',
+          'throwable' => 'Throwable',
+        ),
+         'className' => 'Illuminate\\Http\\Client\\PendingRequest',
+         'functionName' => 'query',
+         'templatePhpDocNodes' => 
+        array (
+        ),
+         'parent' => 
+        \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+           'namespace' => 'Illuminate\\Http\\Client',
+           'uses' => 
+          array (
+            'closure' => 'Closure',
+            'exception' => 'Exception',
+            'client' => 'GuzzleHttp\\Client',
+            'cookiejar' => 'GuzzleHttp\\Cookie\\CookieJar',
+            'connectexception' => 'GuzzleHttp\\Exception\\ConnectException',
+            'requestexception' => 'GuzzleHttp\\Exception\\RequestException',
+            'transferexception' => 'GuzzleHttp\\Exception\\TransferException',
+            'handlerstack' => 'GuzzleHttp\\HandlerStack',
+            'middleware' => 'GuzzleHttp\\Middleware',
+            'eachpromise' => 'GuzzleHttp\\Promise\\EachPromise',
+            'promiseinterface' => 'GuzzleHttp\\Promise\\PromiseInterface',
+            'uritemplate' => 'GuzzleHttp\\UriTemplate\\UriTemplate',
+            'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
+            'connectionfailed' => 'Illuminate\\Http\\Client\\Events\\ConnectionFailed',
+            'requestsending' => 'Illuminate\\Http\\Client\\Events\\RequestSending',
+            'responsereceived' => 'Illuminate\\Http\\Client\\Events\\ResponseReceived',
+            'fluentpromise' => 'Illuminate\\Http\\Client\\Promises\\FluentPromise',
+            'lazypromise' => 'Illuminate\\Http\\Client\\Promises\\LazyPromise',
+            'arr' => 'Illuminate\\Support\\Arr',
+            'collection' => 'Illuminate\\Support\\Collection',
+            'str' => 'Illuminate\\Support\\Str',
+            'stringable' => 'Illuminate\\Support\\Stringable',
+            'conditionable' => 'Illuminate\\Support\\Traits\\Conditionable',
+            'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
+            'invalidargumentexception' => 'InvalidArgumentException',
+            'jsonserializable' => 'JsonSerializable',
+            'messageinterface' => 'Psr\\Http\\Message\\MessageInterface',
+            'requestinterface' => 'Psr\\Http\\Message\\RequestInterface',
+            'streaminterface' => 'Psr\\Http\\Message\\StreamInterface',
+            'vardumper' => 'Symfony\\Component\\VarDumper\\VarDumper',
+            'throwable' => 'Throwable',
+          ),
+           'className' => 'Illuminate\\Http\\Client\\PendingRequest',
+           'functionName' => NULL,
+           'templatePhpDocNodes' => 
+          array (
+            'TAsync' => 
+            array (
+              0 => '@template',
+              1 => 
+              \PHPStan\PhpDocParser\Ast\PhpDoc\TemplateTagValueNode::__set_state(array(
+                 'name' => 'TAsync',
+                 'bound' => 
+                \PHPStan\PhpDocParser\Ast\Type\IdentifierTypeNode::__set_state(array(
+                   'name' => 'bool',
+                   'attributes' => 
+                  array (
+                    'startLine' => 2,
+                    'endLine' => 2,
+                  ),
+                )),
+                 'default' => 
+                \PHPStan\PhpDocParser\Ast\Type\IdentifierTypeNode::__set_state(array(
+                   'name' => 'false',
+                   'attributes' => 
+                  array (
+                    'startLine' => 2,
+                    'endLine' => 2,
+                  ),
+                )),
+                 'lowerBound' => NULL,
+                 'description' => '',
+                 'attributes' => 
+                array (
+                  'startLine' => 2,
+                  'endLine' => 2,
+                ),
+              )),
+            ),
+          ),
+           'parent' => NULL,
+           'typeAliasesMap' => 
+          array (
+          ),
+           'bypassTypeAliases' => false,
+           'constUses' => 
+          array (
+          ),
+           'typeAliasClassName' => NULL,
+           'traitData' => NULL,
+        )),
+         'typeAliasesMap' => 
+        array (
+        ),
+         'bypassTypeAliases' => false,
+         'constUses' => 
+        array (
+        ),
+         'typeAliasClassName' => NULL,
+         'traitData' => NULL,
+      )),
       '318264e19e9953e9f3f7e5b3679865bd' => 
       \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
          'namespace' => 'Illuminate\\Http\\Client',
@@ -14335,7 +14473,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php' => 'afec38eacf1401327792d4cbd94e65b82516e6e995291419245755b8efcd3fda',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php' => '1ffd10ac082015bf7c1a4e43735ed54cc5197ad29c87bef525c1f41931aa384f',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Conditionable/Traits/Conditionable.php' => '5697fdba0acb78ca0b4e122e5c459cd5d97d000ed9b14fed31271cb7ffd44225',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php' => '6dd85b1e28b55ebeee678f9ca423dfb8375e1342bc42d8658da6321bdf97b3c0',
     ),

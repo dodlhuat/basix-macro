@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/cli-parser/src/Parser.php' => 
     array (
-      0 => 'b8308fb7c7dcd566b91d340abca582484b9ea00280de1069e9030386c3b13773',
+      0 => '3cf38716b8a5a6b60d111524b4e8734ce5c2f0070e847cadfadfdca7d0bb7f0b',
       1 => 
       array (
         0 => 'sebastianbergmann\\cliparser\\parser',
@@ -17,7 +17,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'sebastianbergmann\\cliparser\\parse',
         1 => 'sebastianbergmann\\cliparser\\parseshortoption',
         2 => 'sebastianbergmann\\cliparser\\parselongoption',
-        3 => 'sebastianbergmann\\cliparser\\formatsimilaroptions',
+        3 => 'sebastianbergmann\\cliparser\\exactmatch',
+        4 => 'sebastianbergmann\\cliparser\\formatsimilaroptions',
       ),
       3 => 
       array (

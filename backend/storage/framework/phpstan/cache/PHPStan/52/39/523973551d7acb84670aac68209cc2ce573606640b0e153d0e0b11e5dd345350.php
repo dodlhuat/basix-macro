@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Console/Migrations/RollbackCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Database\Console\Migrations\RollbackCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-bd8bdcb85ab772f0d3470c37992e96f24be1844fe30dc65875816e799bd9f361-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-a6d87a0d69da08b900dfee1c9f4581160ad3eb20e60913d521744e89afefd2bf-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -48,7 +48,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       ),
     ),
     'startLine' => 12,
-    'endLine' => 92,
+    'endLine' => 91,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Database\\Console\\Migrations\\BaseCommand',
@@ -247,7 +247,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @return int
  */',
         'startLine' => 55,
-        'endLine' => 73,
+        'endLine' => 72,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -277,8 +277,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return array
  */',
-        'startLine' => 80,
-        'endLine' => 91,
+        'startLine' => 79,
+        'endLine' => 90,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

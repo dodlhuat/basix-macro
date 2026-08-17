@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\PolicyMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-3021062d3bea129d36bc41ef8d631af35b3753ea9c0de4e63cd66f5068877b62-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-4d7e190b7b1ab7a2fe77d4786fb5ff85b8a8f95975d5c2ccd3b3c21700d0dacb-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'make:policy\'',
             'attributes' => 
             array (
-              'startLine' => 15,
-              'endLine' => 15,
-              'startTokenPos' => 55,
-              'startFilePos' => 402,
-              'endTokenPos' => 55,
-              'endFilePos' => 414,
+              'startLine' => 14,
+              'endLine' => 14,
+              'startTokenPos' => 50,
+              'startFilePos' => 353,
+              'endTokenPos' => 50,
+              'endFilePos' => 365,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 15,
-    'endLine' => 228,
+    'startLine' => 14,
+    'endLine' => 217,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\GeneratorCommand',
@@ -63,38 +63,42 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\PolicyMakeCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\PolicyMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:policy\'',
+          'code' => '\'make:policy
+                    {name : The name of the policy}
+                    {--f|force : Create the class even if the policy already exists}
+                    {--m|model= : The model that the policy applies to}
+                    {--g|guard= : The guard that the policy relies on}\'',
           'attributes' => 
           array (
-            'startLine' => 23,
-            'endLine' => 23,
-            'startTokenPos' => 77,
-            'startFilePos' => 566,
-            'endTokenPos' => 77,
-            'endFilePos' => 578,
+            'startLine' => 22,
+            'endLine' => 26,
+            'startTokenPos' => 72,
+            'startFilePos' => 543,
+            'endTokenPos' => 72,
+            'endFilePos' => 835,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 23,
-        'endLine' => 23,
+        'startLine' => 22,
+        'endLine' => 26,
         'startColumn' => 5,
-        'endColumn' => 36,
+        'endColumn' => 72,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -114,12 +118,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Create a new policy class\'',
           'attributes' => 
           array (
-            'startLine' => 30,
-            'endLine' => 30,
-            'startTokenPos' => 88,
-            'startFilePos' => 693,
-            'endTokenPos' => 88,
-            'endFilePos' => 719,
+            'startLine' => 33,
+            'endLine' => 33,
+            'startTokenPos' => 83,
+            'startFilePos' => 950,
+            'endTokenPos' => 83,
+            'endFilePos' => 976,
           ),
         ),
         'docComment' => '/**
@@ -130,8 +134,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 30,
-        'endLine' => 30,
+        'startLine' => 33,
+        'endLine' => 33,
         'startColumn' => 5,
         'endColumn' => 57,
         'isPromoted' => false,
@@ -153,12 +157,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Policy\'',
           'attributes' => 
           array (
-            'startLine' => 37,
-            'endLine' => 37,
-            'startTokenPos' => 99,
-            'startFilePos' => 829,
-            'endTokenPos' => 99,
-            'endFilePos' => 836,
+            'startLine' => 40,
+            'endLine' => 40,
+            'startTokenPos' => 94,
+            'startFilePos' => 1086,
+            'endTokenPos' => 94,
+            'endFilePos' => 1093,
           ),
         ),
         'docComment' => '/**
@@ -169,8 +173,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 37,
-        'endLine' => 37,
+        'startLine' => 40,
+        'endLine' => 40,
         'startColumn' => 5,
         'endColumn' => 31,
         'isPromoted' => false,
@@ -199,8 +203,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 45,
-            'endLine' => 45,
+            'startLine' => 48,
+            'endLine' => 48,
             'startColumn' => 35,
             'endColumn' => 39,
             'parameterIndex' => 0,
@@ -218,8 +222,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $name
  * @return string
  */',
-        'startLine' => 45,
-        'endLine' => 54,
+        'startLine' => 48,
+        'endLine' => 57,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -249,8 +253,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 62,
-            'endLine' => 62,
+            'startLine' => 65,
+            'endLine' => 65,
             'startColumn' => 45,
             'endColumn' => 49,
             'parameterIndex' => 0,
@@ -268,8 +272,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $stub
  * @return string
  */',
-        'startLine' => 62,
-        'endLine' => 75,
+        'startLine' => 65,
+        'endLine' => 78,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -301,8 +305,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @throws \\LogicException
  */',
-        'startLine' => 84,
-        'endLine' => 101,
+        'startLine' => 87,
+        'endLine' => 104,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -332,8 +336,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 110,
-            'endLine' => 110,
+            'startLine' => 113,
+            'endLine' => 113,
             'startColumn' => 37,
             'endColumn' => 41,
             'parameterIndex' => 0,
@@ -350,8 +354,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 110,
-            'endLine' => 110,
+            'startLine' => 113,
+            'endLine' => 113,
             'startColumn' => 44,
             'endColumn' => 49,
             'parameterIndex' => 1,
@@ -370,8 +374,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $model
  * @return string
  */',
-        'startLine' => 110,
-        'endLine' => 154,
+        'startLine' => 113,
+        'endLine' => 157,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -401,8 +405,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 161,
-        'endLine' => 166,
+        'startLine' => 164,
+        'endLine' => 169,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -432,8 +436,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 174,
-            'endLine' => 174,
+            'startLine' => 177,
+            'endLine' => 177,
             'startColumn' => 40,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -451,8 +455,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $stub
  * @return string
  */',
-        'startLine' => 174,
-        'endLine' => 179,
+        'startLine' => 177,
+        'endLine' => 182,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -482,8 +486,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 187,
-            'endLine' => 187,
+            'startLine' => 190,
+            'endLine' => 190,
             'startColumn' => 44,
             'endColumn' => 57,
             'parameterIndex' => 0,
@@ -501,39 +505,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rootNamespace
  * @return string
  */',
-        'startLine' => 187,
-        'endLine' => 190,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\PolicyMakeCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\PolicyMakeCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\PolicyMakeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command arguments.
- *
- * @return array
- */',
-        'startLine' => 197,
-        'endLine' => 204,
+        'startLine' => 190,
+        'endLine' => 193,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -571,8 +544,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 213,
-            'endLine' => 213,
+            'startLine' => 202,
+            'endLine' => 202,
             'startColumn' => 58,
             'endColumn' => 78,
             'parameterIndex' => 0,
@@ -597,8 +570,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 213,
-            'endLine' => 213,
+            'startLine' => 202,
+            'endLine' => 202,
             'startColumn' => 81,
             'endColumn' => 103,
             'parameterIndex' => 1,
@@ -617,8 +590,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Symfony\\Component\\Console\\Output\\OutputInterface  $output
  * @return void
  */',
-        'startLine' => 213,
-        'endLine' => 227,
+        'startLine' => 202,
+        'endLine' => 216,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

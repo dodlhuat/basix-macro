@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Console/Migrations/RefreshCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Database\Console\Migrations\RefreshCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-454e1e9ffb2c5d1dd539fa3aa7f87de35a005dc36b89c48de59435ddf6d64d64-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-7fff45e5e8c8c94bde674d38a19bed37204ddf26a8bac0c1dbbe2a5db8b308d1-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'migrate:refresh\'',
             'attributes' => 
             array (
-              'startLine' => 13,
-              'endLine' => 13,
-              'startTokenPos' => 48,
-              'startFilePos' => 381,
-              'endTokenPos' => 48,
-              'endFilePos' => 397,
+              'startLine' => 12,
+              'endLine' => 12,
+              'startTokenPos' => 43,
+              'startFilePos' => 332,
+              'endTokenPos' => 43,
+              'endFilePos' => 348,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 13,
-    'endLine' => 163,
+    'startLine' => 12,
+    'endLine' => 150,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -65,38 +65,45 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Database\\Console\\Migrations\\RefreshCommand',
         'implementingClassName' => 'Illuminate\\Database\\Console\\Migrations\\RefreshCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'migrate:refresh\'',
+          'code' => '\'migrate:refresh
+                    {--database= : The database connection to use}
+                    {--force : Force the operation to run when in production}
+                    {--path=* : The path(s) to the migrations files to be executed}
+                    {--realpath : Indicate any provided migration file paths are pre-resolved absolute paths}
+                    {--seed : Indicates if the seed task should be re-run}
+                    {--seeder= : The class name of the root seeder}
+                    {--step= : The number of migrations to be reverted & re-run}\'',
           'attributes' => 
           array (
-            'startLine' => 23,
-            'endLine' => 23,
-            'startTokenPos' => 78,
-            'startFilePos' => 578,
-            'endTokenPos' => 78,
-            'endFilePos' => 594,
+            'startLine' => 22,
+            'endLine' => 29,
+            'startTokenPos' => 73,
+            'startFilePos' => 555,
+            'endTokenPos' => 73,
+            'endFilePos' => 1134,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 23,
-        'endLine' => 23,
+        'startLine' => 22,
+        'endLine' => 29,
         'startColumn' => 5,
-        'endColumn' => 40,
+        'endColumn' => 82,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -116,12 +123,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Reset and re-run all migrations\'',
           'attributes' => 
           array (
-            'startLine' => 30,
-            'endLine' => 30,
-            'startTokenPos' => 89,
-            'startFilePos' => 709,
-            'endTokenPos' => 89,
-            'endFilePos' => 741,
+            'startLine' => 36,
+            'endLine' => 36,
+            'startTokenPos' => 84,
+            'startFilePos' => 1249,
+            'endTokenPos' => 84,
+            'endFilePos' => 1281,
           ),
         ),
         'docComment' => '/**
@@ -132,8 +139,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 30,
-        'endLine' => 30,
+        'startLine' => 36,
+        'endLine' => 36,
         'startColumn' => 5,
         'endColumn' => 63,
         'isPromoted' => false,
@@ -162,8 +169,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return int
  */',
-        'startLine' => 37,
-        'endLine' => 83,
+        'startLine' => 43,
+        'endLine' => 88,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -193,8 +200,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 93,
-            'endLine' => 93,
+            'startLine' => 98,
+            'endLine' => 98,
             'startColumn' => 36,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -211,8 +218,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 93,
-            'endLine' => 93,
+            'startLine' => 98,
+            'endLine' => 98,
             'startColumn' => 47,
             'endColumn' => 51,
             'parameterIndex' => 1,
@@ -229,8 +236,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 93,
-            'endLine' => 93,
+            'startLine' => 98,
+            'endLine' => 98,
             'startColumn' => 54,
             'endColumn' => 58,
             'parameterIndex' => 2,
@@ -250,8 +257,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  int  $step
  * @return void
  */',
-        'startLine' => 93,
-        'endLine' => 102,
+        'startLine' => 98,
+        'endLine' => 107,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -281,8 +288,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 111,
-            'endLine' => 111,
+            'startLine' => 116,
+            'endLine' => 116,
             'startColumn' => 33,
             'endColumn' => 41,
             'parameterIndex' => 0,
@@ -299,8 +306,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 111,
-            'endLine' => 111,
+            'startLine' => 116,
+            'endLine' => 116,
             'startColumn' => 44,
             'endColumn' => 48,
             'parameterIndex' => 1,
@@ -319,8 +326,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $path
  * @return void
  */',
-        'startLine' => 111,
-        'endLine' => 119,
+        'startLine' => 116,
+        'endLine' => 124,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -350,8 +357,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return bool
  */',
-        'startLine' => 126,
-        'endLine' => 129,
+        'startLine' => 131,
+        'endLine' => 134,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -381,8 +388,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 137,
-            'endLine' => 137,
+            'startLine' => 142,
+            'endLine' => 142,
             'startColumn' => 34,
             'endColumn' => 42,
             'parameterIndex' => 0,
@@ -400,39 +407,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $database
  * @return void
  */',
-        'startLine' => 137,
-        'endLine' => 144,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Database\\Console\\Migrations',
-        'declaringClassName' => 'Illuminate\\Database\\Console\\Migrations\\RefreshCommand',
-        'implementingClassName' => 'Illuminate\\Database\\Console\\Migrations\\RefreshCommand',
-        'currentClassName' => 'Illuminate\\Database\\Console\\Migrations\\RefreshCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command options.
- *
- * @return array
- */',
-        'startLine' => 151,
-        'endLine' => 162,
+        'startLine' => 142,
+        'endLine' => 149,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Console/Seeds/SeederMakeCommand.php-presentSymbols
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-b2bebee42b284189f1ccaf62df11b0af9fc11ddc620db5c0dc145cbffad1aa7c-8.5.6',
+   'variableKey' => 'v2-742ace635a1540a9a8a9a0592065d5afc04bc3a4713fc2a1fe6965d0ea860860-8.5.6',
    'data' => 
   array (
     'classes' => 

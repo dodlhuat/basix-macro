@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Console/WipeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Database\Console\WipeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-bc6da1a886a7e8432a21c96342a7d690a060e83a26b3378a7b47d7ad9f8d7231-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-9fb510cbbb5dad4a1f965c9dd6e781faa2a7862edc3bee537b7ff47aee046d6e-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'db:wipe\'',
             'attributes' => 
             array (
-              'startLine' => 12,
-              'endLine' => 12,
-              'startTokenPos' => 43,
-              'startFilePos' => 349,
-              'endTokenPos' => 43,
-              'endFilePos' => 357,
+              'startLine' => 11,
+              'endLine' => 11,
+              'startTokenPos' => 38,
+              'startFilePos' => 300,
+              'endTokenPos' => 38,
+              'endFilePos' => 308,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 12,
-    'endLine' => 130,
+    'startLine' => 11,
+    'endLine' => 117,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -66,38 +66,42 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Database\\Console\\WipeCommand',
         'implementingClassName' => 'Illuminate\\Database\\Console\\WipeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'db:wipe\'',
+          'code' => '\'db:wipe
+                    {--database= : The database connection to use}
+                    {--drop-views : Drop all tables and views}
+                    {--drop-types : Drop all tables and types (Postgres only)}
+                    {--force : Force the operation to run when in production}\'',
           'attributes' => 
           array (
-            'startLine' => 22,
-            'endLine' => 22,
-            'startTokenPos' => 76,
-            'startFilePos' => 567,
-            'endTokenPos' => 76,
-            'endFilePos' => 575,
+            'startLine' => 21,
+            'endLine' => 25,
+            'startTokenPos' => 71,
+            'startFilePos' => 544,
+            'endTokenPos' => 71,
+            'endFilePos' => 839,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 22,
-        'endLine' => 22,
+        'startLine' => 21,
+        'endLine' => 25,
         'startColumn' => 5,
-        'endColumn' => 32,
+        'endColumn' => 79,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -117,12 +121,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Drop all tables, views, and types\'',
           'attributes' => 
           array (
-            'startLine' => 29,
-            'endLine' => 29,
-            'startTokenPos' => 87,
-            'startFilePos' => 690,
-            'endTokenPos' => 87,
-            'endFilePos' => 724,
+            'startLine' => 32,
+            'endLine' => 32,
+            'startTokenPos' => 82,
+            'startFilePos' => 954,
+            'endTokenPos' => 82,
+            'endFilePos' => 988,
           ),
         ),
         'docComment' => '/**
@@ -133,8 +137,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 29,
-        'endLine' => 29,
+        'startLine' => 32,
+        'endLine' => 32,
         'startColumn' => 5,
         'endColumn' => 65,
         'isPromoted' => false,
@@ -163,8 +167,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return int
  */',
-        'startLine' => 36,
-        'endLine' => 64,
+        'startLine' => 39,
+        'endLine' => 66,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -194,8 +198,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 72,
-            'endLine' => 72,
+            'startLine' => 74,
+            'endLine' => 74,
             'startColumn' => 38,
             'endColumn' => 46,
             'parameterIndex' => 0,
@@ -213,8 +217,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $database
  * @return void
  */',
-        'startLine' => 72,
-        'endLine' => 77,
+        'startLine' => 74,
+        'endLine' => 79,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -244,8 +248,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 85,
-            'endLine' => 85,
+            'startLine' => 87,
+            'endLine' => 87,
             'startColumn' => 37,
             'endColumn' => 45,
             'parameterIndex' => 0,
@@ -263,8 +267,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $database
  * @return void
  */',
-        'startLine' => 85,
-        'endLine' => 90,
+        'startLine' => 87,
+        'endLine' => 92,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -294,8 +298,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 98,
-            'endLine' => 98,
+            'startLine' => 100,
+            'endLine' => 100,
             'startColumn' => 37,
             'endColumn' => 45,
             'parameterIndex' => 0,
@@ -313,8 +317,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $database
  * @return void
  */',
-        'startLine' => 98,
-        'endLine' => 103,
+        'startLine' => 100,
+        'endLine' => 105,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -344,8 +348,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 111,
-            'endLine' => 111,
+            'startLine' => 113,
+            'endLine' => 113,
             'startColumn' => 48,
             'endColumn' => 56,
             'parameterIndex' => 0,
@@ -363,39 +367,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $database
  * @return void
  */',
-        'startLine' => 111,
-        'endLine' => 114,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Database\\Console',
-        'declaringClassName' => 'Illuminate\\Database\\Console\\WipeCommand',
-        'implementingClassName' => 'Illuminate\\Database\\Console\\WipeCommand',
-        'currentClassName' => 'Illuminate\\Database\\Console\\WipeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command options.
- *
- * @return array
- */',
-        'startLine' => 121,
-        'endLine' => 129,
+        'startLine' => 113,
+        'endLine' => 116,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

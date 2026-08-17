@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Http/ResponseTrait.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Http\ResponseTrait
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-90bad041e640197ab18e55ef54aaf23ee27d8575becbd9c661b40ef6c9a026cd-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-7de67617648a40cce983080c7386562e5b4e9cc40e75b4935ec3bf9417d6912d-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 9,
-    'endLine' => 212,
+    'endLine' => 229,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -693,6 +693,126 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'currentClassName' => 'Illuminate\\Http\\ResponseTrait',
         'aliasName' => NULL,
       ),
+      'withoutCookies' => 
+      array (
+        'name' => 'withoutCookies',
+        'parameters' => 
+        array (
+          'cookies' => 
+          array (
+            'name' => 'cookies',
+            'default' => NULL,
+            'type' => 
+            array (
+              'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+              'data' => 
+              array (
+                'name' => 'array',
+                'isIdentifier' => true,
+              ),
+            ),
+            'isVariadic' => false,
+            'byRef' => false,
+            'isPromoted' => false,
+            'attributes' => 
+            array (
+            ),
+            'startLine' => 186,
+            'endLine' => 186,
+            'startColumn' => 36,
+            'endColumn' => 49,
+            'parameterIndex' => 0,
+            'isOptional' => false,
+          ),
+          'path' => 
+          array (
+            'name' => 'path',
+            'default' => 
+            array (
+              'code' => 'null',
+              'attributes' => 
+              array (
+                'startLine' => 186,
+                'endLine' => 186,
+                'startTokenPos' => 564,
+                'startFilePos' => 4011,
+                'endTokenPos' => 564,
+                'endFilePos' => 4014,
+              ),
+            ),
+            'type' => NULL,
+            'isVariadic' => false,
+            'byRef' => false,
+            'isPromoted' => false,
+            'attributes' => 
+            array (
+            ),
+            'startLine' => 186,
+            'endLine' => 186,
+            'startColumn' => 52,
+            'endColumn' => 63,
+            'parameterIndex' => 1,
+            'isOptional' => true,
+          ),
+          'domain' => 
+          array (
+            'name' => 'domain',
+            'default' => 
+            array (
+              'code' => 'null',
+              'attributes' => 
+              array (
+                'startLine' => 186,
+                'endLine' => 186,
+                'startTokenPos' => 571,
+                'startFilePos' => 4027,
+                'endTokenPos' => 571,
+                'endFilePos' => 4030,
+              ),
+            ),
+            'type' => NULL,
+            'isVariadic' => false,
+            'byRef' => false,
+            'isPromoted' => false,
+            'attributes' => 
+            array (
+            ),
+            'startLine' => 186,
+            'endLine' => 186,
+            'startColumn' => 66,
+            'endColumn' => 79,
+            'parameterIndex' => 2,
+            'isOptional' => true,
+          ),
+        ),
+        'returnsReference' => false,
+        'returnType' => NULL,
+        'attributes' => 
+        array (
+        ),
+        'docComment' => '/**
+ * Expire multiple cookies when sending the response.
+ *
+ * @param  array  $cookies
+ * @param  string|null  $path
+ * @param  string|null  $domain
+ * @return $this
+ */',
+        'startLine' => 186,
+        'endLine' => 193,
+        'startColumn' => 5,
+        'endColumn' => 5,
+        'couldThrow' => false,
+        'isClosure' => false,
+        'isGenerator' => false,
+        'isVariadic' => false,
+        'modifiers' => 1,
+        'namespace' => 'Illuminate\\Http',
+        'declaringClassName' => 'Illuminate\\Http\\ResponseTrait',
+        'implementingClassName' => 'Illuminate\\Http\\ResponseTrait',
+        'currentClassName' => 'Illuminate\\Http\\ResponseTrait',
+        'aliasName' => NULL,
+      ),
       'getCallback' => 
       array (
         'name' => 'getCallback',
@@ -709,8 +829,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string|null
  */',
-        'startLine' => 183,
-        'endLine' => 186,
+        'startLine' => 200,
+        'endLine' => 203,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -748,8 +868,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 194,
-            'endLine' => 194,
+            'startLine' => 211,
+            'endLine' => 211,
             'startColumn' => 35,
             'endColumn' => 46,
             'parameterIndex' => 0,
@@ -767,8 +887,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Throwable  $e
  * @return $this
  */',
-        'startLine' => 194,
-        'endLine' => 199,
+        'startLine' => 211,
+        'endLine' => 216,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -800,8 +920,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @throws \\Illuminate\\Http\\Exceptions\\HttpResponseException
  */',
-        'startLine' => 208,
-        'endLine' => 211,
+        'startLine' => 225,
+        'endLine' => 228,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\InterfaceMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-85cff9e2641d442fcb946dd6c903a7bd0434a324702871ea7e3ba3c02691eda0-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-bd987ea753a033602e80d5cc63e961c4887ad853fa6a53d2c0ab7f972d78131c-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'make:interface\'',
             'attributes' => 
             array (
-              'startLine' => 9,
-              'endLine' => 9,
-              'startTokenPos' => 28,
-              'startFilePos' => 209,
-              'endTokenPos' => 28,
-              'endFilePos' => 224,
+              'startLine' => 8,
+              'endLine' => 8,
+              'startTokenPos' => 23,
+              'startFilePos' => 160,
+              'endTokenPos' => 23,
+              'endFilePos' => 175,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 9,
-    'endLine' => 69,
+    'startLine' => 8,
+    'endLine' => 58,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\GeneratorCommand',
@@ -63,38 +63,40 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\InterfaceMakeCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\InterfaceMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:interface\'',
+          'code' => '\'make:interface
+                    {name : The name of the interface}
+                    {--f|force : Create the interface even if the interface already exists}\'',
           'attributes' => 
           array (
-            'startLine' => 17,
-            'endLine' => 17,
-            'startTokenPos' => 50,
-            'startFilePos' => 379,
-            'endTokenPos' => 50,
-            'endFilePos' => 394,
+            'startLine' => 16,
+            'endLine' => 18,
+            'startTokenPos' => 45,
+            'startFilePos' => 356,
+            'endTokenPos' => 45,
+            'endFilePos' => 518,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 17,
-        'endLine' => 17,
+        'startLine' => 16,
+        'endLine' => 18,
         'startColumn' => 5,
-        'endColumn' => 39,
+        'endColumn' => 93,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -114,12 +116,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Create a new interface\'',
           'attributes' => 
           array (
-            'startLine' => 24,
-            'endLine' => 24,
-            'startTokenPos' => 61,
-            'startFilePos' => 509,
-            'endTokenPos' => 61,
-            'endFilePos' => 532,
+            'startLine' => 25,
+            'endLine' => 25,
+            'startTokenPos' => 56,
+            'startFilePos' => 633,
+            'endTokenPos' => 56,
+            'endFilePos' => 656,
           ),
         ),
         'docComment' => '/**
@@ -130,8 +132,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 24,
-        'endLine' => 24,
+        'startLine' => 25,
+        'endLine' => 25,
         'startColumn' => 5,
         'endColumn' => 54,
         'isPromoted' => false,
@@ -153,12 +155,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Interface\'',
           'attributes' => 
           array (
-            'startLine' => 31,
-            'endLine' => 31,
-            'startTokenPos' => 72,
-            'startFilePos' => 642,
-            'endTokenPos' => 72,
-            'endFilePos' => 652,
+            'startLine' => 32,
+            'endLine' => 32,
+            'startTokenPos' => 67,
+            'startFilePos' => 766,
+            'endTokenPos' => 67,
+            'endFilePos' => 776,
           ),
         ),
         'docComment' => '/**
@@ -169,8 +171,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 31,
-        'endLine' => 31,
+        'startLine' => 32,
+        'endLine' => 32,
         'startColumn' => 5,
         'endColumn' => 34,
         'isPromoted' => false,
@@ -199,8 +201,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 38,
-        'endLine' => 41,
+        'startLine' => 39,
+        'endLine' => 42,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -230,8 +232,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 49,
-            'endLine' => 49,
+            'startLine' => 50,
+            'endLine' => 50,
             'startColumn' => 44,
             'endColumn' => 57,
             'parameterIndex' => 0,
@@ -249,39 +251,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rootNamespace
  * @return string
  */',
-        'startLine' => 49,
-        'endLine' => 56,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\InterfaceMakeCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\InterfaceMakeCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\InterfaceMakeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command arguments.
- *
- * @return array
- */',
-        'startLine' => 63,
-        'endLine' => 68,
+        'startLine' => 50,
+        'endLine' => 57,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

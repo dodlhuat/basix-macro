@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-text-template/src/Template.php' => 
     array (
-      0 => '246e2c1bc7a9f2e9c8cd3f7cce1ef2235e2acebd15b89f91568b0d3c7872ed53',
+      0 => '572e22cc4f9bd0a32e0f63be1d76858a1d061e22c5f37257e6b71d1eef5534c2',
       1 => 
       array (
         0 => 'sebastianbergmann\\template\\template',

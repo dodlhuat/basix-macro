@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\EnumMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6337587cc9461e610967a450919bda7b212833640da16d6802ae2cfff8313988-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-3e5d3cb5b81655b9ff30a23c5e6f82d5432c7c38538899e5a1a204eb26fa7696-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'make:enum\'',
             'attributes' => 
             array (
-              'startLine' => 13,
-              'endLine' => 13,
-              'startTokenPos' => 45,
-              'startFilePos' => 353,
-              'endTokenPos' => 45,
-              'endFilePos' => 363,
+              'startLine' => 12,
+              'endLine' => 12,
+              'startTokenPos' => 40,
+              'startFilePos' => 304,
+              'endTokenPos' => 40,
+              'endFilePos' => 314,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 13,
-    'endLine' => 137,
+    'startLine' => 12,
+    'endLine' => 126,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\GeneratorCommand',
@@ -63,38 +63,42 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\EnumMakeCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\EnumMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:enum\'',
+          'code' => '\'make:enum
+                    {name : The name of the enum}
+                    {--s|string : Generate a string backed enum.}
+                    {--i|int : Generate an integer backed enum.}
+                    {--f|force : Create the enum even if the enum already exists}\'',
           'attributes' => 
           array (
-            'startLine' => 21,
-            'endLine' => 21,
-            'startTokenPos' => 67,
-            'startFilePos' => 513,
-            'endTokenPos' => 67,
-            'endFilePos' => 523,
+            'startLine' => 20,
+            'endLine' => 24,
+            'startTokenPos' => 62,
+            'startFilePos' => 490,
+            'endTokenPos' => 62,
+            'endFilePos' => 763,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 21,
-        'endLine' => 21,
+        'startLine' => 20,
+        'endLine' => 24,
         'startColumn' => 5,
-        'endColumn' => 34,
+        'endColumn' => 83,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -114,12 +118,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Create a new enum\'',
           'attributes' => 
           array (
-            'startLine' => 28,
-            'endLine' => 28,
-            'startTokenPos' => 78,
-            'startFilePos' => 638,
-            'endTokenPos' => 78,
-            'endFilePos' => 656,
+            'startLine' => 31,
+            'endLine' => 31,
+            'startTokenPos' => 73,
+            'startFilePos' => 878,
+            'endTokenPos' => 73,
+            'endFilePos' => 896,
           ),
         ),
         'docComment' => '/**
@@ -130,8 +134,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 28,
-        'endLine' => 28,
+        'startLine' => 31,
+        'endLine' => 31,
         'startColumn' => 5,
         'endColumn' => 49,
         'isPromoted' => false,
@@ -153,12 +157,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Enum\'',
           'attributes' => 
           array (
-            'startLine' => 35,
-            'endLine' => 35,
-            'startTokenPos' => 89,
-            'startFilePos' => 766,
-            'endTokenPos' => 89,
-            'endFilePos' => 771,
+            'startLine' => 38,
+            'endLine' => 38,
+            'startTokenPos' => 84,
+            'startFilePos' => 1006,
+            'endTokenPos' => 84,
+            'endFilePos' => 1011,
           ),
         ),
         'docComment' => '/**
@@ -169,8 +173,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 35,
-        'endLine' => 35,
+        'startLine' => 38,
+        'endLine' => 38,
         'startColumn' => 5,
         'endColumn' => 29,
         'isPromoted' => false,
@@ -199,8 +203,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 42,
-        'endLine' => 49,
+        'startLine' => 45,
+        'endLine' => 52,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -230,8 +234,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 57,
-            'endLine' => 57,
+            'startLine' => 60,
+            'endLine' => 60,
             'startColumn' => 40,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -249,8 +253,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $stub
  * @return string
  */',
-        'startLine' => 57,
-        'endLine' => 62,
+        'startLine' => 60,
+        'endLine' => 65,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -280,8 +284,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 70,
-            'endLine' => 70,
+            'startLine' => 73,
+            'endLine' => 73,
             'startColumn' => 44,
             'endColumn' => 57,
             'parameterIndex' => 0,
@@ -299,8 +303,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rootNamespace
  * @return string
  */',
-        'startLine' => 70,
-        'endLine' => 77,
+        'startLine' => 73,
+        'endLine' => 80,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -330,8 +334,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 87,
-            'endLine' => 87,
+            'startLine' => 90,
+            'endLine' => 90,
             'startColumn' => 35,
             'endColumn' => 39,
             'parameterIndex' => 0,
@@ -351,8 +355,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @throws \\Illuminate\\Contracts\\Filesystem\\FileNotFoundException
  */',
-        'startLine' => 87,
-        'endLine' => 98,
+        'startLine' => 90,
+        'endLine' => 101,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -390,8 +394,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 107,
-            'endLine' => 107,
+            'startLine' => 110,
+            'endLine' => 110,
             'startColumn' => 58,
             'endColumn' => 78,
             'parameterIndex' => 0,
@@ -416,8 +420,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 107,
-            'endLine' => 107,
+            'startLine' => 110,
+            'endLine' => 110,
             'startColumn' => 81,
             'endColumn' => 103,
             'parameterIndex' => 1,
@@ -436,39 +440,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Symfony\\Component\\Console\\Output\\OutputInterface  $output
  * @return void
  */',
-        'startLine' => 107,
-        'endLine' => 122,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\EnumMakeCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\EnumMakeCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\EnumMakeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command arguments.
- *
- * @return array
- */',
-        'startLine' => 129,
-        'endLine' => 136,
+        'startLine' => 110,
+        'endLine' => 125,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/sanctum/src/PersonalAccessToken.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Laravel\Sanctum\PersonalAccessToken
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-5f4e3cf12f9b900c207fc113967a558b2c1c602f6da7f930c2a3ca991730afae-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-dd0ecd5fb64ea26a06d54af88198c87c63e8fac139a00cd174aa35ecdb5123eb-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 

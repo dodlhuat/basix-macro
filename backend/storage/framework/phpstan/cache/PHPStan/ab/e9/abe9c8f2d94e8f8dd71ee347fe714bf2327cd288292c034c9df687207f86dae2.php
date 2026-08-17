@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/lines-of-code/src/Counter.php' => 
     array (
-      0 => '85377707e92d7e91759888d8629868460f6ec52db77fc07917e5870b7b57f32e',
+      0 => '36d74a550a104a20b859d286b01ef2a7fbfe297f6571878aecb8c26c2c8531fb',
       1 => 
       array (
         0 => 'sebastianbergmann\\linesofcode\\counter',
@@ -66,7 +66,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/lines-of-code/src/LineCountingVisitor.php' => 
     array (
-      0 => 'b58e258e989a6203343c6df8331a9edb94cabe2a82295f30954983b7bdbf2624',
+      0 => 'e4b83cb7bdbe87f5ab023822b8a25e181103f3cdf5659988a03bfe3a3e03d429',
       1 => 
       array (
         0 => 'sebastianbergmann\\linesofcode\\linecountingvisitor',
@@ -84,7 +84,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/lines-of-code/src/LinesOfCode.php' => 
     array (
-      0 => 'f658eb46deb1758c2ed4ca0ec2cf3632d5b241546e32e4d63711b0acf8f33831',
+      0 => '60be668d80af525554fa9b588f79c44846424cbdf3ce84e14d38842c0ff773cb',
       1 => 
       array (
         0 => 'sebastianbergmann\\linesofcode\\linesofcode',

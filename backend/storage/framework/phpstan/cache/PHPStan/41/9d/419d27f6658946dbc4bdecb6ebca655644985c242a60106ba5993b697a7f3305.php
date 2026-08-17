@@ -2235,7 +2235,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php' => '53fef9eb409578649b19614ca5d45cebb5271d0d58256229d73649e9f8a8e02a',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php' => 'be4648e2c7b26daff6b8e2f21667413efb4a12eeb42130890ba4e586f0cb1ee1',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Conditionable/Traits/Conditionable.php' => '5697fdba0acb78ca0b4e122e5c459cd5d97d000ed9b14fed31271cb7ffd44225',
     ),
   ),

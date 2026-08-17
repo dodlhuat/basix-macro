@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/ResourceMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\ResourceMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-0ade733d553c45271da489256bc6f26c74a51fd77b2d57662fc7d51966587c27-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-1094c8c199982f7f4684f8bab3242561d5beb0dd34ff810fed5c70b70b2d3464-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'make:resource\'',
             'attributes' => 
             array (
-              'startLine' => 9,
-              'endLine' => 9,
-              'startTokenPos' => 28,
-              'startFilePos' => 209,
-              'endTokenPos' => 28,
-              'endFilePos' => 223,
+              'startLine' => 8,
+              'endLine' => 8,
+              'startTokenPos' => 23,
+              'startFilePos' => 160,
+              'endTokenPos' => 23,
+              'endFilePos' => 174,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 9,
-    'endLine' => 109,
+    'startLine' => 8,
+    'endLine' => 98,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\GeneratorCommand',
@@ -63,38 +63,42 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\ResourceMakeCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\ResourceMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:resource\'',
+          'code' => '\'make:resource
+                    {name : The name of the resource}
+                    {--f|force : Create the class even if the resource already exists}
+                    {--j|json-api : Create a JSON:API resource}
+                    {--c|collection : Create a resource collection}\'',
           'attributes' => 
           array (
-            'startLine' => 17,
-            'endLine' => 17,
-            'startTokenPos' => 50,
-            'startFilePos' => 377,
-            'endTokenPos' => 50,
-            'endFilePos' => 391,
+            'startLine' => 16,
+            'endLine' => 20,
+            'startTokenPos' => 45,
+            'startFilePos' => 354,
+            'endTokenPos' => 45,
+            'endFilePos' => 641,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 17,
-        'endLine' => 17,
+        'startLine' => 16,
+        'endLine' => 20,
         'startColumn' => 5,
-        'endColumn' => 38,
+        'endColumn' => 69,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -114,12 +118,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Create a new resource\'',
           'attributes' => 
           array (
-            'startLine' => 24,
-            'endLine' => 24,
-            'startTokenPos' => 61,
-            'startFilePos' => 506,
-            'endTokenPos' => 61,
-            'endFilePos' => 528,
+            'startLine' => 27,
+            'endLine' => 27,
+            'startTokenPos' => 56,
+            'startFilePos' => 756,
+            'endTokenPos' => 56,
+            'endFilePos' => 778,
           ),
         ),
         'docComment' => '/**
@@ -130,8 +134,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 24,
-        'endLine' => 24,
+        'startLine' => 27,
+        'endLine' => 27,
         'startColumn' => 5,
         'endColumn' => 53,
         'isPromoted' => false,
@@ -153,12 +157,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Resource\'',
           'attributes' => 
           array (
-            'startLine' => 31,
-            'endLine' => 31,
-            'startTokenPos' => 72,
-            'startFilePos' => 638,
-            'endTokenPos' => 72,
-            'endFilePos' => 647,
+            'startLine' => 34,
+            'endLine' => 34,
+            'startTokenPos' => 67,
+            'startFilePos' => 888,
+            'endTokenPos' => 67,
+            'endFilePos' => 897,
           ),
         ),
         'docComment' => '/**
@@ -169,8 +173,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 31,
-        'endLine' => 31,
+        'startLine' => 34,
+        'endLine' => 34,
         'startColumn' => 5,
         'endColumn' => 33,
         'isPromoted' => false,
@@ -199,8 +203,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return void
  */',
-        'startLine' => 38,
-        'endLine' => 45,
+        'startLine' => 41,
+        'endLine' => 48,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -230,8 +234,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 52,
-        'endLine' => 59,
+        'startLine' => 55,
+        'endLine' => 62,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -261,8 +265,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return bool
  */',
-        'startLine' => 66,
-        'endLine' => 70,
+        'startLine' => 69,
+        'endLine' => 73,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -292,8 +296,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 78,
-            'endLine' => 78,
+            'startLine' => 81,
+            'endLine' => 81,
             'startColumn' => 40,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -311,8 +315,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $stub
  * @return string
  */',
-        'startLine' => 78,
-        'endLine' => 83,
+        'startLine' => 81,
+        'endLine' => 86,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -342,8 +346,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 91,
-            'endLine' => 91,
+            'startLine' => 94,
+            'endLine' => 94,
             'startColumn' => 44,
             'endColumn' => 57,
             'parameterIndex' => 0,
@@ -361,39 +365,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rootNamespace
  * @return string
  */',
-        'startLine' => 91,
-        'endLine' => 94,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\ResourceMakeCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\ResourceMakeCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\ResourceMakeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command options.
- *
- * @return array
- */',
-        'startLine' => 101,
-        'endLine' => 108,
+        'startLine' => 94,
+        'endLine' => 97,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

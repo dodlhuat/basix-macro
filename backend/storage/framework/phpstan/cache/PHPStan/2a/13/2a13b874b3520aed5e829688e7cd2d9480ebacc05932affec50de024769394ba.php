@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Queue/Console/PauseCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Queue\Console\PauseCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-cb4c9a6eb4bc12c685e56caed5de796b525d7d7e471937a0d975bca63f451139-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-789de9eed1b56a508839672094c821ca14b7f6203067c871bec261ffcb0076f6-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -48,7 +48,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       ),
     ),
     'startLine' => 11,
-    'endLine' => 51,
+    'endLine' => 67,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -73,15 +73,17 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'queue:pause {queue : The name of the queue to pause}\'',
+          'code' => '\'queue:pause
+                            {queue? : The name of the queue to pause}
+                            {--all : Pause job processing for all queues on all connections}\'',
           'attributes' => 
           array (
             'startLine' => 21,
-            'endLine' => 21,
+            'endLine' => 23,
             'startTokenPos' => 69,
             'startFilePos' => 459,
             'endTokenPos' => 69,
-            'endFilePos' => 512,
+            'endFilePos' => 634,
           ),
         ),
         'docComment' => '/**
@@ -93,9 +95,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
         ),
         'startLine' => 21,
-        'endLine' => 21,
+        'endLine' => 23,
         'startColumn' => 5,
-        'endColumn' => 82,
+        'endColumn' => 94,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -115,12 +117,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Pause job processing for a specific queue\'',
           'attributes' => 
           array (
-            'startLine' => 28,
-            'endLine' => 28,
+            'startLine' => 30,
+            'endLine' => 30,
             'startTokenPos' => 80,
-            'startFilePos' => 627,
+            'startFilePos' => 749,
             'endTokenPos' => 80,
-            'endFilePos' => 669,
+            'endFilePos' => 791,
           ),
         ),
         'docComment' => '/**
@@ -131,8 +133,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 28,
-        'endLine' => 28,
+        'startLine' => 30,
+        'endLine' => 30,
         'startColumn' => 5,
         'endColumn' => 73,
         'isPromoted' => false,
@@ -169,8 +171,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 35,
-            'endLine' => 35,
+            'startLine' => 37,
+            'endLine' => 37,
             'startColumn' => 28,
             'endColumn' => 48,
             'parameterIndex' => 0,
@@ -178,7 +180,15 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           ),
         ),
         'returnsReference' => false,
-        'returnType' => NULL,
+        'returnType' => 
+        array (
+          'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+          'data' => 
+          array (
+            'name' => 'int',
+            'isIdentifier' => true,
+          ),
+        ),
         'attributes' => 
         array (
         ),
@@ -187,8 +197,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return int
  */',
-        'startLine' => 35,
-        'endLine' => 50,
+        'startLine' => 37,
+        'endLine' => 66,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

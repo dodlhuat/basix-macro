@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/MailMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\MailMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-578a03b09372d531c1e29779ad6f0c66a9cdff2328f08cae97d13544f6b5b01f-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-ebfa6aa8227269dedeff749c1f17b196bb91bcb077e37dc728cb7038ec1253f8-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'make:mail\'',
             'attributes' => 
             array (
-              'startLine' => 17,
-              'endLine' => 17,
-              'startTokenPos' => 65,
-              'startFilePos' => 506,
-              'endTokenPos' => 65,
-              'endFilePos' => 516,
+              'startLine' => 16,
+              'endLine' => 16,
+              'startTokenPos' => 60,
+              'startFilePos' => 457,
+              'endTokenPos' => 60,
+              'endFilePos' => 467,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 17,
-    'endLine' => 245,
+    'startLine' => 16,
+    'endLine' => 244,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\GeneratorCommand',
@@ -64,38 +64,42 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\MailMakeCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\MailMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:mail\'',
+          'code' => '\'make:mail
+                    {name : The name of the mailable}
+                    {--f|force : Create the class even if the mailable already exists}
+                    {--m|markdown= : Create a new Markdown template for the mailable}
+                    {--view= : Create a new Blade template for the mailable}\'',
           'attributes' => 
           array (
-            'startLine' => 27,
-            'endLine' => 27,
-            'startTokenPos' => 92,
-            'startFilePos' => 696,
-            'endTokenPos' => 92,
-            'endFilePos' => 706,
+            'startLine' => 26,
+            'endLine' => 30,
+            'startTokenPos' => 87,
+            'startFilePos' => 673,
+            'endTokenPos' => 87,
+            'endFilePos' => 987,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 27,
-        'endLine' => 27,
+        'startLine' => 26,
+        'endLine' => 30,
         'startColumn' => 5,
-        'endColumn' => 34,
+        'endColumn' => 78,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -115,12 +119,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Create a new email class\'',
           'attributes' => 
           array (
-            'startLine' => 34,
-            'endLine' => 34,
-            'startTokenPos' => 103,
-            'startFilePos' => 821,
-            'endTokenPos' => 103,
-            'endFilePos' => 846,
+            'startLine' => 37,
+            'endLine' => 37,
+            'startTokenPos' => 98,
+            'startFilePos' => 1102,
+            'endTokenPos' => 98,
+            'endFilePos' => 1127,
           ),
         ),
         'docComment' => '/**
@@ -131,8 +135,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 34,
-        'endLine' => 34,
+        'startLine' => 37,
+        'endLine' => 37,
         'startColumn' => 5,
         'endColumn' => 56,
         'isPromoted' => false,
@@ -154,12 +158,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Mailable\'',
           'attributes' => 
           array (
-            'startLine' => 41,
-            'endLine' => 41,
-            'startTokenPos' => 114,
-            'startFilePos' => 956,
-            'endTokenPos' => 114,
-            'endFilePos' => 965,
+            'startLine' => 44,
+            'endLine' => 44,
+            'startTokenPos' => 109,
+            'startFilePos' => 1237,
+            'endTokenPos' => 109,
+            'endFilePos' => 1246,
           ),
         ),
         'docComment' => '/**
@@ -170,8 +174,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 41,
-        'endLine' => 41,
+        'startLine' => 44,
+        'endLine' => 44,
         'startColumn' => 5,
         'endColumn' => 33,
         'isPromoted' => false,
@@ -184,6 +188,49 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateMethods' => 
     array (
+      'configureDefaults' => 
+      array (
+        'name' => 'configureDefaults',
+        'parameters' => 
+        array (
+        ),
+        'returnsReference' => false,
+        'returnType' => 
+        array (
+          'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+          'data' => 
+          array (
+            'name' => 'void',
+            'isIdentifier' => true,
+          ),
+        ),
+        'attributes' => 
+        array (
+          0 => 
+          array (
+            'name' => 'Override',
+            'isRepeated' => false,
+            'arguments' => 
+            array (
+            ),
+          ),
+        ),
+        'docComment' => NULL,
+        'startLine' => 46,
+        'endLine' => 54,
+        'startColumn' => 5,
+        'endColumn' => 5,
+        'couldThrow' => false,
+        'isClosure' => false,
+        'isGenerator' => false,
+        'isVariadic' => false,
+        'modifiers' => 2,
+        'namespace' => 'Illuminate\\Foundation\\Console',
+        'declaringClassName' => 'Illuminate\\Foundation\\Console\\MailMakeCommand',
+        'implementingClassName' => 'Illuminate\\Foundation\\Console\\MailMakeCommand',
+        'currentClassName' => 'Illuminate\\Foundation\\Console\\MailMakeCommand',
+        'aliasName' => NULL,
+      ),
       'handle' => 
       array (
         'name' => 'handle',
@@ -200,8 +247,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return void
  */',
-        'startLine' => 48,
-        'endLine' => 61,
+        'startLine' => 61,
+        'endLine' => 74,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -231,8 +278,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return void
  */',
-        'startLine' => 68,
-        'endLine' => 89,
+        'startLine' => 81,
+        'endLine' => 102,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -262,8 +309,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return void
  */',
-        'startLine' => 96,
-        'endLine' => 123,
+        'startLine' => 109,
+        'endLine' => 136,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -293,8 +340,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 131,
-            'endLine' => 131,
+            'startLine' => 144,
+            'endLine' => 144,
             'startColumn' => 35,
             'endColumn' => 39,
             'parameterIndex' => 0,
@@ -312,8 +359,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $name
  * @return string
  */',
-        'startLine' => 131,
-        'endLine' => 144,
+        'startLine' => 144,
+        'endLine' => 157,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -343,8 +390,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 151,
-        'endLine' => 164,
+        'startLine' => 164,
+        'endLine' => 177,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -374,8 +421,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 171,
-        'endLine' => 182,
+        'startLine' => 184,
+        'endLine' => 195,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -405,8 +452,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 190,
-            'endLine' => 190,
+            'startLine' => 203,
+            'endLine' => 203,
             'startColumn' => 40,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -424,8 +471,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $stub
  * @return string
  */',
-        'startLine' => 190,
-        'endLine' => 195,
+        'startLine' => 203,
+        'endLine' => 208,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -455,8 +502,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 203,
-            'endLine' => 203,
+            'startLine' => 216,
+            'endLine' => 216,
             'startColumn' => 44,
             'endColumn' => 57,
             'parameterIndex' => 0,
@@ -474,39 +521,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rootNamespace
  * @return string
  */',
-        'startLine' => 203,
-        'endLine' => 206,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\MailMakeCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\MailMakeCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\MailMakeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command options.
- *
- * @return array
- */',
-        'startLine' => 213,
-        'endLine' => 220,
+        'startLine' => 216,
+        'endLine' => 219,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -544,8 +560,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 229,
-            'endLine' => 229,
+            'startLine' => 228,
+            'endLine' => 228,
             'startColumn' => 58,
             'endColumn' => 78,
             'parameterIndex' => 0,
@@ -570,8 +586,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 229,
-            'endLine' => 229,
+            'startLine' => 228,
+            'endLine' => 228,
             'startColumn' => 81,
             'endColumn' => 103,
             'parameterIndex' => 1,
@@ -590,8 +606,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Symfony\\Component\\Console\\Output\\OutputInterface  $output
  * @return void
  */',
-        'startLine' => 229,
-        'endLine' => 244,
+        'startLine' => 228,
+        'endLine' => 243,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

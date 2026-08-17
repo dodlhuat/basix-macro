@@ -24,7 +24,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/type/src/ReflectionMapper.php' => 
     array (
-      0 => 'dc03a108fa2fe16fe1da9be4fbbc412c36bdf637498315e51ce1249cc1f5280b',
+      0 => '5dce3f08621df0e650e101fbbdd58b57d1ca41bda920aa6fc5ebbac9a9ac178e',
       1 => 
       array (
         0 => 'sebastianbergmann\\type\\reflectionmapper',
@@ -34,11 +34,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'sebastianbergmann\\type\\fromparametertypes',
         1 => 'sebastianbergmann\\type\\fromreturntype',
         2 => 'sebastianbergmann\\type\\frompropertytype',
-        3 => 'sebastianbergmann\\type\\mapnamedtype',
-        4 => 'sebastianbergmann\\type\\mapuniontype',
-        5 => 'sebastianbergmann\\type\\mapintersectiontype',
-        6 => 'sebastianbergmann\\type\\hasreturntype',
-        7 => 'sebastianbergmann\\type\\returntype',
+        3 => 'sebastianbergmann\\type\\maptype',
+        4 => 'sebastianbergmann\\type\\mapnamedtype',
+        5 => 'sebastianbergmann\\type\\mapuniontype',
+        6 => 'sebastianbergmann\\type\\mapintersectiontype',
       ),
       3 => 
       array (
@@ -46,7 +45,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/type/src/TypeName.php' => 
     array (
-      0 => 'fc343b48e3af46b19968867cf82b323806d290db65c2d0b5f511ccd9b228aa47',
+      0 => '5cfdb138080acbf8047695d9e0d4a5697e659e228219d6fb298f135a110840cc',
       1 => 
       array (
         0 => 'sebastianbergmann\\type\\typename',
@@ -95,7 +94,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/type/src/type/CallableType.php' => 
     array (
-      0 => 'c590a87ee1901c66d590682cb8c8acec09d524ea81a5e9b6d2fe2e06e1fd6ef1',
+      0 => 'eb6578643c4e5b297ec1cea5dd4cbf5e190f184ac7484cd7cf4f6f392097147c',
       1 => 
       array (
         0 => 'sebastianbergmann\\type\\callabletype',
@@ -137,7 +136,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/type/src/type/GenericObjectType.php' => 
     array (
-      0 => '5b56423ef50b10abf56153cb6bb4174acd1decaa16f5942cb2a2ec3cf4699567',
+      0 => 'bff15c8797ad900716311af4200210651d4b9b2c5e9615da3ff12ebc724dcef1',
       1 => 
       array (
         0 => 'sebastianbergmann\\type\\genericobjecttype',
@@ -156,7 +155,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/type/src/type/IntersectionType.php' => 
     array (
-      0 => '9d5fe0f8d90f38c5241ab531990671f90a645093f988268c631b934d445e3947',
+      0 => '580b988628b316f258bcd6e08d5f54a3a06c0ab2b3c9eff4607e4d9eb3093c1a',
       1 => 
       array (
         0 => 'sebastianbergmann\\type\\intersectiontype',
@@ -180,7 +179,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/type/src/type/IterableType.php' => 
     array (
-      0 => 'f2cd4d4a8654527d74d5d558472a49055bd1cb3105eabd13a0c30558966507a4',
+      0 => '4afcd9ee97650a7c13445a021dc4b299895bec0904001b57b7189bd832601cbb',
       1 => 
       array (
         0 => 'sebastianbergmann\\type\\iterabletype',
@@ -255,7 +254,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/type/src/type/ObjectType.php' => 
     array (
-      0 => '0ee99c69373ae24d463b514c64a960b1c04532cec88e00e9ed555b0540e1de03',
+      0 => '836d309db01657f1c51820a022df293846bfe28e2da4cb58bc06846434d66f2c',
       1 => 
       array (
         0 => 'sebastianbergmann\\type\\objecttype',
@@ -276,7 +275,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/type/src/type/SimpleType.php' => 
     array (
-      0 => '16ab847fdd0f6112319989970aa35a41800abdd9704f6a9bb3181c2e830e1f12',
+      0 => '66af751219456cae8ce10774b92c4f4901fafad7f1b4fc1c93c10e96a81bc69c',
       1 => 
       array (
         0 => 'sebastianbergmann\\type\\simpletype',
@@ -334,7 +333,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/type/src/type/Type.php' => 
     array (
-      0 => '76e8f57856b0d22ba1a93f3bf0c3b66389841776875b214554798f0fb0e80322',
+      0 => '8be857f90646c6b451753195002546e7acb01fffc1c91c96e1fa249a29a7a1e2',
       1 => 
       array (
         0 => 'sebastianbergmann\\type\\type',
@@ -369,7 +368,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/type/src/type/UnionType.php' => 
     array (
-      0 => '5a164475253fb5003e508741f21a6f75eb643904ff6cb256ba82abe967fb64f7',
+      0 => '4cd578e21efbd02432d19a61d38ab5b040d2bfc33e2556afbd255bc685da0775',
       1 => 
       array (
         0 => 'sebastianbergmann\\type\\uniontype',

@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/RequestMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\RequestMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-8a5b38c2086edfba992b18e730956eec7ec20abddd79f739575f91638fbc757b-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-4ae12221d2bd121b31512ffe18a4cc706ebf63755754dfe0d1fe7245ea332565-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'make:request\'',
             'attributes' => 
             array (
-              'startLine' => 9,
-              'endLine' => 9,
-              'startTokenPos' => 28,
-              'startFilePos' => 209,
-              'endTokenPos' => 28,
-              'endFilePos' => 222,
+              'startLine' => 8,
+              'endLine' => 8,
+              'startTokenPos' => 23,
+              'startFilePos' => 160,
+              'endTokenPos' => 23,
+              'endFilePos' => 173,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 9,
-    'endLine' => 78,
+    'startLine' => 8,
+    'endLine' => 67,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\GeneratorCommand',
@@ -63,38 +63,40 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\RequestMakeCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\RequestMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:request\'',
+          'code' => '\'make:request
+                    {name : The name of the request}
+                    {--f|force : Create the class even if the request already exists}\'',
           'attributes' => 
           array (
-            'startLine' => 17,
-            'endLine' => 17,
-            'startTokenPos' => 50,
-            'startFilePos' => 375,
-            'endTokenPos' => 50,
-            'endFilePos' => 388,
+            'startLine' => 16,
+            'endLine' => 18,
+            'startTokenPos' => 45,
+            'startFilePos' => 352,
+            'endTokenPos' => 45,
+            'endFilePos' => 504,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 17,
-        'endLine' => 17,
+        'startLine' => 16,
+        'endLine' => 18,
         'startColumn' => 5,
-        'endColumn' => 37,
+        'endColumn' => 87,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -114,12 +116,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Create a new form request class\'',
           'attributes' => 
           array (
-            'startLine' => 24,
-            'endLine' => 24,
-            'startTokenPos' => 61,
-            'startFilePos' => 503,
-            'endTokenPos' => 61,
-            'endFilePos' => 535,
+            'startLine' => 25,
+            'endLine' => 25,
+            'startTokenPos' => 56,
+            'startFilePos' => 619,
+            'endTokenPos' => 56,
+            'endFilePos' => 651,
           ),
         ),
         'docComment' => '/**
@@ -130,8 +132,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 24,
-        'endLine' => 24,
+        'startLine' => 25,
+        'endLine' => 25,
         'startColumn' => 5,
         'endColumn' => 63,
         'isPromoted' => false,
@@ -153,12 +155,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Request\'',
           'attributes' => 
           array (
-            'startLine' => 31,
-            'endLine' => 31,
-            'startTokenPos' => 72,
-            'startFilePos' => 645,
-            'endTokenPos' => 72,
-            'endFilePos' => 653,
+            'startLine' => 32,
+            'endLine' => 32,
+            'startTokenPos' => 67,
+            'startFilePos' => 761,
+            'endTokenPos' => 67,
+            'endFilePos' => 769,
           ),
         ),
         'docComment' => '/**
@@ -169,8 +171,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 31,
-        'endLine' => 31,
+        'startLine' => 32,
+        'endLine' => 32,
         'startColumn' => 5,
         'endColumn' => 32,
         'isPromoted' => false,
@@ -199,8 +201,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 38,
-        'endLine' => 41,
+        'startLine' => 39,
+        'endLine' => 42,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -230,8 +232,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 49,
-            'endLine' => 49,
+            'startLine' => 50,
+            'endLine' => 50,
             'startColumn' => 40,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -249,8 +251,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $stub
  * @return string
  */',
-        'startLine' => 49,
-        'endLine' => 54,
+        'startLine' => 50,
+        'endLine' => 55,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -280,8 +282,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 62,
-            'endLine' => 62,
+            'startLine' => 63,
+            'endLine' => 63,
             'startColumn' => 44,
             'endColumn' => 57,
             'parameterIndex' => 0,
@@ -299,39 +301,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rootNamespace
  * @return string
  */',
-        'startLine' => 62,
-        'endLine' => 65,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\RequestMakeCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\RequestMakeCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\RequestMakeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command arguments.
- *
- * @return array
- */',
-        'startLine' => 72,
-        'endLine' => 77,
+        'startLine' => 63,
+        'endLine' => 66,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

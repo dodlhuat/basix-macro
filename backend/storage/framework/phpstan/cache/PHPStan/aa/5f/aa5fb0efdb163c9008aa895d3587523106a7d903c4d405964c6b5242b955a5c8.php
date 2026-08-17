@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Support/Facades/Facade.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Support\Facades\Facade
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-5322c87b5924c41281a3644abe453a614800c58d6d99f2352737f12abfc3213c-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-5d4eb0eee1be78b6c5dcf69e8907d5b85ecd4368716ff8a32f431848265c986b-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 19,
-    'endLine' => 365,
+    'endLine' => 366,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -749,7 +749,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @return \\Illuminate\\Support\\Collection
  */',
         'startLine' => 273,
-        'endLine' => 323,
+        'endLine' => 324,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -779,8 +779,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return \\Illuminate\\Contracts\\Foundation\\Application|null
  */',
-        'startLine' => 330,
-        'endLine' => 333,
+        'startLine' => 331,
+        'endLine' => 334,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -810,8 +810,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 341,
-            'endLine' => 341,
+            'startLine' => 342,
+            'endLine' => 342,
             'startColumn' => 49,
             'endColumn' => 52,
             'parameterIndex' => 0,
@@ -829,8 +829,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Contracts\\Foundation\\Application|null  $app
  * @return void
  */',
-        'startLine' => 341,
-        'endLine' => 344,
+        'startLine' => 342,
+        'endLine' => 345,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -860,8 +860,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 355,
-            'endLine' => 355,
+            'startLine' => 356,
+            'endLine' => 356,
             'startColumn' => 41,
             'endColumn' => 47,
             'parameterIndex' => 0,
@@ -878,8 +878,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 355,
-            'endLine' => 355,
+            'startLine' => 356,
+            'endLine' => 356,
             'startColumn' => 50,
             'endColumn' => 54,
             'parameterIndex' => 1,
@@ -900,8 +900,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @throws \\RuntimeException
  */',
-        'startLine' => 355,
-        'endLine' => 364,
+        'startLine' => 356,
+        'endLine' => 365,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

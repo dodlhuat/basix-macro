@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Database\Console\Seeds\SeedCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-27c9de49a7106a04995c143e4dae31bf0769812a9bf34d3ef15c86805c2193a3-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-4777ad90056ad64c130eab4fe9dcb7a81c7a3066d6c81625242af7ffcfbac55f-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'db:seed\'',
             'attributes' => 
             array (
-              'startLine' => 14,
-              'endLine' => 14,
-              'startTokenPos' => 57,
-              'startFilePos' => 438,
-              'endTokenPos' => 57,
-              'endFilePos' => 446,
+              'startLine' => 12,
+              'endLine' => 12,
+              'startTokenPos' => 47,
+              'startFilePos' => 338,
+              'endTokenPos' => 47,
+              'endFilePos' => 346,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 14,
-    'endLine' => 141,
+    'startLine' => 12,
+    'endLine' => 116,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -65,38 +65,42 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Database\\Console\\Seeds\\SeedCommand',
         'implementingClassName' => 'Illuminate\\Database\\Console\\Seeds\\SeedCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'db:seed\'',
+          'code' => '\'db:seed
+                    {class? : The class name of the root seeder}
+                    {--class=Database\\Seeders\\DatabaseSeeder : The class name of the root seeder}
+                    {--database= : The database connection to seed}
+                    {--force : Force the operation to run when in production}\'',
           'attributes' => 
           array (
-            'startLine' => 24,
-            'endLine' => 24,
-            'startTokenPos' => 87,
-            'startFilePos' => 624,
-            'endTokenPos' => 87,
-            'endFilePos' => 632,
+            'startLine' => 22,
+            'endLine' => 26,
+            'startTokenPos' => 77,
+            'startFilePos' => 550,
+            'endTokenPos' => 77,
+            'endFilePos' => 869,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 24,
-        'endLine' => 24,
+        'startLine' => 22,
+        'endLine' => 26,
         'startColumn' => 5,
-        'endColumn' => 32,
+        'endColumn' => 79,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -116,12 +120,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Seed the database with records\'',
           'attributes' => 
           array (
-            'startLine' => 31,
-            'endLine' => 31,
-            'startTokenPos' => 98,
-            'startFilePos' => 747,
-            'endTokenPos' => 98,
-            'endFilePos' => 778,
+            'startLine' => 33,
+            'endLine' => 33,
+            'startTokenPos' => 88,
+            'startFilePos' => 984,
+            'endTokenPos' => 88,
+            'endFilePos' => 1015,
           ),
         ),
         'docComment' => '/**
@@ -132,8 +136,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 31,
-        'endLine' => 31,
+        'startLine' => 33,
+        'endLine' => 33,
         'startColumn' => 5,
         'endColumn' => 62,
         'isPromoted' => false,
@@ -159,8 +163,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 38,
-        'endLine' => 38,
+        'startLine' => 40,
+        'endLine' => 40,
         'startColumn' => 5,
         'endColumn' => 24,
         'isPromoted' => false,
@@ -197,8 +201,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 45,
-            'endLine' => 45,
+            'startLine' => 47,
+            'endLine' => 47,
             'startColumn' => 33,
             'endColumn' => 50,
             'parameterIndex' => 0,
@@ -215,8 +219,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @param  \\Illuminate\\Database\\ConnectionResolverInterface  $resolver
  */',
-        'startLine' => 45,
-        'endLine' => 50,
+        'startLine' => 47,
+        'endLine' => 52,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -246,8 +250,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return int
  */',
-        'startLine' => 57,
-        'endLine' => 79,
+        'startLine' => 59,
+        'endLine' => 80,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -277,8 +281,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return \\Illuminate\\Database\\Seeder
  */',
-        'startLine' => 86,
-        'endLine' => 102,
+        'startLine' => 87,
+        'endLine' => 103,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -308,70 +312,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 109,
-        'endLine' => 114,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Database\\Console\\Seeds',
-        'declaringClassName' => 'Illuminate\\Database\\Console\\Seeds\\SeedCommand',
-        'implementingClassName' => 'Illuminate\\Database\\Console\\Seeds\\SeedCommand',
-        'currentClassName' => 'Illuminate\\Database\\Console\\Seeds\\SeedCommand',
-        'aliasName' => NULL,
-      ),
-      'getArguments' => 
-      array (
-        'name' => 'getArguments',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command arguments.
- *
- * @return array
- */',
-        'startLine' => 121,
-        'endLine' => 126,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Database\\Console\\Seeds',
-        'declaringClassName' => 'Illuminate\\Database\\Console\\Seeds\\SeedCommand',
-        'implementingClassName' => 'Illuminate\\Database\\Console\\Seeds\\SeedCommand',
-        'currentClassName' => 'Illuminate\\Database\\Console\\Seeds\\SeedCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command options.
- *
- * @return array
- */',
-        'startLine' => 133,
-        'endLine' => 140,
+        'startLine' => 110,
+        'endLine' => 115,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

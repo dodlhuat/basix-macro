@@ -8452,7 +8452,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php' => '8ed3a9496f66240af3992148e79ea491e463a4c16461884e61518e700e0903d4',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php' => 'a0e8106eca79da6caedd151cf915c0cf17418c3e3ec120ef36d19d61b5681edb',
     ),
   ),
 ));

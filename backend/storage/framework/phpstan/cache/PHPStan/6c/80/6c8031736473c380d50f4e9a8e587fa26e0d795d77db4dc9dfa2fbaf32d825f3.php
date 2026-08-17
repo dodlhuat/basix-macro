@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/recursion-context/src/Context.php' => 
     array (
-      0 => '6128401ef13f34139afee8ecc319f6cbde082b0fd3c7689f30edffcdb80337f6',
+      0 => '8d377b95d97323a5df4e04ac3ddf12204382f8ec7b9c3519666b98fec140b754',
       1 => 
       array (
         0 => 'sebastianbergmann\\recursioncontext\\context',
@@ -22,6 +22,21 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         5 => 'sebastianbergmann\\recursioncontext\\addobject',
         6 => 'sebastianbergmann\\recursioncontext\\containsarray',
         7 => 'sebastianbergmann\\recursioncontext\\containsobject',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/recursion-context/src/Marker.php' => 
+    array (
+      0 => '7d2286506d76e07fd4bc34b0da2fd46c8bccfb83170f943ed712545e33f5755b',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\recursioncontext\\marker',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\recursioncontext\\__construct',
       ),
       3 => 
       array (

@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasTimestamps.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Database\Eloquent\Concerns\HasTimestamps
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-37774710e1ceca25d06d23caae0d1976dc1184018b8ad3e4c9a2274b6ed7391a-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-25ec1bf4a0be4595f82064e534fd42fdaa62013ef6ce5a79d5a136304f44aa7a-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 11,
-    'endLine' => 261,
+    'endLine' => 255,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -813,7 +813,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @return bool
  */',
         'startLine' => 249,
-        'endLine' => 260,
+        'endLine' => 254,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

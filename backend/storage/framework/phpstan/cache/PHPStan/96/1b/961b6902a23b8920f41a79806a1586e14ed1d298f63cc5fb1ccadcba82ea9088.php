@@ -24,7 +24,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Dispatcher/DeferringDispatcher.php' => 
     array (
-      0 => 'eba5bd9220e45dff6b05db83baaaa2e1925e2230e43239f526fc2f0d06b13d98',
+      0 => 'f5bab38f2c148596a60f316f4584d70afe852f8402918703940d2106029c0cf4',
       1 => 
       array (
         0 => 'phpunit\\event\\deferringdispatcher',
@@ -35,7 +35,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         1 => 'phpunit\\event\\registertracer',
         2 => 'phpunit\\event\\registersubscriber',
         3 => 'phpunit\\event\\dispatch',
-        4 => 'phpunit\\event\\flush',
+        4 => 'phpunit\\event\\startcollectingevents',
+        5 => 'phpunit\\event\\stopcollectingevents',
+        6 => 'phpunit\\event\\flush',
       ),
       3 => 
       array (
@@ -94,7 +96,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Emitter/DispatchingEmitter.php' => 
     array (
-      0 => 'f4e041fd026dafdc564201ffe9dec9c5c945711d813c1152f4006e7a1fd6c4b8',
+      0 => '44d9a314287967d86e351cea676c70789e1dbbd7d48bb2723e10b0a20186af2e',
       1 => 
       array (
         0 => 'phpunit\\event\\dispatchingemitter',
@@ -147,48 +149,57 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         43 => 'phpunit\\event\\testcreatedstubforintersectionofinterfaces',
         44 => 'phpunit\\event\\testerrored',
         45 => 'phpunit\\event\\testfailed',
-        46 => 'phpunit\\event\\testpassed',
-        47 => 'phpunit\\event\\testconsideredrisky',
-        48 => 'phpunit\\event\\testmarkedasincomplete',
-        49 => 'phpunit\\event\\testskipped',
-        50 => 'phpunit\\event\\testtriggeredphpunitdeprecation',
-        51 => 'phpunit\\event\\testtriggeredphpunitnotice',
-        52 => 'phpunit\\event\\testtriggeredphpdeprecation',
-        53 => 'phpunit\\event\\testtriggereddeprecation',
-        54 => 'phpunit\\event\\testtriggerederror',
-        55 => 'phpunit\\event\\testtriggerednotice',
-        56 => 'phpunit\\event\\testtriggeredphpnotice',
-        57 => 'phpunit\\event\\testtriggeredwarning',
-        58 => 'phpunit\\event\\testtriggeredphpwarning',
-        59 => 'phpunit\\event\\testtriggeredphpuniterror',
-        60 => 'phpunit\\event\\testtriggeredphpunitwarning',
-        61 => 'phpunit\\event\\testprintedunexpectedoutput',
-        62 => 'phpunit\\event\\testprovidedadditionalinformation',
-        63 => 'phpunit\\event\\testfinished',
-        64 => 'phpunit\\event\\postconditioncalled',
-        65 => 'phpunit\\event\\postconditionerrored',
-        66 => 'phpunit\\event\\postconditionfailed',
-        67 => 'phpunit\\event\\postconditionfinished',
-        68 => 'phpunit\\event\\aftertestmethodcalled',
-        69 => 'phpunit\\event\\aftertestmethoderrored',
-        70 => 'phpunit\\event\\aftertestmethodfailed',
-        71 => 'phpunit\\event\\aftertestmethodfinished',
-        72 => 'phpunit\\event\\afterlasttestmethodcalled',
-        73 => 'phpunit\\event\\afterlasttestmethoderrored',
-        74 => 'phpunit\\event\\afterlasttestmethodfailed',
-        75 => 'phpunit\\event\\afterlasttestmethodfinished',
-        76 => 'phpunit\\event\\testsuitefinished',
-        77 => 'phpunit\\event\\testrunnerstartedstaticanalysisforcodecoverage',
-        78 => 'phpunit\\event\\testrunnerfinishedstaticanalysisforcodecoverage',
-        79 => 'phpunit\\event\\testrunnertriggeredphpunitdeprecation',
-        80 => 'phpunit\\event\\testrunnertriggeredphpunitnotice',
-        81 => 'phpunit\\event\\testrunnertriggeredphpunitwarning',
-        82 => 'phpunit\\event\\testrunnerenabledgarbagecollection',
-        83 => 'phpunit\\event\\testrunnerexecutionaborted',
-        84 => 'phpunit\\event\\testrunnerexecutionfinished',
-        85 => 'phpunit\\event\\testrunnerfinished',
-        86 => 'phpunit\\event\\applicationfinished',
-        87 => 'phpunit\\event\\telemetryinfo',
+        46 => 'phpunit\\event\\testattempterrored',
+        47 => 'phpunit\\event\\testattemptfailed',
+        48 => 'phpunit\\event\\testpassed',
+        49 => 'phpunit\\event\\testconsideredrisky',
+        50 => 'phpunit\\event\\testmarkedasincomplete',
+        51 => 'phpunit\\event\\testskipped',
+        52 => 'phpunit\\event\\testtriggeredphpunitdeprecation',
+        53 => 'phpunit\\event\\testtriggeredphpunitnotice',
+        54 => 'phpunit\\event\\testtriggeredphpdeprecation',
+        55 => 'phpunit\\event\\testtriggereddeprecation',
+        56 => 'phpunit\\event\\testtriggerederror',
+        57 => 'phpunit\\event\\testtriggerednotice',
+        58 => 'phpunit\\event\\testtriggeredphpnotice',
+        59 => 'phpunit\\event\\testtriggeredwarning',
+        60 => 'phpunit\\event\\testtriggeredphpwarning',
+        61 => 'phpunit\\event\\testtriggeredphpuniterror',
+        62 => 'phpunit\\event\\testtriggeredphpunitwarning',
+        63 => 'phpunit\\event\\testprintedunexpectedoutput',
+        64 => 'phpunit\\event\\testprovidedadditionalinformation',
+        65 => 'phpunit\\event\\testfinished',
+        66 => 'phpunit\\event\\postconditioncalled',
+        67 => 'phpunit\\event\\postconditionerrored',
+        68 => 'phpunit\\event\\postconditionfailed',
+        69 => 'phpunit\\event\\postconditionfinished',
+        70 => 'phpunit\\event\\aftertestmethodcalled',
+        71 => 'phpunit\\event\\aftertestmethoderrored',
+        72 => 'phpunit\\event\\aftertestmethodfailed',
+        73 => 'phpunit\\event\\aftertestmethodfinished',
+        74 => 'phpunit\\event\\afterlasttestmethodcalled',
+        75 => 'phpunit\\event\\afterlasttestmethoderrored',
+        76 => 'phpunit\\event\\afterlasttestmethodfailed',
+        77 => 'phpunit\\event\\afterlasttestmethodfinished',
+        78 => 'phpunit\\event\\testsuitefinished',
+        79 => 'phpunit\\event\\testrunnerstartedstaticanalysisforcodecoverage',
+        80 => 'phpunit\\event\\testrunnerfinishedstaticanalysisforcodecoverage',
+        81 => 'phpunit\\event\\testrunnertriggeredphpunitdeprecation',
+        82 => 'phpunit\\event\\testrunnertriggeredphpunitnotice',
+        83 => 'phpunit\\event\\testrunnertriggeredphpunitwarning',
+        84 => 'phpunit\\event\\testrunnertriggeredphpnotice',
+        85 => 'phpunit\\event\\testrunnertriggerednotice',
+        86 => 'phpunit\\event\\testrunnertriggeredphpwarning',
+        87 => 'phpunit\\event\\testrunnertriggeredwarning',
+        88 => 'phpunit\\event\\testrunnertriggeredphpdeprecation',
+        89 => 'phpunit\\event\\testrunnertriggereddeprecation',
+        90 => 'phpunit\\event\\testrunnertriggerederror',
+        91 => 'phpunit\\event\\testrunnerenabledgarbagecollection',
+        92 => 'phpunit\\event\\testrunnerexecutionaborted',
+        93 => 'phpunit\\event\\testrunnerexecutionfinished',
+        94 => 'phpunit\\event\\testrunnerfinished',
+        95 => 'phpunit\\event\\applicationfinished',
+        96 => 'phpunit\\event\\telemetryinfo',
       ),
       3 => 
       array (
@@ -196,7 +207,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Emitter/Emitter.php' => 
     array (
-      0 => '334bea2a035d53711cc02f18d5d2e870a68921864353ddd29ad5122f244a6ca5',
+      0 => '59a234a9f03b9e918d208b2469ff9c453ca21b1f9e69c7b8162db661ce7d9f78',
       1 => 
       array (
         0 => 'phpunit\\event\\emitter',
@@ -245,50 +256,59 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         39 => 'phpunit\\event\\testcreatedstubforintersectionofinterfaces',
         40 => 'phpunit\\event\\testerrored',
         41 => 'phpunit\\event\\testfailed',
-        42 => 'phpunit\\event\\testpassed',
-        43 => 'phpunit\\event\\testconsideredrisky',
-        44 => 'phpunit\\event\\testmarkedasincomplete',
-        45 => 'phpunit\\event\\testskipped',
-        46 => 'phpunit\\event\\testtriggeredphpunitdeprecation',
-        47 => 'phpunit\\event\\testtriggeredphpunitnotice',
-        48 => 'phpunit\\event\\testtriggeredphpdeprecation',
-        49 => 'phpunit\\event\\testtriggereddeprecation',
-        50 => 'phpunit\\event\\testtriggerederror',
-        51 => 'phpunit\\event\\testtriggerednotice',
-        52 => 'phpunit\\event\\testtriggeredphpnotice',
-        53 => 'phpunit\\event\\testtriggeredwarning',
-        54 => 'phpunit\\event\\testtriggeredphpwarning',
-        55 => 'phpunit\\event\\testtriggeredphpuniterror',
-        56 => 'phpunit\\event\\testtriggeredphpunitwarning',
-        57 => 'phpunit\\event\\testprintedunexpectedoutput',
-        58 => 'phpunit\\event\\testprovidedadditionalinformation',
-        59 => 'phpunit\\event\\testfinished',
-        60 => 'phpunit\\event\\postconditioncalled',
-        61 => 'phpunit\\event\\postconditionerrored',
-        62 => 'phpunit\\event\\postconditionfailed',
-        63 => 'phpunit\\event\\postconditionfinished',
-        64 => 'phpunit\\event\\aftertestmethodcalled',
-        65 => 'phpunit\\event\\aftertestmethoderrored',
-        66 => 'phpunit\\event\\aftertestmethodfailed',
-        67 => 'phpunit\\event\\aftertestmethodfinished',
-        68 => 'phpunit\\event\\afterlasttestmethodcalled',
-        69 => 'phpunit\\event\\afterlasttestmethoderrored',
-        70 => 'phpunit\\event\\afterlasttestmethodfailed',
-        71 => 'phpunit\\event\\afterlasttestmethodfinished',
-        72 => 'phpunit\\event\\testsuitefinished',
-        73 => 'phpunit\\event\\childprocessstarted',
-        74 => 'phpunit\\event\\childprocesserrored',
-        75 => 'phpunit\\event\\childprocessfinished',
-        76 => 'phpunit\\event\\testrunnerstartedstaticanalysisforcodecoverage',
-        77 => 'phpunit\\event\\testrunnerfinishedstaticanalysisforcodecoverage',
-        78 => 'phpunit\\event\\testrunnertriggeredphpunitdeprecation',
-        79 => 'phpunit\\event\\testrunnertriggeredphpunitnotice',
-        80 => 'phpunit\\event\\testrunnertriggeredphpunitwarning',
-        81 => 'phpunit\\event\\testrunnerenabledgarbagecollection',
-        82 => 'phpunit\\event\\testrunnerexecutionaborted',
-        83 => 'phpunit\\event\\testrunnerexecutionfinished',
-        84 => 'phpunit\\event\\testrunnerfinished',
-        85 => 'phpunit\\event\\applicationfinished',
+        42 => 'phpunit\\event\\testattempterrored',
+        43 => 'phpunit\\event\\testattemptfailed',
+        44 => 'phpunit\\event\\testpassed',
+        45 => 'phpunit\\event\\testconsideredrisky',
+        46 => 'phpunit\\event\\testmarkedasincomplete',
+        47 => 'phpunit\\event\\testskipped',
+        48 => 'phpunit\\event\\testtriggeredphpunitdeprecation',
+        49 => 'phpunit\\event\\testtriggeredphpunitnotice',
+        50 => 'phpunit\\event\\testtriggeredphpdeprecation',
+        51 => 'phpunit\\event\\testtriggereddeprecation',
+        52 => 'phpunit\\event\\testtriggerederror',
+        53 => 'phpunit\\event\\testtriggerednotice',
+        54 => 'phpunit\\event\\testtriggeredphpnotice',
+        55 => 'phpunit\\event\\testtriggeredwarning',
+        56 => 'phpunit\\event\\testtriggeredphpwarning',
+        57 => 'phpunit\\event\\testtriggeredphpuniterror',
+        58 => 'phpunit\\event\\testtriggeredphpunitwarning',
+        59 => 'phpunit\\event\\testprintedunexpectedoutput',
+        60 => 'phpunit\\event\\testprovidedadditionalinformation',
+        61 => 'phpunit\\event\\testfinished',
+        62 => 'phpunit\\event\\postconditioncalled',
+        63 => 'phpunit\\event\\postconditionerrored',
+        64 => 'phpunit\\event\\postconditionfailed',
+        65 => 'phpunit\\event\\postconditionfinished',
+        66 => 'phpunit\\event\\aftertestmethodcalled',
+        67 => 'phpunit\\event\\aftertestmethoderrored',
+        68 => 'phpunit\\event\\aftertestmethodfailed',
+        69 => 'phpunit\\event\\aftertestmethodfinished',
+        70 => 'phpunit\\event\\afterlasttestmethodcalled',
+        71 => 'phpunit\\event\\afterlasttestmethoderrored',
+        72 => 'phpunit\\event\\afterlasttestmethodfailed',
+        73 => 'phpunit\\event\\afterlasttestmethodfinished',
+        74 => 'phpunit\\event\\testsuitefinished',
+        75 => 'phpunit\\event\\childprocessstarted',
+        76 => 'phpunit\\event\\childprocesserrored',
+        77 => 'phpunit\\event\\childprocessfinished',
+        78 => 'phpunit\\event\\testrunnerstartedstaticanalysisforcodecoverage',
+        79 => 'phpunit\\event\\testrunnerfinishedstaticanalysisforcodecoverage',
+        80 => 'phpunit\\event\\testrunnertriggeredphpunitdeprecation',
+        81 => 'phpunit\\event\\testrunnertriggeredphpunitnotice',
+        82 => 'phpunit\\event\\testrunnertriggeredphpunitwarning',
+        83 => 'phpunit\\event\\testrunnertriggeredphpnotice',
+        84 => 'phpunit\\event\\testrunnertriggerednotice',
+        85 => 'phpunit\\event\\testrunnertriggeredphpwarning',
+        86 => 'phpunit\\event\\testrunnertriggeredwarning',
+        87 => 'phpunit\\event\\testrunnertriggeredphpdeprecation',
+        88 => 'phpunit\\event\\testrunnertriggereddeprecation',
+        89 => 'phpunit\\event\\testrunnertriggerederror',
+        90 => 'phpunit\\event\\testrunnerenabledgarbagecollection',
+        91 => 'phpunit\\event\\testrunnerexecutionaborted',
+        92 => 'phpunit\\event\\testrunnerexecutionfinished',
+        93 => 'phpunit\\event\\testrunnerfinished',
+        94 => 'phpunit\\event\\applicationfinished',
       ),
       3 => 
       array (
@@ -398,7 +418,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/EventCollectionIterator.php' => 
     array (
-      0 => '0fe0fb0d2b8a1a949f7fe3daa54ad37b0c46e042deeeb5f6fa0f90da73921384',
+      0 => '5cbbea75ccac0d73c9f0866fd720788601a8e80bee3e98f6df86d5d4fa51a659',
       1 => 
       array (
         0 => 'phpunit\\event\\eventcollectioniterator',
@@ -657,7 +677,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/AfterTestMethodCalled.php' => 
     array (
-      0 => 'c2d5346c302b8fa6a84774e169f98d40cd1c23705955cd48cc26d7df7b4c494d',
+      0 => '8ea34f56fc32dbc8615ab6553d5528dafb1e89edefea7984179271805b6f821a',
       1 => 
       array (
         0 => 'phpunit\\event\\test\\aftertestmethodcalled',
@@ -667,9 +687,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\event\\test\\__construct',
         1 => 'phpunit\\event\\test\\telemetryinfo',
         2 => 'phpunit\\event\\test\\test',
-        3 => 'phpunit\\event\\test\\testclassname',
-        4 => 'phpunit\\event\\test\\calledmethod',
-        5 => 'phpunit\\event\\test\\asstring',
+        3 => 'phpunit\\event\\test\\calledmethod',
+        4 => 'phpunit\\event\\test\\asstring',
       ),
       3 => 
       array (
@@ -692,7 +711,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/AfterTestMethodErrored.php' => 
     array (
-      0 => 'c68d60caa58aba823fb38713e6ddc138cc81538abd5c8be0019dc4fb677ed03c',
+      0 => '90f366ca239c1f41c99e3af45885a85b635550c69d22cffa1f5ffd445b26633d',
       1 => 
       array (
         0 => 'phpunit\\event\\test\\aftertestmethoderrored',
@@ -702,10 +721,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\event\\test\\__construct',
         1 => 'phpunit\\event\\test\\telemetryinfo',
         2 => 'phpunit\\event\\test\\test',
-        3 => 'phpunit\\event\\test\\testclassname',
-        4 => 'phpunit\\event\\test\\calledmethod',
-        5 => 'phpunit\\event\\test\\throwable',
-        6 => 'phpunit\\event\\test\\asstring',
+        3 => 'phpunit\\event\\test\\calledmethod',
+        4 => 'phpunit\\event\\test\\throwable',
+        5 => 'phpunit\\event\\test\\asstring',
       ),
       3 => 
       array (
@@ -763,7 +781,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/AfterTestMethodFinished.php' => 
     array (
-      0 => 'f64993f8276b3fb5c7eee7e7ad3c22c5a9178fd1250dae1e032b42364d1940ba',
+      0 => '9d39009579d9c5ec1296328e0278eee66d2a3e323eb023fea4de5d6c8544db17',
       1 => 
       array (
         0 => 'phpunit\\event\\test\\aftertestmethodfinished',
@@ -773,9 +791,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\event\\test\\__construct',
         1 => 'phpunit\\event\\test\\telemetryinfo',
         2 => 'phpunit\\event\\test\\test',
-        3 => 'phpunit\\event\\test\\testclassname',
-        4 => 'phpunit\\event\\test\\calledmethods',
-        5 => 'phpunit\\event\\test\\asstring',
+        3 => 'phpunit\\event\\test\\calledmethods',
+        4 => 'phpunit\\event\\test\\asstring',
       ),
       3 => 
       array (
@@ -936,7 +953,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/BeforeTestMethodCalled.php' => 
     array (
-      0 => 'b0b5362b102754156ee3ca108c042646977bb6495dd36c1c839834dfabec3f6c',
+      0 => '1371d4223a2d93640c05260f7ef3efbedda9e1fe1e8f1ca6cf92bdb7b6ee6627',
       1 => 
       array (
         0 => 'phpunit\\event\\test\\beforetestmethodcalled',
@@ -946,9 +963,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\event\\test\\__construct',
         1 => 'phpunit\\event\\test\\telemetryinfo',
         2 => 'phpunit\\event\\test\\test',
-        3 => 'phpunit\\event\\test\\testclassname',
-        4 => 'phpunit\\event\\test\\calledmethod',
-        5 => 'phpunit\\event\\test\\asstring',
+        3 => 'phpunit\\event\\test\\calledmethod',
+        4 => 'phpunit\\event\\test\\asstring',
       ),
       3 => 
       array (
@@ -971,7 +987,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/BeforeTestMethodErrored.php' => 
     array (
-      0 => '06f5e8b08c1a0040cd5f3c78c2a32202189fe8d972403c6b4d4276efacbfda19',
+      0 => '66e7c9deb40b1fee9860dbe6edf2ee285c2211cea2392e1d9e9eec23ea839021',
       1 => 
       array (
         0 => 'phpunit\\event\\test\\beforetestmethoderrored',
@@ -981,10 +997,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\event\\test\\__construct',
         1 => 'phpunit\\event\\test\\telemetryinfo',
         2 => 'phpunit\\event\\test\\test',
-        3 => 'phpunit\\event\\test\\testclassname',
-        4 => 'phpunit\\event\\test\\calledmethod',
-        5 => 'phpunit\\event\\test\\throwable',
-        6 => 'phpunit\\event\\test\\asstring',
+        3 => 'phpunit\\event\\test\\calledmethod',
+        4 => 'phpunit\\event\\test\\throwable',
+        5 => 'phpunit\\event\\test\\asstring',
       ),
       3 => 
       array (
@@ -1042,7 +1057,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/BeforeTestMethodFinished.php' => 
     array (
-      0 => '94e1c094b524e58e651908f7a8ed8227f06433dc67bfe364525dd2a2761479de',
+      0 => 'ab3fb76895335bdab0da0225265758c6cee1a5c271bd3cc421849ab811671d57',
       1 => 
       array (
         0 => 'phpunit\\event\\test\\beforetestmethodfinished',
@@ -1052,9 +1067,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\event\\test\\__construct',
         1 => 'phpunit\\event\\test\\telemetryinfo',
         2 => 'phpunit\\event\\test\\test',
-        3 => 'phpunit\\event\\test\\testclassname',
-        4 => 'phpunit\\event\\test\\calledmethods',
-        5 => 'phpunit\\event\\test\\asstring',
+        3 => 'phpunit\\event\\test\\calledmethods',
+        4 => 'phpunit\\event\\test\\asstring',
       ),
       3 => 
       array (
@@ -1077,7 +1091,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PostConditionCalled.php' => 
     array (
-      0 => '0c62bd380eeebab553560ed61a607a3f788abfcae55c190dc751e7ce2323adc3',
+      0 => '2ba16c8a6d5f515d4c098131c58fb56e702a89eb19ecdcd1c4fe1ca01df23c23',
       1 => 
       array (
         0 => 'phpunit\\event\\test\\postconditioncalled',
@@ -1087,9 +1101,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\event\\test\\__construct',
         1 => 'phpunit\\event\\test\\telemetryinfo',
         2 => 'phpunit\\event\\test\\test',
-        3 => 'phpunit\\event\\test\\testclassname',
-        4 => 'phpunit\\event\\test\\calledmethod',
-        5 => 'phpunit\\event\\test\\asstring',
+        3 => 'phpunit\\event\\test\\calledmethod',
+        4 => 'phpunit\\event\\test\\asstring',
       ),
       3 => 
       array (
@@ -1112,7 +1125,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PostConditionErrored.php' => 
     array (
-      0 => '3bea2421e521d8d6b5ca8130baf6e2a8facf36b4c822c2060418a9904f9827a7',
+      0 => '640147015c675a6da3a09cd0d7a8b7eeb5b1e0fbf46562160332a5c10c06a203',
       1 => 
       array (
         0 => 'phpunit\\event\\test\\postconditionerrored',
@@ -1122,10 +1135,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\event\\test\\__construct',
         1 => 'phpunit\\event\\test\\telemetryinfo',
         2 => 'phpunit\\event\\test\\test',
-        3 => 'phpunit\\event\\test\\testclassname',
-        4 => 'phpunit\\event\\test\\calledmethod',
-        5 => 'phpunit\\event\\test\\throwable',
-        6 => 'phpunit\\event\\test\\asstring',
+        3 => 'phpunit\\event\\test\\calledmethod',
+        4 => 'phpunit\\event\\test\\throwable',
+        5 => 'phpunit\\event\\test\\asstring',
       ),
       3 => 
       array (
@@ -1183,7 +1195,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PostConditionFinished.php' => 
     array (
-      0 => 'a025ce0e0bb8d46c93952e36b474b755bb0c26a248d2a98b551eab09a436e203',
+      0 => '709b2e678d7616cdcda0d15c40bc2eeca963b0388087a477dd62c0ba05a00011',
       1 => 
       array (
         0 => 'phpunit\\event\\test\\postconditionfinished',
@@ -1193,9 +1205,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\event\\test\\__construct',
         1 => 'phpunit\\event\\test\\telemetryinfo',
         2 => 'phpunit\\event\\test\\test',
-        3 => 'phpunit\\event\\test\\testclassname',
-        4 => 'phpunit\\event\\test\\calledmethods',
-        5 => 'phpunit\\event\\test\\asstring',
+        3 => 'phpunit\\event\\test\\calledmethods',
+        4 => 'phpunit\\event\\test\\asstring',
       ),
       3 => 
       array (
@@ -1218,7 +1229,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PreConditionCalled.php' => 
     array (
-      0 => '6a39104f9d232616192292df63f7d63d0c29f7414898a46afe2344d255651a61',
+      0 => 'a4b5846e97635d05a77c3096e6ae89efd6d40de5f4d617504718a772b577fc82',
       1 => 
       array (
         0 => 'phpunit\\event\\test\\preconditioncalled',
@@ -1228,9 +1239,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\event\\test\\__construct',
         1 => 'phpunit\\event\\test\\telemetryinfo',
         2 => 'phpunit\\event\\test\\test',
-        3 => 'phpunit\\event\\test\\testclassname',
-        4 => 'phpunit\\event\\test\\calledmethod',
-        5 => 'phpunit\\event\\test\\asstring',
+        3 => 'phpunit\\event\\test\\calledmethod',
+        4 => 'phpunit\\event\\test\\asstring',
       ),
       3 => 
       array (
@@ -1253,7 +1263,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PreConditionErrored.php' => 
     array (
-      0 => 'cd4aabd3f226a0e6285c8ebd7c9f9574db5ea44b2e8729173f22c04a75130c90',
+      0 => '4fa52c3344d33d5a7ea8e425cbd367a39ea705b1d60b09fadddc95d28f2662cf',
       1 => 
       array (
         0 => 'phpunit\\event\\test\\preconditionerrored',
@@ -1263,10 +1273,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\event\\test\\__construct',
         1 => 'phpunit\\event\\test\\telemetryinfo',
         2 => 'phpunit\\event\\test\\test',
-        3 => 'phpunit\\event\\test\\testclassname',
-        4 => 'phpunit\\event\\test\\calledmethod',
-        5 => 'phpunit\\event\\test\\throwable',
-        6 => 'phpunit\\event\\test\\asstring',
+        3 => 'phpunit\\event\\test\\calledmethod',
+        4 => 'phpunit\\event\\test\\throwable',
+        5 => 'phpunit\\event\\test\\asstring',
       ),
       3 => 
       array (
@@ -1324,7 +1333,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PreConditionFinished.php' => 
     array (
-      0 => 'f19370a12d65037e970755bf86732e4a834be5fd69c6d733f9f461fd2114dcda',
+      0 => '1d8a4a88b2fb610852f1d8a6f5f400baae372dacce62b8e1a3434edef4bf0cd2',
       1 => 
       array (
         0 => 'phpunit\\event\\test\\preconditionfinished',
@@ -1334,9 +1343,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\event\\test\\__construct',
         1 => 'phpunit\\event\\test\\telemetryinfo',
         2 => 'phpunit\\event\\test\\test',
-        3 => 'phpunit\\event\\test\\testclassname',
-        4 => 'phpunit\\event\\test\\calledmethods',
-        5 => 'phpunit\\event\\test\\asstring',
+        3 => 'phpunit\\event\\test\\calledmethods',
+        4 => 'phpunit\\event\\test\\asstring',
       ),
       3 => 
       array (
@@ -1393,7 +1401,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/Issue/DeprecationTriggered.php' => 
     array (
-      0 => '9d31a42dd5a00a086d25bf53962c410c86f57bc3a21e7127347e36a40194f758',
+      0 => 'c8bbf51c5bc1e528decf891526a56a8572d45b65ee5367a7d66c77d5830da22f',
       1 => 
       array (
         0 => 'phpunit\\event\\test\\deprecationtriggered',
@@ -1409,9 +1417,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         6 => 'phpunit\\event\\test\\wassuppressed',
         7 => 'phpunit\\event\\test\\ignoredbybaseline',
         8 => 'phpunit\\event\\test\\ignoredbytest',
-        9 => 'phpunit\\event\\test\\trigger',
-        10 => 'phpunit\\event\\test\\stacktrace',
-        11 => 'phpunit\\event\\test\\asstring',
+        9 => 'phpunit\\event\\test\\ignoredbyfilter',
+        10 => 'phpunit\\event\\test\\trigger',
+        11 => 'phpunit\\event\\test\\stacktrace',
+        12 => 'phpunit\\event\\test\\asstring',
       ),
       3 => 
       array (
@@ -1509,7 +1518,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/Issue/PhpDeprecationTriggered.php' => 
     array (
-      0 => 'ae6ad99e2eb2120707f3dddfd4fed96b015d2a690b6261ad2d5cfd3ffffdea52',
+      0 => '4ccd02753462201235d22728d2ea73bec195440ee2312152993d84db4f1de39e',
       1 => 
       array (
         0 => 'phpunit\\event\\test\\phpdeprecationtriggered',
@@ -1525,8 +1534,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         6 => 'phpunit\\event\\test\\wassuppressed',
         7 => 'phpunit\\event\\test\\ignoredbybaseline',
         8 => 'phpunit\\event\\test\\ignoredbytest',
-        9 => 'phpunit\\event\\test\\trigger',
-        10 => 'phpunit\\event\\test\\asstring',
+        9 => 'phpunit\\event\\test\\ignoredbyfilter',
+        10 => 'phpunit\\event\\test\\trigger',
+        11 => 'phpunit\\event\\test\\asstring',
       ),
       3 => 
       array (
@@ -2439,7 +2449,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/ChildProcessErrored.php' => 
     array (
-      0 => 'af2e9305ffc1119b04d621158679d7fc694bb8fdef994016c15237b1246a3826',
+      0 => '50fa2c2cbe8e053e9e25ae55811354e2e73850881b87279921e2aba17dde46b7',
       1 => 
       array (
         0 => 'phpunit\\event\\testrunner\\childprocesserrored',
@@ -2448,7 +2458,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\event\\testrunner\\__construct',
         1 => 'phpunit\\event\\testrunner\\telemetryinfo',
-        2 => 'phpunit\\event\\testrunner\\asstring',
+        2 => 'phpunit\\event\\testrunner\\reason',
+        3 => 'phpunit\\event\\testrunner\\message',
+        4 => 'phpunit\\event\\testrunner\\asstring',
       ),
       3 => 
       array (
@@ -2471,7 +2483,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/ChildProcessFinished.php' => 
     array (
-      0 => '16586f61ad5f0acfc0efca2d797d5c02458e66719b4a64d36ffba980755382cf',
+      0 => '921c41761cc3867a23c60420a7605dc59395edc99a63ec691a1c02414d65a3c2',
       1 => 
       array (
         0 => 'phpunit\\event\\testrunner\\childprocessfinished',
@@ -2480,9 +2492,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\event\\testrunner\\__construct',
         1 => 'phpunit\\event\\testrunner\\telemetryinfo',
-        2 => 'phpunit\\event\\testrunner\\stdout',
-        3 => 'phpunit\\event\\testrunner\\stderr',
-        4 => 'phpunit\\event\\testrunner\\asstring',
+        2 => 'phpunit\\event\\testrunner\\reason',
+        3 => 'phpunit\\event\\testrunner\\stdout',
+        4 => 'phpunit\\event\\testrunner\\stderr',
+        5 => 'phpunit\\event\\testrunner\\asstring',
       ),
       3 => 
       array (
@@ -2505,7 +2518,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/ChildProcessStarted.php' => 
     array (
-      0 => 'b2a0f7edf385491b0708de191540e86b1672a2c543fb12fc7f18202d4d2da32c',
+      0 => '6e85a3c3e1731a979989d0739bb9507b56307c0f3db6898811b78ffa6396ee9f',
       1 => 
       array (
         0 => 'phpunit\\event\\testrunner\\childprocessstarted',
@@ -2514,7 +2527,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\event\\testrunner\\__construct',
         1 => 'phpunit\\event\\testrunner\\telemetryinfo',
-        2 => 'phpunit\\event\\testrunner\\asstring',
+        2 => 'phpunit\\event\\testrunner\\reason',
+        3 => 'phpunit\\event\\testrunner\\asstring',
       ),
       3 => 
       array (
@@ -2570,7 +2584,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/DeprecationTriggered.php' => 
     array (
-      0 => 'e80058c15817982bc50e4af43574f6a74b95a3f1a55103e80959067ef3a71601',
+      0 => '3a71cd98463cf43b9b52c0af38c38fb6c35768bb79aca0f1752580dbd37b608f',
       1 => 
       array (
         0 => 'phpunit\\event\\testrunner\\deprecationtriggered',
@@ -2588,7 +2602,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/DeprecationTriggeredSubscriber.php' => 
     array (
-      0 => '3624fc5523b56426c8ff718a071d8192e340052aa3286ca754cd4292d5a235e5',
+      0 => '24643cf16b9ff94da1eaaf55aab2241204334b65fe9d903868312ee9b4cda1fb',
       1 => 
       array (
         0 => 'phpunit\\event\\testrunner\\deprecationtriggeredsubscriber',
@@ -2929,7 +2943,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/NoticeTriggered.php' => 
     array (
-      0 => '20d4a64862aa67eb9e01416312ca572c2f109aa465a21a318141efba5a5dd890',
+      0 => '768d40346196cefd716b1d75bb7ce083defce0747f4490dac08093b469e7e5a5',
       1 => 
       array (
         0 => 'phpunit\\event\\testrunner\\noticetriggered',
@@ -2947,7 +2961,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/NoticeTriggeredSubscriber.php' => 
     array (
-      0 => 'e8ddb42acaed856ee0948babf1a9c3feb5d92a959bcc86e4606b70ff60e43e14',
+      0 => '17421c314e3ef04a42593081ed6746f2a9a377b092095eb9e6b83b96725e8a8a',
       1 => 
       array (
         0 => 'phpunit\\event\\testrunner\\noticetriggeredsubscriber',
@@ -3060,7 +3074,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/WarningTriggered.php' => 
     array (
-      0 => '8a21e6175bee6481922a241be4884af9f62fb0e455226abfd10ac6cd6b21b90f',
+      0 => '7f417d6140330f8212087afddb88f082dfc32e492d71a00729879725cda0dc29',
       1 => 
       array (
         0 => 'phpunit\\event\\testrunner\\warningtriggered',
@@ -3078,7 +3092,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/WarningTriggeredSubscriber.php' => 
     array (
-      0 => '3de368cb791aeff78ee1b393130171c470fc66ad04cdebaea36ca091e81fde39',
+      0 => '83b3ebbed7c40c25ff1670b259ba72cfb920a4076fed8647c7b1b7e57f29bd4f',
       1 => 
       array (
         0 => 'phpunit\\event\\testrunner\\warningtriggeredsubscriber',
@@ -3126,7 +3140,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestSuite/Finished.php' => 
     array (
-      0 => '2d7846332a7c370f7faeedfb1518e3cc81161e7a460c1f05793c8e263d17201d',
+      0 => 'd4152a45433601ea42e8197a73a58aba51e5e0a4aed00a74fbf68f8e476b0361',
       1 => 
       array (
         0 => 'phpunit\\event\\testsuite\\finished',
@@ -3261,7 +3275,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestSuite/Started.php' => 
     array (
-      0 => '5c6d48bf20d9d9bda13fab74581d877626690b653f93fd49dc69f202a61e6d00',
+      0 => '4947b8ba89acf824d59419889609bcd664abaabb5c83556473b5b71e50b97d05',
       1 => 
       array (
         0 => 'phpunit\\event\\testsuite\\started',
@@ -3533,7 +3547,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Facade.php' => 
     array (
-      0 => '8e5ae4ed35be6b4c7232c23be4fdc37da0f71451a4bd92d319bd01d0982ae3dd',
+      0 => '80fd64a2546ee459f16fba34b6b4656145ae15dca4764b08727e143f10d954de',
       1 => 
       array (
         0 => 'phpunit\\event\\facade',
@@ -3548,12 +3562,14 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         5 => 'phpunit\\event\\registertracer',
         6 => 'phpunit\\event\\initforisolation',
         7 => 'phpunit\\event\\forward',
-        8 => 'phpunit\\event\\seal',
-        9 => 'phpunit\\event\\createdispatchingemitter',
-        10 => 'phpunit\\event\\createtelemetrysystem',
-        11 => 'phpunit\\event\\deferreddispatcher',
-        12 => 'phpunit\\event\\typemap',
-        13 => 'phpunit\\event\\registerdefaulttypes',
+        8 => 'phpunit\\event\\startcollectingevents',
+        9 => 'phpunit\\event\\stopcollectingevents',
+        10 => 'phpunit\\event\\seal',
+        11 => 'phpunit\\event\\createdispatchingemitter',
+        12 => 'phpunit\\event\\createtelemetrysystem',
+        13 => 'phpunit\\event\\deferreddispatcher',
+        14 => 'phpunit\\event\\typemap',
+        15 => 'phpunit\\event\\registerdefaulttypes',
       ),
       3 => 
       array (
@@ -3590,7 +3606,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/TypeMap.php' => 
     array (
-      0 => '3f7f4a639c25094928e00aa918368513c6fe1cfab1ce10cf629fc61302bb0c2c',
+      0 => 'c85a43657c7ba80f0d8816b41ea2de72959b89b331b23c04fb2dadd1ca4e39d0',
       1 => 
       array (
         0 => 'phpunit\\event\\typemap',
@@ -3741,7 +3757,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Telemetry/Duration.php' => 
     array (
-      0 => '789672baee1b98340daf3ea1364733db2bd880478d9b22421cb7f5b5216bf5de',
+      0 => '568fc9e6175db670f74e1af0a73eadb1e2d14e9da1374ce7fe6745243195a36b',
       1 => 
       array (
         0 => 'phpunit\\event\\telemetry\\duration',
@@ -3753,12 +3769,13 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         2 => 'phpunit\\event\\telemetry\\seconds',
         3 => 'phpunit\\event\\telemetry\\nanoseconds',
         4 => 'phpunit\\event\\telemetry\\asfloat',
-        5 => 'phpunit\\event\\telemetry\\asstring',
-        6 => 'phpunit\\event\\telemetry\\equals',
-        7 => 'phpunit\\event\\telemetry\\islessthan',
-        8 => 'phpunit\\event\\telemetry\\isgreaterthan',
-        9 => 'phpunit\\event\\telemetry\\ensurenotnegative',
-        10 => 'phpunit\\event\\telemetry\\ensurenanosecondsinrange',
+        5 => 'phpunit\\event\\telemetry\\add',
+        6 => 'phpunit\\event\\telemetry\\asstring',
+        7 => 'phpunit\\event\\telemetry\\equals',
+        8 => 'phpunit\\event\\telemetry\\islessthan',
+        9 => 'phpunit\\event\\telemetry\\isgreaterthan',
+        10 => 'phpunit\\event\\telemetry\\ensurenotnegative',
+        11 => 'phpunit\\event\\telemetry\\ensurenanosecondsinrange',
       ),
       3 => 
       array (
@@ -3808,7 +3825,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Telemetry/HRTime.php' => 
     array (
-      0 => '7dd437ee2c315532f7febd9d433b5f09775ffdda2e0435d4b068257fa7f701cd',
+      0 => 'fa42c7b838f1fc7bd8425cbe74297cf7e48e9e23918270dc5b90b796bd1d2904',
       1 => 
       array (
         0 => 'phpunit\\event\\telemetry\\hrtime',
@@ -3829,7 +3846,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Telemetry/Info.php' => 
     array (
-      0 => '22a8ab21b61ea9d20b1eb0d62da8ff34c2eb1c31aadd7e5b870343e52a806312',
+      0 => '45264da25cc025c78e351d097de99d4d3e050730ea7b2a8ca8cd0310c9a98027',
       1 => 
       array (
         0 => 'phpunit\\event\\telemetry\\info',
@@ -3845,7 +3862,16 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         6 => 'phpunit\\event\\telemetry\\durationsinceprevious',
         7 => 'phpunit\\event\\telemetry\\memoryusagesinceprevious',
         8 => 'phpunit\\event\\telemetry\\garbagecollectorstatus',
-        9 => 'phpunit\\event\\telemetry\\asstring',
+        9 => 'phpunit\\event\\telemetry\\usercputime',
+        10 => 'phpunit\\event\\telemetry\\systemcputime',
+        11 => 'phpunit\\event\\telemetry\\totalcputime',
+        12 => 'phpunit\\event\\telemetry\\usercputimesincestart',
+        13 => 'phpunit\\event\\telemetry\\systemcputimesincestart',
+        14 => 'phpunit\\event\\telemetry\\totalcputimesincestart',
+        15 => 'phpunit\\event\\telemetry\\usercputimesinceprevious',
+        16 => 'phpunit\\event\\telemetry\\systemcputimesinceprevious',
+        17 => 'phpunit\\event\\telemetry\\totalcputimesinceprevious',
+        18 => 'phpunit\\event\\telemetry\\asstring',
       ),
       3 => 
       array (
@@ -3887,7 +3913,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Telemetry/Snapshot.php' => 
     array (
-      0 => 'acf92f3b06128094cc2f8089868e94dd19930ef1805b0c46922a17b2e2a772c6',
+      0 => '8683ed778eddcfeb096a18fdea45d4c1cf77d5f012fb04ec05ce5de82fe73c03',
       1 => 
       array (
         0 => 'phpunit\\event\\telemetry\\snapshot',
@@ -3899,6 +3925,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         2 => 'phpunit\\event\\telemetry\\memoryusage',
         3 => 'phpunit\\event\\telemetry\\peakmemoryusage',
         4 => 'phpunit\\event\\telemetry\\garbagecollectorstatus',
+        5 => 'phpunit\\event\\telemetry\\usercputime',
+        6 => 'phpunit\\event\\telemetry\\systemcputime',
+        7 => 'phpunit\\event\\telemetry\\totalcputime',
       ),
       3 => 
       array (
@@ -3921,7 +3950,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Telemetry/System.php' => 
     array (
-      0 => '3bd7f21869db588fde95f701946de4d7698ba128eae2e4d5d04c4bad2b616474',
+      0 => 'cd4dbcb2592adfd5aa51f76d95345e37ec50e8ecf186c97f56725a594bdbef5d',
       1 => 
       array (
         0 => 'phpunit\\event\\telemetry\\system',
@@ -4015,7 +4044,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/IssueTrigger.php' => 
     array (
-      0 => '74974c7d4bf76a730cc2aa611a5e99d9bd74a3dce0877be81e28b5990b2ffb6f',
+      0 => '93bbdf9e92735dea498acc5ee09c464da12e31c8b6e3eff0060b2dc39c3e6db8',
       1 => 
       array (
         0 => 'phpunit\\event\\code\\issuetrigger\\issuetrigger',
@@ -4028,7 +4057,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         3 => 'phpunit\\event\\code\\issuetrigger\\isdirect',
         4 => 'phpunit\\event\\code\\issuetrigger\\isindirect',
         5 => 'phpunit\\event\\code\\issuetrigger\\isunknown',
-        6 => 'phpunit\\event\\code\\issuetrigger\\asstring',
+        6 => 'phpunit\\event\\code\\issuetrigger\\callerasstring',
+        7 => 'phpunit\\event\\code\\issuetrigger\\calleeasstring',
+        8 => 'phpunit\\event\\code\\issuetrigger\\asstring',
+        9 => 'phpunit\\event\\code\\issuetrigger\\codeasstring',
       ),
       3 => 
       array (
@@ -4036,16 +4068,25 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Test/Phpt.php' => 
     array (
-      0 => 'bc2d2785faa56321128e1b0615f2b95e3e9d77ce80f50d0a4580507bb3ad7c81',
+      0 => '48d8f80e0a982b62c04e875048caca28274b31df57e823c99737623110b7ce15',
       1 => 
       array (
         0 => 'phpunit\\event\\code\\phpt',
       ),
       2 => 
       array (
-        0 => 'phpunit\\event\\code\\isphpt',
-        1 => 'phpunit\\event\\code\\id',
-        2 => 'phpunit\\event\\code\\name',
+        0 => 'phpunit\\event\\code\\__construct',
+        1 => 'phpunit\\event\\code\\isphpt',
+        2 => 'phpunit\\event\\code\\repetition',
+        3 => 'phpunit\\event\\code\\totalrepetitions',
+        4 => 'phpunit\\event\\code\\isrepeated',
+        5 => 'phpunit\\event\\code\\attempt',
+        6 => 'phpunit\\event\\code\\maxattempts',
+        7 => 'phpunit\\event\\code\\isretried',
+        8 => 'phpunit\\event\\code\\id',
+        9 => 'phpunit\\event\\code\\name',
+        10 => 'phpunit\\event\\code\\sortid',
+        11 => 'phpunit\\event\\code\\annotate',
       ),
       3 => 
       array (
@@ -4053,7 +4094,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Test/Test.php' => 
     array (
-      0 => '2d2ee8edab1dc4b4bfa5b188261dc5cbe6e4d4a041d4140819574ddd79c6b85f',
+      0 => '37cf338d086aeed2ac334be280d94bb53855a1aaa9db8fedca8a63d1de75246f',
       1 => 
       array (
         0 => 'phpunit\\event\\code\\test',
@@ -4066,6 +4107,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         3 => 'phpunit\\event\\code\\isphpt',
         4 => 'phpunit\\event\\code\\id',
         5 => 'phpunit\\event\\code\\name',
+        6 => 'phpunit\\event\\code\\sortid',
       ),
       3 => 
       array (
@@ -4092,7 +4134,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Test/TestCollectionIterator.php' => 
     array (
-      0 => '8722e98fea99d15b96bff16f36cdf263600c49dcea2c387ae248e85b5d23c6de',
+      0 => '3f5852b6607a5ed2c98fe0dfa720bbb3d9248d92a7f8adc6bad0f5fbd79145d1',
       1 => 
       array (
         0 => 'phpunit\\event\\code\\testcollectioniterator',
@@ -4186,7 +4228,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Test/TestData/TestDataCollectionIterator.php' => 
     array (
-      0 => '85d1e5a8703ab144620bfa352adbed435f6734848a3bb906d853abbdd593c602',
+      0 => '1e7371256ed49eb4bd940ffe181e47388d0dd4104b274ea1c9d0bfa2b40a7d12',
       1 => 
       array (
         0 => 'phpunit\\event\\testdata\\testdatacollectioniterator',
@@ -4223,7 +4265,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Test/TestDoxBuilder.php' => 
     array (
-      0 => '8e2a7bd546396de14161ea77301867275882a044d6a9258ac9e8b8f85d8d9dc8',
+      0 => '748bbc5e10317680ca5ece4dcd85cbf17491e9d29c72f9559d9edb05f87a0721',
       1 => 
       array (
         0 => 'phpunit\\event\\code\\testdoxbuilder',
@@ -4232,7 +4274,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\event\\code\\fromtestcase',
         1 => 'phpunit\\event\\code\\fromclassnameandmethodname',
-        2 => 'phpunit\\event\\code\\nameprettifier',
+        2 => 'phpunit\\event\\code\\prettifyclassname',
+        3 => 'phpunit\\event\\code\\nameprettifier',
       ),
       3 => 
       array (
@@ -4240,7 +4283,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Test/TestMethod.php' => 
     array (
-      0 => '2c2b36d6b6b61341a7156a6e590346b28fb919adfe01e2cf2dcfe84ef34919b9',
+      0 => '15fc70a91f562fbf2025640063cbcb17167b5b50413c0c681ce527633d238381',
       1 => 
       array (
         0 => 'phpunit\\event\\code\\testmethod',
@@ -4254,10 +4297,18 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         4 => 'phpunit\\event\\code\\testdox',
         5 => 'phpunit\\event\\code\\metadata',
         6 => 'phpunit\\event\\code\\testdata',
-        7 => 'phpunit\\event\\code\\istestmethod',
-        8 => 'phpunit\\event\\code\\id',
-        9 => 'phpunit\\event\\code\\namewithclass',
-        10 => 'phpunit\\event\\code\\name',
+        7 => 'phpunit\\event\\code\\repetition',
+        8 => 'phpunit\\event\\code\\totalrepetitions',
+        9 => 'phpunit\\event\\code\\isrepeated',
+        10 => 'phpunit\\event\\code\\attempt',
+        11 => 'phpunit\\event\\code\\maxattempts',
+        12 => 'phpunit\\event\\code\\isretried',
+        13 => 'phpunit\\event\\code\\istestmethod',
+        14 => 'phpunit\\event\\code\\id',
+        15 => 'phpunit\\event\\code\\namewithclass',
+        16 => 'phpunit\\event\\code\\name',
+        17 => 'phpunit\\event\\code\\sortid',
+        18 => 'phpunit\\event\\code\\namewithdataset',
       ),
       3 => 
       array (
@@ -4265,7 +4316,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Test/TestMethodBuilder.php' => 
     array (
-      0 => '8cefca9eaa0310dd9bafe86c4202bceb328ba86bc14491185255f7f939e8b627',
+      0 => '1042f0f80fcc4613ebfe815e0561a937f53a13b629b2e158044eec19aac22319',
       1 => 
       array (
         0 => 'phpunit\\event\\code\\testmethodbuilder',
@@ -4282,7 +4333,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/TestSuite/TestSuite.php' => 
     array (
-      0 => '3cc3b3a26bd77d70d057b19bf22eec26a5ed7db82637b38e11ab820c32309807',
+      0 => '564b809bb9dc32b2297a5cbc9043558a1f39108b3a3a3fef07b5f31d3e8f6de1',
       1 => 
       array (
         0 => 'phpunit\\event\\testsuite\\testsuite',
@@ -4296,6 +4347,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         4 => 'phpunit\\event\\testsuite\\iswithname',
         5 => 'phpunit\\event\\testsuite\\isfortestclass',
         6 => 'phpunit\\event\\testsuite\\isfortestmethodwithdataprovider',
+        7 => 'phpunit\\event\\testsuite\\isforrepeatedtestmethod',
+        8 => 'phpunit\\event\\testsuite\\isforretriedtestmethod',
+        9 => 'phpunit\\event\\testsuite\\isforrepeatedphpt',
+        10 => 'phpunit\\event\\testsuite\\isforretriedphpt',
       ),
       3 => 
       array (
@@ -4303,7 +4358,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/TestSuite/TestSuiteBuilder.php' => 
     array (
-      0 => 'b1a90791cad4ec6a190551837a3e2c8f14092be41691c6dad364897343f4ad61',
+      0 => 'ef92ea83b7711663bb705c0a3723cd59951d013640e1aebfb5912ac9503558ef',
       1 => 
       array (
         0 => 'phpunit\\event\\testsuite\\testsuitebuilder',
@@ -4319,7 +4374,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/TestSuite/TestSuiteForTestClass.php' => 
     array (
-      0 => '35fbc409cf0028ed1f9f112b6b2e219af669e43a54890fa0d5a229f2a2b6d9b8',
+      0 => '2ef2cb2e2a35b03ee9a1fd0148d4c91b69a97e85bc8f316b8432b14eb714336b',
       1 => 
       array (
         0 => 'phpunit\\event\\testsuite\\testsuitefortestclass',
@@ -4328,9 +4383,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\event\\testsuite\\__construct',
         1 => 'phpunit\\event\\testsuite\\classname',
-        2 => 'phpunit\\event\\testsuite\\file',
-        3 => 'phpunit\\event\\testsuite\\line',
-        4 => 'phpunit\\event\\testsuite\\isfortestclass',
+        2 => 'phpunit\\event\\testsuite\\prettifiedname',
+        3 => 'phpunit\\event\\testsuite\\file',
+        4 => 'phpunit\\event\\testsuite\\line',
+        5 => 'phpunit\\event\\testsuite\\isfortestclass',
       ),
       3 => 
       array (
@@ -4424,7 +4480,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Assert.php' => 
     array (
-      0 => '979946a2ff643b256eac6bd6a5c549c6b30b8f8ef4d93b6f741d90bc30e5a42c',
+      0 => '7f64e65197c4de262fd5c1a71a18846ef436201de281d881a289c8fc4348e616',
       1 => 
       array (
         0 => 'phpunit\\framework\\assert',
@@ -4438,232 +4494,248 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         4 => 'phpunit\\framework\\assertarrayhaskey',
         5 => 'phpunit\\framework\\assertarraynothaskey',
         6 => 'phpunit\\framework\\assertislist',
-        7 => 'phpunit\\framework\\assertcontains',
-        8 => 'phpunit\\framework\\assertcontainsequals',
-        9 => 'phpunit\\framework\\assertnotcontains',
-        10 => 'phpunit\\framework\\assertnotcontainsequals',
-        11 => 'phpunit\\framework\\assertcontainsonly',
-        12 => 'phpunit\\framework\\assertcontainsonlyarray',
-        13 => 'phpunit\\framework\\assertcontainsonlybool',
-        14 => 'phpunit\\framework\\assertcontainsonlycallable',
-        15 => 'phpunit\\framework\\assertcontainsonlyfloat',
-        16 => 'phpunit\\framework\\assertcontainsonlyint',
-        17 => 'phpunit\\framework\\assertcontainsonlyiterable',
-        18 => 'phpunit\\framework\\assertcontainsonlynull',
-        19 => 'phpunit\\framework\\assertcontainsonlynumeric',
-        20 => 'phpunit\\framework\\assertcontainsonlyobject',
-        21 => 'phpunit\\framework\\assertcontainsonlyresource',
-        22 => 'phpunit\\framework\\assertcontainsonlyclosedresource',
-        23 => 'phpunit\\framework\\assertcontainsonlyscalar',
-        24 => 'phpunit\\framework\\assertcontainsonlystring',
-        25 => 'phpunit\\framework\\assertcontainsonlyinstancesof',
-        26 => 'phpunit\\framework\\assertnotcontainsonly',
-        27 => 'phpunit\\framework\\assertcontainsnotonlyarray',
-        28 => 'phpunit\\framework\\assertcontainsnotonlybool',
-        29 => 'phpunit\\framework\\assertcontainsnotonlycallable',
-        30 => 'phpunit\\framework\\assertcontainsnotonlyfloat',
-        31 => 'phpunit\\framework\\assertcontainsnotonlyint',
-        32 => 'phpunit\\framework\\assertcontainsnotonlyiterable',
-        33 => 'phpunit\\framework\\assertcontainsnotonlynull',
-        34 => 'phpunit\\framework\\assertcontainsnotonlynumeric',
-        35 => 'phpunit\\framework\\assertcontainsnotonlyobject',
-        36 => 'phpunit\\framework\\assertcontainsnotonlyresource',
-        37 => 'phpunit\\framework\\assertcontainsnotonlyclosedresource',
-        38 => 'phpunit\\framework\\assertcontainsnotonlyscalar',
-        39 => 'phpunit\\framework\\assertcontainsnotonlystring',
-        40 => 'phpunit\\framework\\assertcontainsnotonlyinstancesof',
-        41 => 'phpunit\\framework\\assertcount',
-        42 => 'phpunit\\framework\\assertnotcount',
-        43 => 'phpunit\\framework\\assertequals',
-        44 => 'phpunit\\framework\\assertequalscanonicalizing',
-        45 => 'phpunit\\framework\\assertequalsignoringcase',
-        46 => 'phpunit\\framework\\assertequalswithdelta',
-        47 => 'phpunit\\framework\\assertnotequals',
-        48 => 'phpunit\\framework\\assertnotequalscanonicalizing',
-        49 => 'phpunit\\framework\\assertnotequalsignoringcase',
-        50 => 'phpunit\\framework\\assertnotequalswithdelta',
-        51 => 'phpunit\\framework\\assertobjectequals',
-        52 => 'phpunit\\framework\\assertobjectnotequals',
-        53 => 'phpunit\\framework\\assertempty',
-        54 => 'phpunit\\framework\\assertnotempty',
-        55 => 'phpunit\\framework\\assertgreaterthan',
-        56 => 'phpunit\\framework\\assertgreaterthanorequal',
-        57 => 'phpunit\\framework\\assertlessthan',
-        58 => 'phpunit\\framework\\assertlessthanorequal',
-        59 => 'phpunit\\framework\\assertfileequals',
-        60 => 'phpunit\\framework\\assertfileequalscanonicalizing',
-        61 => 'phpunit\\framework\\assertfileequalsignoringcase',
-        62 => 'phpunit\\framework\\assertfilenotequals',
-        63 => 'phpunit\\framework\\assertfilenotequalscanonicalizing',
-        64 => 'phpunit\\framework\\assertfilenotequalsignoringcase',
-        65 => 'phpunit\\framework\\assertstringequalsfile',
-        66 => 'phpunit\\framework\\assertstringequalsfilecanonicalizing',
-        67 => 'phpunit\\framework\\assertstringequalsfileignoringcase',
-        68 => 'phpunit\\framework\\assertstringnotequalsfile',
-        69 => 'phpunit\\framework\\assertstringnotequalsfilecanonicalizing',
-        70 => 'phpunit\\framework\\assertstringnotequalsfileignoringcase',
-        71 => 'phpunit\\framework\\assertisreadable',
-        72 => 'phpunit\\framework\\assertisnotreadable',
-        73 => 'phpunit\\framework\\assertiswritable',
-        74 => 'phpunit\\framework\\assertisnotwritable',
-        75 => 'phpunit\\framework\\assertdirectoryexists',
-        76 => 'phpunit\\framework\\assertdirectorydoesnotexist',
-        77 => 'phpunit\\framework\\assertdirectoryisreadable',
-        78 => 'phpunit\\framework\\assertdirectoryisnotreadable',
-        79 => 'phpunit\\framework\\assertdirectoryiswritable',
-        80 => 'phpunit\\framework\\assertdirectoryisnotwritable',
-        81 => 'phpunit\\framework\\assertfileexists',
-        82 => 'phpunit\\framework\\assertfiledoesnotexist',
-        83 => 'phpunit\\framework\\assertfileisreadable',
-        84 => 'phpunit\\framework\\assertfileisnotreadable',
-        85 => 'phpunit\\framework\\assertfileiswritable',
-        86 => 'phpunit\\framework\\assertfileisnotwritable',
-        87 => 'phpunit\\framework\\asserttrue',
-        88 => 'phpunit\\framework\\assertnottrue',
-        89 => 'phpunit\\framework\\assertfalse',
-        90 => 'phpunit\\framework\\assertnotfalse',
-        91 => 'phpunit\\framework\\assertnull',
-        92 => 'phpunit\\framework\\assertnotnull',
-        93 => 'phpunit\\framework\\assertfinite',
-        94 => 'phpunit\\framework\\assertinfinite',
-        95 => 'phpunit\\framework\\assertnan',
-        96 => 'phpunit\\framework\\assertobjecthasproperty',
-        97 => 'phpunit\\framework\\assertobjectnothasproperty',
-        98 => 'phpunit\\framework\\assertsame',
-        99 => 'phpunit\\framework\\assertnotsame',
-        100 => 'phpunit\\framework\\assertinstanceof',
-        101 => 'phpunit\\framework\\assertnotinstanceof',
-        102 => 'phpunit\\framework\\assertisarray',
-        103 => 'phpunit\\framework\\assertisbool',
-        104 => 'phpunit\\framework\\assertisfloat',
-        105 => 'phpunit\\framework\\assertisint',
-        106 => 'phpunit\\framework\\assertisnumeric',
-        107 => 'phpunit\\framework\\assertisobject',
-        108 => 'phpunit\\framework\\assertisresource',
-        109 => 'phpunit\\framework\\assertisclosedresource',
-        110 => 'phpunit\\framework\\assertisstring',
-        111 => 'phpunit\\framework\\assertisscalar',
-        112 => 'phpunit\\framework\\assertiscallable',
-        113 => 'phpunit\\framework\\assertisiterable',
-        114 => 'phpunit\\framework\\assertisnotarray',
-        115 => 'phpunit\\framework\\assertisnotbool',
-        116 => 'phpunit\\framework\\assertisnotfloat',
-        117 => 'phpunit\\framework\\assertisnotint',
-        118 => 'phpunit\\framework\\assertisnotnumeric',
-        119 => 'phpunit\\framework\\assertisnotobject',
-        120 => 'phpunit\\framework\\assertisnotresource',
-        121 => 'phpunit\\framework\\assertisnotclosedresource',
-        122 => 'phpunit\\framework\\assertisnotstring',
-        123 => 'phpunit\\framework\\assertisnotscalar',
-        124 => 'phpunit\\framework\\assertisnotcallable',
-        125 => 'phpunit\\framework\\assertisnotiterable',
-        126 => 'phpunit\\framework\\assertmatchesregularexpression',
-        127 => 'phpunit\\framework\\assertdoesnotmatchregularexpression',
-        128 => 'phpunit\\framework\\assertsamesize',
-        129 => 'phpunit\\framework\\assertnotsamesize',
-        130 => 'phpunit\\framework\\assertstringcontainsstringignoringlineendings',
-        131 => 'phpunit\\framework\\assertstringequalsstringignoringlineendings',
-        132 => 'phpunit\\framework\\assertfilematchesformat',
-        133 => 'phpunit\\framework\\assertfilematchesformatfile',
-        134 => 'phpunit\\framework\\assertstringmatchesformat',
-        135 => 'phpunit\\framework\\assertstringmatchesformatfile',
-        136 => 'phpunit\\framework\\assertstringstartswith',
-        137 => 'phpunit\\framework\\assertstringstartsnotwith',
-        138 => 'phpunit\\framework\\assertstringcontainsstring',
-        139 => 'phpunit\\framework\\assertstringcontainsstringignoringcase',
-        140 => 'phpunit\\framework\\assertstringnotcontainsstring',
-        141 => 'phpunit\\framework\\assertstringnotcontainsstringignoringcase',
-        142 => 'phpunit\\framework\\assertstringendswith',
-        143 => 'phpunit\\framework\\assertstringendsnotwith',
-        144 => 'phpunit\\framework\\assertxmlfileequalsxmlfile',
-        145 => 'phpunit\\framework\\assertxmlfilenotequalsxmlfile',
-        146 => 'phpunit\\framework\\assertxmlstringequalsxmlfile',
-        147 => 'phpunit\\framework\\assertxmlstringnotequalsxmlfile',
-        148 => 'phpunit\\framework\\assertxmlstringequalsxmlstring',
-        149 => 'phpunit\\framework\\assertxmlstringnotequalsxmlstring',
-        150 => 'phpunit\\framework\\assertthat',
-        151 => 'phpunit\\framework\\assertjson',
-        152 => 'phpunit\\framework\\assertjsonstringequalsjsonstring',
-        153 => 'phpunit\\framework\\assertjsonstringnotequalsjsonstring',
-        154 => 'phpunit\\framework\\assertjsonstringequalsjsonfile',
-        155 => 'phpunit\\framework\\assertjsonstringnotequalsjsonfile',
-        156 => 'phpunit\\framework\\assertjsonfileequalsjsonfile',
-        157 => 'phpunit\\framework\\assertjsonfilenotequalsjsonfile',
-        158 => 'phpunit\\framework\\logicaland',
-        159 => 'phpunit\\framework\\logicalor',
-        160 => 'phpunit\\framework\\logicalnot',
-        161 => 'phpunit\\framework\\logicalxor',
-        162 => 'phpunit\\framework\\anything',
-        163 => 'phpunit\\framework\\istrue',
-        164 => 'phpunit\\framework\\callback',
-        165 => 'phpunit\\framework\\isfalse',
-        166 => 'phpunit\\framework\\isjson',
-        167 => 'phpunit\\framework\\isnull',
-        168 => 'phpunit\\framework\\isfinite',
-        169 => 'phpunit\\framework\\isinfinite',
-        170 => 'phpunit\\framework\\isnan',
-        171 => 'phpunit\\framework\\containsequal',
-        172 => 'phpunit\\framework\\containsidentical',
-        173 => 'phpunit\\framework\\containsonly',
-        174 => 'phpunit\\framework\\containsonlyarray',
-        175 => 'phpunit\\framework\\containsonlybool',
-        176 => 'phpunit\\framework\\containsonlycallable',
-        177 => 'phpunit\\framework\\containsonlyfloat',
-        178 => 'phpunit\\framework\\containsonlyint',
-        179 => 'phpunit\\framework\\containsonlyiterable',
-        180 => 'phpunit\\framework\\containsonlynull',
-        181 => 'phpunit\\framework\\containsonlynumeric',
-        182 => 'phpunit\\framework\\containsonlyobject',
-        183 => 'phpunit\\framework\\containsonlyresource',
-        184 => 'phpunit\\framework\\containsonlyclosedresource',
-        185 => 'phpunit\\framework\\containsonlyscalar',
-        186 => 'phpunit\\framework\\containsonlystring',
-        187 => 'phpunit\\framework\\containsonlyinstancesof',
-        188 => 'phpunit\\framework\\arrayhaskey',
-        189 => 'phpunit\\framework\\islist',
-        190 => 'phpunit\\framework\\equalto',
-        191 => 'phpunit\\framework\\equaltocanonicalizing',
-        192 => 'phpunit\\framework\\equaltoignoringcase',
-        193 => 'phpunit\\framework\\equaltowithdelta',
-        194 => 'phpunit\\framework\\isempty',
-        195 => 'phpunit\\framework\\iswritable',
-        196 => 'phpunit\\framework\\isreadable',
-        197 => 'phpunit\\framework\\directoryexists',
-        198 => 'phpunit\\framework\\fileexists',
-        199 => 'phpunit\\framework\\greaterthan',
-        200 => 'phpunit\\framework\\greaterthanorequal',
-        201 => 'phpunit\\framework\\identicalto',
-        202 => 'phpunit\\framework\\isinstanceof',
-        203 => 'phpunit\\framework\\isarray',
-        204 => 'phpunit\\framework\\isbool',
-        205 => 'phpunit\\framework\\iscallable',
-        206 => 'phpunit\\framework\\isfloat',
-        207 => 'phpunit\\framework\\isint',
-        208 => 'phpunit\\framework\\isiterable',
-        209 => 'phpunit\\framework\\isnumeric',
-        210 => 'phpunit\\framework\\isobject',
-        211 => 'phpunit\\framework\\isresource',
-        212 => 'phpunit\\framework\\isclosedresource',
-        213 => 'phpunit\\framework\\isscalar',
-        214 => 'phpunit\\framework\\isstring',
-        215 => 'phpunit\\framework\\istype',
-        216 => 'phpunit\\framework\\lessthan',
-        217 => 'phpunit\\framework\\lessthanorequal',
-        218 => 'phpunit\\framework\\matchesregularexpression',
-        219 => 'phpunit\\framework\\matches',
-        220 => 'phpunit\\framework\\stringstartswith',
-        221 => 'phpunit\\framework\\stringcontains',
-        222 => 'phpunit\\framework\\stringendswith',
-        223 => 'phpunit\\framework\\stringequalsstringignoringlineendings',
-        224 => 'phpunit\\framework\\countof',
-        225 => 'phpunit\\framework\\objectequals',
-        226 => 'phpunit\\framework\\fail',
-        227 => 'phpunit\\framework\\marktestincomplete',
-        228 => 'phpunit\\framework\\marktestskipped',
-        229 => 'phpunit\\framework\\getcount',
-        230 => 'phpunit\\framework\\resetcount',
-        231 => 'phpunit\\framework\\isnativetype',
-        232 => 'phpunit\\framework\\mapnativetype',
+        7 => 'phpunit\\framework\\assertarraysareidentical',
+        8 => 'phpunit\\framework\\assertarraysareidenticalignoringorder',
+        9 => 'phpunit\\framework\\assertarrayshaveidenticalvalues',
+        10 => 'phpunit\\framework\\assertarrayshaveidenticalvaluesignoringorder',
+        11 => 'phpunit\\framework\\assertarraysareequal',
+        12 => 'phpunit\\framework\\assertarraysareequalignoringorder',
+        13 => 'phpunit\\framework\\assertarrayshaveequalvalues',
+        14 => 'phpunit\\framework\\assertarrayshaveequalvaluesignoringorder',
+        15 => 'phpunit\\framework\\assertcontains',
+        16 => 'phpunit\\framework\\assertcontainsequals',
+        17 => 'phpunit\\framework\\assertnotcontains',
+        18 => 'phpunit\\framework\\assertnotcontainsequals',
+        19 => 'phpunit\\framework\\assertcontainsonlyarray',
+        20 => 'phpunit\\framework\\assertcontainsonlybool',
+        21 => 'phpunit\\framework\\assertcontainsonlycallable',
+        22 => 'phpunit\\framework\\assertcontainsonlyfloat',
+        23 => 'phpunit\\framework\\assertcontainsonlyint',
+        24 => 'phpunit\\framework\\assertcontainsonlyiterable',
+        25 => 'phpunit\\framework\\assertcontainsonlynull',
+        26 => 'phpunit\\framework\\assertcontainsonlynumeric',
+        27 => 'phpunit\\framework\\assertcontainsonlyobject',
+        28 => 'phpunit\\framework\\assertcontainsonlyresource',
+        29 => 'phpunit\\framework\\assertcontainsonlyclosedresource',
+        30 => 'phpunit\\framework\\assertcontainsonlyscalar',
+        31 => 'phpunit\\framework\\assertcontainsonlystring',
+        32 => 'phpunit\\framework\\assertcontainsonlyinstancesof',
+        33 => 'phpunit\\framework\\assertcontainsnotonlyarray',
+        34 => 'phpunit\\framework\\assertcontainsnotonlybool',
+        35 => 'phpunit\\framework\\assertcontainsnotonlycallable',
+        36 => 'phpunit\\framework\\assertcontainsnotonlyfloat',
+        37 => 'phpunit\\framework\\assertcontainsnotonlyint',
+        38 => 'phpunit\\framework\\assertcontainsnotonlyiterable',
+        39 => 'phpunit\\framework\\assertcontainsnotonlynull',
+        40 => 'phpunit\\framework\\assertcontainsnotonlynumeric',
+        41 => 'phpunit\\framework\\assertcontainsnotonlyobject',
+        42 => 'phpunit\\framework\\assertcontainsnotonlyresource',
+        43 => 'phpunit\\framework\\assertcontainsnotonlyclosedresource',
+        44 => 'phpunit\\framework\\assertcontainsnotonlyscalar',
+        45 => 'phpunit\\framework\\assertcontainsnotonlystring',
+        46 => 'phpunit\\framework\\assertcontainsnotonlyinstancesof',
+        47 => 'phpunit\\framework\\assertcount',
+        48 => 'phpunit\\framework\\assertnotcount',
+        49 => 'phpunit\\framework\\assertequals',
+        50 => 'phpunit\\framework\\assertequalscanonicalizing',
+        51 => 'phpunit\\framework\\assertequalsignoringcase',
+        52 => 'phpunit\\framework\\assertequalswithdelta',
+        53 => 'phpunit\\framework\\assertnotequals',
+        54 => 'phpunit\\framework\\assertnotequalscanonicalizing',
+        55 => 'phpunit\\framework\\assertnotequalsignoringcase',
+        56 => 'phpunit\\framework\\assertnotequalswithdelta',
+        57 => 'phpunit\\framework\\assertobjectequals',
+        58 => 'phpunit\\framework\\assertobjectnotequals',
+        59 => 'phpunit\\framework\\assertempty',
+        60 => 'phpunit\\framework\\assertnotempty',
+        61 => 'phpunit\\framework\\assertgreaterthan',
+        62 => 'phpunit\\framework\\assertgreaterthanorequal',
+        63 => 'phpunit\\framework\\assertlessthan',
+        64 => 'phpunit\\framework\\assertlessthanorequal',
+        65 => 'phpunit\\framework\\assertfileequals',
+        66 => 'phpunit\\framework\\assertfileequalscanonicalizing',
+        67 => 'phpunit\\framework\\assertfileequalsignoringcase',
+        68 => 'phpunit\\framework\\assertfileequalsfileignoringwhitespace',
+        69 => 'phpunit\\framework\\assertfilenotequals',
+        70 => 'phpunit\\framework\\assertfilenotequalscanonicalizing',
+        71 => 'phpunit\\framework\\assertfilenotequalsignoringcase',
+        72 => 'phpunit\\framework\\assertfilenotequalsfileignoringwhitespace',
+        73 => 'phpunit\\framework\\assertstringequalsfile',
+        74 => 'phpunit\\framework\\assertstringequalsfilecanonicalizing',
+        75 => 'phpunit\\framework\\assertstringequalsfileignoringcase',
+        76 => 'phpunit\\framework\\assertstringnotequalsfile',
+        77 => 'phpunit\\framework\\assertstringnotequalsfilecanonicalizing',
+        78 => 'phpunit\\framework\\assertstringnotequalsfileignoringcase',
+        79 => 'phpunit\\framework\\assertstringequalsfileignoringwhitespace',
+        80 => 'phpunit\\framework\\assertstringnotequalsfileignoringwhitespace',
+        81 => 'phpunit\\framework\\assertisreadable',
+        82 => 'phpunit\\framework\\assertisnotreadable',
+        83 => 'phpunit\\framework\\assertiswritable',
+        84 => 'phpunit\\framework\\assertisnotwritable',
+        85 => 'phpunit\\framework\\assertdirectoryexists',
+        86 => 'phpunit\\framework\\assertdirectorydoesnotexist',
+        87 => 'phpunit\\framework\\assertdirectoryisreadable',
+        88 => 'phpunit\\framework\\assertdirectoryisnotreadable',
+        89 => 'phpunit\\framework\\assertdirectoryiswritable',
+        90 => 'phpunit\\framework\\assertdirectoryisnotwritable',
+        91 => 'phpunit\\framework\\assertfileexists',
+        92 => 'phpunit\\framework\\assertfiledoesnotexist',
+        93 => 'phpunit\\framework\\assertfileisreadable',
+        94 => 'phpunit\\framework\\assertfileisnotreadable',
+        95 => 'phpunit\\framework\\assertfileiswritable',
+        96 => 'phpunit\\framework\\assertfileisnotwritable',
+        97 => 'phpunit\\framework\\asserttrue',
+        98 => 'phpunit\\framework\\assertnottrue',
+        99 => 'phpunit\\framework\\assertfalse',
+        100 => 'phpunit\\framework\\assertnotfalse',
+        101 => 'phpunit\\framework\\assertnull',
+        102 => 'phpunit\\framework\\assertnotnull',
+        103 => 'phpunit\\framework\\assertfinite',
+        104 => 'phpunit\\framework\\assertinfinite',
+        105 => 'phpunit\\framework\\assertnan',
+        106 => 'phpunit\\framework\\assertobjecthasproperty',
+        107 => 'phpunit\\framework\\assertobjectnothasproperty',
+        108 => 'phpunit\\framework\\assertsame',
+        109 => 'phpunit\\framework\\assertnotsame',
+        110 => 'phpunit\\framework\\assertinstanceof',
+        111 => 'phpunit\\framework\\assertnotinstanceof',
+        112 => 'phpunit\\framework\\assertisarray',
+        113 => 'phpunit\\framework\\assertisbool',
+        114 => 'phpunit\\framework\\assertisfloat',
+        115 => 'phpunit\\framework\\assertisint',
+        116 => 'phpunit\\framework\\assertisnumeric',
+        117 => 'phpunit\\framework\\assertisobject',
+        118 => 'phpunit\\framework\\assertisresource',
+        119 => 'phpunit\\framework\\assertisclosedresource',
+        120 => 'phpunit\\framework\\assertisstring',
+        121 => 'phpunit\\framework\\assertisscalar',
+        122 => 'phpunit\\framework\\assertiscallable',
+        123 => 'phpunit\\framework\\assertisiterable',
+        124 => 'phpunit\\framework\\assertisnotarray',
+        125 => 'phpunit\\framework\\assertisnotbool',
+        126 => 'phpunit\\framework\\assertisnotfloat',
+        127 => 'phpunit\\framework\\assertisnotint',
+        128 => 'phpunit\\framework\\assertisnotnumeric',
+        129 => 'phpunit\\framework\\assertisnotobject',
+        130 => 'phpunit\\framework\\assertisnotresource',
+        131 => 'phpunit\\framework\\assertisnotclosedresource',
+        132 => 'phpunit\\framework\\assertisnotstring',
+        133 => 'phpunit\\framework\\assertisnotscalar',
+        134 => 'phpunit\\framework\\assertisnotcallable',
+        135 => 'phpunit\\framework\\assertisnotiterable',
+        136 => 'phpunit\\framework\\assertmatchesregularexpression',
+        137 => 'phpunit\\framework\\assertdoesnotmatchregularexpression',
+        138 => 'phpunit\\framework\\assertsamesize',
+        139 => 'phpunit\\framework\\assertnotsamesize',
+        140 => 'phpunit\\framework\\assertstringcontainsstringignoringlineendings',
+        141 => 'phpunit\\framework\\assertstringequalsstringignoringlineendings',
+        142 => 'phpunit\\framework\\assertstringequalsstringignoringwhitespace',
+        143 => 'phpunit\\framework\\assertstringnotequalsstringignoringwhitespace',
+        144 => 'phpunit\\framework\\assertfilematchesformat',
+        145 => 'phpunit\\framework\\assertfilematchesformatfile',
+        146 => 'phpunit\\framework\\assertstringmatchesformat',
+        147 => 'phpunit\\framework\\assertstringmatchesformatfile',
+        148 => 'phpunit\\framework\\assertstringstartswith',
+        149 => 'phpunit\\framework\\assertstringstartsnotwith',
+        150 => 'phpunit\\framework\\assertstringcontainsstring',
+        151 => 'phpunit\\framework\\assertstringcontainsstringignoringcase',
+        152 => 'phpunit\\framework\\assertstringnotcontainsstring',
+        153 => 'phpunit\\framework\\assertstringnotcontainsstringignoringcase',
+        154 => 'phpunit\\framework\\assertstringendswith',
+        155 => 'phpunit\\framework\\assertstringendsnotwith',
+        156 => 'phpunit\\framework\\assertxmlfileequalsxmlfile',
+        157 => 'phpunit\\framework\\assertxmlfilenotequalsxmlfile',
+        158 => 'phpunit\\framework\\assertxmlstringequalsxmlfile',
+        159 => 'phpunit\\framework\\assertxmlstringnotequalsxmlfile',
+        160 => 'phpunit\\framework\\assertxmlstringequalsxmlstring',
+        161 => 'phpunit\\framework\\assertxmlstringnotequalsxmlstring',
+        162 => 'phpunit\\framework\\assertxmlfileequalsxmlfileconsideringcomments',
+        163 => 'phpunit\\framework\\assertxmlfilenotequalsxmlfileconsideringcomments',
+        164 => 'phpunit\\framework\\assertxmlstringequalsxmlfileconsideringcomments',
+        165 => 'phpunit\\framework\\assertxmlstringnotequalsxmlfileconsideringcomments',
+        166 => 'phpunit\\framework\\assertxmlstringequalsxmlstringconsideringcomments',
+        167 => 'phpunit\\framework\\assertxmlstringnotequalsxmlstringconsideringcomments',
+        168 => 'phpunit\\framework\\assertthat',
+        169 => 'phpunit\\framework\\assertjson',
+        170 => 'phpunit\\framework\\assertjsonstringequalsjsonstring',
+        171 => 'phpunit\\framework\\assertjsonstringnotequalsjsonstring',
+        172 => 'phpunit\\framework\\assertjsonstringequalsjsonfile',
+        173 => 'phpunit\\framework\\assertjsonstringnotequalsjsonfile',
+        174 => 'phpunit\\framework\\assertjsonfileequalsjsonfile',
+        175 => 'phpunit\\framework\\assertjsonfilenotequalsjsonfile',
+        176 => 'phpunit\\framework\\logicaland',
+        177 => 'phpunit\\framework\\logicalor',
+        178 => 'phpunit\\framework\\logicalnot',
+        179 => 'phpunit\\framework\\logicalxor',
+        180 => 'phpunit\\framework\\anything',
+        181 => 'phpunit\\framework\\istrue',
+        182 => 'phpunit\\framework\\callback',
+        183 => 'phpunit\\framework\\isfalse',
+        184 => 'phpunit\\framework\\isjson',
+        185 => 'phpunit\\framework\\isnull',
+        186 => 'phpunit\\framework\\isfinite',
+        187 => 'phpunit\\framework\\isinfinite',
+        188 => 'phpunit\\framework\\isnan',
+        189 => 'phpunit\\framework\\containsequal',
+        190 => 'phpunit\\framework\\containsidentical',
+        191 => 'phpunit\\framework\\containsonlyarray',
+        192 => 'phpunit\\framework\\containsonlybool',
+        193 => 'phpunit\\framework\\containsonlycallable',
+        194 => 'phpunit\\framework\\containsonlyfloat',
+        195 => 'phpunit\\framework\\containsonlyint',
+        196 => 'phpunit\\framework\\containsonlyiterable',
+        197 => 'phpunit\\framework\\containsonlynull',
+        198 => 'phpunit\\framework\\containsonlynumeric',
+        199 => 'phpunit\\framework\\containsonlyobject',
+        200 => 'phpunit\\framework\\containsonlyresource',
+        201 => 'phpunit\\framework\\containsonlyclosedresource',
+        202 => 'phpunit\\framework\\containsonlyscalar',
+        203 => 'phpunit\\framework\\containsonlystring',
+        204 => 'phpunit\\framework\\containsonlyinstancesof',
+        205 => 'phpunit\\framework\\arrayhaskey',
+        206 => 'phpunit\\framework\\islist',
+        207 => 'phpunit\\framework\\equalto',
+        208 => 'phpunit\\framework\\equaltocanonicalizing',
+        209 => 'phpunit\\framework\\equaltoignoringcase',
+        210 => 'phpunit\\framework\\equaltowithdelta',
+        211 => 'phpunit\\framework\\isempty',
+        212 => 'phpunit\\framework\\iswritable',
+        213 => 'phpunit\\framework\\isreadable',
+        214 => 'phpunit\\framework\\directoryexists',
+        215 => 'phpunit\\framework\\fileexists',
+        216 => 'phpunit\\framework\\greaterthan',
+        217 => 'phpunit\\framework\\greaterthanorequal',
+        218 => 'phpunit\\framework\\identicalto',
+        219 => 'phpunit\\framework\\isinstanceof',
+        220 => 'phpunit\\framework\\isarray',
+        221 => 'phpunit\\framework\\isbool',
+        222 => 'phpunit\\framework\\iscallable',
+        223 => 'phpunit\\framework\\isfloat',
+        224 => 'phpunit\\framework\\isint',
+        225 => 'phpunit\\framework\\isiterable',
+        226 => 'phpunit\\framework\\isnumeric',
+        227 => 'phpunit\\framework\\isobject',
+        228 => 'phpunit\\framework\\isresource',
+        229 => 'phpunit\\framework\\isclosedresource',
+        230 => 'phpunit\\framework\\isscalar',
+        231 => 'phpunit\\framework\\isstring',
+        232 => 'phpunit\\framework\\lessthan',
+        233 => 'phpunit\\framework\\lessthanorequal',
+        234 => 'phpunit\\framework\\matchesregularexpression',
+        235 => 'phpunit\\framework\\matches',
+        236 => 'phpunit\\framework\\stringstartswith',
+        237 => 'phpunit\\framework\\stringcontains',
+        238 => 'phpunit\\framework\\stringendswith',
+        239 => 'phpunit\\framework\\stringequalsstringignoringlineendings',
+        240 => 'phpunit\\framework\\stringequalsstringignoringwhitespace',
+        241 => 'phpunit\\framework\\countof',
+        242 => 'phpunit\\framework\\objectequals',
+        243 => 'phpunit\\framework\\fail',
+        244 => 'phpunit\\framework\\marktestincomplete',
+        245 => 'phpunit\\framework\\marktestskipped',
+        246 => 'phpunit\\framework\\getcount',
+        247 => 'phpunit\\framework\\resetcount',
+        248 => 'phpunit\\framework\\contentsoffile',
       ),
       3 => 
       array (
@@ -4671,7 +4743,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Assert/Functions.php' => 
     array (
-      0 => 'bcb298e8972b528c4557ad5d8e333f0dc8c315a0c9c9abb4a601ef4dfbe9f146',
+      0 => '34345cf2375ab24976eb7e0dc43d6a9ee8fa36266109de0dc1a0e8fd355be8f1',
       1 => 
       array (
       ),
@@ -4684,233 +4756,250 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         4 => 'phpunit\\framework\\assertarrayhaskey',
         5 => 'phpunit\\framework\\assertarraynothaskey',
         6 => 'phpunit\\framework\\assertislist',
-        7 => 'phpunit\\framework\\assertcontains',
-        8 => 'phpunit\\framework\\assertcontainsequals',
-        9 => 'phpunit\\framework\\assertnotcontains',
-        10 => 'phpunit\\framework\\assertnotcontainsequals',
-        11 => 'phpunit\\framework\\assertcontainsonly',
-        12 => 'phpunit\\framework\\assertcontainsonlyarray',
-        13 => 'phpunit\\framework\\assertcontainsonlybool',
-        14 => 'phpunit\\framework\\assertcontainsonlycallable',
-        15 => 'phpunit\\framework\\assertcontainsonlyfloat',
-        16 => 'phpunit\\framework\\assertcontainsonlyint',
-        17 => 'phpunit\\framework\\assertcontainsonlyiterable',
-        18 => 'phpunit\\framework\\assertcontainsonlynull',
-        19 => 'phpunit\\framework\\assertcontainsonlynumeric',
-        20 => 'phpunit\\framework\\assertcontainsonlyobject',
-        21 => 'phpunit\\framework\\assertcontainsonlyresource',
-        22 => 'phpunit\\framework\\assertcontainsonlyclosedresource',
-        23 => 'phpunit\\framework\\assertcontainsonlyscalar',
-        24 => 'phpunit\\framework\\assertcontainsonlystring',
-        25 => 'phpunit\\framework\\assertcontainsonlyinstancesof',
-        26 => 'phpunit\\framework\\assertnotcontainsonly',
-        27 => 'phpunit\\framework\\assertcontainsnotonlyarray',
-        28 => 'phpunit\\framework\\assertcontainsnotonlybool',
-        29 => 'phpunit\\framework\\assertcontainsnotonlycallable',
-        30 => 'phpunit\\framework\\assertcontainsnotonlyfloat',
-        31 => 'phpunit\\framework\\assertcontainsnotonlyint',
-        32 => 'phpunit\\framework\\assertcontainsnotonlyiterable',
-        33 => 'phpunit\\framework\\assertcontainsnotonlynull',
-        34 => 'phpunit\\framework\\assertcontainsnotonlynumeric',
-        35 => 'phpunit\\framework\\assertcontainsnotonlyobject',
-        36 => 'phpunit\\framework\\assertcontainsnotonlyresource',
-        37 => 'phpunit\\framework\\assertcontainsnotonlyclosedresource',
-        38 => 'phpunit\\framework\\assertcontainsnotonlyscalar',
-        39 => 'phpunit\\framework\\assertcontainsnotonlystring',
-        40 => 'phpunit\\framework\\assertcontainsnotonlyinstancesof',
-        41 => 'phpunit\\framework\\assertcount',
-        42 => 'phpunit\\framework\\assertnotcount',
-        43 => 'phpunit\\framework\\assertequals',
-        44 => 'phpunit\\framework\\assertequalscanonicalizing',
-        45 => 'phpunit\\framework\\assertequalsignoringcase',
-        46 => 'phpunit\\framework\\assertequalswithdelta',
-        47 => 'phpunit\\framework\\assertnotequals',
-        48 => 'phpunit\\framework\\assertnotequalscanonicalizing',
-        49 => 'phpunit\\framework\\assertnotequalsignoringcase',
-        50 => 'phpunit\\framework\\assertnotequalswithdelta',
-        51 => 'phpunit\\framework\\assertobjectequals',
-        52 => 'phpunit\\framework\\assertobjectnotequals',
-        53 => 'phpunit\\framework\\assertempty',
-        54 => 'phpunit\\framework\\assertnotempty',
-        55 => 'phpunit\\framework\\assertgreaterthan',
-        56 => 'phpunit\\framework\\assertgreaterthanorequal',
-        57 => 'phpunit\\framework\\assertlessthan',
-        58 => 'phpunit\\framework\\assertlessthanorequal',
-        59 => 'phpunit\\framework\\assertfileequals',
-        60 => 'phpunit\\framework\\assertfileequalscanonicalizing',
-        61 => 'phpunit\\framework\\assertfileequalsignoringcase',
-        62 => 'phpunit\\framework\\assertfilenotequals',
-        63 => 'phpunit\\framework\\assertfilenotequalscanonicalizing',
-        64 => 'phpunit\\framework\\assertfilenotequalsignoringcase',
-        65 => 'phpunit\\framework\\assertstringequalsfile',
-        66 => 'phpunit\\framework\\assertstringequalsfilecanonicalizing',
-        67 => 'phpunit\\framework\\assertstringequalsfileignoringcase',
-        68 => 'phpunit\\framework\\assertstringnotequalsfile',
-        69 => 'phpunit\\framework\\assertstringnotequalsfilecanonicalizing',
-        70 => 'phpunit\\framework\\assertstringnotequalsfileignoringcase',
-        71 => 'phpunit\\framework\\assertisreadable',
-        72 => 'phpunit\\framework\\assertisnotreadable',
-        73 => 'phpunit\\framework\\assertiswritable',
-        74 => 'phpunit\\framework\\assertisnotwritable',
-        75 => 'phpunit\\framework\\assertdirectoryexists',
-        76 => 'phpunit\\framework\\assertdirectorydoesnotexist',
-        77 => 'phpunit\\framework\\assertdirectoryisreadable',
-        78 => 'phpunit\\framework\\assertdirectoryisnotreadable',
-        79 => 'phpunit\\framework\\assertdirectoryiswritable',
-        80 => 'phpunit\\framework\\assertdirectoryisnotwritable',
-        81 => 'phpunit\\framework\\assertfileexists',
-        82 => 'phpunit\\framework\\assertfiledoesnotexist',
-        83 => 'phpunit\\framework\\assertfileisreadable',
-        84 => 'phpunit\\framework\\assertfileisnotreadable',
-        85 => 'phpunit\\framework\\assertfileiswritable',
-        86 => 'phpunit\\framework\\assertfileisnotwritable',
-        87 => 'phpunit\\framework\\asserttrue',
-        88 => 'phpunit\\framework\\assertnottrue',
-        89 => 'phpunit\\framework\\assertfalse',
-        90 => 'phpunit\\framework\\assertnotfalse',
-        91 => 'phpunit\\framework\\assertnull',
-        92 => 'phpunit\\framework\\assertnotnull',
-        93 => 'phpunit\\framework\\assertfinite',
-        94 => 'phpunit\\framework\\assertinfinite',
-        95 => 'phpunit\\framework\\assertnan',
-        96 => 'phpunit\\framework\\assertobjecthasproperty',
-        97 => 'phpunit\\framework\\assertobjectnothasproperty',
-        98 => 'phpunit\\framework\\assertsame',
-        99 => 'phpunit\\framework\\assertnotsame',
-        100 => 'phpunit\\framework\\assertinstanceof',
-        101 => 'phpunit\\framework\\assertnotinstanceof',
-        102 => 'phpunit\\framework\\assertisarray',
-        103 => 'phpunit\\framework\\assertisbool',
-        104 => 'phpunit\\framework\\assertisfloat',
-        105 => 'phpunit\\framework\\assertisint',
-        106 => 'phpunit\\framework\\assertisnumeric',
-        107 => 'phpunit\\framework\\assertisobject',
-        108 => 'phpunit\\framework\\assertisresource',
-        109 => 'phpunit\\framework\\assertisclosedresource',
-        110 => 'phpunit\\framework\\assertisstring',
-        111 => 'phpunit\\framework\\assertisscalar',
-        112 => 'phpunit\\framework\\assertiscallable',
-        113 => 'phpunit\\framework\\assertisiterable',
-        114 => 'phpunit\\framework\\assertisnotarray',
-        115 => 'phpunit\\framework\\assertisnotbool',
-        116 => 'phpunit\\framework\\assertisnotfloat',
-        117 => 'phpunit\\framework\\assertisnotint',
-        118 => 'phpunit\\framework\\assertisnotnumeric',
-        119 => 'phpunit\\framework\\assertisnotobject',
-        120 => 'phpunit\\framework\\assertisnotresource',
-        121 => 'phpunit\\framework\\assertisnotclosedresource',
-        122 => 'phpunit\\framework\\assertisnotstring',
-        123 => 'phpunit\\framework\\assertisnotscalar',
-        124 => 'phpunit\\framework\\assertisnotcallable',
-        125 => 'phpunit\\framework\\assertisnotiterable',
-        126 => 'phpunit\\framework\\assertmatchesregularexpression',
-        127 => 'phpunit\\framework\\assertdoesnotmatchregularexpression',
-        128 => 'phpunit\\framework\\assertsamesize',
-        129 => 'phpunit\\framework\\assertnotsamesize',
-        130 => 'phpunit\\framework\\assertstringcontainsstringignoringlineendings',
-        131 => 'phpunit\\framework\\assertstringequalsstringignoringlineendings',
-        132 => 'phpunit\\framework\\assertfilematchesformat',
-        133 => 'phpunit\\framework\\assertfilematchesformatfile',
-        134 => 'phpunit\\framework\\assertstringmatchesformat',
-        135 => 'phpunit\\framework\\assertstringmatchesformatfile',
-        136 => 'phpunit\\framework\\assertstringstartswith',
-        137 => 'phpunit\\framework\\assertstringstartsnotwith',
-        138 => 'phpunit\\framework\\assertstringcontainsstring',
-        139 => 'phpunit\\framework\\assertstringcontainsstringignoringcase',
-        140 => 'phpunit\\framework\\assertstringnotcontainsstring',
-        141 => 'phpunit\\framework\\assertstringnotcontainsstringignoringcase',
-        142 => 'phpunit\\framework\\assertstringendswith',
-        143 => 'phpunit\\framework\\assertstringendsnotwith',
-        144 => 'phpunit\\framework\\assertxmlfileequalsxmlfile',
-        145 => 'phpunit\\framework\\assertxmlfilenotequalsxmlfile',
-        146 => 'phpunit\\framework\\assertxmlstringequalsxmlfile',
-        147 => 'phpunit\\framework\\assertxmlstringnotequalsxmlfile',
-        148 => 'phpunit\\framework\\assertxmlstringequalsxmlstring',
-        149 => 'phpunit\\framework\\assertxmlstringnotequalsxmlstring',
-        150 => 'phpunit\\framework\\assertthat',
-        151 => 'phpunit\\framework\\assertjson',
-        152 => 'phpunit\\framework\\assertjsonstringequalsjsonstring',
-        153 => 'phpunit\\framework\\assertjsonstringnotequalsjsonstring',
-        154 => 'phpunit\\framework\\assertjsonstringequalsjsonfile',
-        155 => 'phpunit\\framework\\assertjsonstringnotequalsjsonfile',
-        156 => 'phpunit\\framework\\assertjsonfileequalsjsonfile',
-        157 => 'phpunit\\framework\\assertjsonfilenotequalsjsonfile',
-        158 => 'phpunit\\framework\\logicaland',
-        159 => 'phpunit\\framework\\logicalor',
-        160 => 'phpunit\\framework\\logicalnot',
-        161 => 'phpunit\\framework\\logicalxor',
-        162 => 'phpunit\\framework\\anything',
-        163 => 'phpunit\\framework\\istrue',
-        164 => 'phpunit\\framework\\isfalse',
-        165 => 'phpunit\\framework\\isjson',
-        166 => 'phpunit\\framework\\isnull',
-        167 => 'phpunit\\framework\\isfinite',
-        168 => 'phpunit\\framework\\isinfinite',
-        169 => 'phpunit\\framework\\isnan',
-        170 => 'phpunit\\framework\\containsequal',
-        171 => 'phpunit\\framework\\containsidentical',
-        172 => 'phpunit\\framework\\containsonly',
-        173 => 'phpunit\\framework\\containsonlyarray',
-        174 => 'phpunit\\framework\\containsonlybool',
-        175 => 'phpunit\\framework\\containsonlycallable',
-        176 => 'phpunit\\framework\\containsonlyfloat',
-        177 => 'phpunit\\framework\\containsonlyint',
-        178 => 'phpunit\\framework\\containsonlyiterable',
-        179 => 'phpunit\\framework\\containsonlynull',
-        180 => 'phpunit\\framework\\containsonlynumeric',
-        181 => 'phpunit\\framework\\containsonlyobject',
-        182 => 'phpunit\\framework\\containsonlyresource',
-        183 => 'phpunit\\framework\\containsonlyclosedresource',
-        184 => 'phpunit\\framework\\containsonlyscalar',
-        185 => 'phpunit\\framework\\containsonlystring',
-        186 => 'phpunit\\framework\\containsonlyinstancesof',
-        187 => 'phpunit\\framework\\arrayhaskey',
-        188 => 'phpunit\\framework\\islist',
-        189 => 'phpunit\\framework\\equalto',
-        190 => 'phpunit\\framework\\equaltocanonicalizing',
-        191 => 'phpunit\\framework\\equaltoignoringcase',
-        192 => 'phpunit\\framework\\equaltowithdelta',
-        193 => 'phpunit\\framework\\isempty',
-        194 => 'phpunit\\framework\\iswritable',
-        195 => 'phpunit\\framework\\isreadable',
-        196 => 'phpunit\\framework\\directoryexists',
-        197 => 'phpunit\\framework\\fileexists',
-        198 => 'phpunit\\framework\\greaterthan',
-        199 => 'phpunit\\framework\\greaterthanorequal',
-        200 => 'phpunit\\framework\\identicalto',
-        201 => 'phpunit\\framework\\isinstanceof',
-        202 => 'phpunit\\framework\\isarray',
-        203 => 'phpunit\\framework\\isbool',
-        204 => 'phpunit\\framework\\iscallable',
-        205 => 'phpunit\\framework\\isfloat',
-        206 => 'phpunit\\framework\\isint',
-        207 => 'phpunit\\framework\\isiterable',
-        208 => 'phpunit\\framework\\isnumeric',
-        209 => 'phpunit\\framework\\isobject',
-        210 => 'phpunit\\framework\\isresource',
-        211 => 'phpunit\\framework\\isclosedresource',
-        212 => 'phpunit\\framework\\isscalar',
-        213 => 'phpunit\\framework\\isstring',
-        214 => 'phpunit\\framework\\istype',
-        215 => 'phpunit\\framework\\lessthan',
-        216 => 'phpunit\\framework\\lessthanorequal',
-        217 => 'phpunit\\framework\\matchesregularexpression',
-        218 => 'phpunit\\framework\\matches',
-        219 => 'phpunit\\framework\\stringstartswith',
-        220 => 'phpunit\\framework\\stringcontains',
-        221 => 'phpunit\\framework\\stringendswith',
-        222 => 'phpunit\\framework\\stringequalsstringignoringlineendings',
-        223 => 'phpunit\\framework\\countof',
-        224 => 'phpunit\\framework\\objectequals',
-        225 => 'phpunit\\framework\\callback',
-        226 => 'phpunit\\framework\\any',
-        227 => 'phpunit\\framework\\never',
-        228 => 'phpunit\\framework\\atleast',
-        229 => 'phpunit\\framework\\atleastonce',
-        230 => 'phpunit\\framework\\once',
-        231 => 'phpunit\\framework\\exactly',
-        232 => 'phpunit\\framework\\atmost',
-        233 => 'phpunit\\framework\\throwexception',
+        7 => 'phpunit\\framework\\assertarraysareidentical',
+        8 => 'phpunit\\framework\\assertarraysareidenticalignoringorder',
+        9 => 'phpunit\\framework\\assertarrayshaveidenticalvalues',
+        10 => 'phpunit\\framework\\assertarrayshaveidenticalvaluesignoringorder',
+        11 => 'phpunit\\framework\\assertarraysareequal',
+        12 => 'phpunit\\framework\\assertarraysareequalignoringorder',
+        13 => 'phpunit\\framework\\assertarrayshaveequalvalues',
+        14 => 'phpunit\\framework\\assertarrayshaveequalvaluesignoringorder',
+        15 => 'phpunit\\framework\\assertcontains',
+        16 => 'phpunit\\framework\\assertcontainsequals',
+        17 => 'phpunit\\framework\\assertnotcontains',
+        18 => 'phpunit\\framework\\assertnotcontainsequals',
+        19 => 'phpunit\\framework\\assertcontainsonlyarray',
+        20 => 'phpunit\\framework\\assertcontainsonlybool',
+        21 => 'phpunit\\framework\\assertcontainsonlycallable',
+        22 => 'phpunit\\framework\\assertcontainsonlyfloat',
+        23 => 'phpunit\\framework\\assertcontainsonlyint',
+        24 => 'phpunit\\framework\\assertcontainsonlyiterable',
+        25 => 'phpunit\\framework\\assertcontainsonlynull',
+        26 => 'phpunit\\framework\\assertcontainsonlynumeric',
+        27 => 'phpunit\\framework\\assertcontainsonlyobject',
+        28 => 'phpunit\\framework\\assertcontainsonlyresource',
+        29 => 'phpunit\\framework\\assertcontainsonlyclosedresource',
+        30 => 'phpunit\\framework\\assertcontainsonlyscalar',
+        31 => 'phpunit\\framework\\assertcontainsonlystring',
+        32 => 'phpunit\\framework\\assertcontainsonlyinstancesof',
+        33 => 'phpunit\\framework\\assertcontainsnotonlyarray',
+        34 => 'phpunit\\framework\\assertcontainsnotonlybool',
+        35 => 'phpunit\\framework\\assertcontainsnotonlycallable',
+        36 => 'phpunit\\framework\\assertcontainsnotonlyfloat',
+        37 => 'phpunit\\framework\\assertcontainsnotonlyint',
+        38 => 'phpunit\\framework\\assertcontainsnotonlyiterable',
+        39 => 'phpunit\\framework\\assertcontainsnotonlynull',
+        40 => 'phpunit\\framework\\assertcontainsnotonlynumeric',
+        41 => 'phpunit\\framework\\assertcontainsnotonlyobject',
+        42 => 'phpunit\\framework\\assertcontainsnotonlyresource',
+        43 => 'phpunit\\framework\\assertcontainsnotonlyclosedresource',
+        44 => 'phpunit\\framework\\assertcontainsnotonlyscalar',
+        45 => 'phpunit\\framework\\assertcontainsnotonlystring',
+        46 => 'phpunit\\framework\\assertcontainsnotonlyinstancesof',
+        47 => 'phpunit\\framework\\assertcount',
+        48 => 'phpunit\\framework\\assertnotcount',
+        49 => 'phpunit\\framework\\assertequals',
+        50 => 'phpunit\\framework\\assertequalscanonicalizing',
+        51 => 'phpunit\\framework\\assertequalsignoringcase',
+        52 => 'phpunit\\framework\\assertequalswithdelta',
+        53 => 'phpunit\\framework\\assertnotequals',
+        54 => 'phpunit\\framework\\assertnotequalscanonicalizing',
+        55 => 'phpunit\\framework\\assertnotequalsignoringcase',
+        56 => 'phpunit\\framework\\assertnotequalswithdelta',
+        57 => 'phpunit\\framework\\assertobjectequals',
+        58 => 'phpunit\\framework\\assertobjectnotequals',
+        59 => 'phpunit\\framework\\assertempty',
+        60 => 'phpunit\\framework\\assertnotempty',
+        61 => 'phpunit\\framework\\assertgreaterthan',
+        62 => 'phpunit\\framework\\assertgreaterthanorequal',
+        63 => 'phpunit\\framework\\assertlessthan',
+        64 => 'phpunit\\framework\\assertlessthanorequal',
+        65 => 'phpunit\\framework\\assertfileequals',
+        66 => 'phpunit\\framework\\assertfileequalscanonicalizing',
+        67 => 'phpunit\\framework\\assertfileequalsignoringcase',
+        68 => 'phpunit\\framework\\assertfileequalsfileignoringwhitespace',
+        69 => 'phpunit\\framework\\assertfilenotequals',
+        70 => 'phpunit\\framework\\assertfilenotequalscanonicalizing',
+        71 => 'phpunit\\framework\\assertfilenotequalsignoringcase',
+        72 => 'phpunit\\framework\\assertfilenotequalsfileignoringwhitespace',
+        73 => 'phpunit\\framework\\assertstringequalsfile',
+        74 => 'phpunit\\framework\\assertstringequalsfilecanonicalizing',
+        75 => 'phpunit\\framework\\assertstringequalsfileignoringcase',
+        76 => 'phpunit\\framework\\assertstringnotequalsfile',
+        77 => 'phpunit\\framework\\assertstringnotequalsfilecanonicalizing',
+        78 => 'phpunit\\framework\\assertstringnotequalsfileignoringcase',
+        79 => 'phpunit\\framework\\assertstringequalsfileignoringwhitespace',
+        80 => 'phpunit\\framework\\assertstringnotequalsfileignoringwhitespace',
+        81 => 'phpunit\\framework\\assertisreadable',
+        82 => 'phpunit\\framework\\assertisnotreadable',
+        83 => 'phpunit\\framework\\assertiswritable',
+        84 => 'phpunit\\framework\\assertisnotwritable',
+        85 => 'phpunit\\framework\\assertdirectoryexists',
+        86 => 'phpunit\\framework\\assertdirectorydoesnotexist',
+        87 => 'phpunit\\framework\\assertdirectoryisreadable',
+        88 => 'phpunit\\framework\\assertdirectoryisnotreadable',
+        89 => 'phpunit\\framework\\assertdirectoryiswritable',
+        90 => 'phpunit\\framework\\assertdirectoryisnotwritable',
+        91 => 'phpunit\\framework\\assertfileexists',
+        92 => 'phpunit\\framework\\assertfiledoesnotexist',
+        93 => 'phpunit\\framework\\assertfileisreadable',
+        94 => 'phpunit\\framework\\assertfileisnotreadable',
+        95 => 'phpunit\\framework\\assertfileiswritable',
+        96 => 'phpunit\\framework\\assertfileisnotwritable',
+        97 => 'phpunit\\framework\\asserttrue',
+        98 => 'phpunit\\framework\\assertnottrue',
+        99 => 'phpunit\\framework\\assertfalse',
+        100 => 'phpunit\\framework\\assertnotfalse',
+        101 => 'phpunit\\framework\\assertnull',
+        102 => 'phpunit\\framework\\assertnotnull',
+        103 => 'phpunit\\framework\\assertfinite',
+        104 => 'phpunit\\framework\\assertinfinite',
+        105 => 'phpunit\\framework\\assertnan',
+        106 => 'phpunit\\framework\\assertobjecthasproperty',
+        107 => 'phpunit\\framework\\assertobjectnothasproperty',
+        108 => 'phpunit\\framework\\assertsame',
+        109 => 'phpunit\\framework\\assertnotsame',
+        110 => 'phpunit\\framework\\assertinstanceof',
+        111 => 'phpunit\\framework\\assertnotinstanceof',
+        112 => 'phpunit\\framework\\assertisarray',
+        113 => 'phpunit\\framework\\assertisbool',
+        114 => 'phpunit\\framework\\assertisfloat',
+        115 => 'phpunit\\framework\\assertisint',
+        116 => 'phpunit\\framework\\assertisnumeric',
+        117 => 'phpunit\\framework\\assertisobject',
+        118 => 'phpunit\\framework\\assertisresource',
+        119 => 'phpunit\\framework\\assertisclosedresource',
+        120 => 'phpunit\\framework\\assertisstring',
+        121 => 'phpunit\\framework\\assertisscalar',
+        122 => 'phpunit\\framework\\assertiscallable',
+        123 => 'phpunit\\framework\\assertisiterable',
+        124 => 'phpunit\\framework\\assertisnotarray',
+        125 => 'phpunit\\framework\\assertisnotbool',
+        126 => 'phpunit\\framework\\assertisnotfloat',
+        127 => 'phpunit\\framework\\assertisnotint',
+        128 => 'phpunit\\framework\\assertisnotnumeric',
+        129 => 'phpunit\\framework\\assertisnotobject',
+        130 => 'phpunit\\framework\\assertisnotresource',
+        131 => 'phpunit\\framework\\assertisnotclosedresource',
+        132 => 'phpunit\\framework\\assertisnotstring',
+        133 => 'phpunit\\framework\\assertisnotscalar',
+        134 => 'phpunit\\framework\\assertisnotcallable',
+        135 => 'phpunit\\framework\\assertisnotiterable',
+        136 => 'phpunit\\framework\\assertmatchesregularexpression',
+        137 => 'phpunit\\framework\\assertdoesnotmatchregularexpression',
+        138 => 'phpunit\\framework\\assertsamesize',
+        139 => 'phpunit\\framework\\assertnotsamesize',
+        140 => 'phpunit\\framework\\assertstringcontainsstringignoringlineendings',
+        141 => 'phpunit\\framework\\assertstringequalsstringignoringlineendings',
+        142 => 'phpunit\\framework\\assertstringequalsstringignoringwhitespace',
+        143 => 'phpunit\\framework\\assertstringnotequalsstringignoringwhitespace',
+        144 => 'phpunit\\framework\\assertfilematchesformat',
+        145 => 'phpunit\\framework\\assertfilematchesformatfile',
+        146 => 'phpunit\\framework\\assertstringmatchesformat',
+        147 => 'phpunit\\framework\\assertstringmatchesformatfile',
+        148 => 'phpunit\\framework\\assertstringstartswith',
+        149 => 'phpunit\\framework\\assertstringstartsnotwith',
+        150 => 'phpunit\\framework\\assertstringcontainsstring',
+        151 => 'phpunit\\framework\\assertstringcontainsstringignoringcase',
+        152 => 'phpunit\\framework\\assertstringnotcontainsstring',
+        153 => 'phpunit\\framework\\assertstringnotcontainsstringignoringcase',
+        154 => 'phpunit\\framework\\assertstringendswith',
+        155 => 'phpunit\\framework\\assertstringendsnotwith',
+        156 => 'phpunit\\framework\\assertxmlfileequalsxmlfile',
+        157 => 'phpunit\\framework\\assertxmlfilenotequalsxmlfile',
+        158 => 'phpunit\\framework\\assertxmlstringequalsxmlfile',
+        159 => 'phpunit\\framework\\assertxmlstringnotequalsxmlfile',
+        160 => 'phpunit\\framework\\assertxmlstringequalsxmlstring',
+        161 => 'phpunit\\framework\\assertxmlstringnotequalsxmlstring',
+        162 => 'phpunit\\framework\\assertxmlfileequalsxmlfileconsideringcomments',
+        163 => 'phpunit\\framework\\assertxmlfilenotequalsxmlfileconsideringcomments',
+        164 => 'phpunit\\framework\\assertxmlstringequalsxmlfileconsideringcomments',
+        165 => 'phpunit\\framework\\assertxmlstringnotequalsxmlfileconsideringcomments',
+        166 => 'phpunit\\framework\\assertxmlstringequalsxmlstringconsideringcomments',
+        167 => 'phpunit\\framework\\assertxmlstringnotequalsxmlstringconsideringcomments',
+        168 => 'phpunit\\framework\\assertthat',
+        169 => 'phpunit\\framework\\assertjson',
+        170 => 'phpunit\\framework\\assertjsonstringequalsjsonstring',
+        171 => 'phpunit\\framework\\assertjsonstringnotequalsjsonstring',
+        172 => 'phpunit\\framework\\assertjsonstringequalsjsonfile',
+        173 => 'phpunit\\framework\\assertjsonstringnotequalsjsonfile',
+        174 => 'phpunit\\framework\\assertjsonfileequalsjsonfile',
+        175 => 'phpunit\\framework\\assertjsonfilenotequalsjsonfile',
+        176 => 'phpunit\\framework\\logicaland',
+        177 => 'phpunit\\framework\\logicalor',
+        178 => 'phpunit\\framework\\logicalnot',
+        179 => 'phpunit\\framework\\logicalxor',
+        180 => 'phpunit\\framework\\anything',
+        181 => 'phpunit\\framework\\istrue',
+        182 => 'phpunit\\framework\\isfalse',
+        183 => 'phpunit\\framework\\isjson',
+        184 => 'phpunit\\framework\\isnull',
+        185 => 'phpunit\\framework\\isfinite',
+        186 => 'phpunit\\framework\\isinfinite',
+        187 => 'phpunit\\framework\\isnan',
+        188 => 'phpunit\\framework\\containsequal',
+        189 => 'phpunit\\framework\\containsidentical',
+        190 => 'phpunit\\framework\\containsonlyarray',
+        191 => 'phpunit\\framework\\containsonlybool',
+        192 => 'phpunit\\framework\\containsonlycallable',
+        193 => 'phpunit\\framework\\containsonlyfloat',
+        194 => 'phpunit\\framework\\containsonlyint',
+        195 => 'phpunit\\framework\\containsonlyiterable',
+        196 => 'phpunit\\framework\\containsonlynull',
+        197 => 'phpunit\\framework\\containsonlynumeric',
+        198 => 'phpunit\\framework\\containsonlyobject',
+        199 => 'phpunit\\framework\\containsonlyresource',
+        200 => 'phpunit\\framework\\containsonlyclosedresource',
+        201 => 'phpunit\\framework\\containsonlyscalar',
+        202 => 'phpunit\\framework\\containsonlystring',
+        203 => 'phpunit\\framework\\containsonlyinstancesof',
+        204 => 'phpunit\\framework\\arrayhaskey',
+        205 => 'phpunit\\framework\\islist',
+        206 => 'phpunit\\framework\\equalto',
+        207 => 'phpunit\\framework\\equaltocanonicalizing',
+        208 => 'phpunit\\framework\\equaltoignoringcase',
+        209 => 'phpunit\\framework\\equaltowithdelta',
+        210 => 'phpunit\\framework\\isempty',
+        211 => 'phpunit\\framework\\iswritable',
+        212 => 'phpunit\\framework\\isreadable',
+        213 => 'phpunit\\framework\\directoryexists',
+        214 => 'phpunit\\framework\\fileexists',
+        215 => 'phpunit\\framework\\greaterthan',
+        216 => 'phpunit\\framework\\greaterthanorequal',
+        217 => 'phpunit\\framework\\identicalto',
+        218 => 'phpunit\\framework\\isinstanceof',
+        219 => 'phpunit\\framework\\isarray',
+        220 => 'phpunit\\framework\\isbool',
+        221 => 'phpunit\\framework\\iscallable',
+        222 => 'phpunit\\framework\\isfloat',
+        223 => 'phpunit\\framework\\isint',
+        224 => 'phpunit\\framework\\isiterable',
+        225 => 'phpunit\\framework\\isnumeric',
+        226 => 'phpunit\\framework\\isobject',
+        227 => 'phpunit\\framework\\isresource',
+        228 => 'phpunit\\framework\\isclosedresource',
+        229 => 'phpunit\\framework\\isscalar',
+        230 => 'phpunit\\framework\\isstring',
+        231 => 'phpunit\\framework\\lessthan',
+        232 => 'phpunit\\framework\\lessthanorequal',
+        233 => 'phpunit\\framework\\matchesregularexpression',
+        234 => 'phpunit\\framework\\matches',
+        235 => 'phpunit\\framework\\stringstartswith',
+        236 => 'phpunit\\framework\\stringcontains',
+        237 => 'phpunit\\framework\\stringendswith',
+        238 => 'phpunit\\framework\\stringequalsstringignoringlineendings',
+        239 => 'phpunit\\framework\\stringequalsstringignoringwhitespace',
+        240 => 'phpunit\\framework\\countof',
+        241 => 'phpunit\\framework\\objectequals',
+        242 => 'phpunit\\framework\\callback',
+        243 => 'phpunit\\framework\\any',
+        244 => 'phpunit\\framework\\never',
+        245 => 'phpunit\\framework\\atleast',
+        246 => 'phpunit\\framework\\atleastonce',
+        247 => 'phpunit\\framework\\once',
+        248 => 'phpunit\\framework\\exactly',
+        249 => 'phpunit\\framework\\atmost',
+        250 => 'phpunit\\framework\\throwexception',
       ),
       3 => 
       array (
@@ -5155,7 +5244,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Attributes/DataProvider.php' => 
     array (
-      0 => 'b2809e63de7c748e77fdcf2b756436376c5a2cecfcfc01e58e26d2c33c7e49e5',
+      0 => '57f181dfb1151c6ce624f0d08893edbcced5cf4c57e747e7f311cb9f8e5ce995',
       1 => 
       array (
         0 => 'phpunit\\framework\\attributes\\dataprovider',
@@ -5165,6 +5254,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\attributes\\__construct',
         1 => 'phpunit\\framework\\attributes\\methodname',
         2 => 'phpunit\\framework\\attributes\\validateargumentcount',
+        3 => 'phpunit\\framework\\attributes\\skipwhenempty',
       ),
       3 => 
       array (
@@ -5172,7 +5262,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Attributes/DataProviderExternal.php' => 
     array (
-      0 => 'ebb3cd8a9aa047477e1c1d047fa2665bc468b7e7c15fcad89bee7300a0abc3b5',
+      0 => '9039c6f93268bb8d299391b5e5130ca28363c973f2193f0105eb6d1b76f5077f',
       1 => 
       array (
         0 => 'phpunit\\framework\\attributes\\dataproviderexternal',
@@ -5183,6 +5273,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         1 => 'phpunit\\framework\\attributes\\classname',
         2 => 'phpunit\\framework\\attributes\\methodname',
         3 => 'phpunit\\framework\\attributes\\validateargumentcount',
+        4 => 'phpunit\\framework\\attributes\\skipwhenempty',
       ),
       3 => 
       array (
@@ -5414,7 +5505,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Attributes/IgnoreDeprecations.php' => 
     array (
-      0 => '4734a88671bc5ac5ec952d81531fe934379f64867a10fda273fbda3aeccc8a61',
+      0 => '80441aafd2567d6244955d70fe150e41af4ba35d35afa9de105b7d4c0312ecd6',
       1 => 
       array (
         0 => 'phpunit\\framework\\attributes\\ignoredeprecations',
@@ -5536,7 +5627,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Attributes/RequiresEnvironmentVariable.php' => 
     array (
-      0 => '70afac530ff5ceb89f187a20e249fe3ededca6a4106fccf980a22c702ddfb9de',
+      0 => 'd468308e586193f7f7918647ef79d377ee6e30760385a76c055d19193f316677',
       1 => 
       array (
         0 => 'phpunit\\framework\\attributes\\requiresenvironmentvariable',
@@ -5693,20 +5784,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\attributes\\__construct',
         1 => 'phpunit\\framework\\attributes\\setting',
         2 => 'phpunit\\framework\\attributes\\value',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Attributes/RunClassInSeparateProcess.php' => 
-    array (
-      0 => '9e9f6b058d23a0f0103f347499a3524e5cd92d1d8c6d74751cc380044ecb8865',
-      1 => 
-      array (
-        0 => 'phpunit\\framework\\attributes\\runclassinseparateprocess',
-      ),
-      2 => 
-      array (
       ),
       3 => 
       array (
@@ -6013,7 +6090,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Boolean/IsFalse.php' => 
     array (
-      0 => '214640ee69048f2345741f12e13ffc0494e04c86766f7b20cb52c1d1a7f7aa85',
+      0 => '5ba5fe4591399f5c0a7dddd4a2e2576b4116eeb6fba0df9be51f5343edd1e5a6',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\isfalse',
@@ -6021,7 +6098,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\framework\\constraint\\tostring',
-        1 => 'phpunit\\framework\\constraint\\matches',
+        1 => 'phpunit\\framework\\constraint\\tostringincontext',
+        2 => 'phpunit\\framework\\constraint\\matches',
+        3 => 'phpunit\\framework\\constraint\\failuredescription',
       ),
       3 => 
       array (
@@ -6029,7 +6108,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Boolean/IsTrue.php' => 
     array (
-      0 => 'ed23d16bf7aef392131cb8a886f856174acff19cbcec0a99d0d4a320ed029b8f',
+      0 => '01ce69dff3c1fabf304efd2f9cdfb356540f780fb0b91cb57072fe02f510b779',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\istrue',
@@ -6037,7 +6116,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\framework\\constraint\\tostring',
-        1 => 'phpunit\\framework\\constraint\\matches',
+        1 => 'phpunit\\framework\\constraint\\tostringincontext',
+        2 => 'phpunit\\framework\\constraint\\matches',
+        3 => 'phpunit\\framework\\constraint\\failuredescription',
       ),
       3 => 
       array (
@@ -6045,7 +6126,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php' => 
     array (
-      0 => 'ed7f135ec73f872e967b731b7f6ef7035bc78f246705482cd337ca44b4b78212',
+      0 => 'a01a1f03bf3948a432e5da5bec22fa0d006e90b16607d68387afcd1f3315e1eb',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\callback',
@@ -6063,7 +6144,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Cardinality/Count.php' => 
     array (
-      0 => '490fc0ad5f4cc5383fbdd61dda260fb22feee308c601513152d9927687214e94',
+      0 => 'ce19a7c88d498dbddcefbed5c65f04b89df5ed1a5808e66b4baf4a80b4e9bb4d',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\count',
@@ -6072,9 +6153,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\tostring',
-        2 => 'phpunit\\framework\\constraint\\matches',
-        3 => 'phpunit\\framework\\constraint\\getcountof',
-        4 => 'phpunit\\framework\\constraint\\failuredescription',
+        2 => 'phpunit\\framework\\constraint\\tostringincontext',
+        3 => 'phpunit\\framework\\constraint\\matches',
+        4 => 'phpunit\\framework\\constraint\\getcountof',
+        5 => 'phpunit\\framework\\constraint\\failuredescription',
+        6 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
       ),
       3 => 
       array (
@@ -6082,7 +6165,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Cardinality/GreaterThan.php' => 
     array (
-      0 => '5a011e1dcf66b24da1bb1328d0dddf58c6dd286157744531c6b1393674349cc5',
+      0 => 'b31eda38108862c5a1605cb01240f6c107b9fbab85be0e5d132087837d8d5bcb',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\greaterthan',
@@ -6091,7 +6174,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\tostring',
-        2 => 'phpunit\\framework\\constraint\\matches',
+        2 => 'phpunit\\framework\\constraint\\tostringincontext',
+        3 => 'phpunit\\framework\\constraint\\matches',
       ),
       3 => 
       array (
@@ -6099,7 +6183,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Cardinality/IsEmpty.php' => 
     array (
-      0 => 'aa59694e688707f3e0c8fa4bfc0d0af8f601752da3097c61910e20fbcc879c07',
+      0 => 'c8bd20d2370ec28b2937ce2bece20e69cc7608a73cf41bf4a4bbbd56de3ad0aa',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\isempty',
@@ -6107,8 +6191,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\framework\\constraint\\tostring',
-        1 => 'phpunit\\framework\\constraint\\matches',
-        2 => 'phpunit\\framework\\constraint\\failuredescription',
+        1 => 'phpunit\\framework\\constraint\\tostringincontext',
+        2 => 'phpunit\\framework\\constraint\\matches',
+        3 => 'phpunit\\framework\\constraint\\failuredescription',
+        4 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
+        5 => 'phpunit\\framework\\constraint\\describe',
       ),
       3 => 
       array (
@@ -6116,7 +6203,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Cardinality/LessThan.php' => 
     array (
-      0 => 'ddb5abfc9c5b34f66bb9f544c3fa42745ba23fc6ca1f2a893093507e9a18413c',
+      0 => 'e34b75aff3de8355e270a7775f99ac57dadce08ab78f34f1314c5521943c39b8',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\lessthan',
@@ -6125,7 +6212,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\tostring',
-        2 => 'phpunit\\framework\\constraint\\matches',
+        2 => 'phpunit\\framework\\constraint\\tostringincontext',
+        3 => 'phpunit\\framework\\constraint\\matches',
       ),
       3 => 
       array (
@@ -6148,7 +6236,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php' => 
     array (
-      0 => 'e9fc877983c4ab3a389997f2f4b791f4febb0028e33e0a595b5cff119bc0cd27',
+      0 => '6c5a82543415fc8d297a1d4c77e0a73bf50a431ff3260d33f3c3e56cacfbdd71',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\constraint',
@@ -6166,6 +6254,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         8 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
         9 => 'phpunit\\framework\\constraint\\reduce',
         10 => 'phpunit\\framework\\constraint\\valuetotypestringfragment',
+        11 => 'phpunit\\framework\\constraint\\assertequalsusingcomparator',
       ),
       3 => 
       array (
@@ -6173,7 +6262,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Equality/IsEqual.php' => 
     array (
-      0 => '22aedabfcfd2e0376e29ffe10db88bc3429e26ba6a99144acf27a640e9d75e5a',
+      0 => '31c831904f20a6ef2bae0035fafa2875bf32612088d72a05cb037eb2e156e08c',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\isequal',
@@ -6183,6 +6272,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\evaluate',
         2 => 'phpunit\\framework\\constraint\\tostring',
+        3 => 'phpunit\\framework\\constraint\\tostringincontext',
+        4 => 'phpunit\\framework\\constraint\\valueasstring',
       ),
       3 => 
       array (
@@ -6190,7 +6281,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Equality/IsEqualCanonicalizing.php' => 
     array (
-      0 => '0d19da661ee0d58b3b3018fd2484832edc4c34db5d3d0c099070630a03df2cf4',
+      0 => '1ee46c66aae90e6ba833b0839f62211fae39431a2ddf4606b968527eeb3939be',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\isequalcanonicalizing',
@@ -6200,6 +6291,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\evaluate',
         2 => 'phpunit\\framework\\constraint\\tostring',
+        3 => 'phpunit\\framework\\constraint\\tostringincontext',
+        4 => 'phpunit\\framework\\constraint\\valueasstring',
       ),
       3 => 
       array (
@@ -6207,7 +6300,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Equality/IsEqualIgnoringCase.php' => 
     array (
-      0 => '0ebf7bdef923baa35938d37e18f1a4b0530a2231cec8d933bcf131adcfa9445d',
+      0 => '8828fba3986d9a61495e5e348e6de4c12882c3db9529ff8669c4f4aa103da989',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\isequalignoringcase',
@@ -6217,6 +6310,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\evaluate',
         2 => 'phpunit\\framework\\constraint\\tostring',
+        3 => 'phpunit\\framework\\constraint\\tostringincontext',
+        4 => 'phpunit\\framework\\constraint\\valueasstring',
       ),
       3 => 
       array (
@@ -6224,7 +6319,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Equality/IsEqualWithDelta.php' => 
     array (
-      0 => '5bfb01156b6ae02ed46a869c39978a1001dd17726609cf6f73d7aaa8ff77f12a',
+      0 => '2400ccd1edf611d154f22a6738361d99e21b2e8c841c7899a75d0b2378e0859f',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\isequalwithdelta',
@@ -6234,6 +6329,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\evaluate',
         2 => 'phpunit\\framework\\constraint\\tostring',
+        3 => 'phpunit\\framework\\constraint\\tostringincontext',
+        4 => 'phpunit\\framework\\constraint\\valueasstring',
       ),
       3 => 
       array (
@@ -6241,7 +6338,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Exception/Exception.php' => 
     array (
-      0 => 'ef55bbf205e5c7ade961ebfaa325e94636effcbc81b542133611208decc773db',
+      0 => '025973e3a2e50929471a159d39addd0598cf2b9f3daa18bcfa740344d662f257',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\exception',
@@ -6259,7 +6356,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Exception/ExceptionCode.php' => 
     array (
-      0 => '17758cd282f7496064c633ecdb4621bd44cdd02b86de7ac8434af165f31753fb',
+      0 => '0e922fdef493229071dcade485f20fb4eaf764e1ecaad2a91993f90cddf89cb4',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\exceptioncode',
@@ -6277,7 +6374,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Exception/ExceptionMessageIsOrContains.php' => 
     array (
-      0 => 'd19b45b1e4aad73c6aabdc674fe40007dfec1eb1b5ec14b7d641f6f4390d2541',
+      0 => 'a5fde96d6d3af9fa0eb8e51671d7021937373b56844e6b75aa674045ca7b5012',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\exceptionmessageisorcontains',
@@ -6295,7 +6392,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Exception/ExceptionMessageMatchesRegularExpression.php' => 
     array (
-      0 => '1ba6c6b069e5b27ef0ddf426415a2fd7f4cc9fe16d1ef68b1dbda7b5c0fc27cc',
+      0 => '99746096a4a405c5a4032c4ada8dc940ae8de7bd4f51bfb799a3d3cb73e14e88',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\exceptionmessagematchesregularexpression',
@@ -6313,7 +6410,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php' => 
     array (
-      0 => 'e57ba09700d3159dd1ac1258716a53bdb4ac807e78611ef8818e6b073e9336aa',
+      0 => 'fc420d6a20f83695ab10dd29dba9b56bb65fa359176a952025efb318d53a0947',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\directoryexists',
@@ -6321,8 +6418,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\framework\\constraint\\tostring',
-        1 => 'phpunit\\framework\\constraint\\matches',
-        2 => 'phpunit\\framework\\constraint\\failuredescription',
+        1 => 'phpunit\\framework\\constraint\\tostringincontext',
+        2 => 'phpunit\\framework\\constraint\\matches',
+        3 => 'phpunit\\framework\\constraint\\failuredescription',
+        4 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
+        5 => 'phpunit\\framework\\constraint\\path',
       ),
       3 => 
       array (
@@ -6330,7 +6430,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php' => 
     array (
-      0 => '1146e4593df4ceb4f3a85fcadbd1c5a3f0f50e068bb93d6d176287b32c6fe6d2',
+      0 => 'ab88b16007a5874714565cd6fba155733cf768b9988195f530435a59dec6902c',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\fileexists',
@@ -6338,8 +6438,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\framework\\constraint\\tostring',
-        1 => 'phpunit\\framework\\constraint\\matches',
-        2 => 'phpunit\\framework\\constraint\\failuredescription',
+        1 => 'phpunit\\framework\\constraint\\tostringincontext',
+        2 => 'phpunit\\framework\\constraint\\matches',
+        3 => 'phpunit\\framework\\constraint\\failuredescription',
+        4 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
+        5 => 'phpunit\\framework\\constraint\\path',
       ),
       3 => 
       array (
@@ -6347,7 +6450,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php' => 
     array (
-      0 => '3daacc41f8da99f1ef1d31223ab08f9d4d4ef2d5d8b6758c8042082ca27679cb',
+      0 => '36dce5c6fe594765dd0fc6c0a180a3c99aeef25c60e287991340712d863479a9',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\isreadable',
@@ -6355,8 +6458,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\framework\\constraint\\tostring',
-        1 => 'phpunit\\framework\\constraint\\matches',
-        2 => 'phpunit\\framework\\constraint\\failuredescription',
+        1 => 'phpunit\\framework\\constraint\\tostringincontext',
+        2 => 'phpunit\\framework\\constraint\\matches',
+        3 => 'phpunit\\framework\\constraint\\failuredescription',
+        4 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
+        5 => 'phpunit\\framework\\constraint\\path',
       ),
       3 => 
       array (
@@ -6364,7 +6470,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php' => 
     array (
-      0 => '141c5c3a54b2d36f3c71e23ae621125fbaa257486c50aabb876ba989b8b898f5',
+      0 => 'ce3f44fc9847f2535342173a6e14d657369ba1e54c2b1eb01e07790a62e0d876',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\iswritable',
@@ -6372,8 +6478,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\framework\\constraint\\tostring',
-        1 => 'phpunit\\framework\\constraint\\matches',
-        2 => 'phpunit\\framework\\constraint\\failuredescription',
+        1 => 'phpunit\\framework\\constraint\\tostringincontext',
+        2 => 'phpunit\\framework\\constraint\\matches',
+        3 => 'phpunit\\framework\\constraint\\failuredescription',
+        4 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
+        5 => 'phpunit\\framework\\constraint\\path',
       ),
       3 => 
       array (
@@ -6398,7 +6507,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php' => 
     array (
-      0 => 'e29e57e6e2f52742a7c2e6cbc845c93dd32e72e2a4a6880f28c770dda378fe5e',
+      0 => '10bfd4fe17808b9ae8ad0fff5176a13a77f1da5f5088f6448b885abf6666944c',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\isidentical',
@@ -6408,7 +6517,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\evaluate',
         2 => 'phpunit\\framework\\constraint\\tostring',
-        3 => 'phpunit\\framework\\constraint\\failuredescription',
+        3 => 'phpunit\\framework\\constraint\\tostringincontext',
+        4 => 'phpunit\\framework\\constraint\\failuredescription',
+        5 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
+        6 => 'phpunit\\framework\\constraint\\valueasstring',
       ),
       3 => 
       array (
@@ -6416,7 +6528,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php' => 
     array (
-      0 => '9b8f10c3183d8dc7a5880ee1d5f810a24b6e284203834c386da6ba92ab1264b0',
+      0 => '95f273a0165ee5d705f795db1611b4fd48c25b412c10289a9ee448ff6ddc8359',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\jsonmatches',
@@ -6425,8 +6537,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\tostring',
-        2 => 'phpunit\\framework\\constraint\\matches',
-        3 => 'phpunit\\framework\\constraint\\fail',
+        2 => 'phpunit\\framework\\constraint\\tostringincontext',
+        3 => 'phpunit\\framework\\constraint\\matches',
+        4 => 'phpunit\\framework\\constraint\\fail',
       ),
       3 => 
       array (
@@ -6434,7 +6547,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Math/IsFinite.php' => 
     array (
-      0 => 'eaf4625048a0e22a86d2998988b936191e5b1fb7f113077ee14ff02ec8e44a79',
+      0 => '1b22e29e1cc154e97771f6886e349aa232533ff9c68cd6939c60ed0be469f623',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\isfinite',
@@ -6442,7 +6555,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\framework\\constraint\\tostring',
-        1 => 'phpunit\\framework\\constraint\\matches',
+        1 => 'phpunit\\framework\\constraint\\tostringincontext',
+        2 => 'phpunit\\framework\\constraint\\matches',
+        3 => 'phpunit\\framework\\constraint\\failuredescription',
       ),
       3 => 
       array (
@@ -6450,7 +6565,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Math/IsInfinite.php' => 
     array (
-      0 => 'e3fc5026cc76d76657cb119780e561b0e85442c5a8967823a1f7298486ae826e',
+      0 => '58a7b41ea608af938c846c5867fb0ea202e79fa0b38370317ba24016bf3047a9',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\isinfinite',
@@ -6458,7 +6573,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\framework\\constraint\\tostring',
-        1 => 'phpunit\\framework\\constraint\\matches',
+        1 => 'phpunit\\framework\\constraint\\tostringincontext',
+        2 => 'phpunit\\framework\\constraint\\matches',
+        3 => 'phpunit\\framework\\constraint\\failuredescription',
       ),
       3 => 
       array (
@@ -6466,7 +6583,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Math/IsNan.php' => 
     array (
-      0 => '2f1b7cbc0fd6e7e0978da3509eb6f81dcbb64467df1db77057a82cc5e9f16a8c',
+      0 => '81f33650d400dce165e1cb35a295127e505ca09588fa1b66b1b98397a451f408',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\isnan',
@@ -6474,7 +6591,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\framework\\constraint\\tostring',
-        1 => 'phpunit\\framework\\constraint\\matches',
+        1 => 'phpunit\\framework\\constraint\\tostringincontext',
+        2 => 'phpunit\\framework\\constraint\\matches',
+        3 => 'phpunit\\framework\\constraint\\failuredescription',
       ),
       3 => 
       array (
@@ -6482,7 +6601,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Object/ObjectEquals.php' => 
     array (
-      0 => '47fdbe32cc5af1375eae5fcd205cdfb16b79f6ff054bf53d9f2ff80937f73890',
+      0 => 'da247eca25e11df700d60194767e9339736481cdbac2546a41667fdbca4dbe10',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\objectequals',
@@ -6491,8 +6610,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\tostring',
-        2 => 'phpunit\\framework\\constraint\\matches',
-        3 => 'phpunit\\framework\\constraint\\failuredescription',
+        2 => 'phpunit\\framework\\constraint\\tostringincontext',
+        3 => 'phpunit\\framework\\constraint\\matches',
+        4 => 'phpunit\\framework\\constraint\\failuredescription',
+        5 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
       ),
       3 => 
       array (
@@ -6500,7 +6621,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Object/ObjectHasProperty.php' => 
     array (
-      0 => '25a3565f7e34c292188d80a9f90f5eb26cd058e29c42f36471ee69038651a313',
+      0 => 'feaeb0d41b2984a3491fffd66a37c64146a6b5efffb694e7d57dd06f83b948ae',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\objecthasproperty',
@@ -6509,8 +6630,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\tostring',
-        2 => 'phpunit\\framework\\constraint\\matches',
-        3 => 'phpunit\\framework\\constraint\\failuredescription',
+        2 => 'phpunit\\framework\\constraint\\tostringincontext',
+        3 => 'phpunit\\framework\\constraint\\matches',
+        4 => 'phpunit\\framework\\constraint\\failuredescription',
+        5 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
+        6 => 'phpunit\\framework\\constraint\\describe',
       ),
       3 => 
       array (
@@ -6518,7 +6642,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Operator/BinaryOperator.php' => 
     array (
-      0 => 'ad2f5820a025383dd5349b9cf7ef5a1ca427e7ca1bb2919441d50c98075c4e52',
+      0 => '093a94967076d9ac35730ae888a43311853944e8314d56c280724ed915afcb85',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\binaryoperator',
@@ -6540,7 +6664,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Operator/LogicalAnd.php' => 
     array (
-      0 => '793b261b22421a9577d4e42b7230bc9a2f5a82454488422553de051c1c0adab9',
+      0 => '473ad3464fcef63892bd924e7b55f3c97fb6f0709db1d9e174d1d6a151ed4cef',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\logicaland',
@@ -6558,7 +6682,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Operator/LogicalNot.php' => 
     array (
-      0 => '035ac16e2b3bd90a6881044b22db871bcaafc85fb2c3d5371fbb3b9ab1a5f981',
+      0 => 'db8afe5340d3bd3f8c346058db6566342021c1980e40c9349ad257c42a280dd7',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\logicalnot',
@@ -6578,7 +6702,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Operator/LogicalOr.php' => 
     array (
-      0 => '1768daa180c34a9d80d791a445c444ced6066e940740eab59c962f5ade9d6398',
+      0 => 'a928160a0a0d256e5043d129dbff3bfaad2fbe5243030c0d512a7d9d6f31f33b',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\logicalor',
@@ -6596,7 +6720,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Operator/LogicalXor.php' => 
     array (
-      0 => '6dc740b1ccba4a1e788aa6ebea9ae4595e9d4dc0dfa68fc1ca3f3ca40f8753e9',
+      0 => '3192a17506d1727da96ae38224993c2366635bfbf6e0f681f2d66edf4330d2c4',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\logicalxor',
@@ -6655,7 +6779,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/String/IsJson.php' => 
     array (
-      0 => '242f73e31a75175bed9baefc4eb81044eebe57bd6d73546b10385f0024b57da1',
+      0 => '70d7a1cf51dc72260d7f1a8edbe12866e2c6b26f92067ac1abe5ffc606fe67d3',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\isjson',
@@ -6663,9 +6787,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\framework\\constraint\\tostring',
-        1 => 'phpunit\\framework\\constraint\\matches',
-        2 => 'phpunit\\framework\\constraint\\failuredescription',
-        3 => 'phpunit\\framework\\constraint\\determinejsonerror',
+        1 => 'phpunit\\framework\\constraint\\tostringincontext',
+        2 => 'phpunit\\framework\\constraint\\matches',
+        3 => 'phpunit\\framework\\constraint\\failuredescription',
+        4 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
+        5 => 'phpunit\\framework\\constraint\\determinejsonerror',
       ),
       3 => 
       array (
@@ -6673,7 +6799,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/String/RegularExpression.php' => 
     array (
-      0 => 'cda59628e9150c53586b9550419f46e9fa8697ee7b3e3ba63a8536287c381a61',
+      0 => 'a233e3d6af816a70e5b31892fd656d8be6810c51bb057ea5d8d4e061bc47d028',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\regularexpression',
@@ -6682,7 +6808,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\tostring',
-        2 => 'phpunit\\framework\\constraint\\matches',
+        2 => 'phpunit\\framework\\constraint\\tostringincontext',
+        3 => 'phpunit\\framework\\constraint\\matches',
       ),
       3 => 
       array (
@@ -6690,7 +6817,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/String/StringContains.php' => 
     array (
-      0 => '488feca4baf740e8e056332d228499e49a45f122a04a583def51b42ecf2b3f82',
+      0 => '03a9bd6285f818c1c5379ffe231b45ef41ae970779bee6bac7b3f98e6065eaf0',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\stringcontains',
@@ -6700,10 +6827,14 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\tostring',
         2 => 'phpunit\\framework\\constraint\\failuredescription',
-        3 => 'phpunit\\framework\\constraint\\matches',
-        4 => 'phpunit\\framework\\constraint\\detectedencoding',
-        5 => 'phpunit\\framework\\constraint\\haystacklength',
-        6 => 'phpunit\\framework\\constraint\\normalizelineendings',
+        3 => 'phpunit\\framework\\constraint\\tostringincontext',
+        4 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
+        5 => 'phpunit\\framework\\constraint\\matches',
+        6 => 'phpunit\\framework\\constraint\\needleasstring',
+        7 => 'phpunit\\framework\\constraint\\haystackasstring',
+        8 => 'phpunit\\framework\\constraint\\detectedencoding',
+        9 => 'phpunit\\framework\\constraint\\haystacklength',
+        10 => 'phpunit\\framework\\constraint\\normalizelineendings',
       ),
       3 => 
       array (
@@ -6711,7 +6842,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/String/StringEndsWith.php' => 
     array (
-      0 => '1c39edd8bce69aaef8a476c575211fd34dbebcb818a73e569aa02ff42d29e268',
+      0 => 'f6467ccae33cb71e3844ace9d9d0eea2e480298564be4983882f828e7c5aabdb',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\stringendswith',
@@ -6720,7 +6851,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\tostring',
-        2 => 'phpunit\\framework\\constraint\\matches',
+        2 => 'phpunit\\framework\\constraint\\tostringincontext',
+        3 => 'phpunit\\framework\\constraint\\matches',
       ),
       3 => 
       array (
@@ -6728,7 +6860,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/String/StringEqualsStringIgnoringLineEndings.php' => 
     array (
-      0 => '0f4fedcabdd05694591f5fe54a82e8e38d3e19a38dffeda7a733665425e21dc2',
+      0 => 'c37b3a8192f6f576b3d458c4f8afab48c6309c69a3958e61bef2ae4331170a4b',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\stringequalsstringignoringlineendings',
@@ -6737,8 +6869,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\tostring',
-        2 => 'phpunit\\framework\\constraint\\matches',
-        3 => 'phpunit\\framework\\constraint\\normalizelineendings',
+        2 => 'phpunit\\framework\\constraint\\tostringincontext',
+        3 => 'phpunit\\framework\\constraint\\matches',
+        4 => 'phpunit\\framework\\constraint\\valueasstring',
+        5 => 'phpunit\\framework\\constraint\\normalizelineendings',
       ),
       3 => 
       array (
@@ -6746,7 +6880,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/String/StringMatchesFormatDescription.php' => 
     array (
-      0 => '0d25ad582a0529ddfa458785300ab2d2924388a63a4b7360812ab6593186a804',
+      0 => '9988d3c34475a88c04071d010930e188664fa17d4a66cf1932108da2caee8c75',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\stringmatchesformatdescription',
@@ -6755,12 +6889,17 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\tostring',
-        2 => 'phpunit\\framework\\constraint\\matches',
-        3 => 'phpunit\\framework\\constraint\\failuredescription',
-        4 => 'phpunit\\framework\\constraint\\additionalfailuredescription',
-        5 => 'phpunit\\framework\\constraint\\regularexpressionforformatdescription',
-        6 => 'phpunit\\framework\\constraint\\convertnewlines',
-        7 => 'phpunit\\framework\\constraint\\differ',
+        2 => 'phpunit\\framework\\constraint\\tostringincontext',
+        3 => 'phpunit\\framework\\constraint\\matches',
+        4 => 'phpunit\\framework\\constraint\\failuredescription',
+        5 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
+        6 => 'phpunit\\framework\\constraint\\additionalfailuredescription',
+        7 => 'phpunit\\framework\\constraint\\regularexpressionforformatdescription',
+        8 => 'phpunit\\framework\\constraint\\ismultilinematch',
+        9 => 'phpunit\\framework\\constraint\\findnextanchor',
+        10 => 'phpunit\\framework\\constraint\\findanchorinactual',
+        11 => 'phpunit\\framework\\constraint\\convertnewlines',
+        12 => 'phpunit\\framework\\constraint\\differ',
       ),
       3 => 
       array (
@@ -6768,7 +6907,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/String/StringStartsWith.php' => 
     array (
-      0 => '9210e206051601a2a85e2721eefcd734ed029a81026c6aa2fa66c58de22bb12c',
+      0 => '1e7702fc0ceaed200e875ea0d09f5520425984f960c6db56c6909bfdd5565b5a',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\stringstartswith',
@@ -6777,42 +6916,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\tostring',
-        2 => 'phpunit\\framework\\constraint\\matches',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Traversable/ArrayHasKey.php' => 
-    array (
-      0 => '1cfa3f067c6ed616d4425ed8389a1c0d5f465441970d430ac55ec538c55fe1e1',
-      1 => 
-      array (
-        0 => 'phpunit\\framework\\constraint\\arrayhaskey',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\framework\\constraint\\__construct',
-        1 => 'phpunit\\framework\\constraint\\tostring',
-        2 => 'phpunit\\framework\\constraint\\matches',
-        3 => 'phpunit\\framework\\constraint\\failuredescription',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Traversable/IsList.php' => 
-    array (
-      0 => '60d73556a359ac28bef8c4b969d408568bc149ee1d33316b2b582855982274f5',
-      1 => 
-      array (
-        0 => 'phpunit\\framework\\constraint\\islist',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\framework\\constraint\\tostring',
-        1 => 'phpunit\\framework\\constraint\\matches',
-        2 => 'phpunit\\framework\\constraint\\failuredescription',
+        2 => 'phpunit\\framework\\constraint\\tostringincontext',
+        3 => 'phpunit\\framework\\constraint\\matches',
       ),
       3 => 
       array (
@@ -6820,7 +6925,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Traversable/TraversableContains.php' => 
     array (
-      0 => '96af801f13097418181516e21bfaa277acc4cf79502dd1451fee51fcde09da02',
+      0 => '8619dffbb397958f09d5e1a550aa51bd632bc13debd52eafda7cdc02aab70212',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\traversablecontains',
@@ -6829,8 +6934,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\tostring',
-        2 => 'phpunit\\framework\\constraint\\failuredescription',
-        3 => 'phpunit\\framework\\constraint\\value',
+        2 => 'phpunit\\framework\\constraint\\tostringincontext',
+        3 => 'phpunit\\framework\\constraint\\failuredescription',
+        4 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
+        5 => 'phpunit\\framework\\constraint\\value',
       ),
       3 => 
       array (
@@ -6838,7 +6945,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Traversable/TraversableContainsEqual.php' => 
     array (
-      0 => '4a861ff01bc202a3427969efee801eb1efd531be1d7a3df5e3cbef168dabf347',
+      0 => 'c6cdec33ab25cff5c7c38788c6a37dcfebd6cd2a0f92b1cd351ac99865735e80',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\traversablecontainsequal',
@@ -6853,7 +6960,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Traversable/TraversableContainsIdentical.php' => 
     array (
-      0 => '7270941cb9a99c1b3ae11ff6a3303e3b6b42a0e7967fbe40bdfa41cf47d0518b',
+      0 => '8a653ad61565a00b72d4c8c92ccb64dc25f5800b8bd9592da98bcad001506d3c',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\traversablecontainsidentical',
@@ -6868,7 +6975,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Traversable/TraversableContainsOnly.php' => 
     array (
-      0 => 'a403a27b2e528bef9d755ac1d3b31338995ff75d6b51863d67e2cade4ad66798',
+      0 => 'a2af24ee856ee534c144ba78e61d1e0611392b5d042faaf9b8ca2bd1897249ec',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\traversablecontainsonly',
@@ -6880,6 +6987,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         2 => 'phpunit\\framework\\constraint\\__construct',
         3 => 'phpunit\\framework\\constraint\\evaluate',
         4 => 'phpunit\\framework\\constraint\\tostring',
+        5 => 'phpunit\\framework\\constraint\\tostringincontext',
       ),
       3 => 
       array (
@@ -6887,7 +6995,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Type/IsInstanceOf.php' => 
     array (
-      0 => 'e3d568612b99548b6dc6a199641fcf667c0c06c755a660c912c629c2dc50f6f7',
+      0 => '79391e2521fe8917a323827c340422df199f55700d7df1cbb8330065a616e1b9',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\isinstanceof',
@@ -6896,8 +7004,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\tostring',
-        2 => 'phpunit\\framework\\constraint\\matches',
-        3 => 'phpunit\\framework\\constraint\\failuredescription',
+        2 => 'phpunit\\framework\\constraint\\tostringincontext',
+        3 => 'phpunit\\framework\\constraint\\matches',
+        4 => 'phpunit\\framework\\constraint\\failuredescription',
+        5 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
       ),
       3 => 
       array (
@@ -6905,7 +7015,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Type/IsNull.php' => 
     array (
-      0 => '1acc9c8c80b5532ab682f617c8eaf9a63376b1860cbbbfc5d5b05f0388807433',
+      0 => 'd3c5f30bdccf2a6997bf52f9a303470b49448f6b4702d5522a5d6a9bdc893958',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\isnull',
@@ -6913,7 +7023,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\framework\\constraint\\tostring',
-        1 => 'phpunit\\framework\\constraint\\matches',
+        1 => 'phpunit\\framework\\constraint\\tostringincontext',
+        2 => 'phpunit\\framework\\constraint\\matches',
+        3 => 'phpunit\\framework\\constraint\\failuredescription',
       ),
       3 => 
       array (
@@ -6921,7 +7033,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Type/IsType.php' => 
     array (
-      0 => '4880312f8ab50875a958cf2fea1696769be2d82c910133a158dba0d915d472a1',
+      0 => '4eae1fe4bac637482e4b21bb959e2a04472aa078014589468221e3386802e403',
       1 => 
       array (
         0 => 'phpunit\\framework\\constraint\\istype',
@@ -6930,7 +7042,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\constraint\\__construct',
         1 => 'phpunit\\framework\\constraint\\tostring',
-        2 => 'phpunit\\framework\\constraint\\matches',
+        2 => 'phpunit\\framework\\constraint\\tostringincontext',
+        3 => 'phpunit\\framework\\constraint\\matches',
       ),
       3 => 
       array (
@@ -7000,7 +7113,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Exception/Exception.php' => 
     array (
-      0 => '3acb3f26e468b0c57badb648a4c45183eb6394983950b40fd5a885b22718c394',
+      0 => 'a750b388d04d8b5ced710f577caf1e2037c096bb21ddfeeb1ac268ad3210c91b',
       1 => 
       array (
         0 => 'phpunit\\framework\\exception',
@@ -7312,24 +7425,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Exception/UnknownNativeTypeException.php' => 
-    array (
-      0 => '28c573240c63381d898606d8545fc06cd6ad35304a442753e3981ba9ae2966f6',
-      1 => 
-      array (
-        0 => 'phpunit\\framework\\unknownnativetypeexception',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\framework\\__construct',
-      ),
-      3 => 
-      array (
-      ),
-    ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/ExecutionOrderDependency.php' => 
     array (
-      0 => '25864b08e87844c40560a2c0cfb0d794d5c8493c8f5bf99b0f2f6550ed375c78',
+      0 => 'e566e8e2d15ecdff6cad6ba3884165d7201b490a67b16655d9a425f83bb8c84c',
       1 => 
       array (
         0 => 'phpunit\\framework\\executionorderdependency',
@@ -7350,6 +7448,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         11 => 'phpunit\\framework\\targetisclass',
         12 => 'phpunit\\framework\\gettarget',
         13 => 'phpunit\\framework\\gettargetclassname',
+        14 => 'phpunit\\framework\\targetiscallabletestmethod',
       ),
       3 => 
       array (
@@ -7602,7 +7701,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/DoubledMethod.php' => 
     array (
-      0 => '60e52622b6150eb52a8ab7176fe9d3a227513c5116ec6ab6b4319d034d5b81e3',
+      0 => '30fb1f03f6a3168add5b1ee165970ac02337ed4ed41274084e1b51eafe5a6fca',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\generator\\doubledmethod',
@@ -7617,10 +7716,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         5 => 'phpunit\\framework\\mockobject\\generator\\returntype',
         6 => 'phpunit\\framework\\mockobject\\generator\\defaultparametervalues',
         7 => 'phpunit\\framework\\mockobject\\generator\\numberofparameters',
-        8 => 'phpunit\\framework\\mockobject\\generator\\methodparametersfordeclaration',
-        9 => 'phpunit\\framework\\mockobject\\generator\\methodparametersforcall',
-        10 => 'phpunit\\framework\\mockobject\\generator\\exportdefaultvalue',
-        11 => 'phpunit\\framework\\mockobject\\generator\\methodparametersdefaultvalues',
+        8 => 'phpunit\\framework\\mockobject\\generator\\mustnotreturnvalue',
+        9 => 'phpunit\\framework\\mockobject\\generator\\methodparametersfordeclaration',
+        10 => 'phpunit\\framework\\mockobject\\generator\\methodparametersforcall',
+        11 => 'phpunit\\framework\\mockobject\\generator\\exportdefaultvalue',
+        12 => 'phpunit\\framework\\mockobject\\generator\\methodparametersdefaultvalues',
       ),
       3 => 
       array (
@@ -7837,7 +7937,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Generator.php' => 
     array (
-      0 => 'a9dfe8b09d03c7621707631fab96df606095ff0a579b65c2505ea2211d868460',
+      0 => 'e72405d4432ae25b2e7770463ece4a74ff4a8464c32fcc9beddd37bbefa4baee',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\generator\\generator',
@@ -7871,7 +7971,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/HookedProperty.php' => 
     array (
-      0 => '3ae0772ad422d9eae260d56fe37a24d90e1b4871292dfa7c25d8cab567eac04c',
+      0 => '2c0f6bbd473f53dfaf1d8648e30e768131ede366bceba5f76a2f6c284a862490',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\generator\\hookedproperty',
@@ -7885,7 +7985,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         4 => 'phpunit\\framework\\mockobject\\generator\\hassethook',
         5 => 'phpunit\\framework\\mockobject\\generator\\shouldgenerategethook',
         6 => 'phpunit\\framework\\mockobject\\generator\\shouldgeneratesethook',
-        7 => 'phpunit\\framework\\mockobject\\generator\\settertype',
+        7 => 'phpunit\\framework\\mockobject\\generator\\hassettertype',
+        8 => 'phpunit\\framework\\mockobject\\generator\\settertype',
       ),
       3 => 
       array (
@@ -7893,7 +7994,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/HookedPropertyGenerator.php' => 
     array (
-      0 => '707e950b43cf7bc117adc6d01a9a1c8ffca6aa99e60057d1020c84677e4c283c',
+      0 => '9b9bda213694433d390dd2a7a558e789e08fa152c0deeb266288480017508109',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\generator\\hookedpropertygenerator',
@@ -7923,7 +8024,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/MockBuilder.php' => 
     array (
-      0 => 'c3d803ab1cd4cb2cd2da151783be8500d4da9199e98a4e66c23072df857fb458',
+      0 => '291674b959fcf069dfba3abb58a7ba451f6314f7b85fbaaa142d922efb8bdd6f',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\mockbuilder',
@@ -7956,7 +8057,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Api/Method.php' => 
     array (
-      0 => 'd102f94d54b7fc9d80f7c6da01e561aa2158dfa918635b1038c6f36335068d38',
+      0 => '68fc0de1bfb7885fb1532e5072c3edd395a91a18ed67731f3d57141f000ff666',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\method',
@@ -7972,7 +8073,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Api/MockObjectApi.php' => 
     array (
-      0 => '0eadd4db160cf432687c833f3e7a1765d72e3a10fc14af803c7487f1a7af8765',
+      0 => '556490c9e4e00df5f1c76a3fd63deca011adb53829e3d84f159861866d9b3317',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\mockobjectapi',
@@ -8009,7 +8110,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Api/StubApi.php' => 
     array (
-      0 => 'acb6cd33a48360885942ba98af5a423336a46776ff0b078053e4339bdc766ab1',
+      0 => '3506f74257cf3b3bb834f555c3f93d669a0ffb27f669db2330f2e9ea5052d63f',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\stubapi',
@@ -8026,7 +8127,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Api/TestDoubleState.php' => 
     array (
-      0 => '7552573230c85ce53d9d884f1f88455f20b1f5a6266621c2d6455e87e0b111ed',
+      0 => '9df1d3bf6077483a5ea625cd3fc44ad1bc3ffaa45f0be440d1e487fc241f9020',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\testdoublestate',
@@ -8046,7 +8147,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Interface/InvocationStubber.php' => 
     array (
-      0 => 'f228f8a54a3db0b849fae6711fc1203d9f438e8806815c466111fd0325bb5452',
+      0 => '1d207d30183d1634d11d809eb9dfea5221f8b7ac1dfb4da0ad1179733928b233',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\invocationstubber',
@@ -8054,19 +8155,17 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\method',
-        1 => 'phpunit\\framework\\mockobject\\id',
-        2 => 'phpunit\\framework\\mockobject\\after',
-        3 => 'phpunit\\framework\\mockobject\\with',
-        4 => 'phpunit\\framework\\mockobject\\withanyparameters',
-        5 => 'phpunit\\framework\\mockobject\\will',
-        6 => 'phpunit\\framework\\mockobject\\willreturn',
-        7 => 'phpunit\\framework\\mockobject\\willreturnreference',
-        8 => 'phpunit\\framework\\mockobject\\willreturnmap',
-        9 => 'phpunit\\framework\\mockobject\\willreturnargument',
-        10 => 'phpunit\\framework\\mockobject\\willreturncallback',
-        11 => 'phpunit\\framework\\mockobject\\willreturnself',
-        12 => 'phpunit\\framework\\mockobject\\willreturnonconsecutivecalls',
-        13 => 'phpunit\\framework\\mockobject\\willthrowexception',
+        1 => 'phpunit\\framework\\mockobject\\will',
+        2 => 'phpunit\\framework\\mockobject\\willreturn',
+        3 => 'phpunit\\framework\\mockobject\\willreturnreference',
+        4 => 'phpunit\\framework\\mockobject\\willreturnmap',
+        5 => 'phpunit\\framework\\mockobject\\willreturnstrictmap',
+        6 => 'phpunit\\framework\\mockobject\\willreturnargument',
+        7 => 'phpunit\\framework\\mockobject\\willreturncallback',
+        8 => 'phpunit\\framework\\mockobject\\willreturnself',
+        9 => 'phpunit\\framework\\mockobject\\willreturnonconsecutivecalls',
+        10 => 'phpunit\\framework\\mockobject\\willthrowexception',
+        11 => 'phpunit\\framework\\mockobject\\seal',
       ),
       3 => 
       array (
@@ -8074,7 +8173,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Interface/MockObject.php' => 
     array (
-      0 => 'e493d6e42091d42f810f3a2121bbcad21b2f1d96615f206ee27c8312513946b4',
+      0 => 'ec246e32136eb39a3411e6e80fc94774b188b4f4e614bc24b07eeb4a02003a43',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\mockobject',
@@ -8138,7 +8237,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Invocation.php' => 
     array (
-      0 => '66dd86e73b51cbb6d345d90271235d82fff4688386a929c77dfb152016ce7417',
+      0 => '712816f32f3d41082a296ea344ae31cfae7e0951f90ff98eaf067f76fc087a99',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\invocation',
@@ -8159,7 +8258,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/InvocationHandler.php' => 
     array (
-      0 => '6b04c0ca1040a40874ca9c355586d749f5b2f8beb910d782a4211eafe7823d81',
+      0 => '428f69705b3d147b604382041a74c9fa727683b8c1016a9bd14b581892136c7f',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\invocationhandler',
@@ -8175,7 +8274,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         6 => 'phpunit\\framework\\mockobject\\expects',
         7 => 'phpunit\\framework\\mockobject\\invoke',
         8 => 'phpunit\\framework\\mockobject\\verify',
-        9 => 'phpunit\\framework\\mockobject\\addmatcher',
+        9 => 'phpunit\\framework\\mockobject\\seal',
+        10 => 'phpunit\\framework\\mockobject\\issealed',
+        11 => 'phpunit\\framework\\mockobject\\hasmatcherwithparametersruleformethodname',
+        12 => 'phpunit\\framework\\mockobject\\addmatcher',
+        13 => 'phpunit\\framework\\mockobject\\configuredmethodnames',
       ),
       3 => 
       array (
@@ -8183,32 +8286,13 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/InvocationStubberImplementation.php' => 
     array (
-      0 => '255d365297e6c3406ce449756bb48c9607bfb81803150ea1627b4bedbcb68aba',
+      0 => '4b9a3f7c713f8a7aa484e06d3614c40108c7049803b77b1a1ae2e84687ace01d',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\invocationstubberimplementation',
       ),
       2 => 
       array (
-        0 => 'phpunit\\framework\\mockobject\\__construct',
-        1 => 'phpunit\\framework\\mockobject\\method',
-        2 => 'phpunit\\framework\\mockobject\\id',
-        3 => 'phpunit\\framework\\mockobject\\after',
-        4 => 'phpunit\\framework\\mockobject\\with',
-        5 => 'phpunit\\framework\\mockobject\\withanyparameters',
-        6 => 'phpunit\\framework\\mockobject\\will',
-        7 => 'phpunit\\framework\\mockobject\\willreturn',
-        8 => 'phpunit\\framework\\mockobject\\willreturnreference',
-        9 => 'phpunit\\framework\\mockobject\\willreturnmap',
-        10 => 'phpunit\\framework\\mockobject\\willreturnargument',
-        11 => 'phpunit\\framework\\mockobject\\willreturncallback',
-        12 => 'phpunit\\framework\\mockobject\\willreturnself',
-        13 => 'phpunit\\framework\\mockobject\\willreturnonconsecutivecalls',
-        14 => 'phpunit\\framework\\mockobject\\willthrowexception',
-        15 => 'phpunit\\framework\\mockobject\\ensureparameterscanbeconfigured',
-        16 => 'phpunit\\framework\\mockobject\\configuredmethod',
-        17 => 'phpunit\\framework\\mockobject\\ensuretypeofreturnvalues',
-        18 => 'phpunit\\framework\\mockobject\\emitdeprecationforwithmethods',
       ),
       3 => 
       array (
@@ -8216,7 +8300,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Matcher.php' => 
     array (
-      0 => '4afb3d0959a3d10744746c8ccd72afe21c77547b03e3dcb2e4cf3092a71515c5',
+      0 => 'f427b0b06dc5ff684968db87ceb8be3d2038244290d1df69d8f4a5020331779c',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\matcher',
@@ -8242,7 +8326,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/MethodNameConstraint.php' => 
     array (
-      0 => '22a5d142e2ffbb2d6f2e5b65471576ac2a0d3462687fa6c6df62bffe2c90527d',
+      0 => 'adfb6526c24390b4ccc385a8d4060b3ba66ed44a384106f7d65308aa433ca771',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\methodnameconstraint',
@@ -8250,8 +8334,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\__construct',
-        1 => 'phpunit\\framework\\mockobject\\tostring',
-        2 => 'phpunit\\framework\\mockobject\\matches',
+        1 => 'phpunit\\framework\\mockobject\\methodname',
+        2 => 'phpunit\\framework\\mockobject\\tostring',
+        3 => 'phpunit\\framework\\mockobject\\matches',
       ),
       3 => 
       array (
@@ -8308,7 +8393,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/ReturnValueGenerator.php' => 
     array (
-      0 => '44cf206fa95efcb40a01bb93ae73926b3be9945bfda419377073f60b6a381ff6',
+      0 => '808c84c9d0a2235c7311f0317ac561472f575022c6054d3e29ad7eaa28b0926d',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\returnvaluegenerator',
@@ -8415,7 +8500,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedAtMostCount.php' => 
     array (
-      0 => '55ee74f1e86a4d5b585eedcb289bc79fe008fbef1dab2414f88e24c64002b665',
+      0 => 'aa7abde3656c60b29d5c159ec134f586262515f9752182a332b0e73bea245614',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\rule\\invokedatmostcount',
@@ -8433,7 +8518,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedCount.php' => 
     array (
-      0 => '1b59f15a510d35991303454a04d8ea6fcb2fd85536fb02a9843324e8896e33d6',
+      0 => 'e2edb71d78091325de7d4cf009d23f484fd4e5b95448bf4f58c6aa90c34ab6cf',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\rule\\invokedcount',
@@ -8453,7 +8538,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/MethodName.php' => 
     array (
-      0 => '3b9d7ecee6031597f1dc8cf29d09978ab9aad6656b7943ee97d35ed619c5298a',
+      0 => '31fd444504e1dd44d6179444f69655f0f11a2e169fb98679592ea3dc62689d32',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\rule\\methodname',
@@ -8462,8 +8547,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\mockobject\\rule\\__construct',
         1 => 'phpunit\\framework\\mockobject\\rule\\tostring',
-        2 => 'phpunit\\framework\\mockobject\\rule\\matches',
-        3 => 'phpunit\\framework\\mockobject\\rule\\matchesname',
+        2 => 'phpunit\\framework\\mockobject\\rule\\failuredescription',
+        3 => 'phpunit\\framework\\mockobject\\rule\\matches',
+        4 => 'phpunit\\framework\\mockobject\\rule\\matchesname',
       ),
       3 => 
       array (
@@ -8471,7 +8557,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/Parameters.php' => 
     array (
-      0 => 'ea5e09d67f525cd79735e786bb47ae8fa0d7294e9eae707a90f2cf432ead3ef8',
+      0 => '6d8bf32fb83a371ca053e42cb22040afac11d28474fff7811dc1768870df2c26',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\rule\\parameters',
@@ -8481,9 +8567,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\mockobject\\rule\\__construct',
         1 => 'phpunit\\framework\\mockobject\\rule\\apply',
         2 => 'phpunit\\framework\\mockobject\\rule\\verify',
-        3 => 'phpunit\\framework\\mockobject\\rule\\doverify',
-        4 => 'phpunit\\framework\\mockobject\\rule\\guardagainstduplicateevaluationofparameterconstraints',
-        5 => 'phpunit\\framework\\mockobject\\rule\\incrementassertioncount',
+        3 => 'phpunit\\framework\\mockobject\\rule\\useassertioncount',
+        4 => 'phpunit\\framework\\mockobject\\rule\\doverify',
+        5 => 'phpunit\\framework\\mockobject\\rule\\guardagainstduplicateevaluationofparameterconstraints',
+        6 => 'phpunit\\framework\\mockobject\\rule\\incrementassertioncount',
+        7 => 'phpunit\\framework\\mockobject\\rule\\parameters',
       ),
       3 => 
       array (
@@ -8618,7 +8706,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Stub/ReturnValueMap.php' => 
     array (
-      0 => '09869e779362cce155aafc3f0d782be72f85f147066f3f98e191dfd546a19c2f',
+      0 => 'a0cb0a7a00ad7e5feba5d3306e38f6b923b70bb22af9663c78b78ae826d37d75',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\stub\\returnvaluemap',
@@ -8627,6 +8715,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\mockobject\\stub\\__construct',
         1 => 'phpunit\\framework\\mockobject\\stub\\invoke',
+        2 => 'phpunit\\framework\\mockobject\\stub\\parametersmatch',
       ),
       3 => 
       array (
@@ -8649,7 +8738,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/TestDoubleBuilder.php' => 
     array (
-      0 => '4ff45850753c9009c150af9fa41e274281f97da70902a448509224e42b1c01a5',
+      0 => 'c58b41b0de8659f189865c71e644767c94c96b64ba7970bf59b8870b2cb4c03a',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\testdoublebuilder',
@@ -8658,14 +8747,15 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\mockobject\\__construct',
         1 => 'phpunit\\framework\\mockobject\\onlymethods',
-        2 => 'phpunit\\framework\\mockobject\\setconstructorargs',
-        3 => 'phpunit\\framework\\mockobject\\disableoriginalconstructor',
-        4 => 'phpunit\\framework\\mockobject\\enableoriginalconstructor',
-        5 => 'phpunit\\framework\\mockobject\\disableoriginalclone',
-        6 => 'phpunit\\framework\\mockobject\\enableoriginalclone',
-        7 => 'phpunit\\framework\\mockobject\\enableautoreturnvaluegeneration',
-        8 => 'phpunit\\framework\\mockobject\\disableautoreturnvaluegeneration',
-        9 => 'phpunit\\framework\\mockobject\\gettestdouble',
+        2 => 'phpunit\\framework\\mockobject\\doubleproperties',
+        3 => 'phpunit\\framework\\mockobject\\setconstructorargs',
+        4 => 'phpunit\\framework\\mockobject\\disableoriginalconstructor',
+        5 => 'phpunit\\framework\\mockobject\\enableoriginalconstructor',
+        6 => 'phpunit\\framework\\mockobject\\disableoriginalclone',
+        7 => 'phpunit\\framework\\mockobject\\enableoriginalclone',
+        8 => 'phpunit\\framework\\mockobject\\enableautoreturnvaluegeneration',
+        9 => 'phpunit\\framework\\mockobject\\disableautoreturnvaluegeneration',
+        10 => 'phpunit\\framework\\mockobject\\gettestdouble',
       ),
       3 => 
       array (
@@ -8673,7 +8763,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/TestStubBuilder.php' => 
     array (
-      0 => '6889a9e4e6253801f385fa7900b76273e50961df472736c969b4d46899c50cd6',
+      0 => '9a995f2757daef4383d53af7953a15b3b625c4dd35be4cee2fac0979cdc06b9c',
       1 => 
       array (
         0 => 'phpunit\\framework\\mockobject\\teststubbuilder',
@@ -8750,7 +8840,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestBuilder.php' => 
     array (
-      0 => '2ace10346c9aecba8c348ea0adba826e6d3630a5487727294e17edc3cb844498',
+      0 => '9c15e1193708e17cbfd59d4b3289535286e4501f90e86a052536c954721b87d9',
       1 => 
       array (
         0 => 'phpunit\\framework\\testbuilder',
@@ -8759,12 +8849,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\framework\\build',
         1 => 'phpunit\\framework\\builddataprovidertestsuite',
-        2 => 'phpunit\\framework\\configuretestcase',
-        3 => 'phpunit\\framework\\backupsettings',
-        4 => 'phpunit\\framework\\shouldglobalstatebepreserved',
-        5 => 'phpunit\\framework\\shouldtestmethodberuninseparateprocess',
-        6 => 'phpunit\\framework\\shouldalltestmethodsoftestclassberuninsingleseparateprocess',
-        7 => 'phpunit\\framework\\requirementssatisfied',
+        2 => 'phpunit\\framework\\buildrepeattestsuite',
+        3 => 'phpunit\\framework\\buildretrytestsuite',
+        4 => 'phpunit\\framework\\configuretestcase',
+        5 => 'phpunit\\framework\\backupsettings',
+        6 => 'phpunit\\framework\\shouldglobalstatebepreserved',
+        7 => 'phpunit\\framework\\methodorclasslevelmetadata',
+        8 => 'phpunit\\framework\\shouldtestmethodberuninseparateprocess',
+        9 => 'phpunit\\framework\\requirementssatisfied',
+        10 => 'phpunit\\framework\\filterexcludesmethod',
+        11 => 'phpunit\\framework\\iseligibleforrepeatorretry',
+        12 => 'phpunit\\framework\\warnwhenmethodisineligible',
+        13 => 'phpunit\\framework\\hasvoidreturntype',
+        14 => 'phpunit\\framework\\doesnotdependonanothertest',
       ),
       3 => 
       array (
@@ -8772,7 +8869,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestCase.php' => 
     array (
-      0 => 'bef3b888d6e552ac1aebeeaecf1e83f6b9b2b857d073de3defc8774daea67dcf',
+      0 => '465308e48b2b49f232b7fcbe356b73de1edfc4740c56aa5bb70c93a00b995715',
       1 => 
       array (
         0 => 'phpunit\\framework\\testcase',
@@ -8809,111 +8906,93 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         27 => 'phpunit\\framework\\setbackupstaticproperties',
         28 => 'phpunit\\framework\\setbackupstaticpropertiesexcludelist',
         29 => 'phpunit\\framework\\setruntestinseparateprocess',
-        30 => 'phpunit\\framework\\setrunclassinseparateprocess',
-        31 => 'phpunit\\framework\\setpreserveglobalstate',
-        32 => 'phpunit\\framework\\setinisolation',
-        33 => 'phpunit\\framework\\result',
-        34 => 'phpunit\\framework\\setresult',
-        35 => 'phpunit\\framework\\registermockobject',
-        36 => 'phpunit\\framework\\addtoassertioncount',
-        37 => 'phpunit\\framework\\numberofassertionsperformed',
-        38 => 'phpunit\\framework\\usesdataprovider',
-        39 => 'phpunit\\framework\\dataname',
-        40 => 'phpunit\\framework\\datasetasstring',
-        41 => 'phpunit\\framework\\datasetasstringwithdata',
-        42 => 'phpunit\\framework\\provideddata',
-        43 => 'phpunit\\framework\\sortid',
-        44 => 'phpunit\\framework\\provides',
-        45 => 'phpunit\\framework\\requires',
-        46 => 'phpunit\\framework\\setdata',
-        47 => 'phpunit\\framework\\valueobjectforevents',
-        48 => 'phpunit\\framework\\wasprepared',
-        49 => 'phpunit\\framework\\any',
-        50 => 'phpunit\\framework\\never',
-        51 => 'phpunit\\framework\\atleast',
-        52 => 'phpunit\\framework\\atleastonce',
-        53 => 'phpunit\\framework\\once',
-        54 => 'phpunit\\framework\\exactly',
-        55 => 'phpunit\\framework\\atmost',
-        56 => 'phpunit\\framework\\throwexception',
-        57 => 'phpunit\\framework\\getactualoutputforassertion',
-        58 => 'phpunit\\framework\\expectoutputregex',
-        59 => 'phpunit\\framework\\expectoutputstring',
-        60 => 'phpunit\\framework\\expecterrorlog',
-        61 => 'phpunit\\framework\\expectexception',
-        62 => 'phpunit\\framework\\expectexceptioncode',
-        63 => 'phpunit\\framework\\expectexceptionmessage',
-        64 => 'phpunit\\framework\\expectexceptionmessagematches',
-        65 => 'phpunit\\framework\\expectexceptionobject',
-        66 => 'phpunit\\framework\\expectnottoperformassertions',
-        67 => 'phpunit\\framework\\expectuserdeprecationmessage',
-        68 => 'phpunit\\framework\\expectuserdeprecationmessagematches',
-        69 => 'phpunit\\framework\\getmockbuilder',
-        70 => 'phpunit\\framework\\registercomparator',
-        71 => 'phpunit\\framework\\registerfailuretype',
-        72 => 'phpunit\\framework\\createmock',
-        73 => 'phpunit\\framework\\createmockforintersectionofinterfaces',
-        74 => 'phpunit\\framework\\createconfiguredmock',
-        75 => 'phpunit\\framework\\createpartialmock',
-        76 => 'phpunit\\framework\\provideadditionalinformation',
-        77 => 'phpunit\\framework\\transformexception',
-        78 => 'phpunit\\framework\\onnotsuccessfultest',
-        79 => 'phpunit\\framework\\invoketestmethod',
-        80 => 'phpunit\\framework\\datasetasfilterstring',
-        81 => 'phpunit\\framework\\runtest',
-        82 => 'phpunit\\framework\\stripdatefromerrorlog',
-        83 => 'phpunit\\framework\\verifydeprecationexpectations',
-        84 => 'phpunit\\framework\\verifymockobjects',
-        85 => 'phpunit\\framework\\checkrequirements',
-        86 => 'phpunit\\framework\\handledependencies',
-        87 => 'phpunit\\framework\\markerrorforinvaliddependency',
-        88 => 'phpunit\\framework\\markskippedformissingdependency',
-        89 => 'phpunit\\framework\\startoutputbuffering',
-        90 => 'phpunit\\framework\\stopoutputbuffering',
-        91 => 'phpunit\\framework\\snapshotglobalerrorexceptionhandlers',
-        92 => 'phpunit\\framework\\restoreglobalerrorexceptionhandlers',
-        93 => 'phpunit\\framework\\activeerrorhandlers',
-        94 => 'phpunit\\framework\\activeexceptionhandlers',
-        95 => 'phpunit\\framework\\snapshotglobalstate',
-        96 => 'phpunit\\framework\\restoreglobalstate',
-        97 => 'phpunit\\framework\\createglobalstatesnapshot',
-        98 => 'phpunit\\framework\\compareglobalstatesnapshots',
-        99 => 'phpunit\\framework\\compareglobalstatesnapshotpart',
-        100 => 'phpunit\\framework\\handleenvironmentvariables',
-        101 => 'phpunit\\framework\\restoreenvironmentvariables',
-        102 => 'phpunit\\framework\\shouldinvocationmockerbereset',
-        103 => 'phpunit\\framework\\unregistercustomcomparators',
-        104 => 'phpunit\\framework\\shouldexceptionexpectationsbeverified',
-        105 => 'phpunit\\framework\\shouldruninseparateprocess',
-        106 => 'phpunit\\framework\\iscallabletestmethod',
-        107 => 'phpunit\\framework\\performassertionsonoutput',
-        108 => 'phpunit\\framework\\invokebeforeclasshookmethods',
-        109 => 'phpunit\\framework\\invokebeforetesthookmethods',
-        110 => 'phpunit\\framework\\invokepreconditionhookmethods',
-        111 => 'phpunit\\framework\\invokepostconditionhookmethods',
-        112 => 'phpunit\\framework\\invokeaftertesthookmethods',
-        113 => 'phpunit\\framework\\invokeafterclasshookmethods',
-        114 => 'phpunit\\framework\\invokehookmethods',
-        115 => 'phpunit\\framework\\methoddoesnotexistorisdeclaredintestcase',
-        116 => 'phpunit\\framework\\verifyexceptionexpectations',
-        117 => 'phpunit\\framework\\expectedexceptionwasnotraised',
-        118 => 'phpunit\\framework\\isregisteredfailure',
-        119 => 'phpunit\\framework\\hasexpectationonoutput',
-        120 => 'phpunit\\framework\\requirementsnotsatisfied',
-        121 => 'phpunit\\framework\\requiresxdebug',
-        122 => 'phpunit\\framework\\handleexceptionfrominvokedcountmockobjectrule',
-        123 => 'phpunit\\framework\\starterrorlogcapture',
-        124 => 'phpunit\\framework\\verifyerrorlogexpectation',
-        125 => 'phpunit\\framework\\handleerrorlogerror',
-        126 => 'phpunit\\framework\\stoperrorlogcapture',
-        127 => 'phpunit\\framework\\allowsmockobjectswithoutexpectations',
-        128 => 'phpunit\\framework\\emiteventforcustomtestmethodinvocation',
-        129 => 'phpunit\\framework\\warnaboutmultipleoutputexpectations',
-        130 => 'phpunit\\framework\\getstubbuilder',
-        131 => 'phpunit\\framework\\createstub',
-        132 => 'phpunit\\framework\\createstubforintersectionofinterfaces',
-        133 => 'phpunit\\framework\\createconfiguredstub',
-        134 => 'phpunit\\framework\\generatereturnvaluesfortestdoubles',
+        30 => 'phpunit\\framework\\setpreserveglobalstate',
+        31 => 'phpunit\\framework\\setinisolation',
+        32 => 'phpunit\\framework\\setemptydataproviderskipmessage',
+        33 => 'phpunit\\framework\\setthrowablefromdeferredissue',
+        34 => 'phpunit\\framework\\result',
+        35 => 'phpunit\\framework\\setresult',
+        36 => 'phpunit\\framework\\registermockobject',
+        37 => 'phpunit\\framework\\addtoassertioncount',
+        38 => 'phpunit\\framework\\numberofassertionsperformed',
+        39 => 'phpunit\\framework\\usesdataprovider',
+        40 => 'phpunit\\framework\\dataname',
+        41 => 'phpunit\\framework\\datasetasstring',
+        42 => 'phpunit\\framework\\datasetasstringwithdata',
+        43 => 'phpunit\\framework\\provideddata',
+        44 => 'phpunit\\framework\\sortid',
+        45 => 'phpunit\\framework\\provides',
+        46 => 'phpunit\\framework\\requires',
+        47 => 'phpunit\\framework\\setdata',
+        48 => 'phpunit\\framework\\valueobjectforevents',
+        49 => 'phpunit\\framework\\wasprepared',
+        50 => 'phpunit\\framework\\repetition',
+        51 => 'phpunit\\framework\\totalrepetitions',
+        52 => 'phpunit\\framework\\setrepetition',
+        53 => 'phpunit\\framework\\attempt',
+        54 => 'phpunit\\framework\\maxattempts',
+        55 => 'phpunit\\framework\\setattempt',
+        56 => 'phpunit\\framework\\setstatus',
+        57 => 'phpunit\\framework\\markskippedforrepeatabort',
+        58 => 'phpunit\\framework\\any',
+        59 => 'phpunit\\framework\\never',
+        60 => 'phpunit\\framework\\atleast',
+        61 => 'phpunit\\framework\\atleastonce',
+        62 => 'phpunit\\framework\\once',
+        63 => 'phpunit\\framework\\exactly',
+        64 => 'phpunit\\framework\\atmost',
+        65 => 'phpunit\\framework\\throwexception',
+        66 => 'phpunit\\framework\\getactualoutputforassertion',
+        67 => 'phpunit\\framework\\expectoutputregex',
+        68 => 'phpunit\\framework\\expectoutputstring',
+        69 => 'phpunit\\framework\\expecterrorlog',
+        70 => 'phpunit\\framework\\expectexception',
+        71 => 'phpunit\\framework\\expectexceptioncode',
+        72 => 'phpunit\\framework\\expectexceptionmessage',
+        73 => 'phpunit\\framework\\expectexceptionmessageis',
+        74 => 'phpunit\\framework\\expectexceptionmessageisorcontains',
+        75 => 'phpunit\\framework\\expectexceptionmessagematches',
+        76 => 'phpunit\\framework\\expectexceptionobject',
+        77 => 'phpunit\\framework\\expectnottoperformassertions',
+        78 => 'phpunit\\framework\\expectuserdeprecationmessage',
+        79 => 'phpunit\\framework\\expectuserdeprecationmessagematches',
+        80 => 'phpunit\\framework\\getmockbuilder',
+        81 => 'phpunit\\framework\\registercomparator',
+        82 => 'phpunit\\framework\\registerobjectexporter',
+        83 => 'phpunit\\framework\\registerfailuretype',
+        84 => 'phpunit\\framework\\createmock',
+        85 => 'phpunit\\framework\\createmockforintersectionofinterfaces',
+        86 => 'phpunit\\framework\\createconfiguredmock',
+        87 => 'phpunit\\framework\\createpartialmock',
+        88 => 'phpunit\\framework\\provideadditionalinformation',
+        89 => 'phpunit\\framework\\transformexception',
+        90 => 'phpunit\\framework\\onnotsuccessfultest',
+        91 => 'phpunit\\framework\\invoketestmethod',
+        92 => 'phpunit\\framework\\runtest',
+        93 => 'phpunit\\framework\\verifydeprecationexpectations',
+        94 => 'phpunit\\framework\\verifymockobjects',
+        95 => 'phpunit\\framework\\checkrequirements',
+        96 => 'phpunit\\framework\\handledependencies',
+        97 => 'phpunit\\framework\\markerrorforinvaliddependency',
+        98 => 'phpunit\\framework\\markskippedformissingdependency',
+        99 => 'phpunit\\framework\\handleenvironmentvariables',
+        100 => 'phpunit\\framework\\restoreenvironmentvariables',
+        101 => 'phpunit\\framework\\shouldinvocationmockerbereset',
+        102 => 'phpunit\\framework\\unregistercustomcomparators',
+        103 => 'phpunit\\framework\\unregistercustomobjectexporters',
+        104 => 'phpunit\\framework\\shouldruninseparateprocess',
+        105 => 'phpunit\\framework\\isregisteredfailure',
+        106 => 'phpunit\\framework\\requirementsnotsatisfied',
+        107 => 'phpunit\\framework\\requiresxdebug',
+        108 => 'phpunit\\framework\\handleexceptionfrominvokedcountmockobjectrule',
+        109 => 'phpunit\\framework\\allowsmockobjectswithoutexpectations',
+        110 => 'phpunit\\framework\\emiteventforcustomtestmethodinvocation',
+        111 => 'phpunit\\framework\\warnaboutconflictingoutputstringexpectation',
+        112 => 'phpunit\\framework\\getstubbuilder',
+        113 => 'phpunit\\framework\\createstub',
+        114 => 'phpunit\\framework\\createstubforintersectionofinterfaces',
+        115 => 'phpunit\\framework\\createconfiguredstub',
+        116 => 'phpunit\\framework\\generatereturnvaluesfortestdoubles',
       ),
       3 => 
       array (
@@ -8921,15 +9000,15 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestRunner/ChildProcessResultProcessor.php' => 
     array (
-      0 => 'dbc0bf2ab19cc55f2729ba3d68efc7c9aa7929135e129051c8ddd030a7a9291b',
+      0 => 'bb69956bdd7a61f8ffb64451f46a79b6564316e3c6534f56393e53ef653cca7d',
       1 => 
       array (
-        0 => 'phpunit\\framework\\childprocessresultprocessor',
+        0 => 'phpunit\\framework\\testrunner\\childprocessresultprocessor',
       ),
       2 => 
       array (
-        0 => 'phpunit\\framework\\__construct',
-        1 => 'phpunit\\framework\\process',
+        0 => 'phpunit\\framework\\testrunner\\__construct',
+        1 => 'phpunit\\framework\\testrunner\\process',
       ),
       3 => 
       array (
@@ -8937,17 +9016,17 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestRunner/SeparateProcessTestRunner.php' => 
     array (
-      0 => 'fd0cba81011cd722efdfe4a08ad732fc54f49727aa702770c868a166c648a25a',
+      0 => '19c1e6da104c8f1f8d30f13757d52118628d760b8448754e55ca703dbb9f488c',
       1 => 
       array (
-        0 => 'phpunit\\framework\\separateprocesstestrunner',
+        0 => 'phpunit\\framework\\testrunner\\separateprocesstestrunner',
       ),
       2 => 
       array (
-        0 => 'phpunit\\framework\\run',
-        1 => 'phpunit\\framework\\sourcemapfileforchildprocess',
-        2 => 'phpunit\\framework\\saveconfigurationforchildprocess',
-        3 => 'phpunit\\framework\\pathforcachedsourcemap',
+        0 => 'phpunit\\framework\\testrunner\\run',
+        1 => 'phpunit\\framework\\testrunner\\sourcemapfileforchildprocess',
+        2 => 'phpunit\\framework\\testrunner\\saveconfigurationforchildprocess',
+        3 => 'phpunit\\framework\\testrunner\\pathforcachedsourcemap',
       ),
       3 => 
       array (
@@ -8955,21 +9034,24 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestRunner/TestRunner.php' => 
     array (
-      0 => '6fcb2d60792b33414cac7d11b8d2ac45281d5547c777188b72f6960e9e262c8e',
+      0 => '5e436fcd444383632f523edae7c2f9cbe6f45a9bf82c91aeb6ed19b39915637b',
       1 => 
       array (
-        0 => 'phpunit\\framework\\testrunner',
+        0 => 'phpunit\\framework\\testrunner\\testrunner',
       ),
       2 => 
       array (
-        0 => 'phpunit\\framework\\__construct',
-        1 => 'phpunit\\framework\\run',
-        2 => 'phpunit\\framework\\hascoveragemetadata',
-        3 => 'phpunit\\framework\\cantimelimitbeenforced',
-        4 => 'phpunit\\framework\\shouldtimelimitbeenforced',
-        5 => 'phpunit\\framework\\runtestwithtimeout',
-        6 => 'phpunit\\framework\\shoulderrorhandlerbeused',
-        7 => 'phpunit\\framework\\performsanitychecks',
+        0 => 'phpunit\\framework\\testrunner\\__construct',
+        1 => 'phpunit\\framework\\testrunner\\run',
+        2 => 'phpunit\\framework\\testrunner\\hascoveragemetadata',
+        3 => 'phpunit\\framework\\testrunner\\cantimelimitbeenforced',
+        4 => 'phpunit\\framework\\testrunner\\shouldtimelimitbeenforced',
+        5 => 'phpunit\\framework\\testrunner\\runtestwithtimeout',
+        6 => 'phpunit\\framework\\testrunner\\shoulderrorhandlerbeused',
+        7 => 'phpunit\\framework\\testrunner\\performsanitychecks',
+        8 => 'phpunit\\framework\\testrunner\\removefilesystemtargetsthatarenotfirstpartycode',
+        9 => 'phpunit\\framework\\testrunner\\isfilesystemtargetthatisnotfirstpartycode',
+        10 => 'phpunit\\framework\\testrunner\\isdirectoryconfiguredasfirstpartycode',
       ),
       3 => 
       array (
@@ -8993,7 +9075,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestSize/Large.php' => 
     array (
-      0 => 'b0cefa23b0db2da895afa1aeaefb98e7d888c611df8e3f1f45336e1830570de7',
+      0 => 'b10d037e223ab87d1526273fa5a2e9d4dd9f2d628e30b71f817af967ad4506c1',
       1 => 
       array (
         0 => 'phpunit\\framework\\testsize\\large',
@@ -9010,7 +9092,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestSize/Medium.php' => 
     array (
-      0 => '3371dae2997336f9dd6dc03c92c18c51e0a38c59c094458e0381ff42e8815bfd',
+      0 => '11afbedc5597458dd4a52a2ef4757f8ac51887b5727f3a7572a43ada5270afed',
       1 => 
       array (
         0 => 'phpunit\\framework\\testsize\\medium',
@@ -9027,7 +9109,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestSize/Small.php' => 
     array (
-      0 => '0dfa7286b7af217b058b731e27425def1d6c83f7bc8f3f2dbd613c71ff846e99',
+      0 => '2278effb9201e181770ae216c551d41ed2ab28c47ece4a50a781c77bbc295df4',
       1 => 
       array (
         0 => 'phpunit\\framework\\testsize\\small',
@@ -9044,7 +9126,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestSize/TestSize.php' => 
     array (
-      0 => '823ba65e80216e5167c1c6ca6109b641346b13a88c2b6d12f7539e6620e8782b',
+      0 => 'c3a1b46772f9ccac3a7489af00134bb11b708551cfaa0a3a37671e4969d14243',
       1 => 
       array (
         0 => 'phpunit\\framework\\testsize\\testsize',
@@ -9068,7 +9150,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestSize/Unknown.php' => 
     array (
-      0 => 'a3751a2fcc0d0a63e5a7acef2225aabf7a15d92766fcf7e7b87d98f4740b46ba',
+      0 => '1fa3b1f91da2dc1be0140b7ef44a32fa3224a4ce83078c1ac110dfbb16ed5785',
       1 => 
       array (
         0 => 'phpunit\\framework\\testsize\\unknown',
@@ -9084,7 +9166,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestStatus/Deprecation.php' => 
     array (
-      0 => '4eb7b42ae3031b9a9ad408c91bcbdff1ec38e1c5455dab268a6b3fbc2b768b75',
+      0 => 'ab78ac9d26abca9b6e2d4ffc6d63e84bdb72e3a61c88145ee17adffc5a227606',
       1 => 
       array (
         0 => 'phpunit\\framework\\teststatus\\deprecation',
@@ -9094,6 +9176,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\teststatus\\isdeprecation',
         1 => 'phpunit\\framework\\teststatus\\asint',
         2 => 'phpunit\\framework\\teststatus\\asstring',
+        3 => 'phpunit\\framework\\teststatus\\sortweight',
       ),
       3 => 
       array (
@@ -9101,7 +9184,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestStatus/Error.php' => 
     array (
-      0 => '19a2ec8541e122724fc30699401dc20793cf67ae269131bf1d1c752670e7891d',
+      0 => '1aab735855f877d053ca6f5884fcd3b568ebdb83ffd7909221e6df881fd59a0a',
       1 => 
       array (
         0 => 'phpunit\\framework\\teststatus\\error',
@@ -9111,6 +9194,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\teststatus\\iserror',
         1 => 'phpunit\\framework\\teststatus\\asint',
         2 => 'phpunit\\framework\\teststatus\\asstring',
+        3 => 'phpunit\\framework\\teststatus\\sortweight',
       ),
       3 => 
       array (
@@ -9118,7 +9202,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestStatus/Failure.php' => 
     array (
-      0 => '2d56a4c43dda559a736ad5a3e3c3c99d8454f4e7716d64859aff0289684c2cea',
+      0 => '963b2c1aadc5a3decf56e920969e75195b8e6160cc44b42b5dfc187ad7ba5a46',
       1 => 
       array (
         0 => 'phpunit\\framework\\teststatus\\failure',
@@ -9128,6 +9212,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\teststatus\\isfailure',
         1 => 'phpunit\\framework\\teststatus\\asint',
         2 => 'phpunit\\framework\\teststatus\\asstring',
+        3 => 'phpunit\\framework\\teststatus\\sortweight',
       ),
       3 => 
       array (
@@ -9135,7 +9220,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestStatus/Incomplete.php' => 
     array (
-      0 => 'e36f107dc8a586393e566fa5af5da961d846eb78dfbb82fcaefbe764c15b8a1e',
+      0 => '3ed6154f4918dafded49e7d1ee0b946e421f8e81f6e74cf0df953124bbd3a5c5',
       1 => 
       array (
         0 => 'phpunit\\framework\\teststatus\\incomplete',
@@ -9145,6 +9230,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\teststatus\\isincomplete',
         1 => 'phpunit\\framework\\teststatus\\asint',
         2 => 'phpunit\\framework\\teststatus\\asstring',
+        3 => 'phpunit\\framework\\teststatus\\sortweight',
       ),
       3 => 
       array (
@@ -9167,7 +9253,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestStatus/Notice.php' => 
     array (
-      0 => '9c3f8011a1e342c12700f163da794db45131cfa36b3f0033b095a9793e597b9e',
+      0 => '0f9101ee3211d6a78268dbbccf28228bf7afccca642af988fedff6ea95b05c87',
       1 => 
       array (
         0 => 'phpunit\\framework\\teststatus\\notice',
@@ -9177,6 +9263,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\teststatus\\isnotice',
         1 => 'phpunit\\framework\\teststatus\\asint',
         2 => 'phpunit\\framework\\teststatus\\asstring',
+        3 => 'phpunit\\framework\\teststatus\\sortweight',
       ),
       3 => 
       array (
@@ -9184,7 +9271,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestStatus/Risky.php' => 
     array (
-      0 => '775eea4d81f685900e8136d17f6027e5141b0b016205f4b54bc54939040b15f8',
+      0 => 'ee0002c608ed452eee1f5d9e6d0b11fb8758fd0ca0d0252708d2aeb72fa630d4',
       1 => 
       array (
         0 => 'phpunit\\framework\\teststatus\\risky',
@@ -9194,6 +9281,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\teststatus\\isrisky',
         1 => 'phpunit\\framework\\teststatus\\asint',
         2 => 'phpunit\\framework\\teststatus\\asstring',
+        3 => 'phpunit\\framework\\teststatus\\sortweight',
       ),
       3 => 
       array (
@@ -9201,7 +9289,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestStatus/Skipped.php' => 
     array (
-      0 => 'd7ef3176f67d896df5250cd2f75cc422b26806002af93d364c6b209665dad765',
+      0 => '3372a1dabd4f45b2b34b1f21498e48bcbbe57ffdd81f87389415aad40c5c63fa',
       1 => 
       array (
         0 => 'phpunit\\framework\\teststatus\\skipped',
@@ -9211,6 +9299,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\teststatus\\isskipped',
         1 => 'phpunit\\framework\\teststatus\\asint',
         2 => 'phpunit\\framework\\teststatus\\asstring',
+        3 => 'phpunit\\framework\\teststatus\\sortweight',
       ),
       3 => 
       array (
@@ -9218,7 +9307,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestStatus/Success.php' => 
     array (
-      0 => 'dfc96d14917011fd735fed406bad64ea87fdec04d876f8bf023fd86158125f3c',
+      0 => '27f927267f19f8efbb447f9d319d314824e3703c11aa64fff9e6259fb0b2f50d',
       1 => 
       array (
         0 => 'phpunit\\framework\\teststatus\\success',
@@ -9228,6 +9317,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\teststatus\\issuccess',
         1 => 'phpunit\\framework\\teststatus\\asint',
         2 => 'phpunit\\framework\\teststatus\\asstring',
+        3 => 'phpunit\\framework\\teststatus\\sortweight',
       ),
       3 => 
       array (
@@ -9235,7 +9325,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestStatus/TestStatus.php' => 
     array (
-      0 => '797b729b9000a6c6d48aa64fa73cdfd41381bf3a9218fb1d0a4b20f039759293',
+      0 => 'ad7256d9ca33d89de0e47be807f4d6f05f7df4986758ee9aaa0733ae02a5facc',
       1 => 
       array (
         0 => 'phpunit\\framework\\teststatus\\teststatus',
@@ -9269,6 +9359,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         24 => 'phpunit\\framework\\teststatus\\ismoreimportantthan',
         25 => 'phpunit\\framework\\teststatus\\asint',
         26 => 'phpunit\\framework\\teststatus\\asstring',
+        27 => 'phpunit\\framework\\teststatus\\sortweight',
       ),
       3 => 
       array (
@@ -9276,7 +9367,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestStatus/Unknown.php' => 
     array (
-      0 => '7903b190712d5f5f3a05615541ac005082763f32fa0ff8871f26d4fc91d1a49b',
+      0 => 'c218e5192352e2df47067a7eb0103e99c1f3e6e04007a7db4235afc9b800afcc',
       1 => 
       array (
         0 => 'phpunit\\framework\\teststatus\\unknown',
@@ -9286,6 +9377,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\teststatus\\isunknown',
         1 => 'phpunit\\framework\\teststatus\\asint',
         2 => 'phpunit\\framework\\teststatus\\asstring',
+        3 => 'phpunit\\framework\\teststatus\\sortweight',
       ),
       3 => 
       array (
@@ -9293,7 +9385,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestStatus/Warning.php' => 
     array (
-      0 => 'c5bca13a1891392126c4940988d4a344378112cce38e119da3c4df6c73bac692',
+      0 => '91e6928ff8991595236e40e8164793aff1e2c5cca81ad70de09fc68c251502ca',
       1 => 
       array (
         0 => 'phpunit\\framework\\teststatus\\warning',
@@ -9303,6 +9395,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\framework\\teststatus\\iswarning',
         1 => 'phpunit\\framework\\teststatus\\asint',
         2 => 'phpunit\\framework\\teststatus\\asstring',
+        3 => 'phpunit\\framework\\teststatus\\sortweight',
       ),
       3 => 
       array (
@@ -9310,7 +9403,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestSuite.php' => 
     array (
-      0 => 'f4f7c45799970accfc2be3cb4f481a1f87e6e45e61e323a42b073e9eba727a27',
+      0 => '86a6f6e71188339a33aa3ddca3c0cd6571d1c796478e14c0feec68860b6b4db5',
       1 => 
       array (
         0 => 'phpunit\\framework\\testsuite',
@@ -9339,13 +9432,15 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         19 => 'phpunit\\framework\\requires',
         20 => 'phpunit\\framework\\sortid',
         21 => 'phpunit\\framework\\isfortestclass',
-        22 => 'phpunit\\framework\\addtestmethod',
-        23 => 'phpunit\\framework\\clearcaches',
-        24 => 'phpunit\\framework\\containsonlyvirtualgroups',
-        25 => 'phpunit\\framework\\methoddoesnotexistorisdeclaredintestcase',
-        26 => 'phpunit\\framework\\exceptiontostring',
-        27 => 'phpunit\\framework\\invokemethodsbeforefirsttest',
-        28 => 'phpunit\\framework\\invokemethodsafterlasttest',
+        22 => 'phpunit\\framework\\runtests',
+        23 => 'phpunit\\framework\\addtestmethod',
+        24 => 'phpunit\\framework\\taketests',
+        25 => 'phpunit\\framework\\metadataerrorsfor',
+        26 => 'phpunit\\framework\\clearcaches',
+        27 => 'phpunit\\framework\\containsonlyvirtualgroups',
+        28 => 'phpunit\\framework\\exceptiontostring',
+        29 => 'phpunit\\framework\\invokemethodsbeforefirsttest',
+        30 => 'phpunit\\framework\\invokemethodsafterlasttest',
       ),
       3 => 
       array (
@@ -9353,7 +9448,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestSuiteIterator.php' => 
     array (
-      0 => '0ec3f48a6c45242d4a4ee3d6222645442f5fb6dc8eed51b113e213d8a8da4bae',
+      0 => '0580f27d03662e2d2c9a393f9e11b2249a368f922a86ffe6ff4813af3fbb04cf',
       1 => 
       array (
         0 => 'phpunit\\framework\\testsuiteiterator',
@@ -9375,7 +9470,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/EventLogger.php' => 
     array (
-      0 => '5df801a21e318f1ac6b163fad003d05470cb7dac76b2492ac627e8b6083ba6d8',
+      0 => '5a28a6d48544e71f3c5a194bafb5e042e0e4029035fa324bead1543e6df97520',
       1 => 
       array (
         0 => 'phpunit\\logging\\eventlogger',
@@ -9392,7 +9487,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/JUnit/JunitXmlLogger.php' => 
     array (
-      0 => 'd9fa2022c384027fe8a7ef13ac06b3597cad245e343584a8dacc99438a20f0aa',
+      0 => '886197648cf8f25546c781969059d2d4cce302de92e2d21316df287aa9377c69',
       1 => 
       array (
         0 => 'phpunit\\logging\\junit\\junitxmllogger',
@@ -9408,20 +9503,22 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         6 => 'phpunit\\logging\\junit\\testpreparationerrored',
         7 => 'phpunit\\logging\\junit\\testpreparationfailed',
         8 => 'phpunit\\logging\\junit\\testprepared',
-        9 => 'phpunit\\logging\\junit\\testprintedunexpectedoutput',
-        10 => 'phpunit\\logging\\junit\\testfinished',
-        11 => 'phpunit\\logging\\junit\\testmarkedincomplete',
-        12 => 'phpunit\\logging\\junit\\testskipped',
-        13 => 'phpunit\\logging\\junit\\testerrored',
-        14 => 'phpunit\\logging\\junit\\testfailed',
-        15 => 'phpunit\\logging\\junit\\handlefinish',
-        16 => 'phpunit\\logging\\junit\\registersubscribers',
-        17 => 'phpunit\\logging\\junit\\createdocument',
-        18 => 'phpunit\\logging\\junit\\handlefault',
-        19 => 'phpunit\\logging\\junit\\handleincompleteorskipped',
-        20 => 'phpunit\\logging\\junit\\testasstring',
-        21 => 'phpunit\\logging\\junit\\name',
-        22 => 'phpunit\\logging\\junit\\createtestcase',
+        9 => 'phpunit\\logging\\junit\\testattemptfailed',
+        10 => 'phpunit\\logging\\junit\\testattempterrored',
+        11 => 'phpunit\\logging\\junit\\testprintedunexpectedoutput',
+        12 => 'phpunit\\logging\\junit\\testfinished',
+        13 => 'phpunit\\logging\\junit\\testmarkedincomplete',
+        14 => 'phpunit\\logging\\junit\\testskipped',
+        15 => 'phpunit\\logging\\junit\\testerrored',
+        16 => 'phpunit\\logging\\junit\\testfailed',
+        17 => 'phpunit\\logging\\junit\\handlefinish',
+        18 => 'phpunit\\logging\\junit\\registersubscribers',
+        19 => 'phpunit\\logging\\junit\\createdocument',
+        20 => 'phpunit\\logging\\junit\\handlefault',
+        21 => 'phpunit\\logging\\junit\\handleincompleteorskipped',
+        22 => 'phpunit\\logging\\junit\\testasstring',
+        23 => 'phpunit\\logging\\junit\\name',
+        24 => 'phpunit\\logging\\junit\\createtestcase',
       ),
       3 => 
       array (
@@ -9681,28 +9778,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/InfrastructureInformationProvider.php' => 
-    array (
-      0 => 'efb0449094fcbbc8bf0bd5378d7002495640a86f11f56fd9ad519ecfa69a8057',
-      1 => 
-      array (
-        0 => 'phpunit\\logging\\opentestreporting\\infrastructureinformationprovider',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\logging\\opentestreporting\\operatingsystem',
-        1 => 'phpunit\\logging\\opentestreporting\\hostname',
-        2 => 'phpunit\\logging\\opentestreporting\\username',
-        3 => 'phpunit\\logging\\opentestreporting\\gitinformation',
-        4 => 'phpunit\\logging\\opentestreporting\\executegitcommand',
-      ),
-      3 => 
-      array (
-      ),
-    ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/OtrXmlLogger.php' => 
     array (
-      0 => 'c18fb76b058abc9e40ab0a67ce2a0fbc711a99a5ab1bdb7512eea2ea94b2d085',
+      0 => '3c36896efcfa9c7a0d90150802d6eb5c9e490dd753ee87fdf3172bcbde8f92fb',
       1 => 
       array (
         0 => 'phpunit\\logging\\opentestreporting\\otrxmllogger',
@@ -9716,19 +9794,42 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         4 => 'phpunit\\logging\\opentestreporting\\testsuiteskipped',
         5 => 'phpunit\\logging\\opentestreporting\\testsuitefinished',
         6 => 'phpunit\\logging\\opentestreporting\\testprepared',
-        7 => 'phpunit\\logging\\opentestreporting\\testfinished',
-        8 => 'phpunit\\logging\\opentestreporting\\testfailed',
-        9 => 'phpunit\\logging\\opentestreporting\\testerrored',
-        10 => 'phpunit\\logging\\opentestreporting\\testskipped',
-        11 => 'phpunit\\logging\\opentestreporting\\marktestincomplete',
-        12 => 'phpunit\\logging\\opentestreporting\\parenterrored',
-        13 => 'phpunit\\logging\\opentestreporting\\parentfailed',
-        14 => 'phpunit\\logging\\opentestreporting\\registersubscribers',
-        15 => 'phpunit\\logging\\opentestreporting\\writeteststarted',
-        16 => 'phpunit\\logging\\opentestreporting\\writethrowable',
-        17 => 'phpunit\\logging\\opentestreporting\\timestamp',
-        18 => 'phpunit\\logging\\opentestreporting\\nextid',
-        19 => 'phpunit\\logging\\opentestreporting\\reducetestsuitelevel',
+        7 => 'phpunit\\logging\\opentestreporting\\testattemptfailed',
+        8 => 'phpunit\\logging\\opentestreporting\\testattempterrored',
+        9 => 'phpunit\\logging\\opentestreporting\\testprintedunexpectedoutput',
+        10 => 'phpunit\\logging\\opentestreporting\\testdeprecationtriggered',
+        11 => 'phpunit\\logging\\opentestreporting\\testphpdeprecationtriggered',
+        12 => 'phpunit\\logging\\opentestreporting\\testphpunitdeprecationtriggered',
+        13 => 'phpunit\\logging\\opentestreporting\\testerrortriggered',
+        14 => 'phpunit\\logging\\opentestreporting\\testphpuniterrortriggered',
+        15 => 'phpunit\\logging\\opentestreporting\\testnoticetriggered',
+        16 => 'phpunit\\logging\\opentestreporting\\testphpnoticetriggered',
+        17 => 'phpunit\\logging\\opentestreporting\\testphpunitnoticetriggered',
+        18 => 'phpunit\\logging\\opentestreporting\\testwarningtriggered',
+        19 => 'phpunit\\logging\\opentestreporting\\testphpwarningtriggered',
+        20 => 'phpunit\\logging\\opentestreporting\\testphpunitwarningtriggered',
+        21 => 'phpunit\\logging\\opentestreporting\\testconsideredrisky',
+        22 => 'phpunit\\logging\\opentestreporting\\testfinished',
+        23 => 'phpunit\\logging\\opentestreporting\\testfailed',
+        24 => 'phpunit\\logging\\opentestreporting\\testerrored',
+        25 => 'phpunit\\logging\\opentestreporting\\testskipped',
+        26 => 'phpunit\\logging\\opentestreporting\\marktestincomplete',
+        27 => 'phpunit\\logging\\opentestreporting\\parenterrored',
+        28 => 'phpunit\\logging\\opentestreporting\\parentfailed',
+        29 => 'phpunit\\logging\\opentestreporting\\writeissue',
+        30 => 'phpunit\\logging\\opentestreporting\\triggerasstring',
+        31 => 'phpunit\\logging\\opentestreporting\\registersubscribers',
+        32 => 'phpunit\\logging\\opentestreporting\\writeteststarted',
+        33 => 'phpunit\\logging\\opentestreporting\\writethrowable',
+        34 => 'phpunit\\logging\\opentestreporting\\writecomparisonfailure',
+        35 => 'phpunit\\logging\\opentestreporting\\rememberretriedattempt',
+        36 => 'phpunit\\logging\\opentestreporting\\writetestattachments',
+        37 => 'phpunit\\logging\\opentestreporting\\writesuiteresourceusage',
+        38 => 'phpunit\\logging\\opentestreporting\\writeresourceusageelement',
+        39 => 'phpunit\\logging\\opentestreporting\\timestamp',
+        40 => 'phpunit\\logging\\opentestreporting\\nextid',
+        41 => 'phpunit\\logging\\opentestreporting\\reducetestsuitelevel',
+        42 => 'phpunit\\logging\\opentestreporting\\gitinformation',
       ),
       3 => 
       array (
@@ -9871,7 +9972,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestFinishedSubscriber.php' => 
     array (
-      0 => 'a09482f68808541a63f6f9343feafff7985c3303b6875a91214958f416be030a',
+      0 => '716f81d6318eea3ff17a0ecf19468f5704cfa93585e128adb2e72c9bffa9f07a',
       1 => 
       array (
         0 => 'phpunit\\logging\\opentestreporting\\testfinishedsubscriber',
@@ -9976,7 +10077,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestSuiteFinishedSubscriber.php' => 
     array (
-      0 => '2654968de5ad765a9baa08614eef7e4acc249d85d2476e0486a4b04e36eb1d67',
+      0 => 'e8bbafc55122c863870eaccb363684f8f0707a9291a96b9e56a3fb26e41ff6c7',
       1 => 
       array (
         0 => 'phpunit\\logging\\opentestreporting\\testsuitefinishedsubscriber',
@@ -10277,7 +10378,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/TeamCity/TeamCityLogger.php' => 
     array (
-      0 => '1e685bb46b9b917ebd0c4fa21f5f3fe518a5b628d84d00d83beb65aea8a77223',
+      0 => '61d655a11f6554eb1f19d7126506d2a88372ee3a4ec1ea0ba255e6c4f61d4ebe',
       1 => 
       array (
         0 => 'phpunit\\logging\\teamcity\\teamcitylogger',
@@ -10317,7 +10418,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/TestDox/HtmlRenderer.php' => 
     array (
-      0 => '784de25128c5c7f24dba9d3200fc98c7486633f9b0ec2defeec14026bd6446ed',
+      0 => 'aec75347470d9b02375c577338bbafde1d99e68575fdd669f8b8e745ec4d4d5f',
       1 => 
       array (
         0 => 'phpunit\\logging\\testdox\\htmlrenderer',
@@ -10325,7 +10426,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\logging\\testdox\\render',
-        1 => 'phpunit\\logging\\testdox\\reduce',
+        1 => 'phpunit\\logging\\testdox\\summarize',
+        2 => 'phpunit\\logging\\testdox\\reduce',
       ),
       3 => 
       array (
@@ -10333,7 +10435,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/TestDox/NamePrettifier.php' => 
     array (
-      0 => '5264ba24c88fa65bfd1341d0b541718a283e660816acffb799475f57497d10a5',
+      0 => '1a7ff204431c023c268158a6d99a354b77256ac9de172dfea72c1f4931c53b87',
       1 => 
       array (
         0 => 'phpunit\\logging\\testdox\\nameprettifier',
@@ -10344,10 +10446,13 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         1 => 'phpunit\\logging\\testdox\\prettifytestmethodname',
         2 => 'phpunit\\logging\\testdox\\prettifytestcase',
         3 => 'phpunit\\logging\\testdox\\prettifydataset',
-        4 => 'phpunit\\logging\\testdox\\maptestmethodparameternamestoprovideddatavalues',
-        5 => 'phpunit\\logging\\testdox\\objecttostring',
-        6 => 'phpunit\\logging\\testdox\\processtestdox',
-        7 => 'phpunit\\logging\\testdox\\processtestdoxformatter',
+        4 => 'phpunit\\logging\\testdox\\prettifyrepetition',
+        5 => 'phpunit\\logging\\testdox\\maptestmethodparameternamestoprovideddatavalues',
+        6 => 'phpunit\\logging\\testdox\\objecttostring',
+        7 => 'phpunit\\logging\\testdox\\processtestdox',
+        8 => 'phpunit\\logging\\testdox\\processtestdoxformatter',
+        9 => 'phpunit\\logging\\testdox\\separateuppercaseletter',
+        10 => 'phpunit\\logging\\testdox\\separatenumber',
       ),
       3 => 
       array (
@@ -10355,7 +10460,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/TestDox/PlainTextRenderer.php' => 
     array (
-      0 => 'fb7ca993571e0c7c510ba44a5401a82b2b1005686b27dcf82ec0eea1098e5c39',
+      0 => 'e35fed0225239c5948fcbe099d170e2f2371203b8f1920081321bcb0b8c510c6',
       1 => 
       array (
         0 => 'phpunit\\logging\\testdox\\plaintextrenderer',
@@ -10679,7 +10784,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/TestDox/TestResult/TestResultCollectionIterator.php' => 
     array (
-      0 => 'c368e4268247df33879bdecb9730f03cd34fdb0c0b5da851b45e4c55564cbab4',
+      0 => 'e1e36bb4c2a488ee11c7faae415fdab1561944dbd3b485a9d30200cad8065807',
       1 => 
       array (
         0 => 'phpunit\\logging\\testdox\\testresultcollectioniterator',
@@ -10699,7 +10804,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/TestDox/TestResult/TestResultCollector.php' => 
     array (
-      0 => 'e2b06ebe67926e503ddd44ca0e09def2f2fc87edce24ea57902c8d2157f4dc5f',
+      0 => 'b70a35d7ec5ab8237fe591d8af919389a65777418c4f6e2b8ae80701d03aa4f1',
       1 => 
       array (
         0 => 'phpunit\\logging\\testdox\\testresultcollector',
@@ -10735,7 +10840,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/After.php' => 
     array (
-      0 => '4bf594e1f3fd1a6e2cd467f3088874b72e359965bfe76fd60153e4b8183b7c8f',
+      0 => '43a500d87fccf71fca32488403f10c504224f79639c7d2fc1414866239f6fbf9',
       1 => 
       array (
         0 => 'phpunit\\metadata\\after',
@@ -10752,7 +10857,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/AfterClass.php' => 
     array (
-      0 => '02e05ef794f48328dbdc220f4ec7aa9f8213c9124a6210fa1f942e774995698d',
+      0 => 'fe9092b0d86e9097db7e3b2b066e9e23866a5fcfd9bc268c2ab6c82acc83e918',
       1 => 
       array (
         0 => 'phpunit\\metadata\\afterclass',
@@ -10784,7 +10889,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Api/CodeCoverage.php' => 
     array (
-      0 => 'f126a71b50de82521dcd98c46ac5fed784fd7acd2c6a53ef614ac632aa40768f',
+      0 => 'ad7697b5e3ed3acc3338adbbdce3831a84aeaed7f637dce1698c38235085b798',
       1 => 
       array (
         0 => 'phpunit\\metadata\\api\\codecoverage',
@@ -10794,6 +10899,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\metadata\\api\\coverstargets',
         1 => 'phpunit\\metadata\\api\\usestargets',
         2 => 'phpunit\\metadata\\api\\shouldcodecoveragebecollectedfor',
+        3 => 'phpunit\\metadata\\api\\coversnothingcontradictscoversoruses',
+        4 => 'phpunit\\metadata\\api\\coverstargetsfor',
+        5 => 'phpunit\\metadata\\api\\usestargetsfor',
       ),
       3 => 
       array (
@@ -10801,7 +10909,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Api/DataProvider.php' => 
     array (
-      0 => 'f517921b7fdecbe8c40ff77aff1cf078986a81de39d4997e382b40884a67b474',
+      0 => '4ecb3e68da25c01350348d0e00946fd7e2cd0c4604e824fccceea292864c30b9',
       1 => 
       array (
         0 => 'phpunit\\metadata\\api\\dataprovider',
@@ -10837,7 +10945,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Api/Groups.php' => 
     array (
-      0 => 'bdd070183d652afd92c83d34ca9358d9c62bb19c2f65999f03daedb7e1ca6061',
+      0 => '6f833f9174a6b32d90f3003e3c3f9f69cd169f49c7d6c7df8daf9467307d3daf',
       1 => 
       array (
         0 => 'phpunit\\metadata\\api\\groups',
@@ -10854,7 +10962,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Api/HookMethods.php' => 
     array (
-      0 => '463603d891b0728aad8ff9c66e7d58b449ae2195953d5233c98ef21d47976ad3',
+      0 => '3702f501cc85445500383a625da578bf63d0f49d3efd344415b5a91818bbed83',
       1 => 
       array (
         0 => 'phpunit\\metadata\\api\\hookmethods',
@@ -10863,7 +10971,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\metadata\\api\\hookmethods',
         1 => 'phpunit\\metadata\\api\\ishookmethod',
-        2 => 'phpunit\\metadata\\api\\emptyhookmethodsarray',
+        2 => 'phpunit\\metadata\\api\\addhookmethod',
+        3 => 'phpunit\\metadata\\api\\emptyhookmethodsarray',
       ),
       3 => 
       array (
@@ -10871,7 +10980,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Api/ProvidedData.php' => 
     array (
-      0 => 'efe2ef0abd9a0d2f066421c31725dc975c78c5591dfdcbdbeeb22d410871e0f1',
+      0 => '49f6f2815dfe1090043ea0d5e64b05ae79ac0e0d84997bff7291d2c79dc8ef5b',
       1 => 
       array (
         0 => 'phpunit\\metadata\\api\\provideddata',
@@ -10888,7 +10997,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Api/Requirements.php' => 
     array (
-      0 => 'fbcac5c9d439d1baf6a38763f816b96b2aafe6664dd095c109efa187d4890f3d',
+      0 => '98f020538fd7a81c3709861d6f362d45a9776e547db83af497bb7327085d59aa',
       1 => 
       array (
         0 => 'phpunit\\metadata\\api\\requirements',
@@ -10896,8 +11005,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\metadata\\api\\requirementsnotsatisfiedfor',
-        1 => 'phpunit\\metadata\\api\\requiresxdebug',
-        2 => 'phpunit\\metadata\\api\\warnaboutincompleteversion',
+        1 => 'phpunit\\metadata\\api\\invalidversionrequirementsfor',
+        2 => 'phpunit\\metadata\\api\\requiresxdebug',
+        3 => 'phpunit\\metadata\\api\\warnaboutincompleteversion',
       ),
       3 => 
       array (
@@ -10905,7 +11015,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/BackupGlobals.php' => 
     array (
-      0 => 'c63226e19d456d0a4f258b488a48b6837ac2b17219c60c530d46642740295e06',
+      0 => 'b2159a3d44a35e31a46c9a50881b3cf1031f1f30cff78b2255bfb45441906412',
       1 => 
       array (
         0 => 'phpunit\\metadata\\backupglobals',
@@ -10922,7 +11032,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/BackupStaticProperties.php' => 
     array (
-      0 => 'dbcf2b1d9261fdf63e8ab3a355705783f1604139e3efce51ddde2fdcd146efb0',
+      0 => 'b80dd1eaae27c674b0dc75668a05b5c6309e19991a2ee24adf2a8f4e804b13ca',
       1 => 
       array (
         0 => 'phpunit\\metadata\\backupstaticproperties',
@@ -10939,7 +11049,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Before.php' => 
     array (
-      0 => 'ada3c7e1ef67cf9f5939d313a4c9c78a0ce22e6444ee676081065a49c49782bc',
+      0 => 'b6f3861510b359646a18a2ec2e0b9d33660193b7155b904b7170e3c0730491a5',
       1 => 
       array (
         0 => 'phpunit\\metadata\\before',
@@ -10956,7 +11066,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/BeforeClass.php' => 
     array (
-      0 => '1097b041877073da2ac70c279302f7a5715b64fce3546cbb31fa7a10e5a6122a',
+      0 => '18c22ed8035c81fa8833aaa35404ba3b232572427017be392234a7ed7863da38',
       1 => 
       array (
         0 => 'phpunit\\metadata\\beforeclass',
@@ -10973,7 +11083,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/CoversClass.php' => 
     array (
-      0 => 'a7e3d9d103ec9bafbabc569a2488a1bc87ab189cfe6a47f44a552c575cb85b4d',
+      0 => '82cdc8aac96816112f9a7cd2287d1df57a0b90f82305c08f47bc6a4b7c3aeb71',
       1 => 
       array (
         0 => 'phpunit\\metadata\\coversclass',
@@ -10990,7 +11100,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/CoversClassesThatExtendClass.php' => 
     array (
-      0 => 'e93801018483c2de08858c9d6d34b110939eb5aba625606fb8616e5444e1127c',
+      0 => '90f89c7294863dd05132fd2f072355d40bcb465143d6e3d7a32abed102fe62ab',
       1 => 
       array (
         0 => 'phpunit\\metadata\\coversclassesthatextendclass',
@@ -11007,7 +11117,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/CoversClassesThatImplementInterface.php' => 
     array (
-      0 => '2d98aae44dfbd0f21ebd60d7e59cffc6eea4cfa83640b83fd45d56ff410e8c93',
+      0 => 'fe14ef18ce8f339c5c585796fc359c8480ca9cb9d0198ae2fcdc4fb872738733',
       1 => 
       array (
         0 => 'phpunit\\metadata\\coversclassesthatimplementinterface',
@@ -11024,7 +11134,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/CoversFunction.php' => 
     array (
-      0 => 'ac29c143cf9444fe8004e1a387792bd218e2edb24aad6f057abda60d06e5e60d',
+      0 => '40d771808eef044e6a99380b913cb2811f08f9f2a5562e2e108114ed2c0468da',
       1 => 
       array (
         0 => 'phpunit\\metadata\\coversfunction',
@@ -11041,7 +11151,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/CoversMethod.php' => 
     array (
-      0 => '1a990080c77f282305d7b5a8a8bf42f71fbed785d84bc7d2970630d14df23e73',
+      0 => '32d8ebc78b47ad69dbe1a895336102c2a2e1ea6b6f40d1b0dcd3bbcc8f009fec',
       1 => 
       array (
         0 => 'phpunit\\metadata\\coversmethod',
@@ -11059,7 +11169,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/CoversNamespace.php' => 
     array (
-      0 => '25661b1f87aca1e7f9e146b7b48c98a4a81a323b4ab019c06bed8b35c0d083e3',
+      0 => '2737b485769bca69a81ffe562bc0729f370e7b074a37cbf75904384effe66424',
       1 => 
       array (
         0 => 'phpunit\\metadata\\coversnamespace',
@@ -11091,7 +11201,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/CoversTrait.php' => 
     array (
-      0 => '6d8b24b23cfc0bc86037ac2bb3ccace2d772bbceaffe9a0f0cb4c15d27245b44',
+      0 => 'b54179caae650380257bec09e59241e797243720d617e6a5e12c2cceb3ba5758',
       1 => 
       array (
         0 => 'phpunit\\metadata\\coverstrait',
@@ -11108,7 +11218,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/DataProvider.php' => 
     array (
-      0 => '50a460fb0d31727fd3302f651e1818bc4a62c194e296add88a5b0b378f2c1c7c',
+      0 => 'd7658a467e807a8e72d3fa428dc1291b0109b01d29058cc6f3ea8cac18b8e2e7',
       1 => 
       array (
         0 => 'phpunit\\metadata\\dataprovider',
@@ -11120,6 +11230,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         2 => 'phpunit\\metadata\\classname',
         3 => 'phpunit\\metadata\\methodname',
         4 => 'phpunit\\metadata\\validateargumentcount',
+        5 => 'phpunit\\metadata\\skipwhenempty',
       ),
       3 => 
       array (
@@ -11127,7 +11238,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/DependsOnClass.php' => 
     array (
-      0 => '90d303c605fb47d286afb198c78257164b911dc7c47914ee2d3a31943f658f8e',
+      0 => '19cf55e82915b561ffd062f6c78665f3504e288e9da512d34097351428c505ff',
       1 => 
       array (
         0 => 'phpunit\\metadata\\dependsonclass',
@@ -11146,7 +11257,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/DependsOnMethod.php' => 
     array (
-      0 => 'd9ee6aebb1c87ed39ddc045b11fcee10cc5546df4c93a12cdf577bd2a739fb09',
+      0 => '57f84c6b007bdd1f75bbf5987bd0757e63aa6f7aa79c4e7abf6d03a2fc7fb365',
       1 => 
       array (
         0 => 'phpunit\\metadata\\dependsonmethod',
@@ -11208,21 +11319,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Exception/InvalidAttributeException.php' => 
-    array (
-      0 => '42ff6d0d64f656265b1f08c0cb85e64637ce73624fb132641cb9964fe58824e1',
-      1 => 
-      array (
-        0 => 'phpunit\\metadata\\invalidattributeexception',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\metadata\\__construct',
-      ),
-      3 => 
-      array (
-      ),
-    ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Exception/InvalidVersionRequirementException.php' => 
     array (
       0 => '10f5128cdef283edb5345c01f582644809cc83cb4df605208d2abdf86b46cfd5',
@@ -11253,7 +11349,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/ExcludeGlobalVariableFromBackup.php' => 
     array (
-      0 => '574a4d71ef474d64ad9872b7530f3858f862217e59895e11e6f65c84a43151ad',
+      0 => '825d34b4ab045a650d898a0a29e4e616a69a8c73eade6f85833b50b2ccc10df8',
       1 => 
       array (
         0 => 'phpunit\\metadata\\excludeglobalvariablefrombackup',
@@ -11270,7 +11366,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/ExcludeStaticPropertyFromBackup.php' => 
     array (
-      0 => '96d6b1e4e1a7c81f2a9d7dba133b0f376e2fa092a6933667c6600c8bb3f938f4',
+      0 => 'd78101780108ffc01b780c553f1d7ca8eb3802510890420a5d0b8df9c06bd2ec',
       1 => 
       array (
         0 => 'phpunit\\metadata\\excludestaticpropertyfrombackup',
@@ -11288,7 +11384,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Group.php' => 
     array (
-      0 => 'b78e41a915b2b142099aab88ed20db655d8326db34ad910442b73517319a6be4',
+      0 => '2381fc526184ad37ff03bd128c5522bb69827009949e9f83bc54a23343f86df0',
       1 => 
       array (
         0 => 'phpunit\\metadata\\group',
@@ -11305,7 +11401,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/IgnoreDeprecations.php' => 
     array (
-      0 => '3763ecc90a9ac437dec1eb5e00b2f67d24bfb42ae1790a0c0ac0a1cb64cb2f1a',
+      0 => '28018229e8a4f72c7ddc0572bf7f2695c00e9729e28309928f589e71abdcab5d',
       1 => 
       array (
         0 => 'phpunit\\metadata\\ignoredeprecations',
@@ -11337,7 +11433,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/IgnorePhpunitWarnings.php' => 
     array (
-      0 => '0c1cf3ed5864c10003ab97179f5c8baf37493323d5ad77dd4ddb08bee5831576',
+      0 => 'd7109c6241234f6d086ae1461ccae40bd87f68a79d90b97d72eb15ca246a8dcf',
       1 => 
       array (
         0 => 'phpunit\\metadata\\ignorephpunitwarnings',
@@ -11354,7 +11450,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Metadata.php' => 
     array (
-      0 => '2aebb4584ea7424eaafbfbb181e4986fd6f88b1d7aac6f1a7c30526801d7b1a0',
+      0 => '37f6120798da6de2d79cdf5c3bcfa3bd08cbaddb5d2a7ecc86fb0e069107f666',
       1 => 
       array (
         0 => 'phpunit\\metadata\\metadata',
@@ -11378,125 +11474,144 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         14 => 'phpunit\\metadata\\coverstrait',
         15 => 'phpunit\\metadata\\coversmethod',
         16 => 'phpunit\\metadata\\coversfunction',
-        17 => 'phpunit\\metadata\\coversnothingonclass',
-        18 => 'phpunit\\metadata\\coversnothingonmethod',
-        19 => 'phpunit\\metadata\\dataprovider',
-        20 => 'phpunit\\metadata\\dependsonclass',
-        21 => 'phpunit\\metadata\\dependsonmethod',
-        22 => 'phpunit\\metadata\\disablereturnvaluegenerationfortestdoubles',
-        23 => 'phpunit\\metadata\\doesnotperformassertionsonclass',
-        24 => 'phpunit\\metadata\\doesnotperformassertionsonmethod',
-        25 => 'phpunit\\metadata\\excludeglobalvariablefrombackuponclass',
-        26 => 'phpunit\\metadata\\excludeglobalvariablefrombackuponmethod',
-        27 => 'phpunit\\metadata\\excludestaticpropertyfrombackuponclass',
-        28 => 'phpunit\\metadata\\excludestaticpropertyfrombackuponmethod',
-        29 => 'phpunit\\metadata\\grouponclass',
-        30 => 'phpunit\\metadata\\grouponmethod',
-        31 => 'phpunit\\metadata\\ignoredeprecationsonclass',
-        32 => 'phpunit\\metadata\\ignoredeprecationsonmethod',
-        33 => 'phpunit\\metadata\\ignorephpunitdeprecationsonclass',
-        34 => 'phpunit\\metadata\\ignorephpunitdeprecationsonmethod',
-        35 => 'phpunit\\metadata\\postcondition',
-        36 => 'phpunit\\metadata\\precondition',
-        37 => 'phpunit\\metadata\\preserveglobalstateonclass',
-        38 => 'phpunit\\metadata\\preserveglobalstateonmethod',
-        39 => 'phpunit\\metadata\\requiresfunctiononclass',
-        40 => 'phpunit\\metadata\\requiresfunctiononmethod',
-        41 => 'phpunit\\metadata\\requiresmethodonclass',
-        42 => 'phpunit\\metadata\\requiresmethodonmethod',
-        43 => 'phpunit\\metadata\\requiresoperatingsystemonclass',
-        44 => 'phpunit\\metadata\\requiresoperatingsystemonmethod',
-        45 => 'phpunit\\metadata\\requiresoperatingsystemfamilyonclass',
-        46 => 'phpunit\\metadata\\requiresoperatingsystemfamilyonmethod',
-        47 => 'phpunit\\metadata\\requiresphponclass',
-        48 => 'phpunit\\metadata\\requiresphponmethod',
-        49 => 'phpunit\\metadata\\requiresphpextensiononclass',
-        50 => 'phpunit\\metadata\\requiresphpextensiononmethod',
-        51 => 'phpunit\\metadata\\requiresphpunitonclass',
-        52 => 'phpunit\\metadata\\requiresphpunitonmethod',
-        53 => 'phpunit\\metadata\\requiresphpunitextensiononclass',
-        54 => 'phpunit\\metadata\\requiresphpunitextensiononmethod',
-        55 => 'phpunit\\metadata\\requiresenvironmentvariableonclass',
-        56 => 'phpunit\\metadata\\requiresenvironmentvariableonmethod',
-        57 => 'phpunit\\metadata\\withenvironmentvariableonclass',
-        58 => 'phpunit\\metadata\\withenvironmentvariableonmethod',
-        59 => 'phpunit\\metadata\\requiressettingonclass',
-        60 => 'phpunit\\metadata\\requiressettingonmethod',
-        61 => 'phpunit\\metadata\\runclassinseparateprocess',
-        62 => 'phpunit\\metadata\\runtestsinseparateprocesses',
-        63 => 'phpunit\\metadata\\runinseparateprocess',
-        64 => 'phpunit\\metadata\\test',
-        65 => 'phpunit\\metadata\\testdoxonclass',
-        66 => 'phpunit\\metadata\\testdoxonmethod',
-        67 => 'phpunit\\metadata\\testdoxformatter',
-        68 => 'phpunit\\metadata\\testwith',
-        69 => 'phpunit\\metadata\\usesnamespace',
-        70 => 'phpunit\\metadata\\usesclass',
-        71 => 'phpunit\\metadata\\usesclassesthatextendclass',
-        72 => 'phpunit\\metadata\\usesclassesthatimplementinterface',
-        73 => 'phpunit\\metadata\\usestrait',
-        74 => 'phpunit\\metadata\\usesfunction',
-        75 => 'phpunit\\metadata\\usesmethod',
-        76 => 'phpunit\\metadata\\withouterrorhandler',
-        77 => 'phpunit\\metadata\\ignorephpunitwarnings',
-        78 => 'phpunit\\metadata\\__construct',
-        79 => 'phpunit\\metadata\\isclasslevel',
-        80 => 'phpunit\\metadata\\ismethodlevel',
-        81 => 'phpunit\\metadata\\isafter',
-        82 => 'phpunit\\metadata\\isafterclass',
-        83 => 'phpunit\\metadata\\isallowmockobjectswithoutexpectations',
-        84 => 'phpunit\\metadata\\isbackupglobals',
-        85 => 'phpunit\\metadata\\isbackupstaticproperties',
-        86 => 'phpunit\\metadata\\isbeforeclass',
-        87 => 'phpunit\\metadata\\isbefore',
-        88 => 'phpunit\\metadata\\iscoversnamespace',
-        89 => 'phpunit\\metadata\\iscoversclass',
-        90 => 'phpunit\\metadata\\iscoversclassesthatextendclass',
-        91 => 'phpunit\\metadata\\iscoversclassesthatimplementinterface',
-        92 => 'phpunit\\metadata\\iscoverstrait',
-        93 => 'phpunit\\metadata\\iscoversfunction',
-        94 => 'phpunit\\metadata\\iscoversmethod',
-        95 => 'phpunit\\metadata\\iscoversnothing',
-        96 => 'phpunit\\metadata\\isdataprovider',
-        97 => 'phpunit\\metadata\\isdependsonclass',
-        98 => 'phpunit\\metadata\\isdependsonmethod',
-        99 => 'phpunit\\metadata\\isdisablereturnvaluegenerationfortestdoubles',
-        100 => 'phpunit\\metadata\\isdoesnotperformassertions',
-        101 => 'phpunit\\metadata\\isexcludeglobalvariablefrombackup',
-        102 => 'phpunit\\metadata\\isexcludestaticpropertyfrombackup',
-        103 => 'phpunit\\metadata\\isgroup',
-        104 => 'phpunit\\metadata\\isignoredeprecations',
-        105 => 'phpunit\\metadata\\isignorephpunitdeprecations',
-        106 => 'phpunit\\metadata\\isrunclassinseparateprocess',
-        107 => 'phpunit\\metadata\\isruninseparateprocess',
-        108 => 'phpunit\\metadata\\isruntestsinseparateprocesses',
-        109 => 'phpunit\\metadata\\istest',
-        110 => 'phpunit\\metadata\\isprecondition',
-        111 => 'phpunit\\metadata\\ispostcondition',
-        112 => 'phpunit\\metadata\\ispreserveglobalstate',
-        113 => 'phpunit\\metadata\\isrequiresmethod',
-        114 => 'phpunit\\metadata\\isrequiresfunction',
-        115 => 'phpunit\\metadata\\isrequiresoperatingsystem',
-        116 => 'phpunit\\metadata\\isrequiresoperatingsystemfamily',
-        117 => 'phpunit\\metadata\\isrequiresphp',
-        118 => 'phpunit\\metadata\\isrequiresphpextension',
-        119 => 'phpunit\\metadata\\isrequiresphpunit',
-        120 => 'phpunit\\metadata\\isrequiresphpunitextension',
-        121 => 'phpunit\\metadata\\isrequiresenvironmentvariable',
-        122 => 'phpunit\\metadata\\iswithenvironmentvariable',
-        123 => 'phpunit\\metadata\\isrequiressetting',
-        124 => 'phpunit\\metadata\\istestdox',
-        125 => 'phpunit\\metadata\\istestdoxformatter',
-        126 => 'phpunit\\metadata\\istestwith',
-        127 => 'phpunit\\metadata\\isusesnamespace',
-        128 => 'phpunit\\metadata\\isusesclass',
-        129 => 'phpunit\\metadata\\isusesclassesthatextendclass',
-        130 => 'phpunit\\metadata\\isusesclassesthatimplementinterface',
-        131 => 'phpunit\\metadata\\isusestrait',
-        132 => 'phpunit\\metadata\\isusesfunction',
-        133 => 'phpunit\\metadata\\isusesmethod',
-        134 => 'phpunit\\metadata\\iswithouterrorhandler',
-        135 => 'phpunit\\metadata\\isignorephpunitwarnings',
+        17 => 'phpunit\\metadata\\coversfile',
+        18 => 'phpunit\\metadata\\coversdirectory',
+        19 => 'phpunit\\metadata\\coversdirectoryrecursively',
+        20 => 'phpunit\\metadata\\coversnothingonclass',
+        21 => 'phpunit\\metadata\\coversnothingonmethod',
+        22 => 'phpunit\\metadata\\dataprovider',
+        23 => 'phpunit\\metadata\\dataproviderclosure',
+        24 => 'phpunit\\metadata\\dependsonclass',
+        25 => 'phpunit\\metadata\\dependsonmethod',
+        26 => 'phpunit\\metadata\\disablereturnvaluegenerationfortestdoubles',
+        27 => 'phpunit\\metadata\\doesnotperformassertionsonclass',
+        28 => 'phpunit\\metadata\\doesnotperformassertionsonmethod',
+        29 => 'phpunit\\metadata\\excludeglobalvariablefrombackuponclass',
+        30 => 'phpunit\\metadata\\excludeglobalvariablefrombackuponmethod',
+        31 => 'phpunit\\metadata\\excludestaticpropertyfrombackuponclass',
+        32 => 'phpunit\\metadata\\excludestaticpropertyfrombackuponmethod',
+        33 => 'phpunit\\metadata\\grouponclass',
+        34 => 'phpunit\\metadata\\grouponmethod',
+        35 => 'phpunit\\metadata\\ignoredeprecationsonclass',
+        36 => 'phpunit\\metadata\\ignoredeprecationsonmethod',
+        37 => 'phpunit\\metadata\\ignorephpunitdeprecationsonclass',
+        38 => 'phpunit\\metadata\\ignorephpunitdeprecationsonmethod',
+        39 => 'phpunit\\metadata\\invalidattributeonclass',
+        40 => 'phpunit\\metadata\\invalidattributeonmethod',
+        41 => 'phpunit\\metadata\\postcondition',
+        42 => 'phpunit\\metadata\\precondition',
+        43 => 'phpunit\\metadata\\preserveglobalstateonclass',
+        44 => 'phpunit\\metadata\\preserveglobalstateonmethod',
+        45 => 'phpunit\\metadata\\requiresfunctiononclass',
+        46 => 'phpunit\\metadata\\requiresfunctiononmethod',
+        47 => 'phpunit\\metadata\\requiresmethodonclass',
+        48 => 'phpunit\\metadata\\requiresmethodonmethod',
+        49 => 'phpunit\\metadata\\requiresoperatingsystemonclass',
+        50 => 'phpunit\\metadata\\requiresoperatingsystemonmethod',
+        51 => 'phpunit\\metadata\\requiresoperatingsystemfamilyonclass',
+        52 => 'phpunit\\metadata\\requiresoperatingsystemfamilyonmethod',
+        53 => 'phpunit\\metadata\\requiresphponclass',
+        54 => 'phpunit\\metadata\\requiresphponmethod',
+        55 => 'phpunit\\metadata\\requiresphpextensiononclass',
+        56 => 'phpunit\\metadata\\requiresphpextensiononmethod',
+        57 => 'phpunit\\metadata\\requiresphpunitonclass',
+        58 => 'phpunit\\metadata\\requiresphpunitonmethod',
+        59 => 'phpunit\\metadata\\requiresphpunitextensiononclass',
+        60 => 'phpunit\\metadata\\requiresphpunitextensiononmethod',
+        61 => 'phpunit\\metadata\\requiresenvironmentvariableonclass',
+        62 => 'phpunit\\metadata\\requiresenvironmentvariableonmethod',
+        63 => 'phpunit\\metadata\\withenvironmentvariableonclass',
+        64 => 'phpunit\\metadata\\withenvironmentvariableonmethod',
+        65 => 'phpunit\\metadata\\requiressettingonclass',
+        66 => 'phpunit\\metadata\\requiressettingonmethod',
+        67 => 'phpunit\\metadata\\runtestsinseparateprocesses',
+        68 => 'phpunit\\metadata\\repeat',
+        69 => 'phpunit\\metadata\\retry',
+        70 => 'phpunit\\metadata\\runinseparateprocess',
+        71 => 'phpunit\\metadata\\test',
+        72 => 'phpunit\\metadata\\testdoxonclass',
+        73 => 'phpunit\\metadata\\testdoxonmethod',
+        74 => 'phpunit\\metadata\\testdoxformatter',
+        75 => 'phpunit\\metadata\\testwith',
+        76 => 'phpunit\\metadata\\usesnamespace',
+        77 => 'phpunit\\metadata\\usesclass',
+        78 => 'phpunit\\metadata\\usesclassesthatextendclass',
+        79 => 'phpunit\\metadata\\usesclassesthatimplementinterface',
+        80 => 'phpunit\\metadata\\usestrait',
+        81 => 'phpunit\\metadata\\usesfunction',
+        82 => 'phpunit\\metadata\\usesmethod',
+        83 => 'phpunit\\metadata\\usesfile',
+        84 => 'phpunit\\metadata\\usesdirectory',
+        85 => 'phpunit\\metadata\\usesdirectoryrecursively',
+        86 => 'phpunit\\metadata\\withouterrorhandler',
+        87 => 'phpunit\\metadata\\ignorephpunitwarnings',
+        88 => 'phpunit\\metadata\\__construct',
+        89 => 'phpunit\\metadata\\isclasslevel',
+        90 => 'phpunit\\metadata\\ismethodlevel',
+        91 => 'phpunit\\metadata\\isafter',
+        92 => 'phpunit\\metadata\\isafterclass',
+        93 => 'phpunit\\metadata\\isallowmockobjectswithoutexpectations',
+        94 => 'phpunit\\metadata\\isbackupglobals',
+        95 => 'phpunit\\metadata\\isbackupstaticproperties',
+        96 => 'phpunit\\metadata\\isbeforeclass',
+        97 => 'phpunit\\metadata\\isbefore',
+        98 => 'phpunit\\metadata\\iscoversnamespace',
+        99 => 'phpunit\\metadata\\iscoversclass',
+        100 => 'phpunit\\metadata\\iscoversclassesthatextendclass',
+        101 => 'phpunit\\metadata\\iscoversclassesthatimplementinterface',
+        102 => 'phpunit\\metadata\\iscoverstrait',
+        103 => 'phpunit\\metadata\\iscoversfunction',
+        104 => 'phpunit\\metadata\\iscoversmethod',
+        105 => 'phpunit\\metadata\\iscoversfile',
+        106 => 'phpunit\\metadata\\iscoversdirectory',
+        107 => 'phpunit\\metadata\\iscoversdirectoryrecursively',
+        108 => 'phpunit\\metadata\\iscoversnothing',
+        109 => 'phpunit\\metadata\\isdataprovider',
+        110 => 'phpunit\\metadata\\isdataproviderclosure',
+        111 => 'phpunit\\metadata\\isdependsonclass',
+        112 => 'phpunit\\metadata\\isdependsonmethod',
+        113 => 'phpunit\\metadata\\isdisablereturnvaluegenerationfortestdoubles',
+        114 => 'phpunit\\metadata\\isdoesnotperformassertions',
+        115 => 'phpunit\\metadata\\isexcludeglobalvariablefrombackup',
+        116 => 'phpunit\\metadata\\isexcludestaticpropertyfrombackup',
+        117 => 'phpunit\\metadata\\isgroup',
+        118 => 'phpunit\\metadata\\isignoredeprecations',
+        119 => 'phpunit\\metadata\\isignorephpunitdeprecations',
+        120 => 'phpunit\\metadata\\isinvalidattribute',
+        121 => 'phpunit\\metadata\\isrepeat',
+        122 => 'phpunit\\metadata\\isretry',
+        123 => 'phpunit\\metadata\\isruninseparateprocess',
+        124 => 'phpunit\\metadata\\isruntestsinseparateprocesses',
+        125 => 'phpunit\\metadata\\istest',
+        126 => 'phpunit\\metadata\\isprecondition',
+        127 => 'phpunit\\metadata\\ispostcondition',
+        128 => 'phpunit\\metadata\\ispreserveglobalstate',
+        129 => 'phpunit\\metadata\\isrequiresmethod',
+        130 => 'phpunit\\metadata\\isrequiresfunction',
+        131 => 'phpunit\\metadata\\isrequiresoperatingsystem',
+        132 => 'phpunit\\metadata\\isrequiresoperatingsystemfamily',
+        133 => 'phpunit\\metadata\\isrequiresphp',
+        134 => 'phpunit\\metadata\\isrequiresphpextension',
+        135 => 'phpunit\\metadata\\isrequiresphpunit',
+        136 => 'phpunit\\metadata\\isrequiresphpunitextension',
+        137 => 'phpunit\\metadata\\isrequiresenvironmentvariable',
+        138 => 'phpunit\\metadata\\iswithenvironmentvariable',
+        139 => 'phpunit\\metadata\\isrequiressetting',
+        140 => 'phpunit\\metadata\\istestdox',
+        141 => 'phpunit\\metadata\\istestdoxformatter',
+        142 => 'phpunit\\metadata\\istestwith',
+        143 => 'phpunit\\metadata\\isusesnamespace',
+        144 => 'phpunit\\metadata\\isusesclass',
+        145 => 'phpunit\\metadata\\isusesclassesthatextendclass',
+        146 => 'phpunit\\metadata\\isusesclassesthatimplementinterface',
+        147 => 'phpunit\\metadata\\isusestrait',
+        148 => 'phpunit\\metadata\\isusesfunction',
+        149 => 'phpunit\\metadata\\isusesmethod',
+        150 => 'phpunit\\metadata\\isusesfile',
+        151 => 'phpunit\\metadata\\isusesdirectory',
+        152 => 'phpunit\\metadata\\isusesdirectoryrecursively',
+        153 => 'phpunit\\metadata\\iswithouterrorhandler',
+        154 => 'phpunit\\metadata\\isignorephpunitwarnings',
       ),
       3 => 
       array (
@@ -11504,7 +11619,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/MetadataCollection.php' => 
     array (
-      0 => '263d1129539c152f093d312b22ac21769f169c05ebf25517bfb614a0de2b0fa5',
+      0 => '1adca49673a24a60df2404e95f15d9bf1ce0603cf88edfc02eaac689b8f1c982',
       1 => 
       array (
         0 => 'phpunit\\metadata\\metadatacollection',
@@ -11535,48 +11650,57 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         21 => 'phpunit\\metadata\\iscoverstrait',
         22 => 'phpunit\\metadata\\iscoversfunction',
         23 => 'phpunit\\metadata\\iscoversmethod',
-        24 => 'phpunit\\metadata\\isexcludeglobalvariablefrombackup',
-        25 => 'phpunit\\metadata\\isexcludestaticpropertyfrombackup',
-        26 => 'phpunit\\metadata\\iscoversnothing',
-        27 => 'phpunit\\metadata\\isdataprovider',
-        28 => 'phpunit\\metadata\\isdepends',
-        29 => 'phpunit\\metadata\\isdependsonclass',
-        30 => 'phpunit\\metadata\\isdependsonmethod',
-        31 => 'phpunit\\metadata\\isdisablereturnvaluegenerationfortestdoubles',
-        32 => 'phpunit\\metadata\\isdoesnotperformassertions',
-        33 => 'phpunit\\metadata\\isgroup',
-        34 => 'phpunit\\metadata\\isignoredeprecations',
-        35 => 'phpunit\\metadata\\isignorephpunitdeprecations',
-        36 => 'phpunit\\metadata\\isignorephpunitwarnings',
-        37 => 'phpunit\\metadata\\isrunclassinseparateprocess',
-        38 => 'phpunit\\metadata\\isruninseparateprocess',
-        39 => 'phpunit\\metadata\\isruntestsinseparateprocesses',
-        40 => 'phpunit\\metadata\\istest',
-        41 => 'phpunit\\metadata\\isprecondition',
-        42 => 'phpunit\\metadata\\ispostcondition',
-        43 => 'phpunit\\metadata\\ispreserveglobalstate',
-        44 => 'phpunit\\metadata\\isrequiresmethod',
-        45 => 'phpunit\\metadata\\isrequiresfunction',
-        46 => 'phpunit\\metadata\\isrequiresoperatingsystem',
-        47 => 'phpunit\\metadata\\isrequiresoperatingsystemfamily',
-        48 => 'phpunit\\metadata\\isrequiresphp',
-        49 => 'phpunit\\metadata\\isrequiresphpextension',
-        50 => 'phpunit\\metadata\\isrequiresphpunit',
-        51 => 'phpunit\\metadata\\isrequiresphpunitextension',
-        52 => 'phpunit\\metadata\\isrequiresenvironmentvariable',
-        53 => 'phpunit\\metadata\\iswithenvironmentvariable',
-        54 => 'phpunit\\metadata\\isrequiressetting',
-        55 => 'phpunit\\metadata\\istestdox',
-        56 => 'phpunit\\metadata\\istestdoxformatter',
-        57 => 'phpunit\\metadata\\istestwith',
-        58 => 'phpunit\\metadata\\isusesnamespace',
-        59 => 'phpunit\\metadata\\isusesclass',
-        60 => 'phpunit\\metadata\\isusesclassesthatextendclass',
-        61 => 'phpunit\\metadata\\isusesclassesthatimplementinterface',
-        62 => 'phpunit\\metadata\\isusestrait',
-        63 => 'phpunit\\metadata\\isusesfunction',
-        64 => 'phpunit\\metadata\\isusesmethod',
-        65 => 'phpunit\\metadata\\iswithouterrorhandler',
+        24 => 'phpunit\\metadata\\iscoversfile',
+        25 => 'phpunit\\metadata\\iscoversdirectory',
+        26 => 'phpunit\\metadata\\iscoversdirectoryrecursively',
+        27 => 'phpunit\\metadata\\isexcludeglobalvariablefrombackup',
+        28 => 'phpunit\\metadata\\isexcludestaticpropertyfrombackup',
+        29 => 'phpunit\\metadata\\iscoversnothing',
+        30 => 'phpunit\\metadata\\isdataprovider',
+        31 => 'phpunit\\metadata\\isdataproviderclosure',
+        32 => 'phpunit\\metadata\\isdepends',
+        33 => 'phpunit\\metadata\\isdependsonclass',
+        34 => 'phpunit\\metadata\\isdependsonmethod',
+        35 => 'phpunit\\metadata\\isdisablereturnvaluegenerationfortestdoubles',
+        36 => 'phpunit\\metadata\\isdoesnotperformassertions',
+        37 => 'phpunit\\metadata\\isgroup',
+        38 => 'phpunit\\metadata\\isignoredeprecations',
+        39 => 'phpunit\\metadata\\isignorephpunitdeprecations',
+        40 => 'phpunit\\metadata\\isignorephpunitwarnings',
+        41 => 'phpunit\\metadata\\isinvalidattribute',
+        42 => 'phpunit\\metadata\\isrepeat',
+        43 => 'phpunit\\metadata\\isretry',
+        44 => 'phpunit\\metadata\\isruninseparateprocess',
+        45 => 'phpunit\\metadata\\isruntestsinseparateprocesses',
+        46 => 'phpunit\\metadata\\istest',
+        47 => 'phpunit\\metadata\\isprecondition',
+        48 => 'phpunit\\metadata\\ispostcondition',
+        49 => 'phpunit\\metadata\\ispreserveglobalstate',
+        50 => 'phpunit\\metadata\\isrequiresmethod',
+        51 => 'phpunit\\metadata\\isrequiresfunction',
+        52 => 'phpunit\\metadata\\isrequiresoperatingsystem',
+        53 => 'phpunit\\metadata\\isrequiresoperatingsystemfamily',
+        54 => 'phpunit\\metadata\\isrequiresphp',
+        55 => 'phpunit\\metadata\\isrequiresphpextension',
+        56 => 'phpunit\\metadata\\isrequiresphpunit',
+        57 => 'phpunit\\metadata\\isrequiresphpunitextension',
+        58 => 'phpunit\\metadata\\isrequiresenvironmentvariable',
+        59 => 'phpunit\\metadata\\iswithenvironmentvariable',
+        60 => 'phpunit\\metadata\\isrequiressetting',
+        61 => 'phpunit\\metadata\\istestdox',
+        62 => 'phpunit\\metadata\\istestdoxformatter',
+        63 => 'phpunit\\metadata\\istestwith',
+        64 => 'phpunit\\metadata\\isusesnamespace',
+        65 => 'phpunit\\metadata\\isusesclass',
+        66 => 'phpunit\\metadata\\isusesclassesthatextendclass',
+        67 => 'phpunit\\metadata\\isusesclassesthatimplementinterface',
+        68 => 'phpunit\\metadata\\isusestrait',
+        69 => 'phpunit\\metadata\\isusesfunction',
+        70 => 'phpunit\\metadata\\isusesmethod',
+        71 => 'phpunit\\metadata\\isusesfile',
+        72 => 'phpunit\\metadata\\isusesdirectory',
+        73 => 'phpunit\\metadata\\isusesdirectoryrecursively',
+        74 => 'phpunit\\metadata\\iswithouterrorhandler',
       ),
       3 => 
       array (
@@ -11584,7 +11708,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/MetadataCollectionIterator.php' => 
     array (
-      0 => '494ec53270222b65080af5b9ac1e83325957b169e3b32299729a73dce8a7acae',
+      0 => 'ecd8d2b5ab8a957dd1b761dc73837ed8214d73e8c619fd06a7373e176ea62054',
       1 => 
       array (
         0 => 'phpunit\\metadata\\metadatacollectioniterator',
@@ -11604,7 +11728,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php' => 
     array (
-      0 => '30509b1e9131a4a5104196f813db4e0a1176f2297b61a7a8ceb04ccc516ef6a6',
+      0 => '1f9bc3e3a5dfa798a000edc611c02c51f4db6de8583b848ce125f27405416916',
       1 => 
       array (
         0 => 'phpunit\\metadata\\parser\\attributeparser',
@@ -11616,7 +11740,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         2 => 'phpunit\\metadata\\parser\\forclassandmethod',
         3 => 'phpunit\\metadata\\parser\\issizegroup',
         4 => 'phpunit\\metadata\\parser\\requirement',
-        5 => 'phpunit\\metadata\\parser\\testasstring',
+        5 => 'phpunit\\metadata\\parser\\invalidattributemessage',
+        6 => 'phpunit\\metadata\\parser\\testasstring',
       ),
       3 => 
       array (
@@ -11675,7 +11800,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/PostCondition.php' => 
     array (
-      0 => '7a43989823dc239a9d9a6d6d96e23c8fcc68a6cc2172fc2fae303c633c2ad6f9',
+      0 => 'eb59d7f013b8c36cb756abc2bca488a77eadfb6892724efa06f3e1798a33d20c',
       1 => 
       array (
         0 => 'phpunit\\metadata\\postcondition',
@@ -11692,7 +11817,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/PreCondition.php' => 
     array (
-      0 => 'eb0b2491d053dd737b8743a528fe5dae2e886bde569109b13c746f396595f9c4',
+      0 => 'c55b9fee8385352d62079950915365b7816020e7a800a67ca4852580a7928455',
       1 => 
       array (
         0 => 'phpunit\\metadata\\precondition',
@@ -11709,7 +11834,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/PreserveGlobalState.php' => 
     array (
-      0 => 'ea6dce678417a1c34e1bf5366edb9f244d898af0d1806acc4bd14f2226bcfa71',
+      0 => 'e376dcac10cf73c3ad5ba5d92f2f50979ac56ed4fb4b5a6b63118560c1931603',
       1 => 
       array (
         0 => 'phpunit\\metadata\\preserveglobalstate',
@@ -11726,7 +11851,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/RequiresEnvironmentVariable.php' => 
     array (
-      0 => 'a7d6cecfb470804863ca8115eb8060f26c1dcb69685c8ae23f9bd8625fdc9d00',
+      0 => '3504fc34824bdd6cfec8742851fbc2191657e9eedc9a2e4bb6ffaace64cbdeef',
       1 => 
       array (
         0 => 'phpunit\\metadata\\requiresenvironmentvariable',
@@ -11744,7 +11869,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/RequiresFunction.php' => 
     array (
-      0 => 'd8f4e51a0de5941e2d54c3de5311ded61b62de2d79396b1e3f18f2e3e9e3e52c',
+      0 => 'af1ae3b9f47f1cbcc8587a7b16e0a2cd33c1bbdd70d3e386e96012cfc069a75e',
       1 => 
       array (
         0 => 'phpunit\\metadata\\requiresfunction',
@@ -11761,7 +11886,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/RequiresMethod.php' => 
     array (
-      0 => '344c9146b1baeb684a64090e6ef530e731ce6abf95d014e021299e97ace20250',
+      0 => '76b9496adc8ab107ae28afcea2240cb26f2dcee4e2267521540905609b1c5a21',
       1 => 
       array (
         0 => 'phpunit\\metadata\\requiresmethod',
@@ -11779,7 +11904,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/RequiresOperatingSystem.php' => 
     array (
-      0 => '8528f8366ed28f16d7f3c9b63a35dfe41e5e76950582f37475fdbb2af9e53d4a',
+      0 => '78bb86f6d8f9a2896c1c8d69436b2e5ef2c2fc9fe8e024a4c4298a32f931630b',
       1 => 
       array (
         0 => 'phpunit\\metadata\\requiresoperatingsystem',
@@ -11796,7 +11921,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/RequiresOperatingSystemFamily.php' => 
     array (
-      0 => '92a3a2875eeb010a5f5ab4d9cddde0f903fa3da1e63bbb387c225a948182370e',
+      0 => '425e7fb9c7e122731fa46e9e99ea08d2e837cf2f73aafd627d8a7bcd26997a4a',
       1 => 
       array (
         0 => 'phpunit\\metadata\\requiresoperatingsystemfamily',
@@ -11813,7 +11938,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/RequiresPhp.php' => 
     array (
-      0 => '60aea2c3bf011317e95f765032a1b39a933206295f5043ab58e367a6d6b050da',
+      0 => 'a0b792efd2f8319af8f15bbbfcdc928ae23f2afd34314ad4a8452808b7abdc79',
       1 => 
       array (
         0 => 'phpunit\\metadata\\requiresphp',
@@ -11830,7 +11955,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/RequiresPhpExtension.php' => 
     array (
-      0 => '2b710e2dbec92b4ae3f818ccd10fd759280bd09290011616e94245bc33a97fce',
+      0 => '301f2655f51608366151bcb7746a7ff280df9b1206e6482f26e71bb6e4b0d61a',
       1 => 
       array (
         0 => 'phpunit\\metadata\\requiresphpextension',
@@ -11849,7 +11974,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/RequiresPhpunit.php' => 
     array (
-      0 => 'e3d0b6a6e6c040a870c07b475b2ec29b2ccb1e4ff1a3a9f2a88b8f62995049b4',
+      0 => '569caed8a7af4f1ffaee7952af1a82e6c1073f835e312415da80fdb127b8e09f',
       1 => 
       array (
         0 => 'phpunit\\metadata\\requiresphpunit',
@@ -11866,7 +11991,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/RequiresPhpunitExtension.php' => 
     array (
-      0 => 'ea709e4b9e2cf34801707d5f6f5a0a348ec1021a2fd870a554183e236bd465f5',
+      0 => 'e8463ede29f9298b62cfb9f2523af09ca0bf6037fd44987ea9a44d480cb2b5cc',
       1 => 
       array (
         0 => 'phpunit\\metadata\\requiresphpunitextension',
@@ -11883,7 +12008,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/RequiresSetting.php' => 
     array (
-      0 => 'f0fe97e21e9d01137a48a13d27310499d73e939b19bbed68e31520e77b3d1d67',
+      0 => 'eb8b559aeeacebcd265323532a3e4b9f8fa2178686d2ff172c8ca5e36b403667',
       1 => 
       array (
         0 => 'phpunit\\metadata\\requiressetting',
@@ -11894,21 +12019,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         1 => 'phpunit\\metadata\\isrequiressetting',
         2 => 'phpunit\\metadata\\setting',
         3 => 'phpunit\\metadata\\value',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/RunClassInSeparateProcess.php' => 
-    array (
-      0 => 'e6577287dde51c8aac43c0f81ad354fc3cd0b77064d29c43daa2077cff43f802',
-      1 => 
-      array (
-        0 => 'phpunit\\metadata\\runclassinseparateprocess',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\metadata\\isrunclassinseparateprocess',
       ),
       3 => 
       array (
@@ -11961,7 +12071,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/TestDox.php' => 
     array (
-      0 => 'b0c0914f46651ace97593248bfa53627d4a1853137233de250a0fa3dd38174bf',
+      0 => '71a71c19c4cd50a15534755d94409d626ecf3f6e8ce697dde7c1b2e673616d2c',
       1 => 
       array (
         0 => 'phpunit\\metadata\\testdox',
@@ -11978,7 +12088,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/TestDoxFormatter.php' => 
     array (
-      0 => '285bd99ac9c366fc54b27504b4cb36754ff2e2b97a3d7528c24da212cba846ea',
+      0 => 'cc6727ea074837f6ef4c66ca12e1c0ee03a5b1e5d5032c66de9e7f23bba2ff4b',
       1 => 
       array (
         0 => 'phpunit\\metadata\\testdoxformatter',
@@ -11996,7 +12106,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/TestWith.php' => 
     array (
-      0 => '23f9c518905ba1faf6d45ec63055e274775668b6b1304e4b8c90b7419687ef3b',
+      0 => '62be3a36f57abbe4697d3cb16283d780358922ef5c9ac70b0f3d03b01b05e735',
       1 => 
       array (
         0 => 'phpunit\\metadata\\testwith',
@@ -12015,7 +12125,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/UsesClass.php' => 
     array (
-      0 => '28c4db9bf1e608adf8cac22970f694a036b95cb82956d2c4106456397e8b14a7',
+      0 => 'f61ebb1914060adaa2b04de085439e6e9b22462860b7b4fd15ed0baab6d7d169',
       1 => 
       array (
         0 => 'phpunit\\metadata\\usesclass',
@@ -12032,7 +12142,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/UsesClassesThatExtendClass.php' => 
     array (
-      0 => '89f7bed2b48e3ab468297946179e285e6d09c5f7e6fb2f5ee3db9f826f58db8a',
+      0 => '9f58c8a0c907a4bfa35028fd0c800f8250b92a8e1f86c6ddbfd03f9f1ccfe1d1',
       1 => 
       array (
         0 => 'phpunit\\metadata\\usesclassesthatextendclass',
@@ -12049,7 +12159,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/UsesClassesThatImplementInterface.php' => 
     array (
-      0 => '6116d22a891e5d5818f1fdcbb6640b4c0fb612990594e278d4824f5e1f4870e1',
+      0 => '71596aae59e2e38464abeaee651d05de697949895b9ea0b0639383bd9a462259',
       1 => 
       array (
         0 => 'phpunit\\metadata\\usesclassesthatimplementinterface',
@@ -12066,7 +12176,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/UsesFunction.php' => 
     array (
-      0 => '2e31a3cb4ea608f788c79610f2d59e5f1a76247f8866a913048e59481432790a',
+      0 => '6fc9315df1d5082452d7ce95015a4afc7ce5d19a282e4f293e2d03df685b0393',
       1 => 
       array (
         0 => 'phpunit\\metadata\\usesfunction',
@@ -12083,7 +12193,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/UsesMethod.php' => 
     array (
-      0 => '2cdef5b2c2451be5db63c596bfc121817d34256133cb32ac2fb51897ae9feda3',
+      0 => '97bf789677525403a2bec4fd32d70c5d15fce4444913dbc7204199adc852ee47',
       1 => 
       array (
         0 => 'phpunit\\metadata\\usesmethod',
@@ -12101,7 +12211,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/UsesNamespace.php' => 
     array (
-      0 => '8d51ff04f3885c7d0a036cfa80cca6daf570e72d66cba68c79e125ddf2389adc',
+      0 => 'd027852e0e5e279238a13b887f7fb8ab74e2a1a6e3432ae40fb024adddaae01d',
       1 => 
       array (
         0 => 'phpunit\\metadata\\usesnamespace',
@@ -12118,7 +12228,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/UsesTrait.php' => 
     array (
-      0 => '010766f5998fd7caf76e147366bb45b7fd0c5bf725ed49ed5a3bbcdf5bde626c',
+      0 => 'f629272ea98d300da563b7daca67cd8341d0e15849498a72493f4a95abc8c0a9',
       1 => 
       array (
         0 => 'phpunit\\metadata\\usestrait',
@@ -12153,7 +12263,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Version/ConstraintRequirement.php' => 
     array (
-      0 => 'bb197a2f78d73106d9c20c201c951c775cdc685f3c29abbdc6b8cdc00a557cfd',
+      0 => '904aed1744a94ea7846a7663982cb72e01f45ed82042b11b7c6c9c4ff5174bad',
       1 => 
       array (
         0 => 'phpunit\\metadata\\version\\constraintrequirement',
@@ -12188,7 +12298,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/WithEnvironmentVariable.php' => 
     array (
-      0 => '46c0d69470129752347e256a5d57a36fb73907e475aa2420dc0e0ea96ef7b4fd',
+      0 => 'abb7e0059bc1c0f8b63da840b7fed1b71504c28a2c785373042aef87c6ad6cd9',
       1 => 
       array (
         0 => 'phpunit\\metadata\\withenvironmentvariable',
@@ -12221,7 +12331,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/BackedUpEnvironmentVariable.php' => 
     array (
-      0 => '75c39aa5330c9e794eedb04119e79a3ac8f9d1782983539cc6eeb22ee41294e2',
+      0 => 'ce83d6a1ddc7de30ab4f926d218506e4467e90ed075990658361bcc1277bb5c4',
       1 => 
       array (
         0 => 'phpunit\\runner\\backedupenvironmentvariable',
@@ -12341,7 +12451,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Baseline/Reader.php' => 
     array (
-      0 => '6659d983c7a5df47aa8f76298f687df311076b23101a0d61b78b0328e729b266',
+      0 => '11a4a2a73ec73acdb7f03299058d5f2da23d663ce4eac49cc0d1886ae20e8f7f',
       1 => 
       array (
         0 => 'phpunit\\runner\\baseline\\reader',
@@ -12356,7 +12466,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Baseline/RelativePathCalculator.php' => 
     array (
-      0 => 'f8c99ac87f74341770152059472a89b06815bc60d3e2309947f3ead8dbdcecc8',
+      0 => 'a01be2811da0048e5a2d7242bce15c4b67df58399855654972f7f7346c11d9b3',
       1 => 
       array (
         0 => 'phpunit\\runner\\baseline\\relativepathcalculator',
@@ -12479,7 +12589,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Baseline/Writer.php' => 
     array (
-      0 => 'aabfac0f4a70360d60b18c9c7b66b59f092101a96f110d2290163914cec755c0',
+      0 => 'a4abb42b06bf0260c7bf8152fcc56c20b324f510faa1ecfe7ddf3a80b51229b6',
       1 => 
       array (
         0 => 'phpunit\\runner\\baseline\\writer',
@@ -12494,7 +12604,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/CodeCoverage.php' => 
     array (
-      0 => 'd860990086867e5aa965759a5786ee2b65efc3238a4ac22255dd4a65451f4b03',
+      0 => '0bfe21ec874ed3d11bc16b4cfb529db1a07cb5051a34f3c8d5eaeeef843be161',
       1 => 
       array (
         0 => 'phpunit\\runner\\codecoverage',
@@ -12508,14 +12618,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         4 => 'phpunit\\runner\\drivernameandversion',
         5 => 'phpunit\\runner\\start',
         6 => 'phpunit\\runner\\stop',
-        7 => 'phpunit\\runner\\deactivate',
-        8 => 'phpunit\\runner\\generatereports',
-        9 => 'phpunit\\runner\\warniffilterisnotconfigured',
-        10 => 'phpunit\\runner\\activate',
-        11 => 'phpunit\\runner\\codecoveragegenerationstart',
-        12 => 'phpunit\\runner\\codecoveragegenerationsucceeded',
-        13 => 'phpunit\\runner\\codecoveragegenerationfailed',
-        14 => 'phpunit\\runner\\timer',
+        7 => 'phpunit\\runner\\lasttestcontributedtocoverage',
+        8 => 'phpunit\\runner\\deactivate',
+        9 => 'phpunit\\runner\\collectsbranchcoverage',
+        10 => 'phpunit\\runner\\collectspathcoverage',
+        11 => 'phpunit\\runner\\generatereports',
+        12 => 'phpunit\\runner\\warnaboutfilesthatcouldnotbeparsed',
+        13 => 'phpunit\\runner\\warniffilterisnotconfigured',
+        14 => 'phpunit\\runner\\activate',
+        15 => 'phpunit\\runner\\instantiatedriver',
+        16 => 'phpunit\\runner\\codecoveragegenerationstart',
+        17 => 'phpunit\\runner\\codecoveragegenerationsucceeded',
+        18 => 'phpunit\\runner\\codecoveragegenerationfailed',
+        19 => 'phpunit\\runner\\timer',
       ),
       3 => 
       array (
@@ -12593,7 +12708,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/DeprecationCollector/Subscriber/Subscriber.php' => 
     array (
-      0 => 'c1cdd6ae409a11cc65027020a2594031c286fa154826499784eb018397ed65b4',
+      0 => '4876d8877c085d4eb01b1afa818c3859432fbb8a12ba5fbf10bc3610a1460eb6',
       1 => 
       array (
         0 => 'phpunit\\runner\\deprecationcollector\\subscriber',
@@ -12609,7 +12724,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/DeprecationCollector/Subscriber/TestPreparedSubscriber.php' => 
     array (
-      0 => '0cf07aa862bd3025bcfc69d5d5b10d691f42cd61d41fffec0dc576e02b51b2b1',
+      0 => 'bcc11c2c9dd42eeb3dbecbcf02077a10a36943a494cde7820766b4b4cf01841e',
       1 => 
       array (
         0 => 'phpunit\\runner\\deprecationcollector\\testpreparedsubscriber',
@@ -12624,7 +12739,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/DeprecationCollector/Subscriber/TestTriggeredDeprecationSubscriber.php' => 
     array (
-      0 => '930e9ee334561f00b3a753ba2bd326b82bb105fa0f5970b632b1dc7a29b4c7f3',
+      0 => 'f25f7fdecb4584db4f15e7ba935f2e488917372a78aefadb504676dc0497efcb',
       1 => 
       array (
         0 => 'phpunit\\runner\\deprecationcollector\\testtriggereddeprecationsubscriber',
@@ -12639,7 +12754,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ErrorHandler.php' => 
     array (
-      0 => 'e7df90f0017657eb3181e8d0a91f5f862cd808ea5f70cf0ecaf9938ae336d1e5',
+      0 => '89471aac2a7f9800407c039bea83aaefc9f03ff5dfe8ef7fa7badc3164b4061c',
       1 => 
       array (
         0 => 'phpunit\\runner\\errorhandler',
@@ -12649,28 +12764,44 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\runner\\instance',
         1 => 'phpunit\\runner\\__construct',
         2 => 'phpunit\\runner\\__invoke',
-        3 => 'phpunit\\runner\\deprecationhandler',
-        4 => 'phpunit\\runner\\registerdeprecationhandler',
-        5 => 'phpunit\\runner\\restoredeprecationhandler',
+        3 => 'phpunit\\runner\\handlenontestcaseissue',
+        4 => 'phpunit\\runner\\registerfornontestcasecontext',
+        5 => 'phpunit\\runner\\restorefornontestcasecontext',
         6 => 'phpunit\\runner\\enable',
         7 => 'phpunit\\runner\\disable',
-        8 => 'phpunit\\runner\\usebaseline',
-        9 => 'phpunit\\runner\\usedeprecationtriggers',
-        10 => 'phpunit\\runner\\entertestcasecontext',
-        11 => 'phpunit\\runner\\leavetestcasecontext',
-        12 => 'phpunit\\runner\\ignoredbybaseline',
-        13 => 'phpunit\\runner\\trigger',
-        14 => 'phpunit\\runner\\triggerforuserlanddeprecation',
-        15 => 'phpunit\\runner\\categorizefile',
-        16 => 'phpunit\\runner\\filteredstacktrace',
-        17 => 'phpunit\\runner\\guessdeprecationframe',
-        18 => 'phpunit\\runner\\errorstacktrace',
-        19 => 'phpunit\\runner\\frameisfunction',
-        20 => 'phpunit\\runner\\frameismethod',
-        21 => 'phpunit\\runner\\stacktrace',
-        22 => 'phpunit\\runner\\triggerglobaldeprecations',
-        23 => 'phpunit\\runner\\testcasecontext',
-        24 => 'phpunit\\runner\\deprecationignoredbytest',
+        8 => 'phpunit\\runner\\snapshoterrorhandlers',
+        9 => 'phpunit\\runner\\restoreerrorhandlers',
+        10 => 'phpunit\\runner\\usebaseline',
+        11 => 'phpunit\\runner\\usedeprecationtriggers',
+        12 => 'phpunit\\runner\\addissuetriggerresolver',
+        13 => 'phpunit\\runner\\adddeprecationfilter',
+        14 => 'phpunit\\runner\\entertestcasecontext',
+        15 => 'phpunit\\runner\\leavetestcasecontext',
+        16 => 'phpunit\\runner\\ignoredbybaseline',
+        17 => 'phpunit\\runner\\triggerwithouttest',
+        18 => 'phpunit\\runner\\trigger',
+        19 => 'phpunit\\runner\\triggerforuserlanddeprecation',
+        20 => 'phpunit\\runner\\categorizefile',
+        21 => 'phpunit\\runner\\categorizefilewithouttest',
+        22 => 'phpunit\\runner\\triggerforuserlanddeprecationwithouttest',
+        23 => 'phpunit\\runner\\filteredstacktrace',
+        24 => 'phpunit\\runner\\guessdeprecationframe',
+        25 => 'phpunit\\runner\\deprecationtriggerframeposition',
+        26 => 'phpunit\\runner\\framematchesdeprecationtrigger',
+        27 => 'phpunit\\runner\\applydeprecationframe',
+        28 => 'phpunit\\runner\\errorstacktrace',
+        29 => 'phpunit\\runner\\frameisfunction',
+        30 => 'phpunit\\runner\\frameismethod',
+        31 => 'phpunit\\runner\\stacktrace',
+        32 => 'phpunit\\runner\\triggertestcasecontextissues',
+        33 => 'phpunit\\runner\\testcasecontext',
+        34 => 'phpunit\\runner\\activeerrorhandlers',
+        35 => 'phpunit\\runner\\handlersaboveself',
+        36 => 'phpunit\\runner\\isonstack',
+        37 => 'phpunit\\runner\\deprecationignoredbytest',
+        38 => 'phpunit\\runner\\deprecationignoredbyfilter',
+        39 => 'phpunit\\runner\\forwardtopreviouserrorhandler',
+        40 => 'phpunit\\runner\\forwardtopreviousnontestcaseerrorhandler',
       ),
       3 => 
       array (
@@ -12839,7 +12970,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Extension/ExtensionBootstrapper.php' => 
     array (
-      0 => '87708043877c21123c073ef8e0e8d87e0d0c3baaa087fb7e714f0d2c320ebc1f',
+      0 => 'c633bfe7bcbb4b24ec973f513bf72fc0a19d92428528b3c460f1035b6e25e0e4',
       1 => 
       array (
         0 => 'phpunit\\runner\\extension\\extensionbootstrapper',
@@ -12855,7 +12986,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Extension/Facade.php' => 
     array (
-      0 => '553dfb0b4e7781e45e9677f5b0319d88651680c6b86fab6b328f5572bca1331f',
+      0 => '51fdc7f108d60fb8f185204de7ef8503db1ac5e5a421f1d53871be8fb723dc6e',
       1 => 
       array (
         0 => 'phpunit\\runner\\extension\\facade',
@@ -12866,13 +12997,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         1 => 'phpunit\\runner\\extension\\registersubscriber',
         2 => 'phpunit\\runner\\extension\\registertracer',
         3 => 'phpunit\\runner\\extension\\replaceoutput',
-        4 => 'phpunit\\runner\\extension\\replacesoutput',
-        5 => 'phpunit\\runner\\extension\\replaceprogressoutput',
-        6 => 'phpunit\\runner\\extension\\replacesprogressoutput',
-        7 => 'phpunit\\runner\\extension\\replaceresultoutput',
-        8 => 'phpunit\\runner\\extension\\replacesresultoutput',
-        9 => 'phpunit\\runner\\extension\\requirecodecoveragecollection',
-        10 => 'phpunit\\runner\\extension\\requirescodecoveragecollection',
+        4 => 'phpunit\\runner\\extension\\replaceprogressoutput',
+        5 => 'phpunit\\runner\\extension\\replaceresultoutput',
+        6 => 'phpunit\\runner\\extension\\requirecodecoveragecollection',
       ),
       3 => 
       array (
@@ -12880,7 +13007,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Extension/ParameterCollection.php' => 
     array (
-      0 => '998412e1f44d72edce3a13386ee233462f0a27c5724669a14206458e6656c2f1',
+      0 => '43b3e05f7110714cb640aa8bf4ad56bc2e9b94852f9bb68c702541f161620edf',
       1 => 
       array (
         0 => 'phpunit\\runner\\extension\\parametercollection',
@@ -12898,7 +13025,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Extension/PharLoader.php' => 
     array (
-      0 => '676c29d71e0b49a4286c546fe91e62cf84aef013f46f734d7e0c6ba55940a6ae',
+      0 => '4b57d933fecc37abaa55163f1cae9a13ad6dbd6ed1e9014ed861a9c2d710cada',
       1 => 
       array (
         0 => 'phpunit\\runner\\extension\\pharloader',
@@ -12914,7 +13041,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Filter/ExcludeGroupFilterIterator.php' => 
     array (
-      0 => 'd1d7a0ced770e44a1a3647d472c3afd85ced3c64186db35e715dc263ef7812db',
+      0 => 'd19636e1f6918b8abf27f10fcaf99da51a29b8578768e3d18b10ca110cd187e9',
       1 => 
       array (
         0 => 'phpunit\\runner\\filter\\excludegroupfilteriterator',
@@ -12944,7 +13071,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Filter/Factory.php' => 
     array (
-      0 => 'bdb7d8c6e7967f5af9429d8378b5dbb16b689e9d90757f3feb86b98591ec4f59',
+      0 => 'f50062dbcec893b0e3c8eaceed32f2537ff1b7e07222a733b9836700e44bb10b',
       1 => 
       array (
         0 => 'phpunit\\runner\\filter\\factory',
@@ -12964,7 +13091,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Filter/GroupFilterIterator.php' => 
     array (
-      0 => 'b7fc5a8ef8f5acf7c621397a21ede20483bc7395df72674f79ac7ab290783f44',
+      0 => '7fb5d4ded547feb5a9209b178d4619ebf8ad191077f91679b8ff7047937b0010',
       1 => 
       array (
         0 => 'phpunit\\runner\\filter\\groupfilteriterator',
@@ -12981,7 +13108,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Filter/IncludeGroupFilterIterator.php' => 
     array (
-      0 => '580d01828d7368355bbc56175236a1a97c8361795e24322bbaea4b1ed277dd41',
+      0 => '07a45b55682dcf194273e39eaf15b234b2f3890faa9b769c7b16eb6f7b4c55d9',
       1 => 
       array (
         0 => 'phpunit\\runner\\filter\\includegroupfilteriterator',
@@ -13011,7 +13138,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Filter/NameFilterIterator.php' => 
     array (
-      0 => 'd1cabb65f526239ae8c1b333bfb74a3d880cb91be2e6ed80ea98ea942e906757',
+      0 => '0f232d3ec4553882e6d06f17bc57f814a3361f07f374dee1276677bb3b79b018',
       1 => 
       array (
         0 => 'phpunit\\runner\\filter\\namefilteriterator',
@@ -13021,7 +13148,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\runner\\filter\\__construct',
         1 => 'phpunit\\runner\\filter\\accept',
         2 => 'phpunit\\runner\\filter\\doaccept',
-        3 => 'phpunit\\runner\\filter\\preparefilter',
       ),
       3 => 
       array (
@@ -13029,7 +13155,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Filter/TestIdFilterIterator.php' => 
     array (
-      0 => 'ebedf96089f0d7053786c88984b9166c5f0148675deffb9f0e6bcd337951db13',
+      0 => '16620544a5e07779840a2a2f29deb5d1732ad6b5999ba6236997a13a0f737f0c',
       1 => 
       array (
         0 => 'phpunit\\runner\\filter\\testidfilteriterator',
@@ -13142,7 +13268,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/HookMethod/HookMethodCollection.php' => 
     array (
-      0 => 'c91beb252727cbf836998350000d35e7bd44e8f9d4ba0fd79b20ad9d32a18587',
+      0 => '9a32968fe55d206bbd99e1afed0f819d37952d1386a3825379c3551737cd5dfa',
       1 => 
       array (
         0 => 'phpunit\\runner\\hookmethodcollection',
@@ -13156,8 +13282,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         4 => 'phpunit\\runner\\defaultafter',
         5 => 'phpunit\\runner\\defaultafterclass',
         6 => 'phpunit\\runner\\__construct',
-        7 => 'phpunit\\runner\\add',
-        8 => 'phpunit\\runner\\methodnamessortedbypriority',
+        7 => 'phpunit\\runner\\isdefaulthookmethod',
+        8 => 'phpunit\\runner\\add',
+        9 => 'phpunit\\runner\\methodnamessortedbypriority',
       ),
       3 => 
       array (
@@ -13165,7 +13292,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/IssueFilter.php' => 
     array (
-      0 => '283a6aa0c620caf4f0e7656ce6fb9c4d146ab802ce120ee787a54ba4d2d93f96',
+      0 => '2ea007cf03963861936242697c02c4d5869240a78b80c1f0fa85b1788b0db7b9',
       1 => 
       array (
         0 => 'phpunit\\testrunner\\issuefilter',
@@ -13181,13 +13308,14 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Phpt/Exception/InvalidPhptFileException.php' => 
     array (
-      0 => 'be8758ff248d02699ba69f1535fe432a59734e4cb7db1d572ad41cf419d8300e',
+      0 => '2b025983f5f4d7387b5bd0711577d465f4f672e9fd2481528426e33252c9bcb1',
       1 => 
       array (
         0 => 'phpunit\\runner\\phpt\\invalidphptfileexception',
       ),
       2 => 
       array (
+        0 => 'phpunit\\runner\\phpt\\__construct',
       ),
       3 => 
       array (
@@ -13225,7 +13353,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Phpt/Parser.php' => 
     array (
-      0 => 'e3205342a4a7ee2e583229ef9d7113bad33064896131f7557d42c436d6b808bb',
+      0 => 'cf0c2dfa4663c0346689887ff2a467532cef8b823d80056b40e5a6e3b149d4fd',
       1 => 
       array (
         0 => 'phpunit\\runner\\phpt\\parser',
@@ -13236,7 +13364,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         1 => 'phpunit\\runner\\phpt\\parseenvsection',
         2 => 'phpunit\\runner\\phpt\\parseinisection',
         3 => 'phpunit\\runner\\phpt\\parseexternal',
-        4 => 'phpunit\\runner\\phpt\\validate',
+        4 => 'phpunit\\runner\\phpt\\ensureexactlyonesectionof',
+        5 => 'phpunit\\runner\\phpt\\ensurecodeisnotempty',
       ),
       3 => 
       array (
@@ -13244,7 +13373,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Phpt/Renderer.php' => 
     array (
-      0 => '14cb6c8c2f356b836dc4d0e8ab4fbbbdffd3a285d09d4bbad4ccb96c43f6cc84',
+      0 => 'cd1b858c61263e10a36ef294dba85220241f73c4c1f6ba05eca8712039e9d402',
       1 => 
       array (
         0 => 'phpunit\\runner\\phpt\\renderer',
@@ -13260,7 +13389,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Phpt/TestCase.php' => 
     array (
-      0 => '57e3f0ff0f708d284b6e7a374e85a8bba79b4c98c63b43cea13af182786fb996',
+      0 => '502dfea736010e7634d99e94e4c745ddf0fa2f10ea4d03dafc1ee632ab9c4a87',
       1 => 
       array (
         0 => 'phpunit\\runner\\phpt\\testcase',
@@ -13276,278 +13405,23 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         6 => 'phpunit\\runner\\phpt\\provides',
         7 => 'phpunit\\runner\\phpt\\requires',
         8 => 'phpunit\\runner\\phpt\\valueobjectforevents',
-        9 => 'phpunit\\runner\\phpt\\assertphptexpectation',
-        10 => 'phpunit\\runner\\phpt\\shouldtestbeskipped',
-        11 => 'phpunit\\runner\\phpt\\shouldruninsubprocess',
-        12 => 'phpunit\\runner\\phpt\\runcodeinlocalsandbox',
-        13 => 'phpunit\\runner\\phpt\\runclean',
-        14 => 'phpunit\\runner\\phpt\\cleanupforcoverage',
-        15 => 'phpunit\\runner\\phpt\\coveragefiles',
-        16 => 'phpunit\\runner\\phpt\\stringifyini',
-        17 => 'phpunit\\runner\\phpt\\locationhintfromdiff',
-        18 => 'phpunit\\runner\\phpt\\cleandiffline',
-        19 => 'phpunit\\runner\\phpt\\locationhint',
-        20 => 'phpunit\\runner\\phpt\\settings',
-        21 => 'phpunit\\runner\\phpt\\triggerrunnerwarningonphperrors',
-        22 => 'phpunit\\runner\\phpt\\ensurecoveragefiledoesnotexist',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ResultCache/DefaultResultCache.php' => 
-    array (
-      0 => '56b365af2853ac3e36692fda020c086f139f6e1620b14b648704a94f2c446c5a',
-      1 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\defaultresultcache',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\__construct',
-        1 => 'phpunit\\runner\\resultcache\\setstatus',
-        2 => 'phpunit\\runner\\resultcache\\status',
-        3 => 'phpunit\\runner\\resultcache\\settime',
-        4 => 'phpunit\\runner\\resultcache\\time',
-        5 => 'phpunit\\runner\\resultcache\\mergewith',
-        6 => 'phpunit\\runner\\resultcache\\load',
-        7 => 'phpunit\\runner\\resultcache\\persist',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ResultCache/NullResultCache.php' => 
-    array (
-      0 => '3091d1a34db4fee70ab5a7bea2dbd85739963ec2c89c433949af5616dec369b7',
-      1 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\nullresultcache',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\setstatus',
-        1 => 'phpunit\\runner\\resultcache\\status',
-        2 => 'phpunit\\runner\\resultcache\\settime',
-        3 => 'phpunit\\runner\\resultcache\\time',
-        4 => 'phpunit\\runner\\resultcache\\load',
-        5 => 'phpunit\\runner\\resultcache\\persist',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ResultCache/ResultCache.php' => 
-    array (
-      0 => 'c0d592a6a5b02b6963c1611b92ea7ca6374ef7f63204f4f433cd79dcaeeae8c8',
-      1 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\resultcache',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\setstatus',
-        1 => 'phpunit\\runner\\resultcache\\status',
-        2 => 'phpunit\\runner\\resultcache\\settime',
-        3 => 'phpunit\\runner\\resultcache\\time',
-        4 => 'phpunit\\runner\\resultcache\\load',
-        5 => 'phpunit\\runner\\resultcache\\persist',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ResultCache/ResultCacheHandler.php' => 
-    array (
-      0 => 'fd9495b477e6e19eb41e003d332969b96c9625ed0e5f7ccd37645cf08423cd2d',
-      1 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\resultcachehandler',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\__construct',
-        1 => 'phpunit\\runner\\resultcache\\testsuitestarted',
-        2 => 'phpunit\\runner\\resultcache\\testsuitefinished',
-        3 => 'phpunit\\runner\\resultcache\\testprepared',
-        4 => 'phpunit\\runner\\resultcache\\testmarkedincomplete',
-        5 => 'phpunit\\runner\\resultcache\\testconsideredrisky',
-        6 => 'phpunit\\runner\\resultcache\\testerrored',
-        7 => 'phpunit\\runner\\resultcache\\testfailed',
-        8 => 'phpunit\\runner\\resultcache\\testskipped',
-        9 => 'phpunit\\runner\\resultcache\\testfinished',
-        10 => 'phpunit\\runner\\resultcache\\duration',
-        11 => 'phpunit\\runner\\resultcache\\registersubscribers',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ResultCache/ResultCacheId.php' => 
-    array (
-      0 => '65beda1f3fdae6d6a3c7323ef42e51cf63aefd0fad32e8bd8345b6a199f32d23',
-      1 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\resultcacheid',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\fromtest',
-        1 => 'phpunit\\runner\\resultcache\\fromreorderable',
-        2 => 'phpunit\\runner\\resultcache\\fromtestclassandmethodname',
-        3 => 'phpunit\\runner\\resultcache\\__construct',
-        4 => 'phpunit\\runner\\resultcache\\asstring',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ResultCache/Subscriber/Subscriber.php' => 
-    array (
-      0 => '5214f7801e3647ccac80edb3fee8f9f419db85b0883ebf60161f265b0fa1aab0',
-      1 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\subscriber',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\__construct',
-        1 => 'phpunit\\runner\\resultcache\\handler',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ResultCache/Subscriber/TestConsideredRiskySubscriber.php' => 
-    array (
-      0 => '51ad5d158dc9b37aeff336a1fa4b45000f503d313d910ac4e2ff6a24d68ca56d',
-      1 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\testconsideredriskysubscriber',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\notify',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ResultCache/Subscriber/TestErroredSubscriber.php' => 
-    array (
-      0 => '83020c2a025ddb6c297457c732f2848ec5a20b5fda2d4b288690584202f0d3f4',
-      1 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\testerroredsubscriber',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\notify',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ResultCache/Subscriber/TestFailedSubscriber.php' => 
-    array (
-      0 => '762251ab7ee82b79d8cc6e6c16bd7b2fe4cd69d7feb1ce315ffdf731e73e65c1',
-      1 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\testfailedsubscriber',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\notify',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ResultCache/Subscriber/TestFinishedSubscriber.php' => 
-    array (
-      0 => '8082026d3b8ae06301378777430760d9ffec0efc3a6c634bf5f4efee3f0caed8',
-      1 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\testfinishedsubscriber',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\notify',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ResultCache/Subscriber/TestMarkedIncompleteSubscriber.php' => 
-    array (
-      0 => '11c0c841fe2b1e76ef1a96c1c9a3b056c0f93e05f1fbc28153c39fdbcd9f2318',
-      1 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\testmarkedincompletesubscriber',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\notify',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ResultCache/Subscriber/TestPreparedSubscriber.php' => 
-    array (
-      0 => '8adcb22362142282f57a9866225e3263d8c41fd36300d679f939082592ff3d8a',
-      1 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\testpreparedsubscriber',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\notify',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ResultCache/Subscriber/TestSkippedSubscriber.php' => 
-    array (
-      0 => 'ff20c5b0b504177b406e24da399c26f963e564a4833f95002c3f3f96ebcdca18',
-      1 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\testskippedsubscriber',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\notify',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ResultCache/Subscriber/TestSuiteFinishedSubscriber.php' => 
-    array (
-      0 => 'e29c719a5c3f79d8aa9c37608245de65b9a05a6f6c283ef0e275a2496eba2645',
-      1 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\testsuitefinishedsubscriber',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\notify',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ResultCache/Subscriber/TestSuiteStartedSubscriber.php' => 
-    array (
-      0 => 'd33eddb9552de13a27f8c82810865a242aae6a4906a003a3344c59b2da7dd0df',
-      1 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\testsuitestartedsubscriber',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\runner\\resultcache\\notify',
+        9 => 'phpunit\\runner\\phpt\\repetition',
+        10 => 'phpunit\\runner\\phpt\\markskippedforrepeatabort',
+        11 => 'phpunit\\runner\\phpt\\assertphptexpectation',
+        12 => 'phpunit\\runner\\phpt\\shouldtestbeskipped',
+        13 => 'phpunit\\runner\\phpt\\shouldruninsubprocess',
+        14 => 'phpunit\\runner\\phpt\\runcodeinlocalsandbox',
+        15 => 'phpunit\\runner\\phpt\\runclean',
+        16 => 'phpunit\\runner\\phpt\\cleanupforcoverage',
+        17 => 'phpunit\\runner\\phpt\\coveragefiles',
+        18 => 'phpunit\\runner\\phpt\\stringifyini',
+        19 => 'phpunit\\runner\\phpt\\locationhintfromdiff',
+        20 => 'phpunit\\runner\\phpt\\cleandiffline',
+        21 => 'phpunit\\runner\\phpt\\locationhint',
+        22 => 'phpunit\\runner\\phpt\\settings',
+        23 => 'phpunit\\runner\\phpt\\triggerrunnerwarningonphperrors',
+        24 => 'phpunit\\runner\\phpt\\sectionoffset',
+        25 => 'phpunit\\runner\\phpt\\ensurecoveragefiledoesnotexist',
       ),
       3 => 
       array (
@@ -13555,7 +13429,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/ShutdownHandler.php' => 
     array (
-      0 => '764194f526922c89919650ffbb5fa0acf8e168eba25771225b3b020fc5eaaf61',
+      0 => 'd88a71184dc5ef023de2c8f81c8e2f5e7beeebe6fc1d24a5cfce79326dbfd00f',
       1 => 
       array (
         0 => 'phpunit\\runner\\shutdownhandler',
@@ -13572,7 +13446,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Collector.php' => 
     array (
-      0 => 'f273a1ee8c3a17f3f7fa43ed11bd3cbda7fe983be4a89550c6b01642fbdbdf62',
+      0 => 'ed9d21943d38be82ef633859fa9dfe1e01a787081b98a4b84de228e3826b13c5',
       1 => 
       array (
         0 => 'phpunit\\testrunner\\testresult\\collector',
@@ -13593,33 +13467,47 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         11 => 'phpunit\\testrunner\\testresult\\aftertestclassmethodfailed',
         12 => 'phpunit\\testrunner\\testresult\\testerrored',
         13 => 'phpunit\\testrunner\\testresult\\testfailed',
-        14 => 'phpunit\\testrunner\\testresult\\testmarkedincomplete',
-        15 => 'phpunit\\testrunner\\testresult\\testskipped',
-        16 => 'phpunit\\testrunner\\testresult\\testconsideredrisky',
-        17 => 'phpunit\\testrunner\\testresult\\testtriggereddeprecation',
-        18 => 'phpunit\\testrunner\\testresult\\testtriggeredphpdeprecation',
-        19 => 'phpunit\\testrunner\\testresult\\testtriggeredphpunitdeprecation',
-        20 => 'phpunit\\testrunner\\testresult\\testtriggeredphpunitnotice',
-        21 => 'phpunit\\testrunner\\testresult\\testtriggerederror',
-        22 => 'phpunit\\testrunner\\testresult\\testtriggerednotice',
-        23 => 'phpunit\\testrunner\\testresult\\testtriggeredphpnotice',
-        24 => 'phpunit\\testrunner\\testresult\\testtriggeredwarning',
-        25 => 'phpunit\\testrunner\\testresult\\testtriggeredphpwarning',
-        26 => 'phpunit\\testrunner\\testresult\\testtriggeredphpuniterror',
-        27 => 'phpunit\\testrunner\\testresult\\testtriggeredphpunitwarning',
-        28 => 'phpunit\\testrunner\\testresult\\testrunnertriggereddeprecation',
-        29 => 'phpunit\\testrunner\\testresult\\testrunnertriggerednotice',
-        30 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredwarning',
-        31 => 'phpunit\\testrunner\\testresult\\childprocesserrored',
-        32 => 'phpunit\\testrunner\\testresult\\haserroredtests',
-        33 => 'phpunit\\testrunner\\testresult\\hasfailedtests',
-        34 => 'phpunit\\testrunner\\testresult\\hasriskytests',
-        35 => 'phpunit\\testrunner\\testresult\\hasskippedtests',
-        36 => 'phpunit\\testrunner\\testresult\\hasincompletetests',
-        37 => 'phpunit\\testrunner\\testresult\\hasdeprecations',
-        38 => 'phpunit\\testrunner\\testresult\\hasnotices',
-        39 => 'phpunit\\testrunner\\testresult\\haswarnings',
-        40 => 'phpunit\\testrunner\\testresult\\issueid',
+        14 => 'phpunit\\testrunner\\testresult\\testattempterrored',
+        15 => 'phpunit\\testrunner\\testresult\\testattemptfailed',
+        16 => 'phpunit\\testrunner\\testresult\\testmarkedincomplete',
+        17 => 'phpunit\\testrunner\\testresult\\testskipped',
+        18 => 'phpunit\\testrunner\\testresult\\testconsideredrisky',
+        19 => 'phpunit\\testrunner\\testresult\\testtriggereddeprecation',
+        20 => 'phpunit\\testrunner\\testresult\\testtriggeredphpdeprecation',
+        21 => 'phpunit\\testrunner\\testresult\\testtriggeredphpunitdeprecation',
+        22 => 'phpunit\\testrunner\\testresult\\testtriggeredphpunitnotice',
+        23 => 'phpunit\\testrunner\\testresult\\testtriggerederror',
+        24 => 'phpunit\\testrunner\\testresult\\testtriggerednotice',
+        25 => 'phpunit\\testrunner\\testresult\\testtriggeredphpnotice',
+        26 => 'phpunit\\testrunner\\testresult\\testtriggeredwarning',
+        27 => 'phpunit\\testrunner\\testresult\\testtriggeredphpwarning',
+        28 => 'phpunit\\testrunner\\testresult\\testtriggeredphpuniterror',
+        29 => 'phpunit\\testrunner\\testresult\\testtriggeredphpunitwarning',
+        30 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredphpunitdeprecation',
+        31 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredphpunitnotice',
+        32 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredphpunitwarning',
+        33 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuedeprecation',
+        34 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissueerror',
+        35 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuenotice',
+        36 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuephpdeprecation',
+        37 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuephpnotice',
+        38 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuephpwarning',
+        39 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuewarning',
+        40 => 'phpunit\\testrunner\\testresult\\childprocesserrored',
+        41 => 'phpunit\\testrunner\\testresult\\numberoferroredtests',
+        42 => 'phpunit\\testrunner\\testresult\\numberoffailedtests',
+        43 => 'phpunit\\testrunner\\testresult\\numberofriskytests',
+        44 => 'phpunit\\testrunner\\testresult\\numberofskippedtests',
+        45 => 'phpunit\\testrunner\\testresult\\numberofincompletetests',
+        46 => 'phpunit\\testrunner\\testresult\\numberofnotices',
+        47 => 'phpunit\\testrunner\\testresult\\numberofwarnings',
+        48 => 'phpunit\\testrunner\\testresult\\rememberretriedtest',
+        49 => 'phpunit\\testrunner\\testresult\\forgetretriedtest',
+        50 => 'phpunit\\testrunner\\testresult\\retriedtestid',
+        51 => 'phpunit\\testrunner\\testresult\\logicaltestid',
+        52 => 'phpunit\\testrunner\\testresult\\registertestmethodaspassedifnorunfailedorerrored',
+        53 => 'phpunit\\testrunner\\testresult\\issueid',
+        54 => 'phpunit\\testrunner\\testresult\\registerdeprecationbytrigger',
       ),
       3 => 
       array (
@@ -13627,7 +13515,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Facade.php' => 
     array (
-      0 => '8ae490d37ffd29f1ea4a273c5a0f9d6fcc80214ea051fc5ad67c88cc440e7370',
+      0 => '56998132aad6007afa935a835d519c72cc1e7322f448e8b8a0d532d877a00d5f',
       1 => 
       array (
         0 => 'phpunit\\testrunner\\testresult\\facade',
@@ -13635,10 +13523,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\testrunner\\testresult\\init',
-        1 => 'phpunit\\testrunner\\testresult\\result',
-        2 => 'phpunit\\testrunner\\testresult\\shouldstop',
-        3 => 'phpunit\\testrunner\\testresult\\collector',
-        4 => 'phpunit\\testrunner\\testresult\\stopondeprecation',
+        1 => 'phpunit\\testrunner\\testresult\\interrupt',
+        2 => 'phpunit\\testrunner\\testresult\\wasinterrupted',
+        3 => 'phpunit\\testrunner\\testresult\\result',
+        4 => 'phpunit\\testrunner\\testresult\\shouldstop',
+        5 => 'phpunit\\testrunner\\testresult\\collector',
+        6 => 'phpunit\\testrunner\\testresult\\stopondeprecation',
       ),
       3 => 
       array (
@@ -13646,7 +13536,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Issue.php' => 
     array (
-      0 => '0033c452c9e0daee44eb5f8848791dbf69418fbd44b5f4992552d629d2db194c',
+      0 => '9a2a2dbd93a1f36d68fdfb7a66d2b1cf890f69d00e2c7cf0880c25de35a594f3',
       1 => 
       array (
         0 => 'phpunit\\testrunner\\testresult\\issues\\issue',
@@ -13670,7 +13560,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/PassedTests.php' => 
     array (
-      0 => '619732a2826fb13aa44c7b209fedc017e5e428ac1f1130d54e78efde957b8060',
+      0 => 'd5b0ff17025a4aa7144585901e76f0366aa536487914270442bf5dda5e9b3511',
       1 => 
       array (
         0 => 'phpunit\\testrunner\\testresult\\passedtests',
@@ -13878,51 +13768,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       1 => 
       array (
         0 => 'phpunit\\testrunner\\testresult\\testpreparedsubscriber',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\testrunner\\testresult\\notify',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php' => 
-    array (
-      0 => 'cc8c207929f9e49ddc224cfe117f717b67c9223d6a158a99d604580514a6fb95',
-      1 => 
-      array (
-        0 => 'phpunit\\testrunner\\testresult\\testrunnertriggereddeprecationsubscriber',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\testrunner\\testresult\\notify',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredNoticeSubscriber.php' => 
-    array (
-      0 => '9cf40586a420e5009ca076ae5878f04b49ddf0161ca2782e944acce0b1270a8c',
-      1 => 
-      array (
-        0 => 'phpunit\\testrunner\\testresult\\testrunnertriggerednoticesubscriber',
-      ),
-      2 => 
-      array (
-        0 => 'phpunit\\testrunner\\testresult\\notify',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php' => 
-    array (
-      0 => 'd439428cde1b9349b2673d83065d1f79d10d38cfbc7fcbac65d10563ba21cffb',
-      1 => 
-      array (
-        0 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredwarningsubscriber',
       ),
       2 => 
       array (
@@ -14159,7 +14004,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/TestResult.php' => 
     array (
-      0 => '1e1442fb040291d41784da87c6423d4275bca0592155c7005c82b429507fef0e',
+      0 => '97857e5901c1b734c40b1ed00f4bd46daa8cf0524fe394dd3c6410c73ffaeb89',
       1 => 
       array (
         0 => 'phpunit\\testrunner\\testresult\\testresult',
@@ -14167,79 +14012,104 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\testrunner\\testresult\\__construct',
-        1 => 'phpunit\\testrunner\\testresult\\numberoftestsrun',
-        2 => 'phpunit\\testrunner\\testresult\\numberofassertions',
-        3 => 'phpunit\\testrunner\\testresult\\testerroredevents',
-        4 => 'phpunit\\testrunner\\testresult\\numberoftesterroredevents',
-        5 => 'phpunit\\testrunner\\testresult\\hastesterroredevents',
-        6 => 'phpunit\\testrunner\\testresult\\testfailedevents',
-        7 => 'phpunit\\testrunner\\testresult\\numberoftestfailedevents',
-        8 => 'phpunit\\testrunner\\testresult\\hastestfailedevents',
-        9 => 'phpunit\\testrunner\\testresult\\testconsideredriskyevents',
-        10 => 'phpunit\\testrunner\\testresult\\numberoftestswithtestconsideredriskyevents',
-        11 => 'phpunit\\testrunner\\testresult\\hastestconsideredriskyevents',
-        12 => 'phpunit\\testrunner\\testresult\\testsuiteskippedevents',
-        13 => 'phpunit\\testrunner\\testresult\\numberoftestskippedbytestsuiteskippedevents',
-        14 => 'phpunit\\testrunner\\testresult\\hastestsuiteskippedevents',
-        15 => 'phpunit\\testrunner\\testresult\\testskippedevents',
-        16 => 'phpunit\\testrunner\\testresult\\numberoftestskippedevents',
-        17 => 'phpunit\\testrunner\\testresult\\hastestskippedevents',
-        18 => 'phpunit\\testrunner\\testresult\\testmarkedincompleteevents',
-        19 => 'phpunit\\testrunner\\testresult\\numberoftestmarkedincompleteevents',
-        20 => 'phpunit\\testrunner\\testresult\\hastestmarkedincompleteevents',
-        21 => 'phpunit\\testrunner\\testresult\\testtriggeredphpunitdeprecationevents',
-        22 => 'phpunit\\testrunner\\testresult\\numberoftestswithtesttriggeredphpunitdeprecationevents',
-        23 => 'phpunit\\testrunner\\testresult\\hastesttriggeredphpunitdeprecationevents',
-        24 => 'phpunit\\testrunner\\testresult\\testtriggeredphpuniterrorevents',
-        25 => 'phpunit\\testrunner\\testresult\\numberoftestswithtesttriggeredphpuniterrorevents',
-        26 => 'phpunit\\testrunner\\testresult\\hastesttriggeredphpuniterrorevents',
-        27 => 'phpunit\\testrunner\\testresult\\testtriggeredphpunitnoticeevents',
-        28 => 'phpunit\\testrunner\\testresult\\numberoftestswithtesttriggeredphpunitnoticeevents',
-        29 => 'phpunit\\testrunner\\testresult\\hastesttriggeredphpunitnoticeevents',
-        30 => 'phpunit\\testrunner\\testresult\\testtriggeredphpunitwarningevents',
-        31 => 'phpunit\\testrunner\\testresult\\numberoftestswithtesttriggeredphpunitwarningevents',
-        32 => 'phpunit\\testrunner\\testresult\\hastesttriggeredphpunitwarningevents',
-        33 => 'phpunit\\testrunner\\testresult\\testrunnertriggereddeprecationevents',
-        34 => 'phpunit\\testrunner\\testresult\\numberoftestrunnertriggereddeprecationevents',
-        35 => 'phpunit\\testrunner\\testresult\\hastestrunnertriggereddeprecationevents',
-        36 => 'phpunit\\testrunner\\testresult\\testrunnertriggerednoticeevents',
-        37 => 'phpunit\\testrunner\\testresult\\numberoftestrunnertriggerednoticeevents',
-        38 => 'phpunit\\testrunner\\testresult\\hastestrunnertriggerednoticeevents',
-        39 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredwarningevents',
-        40 => 'phpunit\\testrunner\\testresult\\numberoftestrunnertriggeredwarningevents',
-        41 => 'phpunit\\testrunner\\testresult\\hastestrunnertriggeredwarningevents',
-        42 => 'phpunit\\testrunner\\testresult\\wassuccessful',
-        43 => 'phpunit\\testrunner\\testresult\\hasissues',
-        44 => 'phpunit\\testrunner\\testresult\\hastestswithissues',
-        45 => 'phpunit\\testrunner\\testresult\\errors',
-        46 => 'phpunit\\testrunner\\testresult\\deprecations',
-        47 => 'phpunit\\testrunner\\testresult\\notices',
-        48 => 'phpunit\\testrunner\\testresult\\warnings',
-        49 => 'phpunit\\testrunner\\testresult\\phpdeprecations',
-        50 => 'phpunit\\testrunner\\testresult\\phpnotices',
-        51 => 'phpunit\\testrunner\\testresult\\phpwarnings',
-        52 => 'phpunit\\testrunner\\testresult\\hastests',
-        53 => 'phpunit\\testrunner\\testresult\\haserrors',
-        54 => 'phpunit\\testrunner\\testresult\\numberoferrors',
-        55 => 'phpunit\\testrunner\\testresult\\hasdeprecations',
-        56 => 'phpunit\\testrunner\\testresult\\hasphporuserdeprecations',
-        57 => 'phpunit\\testrunner\\testresult\\numberofphporuserdeprecations',
-        58 => 'phpunit\\testrunner\\testresult\\hasphpunitdeprecations',
-        59 => 'phpunit\\testrunner\\testresult\\numberofphpunitdeprecations',
-        60 => 'phpunit\\testrunner\\testresult\\hasphpunitwarnings',
-        61 => 'phpunit\\testrunner\\testresult\\numberofphpunitwarnings',
-        62 => 'phpunit\\testrunner\\testresult\\numberofdeprecations',
-        63 => 'phpunit\\testrunner\\testresult\\hasnotices',
-        64 => 'phpunit\\testrunner\\testresult\\numberofnotices',
-        65 => 'phpunit\\testrunner\\testresult\\haswarnings',
-        66 => 'phpunit\\testrunner\\testresult\\numberofwarnings',
-        67 => 'phpunit\\testrunner\\testresult\\hasincompletetests',
-        68 => 'phpunit\\testrunner\\testresult\\hasriskytests',
-        69 => 'phpunit\\testrunner\\testresult\\hasskippedtests',
-        70 => 'phpunit\\testrunner\\testresult\\hasissuesignoredbybaseline',
-        71 => 'phpunit\\testrunner\\testresult\\numberofissuesignoredbybaseline',
-        72 => 'phpunit\\testrunner\\testresult\\hasphpunitnotices',
-        73 => 'phpunit\\testrunner\\testresult\\numberofphpunitnotices',
+        1 => 'phpunit\\testrunner\\testresult\\hasretriedtests',
+        2 => 'phpunit\\testrunner\\testresult\\retriedtests',
+        3 => 'phpunit\\testrunner\\testresult\\numberoftestsrun',
+        4 => 'phpunit\\testrunner\\testresult\\numberofassertions',
+        5 => 'phpunit\\testrunner\\testresult\\testerroredevents',
+        6 => 'phpunit\\testrunner\\testresult\\numberoftesterroredevents',
+        7 => 'phpunit\\testrunner\\testresult\\hastesterroredevents',
+        8 => 'phpunit\\testrunner\\testresult\\testfailedevents',
+        9 => 'phpunit\\testrunner\\testresult\\numberoftestfailedevents',
+        10 => 'phpunit\\testrunner\\testresult\\hastestfailedevents',
+        11 => 'phpunit\\testrunner\\testresult\\testconsideredriskyevents',
+        12 => 'phpunit\\testrunner\\testresult\\numberoftestswithtestconsideredriskyevents',
+        13 => 'phpunit\\testrunner\\testresult\\hastestconsideredriskyevents',
+        14 => 'phpunit\\testrunner\\testresult\\testsuiteskippedevents',
+        15 => 'phpunit\\testrunner\\testresult\\numberoftestskippedbytestsuiteskippedevents',
+        16 => 'phpunit\\testrunner\\testresult\\hastestsuiteskippedevents',
+        17 => 'phpunit\\testrunner\\testresult\\testskippedevents',
+        18 => 'phpunit\\testrunner\\testresult\\numberoftestskippedevents',
+        19 => 'phpunit\\testrunner\\testresult\\hastestskippedevents',
+        20 => 'phpunit\\testrunner\\testresult\\testmarkedincompleteevents',
+        21 => 'phpunit\\testrunner\\testresult\\numberoftestmarkedincompleteevents',
+        22 => 'phpunit\\testrunner\\testresult\\hastestmarkedincompleteevents',
+        23 => 'phpunit\\testrunner\\testresult\\testtriggeredphpunitdeprecationevents',
+        24 => 'phpunit\\testrunner\\testresult\\numberoftestswithtesttriggeredphpunitdeprecationevents',
+        25 => 'phpunit\\testrunner\\testresult\\hastesttriggeredphpunitdeprecationevents',
+        26 => 'phpunit\\testrunner\\testresult\\testtriggeredphpuniterrorevents',
+        27 => 'phpunit\\testrunner\\testresult\\numberoftestswithtesttriggeredphpuniterrorevents',
+        28 => 'phpunit\\testrunner\\testresult\\hastesttriggeredphpuniterrorevents',
+        29 => 'phpunit\\testrunner\\testresult\\testtriggeredphpunitnoticeevents',
+        30 => 'phpunit\\testrunner\\testresult\\numberoftestswithtesttriggeredphpunitnoticeevents',
+        31 => 'phpunit\\testrunner\\testresult\\hastesttriggeredphpunitnoticeevents',
+        32 => 'phpunit\\testrunner\\testresult\\testtriggeredphpunitwarningevents',
+        33 => 'phpunit\\testrunner\\testresult\\numberoftestswithtesttriggeredphpunitwarningevents',
+        34 => 'phpunit\\testrunner\\testresult\\hastesttriggeredphpunitwarningevents',
+        35 => 'phpunit\\testrunner\\testresult\\testrunnertriggereddeprecationevents',
+        36 => 'phpunit\\testrunner\\testresult\\numberoftestrunnertriggereddeprecationevents',
+        37 => 'phpunit\\testrunner\\testresult\\hastestrunnertriggereddeprecationevents',
+        38 => 'phpunit\\testrunner\\testresult\\testrunnertriggerednoticeevents',
+        39 => 'phpunit\\testrunner\\testresult\\numberoftestrunnertriggerednoticeevents',
+        40 => 'phpunit\\testrunner\\testresult\\hastestrunnertriggerednoticeevents',
+        41 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredwarningevents',
+        42 => 'phpunit\\testrunner\\testresult\\numberoftestrunnertriggeredwarningevents',
+        43 => 'phpunit\\testrunner\\testresult\\hastestrunnertriggeredwarningevents',
+        44 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuedeprecationevents',
+        45 => 'phpunit\\testrunner\\testresult\\hastestrunnertriggeredissuedeprecationevents',
+        46 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissueerrorevents',
+        47 => 'phpunit\\testrunner\\testresult\\hastestrunnertriggeredissueerrorevents',
+        48 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuenoticeevents',
+        49 => 'phpunit\\testrunner\\testresult\\hastestrunnertriggeredissuenoticeevents',
+        50 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuephpdeprecationevents',
+        51 => 'phpunit\\testrunner\\testresult\\hastestrunnertriggeredissuephpdeprecationevents',
+        52 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuephpnoticeevents',
+        53 => 'phpunit\\testrunner\\testresult\\hastestrunnertriggeredissuephpnoticeevents',
+        54 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuephpwarningevents',
+        55 => 'phpunit\\testrunner\\testresult\\hastestrunnertriggeredissuephpwarningevents',
+        56 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuewarningevents',
+        57 => 'phpunit\\testrunner\\testresult\\hastestrunnertriggeredissuewarningevents',
+        58 => 'phpunit\\testrunner\\testresult\\wassuccessful',
+        59 => 'phpunit\\testrunner\\testresult\\hasissues',
+        60 => 'phpunit\\testrunner\\testresult\\hasissuestriggeredoutsideoftests',
+        61 => 'phpunit\\testrunner\\testresult\\hastestswithissues',
+        62 => 'phpunit\\testrunner\\testresult\\errors',
+        63 => 'phpunit\\testrunner\\testresult\\deprecations',
+        64 => 'phpunit\\testrunner\\testresult\\notices',
+        65 => 'phpunit\\testrunner\\testresult\\warnings',
+        66 => 'phpunit\\testrunner\\testresult\\phpdeprecations',
+        67 => 'phpunit\\testrunner\\testresult\\phpnotices',
+        68 => 'phpunit\\testrunner\\testresult\\phpwarnings',
+        69 => 'phpunit\\testrunner\\testresult\\hastests',
+        70 => 'phpunit\\testrunner\\testresult\\haserrors',
+        71 => 'phpunit\\testrunner\\testresult\\numberoferrors',
+        72 => 'phpunit\\testrunner\\testresult\\hasdeprecations',
+        73 => 'phpunit\\testrunner\\testresult\\hasphporuserdeprecations',
+        74 => 'phpunit\\testrunner\\testresult\\numberofphporuserdeprecations',
+        75 => 'phpunit\\testrunner\\testresult\\hasselfdeprecations',
+        76 => 'phpunit\\testrunner\\testresult\\numberofselfdeprecations',
+        77 => 'phpunit\\testrunner\\testresult\\hasdirectdeprecations',
+        78 => 'phpunit\\testrunner\\testresult\\numberofdirectdeprecations',
+        79 => 'phpunit\\testrunner\\testresult\\hasindirectdeprecations',
+        80 => 'phpunit\\testrunner\\testresult\\numberofindirectdeprecations',
+        81 => 'phpunit\\testrunner\\testresult\\hasdeprecationswithunknowntrigger',
+        82 => 'phpunit\\testrunner\\testresult\\numberofdeprecationswithunknowntrigger',
+        83 => 'phpunit\\testrunner\\testresult\\hasphpunitdeprecations',
+        84 => 'phpunit\\testrunner\\testresult\\numberofphpunitdeprecations',
+        85 => 'phpunit\\testrunner\\testresult\\hasphpunitwarnings',
+        86 => 'phpunit\\testrunner\\testresult\\numberofphpunitwarnings',
+        87 => 'phpunit\\testrunner\\testresult\\numberofdeprecations',
+        88 => 'phpunit\\testrunner\\testresult\\hasnotices',
+        89 => 'phpunit\\testrunner\\testresult\\numberofnotices',
+        90 => 'phpunit\\testrunner\\testresult\\haswarnings',
+        91 => 'phpunit\\testrunner\\testresult\\numberofwarnings',
+        92 => 'phpunit\\testrunner\\testresult\\hasincompletetests',
+        93 => 'phpunit\\testrunner\\testresult\\hasriskytests',
+        94 => 'phpunit\\testrunner\\testresult\\hasskippedtests',
+        95 => 'phpunit\\testrunner\\testresult\\hasissuesignoredbybaseline',
+        96 => 'phpunit\\testrunner\\testresult\\numberofissuesignoredbybaseline',
+        97 => 'phpunit\\testrunner\\testresult\\hasphpunitnotices',
+        98 => 'phpunit\\testrunner\\testresult\\numberofphpunitnotices',
       ),
       3 => 
       array (
@@ -14247,7 +14117,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestSuiteLoader.php' => 
     array (
-      0 => 'e950f4fdbfb9625950fdcba032460ddd55342454814821a15d5b678ed7a23081',
+      0 => 'c1cc8be8041f4f514a6d09ff84488fc37f76369f37d451845d3eee4eb149b3d1',
       1 => 
       array (
         0 => 'phpunit\\runner\\testsuiteloader',
@@ -14257,6 +14127,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\runner\\load',
         1 => 'phpunit\\runner\\classnamefromfilename',
         2 => 'phpunit\\runner\\loadsuiteclassfile',
+        3 => 'phpunit\\runner\\mapclassestothefilesthatdeclarethem',
       ),
       3 => 
       array (
@@ -14264,7 +14135,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestSuiteSorter.php' => 
     array (
-      0 => 'e18f3742690b83181a85a8652d4a14f06c69ce6d7e4950d591ec345e82e52f4d',
+      0 => '8cee4fec3726cda5a910341b46e8c91e7f60ca9b9c3d0c44e9b40fe37f809288',
       1 => 
       array (
         0 => 'phpunit\\runner\\testsuitesorter',
@@ -14279,11 +14150,15 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         5 => 'phpunit\\runner\\randomize',
         6 => 'phpunit\\runner\\sortdefectsfirst',
         7 => 'phpunit\\runner\\sortbyduration',
-        8 => 'phpunit\\runner\\sortbysize',
-        9 => 'phpunit\\runner\\cmpdefectpriorityandtime',
-        10 => 'phpunit\\runner\\cmpduration',
-        11 => 'phpunit\\runner\\cmpsize',
-        12 => 'phpunit\\runner\\resolvedependencies',
+        8 => 'phpunit\\runner\\sortbydurationdescending',
+        9 => 'phpunit\\runner\\sortbysize',
+        10 => 'phpunit\\runner\\sortbysizedescending',
+        11 => 'phpunit\\runner\\cmpdefectpriorityandtime',
+        12 => 'phpunit\\runner\\cmpduration',
+        13 => 'phpunit\\runner\\durationweight',
+        14 => 'phpunit\\runner\\cmpsize',
+        15 => 'phpunit\\runner\\sizeweight',
+        16 => 'phpunit\\runner\\resolvedependencies',
       ),
       3 => 
       array (
@@ -14291,7 +14166,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Version.php' => 
     array (
-      0 => '6e32d14e5ab836b849f5938c0fe8ed0ffa83c3a58dad56da081b9c7c2b90a813',
+      0 => '0ed034d10a2ce1b4ba04150699947dad30d4b720295ded5414098b4569f1e9f5',
       1 => 
       array (
         0 => 'phpunit\\runner\\version',
@@ -14309,7 +14184,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Application.php' => 
     array (
-      0 => 'fa467cd4daf2b745116380e9e00373ee84e75c71a62f333efa6dd838cbf1f620',
+      0 => 'c2c266cf59c3f7de717e7fe392611aaaa1f723887aec57fe7a9b671a60f9db22',
       1 => 
       array (
         0 => 'phpunit\\textui\\application',
@@ -14331,13 +14206,18 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         12 => 'phpunit\\textui\\writerandomseedinformation',
         13 => 'phpunit\\textui\\registerlogfilewriters',
         14 => 'phpunit\\textui\\testdoxresultcollector',
-        15 => 'phpunit\\textui\\initializetestresultcache',
-        16 => 'phpunit\\textui\\configurebaseline',
-        17 => 'phpunit\\textui\\exitwithcrashmessage',
-        18 => 'phpunit\\textui\\exitwitherrormessage',
-        19 => 'phpunit\\textui\\filteredtests',
-        20 => 'phpunit\\textui\\configuredeprecationtriggers',
-        21 => 'phpunit\\textui\\preload',
+        15 => 'phpunit\\textui\\initializetestrunhistory',
+        16 => 'phpunit\\textui\\testrunhistorymaybepruned',
+        17 => 'phpunit\\textui\\configurebaseline',
+        18 => 'phpunit\\textui\\checkphpconfiguration',
+        19 => 'phpunit\\textui\\registerinterrupthandler',
+        20 => 'phpunit\\textui\\exitwithcrashmessage',
+        21 => 'phpunit\\textui\\exitwitherrormessage',
+        22 => 'phpunit\\textui\\filteredtests',
+        23 => 'phpunit\\textui\\configuredeprecationtriggers',
+        24 => 'phpunit\\textui\\configureissuetriggerresolvers',
+        25 => 'phpunit\\textui\\configuredeprecationfilters',
+        26 => 'phpunit\\textui\\preload',
       ),
       3 => 
       array (
@@ -14376,7 +14256,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Command/Commands/CheckPhpConfigurationCommand.php' => 
     array (
-      0 => '95851e6042a0554f39b74166b05108da52856fad923861902482ea6028594079',
+      0 => 'bf14a3332bf2808eba44f5fa23edfab1ece5c54dcaa405dd95df79a027bacccb',
       1 => 
       array (
         0 => 'phpunit\\textui\\command\\checkphpconfigurationcommand',
@@ -14387,7 +14267,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         1 => 'phpunit\\textui\\command\\execute',
         2 => 'phpunit\\textui\\command\\ok',
         3 => 'phpunit\\textui\\command\\notok',
-        4 => 'phpunit\\textui\\command\\settings',
       ),
       3 => 
       array (
@@ -14427,7 +14306,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Command/Commands/ListTestFilesCommand.php' => 
     array (
-      0 => 'ac3fb06cee7e1dbbc27dacfe87dfaa2c8cce98ca546823e3178990752e4ef0bb',
+      0 => '40f3272c95d443c78eef58d1ec0dbfc399e8c7d32f5cfc2148cfe02c6c0fc553',
       1 => 
       array (
         0 => 'phpunit\\textui\\command\\listtestfilescommand',
@@ -14476,7 +14355,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Command/Commands/ListTestsAsXmlCommand.php' => 
     array (
-      0 => '3deb2da16c1693865d3d4f681a21b68a87a3a3dcdb9487f2b9381eff33d82501',
+      0 => '2263eea89d684193fbc1eef118f8ba2d78cab6c5dd51ce6c325777fdfea2dcae',
       1 => 
       array (
         0 => 'phpunit\\textui\\command\\listtestsasxmlcommand',
@@ -14589,7 +14468,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/BootstrapLoader.php' => 
     array (
-      0 => '9fb3ddc88e271ccad1bc100428aafe10d98a58b597935cf98b4f786a852716f7',
+      0 => '9f8f5853c2b056e4973e367244ef807b310530d19156f334591474d09da0030c',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\bootstraploader',
@@ -14620,7 +14499,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Cli/Builder.php' => 
     array (
-      0 => '1a7400fce5803a3ba0b2b360d51e9cc8728199d7f48ea31fc6f695efcfa7f694',
+      0 => '3d01ffa14e352fc6b6596294b65842499ba76296719d34821ec0f00f167fe3c7',
       1 => 
       array (
         0 => 'phpunit\\textui\\cliarguments\\builder',
@@ -14629,7 +14508,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\textui\\cliarguments\\fromparameters',
         1 => 'phpunit\\textui\\cliarguments\\markprocessed',
-        2 => 'phpunit\\textui\\cliarguments\\warnwhenoptionsconflict',
+        2 => 'phpunit\\textui\\cliarguments\\warnaboutconflictingoptions',
+        3 => 'phpunit\\textui\\cliarguments\\parsestoponvalue',
+        4 => 'phpunit\\textui\\cliarguments\\requirenonemptyvalue',
+        5 => 'phpunit\\textui\\cliarguments\\requirepositiveintvalue',
       ),
       3 => 
       array (
@@ -14637,7 +14519,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Cli/Configuration.php' => 
     array (
-      0 => '2d52648d5f04aca0fa9040b4f0b170409694346c9caf7fc09b5bc037150cc83b',
+      0 => '0f3a4873d595f51778430febcf485738cba50b894db27dcfe02b1e19caaa823f',
       1 => 
       array (
         0 => 'phpunit\\textui\\cliarguments\\configuration',
@@ -14646,241 +14528,281 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\textui\\cliarguments\\__construct',
         1 => 'phpunit\\textui\\cliarguments\\arguments',
-        2 => 'phpunit\\textui\\cliarguments\\hasall',
-        3 => 'phpunit\\textui\\cliarguments\\all',
-        4 => 'phpunit\\textui\\cliarguments\\hasatleastversion',
-        5 => 'phpunit\\textui\\cliarguments\\atleastversion',
-        6 => 'phpunit\\textui\\cliarguments\\hasbackupglobals',
-        7 => 'phpunit\\textui\\cliarguments\\backupglobals',
-        8 => 'phpunit\\textui\\cliarguments\\hasbackupstaticproperties',
-        9 => 'phpunit\\textui\\cliarguments\\backupstaticproperties',
-        10 => 'phpunit\\textui\\cliarguments\\hasbestrictaboutchangestoglobalstate',
-        11 => 'phpunit\\textui\\cliarguments\\bestrictaboutchangestoglobalstate',
-        12 => 'phpunit\\textui\\cliarguments\\hasbootstrap',
-        13 => 'phpunit\\textui\\cliarguments\\bootstrap',
-        14 => 'phpunit\\textui\\cliarguments\\hascachedirectory',
-        15 => 'phpunit\\textui\\cliarguments\\cachedirectory',
-        16 => 'phpunit\\textui\\cliarguments\\hascacheresult',
-        17 => 'phpunit\\textui\\cliarguments\\cacheresult',
-        18 => 'phpunit\\textui\\cliarguments\\checkphpconfiguration',
-        19 => 'phpunit\\textui\\cliarguments\\checkversion',
-        20 => 'phpunit\\textui\\cliarguments\\hascolors',
-        21 => 'phpunit\\textui\\cliarguments\\colors',
-        22 => 'phpunit\\textui\\cliarguments\\hascolumns',
-        23 => 'phpunit\\textui\\cliarguments\\columns',
-        24 => 'phpunit\\textui\\cliarguments\\hasconfigurationfile',
-        25 => 'phpunit\\textui\\cliarguments\\configurationfile',
-        26 => 'phpunit\\textui\\cliarguments\\hascoveragefilter',
-        27 => 'phpunit\\textui\\cliarguments\\coveragefilter',
-        28 => 'phpunit\\textui\\cliarguments\\hascoverageclover',
-        29 => 'phpunit\\textui\\cliarguments\\coverageclover',
-        30 => 'phpunit\\textui\\cliarguments\\hascoveragecobertura',
-        31 => 'phpunit\\textui\\cliarguments\\coveragecobertura',
-        32 => 'phpunit\\textui\\cliarguments\\hascoveragecrap4j',
-        33 => 'phpunit\\textui\\cliarguments\\coveragecrap4j',
-        34 => 'phpunit\\textui\\cliarguments\\hascoveragehtml',
-        35 => 'phpunit\\textui\\cliarguments\\coveragehtml',
-        36 => 'phpunit\\textui\\cliarguments\\hascoverageopenclover',
-        37 => 'phpunit\\textui\\cliarguments\\coverageopenclover',
-        38 => 'phpunit\\textui\\cliarguments\\hascoveragephp',
-        39 => 'phpunit\\textui\\cliarguments\\coveragephp',
-        40 => 'phpunit\\textui\\cliarguments\\hascoveragetext',
-        41 => 'phpunit\\textui\\cliarguments\\coveragetext',
-        42 => 'phpunit\\textui\\cliarguments\\hascoveragetextshowuncoveredfiles',
-        43 => 'phpunit\\textui\\cliarguments\\coveragetextshowuncoveredfiles',
-        44 => 'phpunit\\textui\\cliarguments\\hascoveragetextshowonlysummary',
-        45 => 'phpunit\\textui\\cliarguments\\coveragetextshowonlysummary',
-        46 => 'phpunit\\textui\\cliarguments\\hascoveragexml',
-        47 => 'phpunit\\textui\\cliarguments\\coveragexml',
-        48 => 'phpunit\\textui\\cliarguments\\hasexcludesourcefromxmlcoverage',
-        49 => 'phpunit\\textui\\cliarguments\\excludesourcefromxmlcoverage',
-        50 => 'phpunit\\textui\\cliarguments\\haspathcoverage',
-        51 => 'phpunit\\textui\\cliarguments\\pathcoverage',
-        52 => 'phpunit\\textui\\cliarguments\\warmcoveragecache',
-        53 => 'phpunit\\textui\\cliarguments\\hasdefaulttimelimit',
-        54 => 'phpunit\\textui\\cliarguments\\defaulttimelimit',
-        55 => 'phpunit\\textui\\cliarguments\\hasdisablecodecoverageignore',
-        56 => 'phpunit\\textui\\cliarguments\\disablecodecoverageignore',
-        57 => 'phpunit\\textui\\cliarguments\\hasdisallowtestoutput',
-        58 => 'phpunit\\textui\\cliarguments\\disallowtestoutput',
-        59 => 'phpunit\\textui\\cliarguments\\hasenforcetimelimit',
-        60 => 'phpunit\\textui\\cliarguments\\enforcetimelimit',
-        61 => 'phpunit\\textui\\cliarguments\\hasexcludegroups',
-        62 => 'phpunit\\textui\\cliarguments\\excludegroups',
-        63 => 'phpunit\\textui\\cliarguments\\hasexecutionorder',
-        64 => 'phpunit\\textui\\cliarguments\\executionorder',
-        65 => 'phpunit\\textui\\cliarguments\\hasexecutionorderdefects',
-        66 => 'phpunit\\textui\\cliarguments\\executionorderdefects',
-        67 => 'phpunit\\textui\\cliarguments\\hasfailonallissues',
-        68 => 'phpunit\\textui\\cliarguments\\failonallissues',
-        69 => 'phpunit\\textui\\cliarguments\\hasfailondeprecation',
-        70 => 'phpunit\\textui\\cliarguments\\failondeprecation',
-        71 => 'phpunit\\textui\\cliarguments\\hasfailonphpunitdeprecation',
-        72 => 'phpunit\\textui\\cliarguments\\failonphpunitdeprecation',
-        73 => 'phpunit\\textui\\cliarguments\\hasfailonphpunitnotice',
-        74 => 'phpunit\\textui\\cliarguments\\failonphpunitnotice',
-        75 => 'phpunit\\textui\\cliarguments\\hasfailonphpunitwarning',
-        76 => 'phpunit\\textui\\cliarguments\\failonphpunitwarning',
-        77 => 'phpunit\\textui\\cliarguments\\hasfailonemptytestsuite',
-        78 => 'phpunit\\textui\\cliarguments\\failonemptytestsuite',
-        79 => 'phpunit\\textui\\cliarguments\\hasfailonincomplete',
-        80 => 'phpunit\\textui\\cliarguments\\failonincomplete',
-        81 => 'phpunit\\textui\\cliarguments\\hasfailonnotice',
-        82 => 'phpunit\\textui\\cliarguments\\failonnotice',
-        83 => 'phpunit\\textui\\cliarguments\\hasfailonrisky',
-        84 => 'phpunit\\textui\\cliarguments\\failonrisky',
-        85 => 'phpunit\\textui\\cliarguments\\hasfailonskipped',
-        86 => 'phpunit\\textui\\cliarguments\\failonskipped',
-        87 => 'phpunit\\textui\\cliarguments\\hasfailonwarning',
-        88 => 'phpunit\\textui\\cliarguments\\failonwarning',
-        89 => 'phpunit\\textui\\cliarguments\\hasdonotfailondeprecation',
-        90 => 'phpunit\\textui\\cliarguments\\donotfailondeprecation',
-        91 => 'phpunit\\textui\\cliarguments\\hasdonotfailonphpunitdeprecation',
-        92 => 'phpunit\\textui\\cliarguments\\donotfailonphpunitdeprecation',
-        93 => 'phpunit\\textui\\cliarguments\\hasdonotfailonphpunitnotice',
-        94 => 'phpunit\\textui\\cliarguments\\donotfailonphpunitnotice',
-        95 => 'phpunit\\textui\\cliarguments\\hasdonotfailonphpunitwarning',
-        96 => 'phpunit\\textui\\cliarguments\\donotfailonphpunitwarning',
-        97 => 'phpunit\\textui\\cliarguments\\hasdonotfailonemptytestsuite',
-        98 => 'phpunit\\textui\\cliarguments\\donotfailonemptytestsuite',
-        99 => 'phpunit\\textui\\cliarguments\\hasdonotfailonincomplete',
-        100 => 'phpunit\\textui\\cliarguments\\donotfailonincomplete',
-        101 => 'phpunit\\textui\\cliarguments\\hasdonotfailonnotice',
-        102 => 'phpunit\\textui\\cliarguments\\donotfailonnotice',
-        103 => 'phpunit\\textui\\cliarguments\\hasdonotfailonrisky',
-        104 => 'phpunit\\textui\\cliarguments\\donotfailonrisky',
-        105 => 'phpunit\\textui\\cliarguments\\hasdonotfailonskipped',
-        106 => 'phpunit\\textui\\cliarguments\\donotfailonskipped',
-        107 => 'phpunit\\textui\\cliarguments\\hasdonotfailonwarning',
-        108 => 'phpunit\\textui\\cliarguments\\donotfailonwarning',
-        109 => 'phpunit\\textui\\cliarguments\\hasstopondefect',
-        110 => 'phpunit\\textui\\cliarguments\\stopondefect',
-        111 => 'phpunit\\textui\\cliarguments\\hasstopondeprecation',
-        112 => 'phpunit\\textui\\cliarguments\\stopondeprecation',
-        113 => 'phpunit\\textui\\cliarguments\\hasspecificdeprecationtostopon',
-        114 => 'phpunit\\textui\\cliarguments\\specificdeprecationtostopon',
-        115 => 'phpunit\\textui\\cliarguments\\hasstoponerror',
-        116 => 'phpunit\\textui\\cliarguments\\stoponerror',
-        117 => 'phpunit\\textui\\cliarguments\\hasstoponfailure',
-        118 => 'phpunit\\textui\\cliarguments\\stoponfailure',
-        119 => 'phpunit\\textui\\cliarguments\\hasstoponincomplete',
-        120 => 'phpunit\\textui\\cliarguments\\stoponincomplete',
-        121 => 'phpunit\\textui\\cliarguments\\hasstoponnotice',
-        122 => 'phpunit\\textui\\cliarguments\\stoponnotice',
-        123 => 'phpunit\\textui\\cliarguments\\hasstoponrisky',
-        124 => 'phpunit\\textui\\cliarguments\\stoponrisky',
-        125 => 'phpunit\\textui\\cliarguments\\hasstoponskipped',
-        126 => 'phpunit\\textui\\cliarguments\\stoponskipped',
-        127 => 'phpunit\\textui\\cliarguments\\hasstoponwarning',
-        128 => 'phpunit\\textui\\cliarguments\\stoponwarning',
-        129 => 'phpunit\\textui\\cliarguments\\hasexcludefilter',
-        130 => 'phpunit\\textui\\cliarguments\\excludefilter',
-        131 => 'phpunit\\textui\\cliarguments\\hasfilter',
-        132 => 'phpunit\\textui\\cliarguments\\filter',
-        133 => 'phpunit\\textui\\cliarguments\\hasgeneratebaseline',
-        134 => 'phpunit\\textui\\cliarguments\\generatebaseline',
-        135 => 'phpunit\\textui\\cliarguments\\hasusebaseline',
-        136 => 'phpunit\\textui\\cliarguments\\usebaseline',
-        137 => 'phpunit\\textui\\cliarguments\\ignorebaseline',
-        138 => 'phpunit\\textui\\cliarguments\\generateconfiguration',
-        139 => 'phpunit\\textui\\cliarguments\\migrateconfiguration',
-        140 => 'phpunit\\textui\\cliarguments\\hasgroups',
-        141 => 'phpunit\\textui\\cliarguments\\groups',
-        142 => 'phpunit\\textui\\cliarguments\\hastestscovering',
-        143 => 'phpunit\\textui\\cliarguments\\testscovering',
-        144 => 'phpunit\\textui\\cliarguments\\hastestsusing',
-        145 => 'phpunit\\textui\\cliarguments\\testsusing',
-        146 => 'phpunit\\textui\\cliarguments\\hastestsrequiringphpextension',
-        147 => 'phpunit\\textui\\cliarguments\\testsrequiringphpextension',
-        148 => 'phpunit\\textui\\cliarguments\\help',
-        149 => 'phpunit\\textui\\cliarguments\\hasincludepath',
-        150 => 'phpunit\\textui\\cliarguments\\includepath',
-        151 => 'phpunit\\textui\\cliarguments\\hasinisettings',
-        152 => 'phpunit\\textui\\cliarguments\\inisettings',
-        153 => 'phpunit\\textui\\cliarguments\\hasjunitlogfile',
-        154 => 'phpunit\\textui\\cliarguments\\junitlogfile',
-        155 => 'phpunit\\textui\\cliarguments\\hasotrlogfile',
-        156 => 'phpunit\\textui\\cliarguments\\otrlogfile',
-        157 => 'phpunit\\textui\\cliarguments\\hasincludegitinformationinotrlogfile',
-        158 => 'phpunit\\textui\\cliarguments\\includegitinformationinotrlogfile',
-        159 => 'phpunit\\textui\\cliarguments\\listgroups',
-        160 => 'phpunit\\textui\\cliarguments\\listsuites',
-        161 => 'phpunit\\textui\\cliarguments\\listtestfiles',
-        162 => 'phpunit\\textui\\cliarguments\\listtests',
-        163 => 'phpunit\\textui\\cliarguments\\haslisttestsxml',
-        164 => 'phpunit\\textui\\cliarguments\\listtestsxml',
-        165 => 'phpunit\\textui\\cliarguments\\hasnocoverage',
-        166 => 'phpunit\\textui\\cliarguments\\nocoverage',
-        167 => 'phpunit\\textui\\cliarguments\\hasnoextensions',
-        168 => 'phpunit\\textui\\cliarguments\\noextensions',
-        169 => 'phpunit\\textui\\cliarguments\\hasnooutput',
-        170 => 'phpunit\\textui\\cliarguments\\nooutput',
-        171 => 'phpunit\\textui\\cliarguments\\hasnoprogress',
-        172 => 'phpunit\\textui\\cliarguments\\noprogress',
-        173 => 'phpunit\\textui\\cliarguments\\hasnoresults',
-        174 => 'phpunit\\textui\\cliarguments\\noresults',
-        175 => 'phpunit\\textui\\cliarguments\\hasnologging',
-        176 => 'phpunit\\textui\\cliarguments\\nologging',
-        177 => 'phpunit\\textui\\cliarguments\\hasprocessisolation',
-        178 => 'phpunit\\textui\\cliarguments\\processisolation',
-        179 => 'phpunit\\textui\\cliarguments\\hasrandomorderseed',
-        180 => 'phpunit\\textui\\cliarguments\\randomorderseed',
-        181 => 'phpunit\\textui\\cliarguments\\hasreportuselesstests',
-        182 => 'phpunit\\textui\\cliarguments\\reportuselesstests',
-        183 => 'phpunit\\textui\\cliarguments\\hasresolvedependencies',
-        184 => 'phpunit\\textui\\cliarguments\\resolvedependencies',
-        185 => 'phpunit\\textui\\cliarguments\\hasreverselist',
-        186 => 'phpunit\\textui\\cliarguments\\reverselist',
-        187 => 'phpunit\\textui\\cliarguments\\hasstderr',
-        188 => 'phpunit\\textui\\cliarguments\\stderr',
-        189 => 'phpunit\\textui\\cliarguments\\hasstrictcoverage',
-        190 => 'phpunit\\textui\\cliarguments\\strictcoverage',
-        191 => 'phpunit\\textui\\cliarguments\\hasteamcitylogfile',
-        192 => 'phpunit\\textui\\cliarguments\\teamcitylogfile',
-        193 => 'phpunit\\textui\\cliarguments\\hasteamcityprinter',
-        194 => 'phpunit\\textui\\cliarguments\\teamcityprinter',
-        195 => 'phpunit\\textui\\cliarguments\\hastestdoxhtmlfile',
-        196 => 'phpunit\\textui\\cliarguments\\testdoxhtmlfile',
-        197 => 'phpunit\\textui\\cliarguments\\hastestdoxtextfile',
-        198 => 'phpunit\\textui\\cliarguments\\testdoxtextfile',
-        199 => 'phpunit\\textui\\cliarguments\\hastestdoxprinter',
-        200 => 'phpunit\\textui\\cliarguments\\testdoxprinter',
-        201 => 'phpunit\\textui\\cliarguments\\hastestdoxprintersummary',
-        202 => 'phpunit\\textui\\cliarguments\\testdoxprintersummary',
-        203 => 'phpunit\\textui\\cliarguments\\hastestsuffixes',
-        204 => 'phpunit\\textui\\cliarguments\\testsuffixes',
-        205 => 'phpunit\\textui\\cliarguments\\hastestsuite',
-        206 => 'phpunit\\textui\\cliarguments\\testsuite',
-        207 => 'phpunit\\textui\\cliarguments\\hasexcludedtestsuite',
-        208 => 'phpunit\\textui\\cliarguments\\excludedtestsuite',
-        209 => 'phpunit\\textui\\cliarguments\\usedefaultconfiguration',
-        210 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonallissues',
-        211 => 'phpunit\\textui\\cliarguments\\displaydetailsonallissues',
-        212 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonincompletetests',
-        213 => 'phpunit\\textui\\cliarguments\\displaydetailsonincompletetests',
-        214 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonskippedtests',
-        215 => 'phpunit\\textui\\cliarguments\\displaydetailsonskippedtests',
-        216 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonteststhattriggerdeprecations',
-        217 => 'phpunit\\textui\\cliarguments\\displaydetailsonteststhattriggerdeprecations',
-        218 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonphpunitdeprecations',
-        219 => 'phpunit\\textui\\cliarguments\\displaydetailsonphpunitdeprecations',
-        220 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonphpunitnotices',
-        221 => 'phpunit\\textui\\cliarguments\\displaydetailsonphpunitnotices',
-        222 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonteststhattriggererrors',
-        223 => 'phpunit\\textui\\cliarguments\\displaydetailsonteststhattriggererrors',
-        224 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonteststhattriggernotices',
-        225 => 'phpunit\\textui\\cliarguments\\displaydetailsonteststhattriggernotices',
-        226 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonteststhattriggerwarnings',
-        227 => 'phpunit\\textui\\cliarguments\\displaydetailsonteststhattriggerwarnings',
-        228 => 'phpunit\\textui\\cliarguments\\version',
-        229 => 'phpunit\\textui\\cliarguments\\haslogeventstext',
-        230 => 'phpunit\\textui\\cliarguments\\logeventstext',
-        231 => 'phpunit\\textui\\cliarguments\\haslogeventsverbosetext',
-        232 => 'phpunit\\textui\\cliarguments\\logeventsverbosetext',
-        233 => 'phpunit\\textui\\cliarguments\\debug',
-        234 => 'phpunit\\textui\\cliarguments\\withtelemetry',
-        235 => 'phpunit\\textui\\cliarguments\\hasextensions',
-        236 => 'phpunit\\textui\\cliarguments\\extensions',
+        2 => 'phpunit\\textui\\cliarguments\\hastestfilesfile',
+        3 => 'phpunit\\textui\\cliarguments\\testfilesfile',
+        4 => 'phpunit\\textui\\cliarguments\\hastestidfile',
+        5 => 'phpunit\\textui\\cliarguments\\testidfile',
+        6 => 'phpunit\\textui\\cliarguments\\hastestidfilter',
+        7 => 'phpunit\\textui\\cliarguments\\testidfilter',
+        8 => 'phpunit\\textui\\cliarguments\\hasall',
+        9 => 'phpunit\\textui\\cliarguments\\all',
+        10 => 'phpunit\\textui\\cliarguments\\hasatleastversion',
+        11 => 'phpunit\\textui\\cliarguments\\atleastversion',
+        12 => 'phpunit\\textui\\cliarguments\\hasbackupglobals',
+        13 => 'phpunit\\textui\\cliarguments\\backupglobals',
+        14 => 'phpunit\\textui\\cliarguments\\hasbackupstaticproperties',
+        15 => 'phpunit\\textui\\cliarguments\\backupstaticproperties',
+        16 => 'phpunit\\textui\\cliarguments\\hasbestrictaboutchangestoglobalstate',
+        17 => 'phpunit\\textui\\cliarguments\\bestrictaboutchangestoglobalstate',
+        18 => 'phpunit\\textui\\cliarguments\\hasbootstrap',
+        19 => 'phpunit\\textui\\cliarguments\\bootstrap',
+        20 => 'phpunit\\textui\\cliarguments\\hascachedirectory',
+        21 => 'phpunit\\textui\\cliarguments\\cachedirectory',
+        22 => 'phpunit\\textui\\cliarguments\\hasrecordtestrunhistory',
+        23 => 'phpunit\\textui\\cliarguments\\recordtestrunhistory',
+        24 => 'phpunit\\textui\\cliarguments\\checkphpconfiguration',
+        25 => 'phpunit\\textui\\cliarguments\\haswarnwhenphpisnotconfiguredfordevelopment',
+        26 => 'phpunit\\textui\\cliarguments\\warnwhenphpisnotconfiguredfordevelopment',
+        27 => 'phpunit\\textui\\cliarguments\\checkversion',
+        28 => 'phpunit\\textui\\cliarguments\\hascolors',
+        29 => 'phpunit\\textui\\cliarguments\\colors',
+        30 => 'phpunit\\textui\\cliarguments\\hascolumns',
+        31 => 'phpunit\\textui\\cliarguments\\columns',
+        32 => 'phpunit\\textui\\cliarguments\\hasconfigurationfile',
+        33 => 'phpunit\\textui\\cliarguments\\configurationfile',
+        34 => 'phpunit\\textui\\cliarguments\\hascoveragefilter',
+        35 => 'phpunit\\textui\\cliarguments\\coveragefilter',
+        36 => 'phpunit\\textui\\cliarguments\\hascoverageclover',
+        37 => 'phpunit\\textui\\cliarguments\\coverageclover',
+        38 => 'phpunit\\textui\\cliarguments\\hascoveragecobertura',
+        39 => 'phpunit\\textui\\cliarguments\\coveragecobertura',
+        40 => 'phpunit\\textui\\cliarguments\\hascoveragecrap4j',
+        41 => 'phpunit\\textui\\cliarguments\\coveragecrap4j',
+        42 => 'phpunit\\textui\\cliarguments\\hascoveragehtml',
+        43 => 'phpunit\\textui\\cliarguments\\coveragehtml',
+        44 => 'phpunit\\textui\\cliarguments\\haswithoutclassview',
+        45 => 'phpunit\\textui\\cliarguments\\withoutclassview',
+        46 => 'phpunit\\textui\\cliarguments\\haswithoutfileview',
+        47 => 'phpunit\\textui\\cliarguments\\withoutfileview',
+        48 => 'phpunit\\textui\\cliarguments\\hascoverageopenclover',
+        49 => 'phpunit\\textui\\cliarguments\\coverageopenclover',
+        50 => 'phpunit\\textui\\cliarguments\\hascoveragephp',
+        51 => 'phpunit\\textui\\cliarguments\\coveragephp',
+        52 => 'phpunit\\textui\\cliarguments\\hascoveragetext',
+        53 => 'phpunit\\textui\\cliarguments\\coveragetext',
+        54 => 'phpunit\\textui\\cliarguments\\hascoveragetextshowuncoveredfiles',
+        55 => 'phpunit\\textui\\cliarguments\\coveragetextshowuncoveredfiles',
+        56 => 'phpunit\\textui\\cliarguments\\hascoveragetextshowonlysummary',
+        57 => 'phpunit\\textui\\cliarguments\\coveragetextshowonlysummary',
+        58 => 'phpunit\\textui\\cliarguments\\hascoveragexml',
+        59 => 'phpunit\\textui\\cliarguments\\coveragexml',
+        60 => 'phpunit\\textui\\cliarguments\\hasexcludesourcefromxmlcoverage',
+        61 => 'phpunit\\textui\\cliarguments\\excludesourcefromxmlcoverage',
+        62 => 'phpunit\\textui\\cliarguments\\haspathcoverage',
+        63 => 'phpunit\\textui\\cliarguments\\pathcoverage',
+        64 => 'phpunit\\textui\\cliarguments\\hasbranchcoverage',
+        65 => 'phpunit\\textui\\cliarguments\\branchcoverage',
+        66 => 'phpunit\\textui\\cliarguments\\warmcoveragecache',
+        67 => 'phpunit\\textui\\cliarguments\\hasdefaulttimelimit',
+        68 => 'phpunit\\textui\\cliarguments\\defaulttimelimit',
+        69 => 'phpunit\\textui\\cliarguments\\hasdiffcontext',
+        70 => 'phpunit\\textui\\cliarguments\\diffcontext',
+        71 => 'phpunit\\textui\\cliarguments\\hasdisablecodecoverageignore',
+        72 => 'phpunit\\textui\\cliarguments\\disablecodecoverageignore',
+        73 => 'phpunit\\textui\\cliarguments\\hasdisablecoveragetargeting',
+        74 => 'phpunit\\textui\\cliarguments\\disablecoveragetargeting',
+        75 => 'phpunit\\textui\\cliarguments\\hasdisallowtestoutput',
+        76 => 'phpunit\\textui\\cliarguments\\disallowtestoutput',
+        77 => 'phpunit\\textui\\cliarguments\\hasenforcetimelimit',
+        78 => 'phpunit\\textui\\cliarguments\\enforcetimelimit',
+        79 => 'phpunit\\textui\\cliarguments\\hasexcludegroups',
+        80 => 'phpunit\\textui\\cliarguments\\excludegroups',
+        81 => 'phpunit\\textui\\cliarguments\\hasexecutionorder',
+        82 => 'phpunit\\textui\\cliarguments\\executionorder',
+        83 => 'phpunit\\textui\\cliarguments\\hasexecutionorderdefects',
+        84 => 'phpunit\\textui\\cliarguments\\executionorderdefects',
+        85 => 'phpunit\\textui\\cliarguments\\hasfailonallissues',
+        86 => 'phpunit\\textui\\cliarguments\\failonallissues',
+        87 => 'phpunit\\textui\\cliarguments\\hasfailondeprecation',
+        88 => 'phpunit\\textui\\cliarguments\\failondeprecation',
+        89 => 'phpunit\\textui\\cliarguments\\hasfailonselfdeprecation',
+        90 => 'phpunit\\textui\\cliarguments\\failonselfdeprecation',
+        91 => 'phpunit\\textui\\cliarguments\\hasfailondirectdeprecation',
+        92 => 'phpunit\\textui\\cliarguments\\failondirectdeprecation',
+        93 => 'phpunit\\textui\\cliarguments\\hasfailonindirectdeprecation',
+        94 => 'phpunit\\textui\\cliarguments\\failonindirectdeprecation',
+        95 => 'phpunit\\textui\\cliarguments\\hasfailonphpunitdeprecation',
+        96 => 'phpunit\\textui\\cliarguments\\failonphpunitdeprecation',
+        97 => 'phpunit\\textui\\cliarguments\\hasfailonphpunitnotice',
+        98 => 'phpunit\\textui\\cliarguments\\failonphpunitnotice',
+        99 => 'phpunit\\textui\\cliarguments\\hasfailonphpunitwarning',
+        100 => 'phpunit\\textui\\cliarguments\\failonphpunitwarning',
+        101 => 'phpunit\\textui\\cliarguments\\hasfailonemptytestsuite',
+        102 => 'phpunit\\textui\\cliarguments\\failonemptytestsuite',
+        103 => 'phpunit\\textui\\cliarguments\\hasfailonincomplete',
+        104 => 'phpunit\\textui\\cliarguments\\failonincomplete',
+        105 => 'phpunit\\textui\\cliarguments\\hasfailonnotice',
+        106 => 'phpunit\\textui\\cliarguments\\failonnotice',
+        107 => 'phpunit\\textui\\cliarguments\\hasfailonrisky',
+        108 => 'phpunit\\textui\\cliarguments\\failonrisky',
+        109 => 'phpunit\\textui\\cliarguments\\hasfailonskipped',
+        110 => 'phpunit\\textui\\cliarguments\\failonskipped',
+        111 => 'phpunit\\textui\\cliarguments\\hasfailonwarning',
+        112 => 'phpunit\\textui\\cliarguments\\failonwarning',
+        113 => 'phpunit\\textui\\cliarguments\\hasdonotfailondeprecation',
+        114 => 'phpunit\\textui\\cliarguments\\donotfailondeprecation',
+        115 => 'phpunit\\textui\\cliarguments\\hasdonotfailonselfdeprecation',
+        116 => 'phpunit\\textui\\cliarguments\\donotfailonselfdeprecation',
+        117 => 'phpunit\\textui\\cliarguments\\hasdonotfailondirectdeprecation',
+        118 => 'phpunit\\textui\\cliarguments\\donotfailondirectdeprecation',
+        119 => 'phpunit\\textui\\cliarguments\\hasdonotfailonindirectdeprecation',
+        120 => 'phpunit\\textui\\cliarguments\\donotfailonindirectdeprecation',
+        121 => 'phpunit\\textui\\cliarguments\\hasdonotfailonphpunitdeprecation',
+        122 => 'phpunit\\textui\\cliarguments\\donotfailonphpunitdeprecation',
+        123 => 'phpunit\\textui\\cliarguments\\hasdonotfailonphpunitnotice',
+        124 => 'phpunit\\textui\\cliarguments\\donotfailonphpunitnotice',
+        125 => 'phpunit\\textui\\cliarguments\\hasdonotfailonphpunitwarning',
+        126 => 'phpunit\\textui\\cliarguments\\donotfailonphpunitwarning',
+        127 => 'phpunit\\textui\\cliarguments\\hasdonotfailonemptytestsuite',
+        128 => 'phpunit\\textui\\cliarguments\\donotfailonemptytestsuite',
+        129 => 'phpunit\\textui\\cliarguments\\hasdonotfailonincomplete',
+        130 => 'phpunit\\textui\\cliarguments\\donotfailonincomplete',
+        131 => 'phpunit\\textui\\cliarguments\\hasdonotfailonnotice',
+        132 => 'phpunit\\textui\\cliarguments\\donotfailonnotice',
+        133 => 'phpunit\\textui\\cliarguments\\hasdonotfailonrisky',
+        134 => 'phpunit\\textui\\cliarguments\\donotfailonrisky',
+        135 => 'phpunit\\textui\\cliarguments\\hasdonotfailonskipped',
+        136 => 'phpunit\\textui\\cliarguments\\donotfailonskipped',
+        137 => 'phpunit\\textui\\cliarguments\\hasdonotfailonwarning',
+        138 => 'phpunit\\textui\\cliarguments\\donotfailonwarning',
+        139 => 'phpunit\\textui\\cliarguments\\hasstopondefect',
+        140 => 'phpunit\\textui\\cliarguments\\stopondefect',
+        141 => 'phpunit\\textui\\cliarguments\\hasstopondeprecation',
+        142 => 'phpunit\\textui\\cliarguments\\stopondeprecation',
+        143 => 'phpunit\\textui\\cliarguments\\hasspecificdeprecationtostopon',
+        144 => 'phpunit\\textui\\cliarguments\\specificdeprecationtostopon',
+        145 => 'phpunit\\textui\\cliarguments\\hasstoponerror',
+        146 => 'phpunit\\textui\\cliarguments\\stoponerror',
+        147 => 'phpunit\\textui\\cliarguments\\hasstoponfailure',
+        148 => 'phpunit\\textui\\cliarguments\\stoponfailure',
+        149 => 'phpunit\\textui\\cliarguments\\hasstoponincomplete',
+        150 => 'phpunit\\textui\\cliarguments\\stoponincomplete',
+        151 => 'phpunit\\textui\\cliarguments\\hasstoponnotice',
+        152 => 'phpunit\\textui\\cliarguments\\stoponnotice',
+        153 => 'phpunit\\textui\\cliarguments\\hasstoponrisky',
+        154 => 'phpunit\\textui\\cliarguments\\stoponrisky',
+        155 => 'phpunit\\textui\\cliarguments\\hasstoponskipped',
+        156 => 'phpunit\\textui\\cliarguments\\stoponskipped',
+        157 => 'phpunit\\textui\\cliarguments\\hasstoponwarning',
+        158 => 'phpunit\\textui\\cliarguments\\stoponwarning',
+        159 => 'phpunit\\textui\\cliarguments\\hasexcludefilter',
+        160 => 'phpunit\\textui\\cliarguments\\excludefilter',
+        161 => 'phpunit\\textui\\cliarguments\\hasfilter',
+        162 => 'phpunit\\textui\\cliarguments\\filter',
+        163 => 'phpunit\\textui\\cliarguments\\hasgeneratebaseline',
+        164 => 'phpunit\\textui\\cliarguments\\generatebaseline',
+        165 => 'phpunit\\textui\\cliarguments\\hasusebaseline',
+        166 => 'phpunit\\textui\\cliarguments\\usebaseline',
+        167 => 'phpunit\\textui\\cliarguments\\ignorebaseline',
+        168 => 'phpunit\\textui\\cliarguments\\generateconfiguration',
+        169 => 'phpunit\\textui\\cliarguments\\migrateconfiguration',
+        170 => 'phpunit\\textui\\cliarguments\\validateconfiguration',
+        171 => 'phpunit\\textui\\cliarguments\\hasgroups',
+        172 => 'phpunit\\textui\\cliarguments\\groups',
+        173 => 'phpunit\\textui\\cliarguments\\hastestscovering',
+        174 => 'phpunit\\textui\\cliarguments\\testscovering',
+        175 => 'phpunit\\textui\\cliarguments\\hastestsusing',
+        176 => 'phpunit\\textui\\cliarguments\\testsusing',
+        177 => 'phpunit\\textui\\cliarguments\\hastestsrequiringphpextension',
+        178 => 'phpunit\\textui\\cliarguments\\testsrequiringphpextension',
+        179 => 'phpunit\\textui\\cliarguments\\help',
+        180 => 'phpunit\\textui\\cliarguments\\hasincludepath',
+        181 => 'phpunit\\textui\\cliarguments\\includepath',
+        182 => 'phpunit\\textui\\cliarguments\\hasinisettings',
+        183 => 'phpunit\\textui\\cliarguments\\inisettings',
+        184 => 'phpunit\\textui\\cliarguments\\hasjunitlogfile',
+        185 => 'phpunit\\textui\\cliarguments\\junitlogfile',
+        186 => 'phpunit\\textui\\cliarguments\\hasotrlogfile',
+        187 => 'phpunit\\textui\\cliarguments\\otrlogfile',
+        188 => 'phpunit\\textui\\cliarguments\\hasincludegitinformation',
+        189 => 'phpunit\\textui\\cliarguments\\includegitinformation',
+        190 => 'phpunit\\textui\\cliarguments\\listgroups',
+        191 => 'phpunit\\textui\\cliarguments\\listsuites',
+        192 => 'phpunit\\textui\\cliarguments\\listtestfiles',
+        193 => 'phpunit\\textui\\cliarguments\\listtestids',
+        194 => 'phpunit\\textui\\cliarguments\\listtests',
+        195 => 'phpunit\\textui\\cliarguments\\haslisttestsxml',
+        196 => 'phpunit\\textui\\cliarguments\\listtestsxml',
+        197 => 'phpunit\\textui\\cliarguments\\hasnocoverage',
+        198 => 'phpunit\\textui\\cliarguments\\nocoverage',
+        199 => 'phpunit\\textui\\cliarguments\\hasnoextensions',
+        200 => 'phpunit\\textui\\cliarguments\\noextensions',
+        201 => 'phpunit\\textui\\cliarguments\\hasnooutput',
+        202 => 'phpunit\\textui\\cliarguments\\nooutput',
+        203 => 'phpunit\\textui\\cliarguments\\hasnoprogress',
+        204 => 'phpunit\\textui\\cliarguments\\noprogress',
+        205 => 'phpunit\\textui\\cliarguments\\hasnoresults',
+        206 => 'phpunit\\textui\\cliarguments\\noresults',
+        207 => 'phpunit\\textui\\cliarguments\\hasnologging',
+        208 => 'phpunit\\textui\\cliarguments\\nologging',
+        209 => 'phpunit\\textui\\cliarguments\\hasprocessisolation',
+        210 => 'phpunit\\textui\\cliarguments\\processisolation',
+        211 => 'phpunit\\textui\\cliarguments\\hasrandomorderseed',
+        212 => 'phpunit\\textui\\cliarguments\\randomorderseed',
+        213 => 'phpunit\\textui\\cliarguments\\hasrepeat',
+        214 => 'phpunit\\textui\\cliarguments\\repeat',
+        215 => 'phpunit\\textui\\cliarguments\\hasretry',
+        216 => 'phpunit\\textui\\cliarguments\\retry',
+        217 => 'phpunit\\textui\\cliarguments\\hasreportuselesstests',
+        218 => 'phpunit\\textui\\cliarguments\\reportuselesstests',
+        219 => 'phpunit\\textui\\cliarguments\\hasresolvedependencies',
+        220 => 'phpunit\\textui\\cliarguments\\resolvedependencies',
+        221 => 'phpunit\\textui\\cliarguments\\hasreverselist',
+        222 => 'phpunit\\textui\\cliarguments\\reverselist',
+        223 => 'phpunit\\textui\\cliarguments\\hasstderr',
+        224 => 'phpunit\\textui\\cliarguments\\stderr',
+        225 => 'phpunit\\textui\\cliarguments\\hasstrictcoverage',
+        226 => 'phpunit\\textui\\cliarguments\\strictcoverage',
+        227 => 'phpunit\\textui\\cliarguments\\hasrequirecoveragecontribution',
+        228 => 'phpunit\\textui\\cliarguments\\requirecoveragecontribution',
+        229 => 'phpunit\\textui\\cliarguments\\hasteamcitylogfile',
+        230 => 'phpunit\\textui\\cliarguments\\teamcitylogfile',
+        231 => 'phpunit\\textui\\cliarguments\\hascompactprinter',
+        232 => 'phpunit\\textui\\cliarguments\\compactprinter',
+        233 => 'phpunit\\textui\\cliarguments\\hasteamcityprinter',
+        234 => 'phpunit\\textui\\cliarguments\\teamcityprinter',
+        235 => 'phpunit\\textui\\cliarguments\\hastestdoxhtmlfile',
+        236 => 'phpunit\\textui\\cliarguments\\testdoxhtmlfile',
+        237 => 'phpunit\\textui\\cliarguments\\hastestdoxtextfile',
+        238 => 'phpunit\\textui\\cliarguments\\testdoxtextfile',
+        239 => 'phpunit\\textui\\cliarguments\\hastestdoxprinter',
+        240 => 'phpunit\\textui\\cliarguments\\testdoxprinter',
+        241 => 'phpunit\\textui\\cliarguments\\hastestdoxprintersummary',
+        242 => 'phpunit\\textui\\cliarguments\\testdoxprintersummary',
+        243 => 'phpunit\\textui\\cliarguments\\hastestsuffixes',
+        244 => 'phpunit\\textui\\cliarguments\\testsuffixes',
+        245 => 'phpunit\\textui\\cliarguments\\hastestsuite',
+        246 => 'phpunit\\textui\\cliarguments\\testsuite',
+        247 => 'phpunit\\textui\\cliarguments\\hasexcludedtestsuite',
+        248 => 'phpunit\\textui\\cliarguments\\excludedtestsuite',
+        249 => 'phpunit\\textui\\cliarguments\\usedefaultconfiguration',
+        250 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonallissues',
+        251 => 'phpunit\\textui\\cliarguments\\displaydetailsonallissues',
+        252 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonincompletetests',
+        253 => 'phpunit\\textui\\cliarguments\\displaydetailsonincompletetests',
+        254 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonskippedtests',
+        255 => 'phpunit\\textui\\cliarguments\\displaydetailsonskippedtests',
+        256 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonteststhattriggerdeprecations',
+        257 => 'phpunit\\textui\\cliarguments\\displaydetailsonteststhattriggerdeprecations',
+        258 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonphpunitdeprecations',
+        259 => 'phpunit\\textui\\cliarguments\\displaydetailsonphpunitdeprecations',
+        260 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonphpunitnotices',
+        261 => 'phpunit\\textui\\cliarguments\\displaydetailsonphpunitnotices',
+        262 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonteststhattriggererrors',
+        263 => 'phpunit\\textui\\cliarguments\\displaydetailsonteststhattriggererrors',
+        264 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonteststhattriggernotices',
+        265 => 'phpunit\\textui\\cliarguments\\displaydetailsonteststhattriggernotices',
+        266 => 'phpunit\\textui\\cliarguments\\hasdisplaydetailsonteststhattriggerwarnings',
+        267 => 'phpunit\\textui\\cliarguments\\displaydetailsonteststhattriggerwarnings',
+        268 => 'phpunit\\textui\\cliarguments\\version',
+        269 => 'phpunit\\textui\\cliarguments\\haslogeventstext',
+        270 => 'phpunit\\textui\\cliarguments\\logeventstext',
+        271 => 'phpunit\\textui\\cliarguments\\haslogeventsverbosetext',
+        272 => 'phpunit\\textui\\cliarguments\\logeventsverbosetext',
+        273 => 'phpunit\\textui\\cliarguments\\debug',
+        274 => 'phpunit\\textui\\cliarguments\\withtelemetry',
+        275 => 'phpunit\\textui\\cliarguments\\hasextensions',
+        276 => 'phpunit\\textui\\cliarguments\\extensions',
       ),
       3 => 
       array (
@@ -14918,7 +14840,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/CodeCoverageFilterRegistry.php' => 
     array (
-      0 => '0963b61fe4c76f98d7c748851ea88358191e6f3ce74971afca35d473b3bd56f3',
+      0 => 'd529ca97965ef2d42c7aaa9502b0f94c81006ff68b96522a18dbbab5655f095c',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\codecoveragefilterregistry',
@@ -14936,7 +14858,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Configuration.php' => 
     array (
-      0 => 'ac28cffc85e928896fdf582f1de5f59ed01497f83032dc44eab37c296ba51e77',
+      0 => '6157e1976d7bbcee2fee54216dcd914046d4aef9092e0621fcd42b42f709b8cf',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\configuration',
@@ -14946,170 +14868,218 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\textui\\configuration\\__construct',
         1 => 'phpunit\\textui\\configuration\\hascliarguments',
         2 => 'phpunit\\textui\\configuration\\cliarguments',
-        3 => 'phpunit\\textui\\configuration\\hasconfigurationfile',
-        4 => 'phpunit\\textui\\configuration\\configurationfile',
-        5 => 'phpunit\\textui\\configuration\\hasbootstrap',
-        6 => 'phpunit\\textui\\configuration\\bootstrap',
-        7 => 'phpunit\\textui\\configuration\\bootstrapfortestsuite',
-        8 => 'phpunit\\textui\\configuration\\cacheresult',
-        9 => 'phpunit\\textui\\configuration\\hascachedirectory',
-        10 => 'phpunit\\textui\\configuration\\cachedirectory',
-        11 => 'phpunit\\textui\\configuration\\hascoveragecachedirectory',
-        12 => 'phpunit\\textui\\configuration\\coveragecachedirectory',
-        13 => 'phpunit\\textui\\configuration\\source',
-        14 => 'phpunit\\textui\\configuration\\testresultcachefile',
-        15 => 'phpunit\\textui\\configuration\\ignoredeprecatedcodeunitsfromcodecoverage',
-        16 => 'phpunit\\textui\\configuration\\disablecodecoverageignore',
-        17 => 'phpunit\\textui\\configuration\\pathcoverage',
-        18 => 'phpunit\\textui\\configuration\\hascoveragereport',
-        19 => 'phpunit\\textui\\configuration\\hascoverageclover',
-        20 => 'phpunit\\textui\\configuration\\coverageclover',
-        21 => 'phpunit\\textui\\configuration\\hascoveragecobertura',
-        22 => 'phpunit\\textui\\configuration\\coveragecobertura',
-        23 => 'phpunit\\textui\\configuration\\hascoveragecrap4j',
-        24 => 'phpunit\\textui\\configuration\\coveragecrap4j',
-        25 => 'phpunit\\textui\\configuration\\coveragecrap4jthreshold',
-        26 => 'phpunit\\textui\\configuration\\hascoveragehtml',
-        27 => 'phpunit\\textui\\configuration\\coveragehtml',
-        28 => 'phpunit\\textui\\configuration\\coveragehtmllowupperbound',
-        29 => 'phpunit\\textui\\configuration\\coveragehtmlhighlowerbound',
-        30 => 'phpunit\\textui\\configuration\\coveragehtmlcolorsuccesslow',
-        31 => 'phpunit\\textui\\configuration\\coveragehtmlcolorsuccessmedium',
-        32 => 'phpunit\\textui\\configuration\\coveragehtmlcolorsuccesshigh',
-        33 => 'phpunit\\textui\\configuration\\coveragehtmlcolorwarning',
-        34 => 'phpunit\\textui\\configuration\\coveragehtmlcolordanger',
-        35 => 'phpunit\\textui\\configuration\\hascoveragehtmlcustomcssfile',
-        36 => 'phpunit\\textui\\configuration\\coveragehtmlcustomcssfile',
-        37 => 'phpunit\\textui\\configuration\\hascoverageopenclover',
-        38 => 'phpunit\\textui\\configuration\\coverageopenclover',
-        39 => 'phpunit\\textui\\configuration\\hascoveragephp',
-        40 => 'phpunit\\textui\\configuration\\coveragephp',
-        41 => 'phpunit\\textui\\configuration\\hascoveragetext',
-        42 => 'phpunit\\textui\\configuration\\coveragetext',
-        43 => 'phpunit\\textui\\configuration\\coveragetextshowuncoveredfiles',
-        44 => 'phpunit\\textui\\configuration\\coveragetextshowonlysummary',
-        45 => 'phpunit\\textui\\configuration\\hascoveragexml',
-        46 => 'phpunit\\textui\\configuration\\coveragexml',
-        47 => 'phpunit\\textui\\configuration\\coveragexmlincludesource',
-        48 => 'phpunit\\textui\\configuration\\failonallissues',
-        49 => 'phpunit\\textui\\configuration\\failondeprecation',
-        50 => 'phpunit\\textui\\configuration\\failonphpunitdeprecation',
-        51 => 'phpunit\\textui\\configuration\\failonphpunitnotice',
-        52 => 'phpunit\\textui\\configuration\\failonphpunitwarning',
-        53 => 'phpunit\\textui\\configuration\\failonemptytestsuite',
-        54 => 'phpunit\\textui\\configuration\\failonincomplete',
-        55 => 'phpunit\\textui\\configuration\\failonnotice',
-        56 => 'phpunit\\textui\\configuration\\failonrisky',
-        57 => 'phpunit\\textui\\configuration\\failonskipped',
-        58 => 'phpunit\\textui\\configuration\\failonwarning',
-        59 => 'phpunit\\textui\\configuration\\donotfailondeprecation',
-        60 => 'phpunit\\textui\\configuration\\donotfailonphpunitdeprecation',
-        61 => 'phpunit\\textui\\configuration\\donotfailonphpunitnotice',
-        62 => 'phpunit\\textui\\configuration\\donotfailonphpunitwarning',
-        63 => 'phpunit\\textui\\configuration\\donotfailonemptytestsuite',
-        64 => 'phpunit\\textui\\configuration\\donotfailonincomplete',
-        65 => 'phpunit\\textui\\configuration\\donotfailonnotice',
-        66 => 'phpunit\\textui\\configuration\\donotfailonrisky',
-        67 => 'phpunit\\textui\\configuration\\donotfailonskipped',
-        68 => 'phpunit\\textui\\configuration\\donotfailonwarning',
-        69 => 'phpunit\\textui\\configuration\\stopondefect',
-        70 => 'phpunit\\textui\\configuration\\stopondeprecation',
-        71 => 'phpunit\\textui\\configuration\\hasspecificdeprecationtostopon',
-        72 => 'phpunit\\textui\\configuration\\specificdeprecationtostopon',
-        73 => 'phpunit\\textui\\configuration\\stoponerror',
-        74 => 'phpunit\\textui\\configuration\\stoponfailure',
-        75 => 'phpunit\\textui\\configuration\\stoponincomplete',
-        76 => 'phpunit\\textui\\configuration\\stoponnotice',
-        77 => 'phpunit\\textui\\configuration\\stoponrisky',
-        78 => 'phpunit\\textui\\configuration\\stoponskipped',
-        79 => 'phpunit\\textui\\configuration\\stoponwarning',
-        80 => 'phpunit\\textui\\configuration\\outputtostandarderrorstream',
-        81 => 'phpunit\\textui\\configuration\\columns',
-        82 => 'phpunit\\textui\\configuration\\noextensions',
-        83 => 'phpunit\\textui\\configuration\\haspharextensiondirectory',
-        84 => 'phpunit\\textui\\configuration\\pharextensiondirectory',
-        85 => 'phpunit\\textui\\configuration\\extensionbootstrappers',
-        86 => 'phpunit\\textui\\configuration\\backupglobals',
-        87 => 'phpunit\\textui\\configuration\\backupstaticproperties',
-        88 => 'phpunit\\textui\\configuration\\bestrictaboutchangestoglobalstate',
-        89 => 'phpunit\\textui\\configuration\\colors',
-        90 => 'phpunit\\textui\\configuration\\processisolation',
-        91 => 'phpunit\\textui\\configuration\\enforcetimelimit',
-        92 => 'phpunit\\textui\\configuration\\defaulttimelimit',
-        93 => 'phpunit\\textui\\configuration\\timeoutforsmalltests',
-        94 => 'phpunit\\textui\\configuration\\timeoutformediumtests',
-        95 => 'phpunit\\textui\\configuration\\timeoutforlargetests',
-        96 => 'phpunit\\textui\\configuration\\reportuselesstests',
-        97 => 'phpunit\\textui\\configuration\\strictcoverage',
-        98 => 'phpunit\\textui\\configuration\\disallowtestoutput',
-        99 => 'phpunit\\textui\\configuration\\displaydetailsonallissues',
-        100 => 'phpunit\\textui\\configuration\\displaydetailsonincompletetests',
-        101 => 'phpunit\\textui\\configuration\\displaydetailsonskippedtests',
-        102 => 'phpunit\\textui\\configuration\\displaydetailsonteststhattriggerdeprecations',
-        103 => 'phpunit\\textui\\configuration\\displaydetailsonphpunitdeprecations',
-        104 => 'phpunit\\textui\\configuration\\displaydetailsonphpunitnotices',
-        105 => 'phpunit\\textui\\configuration\\displaydetailsonteststhattriggererrors',
-        106 => 'phpunit\\textui\\configuration\\displaydetailsonteststhattriggernotices',
-        107 => 'phpunit\\textui\\configuration\\displaydetailsonteststhattriggerwarnings',
-        108 => 'phpunit\\textui\\configuration\\reversedefectlist',
-        109 => 'phpunit\\textui\\configuration\\requirecoveragemetadata',
-        110 => 'phpunit\\textui\\configuration\\noprogress',
-        111 => 'phpunit\\textui\\configuration\\noresults',
-        112 => 'phpunit\\textui\\configuration\\nooutput',
-        113 => 'phpunit\\textui\\configuration\\executionorder',
-        114 => 'phpunit\\textui\\configuration\\executionorderdefects',
-        115 => 'phpunit\\textui\\configuration\\resolvedependencies',
-        116 => 'phpunit\\textui\\configuration\\haslogfileteamcity',
-        117 => 'phpunit\\textui\\configuration\\logfileteamcity',
-        118 => 'phpunit\\textui\\configuration\\haslogfilejunit',
-        119 => 'phpunit\\textui\\configuration\\logfilejunit',
-        120 => 'phpunit\\textui\\configuration\\haslogfileotr',
-        121 => 'phpunit\\textui\\configuration\\logfileotr',
-        122 => 'phpunit\\textui\\configuration\\includegitinformationinotrlogfile',
-        123 => 'phpunit\\textui\\configuration\\haslogfiletestdoxhtml',
-        124 => 'phpunit\\textui\\configuration\\logfiletestdoxhtml',
-        125 => 'phpunit\\textui\\configuration\\haslogfiletestdoxtext',
-        126 => 'phpunit\\textui\\configuration\\logfiletestdoxtext',
-        127 => 'phpunit\\textui\\configuration\\haslogeventstext',
-        128 => 'phpunit\\textui\\configuration\\logeventstext',
-        129 => 'phpunit\\textui\\configuration\\haslogeventsverbosetext',
-        130 => 'phpunit\\textui\\configuration\\logeventsverbosetext',
-        131 => 'phpunit\\textui\\configuration\\outputisteamcity',
-        132 => 'phpunit\\textui\\configuration\\outputistestdox',
-        133 => 'phpunit\\textui\\configuration\\testdoxoutputwithsummary',
-        134 => 'phpunit\\textui\\configuration\\hastestscovering',
-        135 => 'phpunit\\textui\\configuration\\testscovering',
-        136 => 'phpunit\\textui\\configuration\\hastestsusing',
-        137 => 'phpunit\\textui\\configuration\\testsusing',
-        138 => 'phpunit\\textui\\configuration\\hastestsrequiringphpextension',
-        139 => 'phpunit\\textui\\configuration\\testsrequiringphpextension',
-        140 => 'phpunit\\textui\\configuration\\hasfilter',
-        141 => 'phpunit\\textui\\configuration\\filter',
-        142 => 'phpunit\\textui\\configuration\\hasexcludefilter',
-        143 => 'phpunit\\textui\\configuration\\excludefilter',
-        144 => 'phpunit\\textui\\configuration\\hasgroups',
-        145 => 'phpunit\\textui\\configuration\\groups',
-        146 => 'phpunit\\textui\\configuration\\hasexcludegroups',
-        147 => 'phpunit\\textui\\configuration\\excludegroups',
-        148 => 'phpunit\\textui\\configuration\\randomorderseed',
-        149 => 'phpunit\\textui\\configuration\\includeuncoveredfiles',
-        150 => 'phpunit\\textui\\configuration\\testsuite',
-        151 => 'phpunit\\textui\\configuration\\includetestsuite',
-        152 => 'phpunit\\textui\\configuration\\includetestsuites',
-        153 => 'phpunit\\textui\\configuration\\excludetestsuite',
-        154 => 'phpunit\\textui\\configuration\\excludetestsuites',
-        155 => 'phpunit\\textui\\configuration\\hasdefaulttestsuite',
-        156 => 'phpunit\\textui\\configuration\\defaulttestsuite',
-        157 => 'phpunit\\textui\\configuration\\ignoretestselectioninxmlconfiguration',
-        158 => 'phpunit\\textui\\configuration\\testsuffixes',
-        159 => 'phpunit\\textui\\configuration\\php',
-        160 => 'phpunit\\textui\\configuration\\controlgarbagecollector',
-        161 => 'phpunit\\textui\\configuration\\numberoftestsbeforegarbagecollection',
-        162 => 'phpunit\\textui\\configuration\\hasgeneratebaseline',
-        163 => 'phpunit\\textui\\configuration\\generatebaseline',
-        164 => 'phpunit\\textui\\configuration\\debug',
-        165 => 'phpunit\\textui\\configuration\\withtelemetry',
-        166 => 'phpunit\\textui\\configuration\\shortenarraysforexportthreshold',
+        3 => 'phpunit\\textui\\configuration\\hastestfilesfile',
+        4 => 'phpunit\\textui\\configuration\\testfilesfile',
+        5 => 'phpunit\\textui\\configuration\\hasconfigurationfile',
+        6 => 'phpunit\\textui\\configuration\\configurationfile',
+        7 => 'phpunit\\textui\\configuration\\hasbootstrap',
+        8 => 'phpunit\\textui\\configuration\\bootstrap',
+        9 => 'phpunit\\textui\\configuration\\bootstrapfortestsuite',
+        10 => 'phpunit\\textui\\configuration\\recordtestrunhistory',
+        11 => 'phpunit\\textui\\configuration\\cacheresult',
+        12 => 'phpunit\\textui\\configuration\\hascachedirectory',
+        13 => 'phpunit\\textui\\configuration\\cachedirectory',
+        14 => 'phpunit\\textui\\configuration\\hascoveragecachedirectory',
+        15 => 'phpunit\\textui\\configuration\\coveragecachedirectory',
+        16 => 'phpunit\\textui\\configuration\\source',
+        17 => 'phpunit\\textui\\configuration\\testrunhistoryfile',
+        18 => 'phpunit\\textui\\configuration\\testresultcachefile',
+        19 => 'phpunit\\textui\\configuration\\ignoredeprecatedcodeunitsfromcodecoverage',
+        20 => 'phpunit\\textui\\configuration\\disablecodecoverageignore',
+        21 => 'phpunit\\textui\\configuration\\disablecoveragetargeting',
+        22 => 'phpunit\\textui\\configuration\\pathcoverage',
+        23 => 'phpunit\\textui\\configuration\\branchcoverage',
+        24 => 'phpunit\\textui\\configuration\\hascoveragedriver',
+        25 => 'phpunit\\textui\\configuration\\coveragedriver',
+        26 => 'phpunit\\textui\\configuration\\hascoveragereport',
+        27 => 'phpunit\\textui\\configuration\\hascoverageclover',
+        28 => 'phpunit\\textui\\configuration\\coverageclover',
+        29 => 'phpunit\\textui\\configuration\\hascoveragecobertura',
+        30 => 'phpunit\\textui\\configuration\\coveragecobertura',
+        31 => 'phpunit\\textui\\configuration\\hascoveragecrap4j',
+        32 => 'phpunit\\textui\\configuration\\coveragecrap4j',
+        33 => 'phpunit\\textui\\configuration\\coveragecrap4jthreshold',
+        34 => 'phpunit\\textui\\configuration\\hascoveragehtml',
+        35 => 'phpunit\\textui\\configuration\\coveragehtml',
+        36 => 'phpunit\\textui\\configuration\\coveragehtmlclassview',
+        37 => 'phpunit\\textui\\configuration\\coveragehtmlfileview',
+        38 => 'phpunit\\textui\\configuration\\coveragehtmllowupperbound',
+        39 => 'phpunit\\textui\\configuration\\coveragehtmlhighlowerbound',
+        40 => 'phpunit\\textui\\configuration\\coveragehtmlcolorsuccesslow',
+        41 => 'phpunit\\textui\\configuration\\coveragehtmlcolorsuccesslowdark',
+        42 => 'phpunit\\textui\\configuration\\coveragehtmlcolorsuccessmedium',
+        43 => 'phpunit\\textui\\configuration\\coveragehtmlcolorsuccessmediumdark',
+        44 => 'phpunit\\textui\\configuration\\coveragehtmlcolorsuccesshigh',
+        45 => 'phpunit\\textui\\configuration\\coveragehtmlcolorsuccesshighdark',
+        46 => 'phpunit\\textui\\configuration\\coveragehtmlcolorsuccessbar',
+        47 => 'phpunit\\textui\\configuration\\coveragehtmlcolorsuccessbardark',
+        48 => 'phpunit\\textui\\configuration\\coveragehtmlcolorwarning',
+        49 => 'phpunit\\textui\\configuration\\coveragehtmlcolorwarningdark',
+        50 => 'phpunit\\textui\\configuration\\coveragehtmlcolorwarningbar',
+        51 => 'phpunit\\textui\\configuration\\coveragehtmlcolorwarningbardark',
+        52 => 'phpunit\\textui\\configuration\\coveragehtmlcolordanger',
+        53 => 'phpunit\\textui\\configuration\\coveragehtmlcolordangerdark',
+        54 => 'phpunit\\textui\\configuration\\coveragehtmlcolordangerbar',
+        55 => 'phpunit\\textui\\configuration\\coveragehtmlcolordangerbardark',
+        56 => 'phpunit\\textui\\configuration\\coveragehtmlcolorbreadcrumbs',
+        57 => 'phpunit\\textui\\configuration\\coveragehtmlcolorbreadcrumbsdark',
+        58 => 'phpunit\\textui\\configuration\\hascoveragehtmlcustomcssfile',
+        59 => 'phpunit\\textui\\configuration\\coveragehtmlcustomcssfile',
+        60 => 'phpunit\\textui\\configuration\\hascoverageopenclover',
+        61 => 'phpunit\\textui\\configuration\\coverageopenclover',
+        62 => 'phpunit\\textui\\configuration\\hascoveragephp',
+        63 => 'phpunit\\textui\\configuration\\coveragephp',
+        64 => 'phpunit\\textui\\configuration\\hascoveragetext',
+        65 => 'phpunit\\textui\\configuration\\coveragetext',
+        66 => 'phpunit\\textui\\configuration\\coveragetextshowuncoveredfiles',
+        67 => 'phpunit\\textui\\configuration\\coveragetextshowonlysummary',
+        68 => 'phpunit\\textui\\configuration\\hascoveragexml',
+        69 => 'phpunit\\textui\\configuration\\coveragexml',
+        70 => 'phpunit\\textui\\configuration\\coveragexmlincludesource',
+        71 => 'phpunit\\textui\\configuration\\failonallissues',
+        72 => 'phpunit\\textui\\configuration\\failondeprecation',
+        73 => 'phpunit\\textui\\configuration\\failonselfdeprecation',
+        74 => 'phpunit\\textui\\configuration\\failondirectdeprecation',
+        75 => 'phpunit\\textui\\configuration\\failonindirectdeprecation',
+        76 => 'phpunit\\textui\\configuration\\failonphpunitdeprecation',
+        77 => 'phpunit\\textui\\configuration\\failonphpunitnotice',
+        78 => 'phpunit\\textui\\configuration\\failonphpunitwarning',
+        79 => 'phpunit\\textui\\configuration\\failonemptytestsuite',
+        80 => 'phpunit\\textui\\configuration\\failonincomplete',
+        81 => 'phpunit\\textui\\configuration\\failonnotice',
+        82 => 'phpunit\\textui\\configuration\\failonrisky',
+        83 => 'phpunit\\textui\\configuration\\failonskipped',
+        84 => 'phpunit\\textui\\configuration\\failonwarning',
+        85 => 'phpunit\\textui\\configuration\\donotfailondeprecation',
+        86 => 'phpunit\\textui\\configuration\\donotfailonselfdeprecation',
+        87 => 'phpunit\\textui\\configuration\\donotfailondirectdeprecation',
+        88 => 'phpunit\\textui\\configuration\\donotfailonindirectdeprecation',
+        89 => 'phpunit\\textui\\configuration\\donotfailonphpunitdeprecation',
+        90 => 'phpunit\\textui\\configuration\\donotfailonphpunitnotice',
+        91 => 'phpunit\\textui\\configuration\\donotfailonphpunitwarning',
+        92 => 'phpunit\\textui\\configuration\\donotfailonemptytestsuite',
+        93 => 'phpunit\\textui\\configuration\\donotfailonincomplete',
+        94 => 'phpunit\\textui\\configuration\\donotfailonnotice',
+        95 => 'phpunit\\textui\\configuration\\donotfailonrisky',
+        96 => 'phpunit\\textui\\configuration\\donotfailonskipped',
+        97 => 'phpunit\\textui\\configuration\\donotfailonwarning',
+        98 => 'phpunit\\textui\\configuration\\stopondefect',
+        99 => 'phpunit\\textui\\configuration\\stopondefectthreshold',
+        100 => 'phpunit\\textui\\configuration\\stopondeprecation',
+        101 => 'phpunit\\textui\\configuration\\stopondeprecationthreshold',
+        102 => 'phpunit\\textui\\configuration\\hasspecificdeprecationtostopon',
+        103 => 'phpunit\\textui\\configuration\\specificdeprecationtostopon',
+        104 => 'phpunit\\textui\\configuration\\stoponerror',
+        105 => 'phpunit\\textui\\configuration\\stoponerrorthreshold',
+        106 => 'phpunit\\textui\\configuration\\stoponfailure',
+        107 => 'phpunit\\textui\\configuration\\stoponfailurethreshold',
+        108 => 'phpunit\\textui\\configuration\\stoponincomplete',
+        109 => 'phpunit\\textui\\configuration\\stoponincompletethreshold',
+        110 => 'phpunit\\textui\\configuration\\stoponnotice',
+        111 => 'phpunit\\textui\\configuration\\stoponnoticethreshold',
+        112 => 'phpunit\\textui\\configuration\\stoponrisky',
+        113 => 'phpunit\\textui\\configuration\\stoponriskythreshold',
+        114 => 'phpunit\\textui\\configuration\\stoponskipped',
+        115 => 'phpunit\\textui\\configuration\\stoponskippedthreshold',
+        116 => 'phpunit\\textui\\configuration\\stoponwarning',
+        117 => 'phpunit\\textui\\configuration\\stoponwarningthreshold',
+        118 => 'phpunit\\textui\\configuration\\outputtostandarderrorstream',
+        119 => 'phpunit\\textui\\configuration\\columns',
+        120 => 'phpunit\\textui\\configuration\\noextensions',
+        121 => 'phpunit\\textui\\configuration\\haspharextensiondirectory',
+        122 => 'phpunit\\textui\\configuration\\pharextensiondirectory',
+        123 => 'phpunit\\textui\\configuration\\extensionbootstrappers',
+        124 => 'phpunit\\textui\\configuration\\backupglobals',
+        125 => 'phpunit\\textui\\configuration\\backupstaticproperties',
+        126 => 'phpunit\\textui\\configuration\\bestrictaboutchangestoglobalstate',
+        127 => 'phpunit\\textui\\configuration\\colors',
+        128 => 'phpunit\\textui\\configuration\\processisolation',
+        129 => 'phpunit\\textui\\configuration\\enforcetimelimit',
+        130 => 'phpunit\\textui\\configuration\\defaulttimelimit',
+        131 => 'phpunit\\textui\\configuration\\diffcontext',
+        132 => 'phpunit\\textui\\configuration\\timeoutforsmalltests',
+        133 => 'phpunit\\textui\\configuration\\timeoutformediumtests',
+        134 => 'phpunit\\textui\\configuration\\timeoutforlargetests',
+        135 => 'phpunit\\textui\\configuration\\reportuselesstests',
+        136 => 'phpunit\\textui\\configuration\\strictcoverage',
+        137 => 'phpunit\\textui\\configuration\\requirecoveragecontribution',
+        138 => 'phpunit\\textui\\configuration\\disallowtestoutput',
+        139 => 'phpunit\\textui\\configuration\\displaydetailsonallissues',
+        140 => 'phpunit\\textui\\configuration\\displaydetailsonincompletetests',
+        141 => 'phpunit\\textui\\configuration\\displaydetailsonskippedtests',
+        142 => 'phpunit\\textui\\configuration\\displaydetailsonteststhattriggerdeprecations',
+        143 => 'phpunit\\textui\\configuration\\displaydetailsonphpunitdeprecations',
+        144 => 'phpunit\\textui\\configuration\\displaydetailsonphpunitnotices',
+        145 => 'phpunit\\textui\\configuration\\displaydetailsonteststhattriggererrors',
+        146 => 'phpunit\\textui\\configuration\\displaydetailsonteststhattriggernotices',
+        147 => 'phpunit\\textui\\configuration\\displaydetailsonteststhattriggerwarnings',
+        148 => 'phpunit\\textui\\configuration\\reversedefectlist',
+        149 => 'phpunit\\textui\\configuration\\requirecoveragemetadata',
+        150 => 'phpunit\\textui\\configuration\\requiresealedmockobjects',
+        151 => 'phpunit\\textui\\configuration\\noprogress',
+        152 => 'phpunit\\textui\\configuration\\noresults',
+        153 => 'phpunit\\textui\\configuration\\nooutput',
+        154 => 'phpunit\\textui\\configuration\\executionorder',
+        155 => 'phpunit\\textui\\configuration\\executionorderdefects',
+        156 => 'phpunit\\textui\\configuration\\resolvedependencies',
+        157 => 'phpunit\\textui\\configuration\\haslogfileteamcity',
+        158 => 'phpunit\\textui\\configuration\\logfileteamcity',
+        159 => 'phpunit\\textui\\configuration\\haslogfilejunit',
+        160 => 'phpunit\\textui\\configuration\\logfilejunit',
+        161 => 'phpunit\\textui\\configuration\\haslogfileotr',
+        162 => 'phpunit\\textui\\configuration\\logfileotr',
+        163 => 'phpunit\\textui\\configuration\\includegitinformationinotrlogfile',
+        164 => 'phpunit\\textui\\configuration\\includegitinformation',
+        165 => 'phpunit\\textui\\configuration\\haslogfiletestdoxhtml',
+        166 => 'phpunit\\textui\\configuration\\logfiletestdoxhtml',
+        167 => 'phpunit\\textui\\configuration\\haslogfiletestdoxtext',
+        168 => 'phpunit\\textui\\configuration\\logfiletestdoxtext',
+        169 => 'phpunit\\textui\\configuration\\haslogeventstext',
+        170 => 'phpunit\\textui\\configuration\\logeventstext',
+        171 => 'phpunit\\textui\\configuration\\haslogeventsverbosetext',
+        172 => 'phpunit\\textui\\configuration\\logeventsverbosetext',
+        173 => 'phpunit\\textui\\configuration\\outputiscompact',
+        174 => 'phpunit\\textui\\configuration\\outputisteamcity',
+        175 => 'phpunit\\textui\\configuration\\outputistestdox',
+        176 => 'phpunit\\textui\\configuration\\testdoxoutputwithsummary',
+        177 => 'phpunit\\textui\\configuration\\hastestscovering',
+        178 => 'phpunit\\textui\\configuration\\testscovering',
+        179 => 'phpunit\\textui\\configuration\\hastestsusing',
+        180 => 'phpunit\\textui\\configuration\\testsusing',
+        181 => 'phpunit\\textui\\configuration\\hastestsrequiringphpextension',
+        182 => 'phpunit\\textui\\configuration\\testsrequiringphpextension',
+        183 => 'phpunit\\textui\\configuration\\hasfilter',
+        184 => 'phpunit\\textui\\configuration\\filter',
+        185 => 'phpunit\\textui\\configuration\\hasexcludefilter',
+        186 => 'phpunit\\textui\\configuration\\excludefilter',
+        187 => 'phpunit\\textui\\configuration\\hastestidfilterfile',
+        188 => 'phpunit\\textui\\configuration\\testidfilterfile',
+        189 => 'phpunit\\textui\\configuration\\hastestidfilter',
+        190 => 'phpunit\\textui\\configuration\\testidfilter',
+        191 => 'phpunit\\textui\\configuration\\hasgroups',
+        192 => 'phpunit\\textui\\configuration\\groups',
+        193 => 'phpunit\\textui\\configuration\\hasexcludegroups',
+        194 => 'phpunit\\textui\\configuration\\excludegroups',
+        195 => 'phpunit\\textui\\configuration\\randomorderseed',
+        196 => 'phpunit\\textui\\configuration\\repeat',
+        197 => 'phpunit\\textui\\configuration\\retry',
+        198 => 'phpunit\\textui\\configuration\\includeuncoveredfiles',
+        199 => 'phpunit\\textui\\configuration\\testsuite',
+        200 => 'phpunit\\textui\\configuration\\includetestsuites',
+        201 => 'phpunit\\textui\\configuration\\excludetestsuites',
+        202 => 'phpunit\\textui\\configuration\\hasdefaulttestsuite',
+        203 => 'phpunit\\textui\\configuration\\defaulttestsuite',
+        204 => 'phpunit\\textui\\configuration\\ignoretestselectioninxmlconfiguration',
+        205 => 'phpunit\\textui\\configuration\\testsuffixes',
+        206 => 'phpunit\\textui\\configuration\\php',
+        207 => 'phpunit\\textui\\configuration\\controlgarbagecollector',
+        208 => 'phpunit\\textui\\configuration\\numberoftestsbeforegarbagecollection',
+        209 => 'phpunit\\textui\\configuration\\hasgeneratebaseline',
+        210 => 'phpunit\\textui\\configuration\\generatebaseline',
+        211 => 'phpunit\\textui\\configuration\\debug',
+        212 => 'phpunit\\textui\\configuration\\withtelemetry',
+        213 => 'phpunit\\textui\\configuration\\shortenarraysforexportthreshold',
+        214 => 'phpunit\\textui\\configuration\\warnwhenphpisnotconfiguredfordevelopment',
       ),
       3 => 
       array (
@@ -15356,7 +15326,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Merger.php' => 
     array (
-      0 => 'c3a46d64d459a0bea91ae8ad3969825706ec31abfdfa1a3eceafb6f4e1fadb1f',
+      0 => '2d02d4c35453940944c821178d778b1d78da43bae87aef7cb035d533c0172270',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\merger',
@@ -15364,7 +15334,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\textui\\configuration\\merge',
-        1 => 'phpunit\\textui\\configuration\\hasexplicittestselection',
+        1 => 'phpunit\\textui\\configuration\\nullablenonemptystring',
+        2 => 'phpunit\\textui\\configuration\\requirenonemptystring',
+        3 => 'phpunit\\textui\\configuration\\clampnonnegativeint',
+        4 => 'phpunit\\textui\\configuration\\clamppositiveint',
+        5 => 'phpunit\\textui\\configuration\\hasexplicittestselection',
+        6 => 'phpunit\\textui\\configuration\\warnaboutfailonsettingthathasnoeffect',
       ),
       3 => 
       array (
@@ -15372,7 +15347,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/PhpHandler.php' => 
     array (
-      0 => 'c114deb4d475b1dd82a18ac7cb3be44c99c9f828f113cbc54ca8c13a4c17997d',
+      0 => 'b94c51bb73a49a333f583b6c9a249b2cfca37787b6270b1e9184de1c5710c78f',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\phphandler',
@@ -15394,7 +15369,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Registry.php' => 
     array (
-      0 => '27aa272f732e49440a202b612f6d86882fd4c9988a4155c87ce50396ed226315',
+      0 => 'beede3e3d116f8a6e9befc6a0d154dfb95487cad9878e8fbcd4d069dd81875f1',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\registry',
@@ -15412,7 +15387,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/SourceFilter.php' => 
     array (
-      0 => 'fb996f6b58c4b7c61552242be2567b159cc948133f0425ec6217c382c16d6f7b',
+      0 => '57f4aaace6578950120d00d4fc490d9a3c095d0724bafa13efcc4506604edde1',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\sourcefilter',
@@ -15429,7 +15404,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/SourceMapper.php' => 
     array (
-      0 => '304c97e3f3a1719beb4e8ef11ab438a4fd16fd44c790be0c20e6f5d3340033d4',
+      0 => '575c5af48fb9ab38891993b987007ae4d972d5c76051e0e59b4fd570054c8db6',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\sourcemapper',
@@ -15439,7 +15414,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\textui\\configuration\\saveto',
         1 => 'phpunit\\textui\\configuration\\loadfrom',
         2 => 'phpunit\\textui\\configuration\\map',
-        3 => 'phpunit\\textui\\configuration\\aggregatedirectories',
+        3 => 'phpunit\\textui\\configuration\\mapforcodecoverage',
+        4 => 'phpunit\\textui\\configuration\\isinhiddendirectory',
+        5 => 'phpunit\\textui\\configuration\\aggregatedirectories',
       ),
       3 => 
       array (
@@ -15447,7 +15424,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/TestSuiteBuilder.php' => 
     array (
-      0 => '94cd29320e68d59cf43bf1dfe27d90b114c9c3592394487d6793c3fe863044c2',
+      0 => 'd829ccd73abb36c5bc01e3a2895bd5808a1e599f0e2a5afedd4729510ab53bee',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\testsuitebuilder',
@@ -15464,7 +15441,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/Constant.php' => 
     array (
-      0 => '846dcb9e01b2411e1cbb6dfae5cc4fb1063f1f12553eb3ce4ba4fcf39df5189e',
+      0 => 'ae31f6b42010abba283ad683933713b0a7a8a9e1764913a7c73de3d2a2dd6c65',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\constant',
@@ -15500,7 +15477,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/ConstantCollectionIterator.php' => 
     array (
-      0 => 'e1863501cb6f6d6aafb74df0795b094cffe76a8f0a9173e6a1562a39c5a239fa',
+      0 => '4bb4fe52a3a480d0d4450a39a3a4accb6435fd54e5f621cd0a39e92a7c462efe',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\constantcollectioniterator',
@@ -15520,7 +15497,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/Directory.php' => 
     array (
-      0 => 'fbdfa2b7b7026400e391adb0ade707108acaaa13733826e4bffa9a14c1ca6ba5',
+      0 => '86c89e1eb0702b3381f3aa4a34404f0dc5d302459debd7c5b297b16102f59815',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\directory',
@@ -15556,7 +15533,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/DirectoryCollectionIterator.php' => 
     array (
-      0 => '7244522c3b8340e9e60b01f57cc57f94ac6cf3503b939a5884ca54c1c631a9b5',
+      0 => '625a0db1be95675bf4146e5aab3b62b3fa821aae74c2c7224cb6e8cbaba80a14',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\directorycollectioniterator',
@@ -15611,7 +15588,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/ExtensionBootstrapCollectionIterator.php' => 
     array (
-      0 => '06e320cda885709f1ab2e09d345712f21f463c1cce283f4d06d2d00b80920635',
+      0 => '789773b940040f97326c4daeaf2089a13e6df6aff5c61a1dba3b378e92069699',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\extensionbootstrapcollectioniterator',
@@ -15667,7 +15644,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/FileCollectionIterator.php' => 
     array (
-      0 => '65c0fbaa1652f475952eedc4186e9d4ca3cdd9858e8a64f9709efd0b59964519',
+      0 => '9fcbfc9d5283c73c2789e9a5f5d43b8566a611fa3ec248ca50f2d4aee67a324d',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\filecollectioniterator',
@@ -15687,7 +15664,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/FilterDirectory.php' => 
     array (
-      0 => 'cb52319d6f8dc0ef2ccef888a00ae1745bdb46c7df98586130f10fbf9156ffe9',
+      0 => 'ff690272299886013cbfca9bbd437f90950e4158ae3b39238a1d7a4ecd6b982a',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\filterdirectory',
@@ -15698,6 +15675,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         1 => 'phpunit\\textui\\configuration\\path',
         2 => 'phpunit\\textui\\configuration\\prefix',
         3 => 'phpunit\\textui\\configuration\\suffix',
+        4 => 'phpunit\\textui\\configuration\\includeincodecoverage',
       ),
       3 => 
       array (
@@ -15725,7 +15703,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/FilterDirectoryCollectionIterator.php' => 
     array (
-      0 => 'fb433541c9a06c989e868eb2d5086cb99e6d805e330d568a4e00c0d9685c2f1a',
+      0 => '5ed3f637b4a9c4fb8a207e6926b33f108d71d446436e585f3d6f3cea5758fa38',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\filterdirectorycollectioniterator',
@@ -15745,7 +15723,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/Group.php' => 
     array (
-      0 => 'e0c6d46351b9336dc56720cfeca7824aeef0409f215e34c13d34c98b4ad0a67e',
+      0 => '6dc65ba92877a6ea51c079b222104363d29d38d594cb36371fcb9e689dca8cda',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\group',
@@ -15761,7 +15739,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/GroupCollection.php' => 
     array (
-      0 => '3073a0c95b0249ed4e3733720039c81f09a5323e99e67963602fd36f0b0b67c3',
+      0 => 'd4d9f0b45c1d42f4e21cc067259d2a8b1b77d944aa4318bf64861e522afc5923',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\groupcollection',
@@ -15781,7 +15759,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/GroupCollectionIterator.php' => 
     array (
-      0 => '3a34a765716b8d547874a0fd4d745d147179c3fb766684a121ac38994df0bba1',
+      0 => 'a5c2ed9b99378fea7d74cae8eee133d154cde6e84a8397479068acb44572a9c1',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\groupcollectioniterator',
@@ -15801,7 +15779,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/IniSetting.php' => 
     array (
-      0 => '1527dde4cbd627c7ca936b6629eeaa2ada0d9c22214460169d5b5adb29daf749',
+      0 => '110d8737776039b18d5d1642e430c026e2102d9863276076c8000e1caf6c2733',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\inisetting',
@@ -15837,7 +15815,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/IniSettingCollectionIterator.php' => 
     array (
-      0 => 'b3ffefde7497a7b2d8be00d6e8db8d401e63270309f039710152c1e89bc0980b',
+      0 => 'f6ed3ce5e4bc5815f1584ab91a5c9b303976f0415ec96a184e697d5cf918bc82',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\inisettingcollectioniterator',
@@ -15883,7 +15861,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/Source.php' => 
     array (
-      0 => '005cb97cadd336d301fe44bed616973e04752505d134ddb01627a3235c25751a',
+      0 => 'a9a4728848cf3578ff24a5b60077d50cc9ee031f3eed5ff76b317ef5a4cf4fef',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\source',
@@ -15913,6 +15891,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         20 => 'phpunit\\textui\\configuration\\ignoredirectdeprecations',
         21 => 'phpunit\\textui\\configuration\\ignoreindirectdeprecations',
         22 => 'phpunit\\textui\\configuration\\identifyissuetrigger',
+        23 => 'phpunit\\textui\\configuration\\issuetriggerresolvers',
+        24 => 'phpunit\\textui\\configuration\\deprecationfilters',
       ),
       3 => 
       array (
@@ -15920,7 +15900,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/TestDirectory.php' => 
     array (
-      0 => 'afca46edb3a91732c1b78949f045b16a0261d4660ddfd73e4d3918f52f293767',
+      0 => '498cbf1730601bd5d428b76b20c3df8f4bdf45e92f362464634745af0534e1cc',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\testdirectory',
@@ -15961,7 +15941,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/TestDirectoryCollectionIterator.php' => 
     array (
-      0 => '55a7a17e5d9717d9f65c1a8ea41692439ef454bbce2e2a865066be8e109baac7',
+      0 => '93d5b3b9a8682261f9ed174567b2e878083ef5840c19a9224327e94adaa7b74f',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\testdirectorycollectioniterator',
@@ -16020,7 +16000,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/TestFileCollectionIterator.php' => 
     array (
-      0 => '4cb2462af39de416322c49b28b44de31d60550b2f16ee7c723eaef76193731bc',
+      0 => '9bd371cfdcdec0310959dea214c1f2f0d1da4091fc51aeadd4c18ef046664a21',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\testfilecollectioniterator',
@@ -16079,7 +16059,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/TestSuiteCollectionIterator.php' => 
     array (
-      0 => '6f71efd2064e1e8e89425557fb3f8f7ea56560730002d0e5e2d5447a618ed741',
+      0 => '97d695826126a82f573ae3fc6d80008d14d43f7ba6eccd433df206a2449ac6ce',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\testsuitecollectioniterator',
@@ -16099,7 +16079,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/Variable.php' => 
     array (
-      0 => 'f2851241bace9d87fd2ead90dd8c2788095d1d5360211238f90d80a11d153927',
+      0 => 'ab9908a0121d8f12ebfa011f7731f94cb3d870e8c85c47caace9193d5302fd26',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\variable',
@@ -16136,7 +16116,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/VariableCollectionIterator.php' => 
     array (
-      0 => '05bdfea71c54933f0862a20f39bc5892b63da7c593ba2d7f1cdd43a5afd3d451',
+      0 => '8346f411548e4f76e65c31b1bba7ad0e796d9df2fb79df40ec6e07d59ea6acae',
       1 => 
       array (
         0 => 'phpunit\\textui\\configuration\\variablecollectioniterator',
@@ -16156,7 +16136,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/CodeCoverage/CodeCoverage.php' => 
     array (
-      0 => 'f17c6098fbdcb58efa8d2c5ef23b59b08f79a67dd3ed5117b8785eb436aadb80',
+      0 => 'd3bffbd6a3d0b547090c465a003a312b43ffabeb3713e56a11427f73d7663f08',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\codecoverage',
@@ -16164,26 +16144,29 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\__construct',
-        1 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\pathcoverage',
-        2 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\includeuncoveredfiles',
-        3 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\ignoredeprecatedcodeunits',
-        4 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\disablecodecoverageignore',
-        5 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hasclover',
-        6 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\clover',
-        7 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hascobertura',
-        8 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\cobertura',
-        9 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hascrap4j',
-        10 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\crap4j',
-        11 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hashtml',
-        12 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\html',
-        13 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hasopenclover',
-        14 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\openclover',
-        15 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hasphp',
-        16 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\php',
-        17 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hastext',
-        18 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\text',
-        19 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hasxml',
-        20 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\xml',
+        1 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hasdriver',
+        2 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\driver',
+        3 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\pathcoverage',
+        4 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\branchcoverage',
+        5 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\includeuncoveredfiles',
+        6 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\ignoredeprecatedcodeunits',
+        7 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\disablecodecoverageignore',
+        8 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hasclover',
+        9 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\clover',
+        10 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hascobertura',
+        11 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\cobertura',
+        12 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hascrap4j',
+        13 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\crap4j',
+        14 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hashtml',
+        15 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\html',
+        16 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hasopenclover',
+        17 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\openclover',
+        18 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hasphp',
+        19 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\php',
+        20 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hastext',
+        21 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\text',
+        22 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\hasxml',
+        23 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\xml',
       ),
       3 => 
       array (
@@ -16223,7 +16206,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/CodeCoverage/Report/Crap4j.php' => 
     array (
-      0 => 'f11b3e6d564dae7cbe0a65b3f54336d344155cf168017aeb3fddd718a469c8ae',
+      0 => '83141648034a602d1aec85f5a34209569bcb2a00a0c5c4ee9d013ce6b5e2706e',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\crap4j',
@@ -16240,7 +16223,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/CodeCoverage/Report/Html.php' => 
     array (
-      0 => '96b728ba530ab9edbc27e6644b7ee305ea785c6021fc922c760ee4a9b5d6d450',
+      0 => '53e24c480d2ad2330d1a9a7696677f35340b337395c4eb7c7a810fa2a56842dc',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\html',
@@ -16248,16 +16231,32 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\__construct',
-        1 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\target',
-        2 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\lowupperbound',
-        3 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\highlowerbound',
-        4 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorsuccesslow',
-        5 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorsuccessmedium',
-        6 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorsuccesshigh',
-        7 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorwarning',
-        8 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colordanger',
-        9 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\hascustomcssfile',
-        10 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\customcssfile',
+        1 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\hastarget',
+        2 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\target',
+        3 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\classview',
+        4 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\fileview',
+        5 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\lowupperbound',
+        6 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\highlowerbound',
+        7 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorsuccesslow',
+        8 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorsuccesslowdark',
+        9 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorsuccessmedium',
+        10 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorsuccessmediumdark',
+        11 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorsuccesshigh',
+        12 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorsuccesshighdark',
+        13 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorsuccessbar',
+        14 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorsuccessbardark',
+        15 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorwarning',
+        16 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorwarningdark',
+        17 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorwarningbar',
+        18 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorwarningbardark',
+        19 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colordanger',
+        20 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colordangerdark',
+        21 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colordangerbar',
+        22 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colordangerbardark',
+        23 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorbreadcrumbs',
+        24 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\colorbreadcrumbsdark',
+        25 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\hascustomcssfile',
+        26 => 'phpunit\\textui\\xmlconfiguration\\codecoverage\\report\\customcssfile',
       ),
       3 => 
       array (
@@ -16357,7 +16356,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/DefaultConfiguration.php' => 
     array (
-      0 => '3d326fc6055a13e19c81b1aedce2593d6e52dbfdc2bd5987cd8997378e95982b',
+      0 => '87f686353a8f2b7fc275a872f1ae175b236cb552d9be8973c21808f19ee335ce',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\defaultconfiguration',
@@ -16387,7 +16386,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Generator.php' => 
     array (
-      0 => '1368134138f213091aaf072e6d10c7cb6895f90a90472c0d78aa8ab407de8633',
+      0 => 'eaf027c58af43c8a795f4661b4d105ecf35a0453376f3ba21b4f061711c6b666',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\generator',
@@ -16440,7 +16439,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Loader.php' => 
     array (
-      0 => 'd65a01a8c7f0869b9a9c7ee27cffd486967d6814062e8ea80988eed018df87ed',
+      0 => '665397c0a4d6db89a4daec52173ec109d76f7aee259c15465d38f5eba12b36be',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\loader',
@@ -16458,20 +16457,25 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         8 => 'phpunit\\textui\\xmlconfiguration\\readfilterdirectories',
         9 => 'phpunit\\textui\\xmlconfiguration\\readfilterfiles',
         10 => 'phpunit\\textui\\xmlconfiguration\\groups',
-        11 => 'phpunit\\textui\\xmlconfiguration\\parsebooleanattribute',
-        12 => 'phpunit\\textui\\xmlconfiguration\\parseintegerattribute',
-        13 => 'phpunit\\textui\\xmlconfiguration\\parsestringattribute',
-        14 => 'phpunit\\textui\\xmlconfiguration\\parsestringattributewithdefault',
-        15 => 'phpunit\\textui\\xmlconfiguration\\parseinteger',
-        16 => 'phpunit\\textui\\xmlconfiguration\\php',
-        17 => 'phpunit\\textui\\xmlconfiguration\\phpunit',
-        18 => 'phpunit\\textui\\xmlconfiguration\\parsecolors',
-        19 => 'phpunit\\textui\\xmlconfiguration\\parsecolumns',
-        20 => 'phpunit\\textui\\xmlconfiguration\\bootstrapfortestsuite',
-        21 => 'phpunit\\textui\\xmlconfiguration\\testsuite',
-        22 => 'phpunit\\textui\\xmlconfiguration\\parsetestsuiteelements',
-        23 => 'phpunit\\textui\\xmlconfiguration\\element',
-        24 => 'phpunit\\textui\\xmlconfiguration\\ensureconfigurationvalidatesagainstatleastoneschema',
+        11 => 'phpunit\\textui\\xmlconfiguration\\parserecordtestrunhistoryattribute',
+        12 => 'phpunit\\textui\\xmlconfiguration\\parsebooleanattribute',
+        13 => 'phpunit\\textui\\xmlconfiguration\\parseintegerattribute',
+        14 => 'phpunit\\textui\\xmlconfiguration\\parsenonnegativeintegerattribute',
+        15 => 'phpunit\\textui\\xmlconfiguration\\parsepositiveintegerattribute',
+        16 => 'phpunit\\textui\\xmlconfiguration\\parsestringattribute',
+        17 => 'phpunit\\textui\\xmlconfiguration\\parsenullablenonemptystringattribute',
+        18 => 'phpunit\\textui\\xmlconfiguration\\parsecolorattributewithdefault',
+        19 => 'phpunit\\textui\\xmlconfiguration\\parseversionoperator',
+        20 => 'phpunit\\textui\\xmlconfiguration\\parseinteger',
+        21 => 'phpunit\\textui\\xmlconfiguration\\php',
+        22 => 'phpunit\\textui\\xmlconfiguration\\phpunit',
+        23 => 'phpunit\\textui\\xmlconfiguration\\parsecolors',
+        24 => 'phpunit\\textui\\xmlconfiguration\\parsecolumns',
+        25 => 'phpunit\\textui\\xmlconfiguration\\bootstrapfortestsuite',
+        26 => 'phpunit\\textui\\xmlconfiguration\\testsuite',
+        27 => 'phpunit\\textui\\xmlconfiguration\\parsetestsuiteelements',
+        28 => 'phpunit\\textui\\xmlconfiguration\\element',
+        29 => 'phpunit\\textui\\xmlconfiguration\\ensureconfigurationvalidatesagainstatleastoneschema',
       ),
       3 => 
       array (
@@ -16585,7 +16589,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/MigrationBuilder.php' => 
     array (
-      0 => 'ba8e0ef195aaffea81e6c3d4e2c3dd6c8723448ee99383863cdf752171c94aa1',
+      0 => 'b30992ab03d483a601333cd0f1cf661a1e9beacee25a3b2cd89b4469f187bf4a',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\migrationbuilder',
@@ -16614,7 +16618,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/ConvertLogTypes.php' => 
     array (
-      0 => '4374f6ea409c07f48f5ab7832d1b224f40778d7e0580da54245ef812f552674c',
+      0 => '7ef70dfaf2fce0f9902e26772539de78e6005ad3bebfd8305b6ac27bd9ea91fa',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\convertlogtypes',
@@ -16629,7 +16633,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/CoverageCloverToReport.php' => 
     array (
-      0 => 'bf799f26e3d1f8dc8c858edebc75b62cf6553a1f7a51e75f01d3a2950534706f',
+      0 => 'aec986f5904cdc77be6b3a0ef10cb3f34f2275f328606b9e2e6dfb18a1e1bee4',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\coverageclovertoreport',
@@ -16645,7 +16649,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/CoverageCrap4jToReport.php' => 
     array (
-      0 => 'ba35fab7d61c886910c85ec1d1ac5cc0e98e7f0fd4280cf1fd87397274a7bf60',
+      0 => '4c5a01476d321eee342054cd0703b98f82443b99c3d836bc1966e9c8d92c0020',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\coveragecrap4jtoreport',
@@ -16661,7 +16665,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/CoverageHtmlToReport.php' => 
     array (
-      0 => '7a0031057a8b1d1a372348e425523a275804365d94ed6ff9e91df18bb5788066',
+      0 => '34d328e5347b70c134cf0d5b40832b133b51e29c66c35edf55286603f7501d0f',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\coveragehtmltoreport',
@@ -16677,7 +16681,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/CoveragePhpToReport.php' => 
     array (
-      0 => '163afff32e30ef65d3d68996ffac2092f0d29cc3a4e6292ec2ae81f2a6a5b662',
+      0 => 'c6a121f66e0b03f10334b69125deda418838bc389a33e82693540a9d357d716c',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\coveragephptoreport',
@@ -16693,7 +16697,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/CoverageTextToReport.php' => 
     array (
-      0 => 'b821ed86bbecc51a54febf9003e2df4c5a10305b95f36bb4b9df78e04cc5a78d',
+      0 => '99e8c681ee47b423ed5f2ec26fabbadf6ad66408ae641ea59ee65987be57b32b',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\coveragetexttoreport',
@@ -16709,7 +16713,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/CoverageXmlToReport.php' => 
     array (
-      0 => 'd97d0a281494e63cea4a9a5fc1a5a02e80db40a3d6091b17e73eb3a93d94db0e',
+      0 => '8cb6a910c03991490df5d0ac68e6844c6f8388053f6022b1d6aba592642b363a',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\coveragexmltoreport',
@@ -16725,7 +16729,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/IntroduceCacheDirectoryAttribute.php' => 
     array (
-      0 => '801ea73a827c6b3ab6b7899ee5a2fb6829cbc7fc3a3f72dad2db9a60a958d084',
+      0 => 'bdc1d90ee4286a25590ac751b7733ee1619ea28433ce0239ecb2a9d7483ea5b1',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\introducecachedirectoryattribute',
@@ -16740,7 +16744,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/IntroduceCoverageElement.php' => 
     array (
-      0 => 'be7af0b37c3981cbf89638014d351eceb1b6d38e14ccdac7605a9e39d1115fee',
+      0 => 'de7e478d72dae42d0e15e7694c158ca3bd2a2b17024a66d8942783163d907e3a',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\introducecoverageelement',
@@ -16755,7 +16759,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/LogToReportMigration.php' => 
     array (
-      0 => '180f5afc342b0824e132cb62ff5ca17349c0ff5b40f58bf457a8137b5787816a',
+      0 => '17e7b942242c34e3d7ae9cedce8f72404bec668a626b81f39afc2b08fe6808a1',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\logtoreportmigration',
@@ -16789,7 +16793,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveAttributesFromFilterWhitelistToCoverage.php' => 
     array (
-      0 => '9580a3121a128413ba8e1c1c212f48361b12e40e6af5402a37c674b67190196b',
+      0 => '731474715a532726e778e3ee5078a9077c61eeb439712b5036759ec803441753',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\moveattributesfromfilterwhitelisttocoverage',
@@ -16804,7 +16808,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveAttributesFromRootToCoverage.php' => 
     array (
-      0 => 'cdc38aa99ca74d506d5efbe7c4e6844718a60a139614749418b448894db700c4',
+      0 => 'c58a84345023b41a2d5f999d16bf16e12f447c869eb98a5dbfaba1ff0fc90728',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\moveattributesfromroottocoverage',
@@ -16819,7 +16823,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveCoverageDirectoriesToSource.php' => 
     array (
-      0 => '8aa56e1aafd0ae5cc10e2b84fa7eb5b5607c42e74ef5c2b1bd300babb74066e5',
+      0 => '38ea2eec5e816782ae706bccc4c11e1a1a83d614d0da93f1793e90baa3a8958a',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\movecoveragedirectoriestosource',
@@ -16834,7 +16838,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveWhitelistExcludesToCoverage.php' => 
     array (
-      0 => 'bd4ad428c08c7a93addb903e39906c8342d822ee078d6b65a12ae9b765e89680',
+      0 => '5c45b602ca7de8b8c2cc83d0b9bb8686b5510cc4c40641b48f903ed43212e918',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\movewhitelistexcludestocoverage',
@@ -16849,7 +16853,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveWhitelistIncludesToCoverage.php' => 
     array (
-      0 => 'ce233b76068049456ea1dd40e5c12f8d1156e7d2589c637678c0b105836d35f3',
+      0 => 'ac250bfdc9ae1ea2b57043aee4043e0ea9219ff0846dfca1bfdf796f03ec3afc',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\movewhitelistincludestocoverage',
@@ -16969,7 +16973,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveEmptyFilter.php' => 
     array (
-      0 => '9516f5f7aacc2fae5e35ed36523ee974c70e2d7b1b8993f3c83993b54d8bb4d6',
+      0 => '61e982a0b6800daf9acf1afc477e581376482c1aedb4f31e32dc81d7cf5d50a0',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\removeemptyfilter',
@@ -17000,7 +17004,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveLogTypes.php' => 
     array (
-      0 => 'e50e25231e170dd68ba0a07c15b0f7c024055f60aea6f5ee1d67c48af440cd35',
+      0 => '16bf0834d0b47d4e1c21b8aa7b5dc2dee18430e82bcf28ba6078de6969f4f848',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\removelogtypes',
@@ -17015,7 +17019,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveLoggingElements.php' => 
     array (
-      0 => '91d690e61e7bd08bc822797e50318381cf3a33f3990f513fe7ef38c208a53967',
+      0 => 'bf7d40f3b75c44c52110733d6d2f490f93dd7185c65cafd49e036588da3813e9',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\removeloggingelements',
@@ -17122,7 +17126,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RenameBackupStaticAttributesAttribute.php' => 
     array (
-      0 => '8987906a68ea768d6f3a6c6033d6abe6336dcd428cad8a5bda11f1b277ccedfd',
+      0 => '6d555e5b2f048f8a7c2bb4c873031e56fb26d2c761f293d311ea0b828cd0ec53',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\renamebackupstaticattributesattribute',
@@ -17137,7 +17141,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RenameBeStrictAboutCoversAnnotationAttribute.php' => 
     array (
-      0 => 'a28112c4f2bef54f4b9ca176ae7a348154df1f99794a9cbe94cdbaf775b1a38b',
+      0 => '783a25a996d4040030bca5d219734a5faf220df36b26a8fe5c243744ec179245',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\renamebestrictaboutcoversannotationattribute',
@@ -17152,7 +17156,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RenameForceCoversAnnotationAttribute.php' => 
     array (
-      0 => 'e2aaabdcbabda709a4a824fe6eb256f388c5f868afd884d6e3fa9867534048dc',
+      0 => '10be748fc72cecbbc3a050190ae047ae24c44b35f9b7b6ced4bf9247a010c62c',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\renameforcecoversannotationattribute',
@@ -17230,7 +17234,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/PHPUnit.php' => 
     array (
-      0 => '89c0b49fa40e745ba9f1a0edbcc60565e9146aa91be54bcbd93b35a8a4cb4246',
+      0 => '4a5a49be10e895c481bde2a1893f72a05dcf41f6c9c378dab8d89e9b9b39b8af',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\phpunit',
@@ -17240,7 +17244,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\textui\\xmlconfiguration\\__construct',
         1 => 'phpunit\\textui\\xmlconfiguration\\hascachedirectory',
         2 => 'phpunit\\textui\\xmlconfiguration\\cachedirectory',
-        3 => 'phpunit\\textui\\xmlconfiguration\\cacheresult',
+        3 => 'phpunit\\textui\\xmlconfiguration\\recordtestrunhistory',
         4 => 'phpunit\\textui\\xmlconfiguration\\columns',
         5 => 'phpunit\\textui\\xmlconfiguration\\colors',
         6 => 'phpunit\\textui\\xmlconfiguration\\stderr',
@@ -17255,54 +17259,73 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         15 => 'phpunit\\textui\\xmlconfiguration\\displaydetailsonteststhattriggerwarnings',
         16 => 'phpunit\\textui\\xmlconfiguration\\reversedefectlist',
         17 => 'phpunit\\textui\\xmlconfiguration\\requirecoveragemetadata',
-        18 => 'phpunit\\textui\\xmlconfiguration\\hasbootstrap',
-        19 => 'phpunit\\textui\\xmlconfiguration\\bootstrap',
-        20 => 'phpunit\\textui\\xmlconfiguration\\bootstrapfortestsuite',
-        21 => 'phpunit\\textui\\xmlconfiguration\\processisolation',
-        22 => 'phpunit\\textui\\xmlconfiguration\\failonallissues',
-        23 => 'phpunit\\textui\\xmlconfiguration\\failondeprecation',
-        24 => 'phpunit\\textui\\xmlconfiguration\\failonphpunitdeprecation',
-        25 => 'phpunit\\textui\\xmlconfiguration\\failonphpunitnotice',
-        26 => 'phpunit\\textui\\xmlconfiguration\\failonphpunitwarning',
-        27 => 'phpunit\\textui\\xmlconfiguration\\failonemptytestsuite',
-        28 => 'phpunit\\textui\\xmlconfiguration\\hasfailonemptytestsuite',
-        29 => 'phpunit\\textui\\xmlconfiguration\\failonincomplete',
-        30 => 'phpunit\\textui\\xmlconfiguration\\failonnotice',
-        31 => 'phpunit\\textui\\xmlconfiguration\\failonrisky',
-        32 => 'phpunit\\textui\\xmlconfiguration\\failonskipped',
-        33 => 'phpunit\\textui\\xmlconfiguration\\failonwarning',
-        34 => 'phpunit\\textui\\xmlconfiguration\\stopondefect',
-        35 => 'phpunit\\textui\\xmlconfiguration\\stopondeprecation',
-        36 => 'phpunit\\textui\\xmlconfiguration\\stoponerror',
-        37 => 'phpunit\\textui\\xmlconfiguration\\stoponfailure',
-        38 => 'phpunit\\textui\\xmlconfiguration\\stoponincomplete',
-        39 => 'phpunit\\textui\\xmlconfiguration\\stoponnotice',
-        40 => 'phpunit\\textui\\xmlconfiguration\\stoponrisky',
-        41 => 'phpunit\\textui\\xmlconfiguration\\stoponskipped',
-        42 => 'phpunit\\textui\\xmlconfiguration\\stoponwarning',
-        43 => 'phpunit\\textui\\xmlconfiguration\\hasextensionsdirectory',
-        44 => 'phpunit\\textui\\xmlconfiguration\\extensionsdirectory',
-        45 => 'phpunit\\textui\\xmlconfiguration\\bestrictaboutchangestoglobalstate',
-        46 => 'phpunit\\textui\\xmlconfiguration\\bestrictaboutoutputduringtests',
-        47 => 'phpunit\\textui\\xmlconfiguration\\bestrictaboutteststhatdonottestanything',
-        48 => 'phpunit\\textui\\xmlconfiguration\\bestrictaboutcoveragemetadata',
-        49 => 'phpunit\\textui\\xmlconfiguration\\enforcetimelimit',
-        50 => 'phpunit\\textui\\xmlconfiguration\\defaulttimelimit',
-        51 => 'phpunit\\textui\\xmlconfiguration\\timeoutforsmalltests',
-        52 => 'phpunit\\textui\\xmlconfiguration\\timeoutformediumtests',
-        53 => 'phpunit\\textui\\xmlconfiguration\\timeoutforlargetests',
-        54 => 'phpunit\\textui\\xmlconfiguration\\hasdefaulttestsuite',
-        55 => 'phpunit\\textui\\xmlconfiguration\\defaulttestsuite',
-        56 => 'phpunit\\textui\\xmlconfiguration\\executionorder',
-        57 => 'phpunit\\textui\\xmlconfiguration\\resolvedependencies',
-        58 => 'phpunit\\textui\\xmlconfiguration\\defectsfirst',
-        59 => 'phpunit\\textui\\xmlconfiguration\\backupglobals',
-        60 => 'phpunit\\textui\\xmlconfiguration\\backupstaticproperties',
-        61 => 'phpunit\\textui\\xmlconfiguration\\testdoxprinter',
-        62 => 'phpunit\\textui\\xmlconfiguration\\testdoxprintersummary',
-        63 => 'phpunit\\textui\\xmlconfiguration\\controlgarbagecollector',
-        64 => 'phpunit\\textui\\xmlconfiguration\\numberoftestsbeforegarbagecollection',
-        65 => 'phpunit\\textui\\xmlconfiguration\\shortenarraysforexportthreshold',
+        18 => 'phpunit\\textui\\xmlconfiguration\\requiresealedmockobjects',
+        19 => 'phpunit\\textui\\xmlconfiguration\\hasbootstrap',
+        20 => 'phpunit\\textui\\xmlconfiguration\\bootstrap',
+        21 => 'phpunit\\textui\\xmlconfiguration\\bootstrapfortestsuite',
+        22 => 'phpunit\\textui\\xmlconfiguration\\processisolation',
+        23 => 'phpunit\\textui\\xmlconfiguration\\failonallissues',
+        24 => 'phpunit\\textui\\xmlconfiguration\\failondeprecation',
+        25 => 'phpunit\\textui\\xmlconfiguration\\hasfailondeprecation',
+        26 => 'phpunit\\textui\\xmlconfiguration\\failonselfdeprecation',
+        27 => 'phpunit\\textui\\xmlconfiguration\\hasfailonselfdeprecation',
+        28 => 'phpunit\\textui\\xmlconfiguration\\failondirectdeprecation',
+        29 => 'phpunit\\textui\\xmlconfiguration\\hasfailondirectdeprecation',
+        30 => 'phpunit\\textui\\xmlconfiguration\\failonindirectdeprecation',
+        31 => 'phpunit\\textui\\xmlconfiguration\\hasfailonindirectdeprecation',
+        32 => 'phpunit\\textui\\xmlconfiguration\\failonphpunitdeprecation',
+        33 => 'phpunit\\textui\\xmlconfiguration\\hasfailonphpunitdeprecation',
+        34 => 'phpunit\\textui\\xmlconfiguration\\failonphpunitnotice',
+        35 => 'phpunit\\textui\\xmlconfiguration\\hasfailonphpunitnotice',
+        36 => 'phpunit\\textui\\xmlconfiguration\\failonphpunitwarning',
+        37 => 'phpunit\\textui\\xmlconfiguration\\hasfailonphpunitwarning',
+        38 => 'phpunit\\textui\\xmlconfiguration\\failonemptytestsuite',
+        39 => 'phpunit\\textui\\xmlconfiguration\\hasfailonemptytestsuite',
+        40 => 'phpunit\\textui\\xmlconfiguration\\failonincomplete',
+        41 => 'phpunit\\textui\\xmlconfiguration\\hasfailonincomplete',
+        42 => 'phpunit\\textui\\xmlconfiguration\\failonnotice',
+        43 => 'phpunit\\textui\\xmlconfiguration\\hasfailonnotice',
+        44 => 'phpunit\\textui\\xmlconfiguration\\failonrisky',
+        45 => 'phpunit\\textui\\xmlconfiguration\\hasfailonrisky',
+        46 => 'phpunit\\textui\\xmlconfiguration\\failonskipped',
+        47 => 'phpunit\\textui\\xmlconfiguration\\hasfailonskipped',
+        48 => 'phpunit\\textui\\xmlconfiguration\\failonwarning',
+        49 => 'phpunit\\textui\\xmlconfiguration\\hasfailonwarning',
+        50 => 'phpunit\\textui\\xmlconfiguration\\stopondefect',
+        51 => 'phpunit\\textui\\xmlconfiguration\\stopondeprecation',
+        52 => 'phpunit\\textui\\xmlconfiguration\\stoponerror',
+        53 => 'phpunit\\textui\\xmlconfiguration\\stoponfailure',
+        54 => 'phpunit\\textui\\xmlconfiguration\\stoponincomplete',
+        55 => 'phpunit\\textui\\xmlconfiguration\\stoponnotice',
+        56 => 'phpunit\\textui\\xmlconfiguration\\stoponrisky',
+        57 => 'phpunit\\textui\\xmlconfiguration\\stoponskipped',
+        58 => 'phpunit\\textui\\xmlconfiguration\\stoponwarning',
+        59 => 'phpunit\\textui\\xmlconfiguration\\hasextensionsdirectory',
+        60 => 'phpunit\\textui\\xmlconfiguration\\extensionsdirectory',
+        61 => 'phpunit\\textui\\xmlconfiguration\\bestrictaboutchangestoglobalstate',
+        62 => 'phpunit\\textui\\xmlconfiguration\\bestrictaboutoutputduringtests',
+        63 => 'phpunit\\textui\\xmlconfiguration\\bestrictaboutteststhatdonottestanything',
+        64 => 'phpunit\\textui\\xmlconfiguration\\bestrictaboutcoveragemetadata',
+        65 => 'phpunit\\textui\\xmlconfiguration\\requirecoveragecontribution',
+        66 => 'phpunit\\textui\\xmlconfiguration\\enforcetimelimit',
+        67 => 'phpunit\\textui\\xmlconfiguration\\defaulttimelimit',
+        68 => 'phpunit\\textui\\xmlconfiguration\\timeoutforsmalltests',
+        69 => 'phpunit\\textui\\xmlconfiguration\\timeoutformediumtests',
+        70 => 'phpunit\\textui\\xmlconfiguration\\timeoutforlargetests',
+        71 => 'phpunit\\textui\\xmlconfiguration\\hasdefaulttestsuite',
+        72 => 'phpunit\\textui\\xmlconfiguration\\defaulttestsuite',
+        73 => 'phpunit\\textui\\xmlconfiguration\\executionorder',
+        74 => 'phpunit\\textui\\xmlconfiguration\\resolvedependencies',
+        75 => 'phpunit\\textui\\xmlconfiguration\\defectsfirst',
+        76 => 'phpunit\\textui\\xmlconfiguration\\backupglobals',
+        77 => 'phpunit\\textui\\xmlconfiguration\\backupstaticproperties',
+        78 => 'phpunit\\textui\\xmlconfiguration\\testdoxprinter',
+        79 => 'phpunit\\textui\\xmlconfiguration\\testdoxprintersummary',
+        80 => 'phpunit\\textui\\xmlconfiguration\\controlgarbagecollector',
+        81 => 'phpunit\\textui\\xmlconfiguration\\numberoftestsbeforegarbagecollection',
+        82 => 'phpunit\\textui\\xmlconfiguration\\shortenarraysforexportthreshold',
+        83 => 'phpunit\\textui\\xmlconfiguration\\diffcontext',
+        84 => 'phpunit\\textui\\xmlconfiguration\\warnwhenphpisnotconfiguredfordevelopment',
       ),
       3 => 
       array (
@@ -17372,7 +17395,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/SchemaFinder.php' => 
     array (
-      0 => '355938481d32d75d4e5e7673a926e900acb91d60e049b01ece018a9e8120754a',
+      0 => 'bc06fc95c0c7ab30f614f5f7ed171389a75403bcd085daed0c0ae8e8301b501c',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\schemafinder',
@@ -17389,7 +17412,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/TestSuiteMapper.php' => 
     array (
-      0 => '772893814a27637a21fe4b89a15a3ffcbabd1763ec86c6c0cd121c744ee39a16',
+      0 => 'e2564e31c077ef1af65b55665c58bdafc66349f79980d54eef8e86f4f0a6547d',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\testsuitemapper',
@@ -17397,6 +17420,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\map',
+        1 => 'phpunit\\textui\\xmlconfiguration\\wasalreadyaddedtoanothertestsuite',
       ),
       3 => 
       array (
@@ -17422,7 +17446,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Validator/Validator.php' => 
     array (
-      0 => '41dd9b477af26816908e42123e70d27035299bc931fafcd437a45ebb962c41d1',
+      0 => '0d20bbcd7ed517e78b05633951663b416a48e70b2fc4fa0b9dd06b4512b32baa',
       1 => 
       array (
         0 => 'phpunit\\textui\\xmlconfiguration\\validator',
@@ -17525,7 +17549,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Help.php' => 
     array (
-      0 => '54d77a5c3c4482653f750bf05f773a4749ac3fd7b2b229575601e15802d9cb74',
+      0 => '5cecf5be0896e393c2265f1d73d0ca8c6a69507c4ebe7130b3aebf2865fbe533',
       1 => 
       array (
         0 => 'phpunit\\textui\\help',
@@ -17544,7 +17568,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/ProgressPrinter.php' => 
     array (
-      0 => '71ce212ceb72deead52ef07ff83e95376d346af93bae49707e9e3be9c7a903a0',
+      0 => '80d154d8e6ffcd0397697e021533a74759ebbb7af7afcd793808f1ece317d48c',
       1 => 
       array (
         0 => 'phpunit\\textui\\output\\default\\progressprinter\\progressprinter',
@@ -17924,7 +17948,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Output/Default/ResultPrinter.php' => 
     array (
-      0 => '46616b675ac290a9f105657bae34a40e1f9b82bf6db955dd29d04e88538d7953',
+      0 => 'a3e71a5ac65fd1350bd6e1d5461175e012a157025e8c52d6d9ebad0c1971d3eb',
       1 => 
       array (
         0 => 'phpunit\\textui\\output\\default\\resultprinter',
@@ -17939,25 +17963,28 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         5 => 'phpunit\\textui\\output\\default\\printtestrunnernotices',
         6 => 'phpunit\\textui\\output\\default\\printtestrunnerwarnings',
         7 => 'phpunit\\textui\\output\\default\\printtestrunnerdeprecations',
-        8 => 'phpunit\\textui\\output\\default\\printdetailsonteststhattriggeredphpunitwarnings',
-        9 => 'phpunit\\textui\\output\\default\\printtestswitherrors',
-        10 => 'phpunit\\textui\\output\\default\\printtestswithfailedassertions',
-        11 => 'phpunit\\textui\\output\\default\\printriskytests',
-        12 => 'phpunit\\textui\\output\\default\\printincompletetests',
-        13 => 'phpunit\\textui\\output\\default\\printskippedtestsuites',
-        14 => 'phpunit\\textui\\output\\default\\printskippedtests',
-        15 => 'phpunit\\textui\\output\\default\\printissuelist',
-        16 => 'phpunit\\textui\\output\\default\\printlistheaderwithnumberoftestsandnumberofissues',
-        17 => 'phpunit\\textui\\output\\default\\printlistheaderwithnumber',
-        18 => 'phpunit\\textui\\output\\default\\printlistheader',
-        19 => 'phpunit\\textui\\output\\default\\printlist',
-        20 => 'phpunit\\textui\\output\\default\\printlistelement',
-        21 => 'phpunit\\textui\\output\\default\\printissuelistelement',
-        22 => 'phpunit\\textui\\output\\default\\name',
-        23 => 'phpunit\\textui\\output\\default\\maptestswithissueseventstoelements',
-        24 => 'phpunit\\textui\\output\\default\\testlocation',
-        25 => 'phpunit\\textui\\output\\default\\reasonmessage',
-        26 => 'phpunit\\textui\\output\\default\\reasonlocation',
+        8 => 'phpunit\\textui\\output\\default\\printissuestriggeredoutsideoftests',
+        9 => 'phpunit\\textui\\output\\default\\printdetailsonteststhattriggeredphpunitwarnings',
+        10 => 'phpunit\\textui\\output\\default\\printtestswitherrors',
+        11 => 'phpunit\\textui\\output\\default\\printtestswithfailedassertions',
+        12 => 'phpunit\\textui\\output\\default\\printriskytests',
+        13 => 'phpunit\\textui\\output\\default\\printretriedtests',
+        14 => 'phpunit\\textui\\output\\default\\printincompletetests',
+        15 => 'phpunit\\textui\\output\\default\\printskippedtestsuites',
+        16 => 'phpunit\\textui\\output\\default\\printskippedtests',
+        17 => 'phpunit\\textui\\output\\default\\printissuelist',
+        18 => 'phpunit\\textui\\output\\default\\printlistheaderwithnumberoftestsandnumberofissues',
+        19 => 'phpunit\\textui\\output\\default\\printissuetriggeredoutsideoftestlistheader',
+        20 => 'phpunit\\textui\\output\\default\\printlistheaderwithnumber',
+        21 => 'phpunit\\textui\\output\\default\\printlistheader',
+        22 => 'phpunit\\textui\\output\\default\\printlist',
+        23 => 'phpunit\\textui\\output\\default\\printlistelement',
+        24 => 'phpunit\\textui\\output\\default\\printissuelistelement',
+        25 => 'phpunit\\textui\\output\\default\\name',
+        26 => 'phpunit\\textui\\output\\default\\maptestswithissueseventstoelements',
+        27 => 'phpunit\\textui\\output\\default\\testlocation',
+        28 => 'phpunit\\textui\\output\\default\\reasonmessage',
+        29 => 'phpunit\\textui\\output\\default\\reasonlocation',
       ),
       3 => 
       array (
@@ -17981,7 +18008,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Output/Facade.php' => 
     array (
-      0 => '58a21661b168d2aa926f419d149a2b6b9e775adc81211ce28a79f73f57cf0df2',
+      0 => 'c789b8a24834d350f1defd5938892958e2e25242c5d2324b0e40a441f270786d',
       1 => 
       array (
         0 => 'phpunit\\textui\\output\\facade',
@@ -18056,7 +18083,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Output/SummaryPrinter.php' => 
     array (
-      0 => '5874dd7d9601876452518f9e0b8233166f5ba8c7d2a3a18883c78f1f2170f9a6',
+      0 => 'c940fa541a891e2d50b715dccd24b62504a958dc8fe4019cc4d8dd19357910c7',
       1 => 
       array (
         0 => 'phpunit\\textui\\output\\summaryprinter',
@@ -18075,7 +18102,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Output/TestDox/ResultPrinter.php' => 
     array (
-      0 => '39e1f460ed8369c23fb90b9d95cd388abc861c7ffb3a9b37d5aa993f265c3544',
+      0 => '5a19866822f6aad8c92274445bd9ef9334fc7868a4f425f0e8b57e29d447108f',
       1 => 
       array (
         0 => 'phpunit\\textui\\output\\testdox\\resultprinter',
@@ -18107,7 +18134,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/ShellExitCodeCalculator.php' => 
     array (
-      0 => 'bcfc9d0adb79f10fee34d437488f61994d748e86364819739ca1fca520b03eac',
+      0 => 'cfcd5efd63ed319d04f11df7036375beb785f74a62138aa62383d0b5e71fc69f',
       1 => 
       array (
         0 => 'phpunit\\textui\\shellexitcodecalculator',
@@ -18122,7 +18149,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/TestRunner.php' => 
     array (
-      0 => '91204a181e556057bdc4580d124bfaa3a991d8ae234b1c3cdcd16b59d7862884',
+      0 => '72e8fa5d9237247c7ac19f6c3180dc918a42e56d87bcbebb82ff7e3404bd955b',
       1 => 
       array (
         0 => 'phpunit\\textui\\testrunner',
@@ -18137,7 +18164,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/TestSuiteFilterProcessor.php' => 
     array (
-      0 => 'b4250fc3ffad5954624cb5e682fd940b874e8d3422fa1ee298bd7225e1aa5fc2',
+      0 => 'a16461096a94ef7a947bcba070cadfdcbdcd9f0006f0260e61335dc26ff462db',
       1 => 
       array (
         0 => 'phpunit\\textui\\testsuitefilterprocessor',
@@ -18152,7 +18179,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Util/Color.php' => 
     array (
-      0 => '9ad68376c93586904328b40926555eb7d40281ca0ac6bf3a70cd4fca0e16a7b6',
+      0 => '76ca4624511f5fc3e6d0efcae8649d6920eb99dc9fc8cef160fda791c398fb6d',
       1 => 
       array (
         0 => 'phpunit\\util\\color',
@@ -18258,7 +18285,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Util/ExcludeList.php' => 
     array (
-      0 => 'b1d41f80c932f57a1cec490a1c76f27f155b54c10884151ba1452626180cbe23',
+      0 => '633ef156519f30676c06fb8d994c3e5829123ad793959cd038b9ecc86ff1d784',
       1 => 
       array (
         0 => 'phpunit\\util\\excludelist',
@@ -18277,17 +18304,20 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Util/Exporter.php' => 
     array (
-      0 => '88fba1beec24ea86ef1dd2557dae4f3c862444e21ec6d70b0f0afcda7a1574d0',
+      0 => 'd96769db1bc8ee9290fab69c5e0ef8e2f4e6bb6a1f366172ce69ea97e8142534',
       1 => 
       array (
         0 => 'phpunit\\util\\exporter',
       ),
       2 => 
       array (
-        0 => 'phpunit\\util\\export',
-        1 => 'phpunit\\util\\shortenedrecursiveexport',
-        2 => 'phpunit\\util\\shortenedexport',
-        3 => 'phpunit\\util\\exporter',
+        0 => 'phpunit\\util\\registerobjectexporter',
+        1 => 'phpunit\\util\\unregisterobjectexporter',
+        2 => 'phpunit\\util\\export',
+        3 => 'phpunit\\util\\shortenedrecursiveexport',
+        4 => 'phpunit\\util\\shortenedexport',
+        5 => 'phpunit\\util\\updatecomparatorfactory',
+        6 => 'phpunit\\util\\exporter',
       ),
       3 => 
       array (
@@ -18311,7 +18341,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Util/Filter.php' => 
     array (
-      0 => 'f171d59f1f93297fc74a916871935e695b9a1aeef9cd68168a078b12c7094736',
+      0 => '8cebf456c774f258a8098fbab4192e8e622f688c357d1ce199aee54fefc2c9bc',
       1 => 
       array (
         0 => 'phpunit\\util\\filter',
@@ -18330,7 +18360,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Util/GlobalState.php' => 
     array (
-      0 => '43223874c68fe1e1a4c1ec6b274adfd6bf1e020834f7b2b0995afe88f54370fd',
+      0 => '39cf543bdd300ffb3f9557ca97310063fd51cc345f5c7b7444e37249d28cd539',
       1 => 
       array (
         0 => 'phpunit\\util\\globalstate',
@@ -18400,7 +18430,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Util/Json.php' => 
     array (
-      0 => 'fbfd1a6e22073172cd83b15a236c894ae941b717cb38975365163e9525430a27',
+      0 => 'fe45f24081488a13aa33b287cc07abc28efc7eaaf73e7bc9f95e3392630d52b0',
       1 => 
       array (
         0 => 'phpunit\\util\\json',
@@ -18417,7 +18447,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Util/PHP/Job.php' => 
     array (
-      0 => 'be1c33e082af79680b45862316c90cd2e1046d40f0635dbd2e5c790b6ba4f9bf',
+      0 => '774b0c57699eb1d8ca9706f4b12895e29414e83819108ae206fe48be9ef42cf7',
       1 => 
       array (
         0 => 'phpunit\\util\\php\\job',
@@ -18426,15 +18456,16 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'phpunit\\util\\php\\__construct',
         1 => 'phpunit\\util\\php\\code',
-        2 => 'phpunit\\util\\php\\phpsettings',
-        3 => 'phpunit\\util\\php\\hasenvironmentvariables',
-        4 => 'phpunit\\util\\php\\environmentvariables',
-        5 => 'phpunit\\util\\php\\hasarguments',
-        6 => 'phpunit\\util\\php\\arguments',
-        7 => 'phpunit\\util\\php\\hasinput',
-        8 => 'phpunit\\util\\php\\input',
-        9 => 'phpunit\\util\\php\\redirecterrors',
-        10 => 'phpunit\\util\\php\\requiresxdebug',
+        2 => 'phpunit\\util\\php\\reason',
+        3 => 'phpunit\\util\\php\\phpsettings',
+        4 => 'phpunit\\util\\php\\hasenvironmentvariables',
+        5 => 'phpunit\\util\\php\\environmentvariables',
+        6 => 'phpunit\\util\\php\\hasarguments',
+        7 => 'phpunit\\util\\php\\arguments',
+        8 => 'phpunit\\util\\php\\hasinput',
+        9 => 'phpunit\\util\\php\\input',
+        10 => 'phpunit\\util\\php\\redirecterrors',
+        11 => 'phpunit\\util\\php\\requiresxdebug',
       ),
       3 => 
       array (
@@ -18442,7 +18473,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Util/PHP/JobRunner.php' => 
     array (
-      0 => 'e3988f5dd41e6632c0e491ca0af2c713146d173f21067a60e01197ba898e26da',
+      0 => '074641c414ac6d58e0d0be73db792c773da4dfcfc1d901d3af572dcc6422568f',
       1 => 
       array (
         0 => 'phpunit\\util\\php\\jobrunner',
@@ -18452,11 +18483,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\util\\php\\__construct',
         1 => 'phpunit\\util\\php\\runtestjob',
         2 => 'phpunit\\util\\php\\run',
-        3 => 'phpunit\\util\\php\\runprocess',
-        4 => 'phpunit\\util\\php\\buildcommand',
-        5 => 'phpunit\\util\\php\\cliinioverrides',
-        6 => 'phpunit\\util\\php\\settingstoparameters',
-        7 => 'phpunit\\util\\php\\processsettingvalue',
+        3 => 'phpunit\\util\\php\\start',
+        4 => 'phpunit\\util\\php\\startprocess',
+        5 => 'phpunit\\util\\php\\buildcommand',
+        6 => 'phpunit\\util\\php\\cliinioverrides',
+        7 => 'phpunit\\util\\php\\settingstoparameters',
+        8 => 'phpunit\\util\\php\\processsettingvalue',
       ),
       3 => 
       array (
@@ -18464,7 +18496,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Util/PHP/JobRunnerRegistry.php' => 
     array (
-      0 => '3ec6bfc1e94cf7ea59a694c67fb6de376a7577435253cc8dd35027ee86aa8f7a',
+      0 => 'a42fbb0dd3813782f5d6401acdb4769354f4b6c4c74675c2928a5916b57fb00e',
       1 => 
       array (
         0 => 'phpunit\\util\\php\\jobrunnerregistry',
@@ -18499,7 +18531,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Util/Reflection.php' => 
     array (
-      0 => 'fa060d000b826e9164ea3b0abdbc3588ff381f4b56d709dcb068d3c6b800be63',
+      0 => 'ba84ddb460cc4a51f5d16d83454d6b1ac35138ddccc89dcfd845e4fc3687cbf9',
       1 => 
       array (
         0 => 'phpunit\\util\\reflection',
@@ -18507,9 +18539,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'phpunit\\util\\sourcelocationfor',
-        1 => 'phpunit\\util\\publicmethodsdeclareddirectlyintestclass',
-        2 => 'phpunit\\util\\methodsdeclareddirectlyintestclass',
-        3 => 'phpunit\\util\\filterandsortmethods',
+        1 => 'phpunit\\util\\methoddoesnotexistorisdeclaredintestcase',
+        2 => 'phpunit\\util\\publicmethodsdeclareddirectlyintestclass',
+        3 => 'phpunit\\util\\methodsdeclareddirectlyintestclass',
+        4 => 'phpunit\\util\\filterandsortmethods',
       ),
       3 => 
       array (
@@ -18517,7 +18550,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Util/Sanitizer.php' => 
     array (
-      0 => 'e8b2c37d0c03f910f1cbc9bcba8d4f035565821bb0bea2ce079b7a3e89ede242',
+      0 => '39ff60d04ee5da69e93e3f0e3b25c22ad8123dedf4630fbcb1a53abca516f8e6',
       1 => 
       array (
         0 => 'phpunit\\util\\sanitizer',
@@ -18597,7 +18630,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Util/Xml/Xml.php' => 
     array (
-      0 => '8473b7abf702fcf8372ca256a0793e731f95295b4c2a3cdf584d8d99465bb131',
+      0 => '4d71ded39eb1e8db64c1d997d566c8f1352c34efa333e1ba5755d27066177229',
       1 => 
       array (
         0 => 'phpunit\\util\\xml',
@@ -18607,6 +18640,2860 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'phpunit\\util\\preparestring',
         1 => 'phpunit\\util\\converttoutf8',
         2 => 'phpunit\\util\\isutf8',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/Outcome/AttemptErrored.php' => 
+    array (
+      0 => 'ac59188b902824629065f56c7d7cff8e6cf60ea56548142e5a86fe4950964c87',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\test\\attempterrored',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\test\\__construct',
+        1 => 'phpunit\\event\\test\\telemetryinfo',
+        2 => 'phpunit\\event\\test\\duration',
+        3 => 'phpunit\\event\\test\\test',
+        4 => 'phpunit\\event\\test\\throwable',
+        5 => 'phpunit\\event\\test\\asstring',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/Outcome/AttemptErroredSubscriber.php' => 
+    array (
+      0 => 'b8f2c808bb0f0a84b7270e0a1ee3ae44c0b9f0e3d89371ed3a068ed0c978ead2',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\test\\attempterroredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\test\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/Outcome/AttemptFailed.php' => 
+    array (
+      0 => '1796c9c076c73cfc4d6a125310755935dcb6b56b86d3f761eb4b4ac6dd29e97e',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\test\\attemptfailed',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\test\\__construct',
+        1 => 'phpunit\\event\\test\\telemetryinfo',
+        2 => 'phpunit\\event\\test\\duration',
+        3 => 'phpunit\\event\\test\\test',
+        4 => 'phpunit\\event\\test\\throwable',
+        5 => 'phpunit\\event\\test\\hascomparisonfailure',
+        6 => 'phpunit\\event\\test\\comparisonfailure',
+        7 => 'phpunit\\event\\test\\asstring',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/Test/Outcome/AttemptFailedSubscriber.php' => 
+    array (
+      0 => 'f171dbb1734eed74e6a8955488e23ed5a4112b16d0796ea1a2fbb3a295dfa2e1',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\test\\attemptfailedsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\test\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/ErrorTriggered.php' => 
+    array (
+      0 => 'd6052fa91171cb1527e9f127b8d2b140155669ad6672deff928b4daac4441eea',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\errortriggered',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\__construct',
+        1 => 'phpunit\\event\\testrunner\\telemetryinfo',
+        2 => 'phpunit\\event\\testrunner\\message',
+        3 => 'phpunit\\event\\testrunner\\file',
+        4 => 'phpunit\\event\\testrunner\\line',
+        5 => 'phpunit\\event\\testrunner\\wassuppressed',
+        6 => 'phpunit\\event\\testrunner\\asstring',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/ErrorTriggeredSubscriber.php' => 
+    array (
+      0 => 'e85b2786913ba13e3277cc0a1f5916a6ab1ed7d01b1249c7c889c4a08d5c3f47',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\errortriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/Issue/DeprecationTriggered.php' => 
+    array (
+      0 => '84db3650a18cfe39c841677179114f17dec92184b5b43d84164c6b5b4499384f',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\issue\\deprecationtriggered',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\issue\\__construct',
+        1 => 'phpunit\\event\\testrunner\\issue\\telemetryinfo',
+        2 => 'phpunit\\event\\testrunner\\issue\\message',
+        3 => 'phpunit\\event\\testrunner\\issue\\file',
+        4 => 'phpunit\\event\\testrunner\\issue\\line',
+        5 => 'phpunit\\event\\testrunner\\issue\\wassuppressed',
+        6 => 'phpunit\\event\\testrunner\\issue\\ignoredbybaseline',
+        7 => 'phpunit\\event\\testrunner\\issue\\ignoredbyfilter',
+        8 => 'phpunit\\event\\testrunner\\issue\\trigger',
+        9 => 'phpunit\\event\\testrunner\\issue\\stacktrace',
+        10 => 'phpunit\\event\\testrunner\\issue\\asstring',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/Issue/DeprecationTriggeredSubscriber.php' => 
+    array (
+      0 => '2a2e46aca3045fef4713f8b3cf43b3c4a6cd8e277a75e2ca87daf78406308ee6',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\issue\\deprecationtriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\issue\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/Issue/NoticeTriggered.php' => 
+    array (
+      0 => 'd6f01f86562f92090d046a44262d48c8dc893a9256bbc78664ef8e4f63c57e3d',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\issue\\noticetriggered',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\issue\\__construct',
+        1 => 'phpunit\\event\\testrunner\\issue\\telemetryinfo',
+        2 => 'phpunit\\event\\testrunner\\issue\\message',
+        3 => 'phpunit\\event\\testrunner\\issue\\file',
+        4 => 'phpunit\\event\\testrunner\\issue\\line',
+        5 => 'phpunit\\event\\testrunner\\issue\\wassuppressed',
+        6 => 'phpunit\\event\\testrunner\\issue\\ignoredbybaseline',
+        7 => 'phpunit\\event\\testrunner\\issue\\asstring',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/Issue/NoticeTriggeredSubscriber.php' => 
+    array (
+      0 => 'dafe1b36c8dab2e483fdb391ea0fc822c38cd47e55d4aed80c2c65466dedb832',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\issue\\noticetriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\issue\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/Issue/WarningTriggered.php' => 
+    array (
+      0 => '2a90c0178901505f459a2908ea6fd72ad0fc9b236cf7a840c9275345ea24bf06',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\issue\\warningtriggered',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\issue\\__construct',
+        1 => 'phpunit\\event\\testrunner\\issue\\telemetryinfo',
+        2 => 'phpunit\\event\\testrunner\\issue\\message',
+        3 => 'phpunit\\event\\testrunner\\issue\\file',
+        4 => 'phpunit\\event\\testrunner\\issue\\line',
+        5 => 'phpunit\\event\\testrunner\\issue\\wassuppressed',
+        6 => 'phpunit\\event\\testrunner\\issue\\ignoredbybaseline',
+        7 => 'phpunit\\event\\testrunner\\issue\\asstring',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/Issue/WarningTriggeredSubscriber.php' => 
+    array (
+      0 => 'f63d79d685e4043e353f1d8f767b8ae889f49c0af9b98d7f4bdf8313feece8f1',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\issue\\warningtriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\issue\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/PhpDeprecationTriggered.php' => 
+    array (
+      0 => '6199096bec5efceaea33466363ec6e252ae421e8d7b6ebd396f32eebdbf8f179',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\phpdeprecationtriggered',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\__construct',
+        1 => 'phpunit\\event\\testrunner\\telemetryinfo',
+        2 => 'phpunit\\event\\testrunner\\message',
+        3 => 'phpunit\\event\\testrunner\\file',
+        4 => 'phpunit\\event\\testrunner\\line',
+        5 => 'phpunit\\event\\testrunner\\wassuppressed',
+        6 => 'phpunit\\event\\testrunner\\ignoredbybaseline',
+        7 => 'phpunit\\event\\testrunner\\ignoredbyfilter',
+        8 => 'phpunit\\event\\testrunner\\trigger',
+        9 => 'phpunit\\event\\testrunner\\asstring',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/PhpDeprecationTriggeredSubscriber.php' => 
+    array (
+      0 => '3f7c1c627a9c9613c3374280a08acd0b3e9f82222538264fb1a8cf88c37b997f',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\phpdeprecationtriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/PhpNoticeTriggered.php' => 
+    array (
+      0 => '227689a0b38ce79caf9a019cea6673c62c3a8801169ecd8837bbd769c7d96d60',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\phpnoticetriggered',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\__construct',
+        1 => 'phpunit\\event\\testrunner\\telemetryinfo',
+        2 => 'phpunit\\event\\testrunner\\message',
+        3 => 'phpunit\\event\\testrunner\\file',
+        4 => 'phpunit\\event\\testrunner\\line',
+        5 => 'phpunit\\event\\testrunner\\wassuppressed',
+        6 => 'phpunit\\event\\testrunner\\ignoredbybaseline',
+        7 => 'phpunit\\event\\testrunner\\asstring',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/PhpNoticeTriggeredSubscriber.php' => 
+    array (
+      0 => '1b86decfbaabcb022f494c236c983416159e5c0a9316879340941bd8e5201e46',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\phpnoticetriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/PhpWarningTriggered.php' => 
+    array (
+      0 => '8ae9f2b8efc1a417918888925ddd817e72344df74ca20e3a157880d095292e28',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\phpwarningtriggered',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\__construct',
+        1 => 'phpunit\\event\\testrunner\\telemetryinfo',
+        2 => 'phpunit\\event\\testrunner\\message',
+        3 => 'phpunit\\event\\testrunner\\file',
+        4 => 'phpunit\\event\\testrunner\\line',
+        5 => 'phpunit\\event\\testrunner\\wassuppressed',
+        6 => 'phpunit\\event\\testrunner\\ignoredbybaseline',
+        7 => 'phpunit\\event\\testrunner\\asstring',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Events/TestRunner/PhpWarningTriggeredSubscriber.php' => 
+    array (
+      0 => '1e54683156587280ea2abdbeed12f2d6fec2b6b86c0cfe2c3381bde512e81844',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\phpwarningtriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Exception/EventsAreAlreadyBeingCollectedException.php' => 
+    array (
+      0 => '2021fd52e5ec564f4e8f402271ca47afcab63254c9c1c79d70aac8147096c432',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\eventsarealreadybeingcollectedexception',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Exception/EventsAreNotBeingCollectedException.php' => 
+    array (
+      0 => '5c2ec54089feb0c194c4295a3585bc859b7667cb92ad9844fc9967a6fdd73741',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\eventsarenotbeingcollectedexception',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/ChildProcessReason.php' => 
+    array (
+      0 => '05ec1b75644aca47262fbb3034826b5b0730b95830d007f124d853be455604ed',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testrunner\\childprocessreason',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Telemetry/CpuTime.php' => 
+    array (
+      0 => 'f1b0d0e7fabb237c63cf4c11b3fd34a41e1b47acb62f4ecf231a688b9b5a8c7d',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\telemetry\\cputime',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\telemetry\\fromsecondsandnanoseconds',
+        1 => 'phpunit\\event\\telemetry\\__construct',
+        2 => 'phpunit\\event\\telemetry\\seconds',
+        3 => 'phpunit\\event\\telemetry\\nanoseconds',
+        4 => 'phpunit\\event\\telemetry\\asfloat',
+        5 => 'phpunit\\event\\telemetry\\add',
+        6 => 'phpunit\\event\\telemetry\\diff',
+        7 => 'phpunit\\event\\telemetry\\ensurenotnegative',
+        8 => 'phpunit\\event\\telemetry\\ensurenanosecondsinrange',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Telemetry/CpuTimeMeter.php' => 
+    array (
+      0 => '123cf28828682b12fb3b9c3a46670b4a849a8ab29dd42e09f95e8ee816ee8abc',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\telemetry\\cputimemeter',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\telemetry\\usercputime',
+        1 => 'phpunit\\event\\telemetry\\systemcputime',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/Telemetry/SystemCpuTimeMeter.php' => 
+    array (
+      0 => '46f91101f011965f39fe966ee1b2a6863ea55f7a70d826da3ef1ccc1f79f9fd7',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\telemetry\\systemcputimemeter',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\telemetry\\usercputime',
+        1 => 'phpunit\\event\\telemetry\\systemcputime',
+        2 => 'phpunit\\event\\telemetry\\cputime',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/TestSuite/TestSuiteForRepeatedPhpt.php' => 
+    array (
+      0 => 'd588d53fc74b3c26318e3b5e8feac2e45f4e08f62c9553c9d9d5b3e4d7e9be23',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testsuite\\testsuiteforrepeatedphpt',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testsuite\\isforrepeatedphpt',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/TestSuite/TestSuiteForRepeatedTestMethod.php' => 
+    array (
+      0 => '21e7450926b2e9743333714ab159ac76da49346ee3cd20d58e20a950cf772629',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testsuite\\testsuiteforrepeatedtestmethod',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testsuite\\__construct',
+        1 => 'phpunit\\event\\testsuite\\classname',
+        2 => 'phpunit\\event\\testsuite\\methodname',
+        3 => 'phpunit\\event\\testsuite\\file',
+        4 => 'phpunit\\event\\testsuite\\line',
+        5 => 'phpunit\\event\\testsuite\\isfordataset',
+        6 => 'phpunit\\event\\testsuite\\isforrepeatedtestmethod',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/TestSuite/TestSuiteForRetriedPhpt.php' => 
+    array (
+      0 => '80e8809ecce8cc575d2d6c5a2f8a20515cd21c1f79c203936806c2dd5c708a49',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testsuite\\testsuiteforretriedphpt',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testsuite\\__construct',
+        1 => 'phpunit\\event\\testsuite\\maxattempts',
+        2 => 'phpunit\\event\\testsuite\\isforretriedphpt',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Event/Value/TestSuite/TestSuiteForRetriedTestMethod.php' => 
+    array (
+      0 => '179bd43cbe299058a529f30b8649ac644b937d23e6f72f271440d21b77b390d0',
+      1 => 
+      array (
+        0 => 'phpunit\\event\\testsuite\\testsuiteforretriedtestmethod',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\event\\testsuite\\__construct',
+        1 => 'phpunit\\event\\testsuite\\classname',
+        2 => 'phpunit\\event\\testsuite\\methodname',
+        3 => 'phpunit\\event\\testsuite\\file',
+        4 => 'phpunit\\event\\testsuite\\line',
+        5 => 'phpunit\\event\\testsuite\\isfordataset',
+        6 => 'phpunit\\event\\testsuite\\maxattempts',
+        7 => 'phpunit\\event\\testsuite\\isforretriedtestmethod',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Attributes/CoversDirectory.php' => 
+    array (
+      0 => 'bc4c2f3153a58503cbaf42b1f65c9c845fb8a910b42adb72e09975bd09c8d76a',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\coversdirectory',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\__construct',
+        1 => 'phpunit\\framework\\attributes\\directory',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Attributes/CoversDirectoryRecursively.php' => 
+    array (
+      0 => 'c3f3083d182982e67a48e29e04cc9f658437a46de5f628a1059ce9add83a6e89',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\coversdirectoryrecursively',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\__construct',
+        1 => 'phpunit\\framework\\attributes\\directory',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Attributes/CoversFile.php' => 
+    array (
+      0 => '67be36dc49f7457fc961863d4d31b376fae779b55b9f6bfca47f2d0c64519955',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\coversfile',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\__construct',
+        1 => 'phpunit\\framework\\attributes\\path',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Attributes/DataProviderClosure.php' => 
+    array (
+      0 => 'babcbe1ea7701fac734f96d2c13635a6e7d37154c88e2a0f54c8c6928093f28b',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\dataproviderclosure',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\__construct',
+        1 => 'phpunit\\framework\\attributes\\closure',
+        2 => 'phpunit\\framework\\attributes\\validateargumentcount',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Attributes/Repeat.php' => 
+    array (
+      0 => '4e375c62e79d16c5a759033daf4f676dd72e5b95c4a8e8f8d6427c12f706a2bc',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\repeat',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\__construct',
+        1 => 'phpunit\\framework\\attributes\\times',
+        2 => 'phpunit\\framework\\attributes\\failurethreshold',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Attributes/Retry.php' => 
+    array (
+      0 => 'ac2e9a3d38b8ce40befa494aa474961c9fb4a0faec858eb79d94514bcf87f6bc',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\retry',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\__construct',
+        1 => 'phpunit\\framework\\attributes\\maxattempts',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Attributes/UsesDirectory.php' => 
+    array (
+      0 => '918c654d336a1680849feb1d9d3a90dcee8befcd1178bf48cecab0664f72f53b',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\usesdirectory',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\__construct',
+        1 => 'phpunit\\framework\\attributes\\directory',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Attributes/UsesDirectoryRecursively.php' => 
+    array (
+      0 => '1e3de729b7b4714c7495a3d5563440acd48cd08b0c3135f82a4d142ff4eb422c',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\usesdirectoryrecursively',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\__construct',
+        1 => 'phpunit\\framework\\attributes\\directory',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Attributes/UsesFile.php' => 
+    array (
+      0 => '3b6b41ca8a5e557b98cfe45e4e9c3ff03476ec55511ed70e5fd6c65f72901554',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\usesfile',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\attributes\\__construct',
+        1 => 'phpunit\\framework\\attributes\\path',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Array/ArrayComparison.php' => 
+    array (
+      0 => '119487d72539deefd46a7e84d8ff4ca54dd5d56503def4e5297a4ed8948da215',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\constraint\\arraycomparison',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\constraint\\__construct',
+        1 => 'phpunit\\framework\\constraint\\evaluate',
+        2 => 'phpunit\\framework\\constraint\\tostring',
+        3 => 'phpunit\\framework\\constraint\\tostringincontext',
+        4 => 'phpunit\\framework\\constraint\\failuredescription',
+        5 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
+        6 => 'phpunit\\framework\\constraint\\comparisontype',
+        7 => 'phpunit\\framework\\constraint\\compareleaf',
+        8 => 'phpunit\\framework\\constraint\\comparisondescription',
+        9 => 'phpunit\\framework\\constraint\\compare',
+        10 => 'phpunit\\framework\\constraint\\comparekeyedignoringorder',
+        11 => 'phpunit\\framework\\constraint\\compareignoringkeysandorder',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Array/ArrayHasKey.php' => 
+    array (
+      0 => '1f1237d26bef621617fcd66ddf549781b104cda41cdaed71796d321ee2ac705f',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\constraint\\arrayhaskey',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\constraint\\__construct',
+        1 => 'phpunit\\framework\\constraint\\tostring',
+        2 => 'phpunit\\framework\\constraint\\matches',
+        3 => 'phpunit\\framework\\constraint\\failuredescription',
+        4 => 'phpunit\\framework\\constraint\\tostringincontext',
+        5 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Array/ArraysAreEqual.php' => 
+    array (
+      0 => 'cc4f05fb8cd873c583baa6683f7dd8d58469c775e2ef68d306bfe7853c91ead1',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\constraint\\arraysareequal',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\constraint\\compareleaf',
+        1 => 'phpunit\\framework\\constraint\\comparisontype',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Array/ArraysAreIdentical.php' => 
+    array (
+      0 => 'bffaf37c3de02b1ef5cdea34680005a878fa66a9b0ad906642332007f2e81a3e',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\constraint\\arraysareidentical',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\constraint\\compareleaf',
+        1 => 'phpunit\\framework\\constraint\\comparisontype',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Array/IsList.php' => 
+    array (
+      0 => '1a651de8e6a5c304d42fbca59d15d02fc689e21a8e4795e9a4ef56505f81a748',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\constraint\\islist',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\constraint\\tostring',
+        1 => 'phpunit\\framework\\constraint\\matches',
+        2 => 'phpunit\\framework\\constraint\\failuredescription',
+        3 => 'phpunit\\framework\\constraint\\tostringincontext',
+        4 => 'phpunit\\framework\\constraint\\failuredescriptionincontext',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/Exception/ExceptionMessageIs.php' => 
+    array (
+      0 => 'd674a609f6bb17f3621b35328a42ee4a58096d7c1a9a52da5a52dc7629619c55',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\constraint\\exceptionmessageis',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\constraint\\__construct',
+        1 => 'phpunit\\framework\\constraint\\tostring',
+        2 => 'phpunit\\framework\\constraint\\matches',
+        3 => 'phpunit\\framework\\constraint\\failuredescription',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/Constraint/String/StringEqualsStringIgnoringWhitespace.php' => 
+    array (
+      0 => 'da7739c2839927dbd6bb3b69f7f8ba84e16959b9e57a00a6dbee21a2db6ef9d9',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\constraint\\stringequalsstringignoringwhitespace',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\constraint\\__construct',
+        1 => 'phpunit\\framework\\constraint\\tostring',
+        2 => 'phpunit\\framework\\constraint\\tostringincontext',
+        3 => 'phpunit\\framework\\constraint\\matches',
+        4 => 'phpunit\\framework\\constraint\\valueasstring',
+        5 => 'phpunit\\framework\\constraint\\normalizewhitespace',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/IterativeTestSuite.php' => 
+    array (
+      0 => '06db2f03263a26a15557314a1a67e73968a2ab1ffa6111d3248e9d504de7952d',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\iterativetestsuite',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\setdependencies',
+        1 => 'phpunit\\framework\\provides',
+        2 => 'phpunit\\framework\\requires',
+        3 => 'phpunit\\framework\\sortid',
+        4 => 'phpunit\\framework\\runtests',
+        5 => 'phpunit\\framework\\dependencies',
+        6 => 'phpunit\\framework\\runcollectingevents',
+        7 => 'phpunit\\framework\\execute',
+        8 => 'phpunit\\framework\\emitattemptevent',
+        9 => 'phpunit\\framework\\durationof',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Exception/MethodParametersAlreadyConfiguredForAnotherMatcherException.php' => 
+    array (
+      0 => 'cee7741e7211685f0ab6290718073241dfceaf86e927f6b39a70b6438568dfec',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\methodparametersalreadyconfiguredforanothermatcherexception',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Exception/NoMoreParameterSetsConfiguredException.php' => 
+    array (
+      0 => '3114452bb4deaadd75c7cef3358f91cb0e76a8bfb53ff8a34c13604e855e2ab9',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\nomoreparametersetsconfiguredexception',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Exception/PropertyCannotBeDoubledException.php' => 
+    array (
+      0 => 'a621cf9af5aaaa8c8ac13b2ca49b27348bb0127852531e5df28cc9cf3b8da25c',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\propertycannotbedoubledexception',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Exception/TestDoubleSealedException.php' => 
+    array (
+      0 => 'f0c3ca0b91a911c5e9bc2099a7425fe2bc1bb6f5d6ed4089c089c2d29cef93f7',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\testdoublesealedexception',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/AbstractInvocationImplementation.php' => 
+    array (
+      0 => '35d2991ce46c1c67f8d02bfbcfc79d022e045d31d519b70cdd361fb3141ccd1b',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\abstractinvocationimplementation',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\__construct',
+        1 => 'phpunit\\framework\\mockobject\\method',
+        2 => 'phpunit\\framework\\mockobject\\will',
+        3 => 'phpunit\\framework\\mockobject\\willreturn',
+        4 => 'phpunit\\framework\\mockobject\\willreturnreference',
+        5 => 'phpunit\\framework\\mockobject\\willreturnmap',
+        6 => 'phpunit\\framework\\mockobject\\willreturnstrictmap',
+        7 => 'phpunit\\framework\\mockobject\\willreturnargument',
+        8 => 'phpunit\\framework\\mockobject\\willreturncallback',
+        9 => 'phpunit\\framework\\mockobject\\willreturnself',
+        10 => 'phpunit\\framework\\mockobject\\willreturnonconsecutivecalls',
+        11 => 'phpunit\\framework\\mockobject\\willthrowexception',
+        12 => 'phpunit\\framework\\mockobject\\markascreatedwithoutexplicitexpects',
+        13 => 'phpunit\\framework\\mockobject\\seal',
+        14 => 'phpunit\\framework\\mockobject\\ensureparameterscanbeconfigured',
+        15 => 'phpunit\\framework\\mockobject\\configuredmethod',
+        16 => 'phpunit\\framework\\mockobject\\normalizevaluemap',
+        17 => 'phpunit\\framework\\mockobject\\ensuretypeofreturnvalues',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Interface/InvocationMocker.php' => 
+    array (
+      0 => '8be702ea3bc959ff0dd919a8421ca0337508099f008a0302e39364f6d0d8e3f3',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\invocationmocker',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\with',
+        1 => 'phpunit\\framework\\mockobject\\withparametersetsinorder',
+        2 => 'phpunit\\framework\\mockobject\\withparametersetsinanyorder',
+        3 => 'phpunit\\framework\\mockobject\\withparametersetsinpartialorder',
+        4 => 'phpunit\\framework\\mockobject\\withanyparameters',
+        5 => 'phpunit\\framework\\mockobject\\id',
+        6 => 'phpunit\\framework\\mockobject\\after',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/InvocationMockerImplementation.php' => 
+    array (
+      0 => '040c8bc1eae02c53dd5a9cd9780110faa989b7f914bb5d87b3f1c6796815cc00',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\invocationmockerimplementation',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\with',
+        1 => 'phpunit\\framework\\mockobject\\withparametersetsinorder',
+        2 => 'phpunit\\framework\\mockobject\\withparametersetsinanyorder',
+        3 => 'phpunit\\framework\\mockobject\\withparametersetsinpartialorder',
+        4 => 'phpunit\\framework\\mockobject\\withanyparameters',
+        5 => 'phpunit\\framework\\mockobject\\id',
+        6 => 'phpunit\\framework\\mockobject\\after',
+        7 => 'phpunit\\framework\\mockobject\\ensurenoothermatcherhasparametersruleforsamemethod',
+        8 => 'phpunit\\framework\\mockobject\\emitdeprecationwhencreatedwithoutexplicitexpects',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/IndexedParameters.php' => 
+    array (
+      0 => 'c64a266c150d1fc0035628202aa0dd88c078984a882b973b5cecc188326f97df',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\rule\\indexedparameters',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\rule\\__construct',
+        1 => 'phpunit\\framework\\mockobject\\rule\\apply',
+        2 => 'phpunit\\framework\\mockobject\\rule\\verify',
+        3 => 'phpunit\\framework\\mockobject\\rule\\useassertioncount',
+        4 => 'phpunit\\framework\\mockobject\\rule\\at',
+        5 => 'phpunit\\framework\\mockobject\\rule\\isstrict',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/OrderedParameterSets.php' => 
+    array (
+      0 => '6b608263c856d384f48fd9f51ea4e75e2862864b19b4b28f6af345a9e9176d48',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\rule\\orderedparametersets',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\rule\\__construct',
+        1 => 'phpunit\\framework\\mockobject\\rule\\apply',
+        2 => 'phpunit\\framework\\mockobject\\rule\\verify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/PartiallyOrderedParameterSets.php' => 
+    array (
+      0 => 'b636e26182bbba9aa8abe1d0d526f80ee02d809336e607cbca0fcd702006e418',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\rule\\partiallyorderedparametersets',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\rule\\__construct',
+        1 => 'phpunit\\framework\\mockobject\\rule\\apply',
+        2 => 'phpunit\\framework\\mockobject\\rule\\verify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/UnorderedParameterSets.php' => 
+    array (
+      0 => 'ede10beb4fa225e5f0e358c776e1efb40643dbc980239ce2c66613716fd587f9',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\rule\\unorderedparametersets',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\mockobject\\rule\\__construct',
+        1 => 'phpunit\\framework\\mockobject\\rule\\apply',
+        2 => 'phpunit\\framework\\mockobject\\rule\\verify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/PhptIterativeTestSuite.php' => 
+    array (
+      0 => 'e6c6ceab42215c1d7eb7c7512b23bb1b6fda7067dcb48a26bb1e14302f7b2539',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\phptiterativetestsuite',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\failedorerrored',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/PhptRepeatTestSuite.php' => 
+    array (
+      0 => '0698a7ee17d48ba9fe6c0d18884903b5a707cb4def614fa455ae4d8c6821a490',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\phptrepeattestsuite',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\for',
+        1 => 'phpunit\\framework\\execute',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/PhptRetryTestSuite.php' => 
+    array (
+      0 => '3a4239808632eedc2dfdbd9db110e26f42042d108203ac7cfe593223347752ee',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\phptretrytestsuite',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\for',
+        1 => 'phpunit\\framework\\maxattempts',
+        2 => 'phpunit\\framework\\execute',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/RepeatTestSuite.php' => 
+    array (
+      0 => '6a84d957a11b6be66d59df59c34db043ffc6db7b8d832f3a5731538fe8a9d452',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\repeattestsuite',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\fromtests',
+        1 => 'phpunit\\framework\\execute',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/RetryTestSuite.php' => 
+    array (
+      0 => 'cfcec916e88c4e410da28b4d38374478db26addf1c61ca406e9e0b575cf0ead8',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\retrytestsuite',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\fromtestcase',
+        1 => 'phpunit\\framework\\maxattempts',
+        2 => 'phpunit\\framework\\execute',
+        3 => 'phpunit\\framework\\runattempts',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestCase/ErrorLogCapture.php' => 
+    array (
+      0 => 'd3e7eb90e4b7c21832c18927c2093ff1b17c3eccefaa70ea0db8769a58d4c791',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\testcase\\errorlogcapture',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\testcase\\expect',
+        1 => 'phpunit\\framework\\testcase\\verify',
+        2 => 'phpunit\\framework\\testcase\\stop',
+        3 => 'phpunit\\framework\\testcase\\start',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestCase/ExceptionExpectation.php' => 
+    array (
+      0 => '19888f507e49b9ca68a976d479286dee8bfe41a6da077da73b1de6683e94dcc2',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\testcase\\exceptionexpectation',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\testcase\\expectclass',
+        1 => 'phpunit\\framework\\testcase\\expectcode',
+        2 => 'phpunit\\framework\\testcase\\expectmessageis',
+        3 => 'phpunit\\framework\\testcase\\expectmessageisorcontains',
+        4 => 'phpunit\\framework\\testcase\\expectmessagematches',
+        5 => 'phpunit\\framework\\testcase\\shouldbeverifiedfor',
+        6 => 'phpunit\\framework\\testcase\\verify',
+        7 => 'phpunit\\framework\\testcase\\assertwasraised',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestCase/GlobalStateCapture.php' => 
+    array (
+      0 => '06395d781115f06050146d89a17f20dae8e294241a747e8e9b5ffbf74be6411a',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\testcase\\globalstatecapture',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\testcase\\setbackupglobals',
+        1 => 'phpunit\\framework\\testcase\\setbackupglobalsexcludelist',
+        2 => 'phpunit\\framework\\testcase\\setbackupstaticproperties',
+        3 => 'phpunit\\framework\\testcase\\setbackupstaticpropertiesexcludelist',
+        4 => 'phpunit\\framework\\testcase\\snapshotglobals',
+        5 => 'phpunit\\framework\\testcase\\restoreglobals',
+        6 => 'phpunit\\framework\\testcase\\snapshoterrorhandlers',
+        7 => 'phpunit\\framework\\testcase\\restoreerrorhandlers',
+        8 => 'phpunit\\framework\\testcase\\createsnapshot',
+        9 => 'phpunit\\framework\\testcase\\comparesnapshots',
+        10 => 'phpunit\\framework\\testcase\\comparesnapshotpart',
+        11 => 'phpunit\\framework\\testcase\\activeexceptionhandlers',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestCase/HookMethodInvoker.php' => 
+    array (
+      0 => 'e150508793f907ccde05ce9c6b171b7b3ede3d1a830d41babc183f071fe3fe20',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\testcase\\hookmethodinvoker',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\testcase\\invokebeforeclass',
+        1 => 'phpunit\\framework\\testcase\\invokebeforetest',
+        2 => 'phpunit\\framework\\testcase\\invokeprecondition',
+        3 => 'phpunit\\framework\\testcase\\invokepostcondition',
+        4 => 'phpunit\\framework\\testcase\\invokeaftertest',
+        5 => 'phpunit\\framework\\testcase\\invokeafterclass',
+        6 => 'phpunit\\framework\\testcase\\invokemethodlevel',
+        7 => 'phpunit\\framework\\testcase\\invokeclasslevel',
+        8 => 'phpunit\\framework\\testcase\\doinvoke',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestCase/OutputBuffer.php' => 
+    array (
+      0 => '2793991953e39946ece53eb82f17a569003e3e9b3ddbe271f61b062e31892f49',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\testcase\\outputbuffer',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\testcase\\expectregularexpression',
+        1 => 'phpunit\\framework\\testcase\\expectstring',
+        2 => 'phpunit\\framework\\testcase\\conflictswithexpectedstring',
+        3 => 'phpunit\\framework\\testcase\\hasexpectation',
+        4 => 'phpunit\\framework\\testcase\\expectsoutput',
+        5 => 'phpunit\\framework\\testcase\\hasunexpectedoutput',
+        6 => 'phpunit\\framework\\testcase\\output',
+        7 => 'phpunit\\framework\\testcase\\getactualoutputforassertion',
+        8 => 'phpunit\\framework\\testcase\\start',
+        9 => 'phpunit\\framework\\testcase\\stop',
+        10 => 'phpunit\\framework\\testcase\\performassertions',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestCase/OutputBufferStopResult.php' => 
+    array (
+      0 => '8716e566829f1aac397e606320e20ce3a9789b68b885116f3a6767d23275e959',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\testcase\\outputbufferstopresult',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\testcase\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestRunner/ChildProcessOutputCollector.php' => 
+    array (
+      0 => 'a2a8c0e757e8acac4de84937f3aa604670f409e3e67982943e1431702ff19e80',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\testrunner\\childprocessoutputcollector',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\testrunner\\collect',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Framework/TestRunner/ErrorHandlerBootstrapper.php' => 
+    array (
+      0 => '6ab7439f288d383ac34329bb224263429c75875068f339f731dee6ec0320612a',
+      1 => 
+      array (
+        0 => 'phpunit\\framework\\testrunner\\errorhandlerbootstrapper',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\framework\\testrunner\\bootstrap',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/JUnit/Subscriber/TestAttemptErroredSubscriber.php' => 
+    array (
+      0 => '98dfe8da9f8818a0f0c761c94fe91ecad251c130858bc1d7f7bb514da7b1c935',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\junit\\testattempterroredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\junit\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/JUnit/Subscriber/TestAttemptFailedSubscriber.php' => 
+    array (
+      0 => 'f03526f7252db46c6eefc17d2f6da89cbd565aca657c0dfdbdce64126664ab0a',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\junit\\testattemptfailedsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\junit\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestAttemptErroredSubscriber.php' => 
+    array (
+      0 => '3c0b75c442976698a62ed7ded18c897365b41d6290017d5979943ce3f9a19cd0',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\testattempterroredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestAttemptFailedSubscriber.php' => 
+    array (
+      0 => 'cce5f878c30f891cf9193366f36062d83140c2b4dcf742c4111ca469921ce616',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\testattemptfailedsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestConsideredRiskySubscriber.php' => 
+    array (
+      0 => '4551895489036226dc1d16455e156c67467925382c0c1c1c942df26ef1e3f8bf',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\testconsideredriskysubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestDeprecationTriggeredSubscriber.php' => 
+    array (
+      0 => '988f6a1ff22535a3b1ad0a09afb1d79573c66bda0fa7ac10520b62716238ce4f',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\testdeprecationtriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestErrorTriggeredSubscriber.php' => 
+    array (
+      0 => '2ae5043e2e2976f3e026db66019ad61959d7242488e696337cb47173beeab486',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\testerrortriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestNoticeTriggeredSubscriber.php' => 
+    array (
+      0 => '519f3971d8db40920d732e091327797dafbf851456894b25a94f18270b9e7e54',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\testnoticetriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestPhpDeprecationTriggeredSubscriber.php' => 
+    array (
+      0 => '062709c714dc8263f77d9ba02b359ffa1b7ad17613661acc5320db92e7427608',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\testphpdeprecationtriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestPhpNoticeTriggeredSubscriber.php' => 
+    array (
+      0 => '6e84311e5574cc176c647155794d44d74cbf27257a2b2f6d92cf8ff0f637060f',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\testphpnoticetriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestPhpWarningTriggeredSubscriber.php' => 
+    array (
+      0 => '52dbbb0ccbcb9b7d8b976c8e85c42f394f746168f0ce3f12192f5148562026ef',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\testphpwarningtriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestPhpunitDeprecationTriggeredSubscriber.php' => 
+    array (
+      0 => '9de75676d897996fe821b92edae2e3cd33ef5e6336f8610d6a2bbc35a9d20538',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\testphpunitdeprecationtriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestPhpunitErrorTriggeredSubscriber.php' => 
+    array (
+      0 => '7612b89e29bac10dff3def3321aba5365d068ca482d0a2996f5cef853bb666b6',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\testphpuniterrortriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestPhpunitNoticeTriggeredSubscriber.php' => 
+    array (
+      0 => 'a180decb4f984ce44b418684cb4606d36d4804a2f5cc38424829a3640be5611f',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\testphpunitnoticetriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestPhpunitWarningTriggeredSubscriber.php' => 
+    array (
+      0 => 'a7863c027c06221368699fed6111118df29bee3b2b51296590a13b03e2a54ab2',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\testphpunitwarningtriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestPrintedUnexpectedOutputSubscriber.php' => 
+    array (
+      0 => '642db7f29a938b525a6d147c03881fc8dca91543c3f3e92a341b6d33deb204bf',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\testprintedunexpectedoutputsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Logging/OpenTestReporting/Subscriber/TestWarningTriggeredSubscriber.php' => 
+    array (
+      0 => '91a2160cca82b8f96154c8036df0b3f79a817cd9d5a31c3d821ea85923b9b9f8',
+      1 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\testwarningtriggeredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\logging\\opentestreporting\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/CoversDirectory.php' => 
+    array (
+      0 => '3d58ece877cc81b40bd15817a40534b029525b3dbf031859619d7bdeedf04b5b',
+      1 => 
+      array (
+        0 => 'phpunit\\metadata\\coversdirectory',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\metadata\\__construct',
+        1 => 'phpunit\\metadata\\iscoversdirectory',
+        2 => 'phpunit\\metadata\\directory',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/CoversDirectoryRecursively.php' => 
+    array (
+      0 => 'c6ae9b40532680c9a7daf16c1af20ba05315652f5a2b6c497442249d26c449a2',
+      1 => 
+      array (
+        0 => 'phpunit\\metadata\\coversdirectoryrecursively',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\metadata\\__construct',
+        1 => 'phpunit\\metadata\\iscoversdirectoryrecursively',
+        2 => 'phpunit\\metadata\\directory',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/CoversFile.php' => 
+    array (
+      0 => '04fe435e5e0bdaab8b3b116e69ba3e640fcaf2ad3c9946cef176fa3072863434',
+      1 => 
+      array (
+        0 => 'phpunit\\metadata\\coversfile',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\metadata\\__construct',
+        1 => 'phpunit\\metadata\\iscoversfile',
+        2 => 'phpunit\\metadata\\path',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/DataProviderClosure.php' => 
+    array (
+      0 => '8e197e8cc3ca357fec5c92e39f9117000b1606c551b05e7c879289d04698aad0',
+      1 => 
+      array (
+        0 => 'phpunit\\metadata\\dataproviderclosure',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\metadata\\__construct',
+        1 => 'phpunit\\metadata\\isdataproviderclosure',
+        2 => 'phpunit\\metadata\\closure',
+        3 => 'phpunit\\metadata\\validateargumentcount',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/InvalidAttribute.php' => 
+    array (
+      0 => 'f66765c685c983321e9274fe40714d39418a661de38b33680fe5274ece3f8ad1',
+      1 => 
+      array (
+        0 => 'phpunit\\metadata\\invalidattribute',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\metadata\\__construct',
+        1 => 'phpunit\\metadata\\isinvalidattribute',
+        2 => 'phpunit\\metadata\\message',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Level.php' => 
+    array (
+      0 => 'd573eaf59a4854ff31be5bc86adcbaa184b9a763075cdf75230483f1440ca44d',
+      1 => 
+      array (
+        0 => 'phpunit\\metadata\\level',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Repeat.php' => 
+    array (
+      0 => 'a68b14dd3e6067d449601dad4b799a5175e82cc8f8c2643d8344d26ad9976bf4',
+      1 => 
+      array (
+        0 => 'phpunit\\metadata\\repeat',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\metadata\\__construct',
+        1 => 'phpunit\\metadata\\isrepeat',
+        2 => 'phpunit\\metadata\\times',
+        3 => 'phpunit\\metadata\\failurethreshold',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Retry.php' => 
+    array (
+      0 => 'd6ff843edcfd38972e634d09158796e5c16c0075355ffbef93842cf59bc175f8',
+      1 => 
+      array (
+        0 => 'phpunit\\metadata\\retry',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\metadata\\__construct',
+        1 => 'phpunit\\metadata\\isretry',
+        2 => 'phpunit\\metadata\\maxattempts',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/UsesDirectory.php' => 
+    array (
+      0 => '0a95b77388c2bc43507617fbe56cab86a8ffe4b91d890c859df59b405ee99e9d',
+      1 => 
+      array (
+        0 => 'phpunit\\metadata\\usesdirectory',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\metadata\\__construct',
+        1 => 'phpunit\\metadata\\isusesdirectory',
+        2 => 'phpunit\\metadata\\directory',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/UsesDirectoryRecursively.php' => 
+    array (
+      0 => 'df314dda21a082e3ff83595ce6d9ded2e9be3800482317fcba2462156377a9a5',
+      1 => 
+      array (
+        0 => 'phpunit\\metadata\\usesdirectoryrecursively',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\metadata\\__construct',
+        1 => 'phpunit\\metadata\\isusesdirectoryrecursively',
+        2 => 'phpunit\\metadata\\directory',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/UsesFile.php' => 
+    array (
+      0 => 'f33ef92152d10bdabb088772e63bf172c3c560c1a625438130afcc2f0a9f2b99',
+      1 => 
+      array (
+        0 => 'phpunit\\metadata\\usesfile',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\metadata\\__construct',
+        1 => 'phpunit\\metadata\\isusesfile',
+        2 => 'phpunit\\metadata\\path',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Metadata/Version/InvalidVersionRequirement.php' => 
+    array (
+      0 => '8778334ff4f946fcbacb1d6d68e620623ded17bffaf14e798515bd1772bab40c',
+      1 => 
+      array (
+        0 => 'phpunit\\metadata\\version\\invalidversionrequirement',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\metadata\\version\\__construct',
+        1 => 'phpunit\\metadata\\version\\issatisfiedby',
+        2 => 'phpunit\\metadata\\version\\asstring',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/DeprecationFilter.php' => 
+    array (
+      0 => '5abb63bed04334906e355348f6616debe0725466f296d2b42d52585cd9cc3602',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\deprecationfilter',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\ignores',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Exception/CodeCoverageDriverException.php' => 
+    array (
+      0 => '4c4b2e69f759abe5d91de1be4b8592dce5799b102ce6680d76fdd964bf32c51d',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\codecoveragedriverexception',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Extension/ExtensionCapabilities.php' => 
+    array (
+      0 => '9b083623a49fd6f57ae54c0402bfc7b4c1cad4cab51e2023e0f1b259c85297c6',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\extension\\extensioncapabilities',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\extension\\from',
+        1 => 'phpunit\\runner\\extension\\none',
+        2 => 'phpunit\\runner\\extension\\__construct',
+        3 => 'phpunit\\runner\\extension\\requirescodecoveragecollection',
+        4 => 'phpunit\\runner\\extension\\replacesoutput',
+        5 => 'phpunit\\runner\\extension\\replacesprogressoutput',
+        6 => 'phpunit\\runner\\extension\\replacesresultoutput',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Extension/ExtensionFacade.php' => 
+    array (
+      0 => 'cbb739d36e8b8edb685f82ee0bc84df790e7928b374a7a542c9fb70e7a14c4c0',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\extension\\extensionfacade',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\extension\\registersubscribers',
+        1 => 'phpunit\\runner\\extension\\registersubscriber',
+        2 => 'phpunit\\runner\\extension\\registertracer',
+        3 => 'phpunit\\runner\\extension\\replaceoutput',
+        4 => 'phpunit\\runner\\extension\\replacesoutput',
+        5 => 'phpunit\\runner\\extension\\replaceprogressoutput',
+        6 => 'phpunit\\runner\\extension\\replacesprogressoutput',
+        7 => 'phpunit\\runner\\extension\\replaceresultoutput',
+        8 => 'phpunit\\runner\\extension\\replacesresultoutput',
+        9 => 'phpunit\\runner\\extension\\requirecodecoveragecollection',
+        10 => 'phpunit\\runner\\extension\\requirescodecoveragecollection',
+        11 => 'phpunit\\runner\\extension\\capabilities',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Filter/CompiledNameFilter.php' => 
+    array (
+      0 => '6c1ecd7ceae4127f6760aa6539e74a959bae4dad84de5342daa3c0a7a8858b01',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\filter\\compilednamefilter',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\filter\\from',
+        1 => 'phpunit\\runner\\filter\\__construct',
+        2 => 'phpunit\\runner\\filter\\regularexpression',
+        3 => 'phpunit\\runner\\filter\\constrainsmethodname',
+        4 => 'phpunit\\runner\\filter\\methodnameregularexpression',
+        5 => 'phpunit\\runner\\filter\\hasdatasetrange',
+        6 => 'phpunit\\runner\\filter\\datasetminimum',
+        7 => 'phpunit\\runner\\filter\\datasetmaximum',
+        8 => 'phpunit\\runner\\filter\\isfiltersyntax',
+        9 => 'phpunit\\runner\\filter\\isregularexpression',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/IssueTriggerResolver/DefaultResolver.php' => 
+    array (
+      0 => 'a246db4be5ed2657c1a0b3d8ac314e642c2da3f0b6bf9b13f2e9bef59ded06c0',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\issuetriggerresolver\\defaultresolver',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\issuetriggerresolver\\resolve',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/IssueTriggerResolver/Resolution.php' => 
+    array (
+      0 => '4b1d51232c9e656f69c0adccd07ee0ab137076f9f8132130a74e53368df95cf4',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\issuetriggerresolver\\resolution',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\issuetriggerresolver\\__construct',
+        1 => 'phpunit\\runner\\issuetriggerresolver\\hascallee',
+        2 => 'phpunit\\runner\\issuetriggerresolver\\callee',
+        3 => 'phpunit\\runner\\issuetriggerresolver\\hascaller',
+        4 => 'phpunit\\runner\\issuetriggerresolver\\caller',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/IssueTriggerResolver/Resolver.php' => 
+    array (
+      0 => '6a01dcc8c3b8aaa5fcb68280b7bf55be295108000d9336f067a50a963ecd607a',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\issuetriggerresolver\\resolver',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\issuetriggerresolver\\resolve',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/PhpConfiguration/PhpConfigurationCheckResult.php' => 
+    array (
+      0 => 'd58730587c2650b850233610fa5fddfe7d6d47f5af310308288ca728ed0ae33d',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\phpconfiguration\\phpconfigurationcheckresult',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\phpconfiguration\\__construct',
+        1 => 'phpunit\\runner\\phpconfiguration\\name',
+        2 => 'phpunit\\runner\\phpconfiguration\\valueforconfiguration',
+        3 => 'phpunit\\runner\\phpconfiguration\\actualvalue',
+        4 => 'phpunit\\runner\\phpconfiguration\\isok',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/PhpConfiguration/PhpConfigurationChecker.php' => 
+    array (
+      0 => '9ba0dccc064a907026c502c587b9f2039a04e7283b0224f3cbe19cf04bf953c1',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\phpconfiguration\\phpconfigurationchecker',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\phpconfiguration\\check',
+        1 => 'phpunit\\runner\\phpconfiguration\\settings',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Phpt/CodeCoverageBootstrapper.php' => 
+    array (
+      0 => 'eae7cce7cbc8dc8f959699df69f974831e6b0ed945ad82c68ee551982af2b7f6',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\phpt\\codecoveragebootstrapper',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\phpt\\bootstrap',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Phpt/Exception/CannotLoadPhptFileException.php' => 
+    array (
+      0 => 'ab7fb21dded4d4fb7e1c7602085d50d4d20e3b5d53101a63a4eee320fcfaecc2',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\phpt\\cannotloadphptfileexception',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Phpt/Exception/ConflictingPhptSectionsException.php' => 
+    array (
+      0 => 'e3096dd3aa38a657341e88872c7e78f7f5f4ad67f56f5e5753912a973d14be45',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\phpt\\conflictingphptsectionsexception',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\phpt\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Phpt/Exception/DuplicatePhptSectionException.php' => 
+    array (
+      0 => '3afe83054becb76d15049d9245d4f7528a8d2349fdb82d30ee9b06be97610556',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\phpt\\duplicatephptsectionexception',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\phpt\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/Phpt/Exception/UnknownPhptSectionException.php' => 
+    array (
+      0 => 'a56a76bdad287d5ee29442ec5763f07171818b43df1b5c48978ce26230f5b67d',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\phpt\\unknownphptsectionexception',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\phpt\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestAttemptErroredSubscriber.php' => 
+    array (
+      0 => '8b4b8bdde8ca657b27204af67bc594365cb436bbbe34d3039b7301f9ad745b29',
+      1 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\testattempterroredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestAttemptFailedSubscriber.php' => 
+    array (
+      0 => 'bfea0645bc9ffab9ce76e88ba493587b62766d5c0a5ea82358cfc08bb8c17e7b',
+      1 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\testattemptfailedsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredIssueDeprecationSubscriber.php' => 
+    array (
+      0 => '96cc7c7cc893f922e1083bcc3f4773e0116595168c482e971102d9eec6f4db56',
+      1 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuedeprecationsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredIssueErrorSubscriber.php' => 
+    array (
+      0 => '8f57f64f40dd31ad987087652369ca6ba5dc1f03408275488a1fd7b71afabead',
+      1 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissueerrorsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredIssueNoticeSubscriber.php' => 
+    array (
+      0 => '92466e391c95a8ec7e2c632e94bd2e1b95eed3d7c102b9beee1b4f29f99ae663',
+      1 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuenoticesubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredIssuePhpDeprecationSubscriber.php' => 
+    array (
+      0 => '4039875dd508db0cb1aa9be5bdb7e75f888c4e4404ca3fb8d70851663e023e80',
+      1 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuephpdeprecationsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredIssuePhpNoticeSubscriber.php' => 
+    array (
+      0 => '5421705841ab095bec9e12c6a9353890ce7f59efc1a40687e4392e9403359710',
+      1 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuephpnoticesubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredIssuePhpWarningSubscriber.php' => 
+    array (
+      0 => '42cfef003d902c947a48eb6a120d034be6989045a6515864b5f64bb59fc0ac3b',
+      1 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuephpwarningsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredIssueWarningSubscriber.php' => 
+    array (
+      0 => '97b9b97dab7eaf8feae205a9acd9c56b7a95cc2d9753133134208354742a919a',
+      1 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredissuewarningsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredPhpunitDeprecationSubscriber.php' => 
+    array (
+      0 => '082b7197d94c1dfdbeac28448944c0b240cd7c6f19aaa3786c4113ee08887e14',
+      1 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredphpunitdeprecationsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredPhpunitNoticeSubscriber.php' => 
+    array (
+      0 => 'fae16656c53a948fe4f33ac62cf791cc100faa4a11500aa08521fc255716d45a',
+      1 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredphpunitnoticesubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredPhpunitWarningSubscriber.php' => 
+    array (
+      0 => '774c0468cf9e46ac372f546820169774d1815837b9dd07f13f53535f7956c55b',
+      1 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\testrunnertriggeredphpunitwarningsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\testrunner\\testresult\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/DefaultTestRunHistory.php' => 
+    array (
+      0 => '4ef0e3da6e2c5ded2afa62d77232d79e8e9c2a7691a1ca593f95be0ea95b4d0b',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\defaulttestrunhistory',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\__construct',
+        1 => 'phpunit\\runner\\testrunhistory\\setstatus',
+        2 => 'phpunit\\runner\\testrunhistory\\remove',
+        3 => 'phpunit\\runner\\testrunhistory\\status',
+        4 => 'phpunit\\runner\\testrunhistory\\settime',
+        5 => 'phpunit\\runner\\testrunhistory\\time',
+        6 => 'phpunit\\runner\\testrunhistory\\mergewith',
+        7 => 'phpunit\\runner\\testrunhistory\\load',
+        8 => 'phpunit\\runner\\testrunhistory\\persist',
+        9 => 'phpunit\\runner\\testrunhistory\\persistandprune',
+        10 => 'phpunit\\runner\\testrunhistory\\writetofile',
+        11 => 'phpunit\\runner\\testrunhistory\\parse',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/NullTestRunHistory.php' => 
+    array (
+      0 => 'd669bf09fc3b3380d2d5b7a4e2b2f8903ef65b54c60c7185bdd952451aa133cf',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\nulltestrunhistory',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\setstatus',
+        1 => 'phpunit\\runner\\testrunhistory\\remove',
+        2 => 'phpunit\\runner\\testrunhistory\\status',
+        3 => 'phpunit\\runner\\testrunhistory\\settime',
+        4 => 'phpunit\\runner\\testrunhistory\\time',
+        5 => 'phpunit\\runner\\testrunhistory\\load',
+        6 => 'phpunit\\runner\\testrunhistory\\persist',
+        7 => 'phpunit\\runner\\testrunhistory\\persistandprune',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/Subscriber/Subscriber.php' => 
+    array (
+      0 => 'd8766550fb406767a03d96cc6e88e9576f4ed16386257e3e6590dcdcda0ea848',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\subscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\__construct',
+        1 => 'phpunit\\runner\\testrunhistory\\handler',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/Subscriber/TestConsideredRiskySubscriber.php' => 
+    array (
+      0 => 'e41affbc87f2b0061888f39546d04664b908c104ccae48f935c00eff98063499',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\testconsideredriskysubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/Subscriber/TestErroredSubscriber.php' => 
+    array (
+      0 => '782cbfd91398e576dd6f217897cefbea733243c96d22de95ea05f00179ec920d',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\testerroredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/Subscriber/TestFailedSubscriber.php' => 
+    array (
+      0 => '33785693c9de531bfcd68c665986f4918b29020839055aea7f310759b2b54c8a',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\testfailedsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/Subscriber/TestFinishedSubscriber.php' => 
+    array (
+      0 => 'b88f616e22d245bb3bd1f4256f67ab231ad248c839cb8768454375cc1dea40df',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\testfinishedsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/Subscriber/TestMarkedIncompleteSubscriber.php' => 
+    array (
+      0 => '4d3cd526f9ba66337902e27beacc17c585acbbb752afaaba586a56fb9a785c39',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\testmarkedincompletesubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/Subscriber/TestPassedSubscriber.php' => 
+    array (
+      0 => 'd79d9c18d01421f20c11c62c06ffe149e0382185bf23c40bf84d8158c3658d87',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\testpassedsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/Subscriber/TestPreparedSubscriber.php' => 
+    array (
+      0 => '9e035efc672e4d8f3677308d29a35726c10eb6df5cc638dd7d7c5cceba2372c6',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\testpreparedsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/Subscriber/TestRunnerExecutionAbortedSubscriber.php' => 
+    array (
+      0 => 'fff43fe08027d1a8a2322185fd030b7f84dfa005b49c8cde26c137def333f78f',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\testrunnerexecutionabortedsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/Subscriber/TestSkippedSubscriber.php' => 
+    array (
+      0 => '9e8826e1aaed8fde2eddb729faa794982df2fc53795cea26b77629a1a7b94386',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\testskippedsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/Subscriber/TestSuiteFinishedSubscriber.php' => 
+    array (
+      0 => '05ae0bff27f6e5f9ec0ad9d1dac994710124cab39eb8e6e29dbc12875306f238',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\testsuitefinishedsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/Subscriber/TestSuiteStartedSubscriber.php' => 
+    array (
+      0 => '70d3159edd586ce95c6ca0a291cd4f596e916b3d893cbd76e84e42063f5438f4',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\testsuitestartedsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/TestRunHistory.php' => 
+    array (
+      0 => '411717bc106a396b59b2045e7c5609463a0f17830fb0c1e6aba617a8e01aab0f',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\testrunhistory',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\setstatus',
+        1 => 'phpunit\\runner\\testrunhistory\\remove',
+        2 => 'phpunit\\runner\\testrunhistory\\status',
+        3 => 'phpunit\\runner\\testrunhistory\\settime',
+        4 => 'phpunit\\runner\\testrunhistory\\time',
+        5 => 'phpunit\\runner\\testrunhistory\\load',
+        6 => 'phpunit\\runner\\testrunhistory\\persist',
+        7 => 'phpunit\\runner\\testrunhistory\\persistandprune',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/TestRunHistoryHandler.php' => 
+    array (
+      0 => '4dd4b2ac961921a8767b19331714d54e4ee2536d5ee51c7310b11c6a5c8323cc',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\testrunhistoryhandler',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\__construct',
+        1 => 'phpunit\\runner\\testrunhistory\\testsuitestarted',
+        2 => 'phpunit\\runner\\testrunhistory\\testsuitefinished',
+        3 => 'phpunit\\runner\\testrunhistory\\testrunnerexecutionaborted',
+        4 => 'phpunit\\runner\\testrunhistory\\testprepared',
+        5 => 'phpunit\\runner\\testrunhistory\\testmarkedincomplete',
+        6 => 'phpunit\\runner\\testrunhistory\\testconsideredrisky',
+        7 => 'phpunit\\runner\\testrunhistory\\testerrored',
+        8 => 'phpunit\\runner\\testrunhistory\\testfailed',
+        9 => 'phpunit\\runner\\testrunhistory\\testpassed',
+        10 => 'phpunit\\runner\\testrunhistory\\testskipped',
+        11 => 'phpunit\\runner\\testrunhistory\\testfinished',
+        12 => 'phpunit\\runner\\testrunhistory\\recordstatus',
+        13 => 'phpunit\\runner\\testrunhistory\\duration',
+        14 => 'phpunit\\runner\\testrunhistory\\registersubscribers',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Runner/TestRunHistory/TestRunHistoryId.php' => 
+    array (
+      0 => '0c8bb27f1c89ce49f44c9370001cc9e332e500910f5f95eae92d52b3f7cfa8ba',
+      1 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\testrunhistoryid',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\runner\\testrunhistory\\fromtest',
+        1 => 'phpunit\\runner\\testrunhistory\\fromreorderable',
+        2 => 'phpunit\\runner\\testrunhistory\\fromtestclassandmethodname',
+        3 => 'phpunit\\runner\\testrunhistory\\__construct',
+        4 => 'phpunit\\runner\\testrunhistory\\asstring',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Command/Commands/ListTestIdsCommand.php' => 
+    array (
+      0 => '32867593f93e81dab38201254d12090d95495d3e215c6c630e91cfb08534b7b5',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\command\\listtestidscommand',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\command\\__construct',
+        1 => 'phpunit\\textui\\command\\execute',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Command/Commands/ValidateConfigurationCommand.php' => 
+    array (
+      0 => '5a85ce8026c3cd4f17dee059bc02e6cf440ab4ebfb35f2ce32cd63f1752e9257',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\command\\validateconfigurationcommand',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\command\\__construct',
+        1 => 'phpunit\\textui\\command\\execute',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Exception/CodeCoverageDriverNotConfiguredException.php' => 
+    array (
+      0 => 'e20b181a32aea3fc4cc8d7eaba572565487aa0356afda3a4ea3987703ff1d97d',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\configuration\\codecoveragedrivernotconfiguredexception',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Exception/NoHtmlCoverageTargetException.php' => 
+    array (
+      0 => '43ade3e8e1ed683c1d707b2e6e8ba48f6105911f4dab6e38cc5f765eba5d0881',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\configuration\\nohtmlcoveragetargetexception',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Exception/NoTestFilesFileException.php' => 
+    array (
+      0 => 'c305932fef95c87005811c6fb55bfc2c808feb057410c7ab7af43e22d2875307',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\configuration\\notestfilesfileexception',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/FileFilterMapper.php' => 
+    array (
+      0 => '86e9ba2edf3bcbdc3631f0ab3cc54beb995a9d36562352f4e169bea3f4199225',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\configuration\\filefiltermapper',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\configuration\\map',
+        1 => 'phpunit\\textui\\configuration\\directories',
+        2 => 'phpunit\\textui\\configuration\\files',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/FilterFile.php' => 
+    array (
+      0 => '0051b239ab6ec9e0894ee380512d940489ea373620706119ac43adfb5025e42f',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\configuration\\filterfile',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\configuration\\__construct',
+        1 => 'phpunit\\textui\\configuration\\path',
+        2 => 'phpunit\\textui\\configuration\\includeincodecoverage',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/FilterFileCollection.php' => 
+    array (
+      0 => '4e845c56cae41f7a56c700c44710eca3efbe1104538bf3181a2d0566bc9e88cd',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\configuration\\filterfilecollection',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\configuration\\fromarray',
+        1 => 'phpunit\\textui\\configuration\\__construct',
+        2 => 'phpunit\\textui\\configuration\\asarray',
+        3 => 'phpunit\\textui\\configuration\\count',
+        4 => 'phpunit\\textui\\configuration\\notempty',
+        5 => 'phpunit\\textui\\configuration\\getiterator',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Value/FilterFileCollectionIterator.php' => 
+    array (
+      0 => '0e199795e96943912f7ab8884252774dc6c44e58c1d2577019417a0e262bc427',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\configuration\\filterfilecollectioniterator',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\configuration\\__construct',
+        1 => 'phpunit\\textui\\configuration\\rewind',
+        2 => 'phpunit\\textui\\configuration\\valid',
+        3 => 'phpunit\\textui\\configuration\\key',
+        4 => 'phpunit\\textui\\configuration\\current',
+        5 => 'phpunit\\textui\\configuration\\next',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RenameCacheResultAttribute.php' => 
+    array (
+      0 => 'e9b433823188559f779aceec6d80012f1ee85b8f69340827aef08022ef123782',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\xmlconfiguration\\renamecacheresultattribute',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\xmlconfiguration\\migrate',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RenameExecutionOrderOptionsDurationAndSize.php' => 
+    array (
+      0 => '1743431a2b291862150e50e89ad7519fcd46866f7bf793129323d6e9a6875ff8',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\xmlconfiguration\\renameexecutionorderoptionsdurationandsize',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\xmlconfiguration\\migrate',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Output/Compact/ProgressPrinter/ProgressPrinter.php' => 
+    array (
+      0 => '6fd62cd91956c0da17e641b590dc535d8f08611be1b6a1a4a6ac1daa6f0b2f9a',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\progressprinter',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\__construct',
+        1 => 'phpunit\\textui\\output\\compact\\progressprinter\\testerrored',
+        2 => 'phpunit\\textui\\output\\compact\\progressprinter\\testfailed',
+        3 => 'phpunit\\textui\\output\\compact\\progressprinter\\beforefirsttestmethoderrored',
+        4 => 'phpunit\\textui\\output\\compact\\progressprinter\\beforefirsttestmethodfailed',
+        5 => 'phpunit\\textui\\output\\compact\\progressprinter\\afterlasttestmethoderrored',
+        6 => 'phpunit\\textui\\output\\compact\\progressprinter\\afterlasttestmethodfailed',
+        7 => 'phpunit\\textui\\output\\compact\\progressprinter\\printerror',
+        8 => 'phpunit\\textui\\output\\compact\\progressprinter\\printfailure',
+        9 => 'phpunit\\textui\\output\\compact\\progressprinter\\registersubscribers',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Output/Compact/ProgressPrinter/Subscriber/AfterLastTestMethodErroredSubscriber.php' => 
+    array (
+      0 => 'dc1d94bfeb079ad09bca5baaee34d6eee4c788bb93dddda0fdb3029447e91ded',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\afterlasttestmethoderroredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Output/Compact/ProgressPrinter/Subscriber/AfterLastTestMethodFailedSubscriber.php' => 
+    array (
+      0 => '2edb5f9ca56dc2f2dd87d6ea1d47bf755a39d6f75c6280d537892d1e57c22ff4',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\afterlasttestmethodfailedsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Output/Compact/ProgressPrinter/Subscriber/BeforeFirstTestMethodErroredSubscriber.php' => 
+    array (
+      0 => '8689e9aef2d1a9ab0cbd5547cf9c6e5c5c77e59db5ee89ba120dcf531508a45b',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\beforefirsttestmethoderroredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Output/Compact/ProgressPrinter/Subscriber/BeforeFirstTestMethodFailedSubscriber.php' => 
+    array (
+      0 => '2410ea4db372f1a3bf5b403f804ad3aa45cb95f68c4e534e2b312f606bfd03eb',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\beforefirsttestmethodfailedsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Output/Compact/ProgressPrinter/Subscriber/Subscriber.php' => 
+    array (
+      0 => 'fa9e6e3b5d7bdc26a8e6e3c788b1b0a6d80210f2a1e1290acd62fd2f8d7135bc',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\subscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\__construct',
+        1 => 'phpunit\\textui\\output\\compact\\progressprinter\\printer',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Output/Compact/ProgressPrinter/Subscriber/TestErroredSubscriber.php' => 
+    array (
+      0 => '7552972babab3074b8b1b6e38fb2536d0cf0d80f8034cbba7d544e44d8a6d7c2',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\testerroredsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Output/Compact/ProgressPrinter/Subscriber/TestFailedSubscriber.php' => 
+    array (
+      0 => 'd723f16089f55628b8a6f49ea0c0c986dd665de05322e26e92c5e9270ebccdad',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\testfailedsubscriber',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\progressprinter\\notify',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Output/Compact/Renderer.php' => 
+    array (
+      0 => '64392ec7af510ab43478795e295aadc4d5ab210e5f3ea5b23d91f7e6104fed80',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\renderer',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\__construct',
+        1 => 'phpunit\\textui\\output\\compact\\nameoftest',
+        2 => 'phpunit\\textui\\output\\compact\\printthrowable',
+        3 => 'phpunit\\textui\\output\\compact\\printstacktrace',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/TextUI/Output/Compact/ResultPrinter.php' => 
+    array (
+      0 => '0dac7cbbc8c8518237aca506eec656d188744ff9cdee9e0490f41583fcb855bc',
+      1 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\resultprinter',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\textui\\output\\compact\\__construct',
+        1 => 'phpunit\\textui\\output\\compact\\print',
+        2 => 'phpunit\\textui\\output\\compact\\printsummaryline',
+        3 => 'phpunit\\textui\\output\\compact\\printdeprecations',
+        4 => 'phpunit\\textui\\output\\compact\\printwarnings',
+        5 => 'phpunit\\textui\\output\\compact\\printnotices',
+        6 => 'phpunit\\textui\\output\\compact\\printtesttriggerederrors',
+        7 => 'phpunit\\textui\\output\\compact\\printphpuniterrors',
+        8 => 'phpunit\\textui\\output\\compact\\printphpunitwarnings',
+        9 => 'phpunit\\textui\\output\\compact\\printphpunitdeprecations',
+        10 => 'phpunit\\textui\\output\\compact\\printphpunitnotices',
+        11 => 'phpunit\\textui\\output\\compact\\printtestrunnerwarnings',
+        12 => 'phpunit\\textui\\output\\compact\\printtestrunnerdeprecations',
+        13 => 'phpunit\\textui\\output\\compact\\printtestrunnernotices',
+        14 => 'phpunit\\textui\\output\\compact\\printissuestriggeredoutsideoftests',
+        15 => 'phpunit\\textui\\output\\compact\\printriskytests',
+        16 => 'phpunit\\textui\\output\\compact\\printincompletetests',
+        17 => 'phpunit\\textui\\output\\compact\\printskippedtests',
+        18 => 'phpunit\\textui\\output\\compact\\printissuelist',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Util/DifferBuilder.php' => 
+    array (
+      0 => '333e52d0d1d09cb0bed5fe1953d78ce5966f9aab7447bd49378945cfe8cec10d',
+      1 => 
+      array (
+        0 => 'phpunit\\util\\differbuilder',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\util\\build',
+        1 => 'phpunit\\util\\configurecomparatorfactory',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/phpunit/src/Util/PHP/RunningJob.php' => 
+    array (
+      0 => '92c08741605c0d312b45d12a8e83e8907411caa2900d8d7a3afee7a41da88c4b',
+      1 => 
+      array (
+        0 => 'phpunit\\util\\php\\runningjob',
+      ),
+      2 => 
+      array (
+        0 => 'phpunit\\util\\php\\__construct',
+        1 => 'phpunit\\util\\php\\write',
+        2 => 'phpunit\\util\\php\\closestdin',
+        3 => 'phpunit\\util\\php\\stdout',
+        4 => 'phpunit\\util\\php\\readablestreams',
+        5 => 'phpunit\\util\\php\\consume',
+        6 => 'phpunit\\util\\php\\wait',
+        7 => 'phpunit\\util\\php\\readavailable',
+        8 => 'phpunit\\util\\php\\drain',
       ),
       3 => 
       array (

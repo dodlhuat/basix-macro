@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\OptimizeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-b751240b120543c78a3090f79d53357a201e5605ab092e1ad0442206f27de494-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-b55daf99dbf3fd698937186d51dabea36196257a3dd6f8ba2d855a55c287e11f-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -39,16 +39,16 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'startLine' => 11,
               'endLine' => 11,
               'startTokenPos' => 38,
-              'startFilePos' => 275,
+              'startFilePos' => 261,
               'endTokenPos' => 38,
-              'endFilePos' => 284,
+              'endFilePos' => 270,
             ),
           ),
         ),
       ),
     ),
     'startLine' => 11,
-    'endLine' => 81,
+    'endLine' => 69,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -63,28 +63,28 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\OptimizeCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\OptimizeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'optimize\'',
+          'code' => '\'optimize {--e|except= : Do not run the commands matching the key or name}\'',
           'attributes' => 
           array (
             'startLine' => 19,
             'endLine' => 19,
             'startTokenPos' => 60,
-            'startFilePos' => 425,
+            'startFilePos' => 437,
             'endTokenPos' => 60,
-            'endFilePos' => 434,
+            'endFilePos' => 511,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
@@ -94,7 +94,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'startLine' => 19,
         'endLine' => 19,
         'startColumn' => 5,
-        'endColumn' => 33,
+        'endColumn' => 103,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -117,9 +117,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 26,
             'endLine' => 26,
             'startTokenPos' => 71,
-            'startFilePos' => 549,
+            'startFilePos' => 626,
             'endTokenPos' => 71,
-            'endFilePos' => 628,
+            'endFilePos' => 705,
           ),
         ),
         'docComment' => '/**
@@ -193,37 +193,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  */',
         'startLine' => 59,
         'endLine' => 68,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\OptimizeCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\OptimizeCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\OptimizeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command arguments.
- *
- * @return array
- */',
-        'startLine' => 75,
-        'endLine' => 80,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

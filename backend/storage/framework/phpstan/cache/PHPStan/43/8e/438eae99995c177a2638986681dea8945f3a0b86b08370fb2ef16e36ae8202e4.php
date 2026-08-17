@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Queue/Console/ResumeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Queue\Console\ResumeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-f1d7688cd68d9665d5ae0bbe8b60d37627748f4c43f5a4356aad6b624cb5d1f1-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-5455e298e44f352a4f3834dadc659c26b372b27dbb8aee0976aa4a2d6974eedd-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -61,7 +61,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       ),
     ),
     'startLine' => 10,
-    'endLine' => 51,
+    'endLine' => 67,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -86,15 +86,17 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'queue:resume {queue : The name of the queue that should resume processing}\'',
+          'code' => '\'queue:resume
+                            {queue? : The name of the queue that should resume processing}
+                            {--all : Resume job processing for all queues on all connections}\'',
           'attributes' => 
           array (
             'startLine' => 20,
-            'endLine' => 20,
+            'endLine' => 22,
             'startTokenPos' => 72,
             'startFilePos' => 461,
             'endTokenPos' => 72,
-            'endFilePos' => 536,
+            'endFilePos' => 659,
           ),
         ),
         'docComment' => '/**
@@ -106,9 +108,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
         ),
         'startLine' => 20,
-        'endLine' => 20,
+        'endLine' => 22,
         'startColumn' => 5,
-        'endColumn' => 104,
+        'endColumn' => 95,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -128,12 +130,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '[\'queue:continue\']',
           'attributes' => 
           array (
-            'startLine' => 27,
-            'endLine' => 27,
+            'startLine' => 29,
+            'endLine' => 29,
             'startTokenPos' => 83,
-            'startFilePos' => 654,
+            'startFilePos' => 777,
             'endTokenPos' => 85,
-            'endFilePos' => 671,
+            'endFilePos' => 794,
           ),
         ),
         'docComment' => '/**
@@ -144,8 +146,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 27,
-        'endLine' => 27,
+        'startLine' => 29,
+        'endLine' => 29,
         'startColumn' => 5,
         'endColumn' => 44,
         'isPromoted' => false,
@@ -167,12 +169,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Resume job processing for a paused queue\'',
           'attributes' => 
           array (
-            'startLine' => 34,
-            'endLine' => 34,
+            'startLine' => 36,
+            'endLine' => 36,
             'startTokenPos' => 96,
-            'startFilePos' => 786,
+            'startFilePos' => 909,
             'endTokenPos' => 96,
-            'endFilePos' => 827,
+            'endFilePos' => 950,
           ),
         ),
         'docComment' => '/**
@@ -183,8 +185,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 34,
-        'endLine' => 34,
+        'startLine' => 36,
+        'endLine' => 36,
         'startColumn' => 5,
         'endColumn' => 72,
         'isPromoted' => false,
@@ -221,8 +223,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 41,
-            'endLine' => 41,
+            'startLine' => 43,
+            'endLine' => 43,
             'startColumn' => 28,
             'endColumn' => 48,
             'parameterIndex' => 0,
@@ -230,7 +232,15 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           ),
         ),
         'returnsReference' => false,
-        'returnType' => NULL,
+        'returnType' => 
+        array (
+          'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+          'data' => 
+          array (
+            'name' => 'int',
+            'isIdentifier' => true,
+          ),
+        ),
         'attributes' => 
         array (
         ),
@@ -239,8 +249,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return int
  */',
-        'startLine' => 41,
-        'endLine' => 50,
+        'startLine' => 43,
+        'endLine' => 66,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

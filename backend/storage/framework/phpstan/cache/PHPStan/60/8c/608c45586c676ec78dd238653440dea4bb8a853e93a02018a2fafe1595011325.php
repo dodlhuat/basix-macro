@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/Scheduling/SchedulePauseCommand.php-presentSymbols
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-0096c7fa3d795bfc34882072a28e77ea7fecd1f06b1a57aedd69ebe867d82ce5-8.5.6',
+   'variableKey' => 'v2-93730dce7b12db3c3ef69f258120bac04091247fbf133eb210d2c7b878ba0e98-8.5.6',
    'data' => 
   array (
     'classes' => 

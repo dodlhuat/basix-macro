@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Validation/Rule.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Validation\Rule
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-09c98f7f5475c648071d2284355417ad89c039124e64cf4c9f0dc249a68b0f3c-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-b1e6c929528196ee69500fc26be0c0b6e7ae93de895c1eb7e3b15457b0c6eab0-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -26,8 +26,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'attributes' => 
     array (
     ),
-    'startLine' => 30,
-    'endLine' => 376,
+    'startLine' => 31,
+    'endLine' => 388,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -62,8 +62,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 41,
-            'endLine' => 41,
+            'startLine' => 42,
+            'endLine' => 42,
             'startColumn' => 32,
             'endColumn' => 39,
             'parameterIndex' => 0,
@@ -80,8 +80,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 41,
-            'endLine' => 41,
+            'startLine' => 42,
+            'endLine' => 42,
             'startColumn' => 42,
             'endColumn' => 54,
             'parameterIndex' => 1,
@@ -100,8 +100,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  mixed  ...$arguments
  * @return \\Illuminate\\Validation\\Rules\\Can
  */',
-        'startLine' => 41,
-        'endLine' => 44,
+        'startLine' => 42,
+        'endLine' => 45,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -131,8 +131,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 54,
-            'endLine' => 54,
+            'startLine' => 55,
+            'endLine' => 55,
             'startColumn' => 33,
             'endColumn' => 42,
             'parameterIndex' => 0,
@@ -149,8 +149,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 54,
-            'endLine' => 54,
+            'startLine' => 55,
+            'endLine' => 55,
             'startColumn' => 45,
             'endColumn' => 50,
             'parameterIndex' => 1,
@@ -164,12 +164,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'code' => '[]',
               'attributes' => 
               array (
-                'startLine' => 54,
-                'endLine' => 54,
-                'startTokenPos' => 192,
-                'startFilePos' => 1978,
-                'endTokenPos' => 193,
-                'endFilePos' => 1979,
+                'startLine' => 55,
+                'endLine' => 55,
+                'startTokenPos' => 197,
+                'startFilePos' => 2021,
+                'endTokenPos' => 198,
+                'endFilePos' => 2022,
               ),
             ),
             'type' => NULL,
@@ -179,8 +179,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 54,
-            'endLine' => 54,
+            'startLine' => 55,
+            'endLine' => 55,
             'startColumn' => 53,
             'endColumn' => 70,
             'parameterIndex' => 2,
@@ -200,8 +200,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Contracts\\Validation\\ValidationRule|\\Illuminate\\Contracts\\Validation\\InvokableRule|\\Illuminate\\Contracts\\Validation\\Rule|\\Closure|array|string  $defaultRules
  * @return \\Illuminate\\Validation\\ConditionalRules
  */',
-        'startLine' => 54,
-        'endLine' => 57,
+        'startLine' => 55,
+        'endLine' => 58,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -231,8 +231,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 67,
-            'endLine' => 67,
+            'startLine' => 68,
+            'endLine' => 68,
             'startColumn' => 35,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -249,8 +249,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 67,
-            'endLine' => 67,
+            'startLine' => 68,
+            'endLine' => 68,
             'startColumn' => 47,
             'endColumn' => 52,
             'parameterIndex' => 1,
@@ -264,12 +264,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'code' => '[]',
               'attributes' => 
               array (
-                'startLine' => 67,
-                'endLine' => 67,
-                'startTokenPos' => 236,
-                'startFilePos' => 2681,
-                'endTokenPos' => 237,
-                'endFilePos' => 2682,
+                'startLine' => 68,
+                'endLine' => 68,
+                'startTokenPos' => 241,
+                'startFilePos' => 2724,
+                'endTokenPos' => 242,
+                'endFilePos' => 2725,
               ),
             ),
             'type' => NULL,
@@ -279,8 +279,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 67,
-            'endLine' => 67,
+            'startLine' => 68,
+            'endLine' => 68,
             'startColumn' => 55,
             'endColumn' => 72,
             'parameterIndex' => 2,
@@ -300,8 +300,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Contracts\\Validation\\ValidationRule|\\Illuminate\\Contracts\\Validation\\InvokableRule|\\Illuminate\\Contracts\\Validation\\Rule|\\Closure|array|string  $defaultRules
  * @return \\Illuminate\\Validation\\ConditionalRules
  */',
-        'startLine' => 67,
-        'endLine' => 70,
+        'startLine' => 68,
+        'endLine' => 71,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -328,12 +328,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'code' => 'null',
               'attributes' => 
               array (
-                'startLine' => 78,
-                'endLine' => 78,
-                'startTokenPos' => 274,
-                'startFilePos' => 2964,
-                'endTokenPos' => 274,
-                'endFilePos' => 2967,
+                'startLine' => 79,
+                'endLine' => 79,
+                'startTokenPos' => 279,
+                'startFilePos' => 3007,
+                'endTokenPos' => 279,
+                'endFilePos' => 3010,
               ),
             ),
             'type' => NULL,
@@ -343,8 +343,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 78,
-            'endLine' => 78,
+            'startLine' => 79,
+            'endLine' => 79,
             'startColumn' => 34,
             'endColumn' => 45,
             'parameterIndex' => 0,
@@ -362,8 +362,58 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  array|null  $keys
  * @return \\Illuminate\\Validation\\Rules\\ArrayRule
  */',
-        'startLine' => 78,
-        'endLine' => 81,
+        'startLine' => 79,
+        'endLine' => 82,
+        'startColumn' => 5,
+        'endColumn' => 5,
+        'couldThrow' => false,
+        'isClosure' => false,
+        'isGenerator' => false,
+        'isVariadic' => true,
+        'modifiers' => 17,
+        'namespace' => 'Illuminate\\Validation',
+        'declaringClassName' => 'Illuminate\\Validation\\Rule',
+        'implementingClassName' => 'Illuminate\\Validation\\Rule',
+        'currentClassName' => 'Illuminate\\Validation\\Rule',
+        'aliasName' => NULL,
+      ),
+      'arrayKeys' => 
+      array (
+        'name' => 'arrayKeys',
+        'parameters' => 
+        array (
+          'keys' => 
+          array (
+            'name' => 'keys',
+            'default' => NULL,
+            'type' => NULL,
+            'isVariadic' => false,
+            'byRef' => false,
+            'isPromoted' => false,
+            'attributes' => 
+            array (
+            ),
+            'startLine' => 90,
+            'endLine' => 90,
+            'startColumn' => 38,
+            'endColumn' => 42,
+            'parameterIndex' => 0,
+            'isOptional' => false,
+          ),
+        ),
+        'returnsReference' => false,
+        'returnType' => NULL,
+        'attributes' => 
+        array (
+        ),
+        'docComment' => '/**
+ * Get an array keys rule builder instance.
+ *
+ * @param  \\Illuminate\\Contracts\\Support\\Arrayable|array|string  $keys
+ * @return \\Illuminate\\Validation\\Rules\\ArrayKeys
+ */',
+        'startLine' => 90,
+        'endLine' => 93,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -393,8 +443,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 89,
-            'endLine' => 89,
+            'startLine' => 101,
+            'endLine' => 101,
             'startColumn' => 36,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -412,8 +462,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  callable  $callback
  * @return \\Illuminate\\Validation\\NestedRules
  */',
-        'startLine' => 89,
-        'endLine' => 92,
+        'startLine' => 101,
+        'endLine' => 104,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -430,87 +480,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       'unique' => 
       array (
         'name' => 'unique',
-        'parameters' => 
-        array (
-          'table' => 
-          array (
-            'name' => 'table',
-            'default' => NULL,
-            'type' => NULL,
-            'isVariadic' => false,
-            'byRef' => false,
-            'isPromoted' => false,
-            'attributes' => 
-            array (
-            ),
-            'startLine' => 101,
-            'endLine' => 101,
-            'startColumn' => 35,
-            'endColumn' => 40,
-            'parameterIndex' => 0,
-            'isOptional' => false,
-          ),
-          'column' => 
-          array (
-            'name' => 'column',
-            'default' => 
-            array (
-              'code' => '\'NULL\'',
-              'attributes' => 
-              array (
-                'startLine' => 101,
-                'endLine' => 101,
-                'startTokenPos' => 338,
-                'startFilePos' => 3516,
-                'endTokenPos' => 338,
-                'endFilePos' => 3521,
-              ),
-            ),
-            'type' => NULL,
-            'isVariadic' => false,
-            'byRef' => false,
-            'isPromoted' => false,
-            'attributes' => 
-            array (
-            ),
-            'startLine' => 101,
-            'endLine' => 101,
-            'startColumn' => 43,
-            'endColumn' => 58,
-            'parameterIndex' => 1,
-            'isOptional' => true,
-          ),
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get a unique constraint builder instance.
- *
- * @param  string  $table
- * @param  string  $column
- * @return \\Illuminate\\Validation\\Rules\\Unique
- */',
-        'startLine' => 101,
-        'endLine' => 104,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 17,
-        'namespace' => 'Illuminate\\Validation',
-        'declaringClassName' => 'Illuminate\\Validation\\Rule',
-        'implementingClassName' => 'Illuminate\\Validation\\Rule',
-        'currentClassName' => 'Illuminate\\Validation\\Rule',
-        'aliasName' => NULL,
-      ),
-      'exists' => 
-      array (
-        'name' => 'exists',
         'parameters' => 
         array (
           'table' => 
@@ -541,10 +510,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               array (
                 'startLine' => 113,
                 'endLine' => 113,
-                'startTokenPos' => 375,
-                'startFilePos' => 3818,
-                'endTokenPos' => 375,
-                'endFilePos' => 3823,
+                'startTokenPos' => 373,
+                'startFilePos' => 3866,
+                'endTokenPos' => 373,
+                'endFilePos' => 3871,
               ),
             ),
             'type' => NULL,
@@ -568,14 +537,95 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
         ),
         'docComment' => '/**
+ * Get a unique constraint builder instance.
+ *
+ * @param  string  $table
+ * @param  string  $column
+ * @return \\Illuminate\\Validation\\Rules\\Unique
+ */',
+        'startLine' => 113,
+        'endLine' => 116,
+        'startColumn' => 5,
+        'endColumn' => 5,
+        'couldThrow' => false,
+        'isClosure' => false,
+        'isGenerator' => false,
+        'isVariadic' => false,
+        'modifiers' => 17,
+        'namespace' => 'Illuminate\\Validation',
+        'declaringClassName' => 'Illuminate\\Validation\\Rule',
+        'implementingClassName' => 'Illuminate\\Validation\\Rule',
+        'currentClassName' => 'Illuminate\\Validation\\Rule',
+        'aliasName' => NULL,
+      ),
+      'exists' => 
+      array (
+        'name' => 'exists',
+        'parameters' => 
+        array (
+          'table' => 
+          array (
+            'name' => 'table',
+            'default' => NULL,
+            'type' => NULL,
+            'isVariadic' => false,
+            'byRef' => false,
+            'isPromoted' => false,
+            'attributes' => 
+            array (
+            ),
+            'startLine' => 125,
+            'endLine' => 125,
+            'startColumn' => 35,
+            'endColumn' => 40,
+            'parameterIndex' => 0,
+            'isOptional' => false,
+          ),
+          'column' => 
+          array (
+            'name' => 'column',
+            'default' => 
+            array (
+              'code' => '\'NULL\'',
+              'attributes' => 
+              array (
+                'startLine' => 125,
+                'endLine' => 125,
+                'startTokenPos' => 410,
+                'startFilePos' => 4168,
+                'endTokenPos' => 410,
+                'endFilePos' => 4173,
+              ),
+            ),
+            'type' => NULL,
+            'isVariadic' => false,
+            'byRef' => false,
+            'isPromoted' => false,
+            'attributes' => 
+            array (
+            ),
+            'startLine' => 125,
+            'endLine' => 125,
+            'startColumn' => 43,
+            'endColumn' => 58,
+            'parameterIndex' => 1,
+            'isOptional' => true,
+          ),
+        ),
+        'returnsReference' => false,
+        'returnType' => NULL,
+        'attributes' => 
+        array (
+        ),
+        'docComment' => '/**
  * Get an exists constraint builder instance.
  *
  * @param  string  $table
  * @param  string  $column
  * @return \\Illuminate\\Validation\\Rules\\Exists
  */',
-        'startLine' => 113,
-        'endLine' => 116,
+        'startLine' => 125,
+        'endLine' => 128,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -605,8 +655,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 124,
-            'endLine' => 124,
+            'startLine' => 136,
+            'endLine' => 136,
             'startColumn' => 31,
             'endColumn' => 37,
             'parameterIndex' => 0,
@@ -624,8 +674,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Contracts\\Support\\Arrayable|\\UnitEnum|array|string  $values
  * @return \\Illuminate\\Validation\\Rules\\In
  */',
-        'startLine' => 124,
-        'endLine' => 131,
+        'startLine' => 136,
+        'endLine' => 143,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -655,8 +705,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 139,
-            'endLine' => 139,
+            'startLine' => 151,
+            'endLine' => 151,
             'startColumn' => 34,
             'endColumn' => 40,
             'parameterIndex' => 0,
@@ -674,8 +724,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Contracts\\Support\\Arrayable|\\UnitEnum|array|string  $values
  * @return \\Illuminate\\Validation\\Rules\\NotIn
  */',
-        'startLine' => 139,
-        'endLine' => 146,
+        'startLine' => 151,
+        'endLine' => 158,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -705,8 +755,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 154,
-            'endLine' => 154,
+            'startLine' => 166,
+            'endLine' => 166,
             'startColumn' => 39,
             'endColumn' => 47,
             'parameterIndex' => 0,
@@ -724,8 +774,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  (\\Closure(): bool)|bool  $callback
  * @return \\Illuminate\\Validation\\Rules\\RequiredIf
  */',
-        'startLine' => 154,
-        'endLine' => 157,
+        'startLine' => 166,
+        'endLine' => 169,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -755,8 +805,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 165,
-            'endLine' => 165,
+            'startLine' => 177,
+            'endLine' => 177,
             'startColumn' => 43,
             'endColumn' => 51,
             'parameterIndex' => 0,
@@ -774,8 +824,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  (\\Closure(): bool)|bool|null  $callback
  * @return \\Illuminate\\Validation\\Rules\\RequiredUnless
  */',
-        'startLine' => 165,
-        'endLine' => 168,
+        'startLine' => 177,
+        'endLine' => 180,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -805,8 +855,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 176,
-            'endLine' => 176,
+            'startLine' => 188,
+            'endLine' => 188,
             'startColumn' => 38,
             'endColumn' => 46,
             'parameterIndex' => 0,
@@ -824,8 +874,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  (\\Closure(): bool)|bool  $callback
  * @return \\Illuminate\\Validation\\Rules\\ExcludeIf
  */',
-        'startLine' => 176,
-        'endLine' => 179,
+        'startLine' => 188,
+        'endLine' => 191,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -855,8 +905,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 187,
-            'endLine' => 187,
+            'startLine' => 199,
+            'endLine' => 199,
             'startColumn' => 42,
             'endColumn' => 50,
             'parameterIndex' => 0,
@@ -874,8 +924,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  (\\Closure(): bool)|bool  $callback
  * @return \\Illuminate\\Validation\\Rules\\ExcludeUnless
  */',
-        'startLine' => 187,
-        'endLine' => 190,
+        'startLine' => 199,
+        'endLine' => 202,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -905,8 +955,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 198,
-            'endLine' => 198,
+            'startLine' => 210,
+            'endLine' => 210,
             'startColumn' => 41,
             'endColumn' => 49,
             'parameterIndex' => 0,
@@ -924,8 +974,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  (\\Closure(): bool)|bool  $callback
  * @return \\Illuminate\\Validation\\Rules\\ProhibitedIf
  */',
-        'startLine' => 198,
-        'endLine' => 201,
+        'startLine' => 210,
+        'endLine' => 213,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -955,8 +1005,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 209,
-            'endLine' => 209,
+            'startLine' => 221,
+            'endLine' => 221,
             'startColumn' => 45,
             'endColumn' => 53,
             'parameterIndex' => 0,
@@ -974,8 +1024,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  (\\Closure(): bool)|bool  $callback
  * @return \\Illuminate\\Validation\\Rules\\ProhibitedUnless
  */',
-        'startLine' => 209,
-        'endLine' => 212,
+        'startLine' => 221,
+        'endLine' => 224,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1005,8 +1055,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return \\Illuminate\\Validation\\Rules\\Date
  */',
-        'startLine' => 219,
-        'endLine' => 222,
+        'startLine' => 231,
+        'endLine' => 234,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1042,8 +1092,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'docComment' => '/**
  * Get a datetime rule builder instance.
  */',
-        'startLine' => 227,
-        'endLine' => 230,
+        'startLine' => 239,
+        'endLine' => 242,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1073,8 +1123,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return \\Illuminate\\Validation\\Rules\\Email
  */',
-        'startLine' => 237,
-        'endLine' => 240,
+        'startLine' => 249,
+        'endLine' => 252,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1104,8 +1154,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 248,
-            'endLine' => 248,
+            'startLine' => 260,
+            'endLine' => 260,
             'startColumn' => 33,
             'endColumn' => 37,
             'parameterIndex' => 0,
@@ -1123,8 +1173,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  class-string  $type
  * @return \\Illuminate\\Validation\\Rules\\Enum
  */',
-        'startLine' => 248,
-        'endLine' => 251,
+        'startLine' => 260,
+        'endLine' => 263,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1154,8 +1204,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return \\Illuminate\\Validation\\Rules\\File
  */',
-        'startLine' => 258,
-        'endLine' => 261,
+        'startLine' => 270,
+        'endLine' => 273,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1182,12 +1232,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'code' => 'false',
               'attributes' => 
               array (
-                'startLine' => 269,
-                'endLine' => 269,
-                'startTokenPos' => 830,
-                'startFilePos' => 7636,
-                'endTokenPos' => 830,
-                'endFilePos' => 7640,
+                'startLine' => 281,
+                'endLine' => 281,
+                'startTokenPos' => 865,
+                'startFilePos' => 7986,
+                'endTokenPos' => 865,
+                'endFilePos' => 7990,
               ),
             ),
             'type' => NULL,
@@ -1197,8 +1247,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 269,
-            'endLine' => 269,
+            'startLine' => 281,
+            'endLine' => 281,
             'startColumn' => 38,
             'endColumn' => 54,
             'parameterIndex' => 0,
@@ -1216,8 +1266,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  bool  $allowSvg
  * @return \\Illuminate\\Validation\\Rules\\ImageFile
  */',
-        'startLine' => 269,
-        'endLine' => 272,
+        'startLine' => 281,
+        'endLine' => 284,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1244,12 +1294,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'code' => '[]',
               'attributes' => 
               array (
-                'startLine' => 280,
-                'endLine' => 280,
-                'startTokenPos' => 863,
-                'startFilePos' => 7916,
-                'endTokenPos' => 864,
-                'endFilePos' => 7917,
+                'startLine' => 292,
+                'endLine' => 292,
+                'startTokenPos' => 898,
+                'startFilePos' => 8266,
+                'endTokenPos' => 899,
+                'endFilePos' => 8267,
               ),
             ),
             'type' => 
@@ -1267,8 +1317,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 280,
-            'endLine' => 280,
+            'startLine' => 292,
+            'endLine' => 292,
             'startColumn' => 39,
             'endColumn' => 61,
             'parameterIndex' => 0,
@@ -1286,8 +1336,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  array  $constraints
  * @return \\Illuminate\\Validation\\Rules\\Dimensions
  */',
-        'startLine' => 280,
-        'endLine' => 283,
+        'startLine' => 292,
+        'endLine' => 295,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1317,8 +1367,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return \\Illuminate\\Validation\\Rules\\StringRule
  */',
-        'startLine' => 290,
-        'endLine' => 293,
+        'startLine' => 302,
+        'endLine' => 305,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1348,8 +1398,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return \\Illuminate\\Validation\\Rules\\Numeric
  */',
-        'startLine' => 300,
-        'endLine' => 303,
+        'startLine' => 312,
+        'endLine' => 315,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1379,8 +1429,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 313,
-            'endLine' => 313,
+            'startLine' => 325,
+            'endLine' => 325,
             'startColumn' => 34,
             'endColumn' => 39,
             'parameterIndex' => 0,
@@ -1400,8 +1450,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @throws \\InvalidArgumentException
  */',
-        'startLine' => 313,
-        'endLine' => 316,
+        'startLine' => 325,
+        'endLine' => 328,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1431,8 +1481,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 324,
-            'endLine' => 324,
+            'startLine' => 336,
+            'endLine' => 336,
             'startColumn' => 37,
             'endColumn' => 43,
             'parameterIndex' => 0,
@@ -1450,8 +1500,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Contracts\\Support\\Arrayable|\\UnitEnum|array|string  $values
  * @return \\Illuminate\\Validation\\Rules\\Contains
  */',
-        'startLine' => 324,
-        'endLine' => 331,
+        'startLine' => 336,
+        'endLine' => 343,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1481,8 +1531,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 339,
-            'endLine' => 339,
+            'startLine' => 351,
+            'endLine' => 351,
             'startColumn' => 42,
             'endColumn' => 48,
             'parameterIndex' => 0,
@@ -1500,8 +1550,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Contracts\\Support\\Arrayable|\\UnitEnum|array|string  $values
  * @return \\Illuminate\\Validation\\Rules\\DoesntContain
  */',
-        'startLine' => 339,
-        'endLine' => 346,
+        'startLine' => 351,
+        'endLine' => 358,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1531,8 +1581,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 356,
-            'endLine' => 356,
+            'startLine' => 368,
+            'endLine' => 368,
             'startColumn' => 36,
             'endColumn' => 45,
             'parameterIndex' => 0,
@@ -1549,8 +1599,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 356,
-            'endLine' => 356,
+            'startLine' => 368,
+            'endLine' => 368,
             'startColumn' => 48,
             'endColumn' => 53,
             'parameterIndex' => 1,
@@ -1564,12 +1614,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'code' => 'null',
               'attributes' => 
               array (
-                'startLine' => 356,
-                'endLine' => 356,
-                'startTokenPos' => 1104,
-                'startFilePos' => 9837,
-                'endTokenPos' => 1104,
-                'endFilePos' => 9840,
+                'startLine' => 368,
+                'endLine' => 368,
+                'startTokenPos' => 1139,
+                'startFilePos' => 10187,
+                'endTokenPos' => 1139,
+                'endFilePos' => 10190,
               ),
             ),
             'type' => NULL,
@@ -1579,8 +1629,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 356,
-            'endLine' => 356,
+            'startLine' => 368,
+            'endLine' => 368,
             'startColumn' => 56,
             'endColumn' => 67,
             'parameterIndex' => 2,
@@ -1600,8 +1650,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  array|null  $data
  * @return object|\\stdClass
  */',
-        'startLine' => 356,
-        'endLine' => 375,
+        'startLine' => 368,
+        'endLine' => 387,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

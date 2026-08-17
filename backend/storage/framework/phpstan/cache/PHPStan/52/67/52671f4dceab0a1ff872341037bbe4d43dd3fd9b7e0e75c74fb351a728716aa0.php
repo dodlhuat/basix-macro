@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Support/Facades/RateLimiter.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Support\Facades\RateLimiter
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-1689b1b63a29b05786ad32df4eef4ebf19250042b11238f7ae6444c45a286bbb-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-791309ff56e7058750049fb1c059422dbfc5cc13034bdbef940567793e99b3ad-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -37,14 +37,18 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @method static void clear(string $key)
  * @method static int availableIn(string $key)
  * @method static string cleanRateLimiterKey(string $key)
+ * @method static void macro(string $name, object|callable $macro)
+ * @method static void mixin(object $mixin, bool $replace = true)
+ * @method static bool hasMacro(string $name)
+ * @method static void flushMacros()
  *
  * @see \\Illuminate\\Cache\\RateLimiter
  */',
     'attributes' => 
     array (
     ),
-    'startLine' => 23,
-    'endLine' => 34,
+    'startLine' => 27,
+    'endLine' => 38,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Support\\Facades\\Facade',
@@ -78,8 +82,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 30,
-        'endLine' => 33,
+        'startLine' => 34,
+        'endLine' => 37,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

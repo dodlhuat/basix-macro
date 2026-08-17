@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\RouteListCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-178bc125060a98b0d709b60c57215a030487e45b765833f1865ab32d3913b6a5-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-c15c96d806f6406643e35e5442780692934f1d4ffd6e3aeb7ff45f7df5b4156c-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'route:list\'',
             'attributes' => 
             array (
-              'startLine' => 21,
-              'endLine' => 21,
-              'startTokenPos' => 88,
-              'startFilePos' => 571,
-              'endTokenPos' => 88,
-              'endFilePos' => 582,
+              'startLine' => 20,
+              'endLine' => 20,
+              'startTokenPos' => 83,
+              'startFilePos' => 522,
+              'endTokenPos' => 83,
+              'endFilePos' => 533,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 21,
-    'endLine' => 558,
+    'startLine' => 20,
+    'endLine' => 546,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -63,38 +63,50 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\RouteListCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\RouteListCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'route:list\'',
+          'code' => '\'route:list
+                    {--json : Output the route list as JSON}
+                    {--method= : Filter the routes by method}
+                    {--action= : Filter the routes by action}
+                    {--name= : Filter the routes by name}
+                    {--domain= : Filter the routes by domain}
+                    {--middleware= : Filter the routes by middleware}
+                    {--path= : Only show routes matching the given path pattern}
+                    {--except-path= : Do not display the routes matching the given path pattern}
+                    {--r|reverse : Reverse the ordering of the routes}
+                    {--sort=uri : The column (domain, method, uri, name, action, middleware, definition) to sort by}
+                    {--except-vendor : Do not display routes defined by vendor packages}
+                    {--only-vendor : Only display routes defined by vendor packages}\'',
           'attributes' => 
           array (
-            'startLine' => 29,
-            'endLine' => 29,
-            'startTokenPos' => 110,
-            'startFilePos' => 724,
-            'endTokenPos' => 110,
-            'endFilePos' => 735,
+            'startLine' => 28,
+            'endLine' => 40,
+            'startTokenPos' => 105,
+            'startFilePos' => 701,
+            'endTokenPos' => 105,
+            'endFilePos' => 1627,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 29,
-        'endLine' => 29,
+        'startLine' => 28,
+        'endLine' => 40,
         'startColumn' => 5,
-        'endColumn' => 35,
+        'endColumn' => 86,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -114,12 +126,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'List all registered routes\'',
           'attributes' => 
           array (
-            'startLine' => 36,
-            'endLine' => 36,
-            'startTokenPos' => 121,
-            'startFilePos' => 850,
-            'endTokenPos' => 121,
-            'endFilePos' => 877,
+            'startLine' => 47,
+            'endLine' => 47,
+            'startTokenPos' => 116,
+            'startFilePos' => 1742,
+            'endTokenPos' => 116,
+            'endFilePos' => 1769,
           ),
         ),
         'docComment' => '/**
@@ -130,8 +142,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 36,
-        'endLine' => 36,
+        'startLine' => 47,
+        'endLine' => 47,
         'startColumn' => 5,
         'endColumn' => 58,
         'isPromoted' => false,
@@ -157,8 +169,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 43,
-        'endLine' => 43,
+        'startLine' => 54,
+        'endLine' => 54,
         'startColumn' => 5,
         'endColumn' => 22,
         'isPromoted' => false,
@@ -180,12 +192,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '[\'Domain\', \'Method\', \'URI\', \'Name\', \'Action\', \'Middleware\', \'Path\']',
           'attributes' => 
           array (
-            'startLine' => 50,
-            'endLine' => 50,
-            'startTokenPos' => 139,
-            'startFilePos' => 1106,
-            'endTokenPos' => 159,
-            'endFilePos' => 1172,
+            'startLine' => 61,
+            'endLine' => 61,
+            'startTokenPos' => 134,
+            'startFilePos' => 1998,
+            'endTokenPos' => 154,
+            'endFilePos' => 2064,
           ),
         ),
         'docComment' => '/**
@@ -196,8 +208,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 50,
-        'endLine' => 50,
+        'startLine' => 61,
+        'endLine' => 61,
         'startColumn' => 5,
         'endColumn' => 93,
         'isPromoted' => false,
@@ -223,8 +235,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 57,
-        'endLine' => 57,
+        'startLine' => 68,
+        'endLine' => 68,
         'startColumn' => 5,
         'endColumn' => 44,
         'isPromoted' => false,
@@ -246,12 +258,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '[\'ANY\' => \'red\', \'GET\' => \'blue\', \'HEAD\' => \'#6C7280\', \'OPTIONS\' => \'#6C7280\', \'POST\' => \'yellow\', \'PUT\' => \'yellow\', \'PATCH\' => \'yellow\', \'DELETE\' => \'red\']',
           'attributes' => 
           array (
-            'startLine' => 64,
-            'endLine' => 73,
-            'startTokenPos' => 179,
-            'startFilePos' => 1425,
-            'endTokenPos' => 237,
-            'endFilePos' => 1652,
+            'startLine' => 75,
+            'endLine' => 84,
+            'startTokenPos' => 174,
+            'startFilePos' => 2317,
+            'endTokenPos' => 232,
+            'endFilePos' => 2544,
           ),
         ),
         'docComment' => '/**
@@ -262,8 +274,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 64,
-        'endLine' => 73,
+        'startLine' => 75,
+        'endLine' => 84,
         'startColumn' => 5,
         'endColumn' => 6,
         'isPromoted' => false,
@@ -300,8 +312,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 80,
-            'endLine' => 80,
+            'startLine' => 91,
+            'endLine' => 91,
             'startColumn' => 33,
             'endColumn' => 46,
             'parameterIndex' => 0,
@@ -318,8 +330,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @param  \\Illuminate\\Routing\\Router  $router
  */',
-        'startLine' => 80,
-        'endLine' => 85,
+        'startLine' => 91,
+        'endLine' => 96,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -349,8 +361,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return void
  */',
-        'startLine' => 92,
-        'endLine' => 107,
+        'startLine' => 103,
+        'endLine' => 118,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -380,8 +392,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return array
  */',
-        'startLine' => 114,
-        'endLine' => 132,
+        'startLine' => 125,
+        'endLine' => 143,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -419,8 +431,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 140,
-            'endLine' => 140,
+            'startLine' => 151,
+            'endLine' => 151,
             'startColumn' => 44,
             'endColumn' => 55,
             'parameterIndex' => 0,
@@ -438,8 +450,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Routing\\Route  $route
  * @return array
  */',
-        'startLine' => 140,
-        'endLine' => 152,
+        'startLine' => 151,
+        'endLine' => 163,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -469,8 +481,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 161,
-            'endLine' => 161,
+            'startLine' => 172,
+            'endLine' => 172,
             'startColumn' => 35,
             'endColumn' => 39,
             'parameterIndex' => 0,
@@ -495,8 +507,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 161,
-            'endLine' => 161,
+            'startLine' => 172,
+            'endLine' => 172,
             'startColumn' => 42,
             'endColumn' => 54,
             'parameterIndex' => 1,
@@ -515,8 +527,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  array  $routes
  * @return array
  */',
-        'startLine' => 161,
-        'endLine' => 174,
+        'startLine' => 172,
+        'endLine' => 185,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -554,8 +566,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 182,
-            'endLine' => 182,
+            'startLine' => 193,
+            'endLine' => 193,
             'startColumn' => 37,
             'endColumn' => 49,
             'parameterIndex' => 0,
@@ -573,8 +585,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  array  $routes
  * @return array
  */',
-        'startLine' => 182,
-        'endLine' => 187,
+        'startLine' => 193,
+        'endLine' => 198,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -612,8 +624,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 195,
-            'endLine' => 195,
+            'startLine' => 206,
+            'endLine' => 206,
             'startColumn' => 38,
             'endColumn' => 50,
             'parameterIndex' => 0,
@@ -631,8 +643,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  array  $routes
  * @return void
  */',
-        'startLine' => 195,
-        'endLine' => 202,
+        'startLine' => 206,
+        'endLine' => 213,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -670,8 +682,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 210,
-            'endLine' => 210,
+            'startLine' => 221,
+            'endLine' => 221,
             'startColumn' => 35,
             'endColumn' => 46,
             'parameterIndex' => 0,
@@ -689,8 +701,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Routing\\Route  $route
  * @return string
  */',
-        'startLine' => 210,
-        'endLine' => 219,
+        'startLine' => 221,
+        'endLine' => 230,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -720,8 +732,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 227,
-            'endLine' => 227,
+            'startLine' => 238,
+            'endLine' => 238,
             'startColumn' => 38,
             'endColumn' => 43,
             'parameterIndex' => 0,
@@ -739,8 +751,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Routing\\Route  $route
  * @return string
  */',
-        'startLine' => 227,
-        'endLine' => 232,
+        'startLine' => 238,
+        'endLine' => 243,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -778,8 +790,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 242,
-            'endLine' => 242,
+            'startLine' => 253,
+            'endLine' => 253,
             'startColumn' => 39,
             'endColumn' => 50,
             'parameterIndex' => 0,
@@ -799,8 +811,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @throws \\ReflectionException
  */',
-        'startLine' => 242,
-        'endLine' => 253,
+        'startLine' => 253,
+        'endLine' => 264,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -838,8 +850,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 261,
-            'endLine' => 261,
+            'startLine' => 272,
+            'endLine' => 272,
             'startColumn' => 38,
             'endColumn' => 49,
             'parameterIndex' => 0,
@@ -857,8 +869,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Routing\\Route  $route
  * @return bool
  */',
-        'startLine' => 261,
-        'endLine' => 281,
+        'startLine' => 272,
+        'endLine' => 292,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -896,8 +908,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 289,
-            'endLine' => 289,
+            'startLine' => 300,
+            'endLine' => 300,
             'startColumn' => 46,
             'endColumn' => 57,
             'parameterIndex' => 0,
@@ -915,8 +927,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Routing\\Route  $route
  * @return bool
  */',
-        'startLine' => 289,
-        'endLine' => 295,
+        'startLine' => 300,
+        'endLine' => 306,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -954,8 +966,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 303,
-            'endLine' => 303,
+            'startLine' => 314,
+            'endLine' => 314,
             'startColumn' => 36,
             'endColumn' => 47,
             'parameterIndex' => 0,
@@ -973,8 +985,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  array  $route
  * @return array|null
  */',
-        'startLine' => 303,
-        'endLine' => 325,
+        'startLine' => 314,
+        'endLine' => 336,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1004,8 +1016,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return array
  */',
-        'startLine' => 332,
-        'endLine' => 335,
+        'startLine' => 343,
+        'endLine' => 346,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1035,8 +1047,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return array
  */',
-        'startLine' => 342,
-        'endLine' => 345,
+        'startLine' => 353,
+        'endLine' => 356,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1074,8 +1086,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 353,
-            'endLine' => 353,
+            'startLine' => 364,
+            'endLine' => 364,
             'startColumn' => 37,
             'endColumn' => 50,
             'parameterIndex' => 0,
@@ -1093,8 +1105,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  array  $columns
  * @return array
  */',
-        'startLine' => 353,
-        'endLine' => 366,
+        'startLine' => 364,
+        'endLine' => 377,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1124,8 +1136,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 374,
-            'endLine' => 374,
+            'startLine' => 385,
+            'endLine' => 385,
             'startColumn' => 31,
             'endColumn' => 37,
             'parameterIndex' => 0,
@@ -1143,8 +1155,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Support\\Collection  $routes
  * @return string
  */',
-        'startLine' => 374,
-        'endLine' => 384,
+        'startLine' => 385,
+        'endLine' => 395,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1174,8 +1186,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 392,
-            'endLine' => 392,
+            'startLine' => 403,
+            'endLine' => 403,
             'startColumn' => 31,
             'endColumn' => 37,
             'parameterIndex' => 0,
@@ -1193,8 +1205,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Support\\Collection  $routes
  * @return array
  */',
-        'startLine' => 392,
-        'endLine' => 453,
+        'startLine' => 403,
+        'endLine' => 464,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1224,8 +1236,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 461,
-            'endLine' => 461,
+            'startLine' => 472,
+            'endLine' => 472,
             'startColumn' => 43,
             'endColumn' => 48,
             'parameterIndex' => 0,
@@ -1243,8 +1255,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  array  $route
  * @return string|null
  */',
-        'startLine' => 461,
-        'endLine' => 493,
+        'startLine' => 472,
+        'endLine' => 504,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1274,8 +1286,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 502,
-            'endLine' => 502,
+            'startLine' => 513,
+            'endLine' => 513,
             'startColumn' => 50,
             'endColumn' => 56,
             'parameterIndex' => 0,
@@ -1292,8 +1304,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 502,
-            'endLine' => 502,
+            'startLine' => 513,
+            'endLine' => 513,
             'startColumn' => 59,
             'endColumn' => 72,
             'parameterIndex' => 1,
@@ -1312,8 +1324,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  int  $terminalWidth
  * @return string
  */',
-        'startLine' => 502,
-        'endLine' => 511,
+        'startLine' => 513,
+        'endLine' => 522,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1343,8 +1355,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return int
  */',
-        'startLine' => 518,
-        'endLine' => 523,
+        'startLine' => 529,
+        'endLine' => 534,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1374,8 +1386,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 531,
-            'endLine' => 531,
+            'startLine' => 542,
+            'endLine' => 542,
             'startColumn' => 54,
             'endColumn' => 62,
             'parameterIndex' => 0,
@@ -1393,8 +1405,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Closure|null  $resolver
  * @return void
  */',
-        'startLine' => 531,
-        'endLine' => 534,
+        'startLine' => 542,
+        'endLine' => 545,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1402,37 +1414,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'isGenerator' => false,
         'isVariadic' => false,
         'modifiers' => 17,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\RouteListCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\RouteListCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\RouteListCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command options.
- *
- * @return array
- */',
-        'startLine' => 541,
-        'endLine' => 557,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
         'namespace' => 'Illuminate\\Foundation\\Console',
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\RouteListCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\RouteListCommand',

@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Console/DumpCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Database\Console\DumpCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-42deae8aea131d818695472db46e2639d3da1e0c9b0b9b61464941c5e66e2cde-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-72c7a8b386e910487cb062f01d3e0e5b8c12fd8fb32dc4643b4d0d8e141ece03-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -48,7 +48,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       ),
     ),
     'startLine' => 16,
-    'endLine' => 109,
+    'endLine' => 111,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -217,10 +217,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @param  \\Illuminate\\Database\\ConnectionResolverInterface  $connections
  * @param  \\Illuminate\\Contracts\\Events\\Dispatcher  $dispatcher
- * @return void
+ * @return int
  */',
         'startLine' => 46,
-        'endLine' => 73,
+        'endLine' => 75,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -258,8 +258,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 81,
-            'endLine' => 81,
+            'startLine' => 83,
+            'endLine' => 83,
             'startColumn' => 36,
             'endColumn' => 57,
             'parameterIndex' => 0,
@@ -277,8 +277,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Database\\Connection  $connection
  * @return mixed
  */',
-        'startLine' => 81,
-        'endLine' => 96,
+        'startLine' => 83,
+        'endLine' => 98,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -316,8 +316,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 103,
-            'endLine' => 103,
+            'startLine' => 105,
+            'endLine' => 105,
             'startColumn' => 29,
             'endColumn' => 50,
             'parameterIndex' => 0,
@@ -334,8 +334,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @param  \\Illuminate\\Database\\Connection  $connection
  */',
-        'startLine' => 103,
-        'endLine' => 108,
+        'startLine' => 105,
+        'endLine' => 110,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

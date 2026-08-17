@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/object-reflector/src/ObjectReflector.php' => 
     array (
-      0 => '554168892c50d914e76ccadc2187256084ac49ab5c011364cd5f1f087f779bba',
+      0 => '8fffa6280dbde24d8ecf46caafc690aa543d0cf0b3b543e53f19c2dd61082ed2',
       1 => 
       array (
         0 => 'sebastianbergmann\\objectreflector\\objectreflector',

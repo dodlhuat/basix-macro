@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Collections/Traits/TransformsToResourceCollection.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Support\Traits\TransformsToResourceCollection
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-226b1867a790e6da048a1b9a717b8af16ca169b1eac84605d5ae76a2aaf96f40-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-e69612f8fa4668e951f8b17f3741da4a1364d369d67bb2f72c01860d17051c50-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 12,
-    'endLine' => 121,
+    'endLine' => 125,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -171,7 +171,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @throws \\Throwable
  */',
         'startLine' => 38,
-        'endLine' => 82,
+        'endLine' => 86,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -209,8 +209,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 90,
-            'endLine' => 90,
+            'startLine' => 94,
+            'endLine' => 94,
             'startColumn' => 53,
             'endColumn' => 65,
             'parameterIndex' => 0,
@@ -255,8 +255,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  class-string<\\Illuminate\\Http\\Resources\\Json\\JsonResource>  $class
  * @return class-string<*>|null
  */',
-        'startLine' => 90,
-        'endLine' => 101,
+        'startLine' => 94,
+        'endLine' => 105,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -294,8 +294,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 109,
-            'endLine' => 109,
+            'startLine' => 113,
+            'endLine' => 113,
             'startColumn' => 63,
             'endColumn' => 75,
             'parameterIndex' => 0,
@@ -340,8 +340,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  class-string<\\Illuminate\\Http\\Resources\\Json\\ResourceCollection>  $class
  * @return class-string<*>|null
  */',
-        'startLine' => 109,
-        'endLine' => 120,
+        'startLine' => 113,
+        'endLine' => 124,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

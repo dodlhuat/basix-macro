@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Routing/Console/MiddlewareMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Routing\Console\MiddlewareMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-ac7f1b306e5e7a513d86c854df5bc946f6b3d0e97b58675ed18fc01b3a15c088-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-6dd78be80cefe9770906796f7e58d3fce2fcd5e597d4b87a79b357e24a7dfb8b-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -64,28 +64,28 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Routing\\Console\\MiddlewareMakeCommand',
         'implementingClassName' => 'Illuminate\\Routing\\Console\\MiddlewareMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:middleware\'',
+          'code' => '\'make:middleware {name : The name of the middleware}\'',
           'attributes' => 
           array (
             'startLine' => 19,
             'endLine' => 19,
             'startTokenPos' => 55,
-            'startFilePos' => 412,
+            'startFilePos' => 438,
             'endTokenPos' => 55,
-            'endFilePos' => 428,
+            'endFilePos' => 490,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
@@ -95,7 +95,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'startLine' => 19,
         'endLine' => 19,
         'startColumn' => 5,
-        'endColumn' => 40,
+        'endColumn' => 81,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -118,9 +118,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 26,
             'endLine' => 26,
             'startTokenPos' => 66,
-            'startFilePos' => 543,
+            'startFilePos' => 605,
             'endTokenPos' => 66,
-            'endFilePos' => 578,
+            'endFilePos' => 640,
           ),
         ),
         'docComment' => '/**
@@ -157,9 +157,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 33,
             'endLine' => 33,
             'startTokenPos' => 77,
-            'startFilePos' => 688,
+            'startFilePos' => 750,
             'endTokenPos' => 77,
-            'endFilePos' => 699,
+            'endFilePos' => 761,
           ),
         ),
         'docComment' => '/**

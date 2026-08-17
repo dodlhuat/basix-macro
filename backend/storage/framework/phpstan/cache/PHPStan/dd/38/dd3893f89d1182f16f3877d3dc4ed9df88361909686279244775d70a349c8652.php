@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Notifications/Console/NotificationTableCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Notifications\Console\NotificationTableCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-f8843836956229a2155d0aa9b95f9a0f6c6488af5852c50a427d7fb354569676-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-9aad1dccae6b730bf0c0f4f321a49c7fcc88feb94fdc47e7588f8c230eb7fb13-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -76,11 +76,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Notifications\\Console\\NotificationTableCommand',
         'implementingClassName' => 'Illuminate\\Notifications\\Console\\NotificationTableCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
@@ -91,13 +91,13 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 16,
             'endLine' => 16,
             'startTokenPos' => 53,
-            'startFilePos' => 399,
+            'startFilePos' => 425,
             'endTokenPos' => 53,
-            'endFilePos' => 424,
+            'endFilePos' => 450,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
@@ -107,7 +107,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'startLine' => 16,
         'endLine' => 16,
         'startColumn' => 5,
-        'endColumn' => 49,
+        'endColumn' => 54,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -130,15 +130,15 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 23,
             'endLine' => 23,
             'startTokenPos' => 64,
-            'startFilePos' => 535,
+            'startFilePos' => 564,
             'endTokenPos' => 66,
-            'endFilePos' => 557,
+            'endFilePos' => 586,
           ),
         ),
         'docComment' => '/**
  * The console command name aliases.
  *
- * @var array
+ * @var string[]
  */',
         'attributes' => 
         array (
@@ -169,9 +169,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 30,
             'endLine' => 30,
             'startTokenPos' => 77,
-            'startFilePos' => 672,
+            'startFilePos' => 701,
             'endTokenPos' => 77,
-            'endFilePos' => 719,
+            'endFilePos' => 748,
           ),
         ),
         'docComment' => '/**

@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Routing/Route.php-presentSymbols
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-8af2078792256eea913498319694b27350ba01c1d26b60a67225243c73b65f15-8.5.6',
+   'variableKey' => 'v2-109d8cb2ccf98edcea7ab6d2637b27d4b969c2cf4a957caf757d958c80f4e83e-8.5.6',
    'data' => 
   array (
     'classes' => 

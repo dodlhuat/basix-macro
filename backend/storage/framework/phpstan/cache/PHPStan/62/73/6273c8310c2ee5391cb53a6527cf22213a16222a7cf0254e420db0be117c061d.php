@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Queue/Console/TableCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Queue\Console\TableCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-fe8e5e59fce950ad9aed6298c9c6f154886dc2a1bf39737faff698577e5bd756-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-10bb64b41a69c0f2dac1055eece424a3d022d4ddf0f0639c5e44bfa795688fe5-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -61,7 +61,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       ),
     ),
     'startLine' => 10,
-    'endLine' => 77,
+    'endLine' => 71,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\MigrationGeneratorCommand',
@@ -76,11 +76,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Queue\\Console\\TableCommand',
         'implementingClassName' => 'Illuminate\\Queue\\Console\\TableCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
@@ -91,13 +91,13 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 18,
             'endLine' => 18,
             'startTokenPos' => 60,
-            'startFilePos' => 411,
+            'startFilePos' => 437,
             'endTokenPos' => 60,
-            'endFilePos' => 428,
+            'endFilePos' => 454,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
@@ -107,7 +107,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'startLine' => 18,
         'endLine' => 18,
         'startColumn' => 5,
-        'endColumn' => 41,
+        'endColumn' => 46,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -130,15 +130,15 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 25,
             'endLine' => 25,
             'startTokenPos' => 71,
-            'startFilePos' => 539,
+            'startFilePos' => 568,
             'endTokenPos' => 73,
-            'endFilePos' => 553,
+            'endFilePos' => 582,
           ),
         ),
         'docComment' => '/**
  * The console command name aliases.
  *
- * @var array
+ * @var string[]
  */',
         'attributes' => 
         array (
@@ -169,9 +169,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 32,
             'endLine' => 32,
             'startTokenPos' => 84,
-            'startFilePos' => 668,
+            'startFilePos' => 697,
             'endTokenPos' => 84,
-            'endFilePos' => 721,
+            'endFilePos' => 750,
           ),
         ),
         'docComment' => '/**
@@ -294,7 +294,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @return bool
  */',
         'startLine' => 60,
-        'endLine' => 76,
+        'endLine' => 70,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

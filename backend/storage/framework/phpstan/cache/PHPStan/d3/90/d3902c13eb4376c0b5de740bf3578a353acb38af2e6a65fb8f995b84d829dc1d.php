@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Database\Console\Migrations\FreshCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-cbcff82f4cefbc5c08289d04575e103bd520d612aad38b9cdd42570f58ddab85-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-447d02046585a8a8482697d733b3bee1dc8602fb1d7fa4b376bb7d4d9803945d-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'migrate:fresh\'',
             'attributes' => 
             array (
-              'startLine' => 15,
-              'endLine' => 15,
-              'startTokenPos' => 58,
-              'startFilePos' => 441,
-              'endTokenPos' => 58,
-              'endFilePos' => 455,
+              'startLine' => 14,
+              'endLine' => 14,
+              'startTokenPos' => 53,
+              'startFilePos' => 392,
+              'endTokenPos' => 53,
+              'endFilePos' => 406,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 15,
-    'endLine' => 155,
+    'startLine' => 14,
+    'endLine' => 142,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -65,38 +65,48 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Database\\Console\\Migrations\\FreshCommand',
         'implementingClassName' => 'Illuminate\\Database\\Console\\Migrations\\FreshCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'migrate:fresh\'',
+          'code' => '\'migrate:fresh
+                    {--database= : The database connection to use}
+                    {--drop-views : Drop all tables and views}
+                    {--drop-types : Drop all tables and types (Postgres only)}
+                    {--force : Force the operation to run when in production}
+                    {--path=* : The path(s) to the migrations files to be executed}
+                    {--realpath : Indicate any provided migration file paths are pre-resolved absolute paths}
+                    {--schema-path= : The path to a schema dump file}
+                    {--seed : Indicates if the seed task should be re-run}
+                    {--seeder= : The class name of the root seeder}
+                    {--step : Force the migrations to be run so they can be rolled back individually}\'',
           'attributes' => 
           array (
-            'startLine' => 25,
-            'endLine' => 25,
-            'startTokenPos' => 88,
-            'startFilePos' => 634,
-            'endTokenPos' => 88,
-            'endFilePos' => 648,
+            'startLine' => 24,
+            'endLine' => 34,
+            'startTokenPos' => 83,
+            'startFilePos' => 611,
+            'endTokenPos' => 83,
+            'endFilePos' => 1421,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 25,
-        'endLine' => 25,
+        'startLine' => 24,
+        'endLine' => 34,
         'startColumn' => 5,
-        'endColumn' => 38,
+        'endColumn' => 103,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -116,12 +126,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Drop all tables and re-run all migrations\'',
           'attributes' => 
           array (
-            'startLine' => 32,
-            'endLine' => 32,
-            'startTokenPos' => 99,
-            'startFilePos' => 763,
-            'endTokenPos' => 99,
-            'endFilePos' => 805,
+            'startLine' => 41,
+            'endLine' => 41,
+            'startTokenPos' => 94,
+            'startFilePos' => 1536,
+            'endTokenPos' => 94,
+            'endFilePos' => 1578,
           ),
         ),
         'docComment' => '/**
@@ -132,8 +142,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 32,
-        'endLine' => 32,
+        'startLine' => 41,
+        'endLine' => 41,
         'startColumn' => 5,
         'endColumn' => 73,
         'isPromoted' => false,
@@ -159,8 +169,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 39,
-        'endLine' => 39,
+        'startLine' => 48,
+        'endLine' => 48,
         'startColumn' => 5,
         'endColumn' => 24,
         'isPromoted' => false,
@@ -197,8 +207,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 46,
-            'endLine' => 46,
+            'startLine' => 55,
+            'endLine' => 55,
             'startColumn' => 33,
             'endColumn' => 50,
             'parameterIndex' => 0,
@@ -215,8 +225,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @param  \\Illuminate\\Database\\Migrations\\Migrator  $migrator
  */',
-        'startLine' => 46,
-        'endLine' => 51,
+        'startLine' => 55,
+        'endLine' => 60,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -246,8 +256,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return int
  */',
-        'startLine' => 58,
-        'endLine' => 108,
+        'startLine' => 67,
+        'endLine' => 116,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -277,8 +287,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return bool
  */',
-        'startLine' => 115,
-        'endLine' => 118,
+        'startLine' => 123,
+        'endLine' => 126,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -308,8 +318,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 126,
-            'endLine' => 126,
+            'startLine' => 134,
+            'endLine' => 134,
             'startColumn' => 34,
             'endColumn' => 42,
             'parameterIndex' => 0,
@@ -327,39 +337,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $database
  * @return void
  */',
-        'startLine' => 126,
-        'endLine' => 133,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Database\\Console\\Migrations',
-        'declaringClassName' => 'Illuminate\\Database\\Console\\Migrations\\FreshCommand',
-        'implementingClassName' => 'Illuminate\\Database\\Console\\Migrations\\FreshCommand',
-        'currentClassName' => 'Illuminate\\Database\\Console\\Migrations\\FreshCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command options.
- *
- * @return array
- */',
-        'startLine' => 140,
-        'endLine' => 154,
+        'startLine' => 134,
+        'endLine' => 141,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

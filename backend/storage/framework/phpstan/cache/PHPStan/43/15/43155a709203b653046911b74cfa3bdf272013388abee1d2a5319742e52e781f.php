@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Console/Migrations/InstallCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Database\Console\Migrations\InstallCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6018a1e1605f8a2cda537bbf172182a45d92f540c7a7f8f36730dce4d3599fbf-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-d2e6035f43024a12fa26817f9d6112507263efc00615cf5c1bbe5f7c07768f26-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'migrate:install\'',
             'attributes' => 
             array (
-              'startLine' => 10,
-              'endLine' => 10,
-              'startTokenPos' => 33,
-              'startFilePos' => 274,
-              'endTokenPos' => 33,
-              'endFilePos' => 290,
+              'startLine' => 9,
+              'endLine' => 9,
+              'startTokenPos' => 28,
+              'startFilePos' => 225,
+              'endTokenPos' => 28,
+              'endFilePos' => 241,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 10,
-    'endLine' => 73,
+    'startLine' => 9,
+    'endLine' => 60,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -63,38 +63,38 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Database\\Console\\Migrations\\InstallCommand',
         'implementingClassName' => 'Illuminate\\Database\\Console\\Migrations\\InstallCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'migrate:install\'',
+          'code' => '\'migrate:install {--database= : The database connection to use}\'',
           'attributes' => 
           array (
-            'startLine' => 18,
-            'endLine' => 18,
-            'startTokenPos' => 55,
-            'startFilePos' => 430,
-            'endTokenPos' => 55,
-            'endFilePos' => 446,
+            'startLine' => 17,
+            'endLine' => 17,
+            'startTokenPos' => 50,
+            'startFilePos' => 407,
+            'endTokenPos' => 50,
+            'endFilePos' => 470,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 18,
-        'endLine' => 18,
+        'startLine' => 17,
+        'endLine' => 17,
         'startColumn' => 5,
-        'endColumn' => 40,
+        'endColumn' => 92,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -114,12 +114,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Create the migration repository\'',
           'attributes' => 
           array (
-            'startLine' => 25,
-            'endLine' => 25,
-            'startTokenPos' => 66,
-            'startFilePos' => 561,
-            'endTokenPos' => 66,
-            'endFilePos' => 593,
+            'startLine' => 24,
+            'endLine' => 24,
+            'startTokenPos' => 61,
+            'startFilePos' => 585,
+            'endTokenPos' => 61,
+            'endFilePos' => 617,
           ),
         ),
         'docComment' => '/**
@@ -130,8 +130,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 25,
-        'endLine' => 25,
+        'startLine' => 24,
+        'endLine' => 24,
         'startColumn' => 5,
         'endColumn' => 63,
         'isPromoted' => false,
@@ -157,8 +157,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 32,
-        'endLine' => 32,
+        'startLine' => 31,
+        'endLine' => 31,
         'startColumn' => 5,
         'endColumn' => 26,
         'isPromoted' => false,
@@ -195,8 +195,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 39,
-            'endLine' => 39,
+            'startLine' => 38,
+            'endLine' => 38,
             'startColumn' => 33,
             'endColumn' => 72,
             'parameterIndex' => 0,
@@ -213,8 +213,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @param  \\Illuminate\\Database\\Migrations\\MigrationRepositoryInterface  $repository
  */',
-        'startLine' => 39,
-        'endLine' => 44,
+        'startLine' => 38,
+        'endLine' => 43,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -244,8 +244,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return void
  */',
-        'startLine' => 51,
-        'endLine' => 60,
+        'startLine' => 50,
+        'endLine' => 59,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -253,37 +253,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'isGenerator' => false,
         'isVariadic' => false,
         'modifiers' => 1,
-        'namespace' => 'Illuminate\\Database\\Console\\Migrations',
-        'declaringClassName' => 'Illuminate\\Database\\Console\\Migrations\\InstallCommand',
-        'implementingClassName' => 'Illuminate\\Database\\Console\\Migrations\\InstallCommand',
-        'currentClassName' => 'Illuminate\\Database\\Console\\Migrations\\InstallCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command options.
- *
- * @return array
- */',
-        'startLine' => 67,
-        'endLine' => 72,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
         'namespace' => 'Illuminate\\Database\\Console\\Migrations',
         'declaringClassName' => 'Illuminate\\Database\\Console\\Migrations\\InstallCommand',
         'implementingClassName' => 'Illuminate\\Database\\Console\\Migrations\\InstallCommand',

@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/sail/src/Console/Concerns/InteractsWithDockerComposeServices.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Laravel\Sail\Console\Concerns\InteractsWithDockerComposeServices
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-ce8685dfd0d4184c716bcaa16059a8f1f7cd3051d4cc90e71658c0c9d9a0e3d4-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-b5339d392f89560ada8153804bf9493df32cf40e671bae436b989577a6ea6cd2-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 8,
-    'endLine' => 343,
+    'endLine' => 345,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -237,7 +237,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @return void
  */',
         'startLine' => 76,
-        'endLine' => 128,
+        'endLine' => 132,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -275,8 +275,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 136,
-            'endLine' => 136,
+            'startLine' => 140,
+            'endLine' => 140,
             'startColumn' => 44,
             'endColumn' => 58,
             'parameterIndex' => 0,
@@ -294,8 +294,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  array  $services
  * @return void
  */',
-        'startLine' => 136,
-        'endLine' => 229,
+        'startLine' => 140,
+        'endLine' => 234,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -325,8 +325,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return void
  */',
-        'startLine' => 236,
-        'endLine' => 259,
+        'startLine' => 241,
+        'endLine' => 261,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -356,8 +356,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return void
  */',
-        'startLine' => 266,
-        'endLine' => 283,
+        'startLine' => 268,
+        'endLine' => 285,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -387,8 +387,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 291,
-            'endLine' => 291,
+            'startLine' => 293,
+            'endLine' => 293,
             'startColumn' => 44,
             'endColumn' => 52,
             'parameterIndex' => 0,
@@ -406,8 +406,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  array  $services
  * @return void
  */',
-        'startLine' => 291,
-        'endLine' => 307,
+        'startLine' => 293,
+        'endLine' => 309,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -437,8 +437,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 315,
-            'endLine' => 315,
+            'startLine' => 317,
+            'endLine' => 317,
             'startColumn' => 36,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -456,8 +456,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  array  $commands
  * @return int
  */',
-        'startLine' => 315,
-        'endLine' => 330,
+        'startLine' => 317,
+        'endLine' => 332,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -487,8 +487,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 337,
-        'endLine' => 342,
+        'startLine' => 339,
+        'endLine' => 344,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/AboutCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\AboutCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-92839ac995bccf1e3b0c0a44cf34a1291eaaa8ee772e4f870a779df869ea620e-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-31f27d0bb6debdbe6e0d6c98bfff48223746a6855b8bd54c4306f650635dbd8b-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -710,10 +710,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               array (
                 'startLine' => 302,
                 'endLine' => 302,
-                'startTokenPos' => 1996,
-                'startFilePos' => 10570,
-                'endTokenPos' => 1996,
-                'endFilePos' => 10573,
+                'startTokenPos' => 2000,
+                'startFilePos' => 10591,
+                'endTokenPos' => 2000,
+                'endFilePos' => 10594,
               ),
             ),
             'type' => 
@@ -845,10 +845,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               array (
                 'startLine' => 315,
                 'endLine' => 315,
-                'startTokenPos' => 2057,
-                'startFilePos' => 10989,
-                'endTokenPos' => 2057,
-                'endFilePos' => 10992,
+                'startTokenPos' => 2061,
+                'startFilePos' => 11010,
+                'endTokenPos' => 2061,
+                'endFilePos' => 11013,
               ),
             ),
             'type' => 
@@ -985,10 +985,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               array (
                 'startLine' => 349,
                 'endLine' => 349,
-                'startTokenPos' => 2273,
-                'startFilePos' => 12032,
-                'endTokenPos' => 2273,
-                'endFilePos' => 12035,
+                'startTokenPos' => 2276,
+                'startFilePos' => 12053,
+                'endTokenPos' => 2276,
+                'endFilePos' => 12056,
               ),
             ),
             'type' => 
@@ -1042,10 +1042,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               array (
                 'startLine' => 349,
                 'endLine' => 349,
-                'startTokenPos' => 2283,
-                'startFilePos' => 12055,
-                'endTokenPos' => 2283,
-                'endFilePos' => 12058,
+                'startTokenPos' => 2286,
+                'startFilePos' => 12076,
+                'endTokenPos' => 2286,
+                'endFilePos' => 12079,
               ),
             ),
             'type' => 

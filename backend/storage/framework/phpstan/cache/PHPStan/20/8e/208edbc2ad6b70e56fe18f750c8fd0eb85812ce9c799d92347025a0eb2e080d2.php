@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/ArrayComparator.php' => 
     array (
-      0 => '58f2c6c4d5e0a29458bfbb5146f3e54506cf67200a74be5133b7135ba3e0c8f4',
+      0 => '97a7701f5a77934579feee27b3be4bd39a164eae6dab162a24e321f3a06381c1',
       1 => 
       array (
         0 => 'sebastianbergmann\\comparator\\arraycomparator',
@@ -26,7 +26,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/ClosureComparator.php' => 
     array (
-      0 => '6b38c95c3bb361a5e8d7237c2c04d47d31ae6db036e327b4df3ec8de20bb2a98',
+      0 => '390ce89b05c96aee5612046aa8ebb1c61b64f17a2973f3afd8225803c1764eef',
       1 => 
       array (
         0 => 'sebastianbergmann\\comparator\\closurecomparator',
@@ -46,7 +46,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/Comparator.php' => 
     array (
-      0 => '41f15333231bdbf30dd0d680a1f87167ba64fd0cd52ca455aa2d3f02803056f6',
+      0 => 'c4c7b24ee9c369ef145890e94815635a3b00c166cca00eb3955c100142cb415c',
       1 => 
       array (
         0 => 'sebastianbergmann\\comparator\\comparator',
@@ -57,6 +57,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         1 => 'sebastianbergmann\\comparator\\accepts',
         2 => 'sebastianbergmann\\comparator\\assertequals',
         3 => 'sebastianbergmann\\comparator\\factory',
+        4 => 'sebastianbergmann\\comparator\\contextlines',
+        5 => 'sebastianbergmann\\comparator\\exporter',
       ),
       3 => 
       array (
@@ -64,7 +66,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/ComparisonFailure.php' => 
     array (
-      0 => '5d4dbec064b9931da24aac33c0a7326471d5f2841327d6fe5918d51cc4ed98a5',
+      0 => 'f2a9052bc5f34fcacab0e0d16f745931e21af962af3c9254496cb97bfa631c50',
       1 => 
       array (
         0 => 'sebastianbergmann\\comparator\\comparisonfailure',
@@ -87,7 +89,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/DOMNodeComparator.php' => 
     array (
-      0 => '29eaa9a8120f37aec2db7392e8c9ecf0b7f107d7970260bda510f4a1c05738b4',
+      0 => 'c5e67b6ae23af36ffbea882cb8e745fd5a8f969ea9e0fe6edb342ed8a236f977',
       1 => 
       array (
         0 => 'sebastianbergmann\\comparator\\domnodecomparator',
@@ -105,7 +107,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/DateTimeComparator.php' => 
     array (
-      0 => '525ca83e6d014c390083b5b0a550be82baa12568cfacd7bf95cf63d58353c4d3',
+      0 => 'acb54634b9338e3c373500a8bb425c91b45ea3bde985c690cbd1f95ff3fa1303',
       1 => 
       array (
         0 => 'sebastianbergmann\\comparator\\datetimecomparator',
@@ -121,7 +123,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/EnumerationComparator.php' => 
     array (
-      0 => '887dbede19f4d63907c21e06badcce2c6ae4194d9132337e2e97ce207b2f2718',
+      0 => '8c755da8611a3d38faf0b49c16de13bde2136a8918b054001b868a61176d00b8',
       1 => 
       array (
         0 => 'sebastianbergmann\\comparator\\enumerationcomparator',
@@ -153,7 +155,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/Factory.php' => 
     array (
-      0 => 'd740bef4862b297f6189be74ba283009cdfdbfb3afc1203647d9c6194454fbe6',
+      0 => 'b011aa24ca50904b0cf807e0bdea3e80f42aab73fd6500902859f14049cb4757',
       1 => 
       array (
         0 => 'sebastianbergmann\\comparator\\factory',
@@ -162,12 +164,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'sebastianbergmann\\comparator\\getinstance',
         1 => 'sebastianbergmann\\comparator\\__construct',
-        2 => 'sebastianbergmann\\comparator\\getcomparatorfor',
-        3 => 'sebastianbergmann\\comparator\\register',
-        4 => 'sebastianbergmann\\comparator\\unregister',
-        5 => 'sebastianbergmann\\comparator\\reset',
-        6 => 'sebastianbergmann\\comparator\\registerdefaultcomparators',
-        7 => 'sebastianbergmann\\comparator\\registerdefaultcomparator',
+        2 => 'sebastianbergmann\\comparator\\contextlines',
+        3 => 'sebastianbergmann\\comparator\\setcontextlines',
+        4 => 'sebastianbergmann\\comparator\\exporter',
+        5 => 'sebastianbergmann\\comparator\\setexporter',
+        6 => 'sebastianbergmann\\comparator\\recordclosurecomparison',
+        7 => 'sebastianbergmann\\comparator\\closurecomparisonoccurred',
+        8 => 'sebastianbergmann\\comparator\\resetclosurecomparisontracking',
+        9 => 'sebastianbergmann\\comparator\\getcomparatorfor',
+        10 => 'sebastianbergmann\\comparator\\register',
+        11 => 'sebastianbergmann\\comparator\\unregister',
+        12 => 'sebastianbergmann\\comparator\\reset',
+        13 => 'sebastianbergmann\\comparator\\registerdefaultcomparators',
+        14 => 'sebastianbergmann\\comparator\\registerdefaultcomparator',
       ),
       3 => 
       array (
@@ -191,7 +200,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/NumberComparator.php' => 
     array (
-      0 => '38db162f5aaeddb4ce02f81ffbb1ba1b0c2680305c81ea66fa6d9379d145b5bb',
+      0 => '78e52686df471295b9d57c9556c5dae7905a03d967a6d4553718a1d41256a59f',
       1 => 
       array (
         0 => 'sebastianbergmann\\comparator\\numbercomparator',
@@ -207,7 +216,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/NumericComparator.php' => 
     array (
-      0 => 'ac5b22fe3f8169a801115e77dca1bf545bd46605726e1aa4f5c48b91500079ce',
+      0 => '017bd6293661ec96985b6b41bdc91468e16b747d5401028e56876979d375c322',
       1 => 
       array (
         0 => 'sebastianbergmann\\comparator\\numericcomparator',
@@ -225,7 +234,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/ObjectComparator.php' => 
     array (
-      0 => '9183ada1ea357bf22b9f3d5de7e73d6bca90c0699bdf57aecdf18bd9604b209a',
+      0 => '69d8d904e5db0bc264f57d1fe2da744745901e3669912cb619efd67fb264d08f',
       1 => 
       array (
         0 => 'sebastianbergmann\\comparator\\objectcomparator',
@@ -242,7 +251,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/ResourceComparator.php' => 
     array (
-      0 => '150257fe698ad206cf0e1ba4c5cd1005f57d3e4daff1cba74791249134251719',
+      0 => 'ebaacaaee8328436e5e380d1bbbd395613e77e7acfc11647a7c31fce7b4c140a',
       1 => 
       array (
         0 => 'sebastianbergmann\\comparator\\resourcecomparator',
@@ -258,7 +267,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/ScalarComparator.php' => 
     array (
-      0 => 'a718860ff231a1c12a9744a9c03ec2a451914d9eee5e41327dea9dd9196782a3',
+      0 => '4ddaf2945c0559d51968ea695212d4beac8d31ebccfeb584b34659b35d2b904a',
       1 => 
       array (
         0 => 'sebastianbergmann\\comparator\\scalarcomparator',
@@ -278,7 +287,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/SplObjectStorageComparator.php' => 
     array (
-      0 => '3a4e0a9bcba49845ae35582218ddeee105710279dd79b51141101538892a4df1',
+      0 => '70151e7ea2f7c404ffcfb580df93194877792279efbc1a1f1960db4ab2b7007c',
       1 => 
       array (
         0 => 'sebastianbergmann\\comparator\\splobjectstoragecomparator',
@@ -294,7 +303,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/TypeComparator.php' => 
     array (
-      0 => '3b83920efddc233e88908be0a433ad50ac850b03d8adb0eed733e8196491ed6a',
+      0 => 'e00ffed0864ad41545b7376dced6da4c8d286347109438b70135960e84336baa',
       1 => 
       array (
         0 => 'sebastianbergmann\\comparator\\typecomparator',
@@ -331,6 +340,24 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       ),
       2 => 
       array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/comparator/src/DateIntervalComparator.php' => 
+    array (
+      0 => 'bea85b06cf6a72e2f535dee04f1980b80ed1d8fc5583ab7ee2aaea85f5303ec9',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\comparator\\dateintervalcomparator',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\comparator\\accepts',
+        1 => 'sebastianbergmann\\comparator\\assertequals',
+        2 => 'sebastianbergmann\\comparator\\toseconds',
+        3 => 'sebastianbergmann\\comparator\\format',
       ),
       3 => 
       array (

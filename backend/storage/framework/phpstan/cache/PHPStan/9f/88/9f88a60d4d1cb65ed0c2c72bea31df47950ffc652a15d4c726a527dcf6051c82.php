@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/PromptsForMissingInput.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Console\Concerns\PromptsForMissingInput
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-c1700d58d8c29ad63cddd62e6aa4d23a27a1bb0d457efa1fd92533701b633924-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-8c0c476b208b3491c202d05f706a12d8c34d63d958bbdc53b5cad287fcf2368e-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 15,
-    'endLine' => 109,
+    'endLine' => 107,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -209,7 +209,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @return void
  */',
         'startLine' => 40,
-        'endLine' => 73,
+        'endLine' => 72,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -239,8 +239,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return array<string, string|array{string, string}|\\Closure(): (array<int|string>|string|int|bool)>
  */',
-        'startLine' => 80,
-        'endLine' => 83,
+        'startLine' => 79,
+        'endLine' => 82,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -278,8 +278,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 92,
-            'endLine' => 92,
+            'startLine' => 91,
+            'endLine' => 91,
             'startColumn' => 58,
             'endColumn' => 78,
             'parameterIndex' => 0,
@@ -304,8 +304,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 92,
-            'endLine' => 92,
+            'startLine' => 91,
+            'endLine' => 91,
             'startColumn' => 81,
             'endColumn' => 103,
             'parameterIndex' => 1,
@@ -324,8 +324,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Symfony\\Component\\Console\\Output\\OutputInterface  $output
  * @return void
  */',
-        'startLine' => 92,
-        'endLine' => 95,
+        'startLine' => 91,
+        'endLine' => 94,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -363,8 +363,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 103,
-            'endLine' => 103,
+            'startLine' => 102,
+            'endLine' => 102,
             'startColumn' => 42,
             'endColumn' => 62,
             'parameterIndex' => 0,
@@ -382,8 +382,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Symfony\\Component\\Console\\Input\\InputInterface  $input
  * @return bool
  */',
-        'startLine' => 103,
-        'endLine' => 108,
+        'startLine' => 102,
+        'endLine' => 106,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

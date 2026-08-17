@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Console\Scheduling\ScheduleInterruptCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-950130233265981d31046cfab130310f9fb6f55c3dda7d75b00afdfe42fb5546-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-5c70670b155fc52360cdc9c9cac1d926e5a21a8b10c8ab251c20f8135140c417-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -63,11 +63,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Console\\Scheduling\\ScheduleInterruptCommand',
         'implementingClassName' => 'Illuminate\\Console\\Scheduling\\ScheduleInterruptCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
@@ -78,13 +78,13 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 18,
             'endLine' => 18,
             'startTokenPos' => 59,
-            'startFilePos' => 409,
+            'startFilePos' => 435,
             'endTokenPos' => 59,
-            'endFilePos' => 428,
+            'endFilePos' => 454,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
@@ -94,7 +94,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'startLine' => 18,
         'endLine' => 18,
         'startColumn' => 5,
-        'endColumn' => 43,
+        'endColumn' => 48,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -117,9 +117,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 25,
             'endLine' => 25,
             'startTokenPos' => 70,
-            'startFilePos' => 543,
+            'startFilePos' => 569,
             'endTokenPos' => 70,
-            'endFilePos' => 578,
+            'endFilePos' => 604,
           ),
         ),
         'docComment' => '/**

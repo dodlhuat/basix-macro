@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php-presentSymbols
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6337587cc9461e610967a450919bda7b212833640da16d6802ae2cfff8313988-8.5.6',
+   'variableKey' => 'v2-3e5d3cb5b81655b9ff30a23c5e6f82d5432c7c38538899e5a1a204eb26fa7696-8.5.6',
    'data' => 
   array (
     'classes' => 

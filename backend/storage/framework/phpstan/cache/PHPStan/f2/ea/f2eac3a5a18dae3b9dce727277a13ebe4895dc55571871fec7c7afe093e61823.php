@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Console/WipeCommand.php-presentSymbols
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-bc6da1a886a7e8432a21c96342a7d690a060e83a26b3378a7b47d7ad9f8d7231-8.5.6',
+   'variableKey' => 'v2-9fb510cbbb5dad4a1f965c9dd6e781faa2a7862edc3bee537b7ff47aee046d6e-8.5.6',
    'data' => 
   array (
     'classes' => 

@@ -2091,7 +2091,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php' => '2ec5513b571a00d68f1617212d8280d6e83c3765c3c05b88cecf53bf1ed47a83',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php' => 'c7284b6be6d8110d3b80e3fb63efd1a139f3dafbc247f88650664ee44a6faa9f',
     ),
   ),
 ));

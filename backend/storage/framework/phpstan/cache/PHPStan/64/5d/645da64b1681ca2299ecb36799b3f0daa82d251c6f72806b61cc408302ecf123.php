@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Support/Facades/Http.php-presentSymbols
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-cdced9d3ba83831fa8dcc06e2176adc9b34c598e8f9fc8ddd149d532e5048ce8-8.5.6',
+   'variableKey' => 'v2-acb0531bd0bf9241d5bed61d7119d9ef94e78a9df7eb7eef8c725b96943ae58c-8.5.6',
    'data' => 
   array (
     'classes' => 

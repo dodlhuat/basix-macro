@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Cache/Console/PruneStaleTagsCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Cache\Console\PruneStaleTagsCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-08bf70b258a88f06648177cff87d420fc7aa8f3741236653de5a4444a7938bb4-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-30c2e0b5b9351d9a59362a2cf87f796d0535fd35528c35134f4b97b5da72e307-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'cache:prune-stale-tags\'',
             'attributes' => 
             array (
-              'startLine' => 10,
-              'endLine' => 10,
-              'startTokenPos' => 33,
-              'startFilePos' => 232,
-              'endTokenPos' => 33,
-              'endFilePos' => 255,
+              'startLine' => 9,
+              'endLine' => 9,
+              'startTokenPos' => 28,
+              'startFilePos' => 181,
+              'endTokenPos' => 28,
+              'endFilePos' => 204,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 10,
-    'endLine' => 55,
+    'startLine' => 9,
+    'endLine' => 42,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -63,38 +63,38 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Cache\\Console\\PruneStaleTagsCommand',
         'implementingClassName' => 'Illuminate\\Cache\\Console\\PruneStaleTagsCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'cache:prune-stale-tags\'',
+          'code' => '\'cache:prune-stale-tags {store? : The name of the store you would like to prune tags from}\'',
           'attributes' => 
           array (
-            'startLine' => 18,
-            'endLine' => 18,
-            'startTokenPos' => 55,
-            'startFilePos' => 402,
-            'endTokenPos' => 55,
-            'endFilePos' => 425,
+            'startLine' => 17,
+            'endLine' => 17,
+            'startTokenPos' => 50,
+            'startFilePos' => 377,
+            'endTokenPos' => 50,
+            'endFilePos' => 467,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 18,
-        'endLine' => 18,
+        'startLine' => 17,
+        'endLine' => 17,
         'startColumn' => 5,
-        'endColumn' => 47,
+        'endColumn' => 119,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -114,12 +114,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Prune stale cache tags from the cache (Redis only)\'',
           'attributes' => 
           array (
-            'startLine' => 25,
-            'endLine' => 25,
-            'startTokenPos' => 66,
-            'startFilePos' => 540,
-            'endTokenPos' => 66,
-            'endFilePos' => 591,
+            'startLine' => 24,
+            'endLine' => 24,
+            'startTokenPos' => 61,
+            'startFilePos' => 582,
+            'endTokenPos' => 61,
+            'endFilePos' => 633,
           ),
         ),
         'docComment' => '/**
@@ -130,8 +130,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 25,
-        'endLine' => 25,
+        'startLine' => 24,
+        'endLine' => 24,
         'startColumn' => 5,
         'endColumn' => 82,
         'isPromoted' => false,
@@ -168,8 +168,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 33,
-            'endLine' => 33,
+            'startLine' => 32,
+            'endLine' => 32,
             'startColumn' => 28,
             'endColumn' => 46,
             'parameterIndex' => 0,
@@ -187,8 +187,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Cache\\CacheManager  $cache
  * @return int|null
  */',
-        'startLine' => 33,
-        'endLine' => 42,
+        'startLine' => 32,
+        'endLine' => 41,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -196,37 +196,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'isGenerator' => false,
         'isVariadic' => false,
         'modifiers' => 1,
-        'namespace' => 'Illuminate\\Cache\\Console',
-        'declaringClassName' => 'Illuminate\\Cache\\Console\\PruneStaleTagsCommand',
-        'implementingClassName' => 'Illuminate\\Cache\\Console\\PruneStaleTagsCommand',
-        'currentClassName' => 'Illuminate\\Cache\\Console\\PruneStaleTagsCommand',
-        'aliasName' => NULL,
-      ),
-      'getArguments' => 
-      array (
-        'name' => 'getArguments',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command arguments.
- *
- * @return array
- */',
-        'startLine' => 49,
-        'endLine' => 54,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
         'namespace' => 'Illuminate\\Cache\\Console',
         'declaringClassName' => 'Illuminate\\Cache\\Console\\PruneStaleTagsCommand',
         'implementingClassName' => 'Illuminate\\Cache\\Console\\PruneStaleTagsCommand',

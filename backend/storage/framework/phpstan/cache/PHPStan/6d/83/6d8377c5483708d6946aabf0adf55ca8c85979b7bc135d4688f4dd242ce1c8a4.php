@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\ChannelMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-fca8eaab3b459ccca935c75fac18b4d751e06d22a9b4f1611d1b8b0b67386b0b-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-21995b689f4515e933f2359ae5787db25e3464f2752dbd451a1cf865a67699dc-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'make:channel\'',
             'attributes' => 
             array (
-              'startLine' => 9,
-              'endLine' => 9,
-              'startTokenPos' => 28,
-              'startFilePos' => 209,
-              'endTokenPos' => 28,
-              'endFilePos' => 222,
+              'startLine' => 8,
+              'endLine' => 8,
+              'startTokenPos' => 23,
+              'startFilePos' => 160,
+              'endTokenPos' => 23,
+              'endFilePos' => 173,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 9,
-    'endLine' => 80,
+    'startLine' => 8,
+    'endLine' => 69,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\GeneratorCommand',
@@ -63,38 +63,40 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\ChannelMakeCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\ChannelMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:channel\'',
+          'code' => '\'make:channel
+                    {name : The name of the channel}
+                    {--f|force : Create the class even if the channel already exists}\'',
           'attributes' => 
           array (
-            'startLine' => 17,
-            'endLine' => 17,
-            'startTokenPos' => 50,
-            'startFilePos' => 375,
-            'endTokenPos' => 50,
-            'endFilePos' => 388,
+            'startLine' => 16,
+            'endLine' => 18,
+            'startTokenPos' => 45,
+            'startFilePos' => 352,
+            'endTokenPos' => 45,
+            'endFilePos' => 504,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 17,
-        'endLine' => 17,
+        'startLine' => 16,
+        'endLine' => 18,
         'startColumn' => 5,
-        'endColumn' => 37,
+        'endColumn' => 87,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -114,12 +116,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Create a new channel class\'',
           'attributes' => 
           array (
-            'startLine' => 24,
-            'endLine' => 24,
-            'startTokenPos' => 61,
-            'startFilePos' => 503,
-            'endTokenPos' => 61,
-            'endFilePos' => 530,
+            'startLine' => 25,
+            'endLine' => 25,
+            'startTokenPos' => 56,
+            'startFilePos' => 619,
+            'endTokenPos' => 56,
+            'endFilePos' => 646,
           ),
         ),
         'docComment' => '/**
@@ -130,8 +132,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 24,
-        'endLine' => 24,
+        'startLine' => 25,
+        'endLine' => 25,
         'startColumn' => 5,
         'endColumn' => 58,
         'isPromoted' => false,
@@ -153,12 +155,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Channel\'',
           'attributes' => 
           array (
-            'startLine' => 31,
-            'endLine' => 31,
-            'startTokenPos' => 72,
-            'startFilePos' => 640,
-            'endTokenPos' => 72,
-            'endFilePos' => 648,
+            'startLine' => 32,
+            'endLine' => 32,
+            'startTokenPos' => 67,
+            'startFilePos' => 756,
+            'endTokenPos' => 67,
+            'endFilePos' => 764,
           ),
         ),
         'docComment' => '/**
@@ -169,8 +171,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 31,
-        'endLine' => 31,
+        'startLine' => 32,
+        'endLine' => 32,
         'startColumn' => 5,
         'endColumn' => 32,
         'isPromoted' => false,
@@ -199,8 +201,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 39,
-            'endLine' => 39,
+            'startLine' => 40,
+            'endLine' => 40,
             'startColumn' => 35,
             'endColumn' => 39,
             'parameterIndex' => 0,
@@ -218,8 +220,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $name
  * @return string
  */',
-        'startLine' => 39,
-        'endLine' => 46,
+        'startLine' => 40,
+        'endLine' => 47,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -249,8 +251,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 53,
-        'endLine' => 56,
+        'startLine' => 54,
+        'endLine' => 57,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -280,8 +282,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 64,
-            'endLine' => 64,
+            'startLine' => 65,
+            'endLine' => 65,
             'startColumn' => 44,
             'endColumn' => 57,
             'parameterIndex' => 0,
@@ -299,39 +301,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rootNamespace
  * @return string
  */',
-        'startLine' => 64,
-        'endLine' => 67,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\ChannelMakeCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\ChannelMakeCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\ChannelMakeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command arguments.
- *
- * @return array
- */',
-        'startLine' => 74,
-        'endLine' => 79,
+        'startLine' => 65,
+        'endLine' => 68,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

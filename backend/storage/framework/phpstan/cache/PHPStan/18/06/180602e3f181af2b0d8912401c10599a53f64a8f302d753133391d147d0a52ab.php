@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/GeneratorCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Console\GeneratorCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-a2ad4abb7f6791226cdd47ff1cfa6055b83463f578e86f18e27d276c5a895f4d-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-30602de746d33cf0e37f7e438e34953db5b7e6156dc4c6ddfe3573798a87462f-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 17,
-    'endLine' => 538,
+    'endLine' => 536,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -1049,7 +1049,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @return bool
  */',
         'startLine' => 458,
-        'endLine' => 466,
+        'endLine' => 464,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1076,12 +1076,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'code' => '\'\'',
               'attributes' => 
               array (
-                'startLine' => 474,
-                'endLine' => 474,
-                'startTokenPos' => 1843,
-                'startFilePos' => 11798,
-                'endTokenPos' => 1843,
-                'endFilePos' => 11799,
+                'startLine' => 472,
+                'endLine' => 472,
+                'startTokenPos' => 1841,
+                'startFilePos' => 11768,
+                'endTokenPos' => 1841,
+                'endFilePos' => 11769,
               ),
             ),
             'type' => NULL,
@@ -1091,8 +1091,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 474,
-            'endLine' => 474,
+            'startLine' => 472,
+            'endLine' => 472,
             'startColumn' => 33,
             'endColumn' => 42,
             'parameterIndex' => 0,
@@ -1110,8 +1110,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $path
  * @return string
  */',
-        'startLine' => 474,
-        'endLine' => 479,
+        'startLine' => 472,
+        'endLine' => 477,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1147,8 +1147,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *    4?: list<string|Suggestion>|\\Closure(CompletionInput, CompletionSuggestions): list<string|Suggestion>
  * })[]
  */',
-        'startLine' => 492,
-        'endLine' => 497,
+        'startLine' => 490,
+        'endLine' => 495,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -1178,8 +1178,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return array<string, string|array{string, string}|\\Closure(): (array<int, string>|string|int|bool)>
  */',
-        'startLine' => 504,
-        'endLine' => 537,
+        'startLine' => 502,
+        'endLine' => 535,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

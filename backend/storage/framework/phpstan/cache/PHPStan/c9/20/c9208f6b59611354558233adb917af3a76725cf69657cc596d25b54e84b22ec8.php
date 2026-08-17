@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Support/Facades/Http.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Support\Facades\Http
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-cdced9d3ba83831fa8dcc06e2176adc9b34c598e8f9fc8ddd149d532e5048ce8-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-acb0531bd0bf9241d5bed61d7119d9ef94e78a9df7eb7eef8c725b96943ae58c-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,9 +27,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @method static \\Illuminate\\Http\\Client\\Factory globalRequestMiddleware(callable $middleware)
  * @method static \\Illuminate\\Http\\Client\\Factory globalResponseMiddleware(callable $middleware)
  * @method static \\Illuminate\\Http\\Client\\Factory globalOptions(\\Closure|array $options)
- * @method static \\GuzzleHttp\\Promise\\PromiseInterface response(array|string|null $body = null, int $status = 200, array $headers = [])
- * @method static \\GuzzleHttp\\Psr7\\Response psr7Response(array|string|null $body = null, int $status = 200, array $headers = [])
- * @method static \\Illuminate\\Http\\Client\\RequestException failedRequest(array|string|null $body = null, int $status = 200, array $headers = [])
+ * @method static mixed withoutGlobalConfiguration(\\Closure $callback)
+ * @method static \\GuzzleHttp\\Promise\\PromiseInterface response(\\Psr\\Http\\Message\\StreamInterface|array|string|resource|null $body = null, int $status = 200, array $headers = [])
+ * @method static \\GuzzleHttp\\Psr7\\Response psr7Response(\\Psr\\Http\\Message\\StreamInterface|array|string|resource|null $body = null, int $status = 200, array $headers = [])
+ * @method static \\Illuminate\\Http\\Client\\RequestException failedRequest(\\Psr\\Http\\Message\\StreamInterface|array|string|resource|null $body = null, int $status = 200, array $headers = [])
  * @method static \\Closure failedConnection(string|null $message = null)
  * @method static \\Illuminate\\Http\\Client\\ResponseSequence sequence(array $responses = [])
  * @method static bool preventingStrayRequests()
@@ -85,7 +86,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @method static \\Illuminate\\Http\\Client\\PendingRequest withResponseMiddleware(callable $middleware)
  * @method static \\Illuminate\\Http\\Client\\PendingRequest withAttributes(array $attributes)
  * @method static \\Illuminate\\Http\\Client\\PendingRequest beforeSending(callable $callback)
- * @method static \\Illuminate\\Http\\Client\\PendingRequest afterResponse(callable|null $callback)
+ * @method static \\Illuminate\\Http\\Client\\PendingRequest afterResponse(callable $callback)
  * @method static \\Illuminate\\Http\\Client\\PendingRequest throw(callable|null $callback = null)
  * @method static \\Illuminate\\Http\\Client\\PendingRequest throwIf(callable|bool $condition)
  * @method static \\Illuminate\\Http\\Client\\PendingRequest throwUnless(callable|bool $condition)
@@ -93,6 +94,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @method static \\Illuminate\\Http\\Client\\PendingRequest dd()
  * @method static \\Illuminate\\Http\\Client\\Response|\\GuzzleHttp\\Promise\\PromiseInterface get(string $url, array|string|null $query = null)
  * @method static \\Illuminate\\Http\\Client\\Response|\\GuzzleHttp\\Promise\\PromiseInterface head(string $url, array|string|null $query = null)
+ * @method static \\Illuminate\\Http\\Client\\Response|\\GuzzleHttp\\Promise\\PromiseInterface query(string $url, array|\\JsonSerializable|\\Illuminate\\Contracts\\Support\\Arrayable $data = [])
  * @method static \\Illuminate\\Http\\Client\\Response|\\GuzzleHttp\\Promise\\PromiseInterface post(string $url, array|\\JsonSerializable|\\Illuminate\\Contracts\\Support\\Arrayable $data = [])
  * @method static \\Illuminate\\Http\\Client\\Response|\\GuzzleHttp\\Promise\\PromiseInterface patch(string $url, array|\\JsonSerializable|\\Illuminate\\Contracts\\Support\\Arrayable $data = [])
  * @method static \\Illuminate\\Http\\Client\\Response|\\GuzzleHttp\\Promise\\PromiseInterface put(string $url, array|\\JsonSerializable|\\Illuminate\\Contracts\\Support\\Arrayable $data = [])
@@ -126,8 +128,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'attributes' => 
     array (
     ),
-    'startLine' => 108,
-    'endLine' => 174,
+    'startLine' => 110,
+    'endLine' => 176,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Support\\Facades\\Facade',
@@ -161,8 +163,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 115,
-        'endLine' => 118,
+        'startLine' => 117,
+        'endLine' => 120,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -189,12 +191,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'code' => 'null',
               'attributes' => 
               array (
-                'startLine' => 126,
-                'endLine' => 126,
+                'startLine' => 128,
+                'endLine' => 128,
                 'startTokenPos' => 61,
-                'startFilePos' => 9537,
+                'startFilePos' => 9915,
                 'endTokenPos' => 61,
-                'endFilePos' => 9540,
+                'endFilePos' => 9918,
               ),
             ),
             'type' => NULL,
@@ -204,8 +206,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 126,
-            'endLine' => 126,
+            'startLine' => 128,
+            'endLine' => 128,
             'startColumn' => 33,
             'endColumn' => 48,
             'parameterIndex' => 0,
@@ -223,8 +225,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Closure|array|null  $callback
  * @return \\Illuminate\\Http\\Client\\Factory
  */',
-        'startLine' => 126,
-        'endLine' => 131,
+        'startLine' => 128,
+        'endLine' => 133,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -251,12 +253,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'code' => '\'*\'',
               'attributes' => 
               array (
-                'startLine' => 139,
-                'endLine' => 139,
+                'startLine' => 141,
+                'endLine' => 141,
                 'startTokenPos' => 126,
-                'startFilePos' => 9935,
+                'startFilePos' => 10313,
                 'endTokenPos' => 126,
-                'endFilePos' => 9937,
+                'endFilePos' => 10315,
               ),
             ),
             'type' => 
@@ -274,8 +276,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 139,
-            'endLine' => 139,
+            'startLine' => 141,
+            'endLine' => 141,
             'startColumn' => 41,
             'endColumn' => 64,
             'parameterIndex' => 0,
@@ -293,8 +295,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $urlPattern
  * @return \\Illuminate\\Http\\Client\\ResponseSequence
  */',
-        'startLine' => 139,
-        'endLine' => 146,
+        'startLine' => 141,
+        'endLine' => 148,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -321,12 +323,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'code' => 'true',
               'attributes' => 
               array (
-                'startLine' => 154,
-                'endLine' => 154,
+                'startLine' => 156,
+                'endLine' => 156,
                 'startTokenPos' => 190,
-                'startFilePos' => 10351,
+                'startFilePos' => 10729,
                 'endTokenPos' => 190,
-                'endFilePos' => 10354,
+                'endFilePos' => 10732,
               ),
             ),
             'type' => NULL,
@@ -336,8 +338,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 154,
-            'endLine' => 154,
+            'startLine' => 156,
+            'endLine' => 156,
             'startColumn' => 49,
             'endColumn' => 63,
             'parameterIndex' => 0,
@@ -355,8 +357,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  bool  $prevent
  * @return \\Illuminate\\Http\\Client\\Factory
  */',
-        'startLine' => 154,
-        'endLine' => 159,
+        'startLine' => 156,
+        'endLine' => 161,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -386,8 +388,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 168,
-            'endLine' => 168,
+            'startLine' => 170,
+            'endLine' => 170,
             'startColumn' => 36,
             'endColumn' => 39,
             'parameterIndex' => 0,
@@ -404,8 +406,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 168,
-            'endLine' => 168,
+            'startLine' => 170,
+            'endLine' => 170,
             'startColumn' => 42,
             'endColumn' => 50,
             'parameterIndex' => 1,
@@ -424,8 +426,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Http\\Client\\Response|\\GuzzleHttp\\Promise\\PromiseInterface|callable  $callback
  * @return \\Illuminate\\Http\\Client\\Factory
  */',
-        'startLine' => 168,
-        'endLine' => 173,
+        'startLine' => 170,
+        'endLine' => 175,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

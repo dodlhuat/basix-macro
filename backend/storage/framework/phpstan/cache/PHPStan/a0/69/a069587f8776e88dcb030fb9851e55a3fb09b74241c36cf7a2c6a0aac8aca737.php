@@ -49,7 +49,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/diff/src/Differ.php' => 
     array (
-      0 => '8320ffab9577965cbf6468673ae4336686e2672a44ed49571bcdae0d6a280d7b',
+      0 => '16e0eb2faf3cc346c28f499fe5a3258a49edbe92a8ef9575f4c115915982e21f',
       1 => 
       array (
         0 => 'sebastianbergmann\\diff\\differ',
@@ -60,11 +60,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         1 => 'sebastianbergmann\\diff\\diff',
         2 => 'sebastianbergmann\\diff\\difftoarray',
         3 => 'sebastianbergmann\\diff\\splitstringbylines',
-        4 => 'sebastianbergmann\\diff\\selectlcsimplementation',
-        5 => 'sebastianbergmann\\diff\\calculateestimatedfootprint',
-        6 => 'sebastianbergmann\\diff\\detectunmatchedlineendings',
-        7 => 'sebastianbergmann\\diff\\getlinebreak',
-        8 => 'sebastianbergmann\\diff\\getarraydiffparted',
+        4 => 'sebastianbergmann\\diff\\detectunmatchedlineendings',
+        5 => 'sebastianbergmann\\diff\\getlinebreak',
+        6 => 'sebastianbergmann\\diff\\getarraydiffparted',
       ),
       3 => 
       array (
@@ -72,7 +70,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/diff/src/Exception/ConfigurationException.php' => 
     array (
-      0 => '6ba01c9488388c648bf8720bfd846577dcdd5f66d67773412d2ce742996ed1d8',
+      0 => 'e0f54bb487b2b36f97e4918519761aaf0e4e32f59a96a58ba450b930905cee7e',
       1 => 
       array (
         0 => 'sebastianbergmann\\diff\\configurationexception',
@@ -91,20 +89,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       1 => 
       array (
         0 => 'sebastianbergmann\\diff\\exception',
-      ),
-      2 => 
-      array (
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/diff/src/Exception/InvalidArgumentException.php' => 
-    array (
-      0 => '011ab72ef5a38205a8bba331db57b6aed8730cdaaa03a82873a1a193786a222c',
-      1 => 
-      array (
-        0 => 'sebastianbergmann\\diff\\invalidargumentexception',
       ),
       2 => 
       array (
@@ -133,55 +117,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/diff/src/LongestCommonSubsequenceCalculator.php' => 
-    array (
-      0 => '9af345eb90d2e99dafb2dc47eb568b6411e70f07c3ee70caa9c0c8d4a8f7e9b8',
-      1 => 
-      array (
-        0 => 'sebastianbergmann\\diff\\longestcommonsubsequencecalculator',
-      ),
-      2 => 
-      array (
-        0 => 'sebastianbergmann\\diff\\calculate',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/diff/src/MemoryEfficientLongestCommonSubsequenceCalculator.php' => 
-    array (
-      0 => 'fff8efe475e92bb119fe163bce901d713d75ae75769040b5d0c4142356a0c02d',
-      1 => 
-      array (
-        0 => 'sebastianbergmann\\diff\\memoryefficientlongestcommonsubsequencecalculator',
-      ),
-      2 => 
-      array (
-        0 => 'sebastianbergmann\\diff\\calculate',
-        1 => 'sebastianbergmann\\diff\\length',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/diff/src/Output/AbstractChunkOutputBuilder.php' => 
-    array (
-      0 => '3f8dea936491c7476c6feeec71cc4b2eabf5aaed1c1387f0051ccf07dd0b01d5',
-      1 => 
-      array (
-        0 => 'sebastianbergmann\\diff\\output\\abstractchunkoutputbuilder',
-      ),
-      2 => 
-      array (
-        0 => 'sebastianbergmann\\diff\\output\\getcommonchunks',
-      ),
-      3 => 
-      array (
-      ),
-    ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/diff/src/Output/DiffOnlyOutputBuilder.php' => 
     array (
-      0 => '71303902daed8880fae251e627056db8050e982777c7a603361246e8973298b8',
+      0 => 'e6290c593fb6e383679644f0d2f8320aa10b234ba0c5cc04ffee13763096bb76',
       1 => 
       array (
         0 => 'sebastianbergmann\\diff\\output\\diffonlyoutputbuilder',
@@ -197,7 +135,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/diff/src/Output/DiffOutputBuilderInterface.php' => 
     array (
-      0 => '1433d21ea20fe9e24101361e443b8d57c1be11b9eabe4d4f272973a7d7287b1a',
+      0 => '4ba2aaf489926eacb463a1181b82bf084a096872c6e1ef97043d9476f8914105',
       1 => 
       array (
         0 => 'sebastianbergmann\\diff\\output\\diffoutputbuilderinterface',
@@ -212,7 +150,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/diff/src/Output/StrictUnifiedDiffOutputBuilder.php' => 
     array (
-      0 => '47e2bf4e0f5eb2150b40a1602d0ffb938ac2d606191fdba0efa3c688505eb560',
+      0 => '4e02b3b1c465a27c2f10a113a03532f442a5cbc561e58d7a7a5b1c8f6660336b',
       1 => 
       array (
         0 => 'sebastianbergmann\\diff\\output\\strictunifieddiffoutputbuilder',
@@ -230,27 +168,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/diff/src/Output/UnifiedDiffOutputBuilder.php' => 
-    array (
-      0 => 'e8e28605e633493876690be2ac16ae49bd15b46fab997068b6fb68101e196033',
-      1 => 
-      array (
-        0 => 'sebastianbergmann\\diff\\output\\unifieddiffoutputbuilder',
-      ),
-      2 => 
-      array (
-        0 => 'sebastianbergmann\\diff\\output\\__construct',
-        1 => 'sebastianbergmann\\diff\\output\\getdiff',
-        2 => 'sebastianbergmann\\diff\\output\\writediffhunks',
-        3 => 'sebastianbergmann\\diff\\output\\writehunk',
-      ),
-      3 => 
-      array (
-      ),
-    ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/diff/src/Parser.php' => 
     array (
-      0 => '01c2459c28563be07281866a5858124ddf8217b5e42fe371ed8659e9796b3856',
+      0 => '36409d6220a26ffd4de63124ff33648ff0606e464b7e8c8331f572ba58b65c41',
       1 => 
       array (
         0 => 'sebastianbergmann\\diff\\parser',
@@ -264,16 +184,34 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/diff/src/TimeEfficientLongestCommonSubsequenceCalculator.php' => 
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/diff/src/Exception/NoMiddleSnakeFoundException.php' => 
     array (
-      0 => '42e4e5dccbfe1b20697a4b4945bea0677f2ba1ec487ccb921fd51a69cd6b121c',
+      0 => '547783afb672385856e37c346ce9946e927f42ba98113539f21679d01b5cf325',
       1 => 
       array (
-        0 => 'sebastianbergmann\\diff\\timeefficientlongestcommonsubsequencecalculator',
+        0 => 'sebastianbergmann\\diff\\nomiddlesnakefoundexception',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\diff\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/diff/src/MyersDiff.php' => 
+    array (
+      0 => 'd59793df087ce4153464350c36b85ece92927fcdeda77fe1062356979156d50d',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\diff\\myersdiff',
       ),
       2 => 
       array (
         0 => 'sebastianbergmann\\diff\\calculate',
+        1 => 'sebastianbergmann\\diff\\normalize',
+        2 => 'sebastianbergmann\\diff\\diffrange',
+        3 => 'sebastianbergmann\\diff\\findmiddlesnake',
       ),
       3 => 
       array (

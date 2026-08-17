@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/EventMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\EventMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-c8fccedd292a110da5936186f19cfd9f816285b4b81324fb08f1dfa11d3ed594-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-1a964ad88e7ecfb020ed83a9308cb40ab8879f03994e2cc792775ac7cf1d0b09-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'make:event\'',
             'attributes' => 
             array (
-              'startLine' => 9,
-              'endLine' => 9,
-              'startTokenPos' => 28,
-              'startFilePos' => 209,
-              'endTokenPos' => 28,
-              'endFilePos' => 220,
+              'startLine' => 8,
+              'endLine' => 8,
+              'startTokenPos' => 23,
+              'startFilePos' => 160,
+              'endTokenPos' => 23,
+              'endFilePos' => 171,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 9,
-    'endLine' => 90,
+    'startLine' => 8,
+    'endLine' => 79,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\GeneratorCommand',
@@ -63,38 +63,40 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\EventMakeCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\EventMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:event\'',
+          'code' => '\'make:event
+                    {name : The name of the event}
+                    {--f|force : Create the class even if the event already exists}\'',
           'attributes' => 
           array (
-            'startLine' => 17,
-            'endLine' => 17,
-            'startTokenPos' => 50,
-            'startFilePos' => 371,
-            'endTokenPos' => 50,
-            'endFilePos' => 382,
+            'startLine' => 16,
+            'endLine' => 18,
+            'startTokenPos' => 45,
+            'startFilePos' => 348,
+            'endTokenPos' => 45,
+            'endFilePos' => 494,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 17,
-        'endLine' => 17,
+        'startLine' => 16,
+        'endLine' => 18,
         'startColumn' => 5,
-        'endColumn' => 35,
+        'endColumn' => 85,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -114,12 +116,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Create a new event class\'',
           'attributes' => 
           array (
-            'startLine' => 24,
-            'endLine' => 24,
-            'startTokenPos' => 61,
-            'startFilePos' => 497,
-            'endTokenPos' => 61,
-            'endFilePos' => 522,
+            'startLine' => 25,
+            'endLine' => 25,
+            'startTokenPos' => 56,
+            'startFilePos' => 609,
+            'endTokenPos' => 56,
+            'endFilePos' => 634,
           ),
         ),
         'docComment' => '/**
@@ -130,8 +132,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 24,
-        'endLine' => 24,
+        'startLine' => 25,
+        'endLine' => 25,
         'startColumn' => 5,
         'endColumn' => 56,
         'isPromoted' => false,
@@ -153,12 +155,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Event\'',
           'attributes' => 
           array (
-            'startLine' => 31,
-            'endLine' => 31,
-            'startTokenPos' => 72,
-            'startFilePos' => 632,
-            'endTokenPos' => 72,
-            'endFilePos' => 638,
+            'startLine' => 32,
+            'endLine' => 32,
+            'startTokenPos' => 67,
+            'startFilePos' => 744,
+            'endTokenPos' => 67,
+            'endFilePos' => 750,
           ),
         ),
         'docComment' => '/**
@@ -169,8 +171,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 31,
-        'endLine' => 31,
+        'startLine' => 32,
+        'endLine' => 32,
         'startColumn' => 5,
         'endColumn' => 30,
         'isPromoted' => false,
@@ -199,8 +201,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 39,
-            'endLine' => 39,
+            'startLine' => 40,
+            'endLine' => 40,
             'startColumn' => 38,
             'endColumn' => 45,
             'parameterIndex' => 0,
@@ -218,8 +220,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rawName
  * @return bool
  */',
-        'startLine' => 39,
-        'endLine' => 43,
+        'startLine' => 40,
+        'endLine' => 44,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -249,8 +251,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 50,
-        'endLine' => 53,
+        'startLine' => 51,
+        'endLine' => 54,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -280,8 +282,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 61,
-            'endLine' => 61,
+            'startLine' => 62,
+            'endLine' => 62,
             'startColumn' => 40,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -299,8 +301,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $stub
  * @return string
  */',
-        'startLine' => 61,
-        'endLine' => 66,
+        'startLine' => 62,
+        'endLine' => 67,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -330,8 +332,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 74,
-            'endLine' => 74,
+            'startLine' => 75,
+            'endLine' => 75,
             'startColumn' => 44,
             'endColumn' => 57,
             'parameterIndex' => 0,
@@ -349,39 +351,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rootNamespace
  * @return string
  */',
-        'startLine' => 74,
-        'endLine' => 77,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\EventMakeCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\EventMakeCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\EventMakeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command options.
- *
- * @return array
- */',
-        'startLine' => 84,
-        'endLine' => 89,
+        'startLine' => 75,
+        'endLine' => 78,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

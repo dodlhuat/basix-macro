@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/ConsoleMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\ConsoleMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-1799a2a96704a5d45dd80922899630c9175f78b12868f02c56e467a1c179cd2d-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-27c7ba9e097ef694e0e04687d2c8aac173d613b5e5f25b4022b25071abccabfe-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'make:command\'',
             'attributes' => 
             array (
-              'startLine' => 12,
-              'endLine' => 12,
-              'startTokenPos' => 43,
-              'startFilePos' => 348,
-              'endTokenPos' => 43,
-              'endFilePos' => 361,
+              'startLine' => 10,
+              'endLine' => 10,
+              'startTokenPos' => 33,
+              'startFilePos' => 248,
+              'endTokenPos' => 33,
+              'endFilePos' => 261,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 12,
-    'endLine' => 103,
+    'startLine' => 10,
+    'endLine' => 79,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\GeneratorCommand',
@@ -64,38 +64,41 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\ConsoleMakeCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\ConsoleMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:command\'',
+          'code' => '\'make:command
+                    {name : The name of the command}
+                    {--f|force : Create the class even if the console command already exists}
+                    {--command= : The terminal command that will be used to invoke the class}\'',
           'attributes' => 
           array (
-            'startLine' => 22,
-            'endLine' => 22,
-            'startTokenPos' => 70,
-            'startFilePos' => 544,
-            'endTokenPos' => 70,
-            'endFilePos' => 557,
+            'startLine' => 20,
+            'endLine' => 23,
+            'startTokenPos' => 60,
+            'startFilePos' => 470,
+            'endTokenPos' => 60,
+            'endFilePos' => 724,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 22,
-        'endLine' => 22,
+        'startLine' => 20,
+        'endLine' => 23,
         'startColumn' => 5,
-        'endColumn' => 37,
+        'endColumn' => 95,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -115,12 +118,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Create a new Artisan command\'',
           'attributes' => 
           array (
-            'startLine' => 29,
-            'endLine' => 29,
-            'startTokenPos' => 81,
-            'startFilePos' => 672,
-            'endTokenPos' => 81,
-            'endFilePos' => 701,
+            'startLine' => 30,
+            'endLine' => 30,
+            'startTokenPos' => 71,
+            'startFilePos' => 839,
+            'endTokenPos' => 71,
+            'endFilePos' => 868,
           ),
         ),
         'docComment' => '/**
@@ -131,8 +134,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 29,
-        'endLine' => 29,
+        'startLine' => 30,
+        'endLine' => 30,
         'startColumn' => 5,
         'endColumn' => 60,
         'isPromoted' => false,
@@ -154,12 +157,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Console command\'',
           'attributes' => 
           array (
-            'startLine' => 36,
-            'endLine' => 36,
-            'startTokenPos' => 92,
-            'startFilePos' => 811,
-            'endTokenPos' => 92,
-            'endFilePos' => 827,
+            'startLine' => 37,
+            'endLine' => 37,
+            'startTokenPos' => 82,
+            'startFilePos' => 978,
+            'endTokenPos' => 82,
+            'endFilePos' => 994,
           ),
         ),
         'docComment' => '/**
@@ -170,8 +173,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 36,
-        'endLine' => 36,
+        'startLine' => 37,
+        'endLine' => 37,
         'startColumn' => 5,
         'endColumn' => 40,
         'isPromoted' => false,
@@ -200,8 +203,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 45,
-            'endLine' => 45,
+            'startLine' => 46,
+            'endLine' => 46,
             'startColumn' => 37,
             'endColumn' => 41,
             'parameterIndex' => 0,
@@ -218,8 +221,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 45,
-            'endLine' => 45,
+            'startLine' => 46,
+            'endLine' => 46,
             'startColumn' => 44,
             'endColumn' => 48,
             'parameterIndex' => 1,
@@ -238,8 +241,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $name
  * @return string
  */',
-        'startLine' => 45,
-        'endLine' => 52,
+        'startLine' => 46,
+        'endLine' => 53,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -269,8 +272,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 59,
-        'endLine' => 66,
+        'startLine' => 60,
+        'endLine' => 67,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -300,8 +303,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 74,
-            'endLine' => 74,
+            'startLine' => 75,
+            'endLine' => 75,
             'startColumn' => 44,
             'endColumn' => 57,
             'parameterIndex' => 0,
@@ -319,70 +322,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rootNamespace
  * @return string
  */',
-        'startLine' => 74,
-        'endLine' => 77,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\ConsoleMakeCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\ConsoleMakeCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\ConsoleMakeCommand',
-        'aliasName' => NULL,
-      ),
-      'getArguments' => 
-      array (
-        'name' => 'getArguments',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command arguments.
- *
- * @return array
- */',
-        'startLine' => 84,
-        'endLine' => 89,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\ConsoleMakeCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\ConsoleMakeCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\ConsoleMakeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command options.
- *
- * @return array
- */',
-        'startLine' => 96,
-        'endLine' => 102,
+        'startLine' => 75,
+        'endLine' => 78,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

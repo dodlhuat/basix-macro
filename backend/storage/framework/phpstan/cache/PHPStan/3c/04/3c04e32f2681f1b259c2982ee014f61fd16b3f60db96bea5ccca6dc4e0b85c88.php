@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Cache/Console/ClearCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Cache\Console\ClearCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-be7956115491b58a2ea79752e56f011e3b964b15631cfd211166b2b8f9b57abe-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-46e859caa9320989608c4e4ae28e46ca9efe6eeede5579f0c64a5e68c7000ca0-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'cache:clear\'',
             'attributes' => 
             array (
-              'startLine' => 14,
-              'endLine' => 14,
-              'startTokenPos' => 53,
-              'startFilePos' => 384,
-              'endTokenPos' => 53,
-              'endFilePos' => 396,
+              'startLine' => 12,
+              'endLine' => 12,
+              'startTokenPos' => 43,
+              'startFilePos' => 284,
+              'endTokenPos' => 43,
+              'endFilePos' => 296,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 14,
-    'endLine' => 195,
+    'startLine' => 12,
+    'endLine' => 171,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -64,38 +64,41 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Cache\\Console\\ClearCommand',
         'implementingClassName' => 'Illuminate\\Cache\\Console\\ClearCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'cache:clear\'',
+          'code' => '\'cache:clear
+                    {store? : The name of the store you would like to clear}
+                    {--tags= : The cache tags you would like to clear}
+                    {--locks : Only clear cache locks}\'',
           'attributes' => 
           array (
-            'startLine' => 24,
-            'endLine' => 24,
-            'startTokenPos' => 80,
-            'startFilePos' => 557,
-            'endTokenPos' => 80,
-            'endFilePos' => 569,
+            'startLine' => 22,
+            'endLine' => 25,
+            'startTokenPos' => 70,
+            'startFilePos' => 483,
+            'endTokenPos' => 70,
+            'endFilePos' => 698,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 24,
-        'endLine' => 24,
+        'startLine' => 22,
+        'endLine' => 25,
         'startColumn' => 5,
-        'endColumn' => 36,
+        'endColumn' => 56,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -115,12 +118,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Flush the application cache\'',
           'attributes' => 
           array (
-            'startLine' => 31,
-            'endLine' => 31,
-            'startTokenPos' => 91,
-            'startFilePos' => 684,
-            'endTokenPos' => 91,
-            'endFilePos' => 712,
+            'startLine' => 32,
+            'endLine' => 32,
+            'startTokenPos' => 81,
+            'startFilePos' => 813,
+            'endTokenPos' => 81,
+            'endFilePos' => 841,
           ),
         ),
         'docComment' => '/**
@@ -131,8 +134,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 31,
-        'endLine' => 31,
+        'startLine' => 32,
+        'endLine' => 32,
         'startColumn' => 5,
         'endColumn' => 59,
         'isPromoted' => false,
@@ -158,8 +161,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 38,
-        'endLine' => 38,
+        'startLine' => 39,
+        'endLine' => 39,
         'startColumn' => 5,
         'endColumn' => 21,
         'isPromoted' => false,
@@ -185,8 +188,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 45,
-        'endLine' => 45,
+        'startLine' => 46,
+        'endLine' => 46,
         'startColumn' => 5,
         'endColumn' => 21,
         'isPromoted' => false,
@@ -223,8 +226,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 53,
-            'endLine' => 53,
+            'startLine' => 54,
+            'endLine' => 54,
             'startColumn' => 33,
             'endColumn' => 51,
             'parameterIndex' => 0,
@@ -249,8 +252,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 53,
-            'endLine' => 53,
+            'startLine' => 54,
+            'endLine' => 54,
             'startColumn' => 54,
             'endColumn' => 70,
             'parameterIndex' => 1,
@@ -268,8 +271,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Cache\\CacheManager  $cache
  * @param  \\Illuminate\\Filesystem\\Filesystem  $files
  */',
-        'startLine' => 53,
-        'endLine' => 59,
+        'startLine' => 54,
+        'endLine' => 60,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -299,8 +302,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return int
  */',
-        'startLine' => 66,
-        'endLine' => 97,
+        'startLine' => 67,
+        'endLine' => 98,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -330,8 +333,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return int
  */',
-        'startLine' => 104,
-        'endLine' => 129,
+        'startLine' => 105,
+        'endLine' => 130,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -361,8 +364,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return void
  */',
-        'startLine' => 136,
-        'endLine' => 147,
+        'startLine' => 137,
+        'endLine' => 148,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -392,8 +395,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return \\Illuminate\\Cache\\Repository
  */',
-        'startLine' => 154,
-        'endLine' => 159,
+        'startLine' => 155,
+        'endLine' => 160,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -423,70 +426,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return array
  */',
-        'startLine' => 166,
-        'endLine' => 169,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Cache\\Console',
-        'declaringClassName' => 'Illuminate\\Cache\\Console\\ClearCommand',
-        'implementingClassName' => 'Illuminate\\Cache\\Console\\ClearCommand',
-        'currentClassName' => 'Illuminate\\Cache\\Console\\ClearCommand',
-        'aliasName' => NULL,
-      ),
-      'getArguments' => 
-      array (
-        'name' => 'getArguments',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command arguments.
- *
- * @return array
- */',
-        'startLine' => 176,
-        'endLine' => 181,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Cache\\Console',
-        'declaringClassName' => 'Illuminate\\Cache\\Console\\ClearCommand',
-        'implementingClassName' => 'Illuminate\\Cache\\Console\\ClearCommand',
-        'currentClassName' => 'Illuminate\\Cache\\Console\\ClearCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command options.
- *
- * @return array
- */',
-        'startLine' => 188,
-        'endLine' => 194,
+        'startLine' => 167,
+        'endLine' => 170,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

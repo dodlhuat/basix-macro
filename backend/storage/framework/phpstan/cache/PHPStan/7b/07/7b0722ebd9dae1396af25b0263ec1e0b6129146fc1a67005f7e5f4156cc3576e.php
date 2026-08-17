@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\JobMiddlewareMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-1058bc0f27dd8c792e48efb5da0d0d42c0881e8c2eb5633347e5b6e57237e9ce-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-24efa642ebc63dcec4a6dfa63638572c8b6a593696b2394c16603b8d33152f6a-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'make:job-middleware\'',
             'attributes' => 
             array (
-              'startLine' => 10,
-              'endLine' => 10,
-              'startTokenPos' => 33,
-              'startFilePos' => 262,
-              'endTokenPos' => 33,
-              'endFilePos' => 282,
+              'startLine' => 9,
+              'endLine' => 9,
+              'startTokenPos' => 28,
+              'startFilePos' => 213,
+              'endTokenPos' => 28,
+              'endFilePos' => 233,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 10,
-    'endLine' => 81,
+    'startLine' => 9,
+    'endLine' => 70,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\GeneratorCommand',
@@ -64,38 +64,40 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\JobMiddlewareMakeCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\JobMiddlewareMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:job-middleware\'',
+          'code' => '\'make:job-middleware
+                    {name : The name of the middleware}
+                    {--f|force : Create the class even if the job middleware already exists}\'',
           'attributes' => 
           array (
-            'startLine' => 20,
-            'endLine' => 20,
-            'startTokenPos' => 60,
-            'startFilePos' => 471,
-            'endTokenPos' => 60,
-            'endFilePos' => 491,
+            'startLine' => 19,
+            'endLine' => 21,
+            'startTokenPos' => 55,
+            'startFilePos' => 448,
+            'endTokenPos' => 55,
+            'endFilePos' => 617,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 20,
-        'endLine' => 20,
+        'startLine' => 19,
+        'endLine' => 21,
         'startColumn' => 5,
-        'endColumn' => 44,
+        'endColumn' => 94,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -115,12 +117,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Create a new job middleware class\'',
           'attributes' => 
           array (
-            'startLine' => 27,
-            'endLine' => 27,
-            'startTokenPos' => 71,
-            'startFilePos' => 606,
-            'endTokenPos' => 71,
-            'endFilePos' => 640,
+            'startLine' => 28,
+            'endLine' => 28,
+            'startTokenPos' => 66,
+            'startFilePos' => 732,
+            'endTokenPos' => 66,
+            'endFilePos' => 766,
           ),
         ),
         'docComment' => '/**
@@ -131,8 +133,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 27,
-        'endLine' => 27,
+        'startLine' => 28,
+        'endLine' => 28,
         'startColumn' => 5,
         'endColumn' => 65,
         'isPromoted' => false,
@@ -154,12 +156,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Middleware\'',
           'attributes' => 
           array (
-            'startLine' => 34,
-            'endLine' => 34,
-            'startTokenPos' => 82,
-            'startFilePos' => 750,
-            'endTokenPos' => 82,
-            'endFilePos' => 761,
+            'startLine' => 35,
+            'endLine' => 35,
+            'startTokenPos' => 77,
+            'startFilePos' => 876,
+            'endTokenPos' => 77,
+            'endFilePos' => 887,
           ),
         ),
         'docComment' => '/**
@@ -170,8 +172,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 34,
-        'endLine' => 34,
+        'startLine' => 35,
+        'endLine' => 35,
         'startColumn' => 5,
         'endColumn' => 35,
         'isPromoted' => false,
@@ -200,8 +202,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 41,
-        'endLine' => 44,
+        'startLine' => 42,
+        'endLine' => 45,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -231,8 +233,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 52,
-            'endLine' => 52,
+            'startLine' => 53,
+            'endLine' => 53,
             'startColumn' => 40,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -250,8 +252,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $stub
  * @return string
  */',
-        'startLine' => 52,
-        'endLine' => 57,
+        'startLine' => 53,
+        'endLine' => 58,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -281,8 +283,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 65,
-            'endLine' => 65,
+            'startLine' => 66,
+            'endLine' => 66,
             'startColumn' => 44,
             'endColumn' => 57,
             'parameterIndex' => 0,
@@ -300,39 +302,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rootNamespace
  * @return string
  */',
-        'startLine' => 65,
-        'endLine' => 68,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\JobMiddlewareMakeCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\JobMiddlewareMakeCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\JobMiddlewareMakeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command options.
- *
- * @return array
- */',
-        'startLine' => 75,
-        'endLine' => 80,
+        'startLine' => 66,
+        'endLine' => 69,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Console\MigrationGeneratorCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-88241d9a509c9fffda76b99696b8c179f993d45fc5309545775a92ea0d70b062-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-cc09b69acf7a05b8aa7ab12b2470622f4b8e49bd5ce7f5c453d4aff43365cd51-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 

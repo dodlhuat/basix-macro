@@ -12,7 +12,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -34,6 +33,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -3522,7 +3522,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -3544,6 +3543,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -3573,7 +3573,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -3595,6 +3594,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -3624,7 +3624,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -3646,6 +3645,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -3675,7 +3675,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -3697,6 +3696,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -3726,7 +3726,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -3748,6 +3747,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -3777,7 +3777,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -3799,6 +3798,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -3828,7 +3828,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -3850,6 +3849,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -3879,7 +3879,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -3901,6 +3900,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -3930,7 +3930,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -3952,6 +3951,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -3981,7 +3981,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4003,6 +4002,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4032,7 +4032,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4054,6 +4053,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4083,7 +4083,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4105,6 +4104,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4134,7 +4134,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4156,6 +4155,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4185,7 +4185,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4207,6 +4206,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4236,7 +4236,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4258,6 +4257,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4287,7 +4287,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4309,6 +4308,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4338,7 +4338,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4360,6 +4359,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4389,7 +4389,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4411,6 +4410,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4440,7 +4440,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4462,6 +4461,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4491,7 +4491,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4513,6 +4512,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4542,7 +4542,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4564,6 +4563,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4593,7 +4593,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4615,6 +4614,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4644,7 +4644,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4666,6 +4665,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4695,7 +4695,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4717,6 +4716,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4746,7 +4746,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4768,6 +4767,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4797,7 +4797,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4819,6 +4818,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4848,7 +4848,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4870,6 +4869,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4899,7 +4899,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4921,6 +4920,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -4950,7 +4950,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -4972,6 +4971,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5001,7 +5001,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5023,6 +5022,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5052,7 +5052,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5074,6 +5073,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5103,7 +5103,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5125,6 +5124,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5154,7 +5154,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5176,6 +5175,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5205,7 +5205,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5227,6 +5226,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5256,7 +5256,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5278,6 +5277,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5307,7 +5307,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5329,6 +5328,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5358,7 +5358,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5380,6 +5379,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5409,7 +5409,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5431,6 +5430,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5460,7 +5460,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5482,6 +5481,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5511,7 +5511,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5533,6 +5532,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5562,7 +5562,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5584,6 +5583,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5613,7 +5613,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5635,6 +5634,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5664,7 +5664,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5686,6 +5685,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5715,7 +5715,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5737,6 +5736,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5766,7 +5766,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5788,6 +5787,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5817,7 +5817,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5839,6 +5838,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5868,7 +5868,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5890,6 +5889,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5919,7 +5919,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5941,6 +5940,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -5970,7 +5970,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -5992,6 +5991,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6021,7 +6021,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6043,6 +6042,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6072,7 +6072,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6094,6 +6093,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6123,7 +6123,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6145,6 +6144,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6174,7 +6174,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6196,6 +6195,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6225,7 +6225,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6247,6 +6246,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6276,7 +6276,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6298,6 +6297,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6327,7 +6327,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6349,6 +6348,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6378,7 +6378,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6400,6 +6399,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6429,7 +6429,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6451,6 +6450,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6480,7 +6480,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6502,6 +6501,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6531,7 +6531,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6553,6 +6552,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6582,7 +6582,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6604,6 +6603,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6633,7 +6633,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6655,6 +6654,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6684,7 +6684,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6706,6 +6705,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6735,7 +6735,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6757,6 +6756,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6786,7 +6786,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6808,6 +6807,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6837,7 +6837,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6859,6 +6858,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6888,7 +6888,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6910,6 +6909,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6939,7 +6939,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -6961,6 +6960,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -6990,7 +6990,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7012,6 +7011,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7041,7 +7041,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7063,6 +7062,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7092,7 +7092,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7114,6 +7113,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7143,7 +7143,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7165,6 +7164,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7194,7 +7194,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7216,6 +7215,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7245,7 +7245,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7267,6 +7266,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7296,7 +7296,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7318,6 +7317,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7347,7 +7347,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7369,6 +7368,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7398,7 +7398,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7420,6 +7419,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7449,7 +7449,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7471,6 +7470,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7500,7 +7500,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7522,6 +7521,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7551,7 +7551,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7573,6 +7572,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7602,7 +7602,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7624,6 +7623,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7653,7 +7653,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7675,6 +7674,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7704,7 +7704,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7726,6 +7725,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7755,7 +7755,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7777,6 +7776,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7806,7 +7806,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7828,6 +7827,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7857,7 +7857,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7879,6 +7878,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7908,7 +7908,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7930,6 +7929,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -7959,7 +7959,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -7981,6 +7980,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8010,7 +8010,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8032,6 +8031,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8061,7 +8061,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8083,6 +8082,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8112,7 +8112,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8134,6 +8133,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8163,7 +8163,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8185,6 +8184,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8214,7 +8214,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8236,6 +8235,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8265,7 +8265,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8287,6 +8286,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8316,7 +8316,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8338,6 +8337,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8367,7 +8367,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8389,6 +8388,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8418,7 +8418,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8440,6 +8439,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8469,7 +8469,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8491,6 +8490,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8520,7 +8520,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8542,6 +8541,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8571,7 +8571,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8593,6 +8592,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8622,7 +8622,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8644,6 +8643,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8673,7 +8673,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8695,6 +8694,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8724,7 +8724,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8746,6 +8745,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8775,7 +8775,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8797,6 +8796,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8826,7 +8826,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8848,6 +8847,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8877,7 +8877,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8899,6 +8898,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8928,7 +8928,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -8950,6 +8949,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -8979,7 +8979,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9001,6 +9000,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9030,7 +9030,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9052,6 +9051,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9081,7 +9081,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9103,6 +9102,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9132,7 +9132,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9154,6 +9153,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9183,7 +9183,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9205,6 +9204,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9234,7 +9234,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9256,6 +9255,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9285,7 +9285,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9307,6 +9306,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9336,7 +9336,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9358,6 +9357,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9387,7 +9387,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9409,6 +9408,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9438,7 +9438,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9460,6 +9459,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9489,7 +9489,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9511,6 +9510,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9540,7 +9540,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9562,6 +9561,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9591,7 +9591,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9613,6 +9612,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9642,7 +9642,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9664,6 +9663,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9693,7 +9693,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9715,6 +9714,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9744,7 +9744,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9766,6 +9765,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9795,7 +9795,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9817,6 +9816,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9846,7 +9846,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9868,6 +9867,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9897,7 +9897,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9919,6 +9918,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9948,7 +9948,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -9970,6 +9969,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -9999,7 +9999,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10021,6 +10020,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10050,7 +10050,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10072,6 +10071,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10101,7 +10101,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10123,6 +10122,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10152,7 +10152,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10174,6 +10173,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10203,7 +10203,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10225,6 +10224,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10254,7 +10254,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10276,6 +10275,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10305,7 +10305,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10327,6 +10326,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10356,7 +10356,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10378,6 +10377,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10407,7 +10407,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10429,6 +10428,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10458,7 +10458,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10480,6 +10479,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10509,7 +10509,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10531,6 +10530,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10560,7 +10560,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10582,6 +10581,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10611,7 +10611,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10633,6 +10632,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10662,7 +10662,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10684,6 +10683,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10713,7 +10713,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10735,6 +10734,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10764,7 +10764,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10786,6 +10785,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10815,7 +10815,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10837,6 +10836,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10866,7 +10866,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10888,6 +10887,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10917,7 +10917,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10939,6 +10938,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -10968,7 +10968,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -10990,6 +10989,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11019,7 +11019,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11041,6 +11040,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11070,7 +11070,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11092,6 +11091,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11121,7 +11121,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11143,6 +11142,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11172,7 +11172,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11194,6 +11193,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11223,7 +11223,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11245,6 +11244,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11274,7 +11274,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11296,6 +11295,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11325,7 +11325,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11347,6 +11346,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11376,7 +11376,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11398,6 +11397,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11427,7 +11427,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11449,6 +11448,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11478,7 +11478,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11500,6 +11499,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11529,7 +11529,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11551,6 +11550,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11580,7 +11580,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11602,6 +11601,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11631,7 +11631,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11653,6 +11652,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11682,7 +11682,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11704,6 +11703,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11733,7 +11733,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11755,6 +11754,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11784,7 +11784,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11806,6 +11805,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11835,7 +11835,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11857,6 +11856,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11886,7 +11886,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11908,6 +11907,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11937,7 +11937,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -11959,6 +11958,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -11988,7 +11988,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12010,6 +12009,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12039,7 +12039,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12061,6 +12060,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12090,7 +12090,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12112,6 +12111,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12141,7 +12141,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12163,6 +12162,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12192,7 +12192,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12214,6 +12213,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12243,7 +12243,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12265,6 +12264,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12294,7 +12294,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12316,6 +12315,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12345,7 +12345,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12367,6 +12366,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12396,7 +12396,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12418,6 +12417,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12447,7 +12447,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12469,6 +12468,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12498,7 +12498,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12520,6 +12519,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12549,7 +12549,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12571,6 +12570,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12617,7 +12617,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12639,6 +12638,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12668,7 +12668,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12690,6 +12689,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12719,7 +12719,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12741,6 +12740,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12770,7 +12770,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12792,6 +12791,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12821,7 +12821,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12843,6 +12842,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12872,7 +12872,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12894,6 +12893,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12923,7 +12923,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12945,6 +12944,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -12974,7 +12974,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -12996,6 +12995,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13025,7 +13025,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13047,6 +13046,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13076,7 +13076,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13098,6 +13097,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13127,7 +13127,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13149,6 +13148,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13178,7 +13178,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13200,6 +13199,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13229,7 +13229,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13251,6 +13250,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13280,7 +13280,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13302,6 +13301,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13331,7 +13331,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13353,6 +13352,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13382,7 +13382,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13404,6 +13403,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13433,7 +13433,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13455,6 +13454,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13484,7 +13484,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13506,6 +13505,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13535,7 +13535,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13557,6 +13556,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13586,7 +13586,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13608,6 +13607,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13637,7 +13637,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13659,6 +13658,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13688,7 +13688,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13710,6 +13709,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13739,7 +13739,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13761,6 +13760,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13790,7 +13790,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13812,6 +13811,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13841,7 +13841,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13863,6 +13862,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13892,7 +13892,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13914,6 +13913,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13943,7 +13943,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -13965,6 +13964,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -13994,7 +13994,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14016,6 +14015,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14045,7 +14045,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14067,6 +14066,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14096,7 +14096,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14118,6 +14117,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14147,7 +14147,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14169,6 +14168,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14198,7 +14198,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14220,6 +14219,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14249,7 +14249,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14271,6 +14270,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14300,7 +14300,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14322,6 +14321,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14351,7 +14351,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14373,6 +14372,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14402,7 +14402,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14424,6 +14423,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14453,7 +14453,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14475,6 +14474,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14504,7 +14504,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14526,6 +14525,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14555,7 +14555,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14577,6 +14576,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14606,7 +14606,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14628,6 +14627,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14657,7 +14657,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14679,6 +14678,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14708,7 +14708,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14730,6 +14729,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14759,7 +14759,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14781,6 +14780,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14810,7 +14810,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14832,6 +14831,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14861,7 +14861,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14883,6 +14882,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14912,7 +14912,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14934,6 +14933,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -14963,7 +14963,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -14985,6 +14984,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15014,7 +15014,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15036,6 +15035,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15065,7 +15065,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15087,6 +15086,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15116,7 +15116,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15138,6 +15137,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15167,7 +15167,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15189,6 +15188,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15218,7 +15218,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15240,6 +15239,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15269,7 +15269,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15291,6 +15290,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15320,7 +15320,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15342,6 +15341,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15371,7 +15371,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15393,6 +15392,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15422,7 +15422,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15444,6 +15443,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15473,7 +15473,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15495,6 +15494,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15524,7 +15524,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15546,6 +15545,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15575,7 +15575,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15597,6 +15596,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15626,7 +15626,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15648,6 +15647,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15677,7 +15677,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15699,6 +15698,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15728,7 +15728,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15750,6 +15749,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15779,7 +15779,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15801,6 +15800,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15830,7 +15830,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15852,6 +15851,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15881,7 +15881,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15903,6 +15902,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15932,7 +15932,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -15954,6 +15953,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -15983,7 +15983,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -16005,6 +16004,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -16034,7 +16034,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -16056,6 +16055,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -16085,7 +16085,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -16107,6 +16106,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -16136,7 +16136,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -16158,6 +16157,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -16187,7 +16187,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -16209,6 +16208,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -16238,7 +16238,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -16260,6 +16259,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -16289,7 +16289,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -16311,6 +16310,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -16340,7 +16340,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -16362,6 +16361,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -16391,7 +16391,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -16413,6 +16412,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -16442,7 +16442,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -16464,6 +16463,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -16493,7 +16493,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -16515,6 +16514,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -16544,7 +16544,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -16566,6 +16565,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -16595,7 +16595,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -16617,6 +16616,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -16646,7 +16646,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -16668,6 +16667,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -16697,7 +16697,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Query',
          'uses' => 
         array (
-          'backedenum' => 'BackedEnum',
           'closure' => 'Closure',
           'dateperiod' => 'DatePeriod',
           'datetimeinterface' => 'DateTimeInterface',
@@ -16719,6 +16718,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'collection' => 'Illuminate\\Support\\Collection',
           'lazycollection' => 'Illuminate\\Support\\LazyCollection',
           'str' => 'Illuminate\\Support\\Str',
+          'stringable' => 'Illuminate\\Support\\Stringable',
           'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
           'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
           'invalidargumentexception' => 'InvalidArgumentException',
@@ -16746,9 +16746,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php' => '0babf26233c521db311a7e16848870b7d1c575ad9e50bf3f3998bf811df5e48b',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php' => '3e84ed51fd11027ffe930145ba7689749b6c0875ad0b5d34b3240f4c6927508e',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Concerns/BuildsWhereDateClauses.php' => '19d812e96ab058e535eb191413c62819da4aea74772c4cd2c1085b7f350830e0',
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php' => '53fef9eb409578649b19614ca5d45cebb5271d0d58256229d73649e9f8a8e02a',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php' => 'be4648e2c7b26daff6b8e2f21667413efb4a12eeb42130890ba4e586f0cb1ee1',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Conditionable/Traits/Conditionable.php' => '5697fdba0acb78ca0b4e122e5c459cd5d97d000ed9b14fed31271cb7ffd44225',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Concerns/ExplainsQueries.php' => 'c1aca7045d73d0d54dd97c0c9fe2456e8ccc152e9b8fbd16412b93da97196bd3',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php' => 'b90103bc7248a11bd7629c525e064a45a50dd93ae0d836bcb79937e63f0b3568',

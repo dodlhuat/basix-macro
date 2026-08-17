@@ -1581,6 +1581,23 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'functionName' => 'prependKeysWith',
          'templatePhpDocNodes' => 
         array (
+          'TValue' => 
+          array (
+            0 => '@template',
+            1 => 
+            \PHPStan\PhpDocParser\Ast\PhpDoc\TemplateTagValueNode::__set_state(array(
+               'name' => 'TValue',
+               'bound' => NULL,
+               'default' => NULL,
+               'lowerBound' => NULL,
+               'description' => '',
+               'attributes' => 
+              array (
+                'startLine' => 4,
+                'endLine' => 4,
+              ),
+            )),
+          ),
         ),
          'parent' => NULL,
          'typeAliasesMap' => 
@@ -3052,7 +3069,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Collections/Arr.php' => '26969358d42c7f4e326a9233295d2f7586f66f47c8de609cc1a16a67b1f4989b',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Collections/Arr.php' => '63a60e931ee3345fe83b2acdad4168ebbc370b99c07696a3bcf997dd662b5ece',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php' => '6dd85b1e28b55ebeee678f9ca423dfb8375e1342bc42d8658da6321bdf97b3c0',
     ),
   ),

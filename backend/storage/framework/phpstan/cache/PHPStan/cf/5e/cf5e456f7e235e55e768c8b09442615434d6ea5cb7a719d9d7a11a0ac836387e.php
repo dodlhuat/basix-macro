@@ -1209,6 +1209,37 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'typeAliasClassName' => NULL,
          'traitData' => NULL,
       )),
+      'ceea64b4718610369dbff4cbe22700bc' => 
+      \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+         'namespace' => 'Illuminate\\Support',
+         'uses' => 
+        array (
+          'arrayaccess' => 'ArrayAccess',
+          'closure' => 'Closure',
+          'date' => 'Illuminate\\Support\\Facades\\Date',
+          'conditionable' => 'Illuminate\\Support\\Traits\\Conditionable',
+          'dumpable' => 'Illuminate\\Support\\Traits\\Dumpable',
+          'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
+          'tappable' => 'Illuminate\\Support\\Traits\\Tappable',
+          'jsonserializable' => 'JsonSerializable',
+          'basestringable' => 'Stringable',
+        ),
+         'className' => 'Illuminate\\Support\\Stringable',
+         'functionName' => 'counted',
+         'templatePhpDocNodes' => 
+        array (
+        ),
+         'parent' => NULL,
+         'typeAliasesMap' => 
+        array (
+        ),
+         'bypassTypeAliases' => false,
+         'constUses' => 
+        array (
+        ),
+         'typeAliasClassName' => NULL,
+         'traitData' => NULL,
+      )),
       '4c6cb118547f38526018adf9665b1309' => 
       \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
          'namespace' => 'Illuminate\\Support',
@@ -4901,7 +4932,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Support/Stringable.php' => 'cb2bf8793d6d82140beafbb3e783be114457e3f5bccac29172cebd2ddb232a97',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Support/Stringable.php' => 'e3a72a81567f5daacc45acf57b0ec92eec4c75a0119c843ea3a84d2b32560d31',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Conditionable/Traits/Conditionable.php' => '5697fdba0acb78ca0b4e122e5c459cd5d97d000ed9b14fed31271cb7ffd44225',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Support/Traits/Dumpable.php' => '5ee524eba6728c03ac2743fb83643d2178f7a632664167f92d87323c10206ad8',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php' => '6dd85b1e28b55ebeee678f9ca423dfb8375e1342bc42d8658da6321bdf97b3c0',

@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/object-enumerator/src/Enumerator.php' => 
     array (
-      0 => '67217cc007c32d77a68d50ef4402f347d58569627172a62d3af5c2d25e868290',
+      0 => 'de4c23406e2b5a3a550827906bb577a021f694272ba73316141c40f77bec21ce',
       1 => 
       array (
         0 => 'sebastianbergmann\\objectenumerator\\enumerator',
@@ -15,6 +15,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'sebastianbergmann\\objectenumerator\\enumerate',
+        1 => 'sebastianbergmann\\objectenumerator\\process',
       ),
       3 => 
       array (

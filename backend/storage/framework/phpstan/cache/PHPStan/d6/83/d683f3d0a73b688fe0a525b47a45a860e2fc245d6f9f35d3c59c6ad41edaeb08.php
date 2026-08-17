@@ -330,6 +330,45 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'typeAliasClassName' => NULL,
          'traitData' => NULL,
       )),
+      'cd74b7b5a4981c85a38b320686fb2d04' => 
+      \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+         'namespace' => 'Illuminate\\Support',
+         'uses' => 
+        array (
+          'closure' => 'Closure',
+          'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
+          'environment' => 'League\\CommonMark\\Environment\\Environment',
+          'githubflavoredmarkdownextension' => 'League\\CommonMark\\Extension\\GithubFlavoredMarkdownExtension',
+          'inlinesonlyextension' => 'League\\CommonMark\\Extension\\InlinesOnly\\InlinesOnlyExtension',
+          'githubflavoredmarkdownconverter' => 'League\\CommonMark\\GithubFlavoredMarkdownConverter',
+          'markdownconverter' => 'League\\CommonMark\\MarkdownConverter',
+          'timestampfirstcombcodec' => 'Ramsey\\Uuid\\Codec\\TimestampFirstCombCodec',
+          'invaliduuidstringexception' => 'Ramsey\\Uuid\\Exception\\InvalidUuidStringException',
+          'combgenerator' => 'Ramsey\\Uuid\\Generator\\CombGenerator',
+          'fieldsinterface' => 'Ramsey\\Uuid\\Rfc4122\\FieldsInterface',
+          'uuid' => 'Ramsey\\Uuid\\Uuid',
+          'uuidfactory' => 'Ramsey\\Uuid\\UuidFactory',
+          'ulid' => 'Symfony\\Component\\Uid\\Ulid',
+          'throwable' => 'Throwable',
+          'traversable' => 'Traversable',
+          'ascii' => 'voku\\helper\\ASCII',
+        ),
+         'className' => 'Illuminate\\Support\\Str',
+         'functionName' => 'trans',
+         'templatePhpDocNodes' => 
+        array (
+        ),
+         'parent' => NULL,
+         'typeAliasesMap' => 
+        array (
+        ),
+         'bypassTypeAliases' => false,
+         'constUses' => 
+        array (
+        ),
+         'typeAliasClassName' => NULL,
+         'traitData' => NULL,
+      )),
       'd6820fe797291d4aa0a6877c057ed21b' => 
       \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
          'namespace' => 'Illuminate\\Support',
@@ -940,6 +979,45 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         ),
          'className' => 'Illuminate\\Support\\Str',
          'functionName' => 'convertCase',
+         'templatePhpDocNodes' => 
+        array (
+        ),
+         'parent' => NULL,
+         'typeAliasesMap' => 
+        array (
+        ),
+         'bypassTypeAliases' => false,
+         'constUses' => 
+        array (
+        ),
+         'typeAliasClassName' => NULL,
+         'traitData' => NULL,
+      )),
+      '300b6208ce1fb0789b7f0fb31bcc440d' => 
+      \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+         'namespace' => 'Illuminate\\Support',
+         'uses' => 
+        array (
+          'closure' => 'Closure',
+          'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
+          'environment' => 'League\\CommonMark\\Environment\\Environment',
+          'githubflavoredmarkdownextension' => 'League\\CommonMark\\Extension\\GithubFlavoredMarkdownExtension',
+          'inlinesonlyextension' => 'League\\CommonMark\\Extension\\InlinesOnly\\InlinesOnlyExtension',
+          'githubflavoredmarkdownconverter' => 'League\\CommonMark\\GithubFlavoredMarkdownConverter',
+          'markdownconverter' => 'League\\CommonMark\\MarkdownConverter',
+          'timestampfirstcombcodec' => 'Ramsey\\Uuid\\Codec\\TimestampFirstCombCodec',
+          'invaliduuidstringexception' => 'Ramsey\\Uuid\\Exception\\InvalidUuidStringException',
+          'combgenerator' => 'Ramsey\\Uuid\\Generator\\CombGenerator',
+          'fieldsinterface' => 'Ramsey\\Uuid\\Rfc4122\\FieldsInterface',
+          'uuid' => 'Ramsey\\Uuid\\Uuid',
+          'uuidfactory' => 'Ramsey\\Uuid\\UuidFactory',
+          'ulid' => 'Symfony\\Component\\Uid\\Ulid',
+          'throwable' => 'Throwable',
+          'traversable' => 'Traversable',
+          'ascii' => 'voku\\helper\\ASCII',
+        ),
+         'className' => 'Illuminate\\Support\\Str',
+         'functionName' => 'counted',
          'templatePhpDocNodes' => 
         array (
         ),
@@ -2578,6 +2656,45 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         ),
          'className' => 'Illuminate\\Support\\Str',
          'functionName' => 'replace',
+         'templatePhpDocNodes' => 
+        array (
+        ),
+         'parent' => NULL,
+         'typeAliasesMap' => 
+        array (
+        ),
+         'bypassTypeAliases' => false,
+         'constUses' => 
+        array (
+        ),
+         'typeAliasClassName' => NULL,
+         'traitData' => NULL,
+      )),
+      '9fdab123ef7b1a2a7432503169c244c3' => 
+      \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+         'namespace' => 'Illuminate\\Support',
+         'uses' => 
+        array (
+          'closure' => 'Closure',
+          'macroable' => 'Illuminate\\Support\\Traits\\Macroable',
+          'environment' => 'League\\CommonMark\\Environment\\Environment',
+          'githubflavoredmarkdownextension' => 'League\\CommonMark\\Extension\\GithubFlavoredMarkdownExtension',
+          'inlinesonlyextension' => 'League\\CommonMark\\Extension\\InlinesOnly\\InlinesOnlyExtension',
+          'githubflavoredmarkdownconverter' => 'League\\CommonMark\\GithubFlavoredMarkdownConverter',
+          'markdownconverter' => 'League\\CommonMark\\MarkdownConverter',
+          'timestampfirstcombcodec' => 'Ramsey\\Uuid\\Codec\\TimestampFirstCombCodec',
+          'invaliduuidstringexception' => 'Ramsey\\Uuid\\Exception\\InvalidUuidStringException',
+          'combgenerator' => 'Ramsey\\Uuid\\Generator\\CombGenerator',
+          'fieldsinterface' => 'Ramsey\\Uuid\\Rfc4122\\FieldsInterface',
+          'uuid' => 'Ramsey\\Uuid\\Uuid',
+          'uuidfactory' => 'Ramsey\\Uuid\\UuidFactory',
+          'ulid' => 'Symfony\\Component\\Uid\\Ulid',
+          'throwable' => 'Throwable',
+          'traversable' => 'Traversable',
+          'ascii' => 'voku\\helper\\ASCII',
+        ),
+         'className' => 'Illuminate\\Support\\Str',
+         'functionName' => 'replaceWhileIgnoringCase',
          'templatePhpDocNodes' => 
         array (
         ),
@@ -4584,7 +4701,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Support/Str.php' => '1993f1413bd9709360c04b266ee2d94d1a6a324561167bfa5986e06ae2a6c489',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Support/Str.php' => '14a4be5b420ed2fed14855cc622067ecfe9d73b038d2cdb683e47c5d38196183',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php' => '6dd85b1e28b55ebeee678f9ca423dfb8375e1342bc42d8658da6321bdf97b3c0',
     ),
   ),

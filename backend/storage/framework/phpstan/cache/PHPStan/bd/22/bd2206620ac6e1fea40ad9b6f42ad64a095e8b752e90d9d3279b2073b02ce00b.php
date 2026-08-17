@@ -43,7 +43,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/complexity/src/Complexity/ComplexityCollection.php' => 
     array (
-      0 => 'c9914d75fcbb35eda7bd5ad9d1f4d768dfc3e06e3f06bcf39bee04b21c56eedc',
+      0 => '8c66e32368a956b27fc9d34874b4627c7fdd43238c29cc7186303bb5f5824e1b',
       1 => 
       array (
         0 => 'sebastianbergmann\\complexity\\complexitycollection',

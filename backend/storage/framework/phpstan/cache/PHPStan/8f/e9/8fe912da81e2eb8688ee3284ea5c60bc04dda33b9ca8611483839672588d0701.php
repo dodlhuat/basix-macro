@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\ExceptionMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-950ade3507d371cb2c8e773beab1361f489dee316cc2fef0fc5c9da4ecb98fa4-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-eb9c731b8ac0f90d20e4f1687e559ce2c70fb77df00c5fef46464a1457d7d7f8-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'make:exception\'',
             'attributes' => 
             array (
-              'startLine' => 13,
-              'endLine' => 13,
-              'startTokenPos' => 45,
-              'startFilePos' => 354,
-              'endTokenPos' => 45,
-              'endFilePos' => 369,
+              'startLine' => 12,
+              'endLine' => 12,
+              'startTokenPos' => 40,
+              'startFilePos' => 305,
+              'endTokenPos' => 40,
+              'endFilePos' => 320,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 13,
-    'endLine' => 107,
+    'startLine' => 12,
+    'endLine' => 96,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\GeneratorCommand',
@@ -63,38 +63,42 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\ExceptionMakeCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\ExceptionMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:exception\'',
+          'code' => '\'make:exception
+                    {name : The name of the exception}
+                    {--f|force : Create the class even if the exception already exists}
+                    {--render : Create the exception with an empty render method}
+                    {--report : Create the exception with an empty report method}\'',
           'attributes' => 
           array (
-            'startLine' => 21,
-            'endLine' => 21,
-            'startTokenPos' => 67,
-            'startFilePos' => 524,
-            'endTokenPos' => 67,
-            'endFilePos' => 539,
+            'startLine' => 20,
+            'endLine' => 24,
+            'startTokenPos' => 62,
+            'startFilePos' => 501,
+            'endTokenPos' => 62,
+            'endFilePos' => 823,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 21,
-        'endLine' => 21,
+        'startLine' => 20,
+        'endLine' => 24,
         'startColumn' => 5,
-        'endColumn' => 39,
+        'endColumn' => 83,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -114,12 +118,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Create a new custom exception class\'',
           'attributes' => 
           array (
-            'startLine' => 28,
-            'endLine' => 28,
-            'startTokenPos' => 78,
-            'startFilePos' => 654,
-            'endTokenPos' => 78,
-            'endFilePos' => 690,
+            'startLine' => 31,
+            'endLine' => 31,
+            'startTokenPos' => 73,
+            'startFilePos' => 938,
+            'endTokenPos' => 73,
+            'endFilePos' => 974,
           ),
         ),
         'docComment' => '/**
@@ -130,8 +134,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 28,
-        'endLine' => 28,
+        'startLine' => 31,
+        'endLine' => 31,
         'startColumn' => 5,
         'endColumn' => 67,
         'isPromoted' => false,
@@ -153,12 +157,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Exception\'',
           'attributes' => 
           array (
-            'startLine' => 35,
-            'endLine' => 35,
-            'startTokenPos' => 89,
-            'startFilePos' => 800,
-            'endTokenPos' => 89,
-            'endFilePos' => 810,
+            'startLine' => 38,
+            'endLine' => 38,
+            'startTokenPos' => 84,
+            'startFilePos' => 1084,
+            'endTokenPos' => 84,
+            'endFilePos' => 1094,
           ),
         ),
         'docComment' => '/**
@@ -169,8 +173,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 35,
-        'endLine' => 35,
+        'startLine' => 38,
+        'endLine' => 38,
         'startColumn' => 5,
         'endColumn' => 34,
         'isPromoted' => false,
@@ -199,8 +203,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 42,
-        'endLine' => 53,
+        'startLine' => 45,
+        'endLine' => 56,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -230,8 +234,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 61,
-            'endLine' => 61,
+            'startLine' => 64,
+            'endLine' => 64,
             'startColumn' => 38,
             'endColumn' => 45,
             'parameterIndex' => 0,
@@ -249,8 +253,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rawName
  * @return bool
  */',
-        'startLine' => 61,
-        'endLine' => 64,
+        'startLine' => 64,
+        'endLine' => 67,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -280,8 +284,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 72,
-            'endLine' => 72,
+            'startLine' => 75,
+            'endLine' => 75,
             'startColumn' => 44,
             'endColumn' => 57,
             'parameterIndex' => 0,
@@ -299,8 +303,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rootNamespace
  * @return string
  */',
-        'startLine' => 72,
-        'endLine' => 75,
+        'startLine' => 75,
+        'endLine' => 78,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -338,8 +342,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 84,
-            'endLine' => 84,
+            'startLine' => 87,
+            'endLine' => 87,
             'startColumn' => 58,
             'endColumn' => 78,
             'parameterIndex' => 0,
@@ -364,8 +368,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 84,
-            'endLine' => 84,
+            'startLine' => 87,
+            'endLine' => 87,
             'startColumn' => 81,
             'endColumn' => 103,
             'parameterIndex' => 1,
@@ -384,39 +388,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Symfony\\Component\\Console\\Output\\OutputInterface  $output
  * @return void
  */',
-        'startLine' => 84,
-        'endLine' => 92,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\ExceptionMakeCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\ExceptionMakeCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\ExceptionMakeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command options.
- *
- * @return array
- */',
-        'startLine' => 99,
-        'endLine' => 106,
+        'startLine' => 87,
+        'endLine' => 95,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

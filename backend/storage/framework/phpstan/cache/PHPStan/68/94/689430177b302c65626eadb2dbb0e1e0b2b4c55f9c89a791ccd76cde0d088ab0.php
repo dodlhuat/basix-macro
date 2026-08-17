@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/environment/src/Console.php' => 
     array (
-      0 => 'b1d7538a16bf550f753da7c4d5f796b2ded0b28c0e8bd23e906b8c7f408f3b41',
+      0 => 'a97218b042cafd892e66a8ff3c586be7b3b21810cb1fb59a3237cf43e149c17b',
       1 => 
       array (
         0 => 'sebastianbergmann\\environment\\console',
@@ -54,6 +54,23 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         17 => 'sebastianbergmann\\environment\\isopcacheactive',
         18 => 'sebastianbergmann\\environment\\parseloadedinifiles',
         19 => 'sebastianbergmann\\environment\\compileddefaults',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/vendor/sebastian/environment/src/Host.php' => 
+    array (
+      0 => 'ebc8122712d61dceeedf9bf081f6e09ea6bbe3d4686a22dcb7f72134bcf95af5',
+      1 => 
+      array (
+        0 => 'sebastianbergmann\\environment\\host',
+      ),
+      2 => 
+      array (
+        0 => 'sebastianbergmann\\environment\\name',
+        1 => 'sebastianbergmann\\environment\\user',
+        2 => 'sebastianbergmann\\environment\\operatingsystem',
       ),
       3 => 
       array (

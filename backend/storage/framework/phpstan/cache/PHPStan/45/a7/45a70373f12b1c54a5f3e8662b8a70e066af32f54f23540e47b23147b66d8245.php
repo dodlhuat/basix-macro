@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/ModelMakeCommand.php-presentSymbols
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-52c3c71fba8e2dbce12b1e560c0af437c46bb836f5882a341c2adda2709b7d29-8.5.6',
+   'variableKey' => 'v2-4a1e76710265fcec3a239f98ad55467f45a98bd604a91b7132d3245b9b8539a0-8.5.6',
    'data' => 
   array (
     'classes' => 

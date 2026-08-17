@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Queue\Console\MonitorCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-613d13c9c05829c6a30588cddc291b038db31738d32d8801b208bfdbf7f4e4ec-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-f36cf3898f233aa7d02fd4a1385a031736721b003399fe25192f06200285a62c-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'queue:monitor\'',
             'attributes' => 
             array (
-              'startLine' => 13,
-              'endLine' => 13,
-              'startTokenPos' => 48,
-              'startFilePos' => 335,
-              'endTokenPos' => 48,
-              'endFilePos' => 349,
+              'startLine' => 14,
+              'endLine' => 14,
+              'startTokenPos' => 53,
+              'startFilePos' => 370,
+              'endTokenPos' => 53,
+              'endFilePos' => 384,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 13,
-    'endLine' => 164,
+    'startLine' => 14,
+    'endLine' => 165,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\Command',
@@ -78,12 +78,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
                        {--json : Output the queue size as JSON}\'',
           'attributes' => 
           array (
-            'startLine' => 21,
-            'endLine' => 24,
-            'startTokenPos' => 70,
-            'startFilePos' => 494,
-            'endTokenPos' => 70,
-            'endFilePos' => 761,
+            'startLine' => 22,
+            'endLine' => 25,
+            'startTokenPos' => 75,
+            'startFilePos' => 529,
+            'endTokenPos' => 75,
+            'endFilePos' => 796,
           ),
         ),
         'docComment' => '/**
@@ -94,8 +94,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 21,
-        'endLine' => 24,
+        'startLine' => 22,
+        'endLine' => 25,
         'startColumn' => 5,
         'endColumn' => 65,
         'isPromoted' => false,
@@ -117,12 +117,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Monitor the size of the specified queues\'',
           'attributes' => 
           array (
-            'startLine' => 31,
-            'endLine' => 31,
-            'startTokenPos' => 81,
-            'startFilePos' => 876,
-            'endTokenPos' => 81,
-            'endFilePos' => 917,
+            'startLine' => 32,
+            'endLine' => 32,
+            'startTokenPos' => 86,
+            'startFilePos' => 911,
+            'endTokenPos' => 86,
+            'endFilePos' => 952,
           ),
         ),
         'docComment' => '/**
@@ -133,8 +133,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 31,
-        'endLine' => 31,
+        'startLine' => 32,
+        'endLine' => 32,
         'startColumn' => 5,
         'endColumn' => 72,
         'isPromoted' => false,
@@ -160,8 +160,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 38,
-        'endLine' => 38,
+        'startLine' => 39,
+        'endLine' => 39,
         'startColumn' => 5,
         'endColumn' => 23,
         'isPromoted' => false,
@@ -187,8 +187,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 45,
-        'endLine' => 45,
+        'startLine' => 46,
+        'endLine' => 46,
         'startColumn' => 5,
         'endColumn' => 22,
         'isPromoted' => false,
@@ -225,8 +225,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 53,
-            'endLine' => 53,
+            'startLine' => 54,
+            'endLine' => 54,
             'startColumn' => 33,
             'endColumn' => 48,
             'parameterIndex' => 0,
@@ -251,8 +251,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 53,
-            'endLine' => 53,
+            'startLine' => 54,
+            'endLine' => 54,
             'startColumn' => 51,
             'endColumn' => 68,
             'parameterIndex' => 1,
@@ -270,8 +270,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Contracts\\Queue\\Factory  $manager
  * @param  \\Illuminate\\Contracts\\Events\\Dispatcher  $events
  */',
-        'startLine' => 53,
-        'endLine' => 59,
+        'startLine' => 54,
+        'endLine' => 60,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -301,8 +301,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return void
  */',
-        'startLine' => 66,
-        'endLine' => 81,
+        'startLine' => 67,
+        'endLine' => 82,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -332,8 +332,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 89,
-            'endLine' => 89,
+            'startLine' => 90,
+            'endLine' => 90,
             'startColumn' => 36,
             'endColumn' => 42,
             'parameterIndex' => 0,
@@ -351,8 +351,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $queues
  * @return \\Illuminate\\Support\\Collection
  */',
-        'startLine' => 89,
-        'endLine' => 110,
+        'startLine' => 90,
+        'endLine' => 111,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -390,8 +390,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 118,
-            'endLine' => 118,
+            'startLine' => 119,
+            'endLine' => 119,
             'startColumn' => 37,
             'endColumn' => 54,
             'parameterIndex' => 0,
@@ -409,8 +409,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Support\\Collection  $queues
  * @return void
  */',
-        'startLine' => 118,
-        'endLine' => 140,
+        'startLine' => 119,
+        'endLine' => 141,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -448,8 +448,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 148,
-            'endLine' => 148,
+            'startLine' => 149,
+            'endLine' => 149,
             'startColumn' => 39,
             'endColumn' => 56,
             'parameterIndex' => 0,
@@ -467,8 +467,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Illuminate\\Support\\Collection  $queues
  * @return void
  */',
-        'startLine' => 148,
-        'endLine' => 163,
+        'startLine' => 149,
+        'endLine' => 164,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

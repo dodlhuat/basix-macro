@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Support/Traits/InteractsWithData.php-presentSymbols
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-4c774da8f03dc5f3b08c79beac0700e9b64ced809b57261a7723b4f2f1d4b3a9-8.5.6',
+   'variableKey' => 'v2-dbf55c811a92f40534849941d51cbcd4c995fe1c36e9b8b754faf50c3442a085-8.5.6',
    'data' => 
   array (
     'classes' => 

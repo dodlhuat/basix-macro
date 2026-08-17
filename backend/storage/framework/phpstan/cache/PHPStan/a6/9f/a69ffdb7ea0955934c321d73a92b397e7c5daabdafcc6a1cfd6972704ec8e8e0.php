@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/ListenerMakeCommand.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Illuminate\Foundation\Console\ListenerMakeCommand
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-2d1430c9403e61e056bdc971ed4d1c3872e8098c1187b28d50c4cedb3d9fe8ae-8.5.6-6.70.0.1',
+   'variableKey' => 'v2-58bb9409bba340b09cbe15032714105569690600db14d844efc84dfe92e487ef-8.5.6-6.70.0.1',
    'data' => 
   array (
     'locatedSource' => 
@@ -36,19 +36,19 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'code' => '\'make:listener\'',
             'attributes' => 
             array (
-              'startLine' => 15,
-              'endLine' => 15,
-              'startTokenPos' => 55,
-              'startFilePos' => 435,
-              'endTokenPos' => 55,
-              'endFilePos' => 449,
+              'startLine' => 14,
+              'endLine' => 14,
+              'startTokenPos' => 50,
+              'startFilePos' => 386,
+              'endTokenPos' => 50,
+              'endFilePos' => 400,
             ),
           ),
         ),
       ),
     ),
-    'startLine' => 15,
-    'endLine' => 157,
+    'startLine' => 14,
+    'endLine' => 146,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Console\\GeneratorCommand',
@@ -64,38 +64,42 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
-      'name' => 
+      'signature' => 
       array (
         'declaringClassName' => 'Illuminate\\Foundation\\Console\\ListenerMakeCommand',
         'implementingClassName' => 'Illuminate\\Foundation\\Console\\ListenerMakeCommand',
-        'name' => 'name',
+        'name' => 'signature',
         'modifiers' => 2,
         'type' => NULL,
         'default' => 
         array (
-          'code' => '\'make:listener\'',
+          'code' => '\'make:listener
+                    {name : The name of the listener}
+                    {--e|event= : The event class being listened for}
+                    {--f|force : Create the class even if the listener already exists}
+                    {--queued : Indicates the event listener should be queued}\'',
           'attributes' => 
           array (
-            'startLine' => 25,
-            'endLine' => 25,
-            'startTokenPos' => 82,
-            'startFilePos' => 633,
-            'endTokenPos' => 82,
-            'endFilePos' => 647,
+            'startLine' => 24,
+            'endLine' => 28,
+            'startTokenPos' => 77,
+            'startFilePos' => 610,
+            'endTokenPos' => 77,
+            'endFilePos' => 914,
           ),
         ),
         'docComment' => '/**
- * The console command name.
+ * The name and signature of the console command.
  *
  * @var string
  */',
         'attributes' => 
         array (
         ),
-        'startLine' => 25,
-        'endLine' => 25,
+        'startLine' => 24,
+        'endLine' => 28,
         'startColumn' => 5,
-        'endColumn' => 38,
+        'endColumn' => 80,
         'isPromoted' => false,
         'declaredAtCompileTime' => true,
         'immediateVirtual' => false,
@@ -115,12 +119,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Create a new event listener class\'',
           'attributes' => 
           array (
-            'startLine' => 32,
-            'endLine' => 32,
-            'startTokenPos' => 93,
-            'startFilePos' => 762,
-            'endTokenPos' => 93,
-            'endFilePos' => 796,
+            'startLine' => 35,
+            'endLine' => 35,
+            'startTokenPos' => 88,
+            'startFilePos' => 1029,
+            'endTokenPos' => 88,
+            'endFilePos' => 1063,
           ),
         ),
         'docComment' => '/**
@@ -131,8 +135,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 32,
-        'endLine' => 32,
+        'startLine' => 35,
+        'endLine' => 35,
         'startColumn' => 5,
         'endColumn' => 65,
         'isPromoted' => false,
@@ -154,12 +158,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'Listener\'',
           'attributes' => 
           array (
-            'startLine' => 39,
-            'endLine' => 39,
-            'startTokenPos' => 104,
-            'startFilePos' => 906,
-            'endTokenPos' => 104,
-            'endFilePos' => 915,
+            'startLine' => 42,
+            'endLine' => 42,
+            'startTokenPos' => 99,
+            'startFilePos' => 1173,
+            'endTokenPos' => 99,
+            'endFilePos' => 1182,
           ),
         ),
         'docComment' => '/**
@@ -170,8 +174,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 39,
-        'endLine' => 39,
+        'startLine' => 42,
+        'endLine' => 42,
         'startColumn' => 5,
         'endColumn' => 33,
         'isPromoted' => false,
@@ -200,8 +204,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 47,
-            'endLine' => 47,
+            'startLine' => 50,
+            'endLine' => 50,
             'startColumn' => 35,
             'endColumn' => 39,
             'parameterIndex' => 0,
@@ -219,8 +223,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $name
  * @return string
  */',
-        'startLine' => 47,
-        'endLine' => 66,
+        'startLine' => 50,
+        'endLine' => 69,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -250,8 +254,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 74,
-            'endLine' => 74,
+            'startLine' => 77,
+            'endLine' => 77,
             'startColumn' => 40,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -269,8 +273,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $stub
  * @return string
  */',
-        'startLine' => 74,
-        'endLine' => 79,
+        'startLine' => 77,
+        'endLine' => 82,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -300,8 +304,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return string
  */',
-        'startLine' => 86,
-        'endLine' => 97,
+        'startLine' => 89,
+        'endLine' => 100,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -331,8 +335,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 105,
-            'endLine' => 105,
+            'startLine' => 108,
+            'endLine' => 108,
             'startColumn' => 38,
             'endColumn' => 45,
             'parameterIndex' => 0,
@@ -350,8 +354,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rawName
  * @return bool
  */',
-        'startLine' => 105,
-        'endLine' => 108,
+        'startLine' => 108,
+        'endLine' => 111,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -381,8 +385,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 116,
-            'endLine' => 116,
+            'startLine' => 119,
+            'endLine' => 119,
             'startColumn' => 44,
             'endColumn' => 57,
             'parameterIndex' => 0,
@@ -400,39 +404,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  string  $rootNamespace
  * @return string
  */',
-        'startLine' => 116,
-        'endLine' => 119,
-        'startColumn' => 5,
-        'endColumn' => 5,
-        'couldThrow' => false,
-        'isClosure' => false,
-        'isGenerator' => false,
-        'isVariadic' => false,
-        'modifiers' => 2,
-        'namespace' => 'Illuminate\\Foundation\\Console',
-        'declaringClassName' => 'Illuminate\\Foundation\\Console\\ListenerMakeCommand',
-        'implementingClassName' => 'Illuminate\\Foundation\\Console\\ListenerMakeCommand',
-        'currentClassName' => 'Illuminate\\Foundation\\Console\\ListenerMakeCommand',
-        'aliasName' => NULL,
-      ),
-      'getOptions' => 
-      array (
-        'name' => 'getOptions',
-        'parameters' => 
-        array (
-        ),
-        'returnsReference' => false,
-        'returnType' => NULL,
-        'attributes' => 
-        array (
-        ),
-        'docComment' => '/**
- * Get the console command options.
- *
- * @return array
- */',
-        'startLine' => 126,
-        'endLine' => 133,
+        'startLine' => 119,
+        'endLine' => 122,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -470,8 +443,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 142,
-            'endLine' => 142,
+            'startLine' => 131,
+            'endLine' => 131,
             'startColumn' => 58,
             'endColumn' => 78,
             'parameterIndex' => 0,
@@ -496,8 +469,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 142,
-            'endLine' => 142,
+            'startLine' => 131,
+            'endLine' => 131,
             'startColumn' => 81,
             'endColumn' => 103,
             'parameterIndex' => 1,
@@ -516,8 +489,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @param  \\Symfony\\Component\\Console\\Output\\OutputInterface  $output
  * @return void
  */',
-        'startLine' => 142,
-        'endLine' => 156,
+        'startLine' => 131,
+        'endLine' => 145,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

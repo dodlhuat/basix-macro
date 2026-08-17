@@ -46,7 +46,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/vendor/phpunit/php-timer/src/Timer.php' => 
     array (
-      0 => '5ca4c32874fdb81f143917faf8436ba868fe090720286e371f79240d8379b2c5',
+      0 => '6b82217a8623121936db029a3e84932dd684e6e644755396c53de414a5476e70',
       1 => 
       array (
         0 => 'sebastianbergmann\\timer\\timer',

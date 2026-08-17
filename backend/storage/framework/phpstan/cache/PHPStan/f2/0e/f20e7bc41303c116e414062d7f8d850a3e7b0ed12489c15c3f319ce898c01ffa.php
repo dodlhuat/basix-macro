@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/ConfigClearCommand.php-presentSymbols
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-999f384fbd138aaf9b4f541c0d35ba5a612a18277fd8a7b94385ff400c0ecdf4-8.5.6',
+   'variableKey' => 'v2-f0a6b07ebd2e48791ebbdb6a487095a735940ec63bc533046aac44afcecc8c81-8.5.6',
    'data' => 
   array (
     'classes' => 

@@ -12825,6 +12825,116 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'typeAliasClassName' => NULL,
          'traitData' => NULL,
       )),
+      '8bb1fa0d89f12190c0d6bb4f9e041476' => 
+      \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+         'namespace' => 'Illuminate\\Database\\Eloquent',
+         'uses' => 
+        array (
+          'badmethodcallexception' => 'BadMethodCallException',
+          'closure' => 'Closure',
+          'exception' => 'Exception',
+          'buildercontract' => 'Illuminate\\Contracts\\Database\\Eloquent\\Builder',
+          'expression' => 'Illuminate\\Contracts\\Database\\Query\\Expression',
+          'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
+          'buildsqueries' => 'Illuminate\\Database\\Concerns\\BuildsQueries',
+          'queriesrelationships' => 'Illuminate\\Database\\Eloquent\\Concerns\\QueriesRelationships',
+          'belongstomany' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany',
+          'relation' => 'Illuminate\\Database\\Eloquent\\Relations\\Relation',
+          'querybuilder' => 'Illuminate\\Database\\Query\\Builder',
+          'recordsnotfoundexception' => 'Illuminate\\Database\\RecordsNotFoundException',
+          'uniqueconstraintviolationexception' => 'Illuminate\\Database\\UniqueConstraintViolationException',
+          'paginator' => 'Illuminate\\Pagination\\Paginator',
+          'arr' => 'Illuminate\\Support\\Arr',
+          'basecollection' => 'Illuminate\\Support\\Collection',
+          'str' => 'Illuminate\\Support\\Str',
+          'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
+          'reflectionclass' => 'ReflectionClass',
+          'reflectionmethod' => 'ReflectionMethod',
+          'sortdirection' => 'SortDirection',
+        ),
+         'className' => 'Illuminate\\Database\\Eloquent\\Builder',
+         'functionName' => 'modelKeys',
+         'templatePhpDocNodes' => 
+        array (
+        ),
+         'parent' => 
+        \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+           'namespace' => 'Illuminate\\Database\\Eloquent',
+           'uses' => 
+          array (
+            'badmethodcallexception' => 'BadMethodCallException',
+            'closure' => 'Closure',
+            'exception' => 'Exception',
+            'buildercontract' => 'Illuminate\\Contracts\\Database\\Eloquent\\Builder',
+            'expression' => 'Illuminate\\Contracts\\Database\\Query\\Expression',
+            'arrayable' => 'Illuminate\\Contracts\\Support\\Arrayable',
+            'buildsqueries' => 'Illuminate\\Database\\Concerns\\BuildsQueries',
+            'queriesrelationships' => 'Illuminate\\Database\\Eloquent\\Concerns\\QueriesRelationships',
+            'belongstomany' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany',
+            'relation' => 'Illuminate\\Database\\Eloquent\\Relations\\Relation',
+            'querybuilder' => 'Illuminate\\Database\\Query\\Builder',
+            'recordsnotfoundexception' => 'Illuminate\\Database\\RecordsNotFoundException',
+            'uniqueconstraintviolationexception' => 'Illuminate\\Database\\UniqueConstraintViolationException',
+            'paginator' => 'Illuminate\\Pagination\\Paginator',
+            'arr' => 'Illuminate\\Support\\Arr',
+            'basecollection' => 'Illuminate\\Support\\Collection',
+            'str' => 'Illuminate\\Support\\Str',
+            'forwardscalls' => 'Illuminate\\Support\\Traits\\ForwardsCalls',
+            'reflectionclass' => 'ReflectionClass',
+            'reflectionmethod' => 'ReflectionMethod',
+            'sortdirection' => 'SortDirection',
+          ),
+           'className' => 'Illuminate\\Database\\Eloquent\\Builder',
+           'functionName' => NULL,
+           'templatePhpDocNodes' => 
+          array (
+            'TModel' => 
+            array (
+              0 => '@template',
+              1 => 
+              \PHPStan\PhpDocParser\Ast\PhpDoc\TemplateTagValueNode::__set_state(array(
+                 'name' => 'TModel',
+                 'bound' => 
+                \PHPStan\PhpDocParser\Ast\Type\IdentifierTypeNode::__set_state(array(
+                   'name' => '\\Illuminate\\Database\\Eloquent\\Model',
+                   'attributes' => 
+                  array (
+                    'startLine' => 2,
+                    'endLine' => 2,
+                  ),
+                )),
+                 'default' => NULL,
+                 'lowerBound' => NULL,
+                 'description' => '',
+                 'attributes' => 
+                array (
+                  'startLine' => 2,
+                  'endLine' => 2,
+                ),
+              )),
+            ),
+          ),
+           'parent' => NULL,
+           'typeAliasesMap' => 
+          array (
+          ),
+           'bypassTypeAliases' => false,
+           'constUses' => 
+          array (
+          ),
+           'typeAliasClassName' => NULL,
+           'traitData' => NULL,
+        )),
+         'typeAliasesMap' => 
+        array (
+        ),
+         'bypassTypeAliases' => false,
+         'constUses' => 
+        array (
+        ),
+         'typeAliasClassName' => NULL,
+         'traitData' => NULL,
+      )),
       '3bfbd5dd0780d9f151d7d49073ed3cfd' => 
       \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
          'namespace' => 'Illuminate\\Database\\Eloquent',
@@ -20460,11 +20570,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php' => '226663eaa62c9e208021fa7a9b97bb9b943f87fb7a4e092ab1ccbfcf80aec517',
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php' => '53fef9eb409578649b19614ca5d45cebb5271d0d58256229d73649e9f8a8e02a',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php' => '7b77e8571198a26e4dcf488fbbccb860938cfce8ccec79cdfa7fa8aa1ac3abbc',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php' => 'be4648e2c7b26daff6b8e2f21667413efb4a12eeb42130890ba4e586f0cb1ee1',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Conditionable/Traits/Conditionable.php' => '5697fdba0acb78ca0b4e122e5c459cd5d97d000ed9b14fed31271cb7ffd44225',
       '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php' => 'b90103bc7248a11bd7629c525e064a45a50dd93ae0d836bcb79937e63f0b3568',
-      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php' => '263edd7c8572a64f5d45c5813b92f14e85031a941b02d030bf781a7f0ef5a7ce',
+      '/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php' => '1e247cedba077d1b534f6bb5ba2226e3f98beb291728a2fc46cb232660f94c7a',
     ),
   ),
 ));

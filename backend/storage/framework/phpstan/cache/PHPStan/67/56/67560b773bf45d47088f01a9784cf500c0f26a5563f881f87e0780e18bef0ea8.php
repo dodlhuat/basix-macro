@@ -2,7 +2,7 @@
 
 // osfsl-/Users/andibauer/Repositories/basix-macro/backend/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php-presentSymbols
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-380719e20cc154cd6da9fdeeb26bfd54f84ba04366a902cd465ea38bac71094f-8.5.6',
+   'variableKey' => 'v2-827d2aeda3bed9bb3a9573d5a735f5e816a641fd67c9cf984b4158cf6718fabb-8.5.6',
    'data' => 
   array (
     'classes' => 
