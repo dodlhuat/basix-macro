@@ -120,13 +120,13 @@
         <div class="scanner-sheet__handle" aria-hidden="true" />
 
         <!-- ─ Found product ─ -->
-        <template v-if="sheetMode === 'found' && offProduct">
+        <template v-if="sheetMode === 'found' && matchedProduct">
           <div class="scanner-sheet__header">
             <AppIcon name="check_circle" size="1.375rem" class="scanner-sheet__found-icon" />
             <div class="scanner-sheet__product-info">
-              <p class="scanner-sheet__product-name">{{ offProduct.name }}</p>
-              <p v-if="offProduct.brand" class="scanner-sheet__product-brand">
-                {{ offProduct.brand }}
+              <p class="scanner-sheet__product-name">{{ matchedProduct.name }}</p>
+              <p v-if="matchedProduct.brand" class="scanner-sheet__product-brand">
+                {{ matchedProduct.brand }}
               </p>
             </div>
           </div>
@@ -134,19 +134,19 @@
           <div class="scanner-sheet__body">
             <div class="scanner-sheet__macros">
               <div class="scanner-sheet__macro">
-                <span class="scanner-sheet__macro-value">{{ offProduct.calories }}</span>
+                <span class="scanner-sheet__macro-value">{{ matchedProduct.calories }}</span>
                 <span class="scanner-sheet__macro-label">kcal</span>
               </div>
               <div class="scanner-sheet__macro scanner-sheet__macro--protein">
-                <span class="scanner-sheet__macro-value">{{ offProduct.protein }}g</span>
+                <span class="scanner-sheet__macro-value">{{ matchedProduct.protein }}g</span>
                 <span class="scanner-sheet__macro-label">{{ $t('common.protein') }}</span>
               </div>
               <div class="scanner-sheet__macro scanner-sheet__macro--carbs">
-                <span class="scanner-sheet__macro-value">{{ offProduct.carbs }}g</span>
+                <span class="scanner-sheet__macro-value">{{ matchedProduct.carbs }}g</span>
                 <span class="scanner-sheet__macro-label">{{ $t('common.carbs') }}</span>
               </div>
               <div class="scanner-sheet__macro scanner-sheet__macro--fat">
-                <span class="scanner-sheet__macro-value">{{ offProduct.fat }}g</span>
+                <span class="scanner-sheet__macro-value">{{ matchedProduct.fat }}g</span>
                 <span class="scanner-sheet__macro-label">{{ $t('common.fat') }}</span>
               </div>
             </div>
@@ -203,12 +203,15 @@
 </template>
 
 <script setup lang="ts">
+import type { FoodItem } from '../../db'
+
 definePageMeta({ layout: false })
 
 const route = useRoute()
 const router = useRouter()
 const foodStore = useFoodStore()
 const { lookupBarcode, mapToFoodItem } = useOpenFoodFacts()
+const { findGlobalFoodByBarcode } = useGlobalFoodSearch()
 const {
   state: barcodeState,
   error: barcodeError,
@@ -234,17 +237,17 @@ type SheetMode = 'hidden' | 'found' | 'not-found'
 const sheetMode = ref<SheetMode>('hidden')
 const isSaving = ref(false)
 
-interface OffDisplayProduct {
+interface MatchedProduct {
   name: string
   brand?: string
   calories: number
   protein: number
   carbs: number
   fat: number
-  rawMapped: ReturnType<typeof mapToFoodItem>
+  rawMapped: Omit<FoodItem, 'id' | 'created_at' | 'updated_at' | 'sync_status' | 'deleted_at'>
 }
 
-const offProduct = ref<OffDisplayProduct | null>(null)
+const matchedProduct = ref<MatchedProduct | null>(null)
 
 // ─── Return-to params (passed in from diary/add) ──────────────────────────────
 
@@ -272,12 +275,30 @@ async function onDetected(barcode: string) {
       return
     }
 
-    // 2. Query Open Food Facts
+    // 2. Query Basix's own crowd-sourced database (skipped for guests, same
+    // auth gate as the text search on food/index.vue — falls through to OFF)
+    const globalMatch = await findGlobalFoodByBarcode(barcode)
+    if (globalMatch) {
+      const mapped = mapGlobalFoodToFoodItem(globalMatch)
+      matchedProduct.value = {
+        name: mapped.name,
+        brand: mapped.brand,
+        calories: mapped.calories_per_100g,
+        protein: mapped.protein_per_100g,
+        carbs: mapped.carbs_per_100g,
+        fat: mapped.fat_per_100g,
+        rawMapped: mapped,
+      }
+      sheetMode.value = 'found'
+      return
+    }
+
+    // 3. Query Open Food Facts
     const result = await lookupBarcode(barcode)
 
     if (result.found && result.product) {
       const mapped = mapToFoodItem(result.product)
-      offProduct.value = {
+      matchedProduct.value = {
         name: mapped.name,
         brand: mapped.brand,
         calories: mapped.calories_per_100g,
@@ -300,10 +321,10 @@ async function onDetected(barcode: string) {
 // ─── Sheet actions ────────────────────────────────────────────────────────────
 
 async function saveAndAdd() {
-  if (!offProduct.value || isSaving.value) return
+  if (!matchedProduct.value || isSaving.value) return
   isSaving.value = true
   try {
-    const id = await foodStore.addItem(offProduct.value.rawMapped)
+    const id = await foodStore.addItem(matchedProduct.value.rawMapped)
     stopScanner()
     await navigateTo(
       `/diary/add?food_id=${id}&date=${fromDate.value}&meal=${fromMeal.value}`,
@@ -316,7 +337,7 @@ async function saveAndAdd() {
 
 function rescan() {
   sheetMode.value = 'hidden'
-  offProduct.value = null
+  matchedProduct.value = null
   scannedBarcode.value = ''
   // Scanner is still running — no restart needed
 }

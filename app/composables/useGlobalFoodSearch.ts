@@ -87,5 +87,18 @@ export function useGlobalFoodSearch() {
     }
   }
 
-  return { searchGlobalFoods }
+  async function findGlobalFoodByBarcode(barcode: string): Promise<GlobalFoodResult | null> {
+    const authStore = useAuthStore()
+    if (!authStore.isAuthenticated || !barcode.trim()) return null
+
+    try {
+      const { get } = useApi()
+      const response = await get<{ data: GlobalFoodResult[] }>('/global-foods', { barcode })
+      return response.data?.[0] ?? null
+    } catch {
+      return null
+    }
+  }
+
+  return { searchGlobalFoods, findGlobalFoodByBarcode }
 }

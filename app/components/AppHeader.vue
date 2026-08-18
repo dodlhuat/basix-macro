@@ -10,7 +10,7 @@
     </div>
     <div>
       <div class="wordmark">
-        <span class="wordmark-thin">basix</span><span class="wordmark-bold">makro</span>
+        <span class="wordmark-thin">basix</span><span class="wordmark-bold">macro</span>
       </div>
     </div>
     <div class="last"/>

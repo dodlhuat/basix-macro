@@ -94,4 +94,33 @@ class GlobalFoodSubmissionTest extends TestCase
     {
         $this->getJson('/api/global-foods')->assertStatus(401);
     }
+
+    public function test_barcode_lookup_returns_an_exact_match(): void
+    {
+        $user = User::factory()->create();
+        $submitter = User::factory()->create();
+
+        GlobalFoodItem::factory()->create(['name' => 'Apfel', 'barcode' => '1111111111111', 'status' => 'approved', 'submitted_by' => $submitter->id]);
+        GlobalFoodItem::factory()->create(['name' => 'Banane', 'barcode' => '2222222222222', 'status' => 'approved', 'submitted_by' => $submitter->id]);
+        GlobalFoodItem::factory()->create(['name' => 'Kirsche', 'barcode' => '3333333333333', 'status' => 'approved', 'submitted_by' => $submitter->id]);
+
+        $response = $this->actingAs($user, 'sanctum')->getJson('/api/global-foods?barcode=2222222222222');
+
+        $response->assertOk();
+        $names = collect($response->json('data'))->pluck('name')->all();
+        $this->assertEquals(['Banane'], $names);
+    }
+
+    public function test_barcode_lookup_only_returns_approved_submissions(): void
+    {
+        $user = User::factory()->create();
+        $submitter = User::factory()->create();
+
+        GlobalFoodItem::factory()->create(['name' => 'Pending Apfel', 'barcode' => '4444444444444', 'status' => 'pending', 'submitted_by' => $submitter->id]);
+
+        $response = $this->actingAs($user, 'sanctum')->getJson('/api/global-foods?barcode=4444444444444');
+
+        $response->assertOk();
+        $this->assertEmpty($response->json('data'));
+    }
 }

@@ -76,7 +76,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/GlobalFoodController.php' => 
     array (
-      0 => '16455715e549cd2007d5bf21d5abd5e6ca905903e7f331af6a4d9ba66b34bdfe',
+      0 => '77c977902ab1148b4e9556d91ea9bc320509d26ee98ca95c50a11ab07a3726cd',
       1 => 
       array (
         0 => 'app\\http\\controllers\\api\\globalfoodcontroller',

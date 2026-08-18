@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Http/Controllers/Api/GlobalFoodController.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Http\Controllers\Api\GlobalFoodController
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-16455715e549cd2007d5bf21d5abd5e6ca905903e7f331af6a4d9ba66b34bdfe',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-77c977902ab1148b4e9556d91ea9bc320509d26ee98ca95c50a11ab07a3726cd',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 11,
-    'endLine' => 28,
+    'endLine' => 33,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'App\\Http\\Controllers\\Controller',
@@ -92,7 +92,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         ),
         'docComment' => NULL,
         'startLine' => 13,
-        'endLine' => 27,
+        'endLine' => 32,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
