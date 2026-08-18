@@ -287,23 +287,23 @@
           <!-- Nutrition preview -->
           <div v-if="sheetNutrition" class="da-sheet__nutrition">
             <div class="da-sheet__nutrition-item">
-              <span class="da-sheet__nutrition-value">{{ sheetNutrition.calories }}</span>
+              <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-calories)' }">{{ sheetNutrition.calories }}</span>
               <span class="da-sheet__nutrition-label">kcal</span>
             </div>
             <div class="da-sheet__nutrition-item">
-              <span class="da-sheet__nutrition-value" style="color: #ef4444">
+              <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-protein)' }">
                 {{ sheetNutrition.protein }}g
               </span>
               <span class="da-sheet__nutrition-label">{{ $t('common.protein') }}</span>
             </div>
             <div class="da-sheet__nutrition-item">
-              <span class="da-sheet__nutrition-value" style="color: #3b82f6">
+              <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-carbs)' }">
                 {{ sheetNutrition.carbs }}g
               </span>
               <span class="da-sheet__nutrition-label">{{ $t('common.carbs') }}</span>
             </div>
             <div class="da-sheet__nutrition-item">
-              <span class="da-sheet__nutrition-value" style="color: #f59e0b">
+              <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-fat)' }">
                 {{ sheetNutrition.fat }}g
               </span>
               <span class="da-sheet__nutrition-label">{{ $t('common.fat') }}</span>
@@ -424,19 +424,19 @@
 
             <div v-if="recipeSheetNutrition" class="da-sheet__nutrition">
               <div class="da-sheet__nutrition-item">
-                <span class="da-sheet__nutrition-value">{{ recipeSheetNutrition.calories }}</span>
+                <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-calories)' }">{{ recipeSheetNutrition.calories }}</span>
                 <span class="da-sheet__nutrition-label">kcal</span>
               </div>
               <div class="da-sheet__nutrition-item">
-                <span class="da-sheet__nutrition-value" style="color: #ef4444">{{ recipeSheetNutrition.protein }}g</span>
+                <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-protein)' }">{{ recipeSheetNutrition.protein }}g</span>
                 <span class="da-sheet__nutrition-label">{{ $t('common.protein') }}</span>
               </div>
               <div class="da-sheet__nutrition-item">
-                <span class="da-sheet__nutrition-value" style="color: #3b82f6">{{ recipeSheetNutrition.carbs }}g</span>
+                <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-carbs)' }">{{ recipeSheetNutrition.carbs }}g</span>
                 <span class="da-sheet__nutrition-label">{{ $t('common.carbs') }}</span>
               </div>
               <div class="da-sheet__nutrition-item">
-                <span class="da-sheet__nutrition-value" style="color: #f59e0b">{{ recipeSheetNutrition.fat }}g</span>
+                <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-fat)' }">{{ recipeSheetNutrition.fat }}g</span>
                 <span class="da-sheet__nutrition-label">{{ $t('common.fat') }}</span>
               </div>
             </div>

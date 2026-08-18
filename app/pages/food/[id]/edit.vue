@@ -545,10 +545,10 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
   margin-right: 0.3rem;
   vertical-align: middle;
 
-  &--kcal    { background: var(--accent-color); }
-  &--protein { background: #ef4444; }
-  &--carbs   { background: #3b82f6; }
-  &--fat     { background: #f59e0b; }
+  &--kcal    { background: var(--macro-calories); }
+  &--protein { background: var(--macro-protein); }
+  &--carbs   { background: var(--macro-carbs); }
+  &--fat     { background: var(--macro-fat); }
 }
 
 // ─── Error state ──────────────────────────────────────────────────────────────

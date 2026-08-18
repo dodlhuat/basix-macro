@@ -298,27 +298,30 @@
           <!-- Nutrition preview -->
           <div v-if="sheetNutrition" class="food-sheet__nutrition">
             <div class="food-sheet__nutrition-item">
-              <span class="food-sheet__nutrition-value">{{ sheetNutrition.calories }}</span>
+              <span
+                class="food-sheet__nutrition-value"
+                :style="{ color: 'var(--macro-calories)' }"
+              >{{ sheetNutrition.calories }}</span>
               <span class="food-sheet__nutrition-label">kcal</span>
             </div>
             <div class="food-sheet__nutrition-item">
               <span
                 class="food-sheet__nutrition-value"
-                style="color: #ef4444"
+                :style="{ color: 'var(--macro-protein)' }"
               >{{ sheetNutrition.protein }}g</span>
               <span class="food-sheet__nutrition-label">{{ $t('common.protein') }}</span>
             </div>
             <div class="food-sheet__nutrition-item">
               <span
                 class="food-sheet__nutrition-value"
-                style="color: #3b82f6"
+                :style="{ color: 'var(--macro-carbs)' }"
               >{{ sheetNutrition.carbs }}g</span>
               <span class="food-sheet__nutrition-label">{{ $t('common.carbs') }}</span>
             </div>
             <div class="food-sheet__nutrition-item">
               <span
                 class="food-sheet__nutrition-value"
-                style="color: #f59e0b"
+                :style="{ color: 'var(--macro-fat)' }"
               >{{ sheetNutrition.fat }}g</span>
               <span class="food-sheet__nutrition-label">{{ $t('common.fat') }}</span>
             </div>

@@ -1128,7 +1128,7 @@ onUnmounted(() => {
   letter-spacing: -0.02em;
   line-height: 1.1;
 
-  &--cal     { color: var(--accent-color); }
+  &--cal     { color: var(--macro-calories); }
   &--protein { color: $macro-protein; }
   &--carbs   { color: $macro-carbs; }
   &--fat     { color: $macro-fat; }
@@ -1663,7 +1663,7 @@ onUnmounted(() => {
   letter-spacing: -0.02em;
   line-height: 1.1;
 
-  &--cal     { color: var(--accent-color); }
+  &--cal     { color: var(--macro-calories); }
   &--protein { color: $macro-protein; }
   &--carbs   { color: $macro-carbs; }
   &--fat     { color: $macro-fat; }

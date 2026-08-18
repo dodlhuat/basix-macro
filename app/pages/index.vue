@@ -826,7 +826,10 @@ watch(currentDate, date => loadDate(date))
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--primary-text);
+  // Calorie identity color — distinct from the giant remaining-number above,
+  // which intentionally stays --primary-text/--error so its over-goal alarm
+  // transition (see .dashboard__remaining-number--over) reads unambiguously.
+  color: var(--macro-calories);
 }
 
 .dashboard__stat-label {

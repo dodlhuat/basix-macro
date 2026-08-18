@@ -475,7 +475,7 @@ const macros = computed(() => [
     label: 'Protein',
     current: totalProtein.value,
     goal: proteinGoal.value,
-    color: '#ef4444',
+    color: 'var(--macro-protein)',
     percent: pct(totalProtein.value, proteinGoal.value),
   },
   {
@@ -483,7 +483,7 @@ const macros = computed(() => [
     label: 'Kohlenhydrate',
     current: totalCarbs.value,
     goal: carbsGoal.value,
-    color: '#3b82f6',
+    color: 'var(--macro-carbs)',
     percent: pct(totalCarbs.value, carbsGoal.value),
   },
   {
@@ -491,7 +491,7 @@ const macros = computed(() => [
     label: 'Fett',
     current: totalFat.value,
     goal: fatGoal.value,
-    color: '#f59e0b',
+    color: 'var(--macro-fat)',
     percent: pct(totalFat.value, fatGoal.value),
   },
 ])

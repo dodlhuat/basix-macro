@@ -15,10 +15,13 @@ $breakpoint-desktop: 1280px; // tablet landscape / desktop — persistent sideba
 // visual continuity between the two nav presentations of the same component.
 $sidebar-width: 280px;
 
-$macro-protein: #ef4444;
-$macro-carbs:   #3b82f6;
-$macro-fat:     #f59e0b;
-$macro-calories: var(--accent-color);
+// Sourced 1:1 from the PWA app icon's 3-segment ring (public/icons/icon-512.png)
+// so the app's macro colors visually match its own icon. Protein keeps its
+// original red — it was never part of the icon's palette and is out of scope.
+$macro-protein:  #ef4444;
+$macro-carbs:    #3ac29c; // icon teal/green arc
+$macro-fat:      #feab0e; // icon amber/yellow arc
+$macro-calories: #fc613d; // icon orange-red arc
 
 // Meal-type accents (dashboard meal-section left border) and the water
 // tracker's droplet color — canonical hex lives here only. main.scss exposes

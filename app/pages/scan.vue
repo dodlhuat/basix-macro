@@ -133,7 +133,7 @@
 
           <div class="scanner-sheet__body">
             <div class="scanner-sheet__macros">
-              <div class="scanner-sheet__macro">
+              <div class="scanner-sheet__macro scanner-sheet__macro--calories">
                 <span class="scanner-sheet__macro-value">{{ matchedProduct.calories }}</span>
                 <span class="scanner-sheet__macro-label">kcal</span>
               </div>
@@ -913,9 +913,10 @@ onUnmounted(() => {
   letter-spacing: -0.02em;
   line-height: 1.1;
 
-  .scanner-sheet__macro--protein & { color: #ef4444; }
-  .scanner-sheet__macro--carbs   & { color: #3b82f6; }
-  .scanner-sheet__macro--fat     & { color: #f59e0b; }
+  .scanner-sheet__macro--calories & { color: var(--macro-calories); }
+  .scanner-sheet__macro--protein  & { color: var(--macro-protein); }
+  .scanner-sheet__macro--carbs    & { color: var(--macro-carbs); }
+  .scanner-sheet__macro--fat      & { color: var(--macro-fat); }
 }
 
 .scanner-sheet__macro-label {

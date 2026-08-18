@@ -132,7 +132,7 @@
         <div class="progress history__macro-progress" role="none">
           <div
             class="progress-bar history__macro-bar"
-            :style="{ width: macroBarWidth(avg.protein_g) + '%', backgroundColor: '#ef4444' }"
+            :style="{ width: macroBarWidth(avg.protein_g) + '%', backgroundColor: 'var(--macro-protein)' }"
             role="progressbar"
             :aria-valuenow="avg.protein_g"
             :aria-valuemax="maxMacro"
@@ -152,7 +152,7 @@
         <div class="progress history__macro-progress" role="none">
           <div
             class="progress-bar history__macro-bar"
-            :style="{ width: macroBarWidth(avg.carbs_g) + '%', backgroundColor: '#3b82f6' }"
+            :style="{ width: macroBarWidth(avg.carbs_g) + '%', backgroundColor: 'var(--macro-carbs)' }"
             role="progressbar"
             :aria-valuenow="avg.carbs_g"
             :aria-valuemax="maxMacro"
@@ -172,7 +172,7 @@
         <div class="progress history__macro-progress" role="none">
           <div
             class="progress-bar history__macro-bar"
-            :style="{ width: macroBarWidth(avg.fat_g) + '%', backgroundColor: '#f59e0b' }"
+            :style="{ width: macroBarWidth(avg.fat_g) + '%', backgroundColor: 'var(--macro-fat)' }"
             role="progressbar"
             :aria-valuenow="avg.fat_g"
             :aria-valuemax="maxMacro"
