@@ -82,7 +82,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/SyncRequest.php' => '4c8c6092d2214bb0b8fecbcdfbc371736c992dad0951a3cf6c6218dbc617d542',
+      '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/SyncRequest.php' => '3ae152a0a80e09ac6ba47d49420044eef0ca84601004931a700ac2953e54f693',
     ),
   ),
 ));

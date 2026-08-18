@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\ActivityEntry;
 use App\Models\BodyFatEntry;
 use App\Models\DiaryEntry;
 use App\Models\FoodItem;
@@ -56,6 +57,9 @@ class SyncService
             ]),
             new SyncableTable('water_entries', WaterEntry::class, [
                 'date', 'amount_ml', 'logged_at',
+            ]),
+            new SyncableTable('activity_entries', ActivityEntry::class, [
+                'date', 'name', 'calories_burned', 'duration_min',
             ]),
         ];
     }

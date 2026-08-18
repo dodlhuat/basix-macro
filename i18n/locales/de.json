@@ -7,6 +7,7 @@
     "statistics": "Statistiken",
     "weight": "Gewicht",
     "bodyFat": "Körperfett",
+    "activity": "Aktivität",
     "settings": "Einstellungen",
     "adminSection": "Verwaltung",
     "adminUsers": "Benutzer",
@@ -50,6 +51,7 @@
     "overGoal": "Ziel überschritten",
     "consumed": "verbraucht",
     "goal": "Ziel",
+    "burned": "verbrannt",
     "overGoalLabel": "+ {n} kcal über dem Ziel",
     "water": "Wasser",
     "streakDay": "Tag",
@@ -87,6 +89,7 @@
       "recipesHint": "Leg zuerst Rezepte an."
     },
     "createFood": "Neues Lebensmittel anlegen",
+    "quickAddCalories": "Kalorien schnell hinzufügen",
     "sheet": {
       "meal": "Mahlzeit",
       "amount": "Menge",
@@ -98,6 +101,13 @@
       "logMode": "Wie hinzufügen?",
       "logModeRecipe": "Als Rezept",
       "logModeItems": "Einzelne Zutaten"
+    },
+    "quickAdd": {
+      "title": "Schnelleintrag",
+      "caloriesLabel": "Kalorien",
+      "nameLabel": "Bezeichnung",
+      "namePlaceholder": "z. B. Snack unterwegs",
+      "macrosToggle": "Nährwerte hinzufügen"
     },
     "diaryPage": {
       "backToDashboard": "Zurück zum Dashboard",
@@ -239,6 +249,21 @@
     "history": "Verlauf",
     "empty": "Noch keine Einträge",
     "emptyHint": "Berechne und speichere deine erste Messung, um zu starten."
+  },
+  "activity": {
+    "title": "Aktivität",
+    "noEntry": "Noch keine Aktivität erfasst",
+    "todayBurned": "heute verbrannt",
+    "entryToday": "Aktivität heute",
+    "entriesToday": "Aktivitäten heute",
+    "addEntry": "Aktivität hinzufügen",
+    "nameLabel": "Bezeichnung",
+    "namePlaceholder": "z. B. Laufen",
+    "caloriesLabel": "Verbrannte Kalorien",
+    "durationLabel": "Dauer",
+    "history": "Verlauf",
+    "empty": "Noch keine Einträge",
+    "emptyHint": "Erfasse deine erste Aktivität, um verbrannte Kalorien zu deinem Tagesziel zu addieren."
   },
   "settings": {
     "title": "Einstellungen",

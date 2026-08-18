@@ -38,7 +38,7 @@ export interface FoodItem {
   fat_per_100g: number
   fiber_per_100g?: number
   sugar_per_100g?: number
-  source: 'manual' | 'openfoodfacts' | 'user_barcode_link' | 'global'
+  source: 'manual' | 'openfoodfacts' | 'user_barcode_link' | 'global' | 'quick_add'
   is_favorite: boolean
   last_used_at?: string
   created_at: string
@@ -131,6 +131,21 @@ export interface BodyFatEntry {
   deleted_at?: string | null
 }
 
+// Manual entry only, by design — no MET-table/activity-type estimation engine,
+// matching the app's existing philosophy of trusting user-entered numbers
+// (manual food entry, manual body measurements) rather than computing guesses.
+export interface ActivityEntry {
+  id: string
+  date: string
+  name: string
+  calories_burned: number
+  duration_min?: number
+  created_at: string
+  updated_at: string
+  sync_status: 'local' | 'synced' | 'dirty'
+  deleted_at?: string | null
+}
+
 class BasixMacroDatabase extends Dexie {
   users!: Table<User>
   food_items!: Table<FoodItem>
@@ -140,9 +155,22 @@ class BasixMacroDatabase extends Dexie {
   weight_entries!: Table<WeightEntry>
   water_entries!: Table<WaterEntry>
   body_fat_entries!: Table<BodyFatEntry>
+  activity_entries!: Table<ActivityEntry>
 
   constructor() {
     super('BasixMacroDB')
+
+    this.version(7).stores({
+      users: 'id, sync_status',
+      food_items: 'id, name, barcode, is_favorite, last_used_at, source, sync_status',
+      recipes: 'id, name, sync_status',
+      recipe_ingredients: 'id, recipe_id, food_item_id, sync_status',
+      diary_entries: 'id, date, meal_type, food_item_id, recipe_id, sync_status',
+      weight_entries: 'id, date, sync_status',
+      water_entries: 'id, date, sync_status',
+      body_fat_entries: 'id, date, sync_status',
+      activity_entries: 'id, date, sync_status',
+    })
 
     this.version(6).stores({
       users: 'id, sync_status',

@@ -200,7 +200,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/SyncRequest.php' => 
     array (
-      0 => '4c8c6092d2214bb0b8fecbcdfbc371736c992dad0951a3cf6c6218dbc617d542',
+      0 => '3ae152a0a80e09ac6ba47d49420044eef0ca84601004931a700ac2953e54f693',
       1 => 
       array (
         0 => 'app\\http\\requests\\syncrequest',
@@ -430,7 +430,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php' => 
     array (
-      0 => '47f9c10303cc0e3b896d19983093d78bc82d9172c8e5b2b97982b7164828aa56',
+      0 => '5e6dbc6cef5f85893a2bfdbfbe109f30dfe623137d04b8fe19789e506ec85ec0',
       1 => 
       array (
         0 => 'app\\services\\syncservice',
@@ -518,6 +518,22 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       1 => 
       array (
         0 => 'app\\models\\bodyfatentry',
+      ),
+      2 => 
+      array (
+        0 => 'app\\models\\casts',
+        1 => 'app\\models\\user',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/andibauer/Repositories/basix-macro/backend/app/Models/ActivityEntry.php' => 
+    array (
+      0 => '1ee3f152b94e5401443993f17cbafef0fb8870217d14f011afc615042dc1f733',
+      1 => 
+      array (
+        0 => 'app\\models\\activityentry',
       ),
       2 => 
       array (

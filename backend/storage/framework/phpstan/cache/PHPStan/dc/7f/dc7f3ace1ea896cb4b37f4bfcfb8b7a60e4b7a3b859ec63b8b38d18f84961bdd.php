@@ -2,7 +2,7 @@
 
 // odsl-/Users/andibauer/Repositories/basix-macro/backend/app/Http/Requests/SyncRequest.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Http\Requests\SyncRequest
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.1-8.5.6-4c8c6092d2214bb0b8fecbcdfbc371736c992dad0951a3cf6c6218dbc617d542',
+   'variableKey' => 'v2-6.70.0.1-8.5.6-3ae152a0a80e09ac6ba47d49420044eef0ca84601004931a700ac2953e54f693',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 8,
-    'endLine' => 33,
+    'endLine' => 34,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Foundation\\Http\\FormRequest',
@@ -103,7 +103,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @return array<string, ValidationRule|array<mixed>|string>
  */',
         'startLine' => 18,
-        'endLine' => 32,
+        'endLine' => 33,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

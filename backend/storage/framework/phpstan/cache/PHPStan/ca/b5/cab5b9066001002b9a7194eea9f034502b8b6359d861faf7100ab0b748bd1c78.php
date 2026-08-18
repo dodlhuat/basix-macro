@@ -12,6 +12,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Services',
          'uses' => 
         array (
+          'activityentry' => 'App\\Models\\ActivityEntry',
           'bodyfatentry' => 'App\\Models\\BodyFatEntry',
           'diaryentry' => 'App\\Models\\DiaryEntry',
           'fooditem' => 'App\\Models\\FoodItem',
@@ -48,6 +49,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Services',
          'uses' => 
         array (
+          'activityentry' => 'App\\Models\\ActivityEntry',
           'bodyfatentry' => 'App\\Models\\BodyFatEntry',
           'diaryentry' => 'App\\Models\\DiaryEntry',
           'fooditem' => 'App\\Models\\FoodItem',
@@ -84,6 +86,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Services',
          'uses' => 
         array (
+          'activityentry' => 'App\\Models\\ActivityEntry',
           'bodyfatentry' => 'App\\Models\\BodyFatEntry',
           'diaryentry' => 'App\\Models\\DiaryEntry',
           'fooditem' => 'App\\Models\\FoodItem',
@@ -120,6 +123,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Services',
          'uses' => 
         array (
+          'activityentry' => 'App\\Models\\ActivityEntry',
           'bodyfatentry' => 'App\\Models\\BodyFatEntry',
           'diaryentry' => 'App\\Models\\DiaryEntry',
           'fooditem' => 'App\\Models\\FoodItem',
@@ -156,6 +160,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Services',
          'uses' => 
         array (
+          'activityentry' => 'App\\Models\\ActivityEntry',
           'bodyfatentry' => 'App\\Models\\BodyFatEntry',
           'diaryentry' => 'App\\Models\\DiaryEntry',
           'fooditem' => 'App\\Models\\FoodItem',
@@ -192,6 +197,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Services',
          'uses' => 
         array (
+          'activityentry' => 'App\\Models\\ActivityEntry',
           'bodyfatentry' => 'App\\Models\\BodyFatEntry',
           'diaryentry' => 'App\\Models\\DiaryEntry',
           'fooditem' => 'App\\Models\\FoodItem',
@@ -228,6 +234,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Services',
          'uses' => 
         array (
+          'activityentry' => 'App\\Models\\ActivityEntry',
           'bodyfatentry' => 'App\\Models\\BodyFatEntry',
           'diaryentry' => 'App\\Models\\DiaryEntry',
           'fooditem' => 'App\\Models\\FoodItem',
@@ -264,6 +271,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Services',
          'uses' => 
         array (
+          'activityentry' => 'App\\Models\\ActivityEntry',
           'bodyfatentry' => 'App\\Models\\BodyFatEntry',
           'diaryentry' => 'App\\Models\\DiaryEntry',
           'fooditem' => 'App\\Models\\FoodItem',
@@ -300,6 +308,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Services',
          'uses' => 
         array (
+          'activityentry' => 'App\\Models\\ActivityEntry',
           'bodyfatentry' => 'App\\Models\\BodyFatEntry',
           'diaryentry' => 'App\\Models\\DiaryEntry',
           'fooditem' => 'App\\Models\\FoodItem',
@@ -334,7 +343,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php' => '47f9c10303cc0e3b896d19983093d78bc82d9172c8e5b2b97982b7164828aa56',
+      '/Users/andibauer/Repositories/basix-macro/backend/app/Services/SyncService.php' => '5e6dbc6cef5f85893a2bfdbfbe109f30dfe623137d04b8fe19789e506ec85ec0',
     ),
   ),
 ));

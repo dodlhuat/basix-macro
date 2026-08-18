@@ -68,6 +68,7 @@ export const useUserStore = defineStore('user', () => {
       db.recipes.clear(),
       db.recipe_ingredients.clear(),
       db.body_fat_entries.clear(),
+      db.activity_entries.clear(),
     ])
     user.value = null
   }

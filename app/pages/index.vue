@@ -74,6 +74,13 @@
               <span class="dashboard__stat-value">{{ calorieGoal }}</span>
               <span class="dashboard__stat-label">{{ $t('dashboard.goal') }}</span>
             </div>
+            <template v-if="totalBurned > 0">
+              <div class="dashboard__stat-sep" aria-hidden="true" />
+              <NuxtLink to="/activity" class="dashboard__stat dashboard__stat--burned">
+                <span class="dashboard__stat-value dashboard__stat-value--burned">{{ Math.round(totalBurned) }}</span>
+                <span class="dashboard__stat-label">{{ $t('dashboard.burned') }}</span>
+              </NuxtLink>
+            </template>
           </div>
         </div>
 
@@ -84,7 +91,7 @@
             :style="{ width: caloriePercent + '%' }"
             role="progressbar"
             :aria-valuenow="Math.round(totalCalories)"
-            :aria-valuemax="calorieGoal"
+            :aria-valuemax="effectiveCalorieGoal"
           />
           <div
             v-if="expectedCaloriePercent !== null"
@@ -257,7 +264,7 @@
                 >
                   <div class="dashboard__entry-info">
                     <span class="dashboard__entry-name">{{ entry.food_item_name }}</span>
-                    <span class="dashboard__entry-amount">
+                    <span v-if="!entry.is_quick_add" class="dashboard__entry-amount">
                       {{ isRecipeEntry(entry) ? `${entry.servings} ${$t('diary.sheet.portion')}` : `${entry.amount_g} g` }}
                     </span>
                   </div>
@@ -367,6 +374,7 @@ definePageMeta({ title: 'Dashboard' })
 
 const diaryStore = useDiaryStore()
 const userStore = useUserStore()
+const activityStore = useActivityStore()
 const { streak } = useStreak()
 const { t, locale } = useI18n()
 
@@ -422,15 +430,25 @@ const WATER_GOAL  = 2000
 
 // ─── Calorie hero ─────────────────────────────────────────────────────────────
 
+// Exercise "earns" extra calories rather than reducing what's shown as
+// consumed — totalCalories is displayed literally as "verbraucht" elsewhere,
+// so subtracting burned calories from it would misrepresent that label.
+// effectiveCalorieGoal is used only for the remaining/percent/over-goal math
+// (and the pace baseline below) — the raw calorieGoal keeps showing as-is
+// everywhere it's labelled "Ziel", so that number never silently shifts.
+// On a day with no activity entries, totalBurned is 0 and this is a no-op.
+const totalBurned = computed(() => activityStore.totalBurnedForDate(currentDate.value))
+const effectiveCalorieGoal = computed(() => calorieGoal.value + totalBurned.value)
+
 // Signed — negative once over goal (e.g. "-180"), replacing the old
 // clamp-to-0 + separate red caption with a single headline number.
 const remainingCalories = computed(() =>
-  Math.round(calorieGoal.value - totalCalories.value)
+  Math.round(effectiveCalorieGoal.value - totalCalories.value)
 )
 const caloriePercent = computed(() =>
-  Math.min(100, (totalCalories.value / calorieGoal.value) * 100)
+  Math.min(100, (totalCalories.value / effectiveCalorieGoal.value) * 100)
 )
-const isOverGoal = computed(() => totalCalories.value > calorieGoal.value)
+const isOverGoal = computed(() => totalCalories.value > effectiveCalorieGoal.value)
 
 // ─── Pace indicator ───────────────────────────────────────────────────────────
 // Compares calories consumed so far against what a steady, evenly-paced day
@@ -455,7 +473,7 @@ const expectedCaloriePercent = computed<number | null>(() => {
 const expectedCalories = computed<number | null>(() =>
   expectedCaloriePercent.value === null
     ? null
-    : Math.round((expectedCaloriePercent.value / 100) * calorieGoal.value)
+    : Math.round((expectedCaloriePercent.value / 100) * effectiveCalorieGoal.value)
 )
 
 const paceDelta = computed<number | null>(() =>
@@ -623,7 +641,10 @@ async function loadDate(date: string) {
   isLoading.value = false
 }
 
-onMounted(() => loadDate(currentDate.value))
+onMounted(() => {
+  loadDate(currentDate.value)
+  activityStore.loadEntries()
+})
 watch(currentDate, date => loadDate(date))
 </script>
 
@@ -845,6 +866,32 @@ watch(currentDate, date => loadDate(date))
   height: 1px;
   background: var(--divider);
   align-self: flex-end;
+}
+
+// Burned-calories tile links to /activity — reads as a "credit" rather than
+// intake, so it deliberately breaks from the shared --macro-calories orange
+// used by consumed/goal above (that hue already means "intake" on this
+// page) and uses --success instead, matching the app's existing "down/back
+// is good" polarity (see weight/body-fat delta badges).
+.dashboard__stat--burned {
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 150ms ease;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.75;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+}
+
+.dashboard__stat-value--burned {
+  color: var(--success);
 }
 
 .dashboard__hero-progress {

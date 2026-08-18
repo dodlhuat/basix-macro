@@ -28,6 +28,7 @@ class SyncRequest extends FormRequest
             'tables.weight_entries' => ['nullable', 'array'],
             'tables.water_entries' => ['nullable', 'array'],
             'tables.body_fat_entries' => ['nullable', 'array'],
+            'tables.activity_entries' => ['nullable', 'array'],
         ];
     }
 }

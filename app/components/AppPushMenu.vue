@@ -52,6 +52,12 @@
           </NuxtLink>
         </li>
         <li>
+          <NuxtLink to="/activity" class="push-menu-item" @click="close">
+            <AppIcon name="directions_run" size="1.25rem" />
+            {{ $t('nav.activity') }}
+          </NuxtLink>
+        </li>
+        <li>
           <NuxtLink to="/settings" class="push-menu-item" @click="close">
             <AppIcon name="settings" size="1.25rem" />
             {{ $t('nav.settings') }}

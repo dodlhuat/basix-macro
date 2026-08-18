@@ -44,6 +44,10 @@ const SYNC_TABLES: readonly SyncTableConfig[] = [
     key: 'body_fat_entries',
     fields: ['date', 'gender', 'height_cm', 'neck_cm', 'waist_cm', 'hip_cm', 'body_fat_percent', 'category'],
   },
+  {
+    key: 'activity_entries',
+    fields: ['date', 'name', 'calories_burned', 'duration_min'],
+  },
 ] as const
 
 const PROFILE_FIELDS = [

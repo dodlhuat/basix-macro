@@ -7,6 +7,7 @@
     "statistics": "Statistics",
     "weight": "Weight",
     "bodyFat": "Body Fat",
+    "activity": "Activity",
     "settings": "Settings",
     "adminSection": "Admin",
     "adminUsers": "Users",
@@ -50,6 +51,7 @@
     "overGoal": "Goal exceeded",
     "consumed": "consumed",
     "goal": "Goal",
+    "burned": "burned",
     "overGoalLabel": "+ {n} kcal above goal",
     "water": "Water",
     "streakDay": "day",
@@ -87,6 +89,7 @@
       "recipesHint": "Add some recipes first."
     },
     "createFood": "Add new food",
+    "quickAddCalories": "Quick add calories",
     "sheet": {
       "meal": "Meal",
       "amount": "Amount",
@@ -98,6 +101,13 @@
       "logMode": "How to log?",
       "logModeRecipe": "As recipe",
       "logModeItems": "Individual items"
+    },
+    "quickAdd": {
+      "title": "Quick entry",
+      "caloriesLabel": "Calories",
+      "nameLabel": "Label",
+      "namePlaceholder": "e.g. Snack on the go",
+      "macrosToggle": "Add nutrition details"
     },
     "diaryPage": {
       "backToDashboard": "Back to dashboard",
@@ -239,6 +249,21 @@
     "history": "History",
     "empty": "No entries yet",
     "emptyHint": "Calculate and save your first measurement to get started."
+  },
+  "activity": {
+    "title": "Activity",
+    "noEntry": "No activity logged yet",
+    "todayBurned": "burned today",
+    "entryToday": "activity today",
+    "entriesToday": "activities today",
+    "addEntry": "Log activity",
+    "nameLabel": "Name",
+    "namePlaceholder": "e.g. Running",
+    "caloriesLabel": "Calories burned",
+    "durationLabel": "Duration",
+    "history": "History",
+    "empty": "No entries yet",
+    "emptyHint": "Log your first activity to add burned calories to your daily goal."
   },
   "settings": {
     "title": "Settings",

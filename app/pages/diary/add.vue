@@ -187,12 +187,16 @@
       </template>
     </div>
 
-    <!-- Create new food link -->
+    <!-- Create new food / quick-add calories links -->
     <div v-if="activeFilter !== 'recipes'" class="diary-add__create">
       <NuxtLink to="/food/add" class="diary-add__create-link">
         <AppIcon name="add_circle" size="1rem" />
         {{ $t('diary.createFood') }}
       </NuxtLink>
+      <button type="button" class="diary-add__create-link" @click="openQuickAddSheet">
+        <AppIcon name="bolt" size="1rem" />
+        {{ $t('diary.quickAddCalories') }}
+      </button>
     </div>
 
   </div>
@@ -460,6 +464,158 @@
             </div>
           </div>
         </template>
+
+      </div>
+    </div>
+
+    <!-- Quick-add calories bottom sheet -->
+    <div
+      class="bottom-sheet-wrapper"
+      :class="{ 'is-visible': quickAddVisible }"
+      :aria-hidden="!quickAddVisible"
+    >
+      <div class="bottom-sheet-backdrop" @click="closeQuickAddSheet" />
+
+      <div
+        class="bottom-sheet"
+        role="dialog"
+        aria-modal="true"
+        :aria-label="$t('diary.quickAdd.title')"
+      >
+        <div class="bottom-sheet-handle" aria-hidden="true" />
+
+        <div class="bottom-sheet-header has-divider">
+          <div class="da-sheet__title-group">
+            <p class="title">{{ $t('diary.quickAdd.title') }}</p>
+            <p class="subtitle">{{ mealLabel }} · {{ formattedDate }}</p>
+          </div>
+          <button
+            class="close button button-icon"
+            :aria-label="$t('common.close')"
+            @click="closeQuickAddSheet"
+          >
+            <AppIcon name="close" size="1.25rem" />
+          </button>
+        </div>
+
+        <div class="bottom-sheet-body">
+
+          <!-- Calories (required) -->
+          <div class="da-sheet__section">
+            <p class="da-sheet__section-label">{{ $t('diary.quickAdd.caloriesLabel') }}</p>
+            <div class="form-group qa-sheet__calories-group">
+              <div class="input-group">
+                <input
+                  v-model="quickCaloriesStr"
+                  type="number"
+                  inputmode="numeric"
+                  min="1"
+                  step="1"
+                  placeholder="250"
+                  aria-label="Kalorien"
+                  class="qa-sheet__calories-input"
+                  autofocus
+                >
+                <span class="da-sheet__amount-unit">kcal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Name (optional) -->
+          <div class="da-sheet__section">
+            <p class="da-sheet__section-label">
+              {{ $t('diary.quickAdd.nameLabel') }}
+              <span class="qa-sheet__optional">({{ $t('common.optional') }})</span>
+            </p>
+            <div class="form-group">
+              <div class="input-group">
+                <input
+                  v-model="quickName"
+                  type="text"
+                  :placeholder="$t('diary.quickAdd.namePlaceholder')"
+                  aria-label="Bezeichnung"
+                  maxlength="60"
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Macro details — collapsed by default, the 90% case is kcal-only -->
+          <button
+            type="button"
+            class="qa-sheet__macro-toggle"
+            :aria-expanded="showQuickMacros"
+            @click="showQuickMacros = !showQuickMacros"
+          >
+            <AppIcon :name="showQuickMacros ? 'keyboard_arrow_up' : 'keyboard_arrow_down'" size="1.1rem" />
+            {{ $t('diary.quickAdd.macrosToggle') }}
+          </button>
+
+          <Transition name="qa-macros">
+            <div v-if="showQuickMacros" class="qa-sheet__macro-row">
+              <div class="qa-sheet__macro-field">
+                <label class="qa-sheet__macro-label" style="color: var(--macro-protein)">{{ $t('common.protein') }}</label>
+                <div class="input-group">
+                  <input
+                    v-model="quickProteinStr"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    step="1"
+                    placeholder="0"
+                    aria-label="Protein in Gramm"
+                  >
+                </div>
+              </div>
+              <div class="qa-sheet__macro-field">
+                <label class="qa-sheet__macro-label" style="color: var(--macro-carbs)">{{ $t('common.carbs') }}</label>
+                <div class="input-group">
+                  <input
+                    v-model="quickCarbsStr"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    step="1"
+                    placeholder="0"
+                    aria-label="Kohlenhydrate in Gramm"
+                  >
+                </div>
+              </div>
+              <div class="qa-sheet__macro-field">
+                <label class="qa-sheet__macro-label" style="color: var(--macro-fat)">{{ $t('common.fat') }}</label>
+                <div class="input-group">
+                  <input
+                    v-model="quickFatStr"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    step="1"
+                    placeholder="0"
+                    aria-label="Fett in Gramm"
+                  >
+                </div>
+              </div>
+            </div>
+          </Transition>
+
+        </div>
+
+        <div class="bottom-sheet-footer">
+          <div class="buttons">
+            <button class="button" @click="closeQuickAddSheet">{{ $t('common.cancel') }}</button>
+            <button
+              class="button button-primary"
+              :disabled="!isQuickAddValid || isAddingQuick"
+              @click="handleQuickAdd"
+            >
+              <span v-if="isAddingQuick" class="loading" />
+              <template v-else>
+                <AppIcon name="check" size="1rem" />
+                {{ $t('common.add') }}
+              </template>
+            </button>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -779,11 +935,71 @@ async function handleAdd() {
   }
 }
 
+// ─── Quick-add calories bottom sheet ───────────────────────────────────────────
+// Unlike the food/recipe sheets above, this has no underlying entity to
+// select first — it's a direct "just log the number" shortcut, so it opens
+// immediately from the create-link row rather than from a list item click.
+
+const quickAddVisible = ref(false)
+const quickCaloriesStr = ref('')
+const quickName = ref('')
+const quickProteinStr = ref('')
+const quickCarbsStr = ref('')
+const quickFatStr = ref('')
+const showQuickMacros = ref(false)
+const isAddingQuick = ref(false)
+
+const isQuickAddValid = computed(() => {
+  const v = parseFloat(quickCaloriesStr.value)
+  return !isNaN(v) && v > 0
+})
+
+function openQuickAddSheet() {
+  quickCaloriesStr.value = ''
+  quickName.value = ''
+  quickProteinStr.value = ''
+  quickCarbsStr.value = ''
+  quickFatStr.value = ''
+  showQuickMacros.value = false
+  quickAddVisible.value = true
+  document.body.style.overflow = 'hidden'
+}
+
+function closeQuickAddSheet() {
+  quickAddVisible.value = false
+  document.body.style.overflow = ''
+}
+
+async function handleQuickAdd() {
+  if (!isQuickAddValid.value || isAddingQuick.value) return
+  isAddingQuick.value = true
+  try {
+    await diaryStore.addQuickEntry({
+      date:       paramDate,
+      meal_type:  paramMeal as 'breakfast' | 'lunch' | 'dinner' | 'snack',
+      calories:   parseFloat(quickCaloriesStr.value),
+      name:       quickName.value.trim() || undefined,
+      protein_g:  quickProteinStr.value ? parseFloat(quickProteinStr.value) : undefined,
+      carbs_g:    quickCarbsStr.value ? parseFloat(quickCarbsStr.value) : undefined,
+      fat_g:      quickFatStr.value ? parseFloat(quickFatStr.value) : undefined,
+    })
+    closeQuickAddSheet()
+    if (route.query.food_id) {
+      await navigateTo('/')
+    } else {
+      router.back()
+    }
+  } finally {
+    isAddingQuick.value = false
+  }
+}
+
 // ─── Keyboard handler ──────────────────────────────────────────────────────────
 
 function onKeydown(e: KeyboardEvent) {
   if (e.key === 'Escape') {
-    if (recipeSheetVisible.value) closeRecipeSheet()
+    if (quickAddVisible.value) closeQuickAddSheet()
+    else if (recipeSheetVisible.value) closeRecipeSheet()
     else if (sheetVisible.value) closeSheet()
   }
 }
@@ -1172,18 +1388,27 @@ onUnmounted(() => {
 
 .diary-add__create {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: calc(#{$spacing} * 0.5);
   padding: calc(#{$spacing} * 0.5) 0;
 }
 
+// Applies to both the NuxtLink (create food) and the plain <button>
+// (quick-add) — reset native button chrome so the two entry points read as
+// one visual family.
 .diary-add__create-link {
   display: flex;
   align-items: center;
   gap: 0.4rem;
   font-size: 0.875rem;
   font-weight: 600;
+  font-family: inherit;
   color: var(--accent-color);
   text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
   padding: calc(#{$spacing} * 0.5) $spacing;
   border-radius: var(--radius-full);
   transition: background 150ms ease;
@@ -1309,5 +1534,105 @@ onUnmounted(() => {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   text-align: center;
+}
+
+// ─── Quick-add sheet content ──────────────────────────────────────────────────
+
+.qa-sheet__calories-group {
+  margin: 0;
+}
+
+.qa-sheet__calories-input {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+
+  // Remove spinner arrows on number inputs
+  -moz-appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.qa-sheet__optional {
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: 0;
+  opacity: 0.75;
+}
+
+.qa-sheet__macro-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  cursor: pointer;
+  padding: calc(#{$spacing} * 0.25) 0;
+  margin-bottom: calc(#{$spacing} * 0.25);
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+}
+
+.qa-sheet__macro-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(#{$spacing} * 0.625);
+  overflow: hidden;
+}
+
+.qa-sheet__macro-field {
+  display: flex;
+  flex-direction: column;
+  gap: calc(#{$spacing} * 0.3);
+  min-width: 0;
+
+  .input-group input {
+    text-align: center;
+  }
+}
+
+.qa-sheet__macro-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// Macro row expand/collapse
+.qa-macros-enter-active {
+  transition: opacity 220ms ease, transform 220ms cubic-bezier(0.22, 1, 0.36, 1), max-height 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  max-height: 4rem;
+}
+
+.qa-macros-leave-active {
+  transition: opacity 160ms ease, transform 160ms ease, max-height 160ms ease;
+  max-height: 4rem;
+}
+
+.qa-macros-enter-from,
+.qa-macros-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+  max-height: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qa-macros-enter-active,
+  .qa-macros-leave-active {
+    transition: none !important;
+  }
 }
 </style>

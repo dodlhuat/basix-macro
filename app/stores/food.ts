@@ -8,16 +8,21 @@ export const useFoodStore = defineStore('food', () => {
 
   // ─── Load actions ─────────────────────────────────────────────────────────────
 
+  // Quick-add creates a disposable, single-use FoodItem (source: 'quick_add')
+  // just so the diary entry can reuse all the normal food_item_id machinery —
+  // it's never meant to be browsed/reused like a real saved food, so every
+  // list here excludes it.
   async function loadAll() {
     const { db } = await import('../../db')
     items.value = excludeDeleted(await db.food_items.orderBy('name').toArray())
+      .filter(f => f.source !== 'quick_add')
   }
 
   async function loadFavorites(): Promise<void> {
     const { db } = await import('../../db')
     const all = await db.food_items.toArray()
     items.value = all
-      .filter(f => f.is_favorite && !f.deleted_at)
+      .filter(f => f.is_favorite && !f.deleted_at && f.source !== 'quick_add')
       .sort((a, b) => a.name.localeCompare(b.name))
   }
 
@@ -26,7 +31,7 @@ export const useFoodStore = defineStore('food', () => {
     items.value = await db.food_items
       .orderBy('last_used_at')
       .reverse()
-      .filter(f => !f.deleted_at)
+      .filter(f => !f.deleted_at && f.source !== 'quick_add')
       .limit(30)
       .toArray()
   }
@@ -44,6 +49,7 @@ export const useFoodStore = defineStore('food', () => {
         await loadRecent()
       } else {
         items.value = excludeDeleted(await db.food_items.orderBy('name').toArray())
+          .filter(f => f.source !== 'quick_add')
       }
       return
     }
@@ -52,6 +58,7 @@ export const useFoodStore = defineStore('food', () => {
       .filter(
         f =>
           !f.deleted_at &&
+          f.source !== 'quick_add' &&
           (f.name.toLowerCase().includes(lower) ||
             (f.brand ?? '').toLowerCase().includes(lower)),
       )

@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import type { DiaryEntry, FoodItem, WaterEntry } from '../../db'
 
-export type DiaryEntryWithName = DiaryEntry & { food_item_name: string }
+export type DiaryEntryWithName = DiaryEntry & { food_item_name: string; is_quick_add: boolean }
 
 export const useDiaryStore = defineStore('diary', () => {
   const entries = ref<DiaryEntry[]>([])
@@ -29,14 +29,18 @@ export const useDiaryStore = defineStore('diary', () => {
     const details: DiaryEntryWithName[] = []
     for (const entry of rawEntries) {
       let food_item_name = 'Unbekanntes Lebensmittel'
+      let is_quick_add = false
       if (entry.food_item_id) {
         const food = await db.food_items.get(entry.food_item_id)
-        if (food) food_item_name = food.name
+        if (food) {
+          food_item_name = food.name
+          is_quick_add = food.source === 'quick_add'
+        }
       } else if (entry.recipe_id) {
         const recipe = await db.recipes.get(entry.recipe_id)
         if (recipe) food_item_name = recipe.name
       }
-      details.push({ ...entry, food_item_name })
+      details.push({ ...entry, food_item_name, is_quick_add })
     }
     entryDetails.value = details
   }
@@ -108,6 +112,51 @@ export const useDiaryStore = defineStore('diary', () => {
     })
 
     await loadForDate(params.date)
+  }
+
+  /**
+   * Logs a calorie estimate without a real food item — "Restaurant-Essen, ~650 kcal".
+   * Creates a disposable, single-use FoodItem (source: 'quick_add') so the diary entry
+   * can reuse the normal food_item_id machinery (name resolution, edit/delete, sync)
+   * instead of needing its own schema. That FoodItem is excluded from every food list
+   * (see food.ts) so it never clutters "recently used" or search, and it's never
+   * submitted to the global food database (SyncService only submits source: 'manual').
+   */
+  async function addQuickEntry(params: {
+    date: string
+    meal_type: 'breakfast' | 'lunch' | 'dinner' | 'snack'
+    calories: number
+    name?: string
+    protein_g?: number
+    carbs_g?: number
+    fat_g?: number
+  }): Promise<void> {
+    const { db } = await import('../../db')
+    const now = new Date().toISOString()
+    const foodId = crypto.randomUUID()
+    const food: FoodItem = {
+      id: foodId,
+      name: params.name?.trim() || 'Schnelleintrag',
+      calories_per_100g: params.calories,
+      protein_per_100g: params.protein_g ?? 0,
+      carbs_per_100g: params.carbs_g ?? 0,
+      fat_per_100g: params.fat_g ?? 0,
+      source: 'quick_add',
+      is_favorite: false,
+      last_used_at: now,
+      created_at: now,
+      updated_at: now,
+      sync_status: 'local',
+    }
+    await db.food_items.add(food)
+
+    await addEntry({
+      date: params.date,
+      meal_type: params.meal_type,
+      food_item_id: foodId,
+      amount_g: 100,
+      food,
+    })
   }
 
   async function addRecipeEntry(params: {
@@ -189,6 +238,7 @@ export const useDiaryStore = defineStore('diary', () => {
     loadForDate,
     addWater,
     addEntry,
+    addQuickEntry,
     addRecipeEntry,
     updateEntryQuantity,
     deleteEntry,

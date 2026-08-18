@@ -67,6 +67,13 @@
             <span class="diary__stat-value">{{ calorieGoal }}</span>
             <span class="diary__stat-label">Ziel</span>
           </div>
+          <template v-if="totalBurned > 0">
+            <div class="diary__stat-sep" aria-hidden="true" />
+            <NuxtLink to="/activity" class="diary__stat diary__stat--burned">
+              <span class="diary__stat-value diary__stat-value--burned">{{ Math.round(totalBurned) }}</span>
+              <span class="diary__stat-label">verbrannt</span>
+            </NuxtLink>
+          </template>
         </div>
       </div>
 
@@ -77,13 +84,13 @@
           :style="{ width: caloriePercent + '%' }"
           role="progressbar"
           :aria-valuenow="Math.round(totalCalories)"
-          :aria-valuemax="calorieGoal"
+          :aria-valuemax="effectiveCalorieGoal"
           aria-label="Kalorienfortschritt"
         />
       </div>
 
       <p v-if="isOverGoal" class="diary__over-label">
-        + {{ Math.round(totalCalories - calorieGoal) }} kcal über dem Ziel
+        + {{ Math.round(totalCalories - effectiveCalorieGoal) }} kcal über dem Ziel
       </p>
     </section>
 
@@ -171,7 +178,7 @@
               >
                 <div class="diary__entry-info">
                   <span class="diary__entry-name">{{ entry.food_item_name }}</span>
-                  <span class="diary__entry-amount">
+                  <span v-if="!entry.is_quick_add" class="diary__entry-amount">
                     {{ entry.amount_g > 0 ? `${entry.amount_g} g` : `${entry.servings} Port.` }}
                   </span>
                 </div>
@@ -394,6 +401,7 @@ const route = useRoute()
 const diaryStore = useDiaryStore()
 const userStore = useUserStore()
 const recipesStore = useRecipesStore()
+const activityStore = useActivityStore()
 const { t } = useI18n()
 const { showToast } = useToast()
 
@@ -450,18 +458,26 @@ const waterGoal   = computed(() => userStore.user?.water_goal_ml  ?? 2000)
 
 // ─── Calorie hero ─────────────────────────────────────────────────────────────
 
+// See index.vue for the full rationale: burned calories extend the daily
+// budget rather than reduce what's shown as "verbraucht". effectiveCalorieGoal
+// feeds only the remaining/percent/over-goal math below; the raw calorieGoal
+// keeps showing as-is wherever it's labelled "Ziel". Zero activity entries
+// means totalBurned is 0 and this is a no-op.
+const totalBurned = computed(() => activityStore.totalBurnedForDate(date.value))
+const effectiveCalorieGoal = computed(() => calorieGoal.value + totalBurned.value)
+
 const remainingCalories = computed(() =>
-  Math.max(0, calorieGoal.value - Math.round(totalCalories.value))
+  Math.max(0, effectiveCalorieGoal.value - Math.round(totalCalories.value))
 )
 
 const caloriePercent = computed(() =>
-  Math.min(100, calorieGoal.value > 0
-    ? (totalCalories.value / calorieGoal.value) * 100
+  Math.min(100, effectiveCalorieGoal.value > 0
+    ? (totalCalories.value / effectiveCalorieGoal.value) * 100
     : 0
   )
 )
 
-const isOverGoal = computed(() => totalCalories.value > calorieGoal.value)
+const isOverGoal = computed(() => totalCalories.value > effectiveCalorieGoal.value)
 
 // ─── Macros ───────────────────────────────────────────────────────────────────
 
@@ -667,7 +683,10 @@ async function saveEdit(id: string): Promise<void> {
 
 // ─── Data loading ──────────────────────────────────────────────────────────────
 
-onMounted(() => diaryStore.loadForDate(date.value))
+onMounted(() => {
+  diaryStore.loadForDate(date.value)
+  activityStore.loadEntries()
+})
 watch(date, newDate => diaryStore.loadForDate(newDate))
 </script>
 
@@ -868,6 +887,29 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   height: 1px;
   background: var(--divider);
   align-self: flex-end;
+}
+
+// See index.vue's identical .dashboard__stat--burned for the color rationale
+// (--success = "credit", distinct from consumed/goal's default text color).
+.diary__stat--burned {
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 150ms ease;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.75;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+}
+
+.diary__stat-value--burned {
+  color: var(--success);
 }
 
 .diary__hero-progress {

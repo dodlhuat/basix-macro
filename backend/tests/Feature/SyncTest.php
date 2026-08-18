@@ -291,4 +291,54 @@ class SyncTest extends TestCase
             ->assertJsonPath('changes.body_fat_entries.0.date', '2026-03-15')
             ->assertJsonPath('changes.body_fat_entries.0.hip_cm', 95);
     }
+
+    public function test_push_creates_an_activity_entry_scoped_to_the_authenticated_user(): void
+    {
+        $user = User::factory()->create();
+        $id = (string) Str::uuid();
+
+        $response = $this->actingAs($user, 'sanctum')->postJson('/api/sync', [
+            'tables' => [
+                'activity_entries' => [[
+                    'id' => $id,
+                    'date' => '2026-03-15',
+                    'name' => 'Laufen',
+                    'calories_burned' => 400,
+                    'duration_min' => 35,
+                    'updated_at' => '2026-01-01T00:00:00.000Z',
+                ]],
+            ],
+        ]);
+
+        $response->assertOk()->assertJsonPath('push_results.activity_entries.0.status', 'applied');
+        $this->assertDatabaseHas('activity_entries', [
+            'id' => $id,
+            'user_id' => $user->id,
+            'name' => 'Laufen',
+            'calories_burned' => 400,
+        ]);
+    }
+
+    public function test_pulled_activity_entry_round_trips_with_a_plain_date(): void
+    {
+        $user = User::factory()->create();
+        $id = (string) Str::uuid();
+
+        $this->actingAs($user, 'sanctum')->postJson('/api/sync', [
+            'tables' => ['activity_entries' => [[
+                'id' => $id,
+                'date' => '2026-03-15',
+                'name' => 'Radfahren',
+                'calories_burned' => 250,
+                'duration_min' => 40,
+                'updated_at' => '2026-01-01T00:00:00.000Z',
+            ]]],
+        ])->assertOk();
+
+        $response = $this->actingAs($user, 'sanctum')->postJson('/api/sync', []);
+
+        $response->assertOk()
+            ->assertJsonPath('changes.activity_entries.0.date', '2026-03-15')
+            ->assertJsonPath('changes.activity_entries.0.duration_min', 40);
+    }
 }
