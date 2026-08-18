@@ -45,7 +45,7 @@ export const useAuthStore = defineStore('auth', () => {
     persist()
   }
 
-  async function login(email: string, password: string): Promise<void> {
+  async function login(email: string, password: string, options: { awaitSync?: boolean } = {}): Promise<void> {
     const { post } = useApi()
     const response = await post<{ token: string, user: AuthUser }>('/auth/login', { email, password })
     token.value = response.token
@@ -53,8 +53,16 @@ export const useAuthStore = defineStore('auth', () => {
     persist()
 
     // Upload/merge whatever this device already has locally, then pull the rest of the account's data.
+    // Fire-and-forget by default so callers (e.g. settings' login form) get instant UI
+    // feedback without waiting on a full sync — but the pre-onboarding login screen needs
+    // to know whether a profile came down before deciding where to navigate, so it awaits.
     const syncStore = useSyncStore()
-    void syncStore.syncNow({ full: true })
+    const syncPromise = syncStore.syncNow({ full: true })
+    if (options.awaitSync) {
+      await syncPromise
+    } else {
+      void syncPromise
+    }
   }
 
   async function logout(): Promise<void> {

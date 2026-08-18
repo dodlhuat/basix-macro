@@ -1,4 +1,4 @@
-const SKIP_PATHS = ['/onboarding', '/forgot-password', '/reset-password']
+const SKIP_PATHS = ['/onboarding', '/login', '/forgot-password', '/reset-password']
 
 export default defineNuxtRouteMiddleware(async (to) => {
   if (import.meta.server) return

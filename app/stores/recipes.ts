@@ -79,6 +79,47 @@ export const useRecipesStore = defineStore('recipes', () => {
 
   // ─── CRUD ─────────────────────────────────────────────────────────────────────
 
+  /**
+   * Creates a recipe with all its ingredients in one Dexie transaction. Unlike
+   * createRecipe() + repeated addIngredient() calls (which each trigger a full
+   * loadRecipe() re-read), this writes everything atomically and reloads once —
+   * used when converting an already-logged meal (diary/[date].vue) into a recipe,
+   * where the ingredient list is already known upfront.
+   */
+  async function createRecipeWithIngredients(
+    name: string,
+    ingredients: { food_item_id: string, amount_g: number }[],
+  ): Promise<string> {
+    const { db } = await import('../../db')
+    const now = new Date().toISOString()
+    const id = crypto.randomUUID()
+
+    await db.transaction('rw', db.recipes, db.recipe_ingredients, async () => {
+      await db.recipes.add({
+        id,
+        name,
+        servings: 1,
+        created_at: now,
+        updated_at: now,
+        sync_status: 'local',
+      })
+      for (const ing of ingredients) {
+        await db.recipe_ingredients.add({
+          id: crypto.randomUUID(),
+          recipe_id: id,
+          food_item_id: ing.food_item_id,
+          amount_g: ing.amount_g,
+          created_at: now,
+          updated_at: now,
+          sync_status: 'local',
+        })
+      }
+    })
+
+    await loadAll()
+    return id
+  }
+
   async function createRecipe(name: string, servings: number, description?: string): Promise<string> {
     const { db } = await import('../../db')
     const now = new Date().toISOString()
@@ -155,6 +196,7 @@ export const useRecipesStore = defineStore('recipes', () => {
     loadRecipe,
     calcTotals,
     createRecipe,
+    createRecipeWithIngredients,
     updateRecipe,
     deleteRecipe,
     addIngredient,

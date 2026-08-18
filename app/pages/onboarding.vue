@@ -3,6 +3,10 @@
     <div class="onboarding__header">
       <h1 class="onboarding__title">BasixMacro</h1>
       <p class="onboarding__subtitle">{{ $t('onboarding.subtitle') }}</p>
+      <p class="onboarding__account-hint">
+        {{ $t('onboarding.hasAccount') }}
+        <NuxtLink to="/login" class="onboarding__account-link">{{ $t('onboarding.hasAccountLink') }}</NuxtLink>
+      </p>
     </div>
 
     <!-- Stepper: managed via Vue :class, no vanilla JS -->
@@ -370,6 +374,23 @@ async function finish() {
   &__subtitle {
     color: var(--secondary-text);
     margin: 0;
+  }
+
+  &__account-hint {
+    color: var(--secondary-text);
+    font-size: 0.8rem;
+    margin: calc($spacing * 0.5) 0 0;
+  }
+
+  &__account-link {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 0.25em;
+
+    &:active {
+      opacity: 0.7;
+    }
   }
 
   .stepper {

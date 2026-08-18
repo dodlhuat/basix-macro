@@ -1,6 +1,6 @@
 <template>
   <div class="forgot-password">
-    <NuxtLink to="/settings" class="button button-icon forgot-password__back" :aria-label="$t('common.back')">
+    <NuxtLink to="/login" class="button button-icon forgot-password__back" :aria-label="$t('common.back')">
       <AppIcon name="arrow_back" size="1.25rem" />
     </NuxtLink>
 
@@ -46,7 +46,7 @@
             </button>
           </form>
 
-          <NuxtLink to="/settings" class="forgot-password__footer-link">
+          <NuxtLink to="/login" class="forgot-password__footer-link">
             {{ $t('auth.forgotPassword.backToLogin') }}
           </NuxtLink>
         </div>
@@ -64,7 +64,7 @@
             {{ $t('auth.forgotPassword.tryAnotherEmail') }}
           </button>
 
-          <NuxtLink to="/settings" class="forgot-password__footer-link">
+          <NuxtLink to="/login" class="forgot-password__footer-link">
             {{ $t('auth.forgotPassword.backToLogin') }}
           </NuxtLink>
         </div>

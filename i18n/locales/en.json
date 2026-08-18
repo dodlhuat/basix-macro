@@ -108,7 +108,10 @@
       "overGoalLabel": "+ {n} kcal above goal",
       "emptyEntry": "Nothing logged yet",
       "addEntry": "Add entry",
-      "editEntry": "Edit {name}"
+      "editEntry": "Edit {name}",
+      "saveAsRecipe": "Save as recipe",
+      "saveAsRecipeName": "Recipe name",
+      "saveAsRecipeToast": "Recipe saved"
     }
   },
   "food": {
@@ -339,7 +342,9 @@
     "adaptiveTitle": "Auto-adjust calorie goal",
     "adaptiveDesc": "Compares your weight progress with expected results and adjusts the goal weekly — starting after 2 weeks of tracking.",
     "errorName": "Please enter your name.",
-    "errorBody": "Please fill in all body data."
+    "errorBody": "Please fill in all body data.",
+    "hasAccount": "Already have an account?",
+    "hasAccountLink": "Log in"
   },
   "recipes": {
     "title": "Recipes",
@@ -376,6 +381,10 @@
     "loginError": "These credentials are invalid.",
     "offlineError": "No connection to the server. Please check your internet connection.",
     "genericError": "Something went wrong. Please try again later.",
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Log in to use your account on this device."
+    },
     "forgotPassword": {
       "title": "Forgot password?",
       "subtitle": "Enter your email address and we'll send you a link to reset your password.",

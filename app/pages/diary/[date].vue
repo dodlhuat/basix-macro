@@ -137,6 +137,14 @@
             {{ Math.round(meal.totalKcal) }} kcal
           </span>
           <button
+            v-if="meal.entries.length"
+            class="button button-icon button-sm diary__meal-save-recipe"
+            :aria-label="`${meal.label} – ${$t('diary.diaryPage.saveAsRecipe')}`"
+            @click="openSaveRecipeSheet(meal)"
+          >
+            <AppIcon name="bookmark_add" size="1.25rem" />
+          </button>
+          <button
             class="button button-icon button-sm diary__meal-add"
             :aria-label="`${meal.label} – Eintrag hinzufügen`"
             @click="addEntry(meal.type)"
@@ -320,6 +328,61 @@
     </section>
 
   </div>
+
+  <!-- Save-meal-as-recipe bottom sheet -->
+  <Teleport to="body">
+    <div
+      class="bottom-sheet-wrapper"
+      :class="{ 'is-visible': saveRecipeSheetVisible }"
+      :aria-hidden="!saveRecipeSheetVisible"
+    >
+      <div class="bottom-sheet-backdrop" @click="closeSaveRecipeSheet" />
+      <div
+        class="bottom-sheet"
+        role="dialog"
+        aria-modal="true"
+        :aria-label="$t('diary.diaryPage.saveAsRecipe')"
+      >
+        <div class="bottom-sheet-handle" aria-hidden="true" />
+        <div class="bottom-sheet-header has-divider">
+          <p class="title">{{ $t('diary.diaryPage.saveAsRecipe') }}</p>
+          <button class="close button button-icon" :aria-label="$t('common.close')" @click="closeSaveRecipeSheet">
+            <AppIcon name="close" size="1.25rem" />
+          </button>
+        </div>
+        <div class="bottom-sheet-body">
+          <div class="form-group">
+            <label for="recipe-name">{{ $t('diary.diaryPage.saveAsRecipeName') }}</label>
+            <div class="input-group">
+              <input
+                id="recipe-name"
+                v-model.trim="newRecipeName"
+                type="text"
+                maxlength="100"
+                :disabled="isSavingRecipe"
+              >
+            </div>
+          </div>
+        </div>
+        <div class="bottom-sheet-footer">
+          <div class="buttons">
+            <button class="button" :disabled="isSavingRecipe" @click="closeSaveRecipeSheet">{{ $t('common.cancel') }}</button>
+            <button
+              class="button button-primary"
+              :disabled="isSavingRecipe || !newRecipeName.trim()"
+              @click="handleSaveAsRecipe"
+            >
+              <span v-if="isSavingRecipe" class="loading" />
+              <template v-else>
+                <AppIcon name="check" size="1rem" />
+                {{ $t('common.save') }}
+              </template>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Teleport>
 </template>
 
 <script setup lang="ts">
@@ -330,6 +393,9 @@ definePageMeta({ title: 'Tagebuch' })
 const route = useRoute()
 const diaryStore = useDiaryStore()
 const userStore = useUserStore()
+const recipesStore = useRecipesStore()
+const { t } = useI18n()
+const { showToast } = useToast()
 
 // ─── Date ─────────────────────────────────────────────────────────────────────
 
@@ -455,7 +521,14 @@ const MEAL_LABELS: Record<MealType, string> = {
   snack: 'Snack',
 }
 
-const mealSections = computed(() =>
+interface MealSection {
+  type: MealType
+  label: string
+  entries: DiaryEntryWithName[]
+  totalKcal: number
+}
+
+const mealSections = computed<MealSection[]>(() =>
   MEAL_TYPES.map(type => {
     const entries = entryDetails.value.filter(e => e.meal_type === type)
     return {
@@ -469,6 +542,65 @@ const mealSections = computed(() =>
 
 function addEntry(mealType: MealType): void {
   navigateTo(`/diary/add?date=${date.value}&meal=${mealType}`)
+}
+
+// ─── Save meal as recipe ────────────────────────────────────────────────────────
+// Converts every entry in a meal section into ingredients of a new recipe.
+// food_item_id entries map 1:1; recipe_id entries (logged via the "as recipe"
+// mode) get resolved by loading the underlying recipe and scaling its
+// ingredient amounts by entry.servings / recipe.servings — RecipeIngredient
+// has no concept of a nested recipe reference, so this is the only way to
+// represent "a recipe that was itself logged as part of this meal" as plain
+// ingredients. Same food_item_id appearing more than once (as two direct
+// entries, or once direct + once via a resolved recipe) gets summed into a
+// single ingredient row rather than duplicated.
+
+const saveRecipeSheetVisible = ref(false)
+const savingMeal = ref<MealSection | null>(null)
+const newRecipeName = ref('')
+const isSavingRecipe = ref(false)
+
+function openSaveRecipeSheet(meal: MealSection): void {
+  savingMeal.value = meal
+  newRecipeName.value = `${meal.label} ${formattedDayMonth.value}`
+  saveRecipeSheetVisible.value = true
+  document.body.style.overflow = 'hidden'
+}
+
+function closeSaveRecipeSheet(): void {
+  saveRecipeSheetVisible.value = false
+  document.body.style.overflow = ''
+  setTimeout(() => { savingMeal.value = null }, 420)
+}
+
+async function handleSaveAsRecipe(): Promise<void> {
+  if (!savingMeal.value || isSavingRecipe.value || !newRecipeName.value.trim()) return
+  isSavingRecipe.value = true
+  try {
+    const merged = new Map<string, number>() // food_item_id -> summed amount_g
+
+    for (const entry of savingMeal.value.entries) {
+      if (entry.food_item_id) {
+        merged.set(entry.food_item_id, (merged.get(entry.food_item_id) ?? 0) + entry.amount_g)
+      } else if (entry.recipe_id) {
+        const recipe = await recipesStore.loadRecipe(entry.recipe_id)
+        if (!recipe) continue
+        const factor = entry.servings / recipe.servings
+        for (const ing of recipe.ingredients) {
+          const amount = Math.round(ing.amount_g * factor)
+          merged.set(ing.food_item_id, (merged.get(ing.food_item_id) ?? 0) + amount)
+        }
+      }
+    }
+
+    const ingredients = Array.from(merged.entries()).map(([food_item_id, amount_g]) => ({ food_item_id, amount_g }))
+    await recipesStore.createRecipeWithIngredients(newRecipeName.value.trim(), ingredients)
+
+    showToast(t('diary.diaryPage.saveAsRecipeToast'))
+    closeSaveRecipeSheet()
+  } finally {
+    isSavingRecipe.value = false
+  }
 }
 
 // ─── Inline delete confirmation ────────────────────────────────────────────────

@@ -37,11 +37,22 @@ export const useUserStore = defineStore('user', () => {
     user.value = { ...user.value, sync_status: 'synced' }
   }
 
-  /** Overwrites the local profile with a server-provided version (sync pull / conflict resolution). */
+  /**
+   * Overwrites the local profile with a server-provided version (sync pull / conflict
+   * resolution). Also handles the no-local-profile-yet case — logging in on a fresh
+   * device before ever completing onboarding there — by adopting the remote row as-is.
+   * The backend doesn't send `created_at` for the profile, so it falls back to
+   * `updated_at`, matching the same convention used for every other synced table.
+   */
   async function applyRemote(remote: Record<string, unknown>): Promise<void> {
-    if (!user.value) return
     const { db } = await import('../../db')
-    const merged: User = { ...user.value, ...remote, id: user.value.id, sync_status: 'synced' }
+    const merged: User = user.value
+      ? { ...user.value, ...remote, id: user.value.id, sync_status: 'synced' }
+      : {
+          ...(remote as unknown as Omit<User, 'created_at' | 'sync_status'>),
+          created_at: remote.updated_at as string,
+          sync_status: 'synced',
+        }
     await db.users.put(merged)
     user.value = merged
   }

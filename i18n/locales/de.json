@@ -108,7 +108,10 @@
       "overGoalLabel": "+ {n} kcal über dem Ziel",
       "emptyEntry": "Noch nichts eingetragen",
       "addEntry": "Eintrag hinzufügen",
-      "editEntry": "{name} bearbeiten"
+      "editEntry": "{name} bearbeiten",
+      "saveAsRecipe": "Als Rezept speichern",
+      "saveAsRecipeName": "Rezeptname",
+      "saveAsRecipeToast": "Rezept gespeichert"
     }
   },
   "food": {
@@ -339,7 +342,9 @@
     "adaptiveTitle": "Kalorienziel automatisch anpassen",
     "adaptiveDesc": "Vergleicht deine Gewichtsentwicklung mit dem erwarteten Fortschritt und korrigiert das Ziel wöchentlich — erst nach 2 Wochen Tracking.",
     "errorName": "Bitte gib deinen Namen ein.",
-    "errorBody": "Bitte fülle alle Körperdaten aus."
+    "errorBody": "Bitte fülle alle Körperdaten aus.",
+    "hasAccount": "Schon ein Konto?",
+    "hasAccountLink": "Anmelden"
   },
   "recipes": {
     "title": "Rezepte",
@@ -376,6 +381,10 @@
     "loginError": "Diese Zugangsdaten sind ungültig.",
     "offlineError": "Keine Verbindung zum Server. Bitte überprüfe deine Internetverbindung.",
     "genericError": "Etwas ist schiefgelaufen. Bitte versuche es später erneut.",
+    "login": {
+      "title": "Willkommen zurück",
+      "subtitle": "Melde dich an, um dein Konto auf diesem Gerät zu nutzen."
+    },
     "forgotPassword": {
       "title": "Passwort vergessen?",
       "subtitle": "Gib deine E-Mail-Adresse ein, wir schicken dir einen Link zum Zurücksetzen.",

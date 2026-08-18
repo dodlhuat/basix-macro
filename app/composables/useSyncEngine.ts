@@ -201,8 +201,12 @@ export async function performSync(options: { full?: boolean } = {}): Promise<Syn
       }
     }
 
+    // No `&& userStore.user` guard here: a fresh device with no local profile yet
+    // (e.g. logging in before ever completing onboarding on this device) must still
+    // pull the remote profile. shouldApplyRemote() already returns true whenever
+    // `local` is falsy, so passing `userStore.user === null` through it is safe.
     const remoteProfile = response.changes.profile as Record<string, unknown> | null | undefined
-    if (remoteProfile && userStore.user) {
+    if (remoteProfile) {
       if (shouldApplyRemote(userStore.user as unknown as SyncRow, remoteProfile as unknown as SyncRow)) {
         await userStore.applyRemote(remoteProfile)
       }

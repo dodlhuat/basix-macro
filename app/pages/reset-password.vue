@@ -1,6 +1,6 @@
 <template>
   <div class="reset-password">
-    <NuxtLink to="/settings" class="button button-icon reset-password__back" :aria-label="$t('common.back')">
+    <NuxtLink to="/login" class="button button-icon reset-password__back" :aria-label="$t('common.back')">
       <AppIcon name="arrow_back" size="1.25rem" />
     </NuxtLink>
 
@@ -94,7 +94,7 @@
             <p class="reset-password__subtitle">{{ $t('auth.resetPassword.successMessage') }}</p>
           </div>
 
-          <NuxtLink to="/settings" class="button button-primary reset-password__submit">
+          <NuxtLink to="/login" class="button button-primary reset-password__submit">
             {{ $t('auth.resetPassword.continueButton') }}
           </NuxtLink>
         </div>
@@ -142,7 +142,7 @@ async function handleSubmit() {
   try {
     await authStore.confirmPasswordReset(token.value, email.value, password.value)
     submitted.value = true
-    redirectTimer = setTimeout(() => navigateTo('/settings'), 4000)
+    redirectTimer = setTimeout(() => navigateTo('/login'), 4000)
   } catch (e) {
     const err = e as { status: number | null, message: string }
     serverError.value = err.status === null ? t('auth.offlineError') : (err.message || t('auth.genericError'))
