@@ -29,8 +29,18 @@ $macro-calories: #fc613d; // icon orange-red arc
 // it already does for $radius-*, so components can consume them via
 // var(--meal-breakfast) etc. instead of re-typing hex in scoped styles or
 // script `<script>` blocks.
-$meal-breakfast: #f59e0b;
+// breakfast and dinner were retuned 2026-08-18 (were #f59e0b / #3b82f6): the
+// old breakfast hex was byte-identical to the pre-icon-recolor $macro-fat,
+// and after the icon recolor $macro-fat (#feab0e) still sits only ~10° away
+// in hue — an unrelated "amber = fat" association forming by accident right
+// next to the dashboard's meal list. Old dinner-blue was likewise ~4° from
+// $water-color (#60a5fa), directly adjacent to it in the dashboard layout.
+// New values keep lunch/snack (already well-separated from every macro/water
+// hue) and move breakfast into the open pink/magenta gap between snack and
+// protein-red, and dinner into indigo — still "blue", but clearly apart from
+// the water tracker's sky blue.
+$meal-breakfast: #ec4899;
 $meal-lunch:     #22c55e;
-$meal-dinner:    #3b82f6;
+$meal-dinner:    #6366f1;
 $meal-snack:     #a855f7;
 $water-color:    #60a5fa;

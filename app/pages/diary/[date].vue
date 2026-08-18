@@ -981,10 +981,10 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
     border-radius: 0 0 var(--radius-xl) var(--radius-xl);
   }
 
-  &--breakfast { border-left-color: #f59e0b; }
-  &--lunch     { border-left-color: #22c55e; }
-  &--dinner    { border-left-color: #3b82f6; }
-  &--snack     { border-left-color: #a855f7; }
+  &--breakfast { border-left-color: var(--meal-breakfast); }
+  &--lunch     { border-left-color: var(--meal-lunch); }
+  &--dinner    { border-left-color: var(--meal-dinner); }
+  &--snack     { border-left-color: var(--meal-snack); }
 }
 
 .diary__meal-header {
