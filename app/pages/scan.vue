@@ -256,11 +256,22 @@ const fromDate = computed(
 )
 const fromMeal = computed(() => (route.query.meal as string) || 'snack')
 
+// Capture-only mode: some callers (e.g. food/add.vue's manual-entry form)
+// just want the raw barcode typed in for them, not a full lookup+save flow.
+const returnTo = computed(() => (route.query.returnTo as string) || '')
+
 // ─── Core scan handler ────────────────────────────────────────────────────────
 
 async function onDetected(barcode: string) {
   // Ignore repeated frames while already processing or sheet is open
   if (isProcessing.value || sheetMode.value !== 'hidden') return
+
+  if (returnTo.value) {
+    stopScanner()
+    await navigateTo(`${returnTo.value}?barcode=${encodeURIComponent(barcode)}`)
+    return
+  }
+
   isProcessing.value = true
   scannedBarcode.value = barcode
 

@@ -191,16 +191,26 @@
       </div>
 
       <div class="form-group">
-        <label for="barcode">Barcode</label>
-        <div class="input-group">
-          <input
-            id="barcode"
-            v-model.trim="form.barcode"
-            type="text"
-            inputmode="numeric"
-            placeholder="EAN/GTIN"
-            autocomplete="off"
+        <label for="barcode">{{ $t('food.form.barcode') }}</label>
+        <div class="food-form__barcode-row">
+          <div class="input-group food-form__barcode-input">
+            <input
+              id="barcode"
+              v-model.trim="form.barcode"
+              type="text"
+              inputmode="numeric"
+              placeholder="EAN/GTIN"
+              autocomplete="off"
+            >
+          </div>
+          <button
+            type="button"
+            class="button button-icon food-form__scan-btn"
+            :aria-label="$t('diary.scanBarcode')"
+            @click="navigateTo('/scan?returnTo=/food/add')"
           >
+            <AppIcon name="qr_code_scanner" size="1.25rem" />
+          </button>
         </div>
       </div>
 
@@ -420,6 +430,42 @@ async function handleSave() {
   &--protein { background: #ef4444; }
   &--carbs   { background: #3b82f6; }
   &--fat     { background: #f59e0b; }
+}
+
+// ─── Barcode field + scan button ──────────────────────────────────────────────
+
+.food-form__barcode-row {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing;
+}
+
+.food-form__barcode-input {
+  flex: 1;
+}
+
+.food-form__scan-btn {
+  flex-shrink: 0;
+  color: var(--accent-color);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  transition: background 150ms ease, transform 200ms ease;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--accent-color-tint);
+    transform: scale(1.08);
+  }
+
+  &:active {
+    transform: scale(0.93);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+  }
 }
 
 // ─── Error state ──────────────────────────────────────────────────────────────
