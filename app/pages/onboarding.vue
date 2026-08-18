@@ -213,6 +213,21 @@ const { t } = useI18n()
 const STEPS = 4
 const { currentStep, isFirst, isLast, next, prev } = useStepper(STEPS)
 
+// `/onboarding` is in the global middleware's SKIP_PATHS (it has to be, otherwise
+// the middleware would redirect a not-yet-onboarded visitor here in an infinite
+// loop), which means the middleware never checks isOnboarded for this route —
+// landing here (browser back, the login page's back button, a stale bookmark)
+// after already being onboarded would otherwise just show the wizard again
+// instead of bouncing to the dashboard like every other already-onboarded route.
+onMounted(async () => {
+  if (!userStore.isOnboarded) {
+    await userStore.loadUser()
+  }
+  if (userStore.isOnboarded) {
+    await router.replace('/')
+  }
+})
+
 const saving = ref(false)
 const errors = reactive({ name: '', body: '' })
 
