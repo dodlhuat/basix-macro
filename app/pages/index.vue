@@ -66,7 +66,17 @@
 
           <div class="dashboard__hero-stats">
             <div class="dashboard__stat">
-              <span class="dashboard__stat-value">{{ Math.round(totalCalories) }}</span>
+              <div class="dashboard__activity-value-row">
+                <span class="dashboard__stat-value dashboard__activity-burned-value">{{ Math.round(totalBurned) }}</span>
+                <button
+                  type="button"
+                  class="dashboard__activity-add"
+                  :aria-label="$t('activity.addEntry')"
+                  @click="openActivitySheet"
+                >
+                  <AppIcon name="add" size="1rem" />
+                </button>
+              </div>
               <span class="dashboard__stat-label">{{ $t('dashboard.consumed') }}</span>
             </div>
             <div class="dashboard__stat-sep" aria-hidden="true" />
@@ -74,13 +84,6 @@
               <span class="dashboard__stat-value">{{ calorieGoal }}</span>
               <span class="dashboard__stat-label">{{ $t('dashboard.goal') }}</span>
             </div>
-            <template v-if="totalBurned > 0">
-              <div class="dashboard__stat-sep" aria-hidden="true" />
-              <NuxtLink to="/activity" class="dashboard__stat dashboard__stat--burned">
-                <span class="dashboard__stat-value dashboard__stat-value--burned">{{ Math.round(totalBurned) }}</span>
-                <span class="dashboard__stat-label">{{ $t('dashboard.burned') }}</span>
-              </NuxtLink>
-            </template>
           </div>
         </div>
 
@@ -365,6 +368,129 @@
       <AppIcon name="add" size="1.5rem" />
     </button>
   </Teleport>
+
+  <!-- Quick-add activity bottom sheet -->
+  <Teleport to="body">
+    <div
+      class="bottom-sheet-wrapper"
+      :class="{ 'is-visible': activitySheetVisible }"
+      :aria-hidden="!activitySheetVisible"
+    >
+      <div class="bottom-sheet-backdrop" @click="closeActivitySheet" />
+
+      <div
+        class="bottom-sheet"
+        role="dialog"
+        aria-modal="true"
+        :aria-label="$t('activity.addEntry')"
+      >
+        <div class="bottom-sheet-handle" aria-hidden="true" />
+
+        <div class="bottom-sheet-header has-divider">
+          <div class="act-sheet__title-group">
+            <p class="title">{{ $t('activity.addEntry') }}</p>
+            <p class="subtitle">{{ formattedDate }}</p>
+          </div>
+          <button
+            class="close button button-icon"
+            :aria-label="$t('common.close')"
+            @click="closeActivitySheet"
+          >
+            <AppIcon name="close" size="1.25rem" />
+          </button>
+        </div>
+
+        <div class="bottom-sheet-body">
+
+          <!-- Name -->
+          <div class="act-sheet__section">
+            <label class="act-sheet__section-label" for="act-sheet-name">
+              {{ $t('activity.nameLabel') }}
+            </label>
+            <div class="form-group act-sheet__field-group">
+              <div class="input-group">
+                <input
+                  id="act-sheet-name"
+                  v-model="activityName"
+                  type="text"
+                  :placeholder="$t('activity.namePlaceholder')"
+                  :aria-label="$t('activity.nameLabel')"
+                  maxlength="60"
+                  autofocus
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Calories + duration -->
+          <div class="act-sheet__row">
+            <div class="act-sheet__section act-sheet__field">
+              <label class="act-sheet__section-label" for="act-sheet-calories">
+                {{ $t('activity.caloriesLabel') }}
+              </label>
+              <div class="form-group act-sheet__field-group">
+                <div class="input-group">
+                  <input
+                    id="act-sheet-calories"
+                    v-model="activityCaloriesStr"
+                    type="number"
+                    inputmode="numeric"
+                    min="1"
+                    step="1"
+                    placeholder="300"
+                    :aria-label="$t('activity.caloriesLabel')"
+                    class="act-sheet__num-input"
+                  >
+                  <span class="act-sheet__input-unit">kcal</span>
+                </div>
+              </div>
+            </div>
+            <div class="act-sheet__section act-sheet__field">
+              <label class="act-sheet__section-label" for="act-sheet-duration">
+                {{ $t('activity.durationLabel') }}
+                <span class="act-sheet__optional">({{ $t('common.optional') }})</span>
+              </label>
+              <div class="form-group act-sheet__field-group">
+                <div class="input-group">
+                  <input
+                    id="act-sheet-duration"
+                    v-model="activityDurationStr"
+                    type="number"
+                    inputmode="numeric"
+                    min="0"
+                    step="1"
+                    placeholder="30"
+                    :aria-label="$t('activity.durationLabel')"
+                    class="act-sheet__num-input"
+                  >
+                  <span class="act-sheet__input-unit">min</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="bottom-sheet-footer">
+          <div class="buttons">
+            <button class="button" @click="closeActivitySheet">{{ $t('common.cancel') }}</button>
+            <button
+              class="button button-primary"
+              :disabled="!isActivityFormValid || isAddingActivity"
+              @click="handleAddActivity"
+            >
+              <span v-if="isAddingActivity" class="loading" />
+              <template v-else>
+                <AppIcon name="check" size="1rem" />
+                {{ $t('common.add') }}
+              </template>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </Teleport>
 </template>
 
 <script setup lang="ts">
@@ -431,9 +557,9 @@ const WATER_GOAL  = 2000
 // ─── Calorie hero ─────────────────────────────────────────────────────────────
 
 // Exercise "earns" extra calories rather than reducing what's shown as
-// consumed — totalCalories is displayed literally as "verbraucht" elsewhere,
-// so subtracting burned calories from it would misrepresent that label.
-// effectiveCalorieGoal is used only for the remaining/percent/over-goal math
+// consumed (totalCalories feeds "remaining"/the progress bar, no longer a
+// standalone hero stat — see the activity tile's own value-row for burned
+// kcal). effectiveCalorieGoal is used only for the remaining/percent/over-goal math
 // (and the pace baseline below) — the raw calorieGoal keeps showing as-is
 // everywhere it's labelled "Ziel", so that number never silently shifts.
 // On a day with no activity entries, totalBurned is 0 and this is a no-op.
@@ -631,6 +757,59 @@ function openFab() {
   navigateTo(`/diary/add?meal=${getMealSuggestion()}&date=${currentDate.value}`)
 }
 
+// ─── Quick-add activity bottom sheet ───────────────────────────────────────────
+// Entry point is the small `dashboard__activity-add` button next to the
+// "consumed" hero tile, always visible (no separate stat slot needed) —
+// unlike the food/recipe sheets in diary/add.vue, there is no underlying
+// entity to pick first, so this opens directly. Logs against `currentDate`
+// (the day being viewed), not always "today" like the standalone /activity
+// page's form.
+
+const activitySheetVisible = ref(false)
+const activityName = ref('')
+const activityCaloriesStr = ref('')
+const activityDurationStr = ref('')
+const isAddingActivity = ref(false)
+
+const isActivityFormValid = computed(() => {
+  const cal = parseFloat(activityCaloriesStr.value)
+  return activityName.value.trim().length > 0 && !isNaN(cal) && cal > 0
+})
+
+function openActivitySheet() {
+  activityName.value = ''
+  activityCaloriesStr.value = ''
+  activityDurationStr.value = ''
+  activitySheetVisible.value = true
+  document.body.style.overflow = 'hidden'
+}
+
+function closeActivitySheet() {
+  activitySheetVisible.value = false
+  document.body.style.overflow = ''
+}
+
+async function handleAddActivity() {
+  if (!isActivityFormValid.value || isAddingActivity.value) return
+  isAddingActivity.value = true
+  try {
+    const duration = activityDurationStr.value ? parseFloat(activityDurationStr.value) : NaN
+    await activityStore.addEntry(
+      activityName.value.trim(),
+      parseFloat(activityCaloriesStr.value),
+      currentDate.value,
+      !isNaN(duration) && duration > 0 ? duration : undefined,
+    )
+    closeActivitySheet()
+  } finally {
+    isAddingActivity.value = false
+  }
+}
+
+function onActivitySheetKeydown(e: KeyboardEvent) {
+  if (e.key === 'Escape' && activitySheetVisible.value) closeActivitySheet()
+}
+
 // ─── Load data ────────────────────────────────────────────────────────────────
 
 const isLoading = ref(true)
@@ -644,6 +823,11 @@ async function loadDate(date: string) {
 onMounted(() => {
   loadDate(currentDate.value)
   activityStore.loadEntries()
+  window.addEventListener('keydown', onActivitySheetKeydown)
+})
+onUnmounted(() => {
+  window.removeEventListener('keydown', onActivitySheetKeydown)
+  document.body.style.overflow = ''
 })
 watch(currentDate, date => loadDate(date))
 </script>
@@ -868,13 +1052,32 @@ watch(currentDate, date => loadDate(date))
   align-self: flex-end;
 }
 
-// Burned-calories tile links to /activity — reads as a "credit" rather than
-// intake, so it deliberately breaks from the shared --macro-calories orange
-// used by consumed/goal above (that hue already means "intake" on this
-// page) and uses --success instead, matching the app's existing "down/back
-// is good" polarity (see weight/body-fat delta badges).
-.dashboard__stat--burned {
-  text-decoration: none;
+// Row pairing the burned-kcal value with the quick-add-activity button —
+// food-consumed calories aren't shown here at all ("remaining" and "goal"
+// already cover that), this tile is purely the activity entry point now.
+.dashboard__activity-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+
+// Burned kcal reuses .dashboard__stat-value's sizing, just recolored —
+// --success = "credit", matching the app's existing "down/back is good"
+// polarity (see weight/body-fat delta badges).
+.dashboard__activity-burned-value {
+  color: var(--success);
+}
+
+// Quick-add-activity button — sits right next to the burned-kcal value.
+.dashboard__activity-add {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  padding: 0.2rem;
+  background: none;
+  border: none;
+  font-family: inherit;
+  color: var(--success);
   cursor: pointer;
   transition: opacity 150ms ease;
 
@@ -888,10 +1091,6 @@ watch(currentDate, date => loadDate(date))
     outline-offset: 2px;
     border-radius: var(--radius-sm);
   }
-}
-
-.dashboard__stat-value--burned {
-  color: var(--success);
 }
 
 .dashboard__hero-progress {
@@ -1410,6 +1609,80 @@ watch(currentDate, date => loadDate(date))
     outline: 2px solid var(--accent-color);
     outline-offset: 3px;
   }
+}
+
+// ─── Activity quick-add sheet ──────────────────────────────────────────────
+// Mirrors diary/add.vue's `da-sheet__*` sheet-body pattern (same bottom-sheet
+// shell classes, same section/field structure) so the two entry points feel
+// like one family — kept as its own `act-sheet__*` block since scoped styles
+// can't be shared across SFCs.
+
+.act-sheet__title-group {
+  flex: 1;
+  min-width: 0;
+
+  .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.act-sheet__section {
+  display: flex;
+  flex-direction: column;
+  gap: calc(#{$spacing} * 0.5);
+  margin-bottom: $spacing;
+}
+
+.act-sheet__section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--secondary-text);
+}
+
+.act-sheet__optional {
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: 0;
+  opacity: 0.75;
+}
+
+.act-sheet__field-group {
+  margin: 0;
+}
+
+.act-sheet__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(#{$spacing} * 0.75);
+}
+
+.act-sheet__field {
+  min-width: 0;
+}
+
+.act-sheet__num-input {
+  // Remove spinner arrows on number inputs
+  -moz-appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.act-sheet__input-unit {
+  padding: 0 calc(#{$spacing} * 0.625);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--secondary-text);
+  flex-shrink: 0;
+  pointer-events: none;
+  user-select: none;
 }
 
 // ─── Skeleton loading state ────────────────────────────────────────────────

@@ -896,11 +896,13 @@ const sheetNutrition = computed(() => {
   }
 })
 
-function openSheet(food: FoodItem) {
+async function openSheet(food: FoodItem) {
   selectedFood.value = food
   sheetAmount.value = 100
   sheetVisible.value = true
   document.body.style.overflow = 'hidden'
+  const lastAmount = await diaryStore.getLastAmountForFood(food.id)
+  if (lastAmount && selectedFood.value?.id === food.id) sheetAmount.value = lastAmount
 }
 
 function closeSheet() {

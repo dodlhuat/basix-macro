@@ -59,21 +59,24 @@
 
         <div class="diary__hero-stats">
           <div class="diary__stat">
-            <span class="diary__stat-value">{{ Math.round(totalCalories) }}</span>
-            <span class="diary__stat-label">verbraucht</span>
+            <div class="diary__activity-value-row">
+              <span class="diary__stat-value diary__activity-burned-value">{{ Math.round(totalBurned) }}</span>
+              <button
+                type="button"
+                class="diary__activity-add"
+                :aria-label="$t('activity.addEntry')"
+                @click="openActivitySheet"
+              >
+                <AppIcon name="add" size="1rem" />
+              </button>
+            </div>
+            <span class="diary__stat-label">{{ $t('dashboard.consumed') }}</span>
           </div>
           <div class="diary__stat-sep" aria-hidden="true" />
           <div class="diary__stat">
             <span class="diary__stat-value">{{ calorieGoal }}</span>
             <span class="diary__stat-label">Ziel</span>
           </div>
-          <template v-if="totalBurned > 0">
-            <div class="diary__stat-sep" aria-hidden="true" />
-            <NuxtLink to="/activity" class="diary__stat diary__stat--burned">
-              <span class="diary__stat-value diary__stat-value--burned">{{ Math.round(totalBurned) }}</span>
-              <span class="diary__stat-label">verbrannt</span>
-            </NuxtLink>
-          </template>
         </div>
       </div>
 
@@ -390,6 +393,127 @@
       </div>
     </div>
   </Teleport>
+
+  <!-- Quick-add activity bottom sheet -->
+  <Teleport to="body">
+    <div
+      class="bottom-sheet-wrapper"
+      :class="{ 'is-visible': activitySheetVisible }"
+      :aria-hidden="!activitySheetVisible"
+    >
+      <div class="bottom-sheet-backdrop" @click="closeActivitySheet" />
+
+      <div
+        class="bottom-sheet"
+        role="dialog"
+        aria-modal="true"
+        :aria-label="$t('activity.addEntry')"
+      >
+        <div class="bottom-sheet-handle" aria-hidden="true" />
+
+        <div class="bottom-sheet-header has-divider">
+          <div class="act-sheet__title-group">
+            <p class="title">{{ $t('activity.addEntry') }}</p>
+            <p class="subtitle">{{ formattedDayMonth }}</p>
+          </div>
+          <button
+            class="close button button-icon"
+            :aria-label="$t('common.close')"
+            @click="closeActivitySheet"
+          >
+            <AppIcon name="close" size="1.25rem" />
+          </button>
+        </div>
+
+        <div class="bottom-sheet-body">
+
+          <div class="act-sheet__section">
+            <label class="act-sheet__section-label" for="diary-act-sheet-name">
+              {{ $t('activity.nameLabel') }}
+            </label>
+            <div class="form-group act-sheet__field-group">
+              <div class="input-group">
+                <input
+                  id="diary-act-sheet-name"
+                  v-model="activityName"
+                  type="text"
+                  :placeholder="$t('activity.namePlaceholder')"
+                  :aria-label="$t('activity.nameLabel')"
+                  maxlength="60"
+                  autofocus
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="act-sheet__row">
+            <div class="act-sheet__section act-sheet__field">
+              <label class="act-sheet__section-label" for="diary-act-sheet-calories">
+                {{ $t('activity.caloriesLabel') }}
+              </label>
+              <div class="form-group act-sheet__field-group">
+                <div class="input-group">
+                  <input
+                    id="diary-act-sheet-calories"
+                    v-model="activityCaloriesStr"
+                    type="number"
+                    inputmode="numeric"
+                    min="1"
+                    step="1"
+                    placeholder="300"
+                    :aria-label="$t('activity.caloriesLabel')"
+                    class="act-sheet__num-input"
+                  >
+                  <span class="act-sheet__input-unit">kcal</span>
+                </div>
+              </div>
+            </div>
+            <div class="act-sheet__section act-sheet__field">
+              <label class="act-sheet__section-label" for="diary-act-sheet-duration">
+                {{ $t('activity.durationLabel') }}
+                <span class="act-sheet__optional">({{ $t('common.optional') }})</span>
+              </label>
+              <div class="form-group act-sheet__field-group">
+                <div class="input-group">
+                  <input
+                    id="diary-act-sheet-duration"
+                    v-model="activityDurationStr"
+                    type="number"
+                    inputmode="numeric"
+                    min="0"
+                    step="1"
+                    placeholder="30"
+                    :aria-label="$t('activity.durationLabel')"
+                    class="act-sheet__num-input"
+                  >
+                  <span class="act-sheet__input-unit">min</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="bottom-sheet-footer">
+          <div class="buttons">
+            <button class="button" @click="closeActivitySheet">{{ $t('common.cancel') }}</button>
+            <button
+              class="button button-primary"
+              :disabled="!isActivityFormValid || isAddingActivity"
+              @click="handleAddActivity"
+            >
+              <span v-if="isAddingActivity" class="loading" />
+              <template v-else>
+                <AppIcon name="check" size="1rem" />
+                {{ $t('common.add') }}
+              </template>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </Teleport>
 </template>
 
 <script setup lang="ts">
@@ -459,10 +583,10 @@ const waterGoal   = computed(() => userStore.user?.water_goal_ml  ?? 2000)
 // ─── Calorie hero ─────────────────────────────────────────────────────────────
 
 // See index.vue for the full rationale: burned calories extend the daily
-// budget rather than reduce what's shown as "verbraucht". effectiveCalorieGoal
-// feeds only the remaining/percent/over-goal math below; the raw calorieGoal
-// keeps showing as-is wherever it's labelled "Ziel". Zero activity entries
-// means totalBurned is 0 and this is a no-op.
+// budget rather than reduce what's shown as consumed (dashboard.consumed).
+// effectiveCalorieGoal feeds only the remaining/percent/over-goal math below;
+// the raw calorieGoal keeps showing as-is wherever it's labelled "Ziel".
+// Zero activity entries means totalBurned is 0 and this is a no-op.
 const totalBurned = computed(() => activityStore.totalBurnedForDate(date.value))
 const effectiveCalorieGoal = computed(() => calorieGoal.value + totalBurned.value)
 
@@ -681,11 +805,67 @@ async function saveEdit(id: string): Promise<void> {
   editingEntryId.value = null
 }
 
+// ─── Quick-add activity bottom sheet ───────────────────────────────────────────
+// Entry point is the small `diary__activity-add` button next to the
+// "consumed" hero tile, always visible (no separate stat slot needed) — see
+// index.vue's identical sheet for the full rationale. Logs against `date`
+// (the day being viewed).
+
+const activitySheetVisible = ref(false)
+const activityName = ref('')
+const activityCaloriesStr = ref('')
+const activityDurationStr = ref('')
+const isAddingActivity = ref(false)
+
+const isActivityFormValid = computed(() => {
+  const cal = parseFloat(activityCaloriesStr.value)
+  return activityName.value.trim().length > 0 && !isNaN(cal) && cal > 0
+})
+
+function openActivitySheet(): void {
+  activityName.value = ''
+  activityCaloriesStr.value = ''
+  activityDurationStr.value = ''
+  activitySheetVisible.value = true
+  document.body.style.overflow = 'hidden'
+}
+
+function closeActivitySheet(): void {
+  activitySheetVisible.value = false
+  document.body.style.overflow = ''
+}
+
+async function handleAddActivity(): Promise<void> {
+  if (!isActivityFormValid.value || isAddingActivity.value) return
+  isAddingActivity.value = true
+  try {
+    const duration = activityDurationStr.value ? parseFloat(activityDurationStr.value) : NaN
+    await activityStore.addEntry(
+      activityName.value.trim(),
+      parseFloat(activityCaloriesStr.value),
+      date.value,
+      !isNaN(duration) && duration > 0 ? duration : undefined,
+    )
+    closeActivitySheet()
+  } finally {
+    isAddingActivity.value = false
+  }
+}
+
+function onActivitySheetKeydown(e: KeyboardEvent): void {
+  if (e.key === 'Escape' && activitySheetVisible.value) closeActivitySheet()
+}
+
 // ─── Data loading ──────────────────────────────────────────────────────────────
 
 onMounted(() => {
   diaryStore.loadForDate(date.value)
   activityStore.loadEntries()
+  window.addEventListener('keydown', onActivitySheetKeydown)
+})
+onUnmounted(() => {
+  window.removeEventListener('keydown', onActivitySheetKeydown)
+  document.body.style.overflow = ''
 })
 watch(date, newDate => diaryStore.loadForDate(newDate))
 </script>
@@ -889,10 +1069,33 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   align-self: flex-end;
 }
 
-// See index.vue's identical .dashboard__stat--burned for the color rationale
-// (--success = "credit", distinct from consumed/goal's default text color).
-.diary__stat--burned {
-  text-decoration: none;
+// Row pairing the burned-kcal value with the quick-add-activity button —
+// food-consumed calories aren't shown here at all ("remaining" and "goal"
+// already cover that), this tile is purely the activity entry point now.
+.diary__activity-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+
+// Burned kcal reuses .diary__stat-value's sizing, just recolored —
+// --success = "credit", matching the app's existing "down/back is good"
+// polarity (see weight/body-fat delta badges).
+.diary__activity-burned-value {
+  color: var(--success);
+}
+
+// Quick-add-activity button — sits right next to the first stat rather than
+// getting its own hero stat slot.
+.diary__activity-add {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  padding: 0.2rem;
+  background: none;
+  border: none;
+  font-family: inherit;
+  color: var(--success);
   cursor: pointer;
   transition: opacity 150ms ease;
 
@@ -906,10 +1109,6 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
     outline-offset: 2px;
     border-radius: var(--radius-sm);
   }
-}
-
-.diary__stat-value--burned {
-  color: var(--success);
 }
 
 .diary__hero-progress {
@@ -1344,5 +1543,76 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 .diary__water-chips {
   flex-wrap: wrap;
   gap: calc(#{$spacing} * 0.5);
+}
+
+// ─── Activity quick-add sheet ──────────────────────────────────────────────
+// Mirrors index.vue's identical `act-sheet__*` block — kept as its own copy
+// since scoped styles can't be shared across SFCs.
+
+.act-sheet__title-group {
+  flex: 1;
+  min-width: 0;
+
+  .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.act-sheet__section {
+  display: flex;
+  flex-direction: column;
+  gap: calc(#{$spacing} * 0.5);
+  margin-bottom: $spacing;
+}
+
+.act-sheet__section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--secondary-text);
+}
+
+.act-sheet__optional {
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: 0;
+  opacity: 0.75;
+}
+
+.act-sheet__field-group {
+  margin: 0;
+}
+
+.act-sheet__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(#{$spacing} * 0.75);
+}
+
+.act-sheet__field {
+  min-width: 0;
+}
+
+.act-sheet__num-input {
+  -moz-appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.act-sheet__input-unit {
+  padding: 0 calc(#{$spacing} * 0.625);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--secondary-text);
+  flex-shrink: 0;
+  pointer-events: none;
+  user-select: none;
 }
 </style>

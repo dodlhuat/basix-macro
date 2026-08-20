@@ -215,6 +215,21 @@ export const useDiaryStore = defineStore('diary', () => {
     await loadForDate(entry.date)
   }
 
+  /**
+   * Amount logged the last time this food was added to the diary, so the
+   * add-food sheet can preselect it instead of always defaulting to 100g.
+   */
+  async function getLastAmountForFood(foodItemId: string): Promise<number | null> {
+    const { db } = await import('../../db')
+    const pastEntries = await db.diary_entries
+      .where('food_item_id').equals(foodItemId)
+      .filter(e => !e.deleted_at)
+      .toArray()
+    if (!pastEntries.length) return null
+    pastEntries.sort((a, b) => b.logged_at.localeCompare(a.logged_at))
+    return pastEntries[0].amount_g
+  }
+
   async function deleteEntry(id: string) {
     const { db } = await import('../../db')
     const entry = await db.diary_entries.get(id)
@@ -242,5 +257,6 @@ export const useDiaryStore = defineStore('diary', () => {
     addRecipeEntry,
     updateEntryQuantity,
     deleteEntry,
+    getLastAmountForFood,
   }
 })
