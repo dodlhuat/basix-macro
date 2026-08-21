@@ -40,48 +40,79 @@
       </template>
     </section>
 
-    <!-- ─── SVG Chart ────────────────────────────────────────────────────────── -->
-    <section class="weight__chart-section" aria-label="Gewichtsverlauf">
-      <template v-if="chartData.length >= 2">
-        <svg
-          class="weight__chart"
-          :viewBox="`0 0 ${W} ${H}`"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <defs>
-            <linearGradient id="weight-gradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="var(--accent-color)" stop-opacity="0.22" />
-              <stop offset="100%" stop-color="var(--accent-color)" stop-opacity="0" />
-            </linearGradient>
-          </defs>
-          <!-- Subtle grid lines -->
-          <line
-            v-for="gw in gridWeights"
-            :key="gw"
-            :x1="0"
-            :y1="toY(gw)"
-            :x2="W"
-            :y2="toY(gw)"
-            class="weight__chart-grid"
-          />
-          <!-- Area fill -->
-          <path :d="areaPath" fill="url(#weight-gradient)" />
-          <!-- Line -->
-          <path :d="linePath" class="weight__chart-line" />
-          <!-- Latest point highlight -->
-          <circle
-            :cx="toX(chartData.length - 1)"
-            :cy="toY(chartData.at(-1)!.weight_kg)"
-            r="4"
-            class="weight__chart-dot"
-          />
-        </svg>
-      </template>
-      <div v-else class="weight__chart-placeholder">
-        <AppIcon name="show_chart" size="1.5rem" />
-        <span>{{ $t('weight.chartHint') }}</span>
+    <!-- ─── Chart section: daily / weekly-average view toggle ───────────────── -->
+    <section
+      ref="tabsRef"
+      class="weight__chart-section weight__view-toggle tabs-container tabs-pills"
+      aria-label="Gewichtsverlauf"
+    >
+      <div class="tabs-header">
+        <ul class="tabs-list">
+          <li class="tab-item">{{ $t('weight.dailyView') }}</li>
+          <li class="tab-item">{{ $t('weight.weeklyView') }}</li>
+        </ul>
+      </div>
+
+      <div class="tabs-content">
+        <!-- Daily panel: raw entries, day-to-day noise -->
+        <div class="tab-panel">
+          <template v-if="chartData.length >= 2">
+            <svg
+              class="weight__chart"
+              :viewBox="`0 0 ${W} ${H}`"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <defs>
+                <linearGradient id="weight-gradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="var(--accent-color)" stop-opacity="0.22" />
+                  <stop offset="100%" stop-color="var(--accent-color)" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <!-- Subtle grid lines -->
+              <line
+                v-for="gw in gridWeights"
+                :key="gw"
+                :x1="0"
+                :y1="toY(gw)"
+                :x2="W"
+                :y2="toY(gw)"
+                class="weight__chart-grid"
+              />
+              <!-- Area fill -->
+              <path :d="areaPath" fill="url(#weight-gradient)" />
+              <!-- Line -->
+              <path :d="linePath" class="weight__chart-line" />
+              <!-- Latest point highlight -->
+              <circle
+                :cx="toX(chartData.length - 1)"
+                :cy="toY(chartData.at(-1)!.weight_kg)"
+                r="4"
+                class="weight__chart-dot"
+              />
+            </svg>
+          </template>
+          <div v-else class="weight__chart-placeholder">
+            <AppIcon name="show_chart" size="1.5rem" />
+            <span>{{ $t('weight.chartHint') }}</span>
+          </div>
+        </div>
+
+        <!-- Weekly panel: ISO-week averages, long-term trend -->
+        <div class="tab-panel">
+          <template v-if="weeklyAverages.length >= 2">
+            <div class="weight__weekly-trend">
+              <span class="badge" :class="weeklyTrendBadgeClass">{{ weeklyTrendDisplay }}</span>
+              <span class="weight__weekly-trend-label">{{ $t('weight.weeklyTrendVsPrev') }}</span>
+            </div>
+            <div ref="weeklyChartEl" class="weight__weekly-chart" />
+          </template>
+          <div v-else class="weight__chart-placeholder">
+            <AppIcon name="show_chart" size="1.5rem" />
+            <span>{{ $t('weight.weeklyChartHint') }}</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -200,14 +231,16 @@
 </template>
 
 <script setup lang="ts">
+import type { ChartSeries } from '@dodlhuat/basix/js/chart.js'
+
 definePageMeta({ title: 'Weight' })
 
 const weightStore = useWeightStore()
 const userStore = useUserStore()
 const { calcBMI } = useBMI()
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 
-const { entries, latestEntry, chartData } = storeToRefs(weightStore)
+const { entries, latestEntry, chartData, weeklyAverages } = storeToRefs(weightStore)
 
 // ─── BMI ──────────────────────────────────────────────────────────────────────
 
@@ -309,6 +342,80 @@ const gridWeights = computed(() => {
     weights.push(w)
   }
   return weights.slice(0, 5)
+})
+
+// ─── View toggle (Basix Tabs, pills layout) ────────────────────────────────────
+
+const tabsRef = ref<HTMLElement | null>(null)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let tabsCtrl: any = null
+
+onMounted(async () => {
+  if (!tabsRef.value) return
+  const { Tabs } = await import('@dodlhuat/basix/js/tabs.js')
+  tabsCtrl = new Tabs(tabsRef.value)
+})
+
+onUnmounted(() => {
+  tabsCtrl?.destroy()
+  tabsCtrl = null
+})
+
+// ─── Weekly-average chart (Basix Chart) ────────────────────────────────────────
+
+function formatWeekLabel(weekKey: string): string {
+  const weekNum = weekKey.split('-W')[1]
+  return `${locale.value === 'en' ? 'Wk' : 'KW'} ${weekNum}`
+}
+
+const weeklySeries = computed<ChartSeries[]>(() => [{
+  name: t('weight.weeklySeriesName'),
+  data: weeklyAverages.value.map(w => ({
+    label: formatWeekLabel(w.weekKey),
+    value: w.avgWeight,
+  })),
+}])
+
+const weeklyChartEl = ref<HTMLElement | null>(null)
+
+useBasixChart(weeklyChartEl, weeklySeries, () => {
+  const values = weeklyAverages.value.map(w => w.avgWeight)
+  return {
+    type: 'line',
+    curve: 'smooth',
+    height: 160,
+    showLegend: false,
+    showGrid: true,
+    animate: true,
+    emptyMessage: t('weight.weeklyChartHint'),
+    yMin: values.length ? +(Math.min(...values) - 1).toFixed(1) : undefined,
+    yMax: values.length ? +(Math.max(...values) + 1).toFixed(1) : undefined,
+  }
+})
+
+// ─── Weekly trend indicator ─────────────────────────────────────────────────────
+
+const weeklyTrendDelta = computed<{ kg: number; percent: number | null } | null>(() => {
+  const last = weeklyAverages.value.at(-1)
+  if (!last || last.deltaKg === null) return null
+  return { kg: last.deltaKg, percent: last.deltaPercent }
+})
+
+const weeklyTrendDisplay = computed(() => {
+  const d = weeklyTrendDelta.value
+  if (!d) return ''
+  if (d.kg === 0) return '±0.0 kg'
+  const sign = d.kg > 0 ? '+' : '−'
+  const pctStr = d.percent !== null
+    ? ` (${d.percent > 0 ? '+' : d.percent < 0 ? '−' : '±'}${Math.abs(d.percent).toFixed(1)}%)`
+    : ''
+  return `${sign}${Math.abs(d.kg).toFixed(1)} kg${pctStr}`
+})
+
+const weeklyTrendBadgeClass = computed(() => {
+  const d = weeklyTrendDelta.value
+  if (!d || d.kg === 0) return ''
+  return d.kg < 0 ? 'badge-success' : 'badge-error'
 })
 
 // ─── Form state ───────────────────────────────────────────────────────────────
@@ -567,6 +674,43 @@ onMounted(async () => {
   color: var(--secondary-text);
   font-size: 0.82rem;
   opacity: 0.55;
+}
+
+// ─── View toggle (daily / weekly-average) ──────────────────────────────────────
+// Basix Tabs, pills layout — re-tuned spacing so the header/content padding
+// the component ships with folds into this card instead of stacking on top
+// of .weight__chart-section's own padding.
+
+.weight__view-toggle {
+  padding: calc(#{$spacing} * 0.875) calc(#{$spacing} * 0.625) calc(#{$spacing} * 0.625);
+
+  .tabs-header {
+    padding: 0 0 calc(#{$spacing} * 0.75);
+  }
+
+  .tabs-list {
+    gap: calc(#{$spacing} * 0.375);
+  }
+
+  .tabs-content {
+    padding: 0;
+  }
+}
+
+.weight__weekly-trend {
+  display: flex;
+  align-items: baseline;
+  gap: calc(#{$spacing} * 0.5);
+  padding: 0 calc(#{$spacing} * 0.375) calc(#{$spacing} * 0.75);
+}
+
+.weight__weekly-trend-label {
+  font-size: 0.75rem;
+  color: var(--secondary-text);
+}
+
+.weight__weekly-chart {
+  width: 100%;
 }
 
 // ─── Section label ────────────────────────────────────────────────────────────

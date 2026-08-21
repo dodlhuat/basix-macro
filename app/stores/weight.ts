@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import type { WeightEntry } from '../../db'
+import { computeWeeklyAverages } from '../utils/weeklyAverage'
 
 export const useWeightStore = defineStore('weight', () => {
   const entries = ref<WeightEntry[]>([])
@@ -49,5 +50,7 @@ export const useWeightStore = defineStore('weight', () => {
       .slice(-90),
   )
 
-  return { entries, latestEntry, chartData, loadEntries, addEntry, deleteEntry }
+  const weeklyAverages = computed(() => computeWeeklyAverages(entries.value).slice(-26))
+
+  return { entries, latestEntry, chartData, weeklyAverages, loadEntries, addEntry, deleteEntry }
 })
