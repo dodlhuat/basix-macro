@@ -86,19 +86,17 @@ export default defineNuxtConfig({
       ],
     },
     workbox: {
-      globPatterns: ['**/*.{js,css,html,ico,png,woff2}'],
+      // icons.svg (~2.9 MB) must precache too: every AppIcon renders via
+      // <use href="/icons.svg#name">, so without it in the precache manifest
+      // the whole icon set silently disappears offline until the app has
+      // been opened online at least once (see former icons-sprite runtimeCaching
+      // rule below, which only cached opportunistically after the fact).
+      globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+      maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
       navigateFallback: '/basixmacro/',
       cleanupOutdatedCaches: true,
       skipWaiting: true,
       runtimeCaching: [
-        {
-          urlPattern: /\/icons\.svg$/,
-          handler: 'CacheFirst',
-          options: {
-            cacheName: 'icons-sprite',
-            expiration: { maxEntries: 1, maxAgeSeconds: 60 * 60 * 24 * 365 },
-          },
-        },
         {
           urlPattern: /^https:\/\/world\.openfoodfacts\.org\/.*/,
           handler: 'NetworkFirst',
