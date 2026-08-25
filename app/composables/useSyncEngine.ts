@@ -216,7 +216,7 @@ export async function performSync(options: { full?: boolean } = {}): Promise<Syn
       }
     }
 
-    syncStore.lastSyncedAt = response.server_time
+    syncStore.setLastSyncedAt(response.server_time)
     syncStore.pendingCount = await countPendingRows(db, !!userStore.user && userStore.user.sync_status !== 'synced')
     return { ok: true }
   } catch (error) {

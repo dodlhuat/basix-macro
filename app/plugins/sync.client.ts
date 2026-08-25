@@ -7,6 +7,8 @@ export default defineNuxtPlugin(() => {
   const syncStore = useSyncStore()
   const online = useOnline()
 
+  syncStore.hydrate()
+
   function syncIfDue() {
     if (authStore.isAuthenticated && online.value && !syncStore.isSyncing) {
       void syncStore.syncNow()

@@ -69,6 +69,15 @@ export default defineNuxtConfig({
 
   pwa: {
     registerType: 'autoUpdate',
+    client: {
+      // Installed PWAs are usually resumed from the background rather than
+      // freshly navigated to, so the browser's native "check the SW for
+      // byte changes on navigation" never runs. Without this, a new deploy
+      // sits undetected until the user force-quits and relaunches the app.
+      // This polls the service worker file every 15 min while the app is
+      // open so `registerType: 'autoUpdate'` actually reaches installs.
+      periodicSyncForUpdates: 900,
+    },
     manifest: {
       name: 'BasixMacro',
       short_name: 'BasixMacro',
