@@ -309,7 +309,7 @@ onMounted(async () => {
 }
 
 .activity__eyebrow-icon {
-  color: var(--macro-calories);
+  color: var(--macro-calories-text);
 }
 
 .activity__value-row {
@@ -415,7 +415,6 @@ onMounted(async () => {
   text-transform: none;
   font-weight: 500;
   letter-spacing: 0;
-  opacity: 0.75;
 }
 
 .activity__num-input {
@@ -514,7 +513,7 @@ onMounted(async () => {
 .activity__item-kcal {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--macro-calories);
+  color: var(--macro-calories-text);
   letter-spacing: -0.02em;
   white-space: nowrap;
 }
@@ -527,17 +526,17 @@ onMounted(async () => {
 }
 
 .activity__item-delete {
+  // 44px tap area; negative margin keeps the row footprint at 32px
   color: var(--secondary-text);
-  opacity: 0.4;
-  width: 2rem;
-  height: 2rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: -0.375rem;
   padding: 0;
   flex-shrink: 0;
-  transition: color 150ms ease, opacity 150ms ease;
+  transition: color 150ms ease;
 
   &:hover,
   &:focus-visible {
-    opacity: 1;
     color: var(--error);
   }
 }

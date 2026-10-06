@@ -553,5 +553,47 @@
         "deleteFailed": "Delete failed. Please try again."
       }
     }
+  },
+  "syncStatus": {
+    "title": "Sync",
+    "openDetails": "Show sync status",
+    "label": {
+      "syncing": "Syncing",
+      "offline": "Offline",
+      "error": "Sync failed",
+      "pending": "Changes waiting to sync"
+    },
+    "labelWithCount": {
+      "offline": "Offline, {count} change pending | Offline, {count} changes pending",
+      "pending": "{count} change waiting to sync | {count} changes waiting to sync",
+      "error": "Sync failed, {count} change pending | Sync failed, {count} changes pending"
+    },
+    "live": {
+      "syncing": "Syncing",
+      "offline": "Offline",
+      "error": "Sync failed",
+      "pending": "Changes waiting to sync"
+    },
+    "headline": {
+      "syncing": "Syncing …",
+      "offline": "Offline",
+      "error": "Sync failed",
+      "pending": "Changes pending",
+      "done": "All synced"
+    },
+    "description": {
+      "syncing": "Your changes are being uploaded.",
+      "offline": "You are offline – changes are saved and will sync later.",
+      "error": "Sync failed. Your data stays safely stored on this device.",
+      "pending": "Your changes are saved locally and not synced yet.",
+      "done": "All changes are synced."
+    },
+    "pendingCount": "{count} change waiting to sync | {count} changes waiting to sync",
+    "errorDetail": "Error message",
+    "lastSynced": "Last synced",
+    "never": "Never",
+    "syncNow": "Sync now",
+    "syncing": "Syncing …",
+    "offlineHint": "An internet connection is needed to sync."
   }
 }

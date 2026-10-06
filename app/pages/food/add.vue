@@ -446,7 +446,7 @@ async function handleSave() {
 
 .food-form__scan-btn {
   flex-shrink: 0;
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
@@ -506,7 +506,7 @@ async function handleSave() {
 
 .food-form__preview-icon {
   flex-shrink: 0;
-  color: var(--accent-color);
+  color: var(--app-accent-text);
 }
 
 // ─── Alert ────────────────────────────────────────────────────────────────────

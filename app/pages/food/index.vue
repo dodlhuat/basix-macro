@@ -299,29 +299,25 @@
           <div v-if="sheetNutrition" class="food-sheet__nutrition">
             <div class="food-sheet__nutrition-item">
               <span
-                class="food-sheet__nutrition-value"
-                :style="{ color: 'var(--macro-calories)' }"
+                class="food-sheet__nutrition-value food-sheet__nutrition-value--kcal"
               >{{ sheetNutrition.calories }}</span>
               <span class="food-sheet__nutrition-label">kcal</span>
             </div>
             <div class="food-sheet__nutrition-item">
               <span
-                class="food-sheet__nutrition-value"
-                :style="{ color: 'var(--macro-protein)' }"
+                class="food-sheet__nutrition-value food-sheet__nutrition-value--protein"
               >{{ sheetNutrition.protein }}g</span>
               <span class="food-sheet__nutrition-label">{{ $t('common.protein') }}</span>
             </div>
             <div class="food-sheet__nutrition-item">
               <span
-                class="food-sheet__nutrition-value"
-                :style="{ color: 'var(--macro-carbs)' }"
+                class="food-sheet__nutrition-value food-sheet__nutrition-value--carbs"
               >{{ sheetNutrition.carbs }}g</span>
               <span class="food-sheet__nutrition-label">{{ $t('common.carbs') }}</span>
             </div>
             <div class="food-sheet__nutrition-item">
               <span
-                class="food-sheet__nutrition-value"
-                :style="{ color: 'var(--macro-fat)' }"
+                class="food-sheet__nutrition-value food-sheet__nutrition-value--fat"
               >{{ sheetNutrition.fat }}g</span>
               <span class="food-sheet__nutrition-label">{{ $t('common.fat') }}</span>
             </div>
@@ -743,7 +739,6 @@ onUnmounted(() => {
 
   &::placeholder {
     color: var(--secondary-text);
-    opacity: 0.7;
   }
 
   // Remove native search cancel button
@@ -865,6 +860,7 @@ onUnmounted(() => {
 }
 
 .food__item-star {
+  @include tap-target;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -879,7 +875,7 @@ onUnmounted(() => {
   padding: 0;
 
   &--active {
-    color: #f59e0b;
+    color: var(--app-star);
   }
 
   &:active {
@@ -938,7 +934,7 @@ onUnmounted(() => {
 }
 
 .food__empty-hint-icon {
-  color: #f59e0b;
+  color: var(--app-star);
   vertical-align: -0.15em;
 }
 
@@ -959,7 +955,7 @@ onUnmounted(() => {
   height: 56px;
   border-radius: 50%;
   background: var(--accent-color);
-  color: var(--accent-color-text);
+  color: var(--on-accent);
   border: none;
   cursor: pointer;
   display: flex;
@@ -1084,6 +1080,11 @@ onUnmounted(() => {
   color: var(--primary-text);
   letter-spacing: -0.02em;
   line-height: 1.1;
+
+  &--kcal    { color: var(--macro-calories-text); }
+  &--protein { color: var(--macro-protein-text); }
+  &--carbs   { color: var(--macro-carbs-text); }
+  &--fat     { color: var(--macro-fat-text); }
 }
 
 .food-sheet__nutrition-label {
@@ -1111,7 +1112,7 @@ onUnmounted(() => {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   padding: 0 calc(#{$spacing} * 0.25);
 }
 
@@ -1135,7 +1136,7 @@ onUnmounted(() => {
 }
 
 .food__global-add-icon {
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   flex-shrink: 0;
 }
 
@@ -1183,7 +1184,7 @@ onUnmounted(() => {
 }
 
 .food__off-add-icon {
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   flex-shrink: 0;
 }
 

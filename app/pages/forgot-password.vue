@@ -167,10 +167,10 @@ function resetForm() {
   }
 
   &__icon {
-    color: var(--accent-color);
+    color: var(--app-accent-text);
 
     &--success {
-      color: var(--success);
+      color: var(--app-success-text);
     }
   }
 
@@ -207,7 +207,7 @@ function resetForm() {
     align-self: center;
     font-size: 0.85rem;
     font-weight: 500;
-    color: var(--accent-color);
+    color: var(--app-accent-text);
     text-decoration: none;
     animation: auth-fade-up 0.45s ease-out 0.26s both;
 

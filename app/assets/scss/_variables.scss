@@ -44,3 +44,27 @@ $meal-lunch:     #22c55e;
 $meal-dinner:    #6366f1;
 $meal-snack:     #a855f7;
 $water-color:    #60a5fa;
+
+// Favorite-star amber (food list / diary quick-add). Was hardcoded #f59e0b.
+// Light mode uses --app-star (darkened) for contrast, see main.scss.
+$star-color:     #f59e0b;
+
+// Invisible 44x44 tap zone for controls that are visually smaller (WCAG 2.5.5 /
+// platform HIG). The element keeps its visible size and layout footprint; the
+// ::before zone is centered on it, grows only where the element is < $min and
+// never shrinks it. Only ::before is used because Basix owns ::after on
+// buttons (.is-loading / .is-success spinners). The element needs no overflow
+// clipping, otherwise the zone is cut off.
+@mixin tap-target($min: 2.75rem) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, #{$min});
+    height: max(100%, #{$min});
+    transform: translate(-50%, -50%);
+  }
+}

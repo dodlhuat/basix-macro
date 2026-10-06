@@ -222,10 +222,10 @@ onUnmounted(() => {
   }
 
   &__icon {
-    color: var(--accent-color);
+    color: var(--app-accent-text);
 
     &--success {
-      color: var(--success);
+      color: var(--app-success-text);
     }
 
     &--error {

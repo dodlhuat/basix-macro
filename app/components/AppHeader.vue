@@ -13,7 +13,9 @@
         <span class="wordmark-thin">basix</span><span class="wordmark-bold">macro</span>
       </div>
     </div>
-    <div class="last"/>
+    <div class="last">
+      <SyncStatusIndicator />
+    </div>
   </header>
 </template>
 
@@ -35,7 +37,7 @@ const { toggle } = usePushMenu()
 
 .wordmark-thin {
   font-weight: 200;
-  opacity: 0.65;
+  color: var(--secondary-text);
 }
 
 .wordmark-bold {
@@ -46,6 +48,11 @@ const { toggle } = usePushMenu()
   display: flex;
   align-items: center;
   justify-content: center;
+  // 44x44 tap area around the 24px icon. Negative inline margins keep the
+  // icon at its original x-position and the header's 3-column footprint.
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-inline: -0.625rem;
 }
 
 // ─── Desktop: persistent sidebar replaces the hamburger overlay ────────────

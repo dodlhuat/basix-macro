@@ -75,7 +75,7 @@ const ariaLabel = computed(() => t('mealClipboard.pasteAria', { ...params.value,
 }
 
 .paste-bar__icon {
-  color: var(--accent-color);
+  color: var(--app-accent-text);
 }
 
 .paste-bar__action {

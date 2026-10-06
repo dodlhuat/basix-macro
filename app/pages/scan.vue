@@ -856,7 +856,7 @@ onUnmounted(() => {
 }
 
 .scanner-sheet__not-found-icon {
-  color: var(--warning);
+  color: var(--app-warning-text);
   flex-shrink: 0;
 }
 
@@ -913,10 +913,10 @@ onUnmounted(() => {
   letter-spacing: -0.02em;
   line-height: 1.1;
 
-  .scanner-sheet__macro--calories & { color: var(--macro-calories); }
-  .scanner-sheet__macro--protein  & { color: var(--macro-protein); }
-  .scanner-sheet__macro--carbs    & { color: var(--macro-carbs); }
-  .scanner-sheet__macro--fat      & { color: var(--macro-fat); }
+  .scanner-sheet__macro--calories & { color: var(--macro-calories-text); }
+  .scanner-sheet__macro--protein  & { color: var(--macro-protein-text); }
+  .scanner-sheet__macro--carbs    & { color: var(--macro-carbs-text); }
+  .scanner-sheet__macro--fat      & { color: var(--macro-fat-text); }
 }
 
 .scanner-sheet__macro-label {

@@ -398,7 +398,7 @@ async function finish() {
   }
 
   &__account-link {
-    color: var(--accent-color);
+    color: var(--app-accent-text);
     font-weight: 600;
     text-decoration: none;
     margin-left: 0.25em;
@@ -575,13 +575,13 @@ async function finish() {
         background: var(--accent-color);
 
         .app-icon {
-          color: var(--accent-color-text);
+          color: var(--on-accent);
           transform: scale(1.15);
         }
       }
 
       .onboarding__activity-text strong {
-        color: var(--accent-color);
+        color: var(--app-accent-text);
       }
 
       .onboarding__activity-bars span {
@@ -626,7 +626,7 @@ async function finish() {
       font-size: 2.5rem;
       font-weight: 800;
       letter-spacing: -0.04em;
-      color: var(--accent-color);
+      color: var(--app-accent-text);
     }
 
     &-unit {
@@ -757,7 +757,7 @@ async function finish() {
     box-shadow: 0 0 0 0.5px var(--accent-color);
 
     .goal-option__label {
-      color: var(--accent-color);
+      color: var(--app-accent-text);
     }
 
     .goal-option__desc-wrap {

@@ -44,7 +44,7 @@ v-for="g in genderOptions" :key="g.value" type="button" class="chip clickable"
 
         <div class="form-group">
           <label>{{ $t('profile.activityLevel') }}</label>
-          <div class="chips" style="flex-wrap: wrap;">
+          <div class="chips">
             <button
 v-for="a in activityOptions" :key="a.value" type="button" class="chip clickable"
               :class="{ 'selected': form.activity_level === a.value }" @click="form.activity_level = a.value">
@@ -253,13 +253,13 @@ watch(user, (u) => {
     align-items: center;
     justify-content: center;
     gap: 0.35rem;
-    color: var(--success);
+    color: var(--app-success-text);
     font-weight: 600;
     margin: 0;
   }
 
   &__saved-icon {
-    color: var(--success);
+    color: var(--app-success-text);
   }
 }
 
@@ -317,7 +317,7 @@ watch(user, (u) => {
     box-shadow: 0 0 0 0.5px var(--accent-color);
 
     .goal-option__label {
-      color: var(--accent-color);
+      color: var(--app-accent-text);
     }
 
     .goal-option__desc-wrap {

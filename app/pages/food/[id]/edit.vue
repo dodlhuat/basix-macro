@@ -589,7 +589,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
 
 .food-form__preview-icon {
   flex-shrink: 0;
-  color: var(--accent-color);
+  color: var(--app-accent-text);
 }
 
 // ─── Alert ────────────────────────────────────────────────────────────────────

@@ -572,9 +572,11 @@ onUnmounted(() => {
 }
 
 .admin-users__item-delete {
+  // 44px tap area; negative margin keeps the row footprint at 32px
   color: var(--secondary-text);
-  width: 2rem;
-  height: 2rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: -0.375rem;
   padding: 0;
   transition: color 150ms ease;
 
@@ -586,7 +588,7 @@ onUnmounted(() => {
 
 .admin-users__item-chevron {
   color: var(--secondary-text);
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 // ─── Empty state ──────────────────────────────────────────────────────────────
@@ -631,7 +633,7 @@ onUnmounted(() => {
   height: 56px;
   border-radius: 50%;
   background: var(--accent-color);
-  color: var(--accent-color-text);
+  color: var(--on-accent);
   border: none;
   cursor: pointer;
   display: flex;

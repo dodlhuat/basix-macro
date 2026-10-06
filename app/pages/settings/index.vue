@@ -503,14 +503,7 @@ function formatDate(iso: string): string {
 }
 
 function formatDateTime(iso: string): string {
-  const loc = currentLocale.value === 'en' ? 'en-US' : 'de-DE'
-  return new Date(iso).toLocaleString(loc, {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  })
+  return formatLocalDateTime(iso, currentLocale.value)
 }
 
 async function changeLocale(lang: 'de' | 'en') {
@@ -681,14 +674,14 @@ onMounted(() => userStore.loadUser())
   flex-shrink: 0;
 
   &--water {
-    color: #5ba8f5;
+    color: var(--water-color-text);
   }
 }
 
 .settings__row-chevron {
   color: var(--secondary-text);
   flex-shrink: 0;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 // ─── Section divider ──────────────────────────────────────────────
@@ -759,7 +752,7 @@ onMounted(() => userStore.loadUser())
 
 .settings__macro-link {
   font-size: 0.8rem;
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   text-decoration: none;
   font-weight: 500;
 
@@ -816,7 +809,7 @@ onMounted(() => userStore.loadUser())
 .settings__account-forgot-link {
   font-size: 0.78rem;
   font-weight: 500;
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   text-decoration: none;
   white-space: nowrap;
 
@@ -840,7 +833,7 @@ onMounted(() => userStore.loadUser())
   height: 2.5rem;
   border-radius: var(--radius-full);
   background: var(--accent-color-tint);
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   display: flex;
   align-items: center;
   justify-content: center;

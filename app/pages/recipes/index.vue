@@ -204,7 +204,6 @@ onMounted(async () => {
 
   &::placeholder {
     color: var(--secondary-text);
-    opacity: 0.7;
   }
 
   &::-webkit-search-cancel-button { display: none; }
@@ -345,7 +344,7 @@ onMounted(async () => {
   height: 56px;
   border-radius: 50%;
   background: var(--accent-color);
-  color: var(--accent-color-text);
+  color: var(--on-accent);
   border: none;
   cursor: pointer;
   display: flex;

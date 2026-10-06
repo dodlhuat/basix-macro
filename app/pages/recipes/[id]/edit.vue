@@ -1034,7 +1034,6 @@ onUnmounted(() => {
   font-size: 0.72rem;
   font-weight: 500;
   color: var(--secondary-text);
-  opacity: 0.65;
 }
 
 .recipe-edit__text-input {
@@ -1128,10 +1127,10 @@ onUnmounted(() => {
   letter-spacing: -0.02em;
   line-height: 1.1;
 
-  &--cal     { color: var(--macro-calories); }
-  &--protein { color: $macro-protein; }
-  &--carbs   { color: $macro-carbs; }
-  &--fat     { color: $macro-fat; }
+  &--cal     { color: var(--macro-calories-text); }
+  &--protein { color: var(--macro-protein-text); }
+  &--carbs   { color: var(--macro-carbs-text); }
+  &--fat     { color: var(--macro-fat-text); }
 }
 
 .recipe-edit__nutrition-label {
@@ -1209,14 +1208,16 @@ onUnmounted(() => {
 .recipe-edit__ing-actions {
   display: flex;
   align-items: center;
-  gap: 0.15rem;
+  gap: 0.5rem;
   flex-shrink: 0;
 }
 
 .recipe-edit__ing-edit {
+  // 44px tap area; negative margin keeps footprint at 36px (8px gap between targets)
   color: var(--secondary-text);
-  width: 2rem;
-  height: 2rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: -0.25rem;
   padding: 0;
   transition: color 150ms ease;
 
@@ -1225,15 +1226,17 @@ onUnmounted(() => {
 }
 
 .recipe-edit__ing-delete {
-  color: var(--error);
-  opacity: 0.7;
-  width: 2rem;
-  height: 2rem;
+  // 44px tap area; negative margin keeps the row footprint at 36px
+  flex-shrink: 0;
+  color: var(--secondary-text);
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: -0.25rem;
   padding: 0;
-  transition: opacity 150ms ease;
+  transition: color 150ms ease;
 
   &:hover,
-  &:focus-visible { opacity: 1; }
+  &:focus-visible { color: var(--error); }
 }
 
 .recipe-edit__ing-empty {
@@ -1320,7 +1323,6 @@ onUnmounted(() => {
 
   &::placeholder {
     color: var(--secondary-text);
-    opacity: 0.7;
   }
 
   &::-webkit-search-cancel-button { display: none; }
@@ -1376,8 +1378,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit-sheet__off-add-icon {
-  color: var(--accent-color);
-  opacity: 0.7;
+  color: var(--app-accent-text);
 }
 
 .recipe-edit-sheet__results {
@@ -1564,9 +1565,9 @@ onUnmounted(() => {
   letter-spacing: -0.02em;
   line-height: 1.1;
 
-  &--protein { color: $macro-protein; }
-  &--carbs   { color: $macro-carbs; }
-  &--fat     { color: $macro-fat; }
+  &--protein { color: var(--macro-protein-text); }
+  &--carbs   { color: var(--macro-carbs-text); }
+  &--fat     { color: var(--macro-fat-text); }
 }
 
 .recipe-edit-sheet__nutrition-label {
@@ -1663,10 +1664,10 @@ onUnmounted(() => {
   letter-spacing: -0.02em;
   line-height: 1.1;
 
-  &--cal     { color: var(--macro-calories); }
-  &--protein { color: $macro-protein; }
-  &--carbs   { color: $macro-carbs; }
-  &--fat     { color: $macro-fat; }
+  &--cal     { color: var(--macro-calories-text); }
+  &--protein { color: var(--macro-protein-text); }
+  &--carbs   { color: var(--macro-carbs-text); }
+  &--fat     { color: var(--macro-fat-text); }
 }
 
 .recipe-log-sheet__preview-label {

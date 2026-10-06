@@ -291,23 +291,23 @@
           <!-- Nutrition preview -->
           <div v-if="sheetNutrition" class="da-sheet__nutrition">
             <div class="da-sheet__nutrition-item">
-              <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-calories)' }">{{ sheetNutrition.calories }}</span>
+              <span class="da-sheet__nutrition-value da-sheet__nutrition-value--kcal">{{ sheetNutrition.calories }}</span>
               <span class="da-sheet__nutrition-label">kcal</span>
             </div>
             <div class="da-sheet__nutrition-item">
-              <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-protein)' }">
+              <span class="da-sheet__nutrition-value da-sheet__nutrition-value--protein">
                 {{ sheetNutrition.protein }}g
               </span>
               <span class="da-sheet__nutrition-label">{{ $t('common.protein') }}</span>
             </div>
             <div class="da-sheet__nutrition-item">
-              <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-carbs)' }">
+              <span class="da-sheet__nutrition-value da-sheet__nutrition-value--carbs">
                 {{ sheetNutrition.carbs }}g
               </span>
               <span class="da-sheet__nutrition-label">{{ $t('common.carbs') }}</span>
             </div>
             <div class="da-sheet__nutrition-item">
-              <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-fat)' }">
+              <span class="da-sheet__nutrition-value da-sheet__nutrition-value--fat">
                 {{ sheetNutrition.fat }}g
               </span>
               <span class="da-sheet__nutrition-label">{{ $t('common.fat') }}</span>
@@ -428,19 +428,19 @@
 
             <div v-if="recipeSheetNutrition" class="da-sheet__nutrition">
               <div class="da-sheet__nutrition-item">
-                <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-calories)' }">{{ recipeSheetNutrition.calories }}</span>
+                <span class="da-sheet__nutrition-value da-sheet__nutrition-value--kcal">{{ recipeSheetNutrition.calories }}</span>
                 <span class="da-sheet__nutrition-label">kcal</span>
               </div>
               <div class="da-sheet__nutrition-item">
-                <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-protein)' }">{{ recipeSheetNutrition.protein }}g</span>
+                <span class="da-sheet__nutrition-value da-sheet__nutrition-value--protein">{{ recipeSheetNutrition.protein }}g</span>
                 <span class="da-sheet__nutrition-label">{{ $t('common.protein') }}</span>
               </div>
               <div class="da-sheet__nutrition-item">
-                <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-carbs)' }">{{ recipeSheetNutrition.carbs }}g</span>
+                <span class="da-sheet__nutrition-value da-sheet__nutrition-value--carbs">{{ recipeSheetNutrition.carbs }}g</span>
                 <span class="da-sheet__nutrition-label">{{ $t('common.carbs') }}</span>
               </div>
               <div class="da-sheet__nutrition-item">
-                <span class="da-sheet__nutrition-value" :style="{ color: 'var(--macro-fat)' }">{{ recipeSheetNutrition.fat }}g</span>
+                <span class="da-sheet__nutrition-value da-sheet__nutrition-value--fat">{{ recipeSheetNutrition.fat }}g</span>
                 <span class="da-sheet__nutrition-label">{{ $t('common.fat') }}</span>
               </div>
             </div>
@@ -554,7 +554,7 @@
           <Transition name="qa-macros">
             <div v-if="showQuickMacros" class="qa-sheet__macro-row">
               <div class="qa-sheet__macro-field">
-                <label class="qa-sheet__macro-label" style="color: var(--macro-protein)">{{ $t('common.protein') }}</label>
+                <label class="qa-sheet__macro-label qa-sheet__macro-label--protein">{{ $t('common.protein') }}</label>
                 <div class="input-group">
                   <input
                     v-model="quickProteinStr"
@@ -568,7 +568,7 @@
                 </div>
               </div>
               <div class="qa-sheet__macro-field">
-                <label class="qa-sheet__macro-label" style="color: var(--macro-carbs)">{{ $t('common.carbs') }}</label>
+                <label class="qa-sheet__macro-label qa-sheet__macro-label--carbs">{{ $t('common.carbs') }}</label>
                 <div class="input-group">
                   <input
                     v-model="quickCarbsStr"
@@ -582,7 +582,7 @@
                 </div>
               </div>
               <div class="qa-sheet__macro-field">
-                <label class="qa-sheet__macro-label" style="color: var(--macro-fat)">{{ $t('common.fat') }}</label>
+                <label class="qa-sheet__macro-label qa-sheet__macro-label--fat">{{ $t('common.fat') }}</label>
                 <div class="input-group">
                   <input
                     v-model="quickFatStr"
@@ -1125,7 +1125,7 @@ onUnmounted(() => {
 
 .diary-add__scan-btn {
   flex-shrink: 0;
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
@@ -1173,7 +1173,6 @@ onUnmounted(() => {
 
   &::placeholder {
     color: var(--secondary-text);
-    opacity: 0.7;
   }
 
   &::-webkit-search-cancel-button { display: none; }
@@ -1302,7 +1301,7 @@ onUnmounted(() => {
 
 .diary-add__item-arrow {
   color: var(--secondary-text);
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 // ─── Empty state ──────────────────────────────────────────────────────────────
@@ -1338,7 +1337,7 @@ onUnmounted(() => {
 }
 
 .diary-add__empty-hint-icon {
-  color: #f59e0b;
+  color: var(--app-star);
   vertical-align: -0.15em;
 }
 
@@ -1382,8 +1381,7 @@ onUnmounted(() => {
 }
 
 .diary-add__off-add-icon {
-  color: var(--accent-color);
-  opacity: 0.7;
+  color: var(--app-accent-text);
 }
 
 // ─── Create new food link ─────────────────────────────────────────────────────
@@ -1406,7 +1404,7 @@ onUnmounted(() => {
   font-size: 0.875rem;
   font-weight: 600;
   font-family: inherit;
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   text-decoration: none;
   background: none;
   border: none;
@@ -1527,6 +1525,11 @@ onUnmounted(() => {
   color: var(--primary-text);
   letter-spacing: -0.02em;
   line-height: 1.1;
+
+  &--kcal    { color: var(--macro-calories-text); }
+  &--protein { color: var(--macro-protein-text); }
+  &--carbs   { color: var(--macro-carbs-text); }
+  &--fat     { color: var(--macro-fat-text); }
 }
 
 .da-sheet__nutrition-label {
@@ -1564,7 +1567,6 @@ onUnmounted(() => {
   text-transform: none;
   font-weight: 500;
   letter-spacing: 0;
-  opacity: 0.75;
 }
 
 .qa-sheet__macro-toggle {
@@ -1576,7 +1578,7 @@ onUnmounted(() => {
   font-family: inherit;
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   cursor: pointer;
   padding: calc(#{$spacing} * 0.25) 0;
   margin-bottom: calc(#{$spacing} * 0.25);
@@ -1607,10 +1609,28 @@ onUnmounted(() => {
 }
 
 .qa-sheet__macro-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: var(--secondary-text);
+
+  // Colored dot carries the macro hue; the text stays neutral for contrast
+  &::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--qa-macro-dot, currentColor);
+    flex-shrink: 0;
+  }
+
+  &--protein { --qa-macro-dot: var(--macro-protein); }
+  &--carbs { --qa-macro-dot: var(--macro-carbs); }
+  &--fat { --qa-macro-dot: var(--macro-fat); }
 }
 
 // Macro row expand/collapse

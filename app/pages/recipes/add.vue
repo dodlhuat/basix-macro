@@ -746,7 +746,6 @@ onUnmounted(() => {
   font-size: 0.72rem;
   font-weight: 500;
   color: var(--secondary-text);
-  opacity: 0.65;
 }
 
 .recipe-add__text-input {
@@ -840,14 +839,14 @@ onUnmounted(() => {
 }
 
 .recipe-add__chip-icon {
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   flex-shrink: 0;
 }
 
 .recipe-add__chip-name {
   font-size: 0.82rem;
   font-weight: 700;
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   max-width: 16ch;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -857,8 +856,7 @@ onUnmounted(() => {
 .recipe-add__chip-servings {
   font-size: 0.78rem;
   font-weight: 500;
-  color: var(--accent-color);
-  opacity: 0.8;
+  color: var(--app-accent-text);
   white-space: nowrap;
 }
 
@@ -913,7 +911,6 @@ onUnmounted(() => {
 
   &::placeholder {
     color: var(--secondary-text);
-    opacity: 0.7;
   }
 
   &::-webkit-search-cancel-button { display: none; }
@@ -982,8 +979,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__off-add-icon {
-  color: var(--accent-color);
-  opacity: 0.7;
+  color: var(--app-accent-text);
 }
 
 // ─── Search results ───────────────────────────────────────────────────────────
@@ -1143,16 +1139,17 @@ onUnmounted(() => {
 }
 
 .recipe-add__ing-delete {
+  // 44px tap area; negative margin keeps the row footprint at 32px
   flex-shrink: 0;
-  color: var(--error);
-  opacity: 0.7;
-  transition: opacity 150ms ease;
-  width: 2rem;
-  height: 2rem;
+  color: var(--secondary-text);
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: -0.375rem;
   padding: 0;
+  transition: color 150ms ease;
 
   &:hover,
-  &:focus-visible { opacity: 1; }
+  &:focus-visible { color: var(--error); }
 }
 
 .recipe-add__ing-empty {
@@ -1212,10 +1209,10 @@ onUnmounted(() => {
   letter-spacing: -0.02em;
   line-height: 1.1;
 
-  &--cal     { color: var(--macro-calories); }
-  &--protein { color: $macro-protein; }
-  &--carbs   { color: $macro-carbs; }
-  &--fat     { color: $macro-fat; }
+  &--cal     { color: var(--macro-calories-text); }
+  &--protein { color: var(--macro-protein-text); }
+  &--carbs   { color: var(--macro-carbs-text); }
+  &--fat     { color: var(--macro-fat-text); }
 }
 
 .recipe-add__nutrition-label {
@@ -1322,9 +1319,9 @@ onUnmounted(() => {
   letter-spacing: -0.02em;
   line-height: 1.1;
 
-  &--protein { color: $macro-protein; }
-  &--carbs   { color: $macro-carbs; }
-  &--fat     { color: $macro-fat; }
+  &--protein { color: var(--macro-protein-text); }
+  &--carbs   { color: var(--macro-carbs-text); }
+  &--fat     { color: var(--macro-fat-text); }
 }
 
 .recipe-add-sheet__nutrition-label {

@@ -937,13 +937,13 @@ watch(currentDate, date => loadDate(date))
   font-weight: 600;
   padding: 0.15rem 0.55rem;
   background: var(--accent-color-tint);
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   border-radius: var(--radius-full);
   pointer-events: none;
 }
 
 .dashboard__streak-icon {
-  color: var(--accent-color);
+  color: var(--app-accent-text);
 }
 
 .dashboard__heute-chip {
@@ -1048,7 +1048,7 @@ watch(currentDate, date => loadDate(date))
   // Calorie identity color — distinct from the giant remaining-number above,
   // which intentionally stays --primary-text/--error so its over-goal alarm
   // transition (see .dashboard__remaining-number--over) reads unambiguously.
-  color: var(--macro-calories);
+  color: var(--macro-calories-text);
 }
 
 .dashboard__stat-label {
@@ -1079,7 +1079,7 @@ watch(currentDate, date => loadDate(date))
 // --success = "credit", matching the app's existing "down/back is good"
 // polarity (see weight/body-fat delta badges).
 .dashboard__activity-burned-value {
-  color: var(--success);
+  color: var(--app-success-text);
 }
 
 // Quick-add-activity button — sits right next to the burned-kcal value.
@@ -1091,7 +1091,7 @@ watch(currentDate, date => loadDate(date))
   background: none;
   border: none;
   font-family: inherit;
-  color: var(--success);
+  color: var(--app-success-text);
   cursor: pointer;
   transition: opacity 150ms ease;
 
@@ -1161,7 +1161,7 @@ watch(currentDate, date => loadDate(date))
 .dashboard__pace-icon {
   flex-shrink: 0;
   margin-top: 0.15rem; // optical alignment with the first line of text
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   opacity: 0.8;
 }
 
@@ -1251,7 +1251,7 @@ watch(currentDate, date => loadDate(date))
 }
 
 .dashboard__water-icon {
-  color: var(--water-color);
+  color: var(--water-color-text);
   flex-shrink: 0;
 }
 
@@ -1361,7 +1361,7 @@ watch(currentDate, date => loadDate(date))
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   background: var(--primary-bg);
   border: 1px solid var(--accent-color);
   border-radius: var(--radius-full);
@@ -1389,7 +1389,7 @@ watch(currentDate, date => loadDate(date))
 }
 
 .dashboard__meal-add {
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   width: 2.75rem;
   height: 2.75rem;
   margin: -0.5rem -0.35rem -0.5rem 0;
@@ -1458,7 +1458,7 @@ watch(currentDate, date => loadDate(date))
 .dashboard__entry-right {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   flex-shrink: 0;
 }
 
@@ -1470,29 +1470,31 @@ watch(currentDate, date => loadDate(date))
 }
 
 .dashboard__entry-edit-toggle {
+  // 44px tap area; negative margin keeps the row footprint at 36px
   color: var(--secondary-text);
-  opacity: 0.5;
-  transition: opacity $duration-fast $ease-standard, color $duration-fast $ease-standard;
-  padding: 0.15rem;
-  margin: -0.15rem;
+  transition: color $duration-fast $ease-standard;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  margin: -0.25rem;
 
   &:hover,
   &:focus-visible {
-    opacity: 1;
-    color: var(--accent-color);
+    color: var(--app-accent-text);
   }
 }
 
 .dashboard__entry-delete {
+  // 44px tap area; negative margin keeps the row footprint at 36px
   color: var(--secondary-text);
-  opacity: 0.5;
-  transition: opacity $duration-fast $ease-standard, color $duration-fast $ease-standard;
-  padding: 0.15rem;
-  margin: -0.15rem;
+  transition: color $duration-fast $ease-standard;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  margin: -0.25rem;
 
   &:hover,
   &:focus-visible {
-    opacity: 1;
     color: var(--error);
   }
 }
@@ -1532,6 +1534,7 @@ watch(currentDate, date => loadDate(date))
 }
 
 .dashboard__entry-edit-step-btn {
+  @include tap-target;
   width: 2.25rem;
   height: 2.25rem;
   padding: 0;
@@ -1594,7 +1597,6 @@ watch(currentDate, date => loadDate(date))
   margin: 0.35rem 0 0;
   font-size: 0.8rem;
   color: var(--secondary-text);
-  opacity: 0.6;
   font-style: italic;
 }
 
@@ -1608,7 +1610,7 @@ watch(currentDate, date => loadDate(date))
   height: 56px;
   border-radius: 50%;
   background: var(--accent-color);
-  color: var(--accent-color-text);
+  color: var(--on-accent);
   border: none;
   cursor: pointer;
   display: flex;
@@ -1624,7 +1626,7 @@ watch(currentDate, date => loadDate(date))
   &:hover,
   &:focus-visible {
     background: color-mix(in srgb, var(--accent-color) 85%, black);
-    color: var(--accent-color-text);
+    color: var(--on-accent);
     transform: scale(1.08);
     box-shadow:
       0 6px 20px rgba(0, 0, 0, 0.22),
@@ -1677,7 +1679,6 @@ watch(currentDate, date => loadDate(date))
   text-transform: none;
   font-weight: 500;
   letter-spacing: 0;
-  opacity: 0.75;
 }
 
 .act-sheet__field-group {

@@ -553,5 +553,47 @@
         "deleteFailed": "Löschen fehlgeschlagen. Bitte versuche es erneut."
       }
     }
+  },
+  "syncStatus": {
+    "title": "Synchronisierung",
+    "openDetails": "Synchronisierungsstatus anzeigen",
+    "label": {
+      "syncing": "Synchronisiere",
+      "offline": "Offline",
+      "error": "Synchronisierung fehlgeschlagen",
+      "pending": "Änderungen warten auf Synchronisierung"
+    },
+    "labelWithCount": {
+      "offline": "Offline, {count} Änderung ausstehend | Offline, {count} Änderungen ausstehend",
+      "pending": "{count} Änderung wartet auf Synchronisierung | {count} Änderungen warten auf Synchronisierung",
+      "error": "Synchronisierung fehlgeschlagen, {count} Änderung ausstehend | Synchronisierung fehlgeschlagen, {count} Änderungen ausstehend"
+    },
+    "live": {
+      "syncing": "Synchronisiere",
+      "offline": "Offline",
+      "error": "Synchronisierung fehlgeschlagen",
+      "pending": "Änderungen warten auf Synchronisierung"
+    },
+    "headline": {
+      "syncing": "Synchronisiere …",
+      "offline": "Offline",
+      "error": "Synchronisierung fehlgeschlagen",
+      "pending": "Änderungen ausstehend",
+      "done": "Alles synchron"
+    },
+    "description": {
+      "syncing": "Deine Änderungen werden gerade übertragen.",
+      "offline": "Du bist offline – Änderungen werden gespeichert und später synchronisiert.",
+      "error": "Die Synchronisierung ist fehlgeschlagen. Deine Daten bleiben lokal gespeichert.",
+      "pending": "Deine Änderungen sind lokal gespeichert und noch nicht synchronisiert.",
+      "done": "Alle Änderungen sind synchronisiert."
+    },
+    "pendingCount": "{count} Änderung wartet auf Synchronisierung | {count} Änderungen warten auf Synchronisierung",
+    "errorDetail": "Fehlermeldung",
+    "lastSynced": "Zuletzt synchronisiert",
+    "never": "Noch nie",
+    "syncNow": "Jetzt synchronisieren",
+    "syncing": "Synchronisiere …",
+    "offlineHint": "Zum Synchronisieren wird eine Internetverbindung benötigt."
   }
 }

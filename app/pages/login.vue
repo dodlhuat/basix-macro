@@ -166,7 +166,7 @@ async function handleLogin() {
   }
 
   &__icon {
-    color: var(--accent-color);
+    color: var(--app-accent-text);
   }
 
   &__title {
@@ -203,7 +203,7 @@ async function handleLogin() {
   &__forgot-link {
     font-size: 0.8rem;
     font-weight: 500;
-    color: var(--accent-color);
+    color: var(--app-accent-text);
     text-decoration: none;
     white-space: nowrap;
 
@@ -227,7 +227,7 @@ async function handleLogin() {
   }
 
   &__sync-hint-icon {
-    color: var(--accent-color);
+    color: var(--app-accent-text);
     animation: login-sync-spin 1.1s linear infinite;
   }
 }

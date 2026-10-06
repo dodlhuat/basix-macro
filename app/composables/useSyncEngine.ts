@@ -108,8 +108,13 @@ function getDexieTable(db: object, key: string): Table<SyncRow, string> {
   return table
 }
 
-async function countPendingRows(db: object, profileDirty: boolean): Promise<number> {
-  let count = profileDirty ? 1 : 0
+/**
+ * Rows not yet confirmed by the server (`local` or `dirty`) across all synced tables plus
+ * the profile. Exported so the live "pending changes" indicator can subscribe to it via
+ * Dexie's liveQuery — it must only issue Dexie queries so liveQuery can track them.
+ */
+export async function countPendingChanges(db: object): Promise<number> {
+  let count = await getDexieTable(db, 'users').where('sync_status').notEqual('synced').count()
   for (const table of SYNC_TABLES) {
     count += await getDexieTable(db, table.key).where('sync_status').notEqual('synced').count()
   }
@@ -217,7 +222,7 @@ export async function performSync(options: { full?: boolean } = {}): Promise<Syn
     }
 
     syncStore.setLastSyncedAt(response.server_time)
-    syncStore.pendingCount = await countPendingRows(db, !!userStore.user && userStore.user.sync_status !== 'synced')
+    syncStore.pendingCount = await countPendingChanges(db)
     return { ok: true }
   } catch (error) {
     const normalized = normalizeApiError(error)

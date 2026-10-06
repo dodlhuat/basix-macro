@@ -60,11 +60,80 @@
   --macro-carbs: #{$macro-carbs};
   --macro-fat: #{$macro-fat};
   --macro-calories: #{$macro-calories};
+  // Status text that must stay >=4.5:1 on --secondary-background (cards) in light
+  // mode: Basix --success-text/--warning-text only reach 4.35/4.02 there.
+  // Darkened 10% toward black; in dark mode this still clears 7:1.
+  --app-success-text: color-mix(in srgb, var(--success-text) 90%, black);
+  --app-warning-text: color-mix(in srgb, var(--warning-text) 90%, black);
   --meal-breakfast: #{$meal-breakfast};
   --meal-lunch: #{$meal-lunch};
   --meal-dinner: #{$meal-dinner};
   --meal-snack: #{$meal-snack};
   --water-color: #{$water-color};
+}
+
+// ─── Text/icon variants of fill colors (WCAG) ──────────────────────────────
+// The raw macro/water/accent/star colors are *fill* colors (bars, dots, rings)
+// and are mostly <3:1 on light surfaces. Wherever the same hue is used as TEXT
+// or as a small/thin icon, use the `*-text` variant instead.
+//   Light: base color darkened toward black by the percentage in the map below
+//          (the share of the base color that is kept), chosen so the result
+//          clears 4.5:1 on --secondary-background (cards), the worst-case surface.
+//   Dark:  the base colors already clear 4.5:1 on dark surfaces, so the text
+//          variant simply aliases the base (accent is the exception, see below).
+// Defined in the same three scopes as Basix's own dark palette (data-theme
+// attribute + prefers-color-scheme fallback) so they follow the theme exactly.
+$text-token-keep: (
+  'macro-protein':  78,
+  'macro-carbs':    58,
+  'macro-fat':      53,
+  'macro-calories': 69,
+  'water':          62,
+);
+
+@mixin app-text-tokens($dark: false) {
+  @each $name, $keep in $text-token-keep {
+    $base: if($name == 'water', '--water-color', '--#{$name}');
+    $out: if($name == 'water', '--water-color-text', '--#{$name}-text');
+    @if $dark {
+      #{$out}: var(#{$base});
+    } @else {
+      #{$out}: color-mix(in srgb, var(#{$base}) #{$keep}#{'%'}, black);
+    }
+  }
+}
+
+:root {
+  @include app-text-tokens;
+  // Accent as text/small icon. Light: 86% accent -> >=4.5:1 even on the accent
+  // tint over a card. Dark: Basix --link-color (5.08:1 on --background) lifted
+  // 6% toward white so it also holds 4.5:1 on the accent tint over a card.
+  --app-accent-text: color-mix(in srgb, var(--accent-color) 86%, black);
+  // Favorite star (graphic, needs 3:1): amber darkened in light mode.
+  --app-star: color-mix(in srgb, #{$star-color} 72%, black);
+}
+
+[data-theme='dark'] {
+  @include app-text-tokens(true);
+  --app-accent-text: color-mix(in srgb, var(--link-color) 94%, white);
+  --app-star: #{$star-color};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    @include app-text-tokens(true);
+    --app-accent-text: color-mix(in srgb, var(--link-color) 94%, white);
+    --app-star: #{$star-color};
+  }
+}
+
+// ─── Touch targets ─────────────────────────────────────────────────────────
+// Basix .button-icon is 36x36 and .button-sm ~30px high. Give both a 44px
+// invisible tap zone without changing their visible size or layout footprint.
+// :where() keeps specificity at 0 so any component that positions the button
+// itself (absolute/fixed, e.g. modal .close) still wins over `position: relative`.
+:where(.button-icon, .button-sm) {
+  @include tap-target;
 }
 
 // Fonts

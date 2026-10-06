@@ -610,7 +610,7 @@ onMounted(async () => {
   font-weight: 700;
   letter-spacing: -0.02em;
 
-  &--down    { color: var(--success); }
+  &--down    { color: var(--app-success-text); }
   &--up      { color: var(--error); }
   &--neutral { color: var(--secondary-text); }
 }
@@ -673,7 +673,6 @@ onMounted(async () => {
   gap: calc(#{$spacing} * 0.5);
   color: var(--secondary-text);
   font-size: 0.82rem;
-  opacity: 0.55;
 }
 
 // ─── View toggle (daily / weekly-average) ──────────────────────────────────────
@@ -865,17 +864,17 @@ onMounted(async () => {
 }
 
 .weight__item-delete {
+  // 44px tap area; negative margin keeps the row footprint at 32px
   color: var(--secondary-text);
-  opacity: 0.4;
-  width: 2rem;
-  height: 2rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: -0.375rem;
   padding: 0;
   flex-shrink: 0;
-  transition: color 150ms ease, opacity 150ms ease;
+  transition: color 150ms ease;
 
   &:hover,
   &:focus-visible {
-    opacity: 1;
     color: var(--error);
   }
 }

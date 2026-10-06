@@ -778,7 +778,7 @@ onMounted(async () => {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   background: var(--primary-bg);
   border-radius: var(--radius-full);
   padding: 0.15rem 0.55rem;
@@ -789,7 +789,7 @@ onMounted(async () => {
   font-weight: 700;
   letter-spacing: -0.02em;
 
-  &--down    { color: var(--success); }
+  &--down    { color: var(--app-success-text); }
   &--up      { color: var(--error); }
   &--neutral { color: var(--secondary-text); }
 }
@@ -814,7 +814,7 @@ onMounted(async () => {
 }
 
 .body-fat__profile-link {
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 0.2em;
@@ -876,7 +876,6 @@ onMounted(async () => {
   gap: calc(#{$spacing} * 0.5);
   color: var(--secondary-text);
   font-size: 0.82rem;
-  opacity: 0.55;
 }
 
 // ─── Form ─────────────────────────────────────────────────────────────────────
@@ -1013,7 +1012,7 @@ onMounted(async () => {
   margin: calc(#{$spacing} * 0.625) 0 0;
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--success);
+  color: var(--app-success-text);
 }
 
 .bf-save-enter-active {
@@ -1179,17 +1178,17 @@ onMounted(async () => {
 }
 
 .body-fat__item-delete {
+  // 44px tap area; negative margin keeps the row footprint at 32px
   color: var(--secondary-text);
-  opacity: 0.4;
-  width: 2rem;
-  height: 2rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: -0.375rem;
   padding: 0;
   flex-shrink: 0;
-  transition: color 150ms ease, opacity 150ms ease;
+  transition: color 150ms ease;
 
   &:hover,
   &:focus-visible {
-    opacity: 1;
     color: var(--error);
   }
 }

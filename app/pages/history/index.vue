@@ -131,8 +131,8 @@
         </div>
         <div class="progress history__macro-progress" role="none">
           <div
-            class="progress-bar history__macro-bar"
-            :style="{ width: macroBarWidth(avg.protein_g) + '%', backgroundColor: 'var(--macro-protein)' }"
+            class="progress-bar history__macro-bar history__macro-bar--protein"
+            :style="{ width: macroBarWidth(avg.protein_g) + '%' }"
             role="progressbar"
             :aria-valuenow="avg.protein_g"
             :aria-valuemax="maxMacro"
@@ -151,8 +151,8 @@
         </div>
         <div class="progress history__macro-progress" role="none">
           <div
-            class="progress-bar history__macro-bar"
-            :style="{ width: macroBarWidth(avg.carbs_g) + '%', backgroundColor: 'var(--macro-carbs)' }"
+            class="progress-bar history__macro-bar history__macro-bar--carbs"
+            :style="{ width: macroBarWidth(avg.carbs_g) + '%' }"
             role="progressbar"
             :aria-valuenow="avg.carbs_g"
             :aria-valuemax="maxMacro"
@@ -171,8 +171,8 @@
         </div>
         <div class="progress history__macro-progress" role="none">
           <div
-            class="progress-bar history__macro-bar"
-            :style="{ width: macroBarWidth(avg.fat_g) + '%', backgroundColor: 'var(--macro-fat)' }"
+            class="progress-bar history__macro-bar history__macro-bar--fat"
+            :style="{ width: macroBarWidth(avg.fat_g) + '%' }"
             role="progressbar"
             :aria-valuenow="avg.fat_g"
             :aria-valuemax="maxMacro"
@@ -435,13 +435,13 @@ onMounted(async () => {
   color: var(--primary-text);
   line-height: 1;
 
-  &--streak  { color: var(--accent-color); }
-  &--success { color: var(--success); }
-  &--warning { color: var(--warning); }
+  &--streak  { color: var(--app-accent-text); }
+  &--success { color: var(--app-success-text); }
+  &--warning { color: var(--app-warning-text); }
 }
 
 .history__streak-icon {
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   align-self: center;
 }
 
@@ -515,7 +515,6 @@ onMounted(async () => {
   gap: calc(#{$spacing} * 0.4);
   color: var(--secondary-text);
   font-size: 0.82rem;
-  opacity: 0.5;
 }
 
 // ─── Section label ────────────────────────────────────────────────────────────
@@ -562,9 +561,9 @@ onMounted(async () => {
   letter-spacing: -0.01em;
   flex-shrink: 0;
 
-  &--protein { color: $macro-protein; }
-  &--carbs   { color: $macro-carbs; }
-  &--fat     { color: $macro-fat; }
+  &--protein { color: var(--macro-protein-text); }
+  &--carbs   { color: var(--macro-carbs-text); }
+  &--fat     { color: var(--macro-fat-text); }
 }
 
 .history__macro-amount {
@@ -592,6 +591,10 @@ onMounted(async () => {
   border-radius: var(--radius-full);
   transition: width 400ms cubic-bezier(0.22, 1, 0.36, 1);
   min-width: 0;
+
+  &--protein { background-color: var(--macro-protein); }
+  &--carbs   { background-color: var(--macro-carbs); }
+  &--fat     { background-color: var(--macro-fat); }
 }
 
 // ─── List section ─────────────────────────────────────────────────────────────
@@ -674,17 +677,17 @@ onMounted(async () => {
   flex-shrink: 0;
 
   &--protein {
-    color: $macro-protein;
+    color: var(--macro-protein-text);
     background: rgba(239, 68, 68, 0.12);
   }
 
   &--carbs {
-    color: $macro-carbs;
+    color: var(--macro-carbs-text);
     background: rgba(59, 130, 246, 0.12);
   }
 
   &--fat {
-    color: $macro-fat;
+    color: var(--macro-fat-text);
     background: rgba(245, 158, 11, 0.12);
   }
 }

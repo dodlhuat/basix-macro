@@ -1089,7 +1089,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 // --success = "credit", matching the app's existing "down/back is good"
 // polarity (see weight/body-fat delta badges).
 .diary__activity-burned-value {
-  color: var(--success);
+  color: var(--app-success-text);
 }
 
 // Quick-add-activity button — sits right next to the first stat rather than
@@ -1102,7 +1102,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   background: none;
   border: none;
   font-family: inherit;
-  color: var(--success);
+  color: var(--app-success-text);
   cursor: pointer;
   transition: opacity 150ms ease;
 
@@ -1272,7 +1272,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .diary__meal-add {
-  color: var(--accent-color);
+  color: var(--app-accent-text);
   width: 2.75rem;
   height: 2.75rem;
   margin: -0.5rem -0.35rem -0.5rem 0;
@@ -1352,7 +1352,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 .diary__entry-right {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   flex-shrink: 0;
 }
 
@@ -1364,29 +1364,31 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .diary__entry-edit-toggle {
+  // 44px tap area; negative margin keeps the row footprint at 36px
   color: var(--secondary-text);
-  opacity: 0.45;
-  transition: opacity 150ms ease, color 150ms ease;
-  padding: 0.15rem;
-  margin: -0.15rem;
+  transition: color 150ms ease;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  margin: -0.25rem;
 
   &:hover,
   &:focus-visible {
-    opacity: 1;
-    color: var(--accent-color);
+    color: var(--app-accent-text);
   }
 }
 
 .diary__entry-delete {
+  // 44px tap area; negative margin keeps the row footprint at 36px
   color: var(--secondary-text);
-  opacity: 0.45;
-  transition: opacity 150ms ease, color 150ms ease;
-  padding: 0.15rem;
-  margin: -0.15rem;
+  transition: color 150ms ease;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  margin: -0.25rem;
 
   &:hover,
   &:focus-visible {
-    opacity: 1;
     color: var(--error);
   }
 }
@@ -1426,6 +1428,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .diary__entry-edit-step-btn {
+  @include tap-target;
   width: 2.25rem;
   height: 2.25rem;
   padding: 0;
@@ -1504,7 +1507,6 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   margin: 0.3rem 0 0;
   font-size: 0.8rem;
   color: var(--secondary-text);
-  opacity: 0.55;
   font-style: italic;
 }
 
@@ -1522,7 +1524,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .diary__water-icon {
-  color: #60a5fa;
+  color: var(--water-color-text);
   flex-shrink: 0;
 }
 
@@ -1602,7 +1604,6 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   text-transform: none;
   font-weight: 500;
   letter-spacing: 0;
-  opacity: 0.75;
 }
 
 .act-sheet__field-group {
