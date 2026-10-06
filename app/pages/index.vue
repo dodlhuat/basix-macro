@@ -214,6 +214,7 @@
     </section>
 
     <!-- Meal sections -->
+    <MealClipboardChip class="dashboard__clip-chip" />
     <section class="dashboard__meals" :aria-busy="isLoading">
       <template v-if="isLoading">
         <div v-for="n in 4" :key="n" class="dashboard__meal">
@@ -230,6 +231,7 @@
           :class="[
             `dashboard__meal--${meal.type}`,
             { 'dashboard__meal--current': meal.type === currentMealType },
+            { 'dashboard__meal--pasted': pastedMeal === meal.type },
           ]"
         >
           <div class="dashboard__meal-header">
@@ -243,6 +245,15 @@
             >
               {{ Math.round(meal.totalKcal) }} kcal
             </span>
+            <MealClipboardActions
+              :label="meal.label"
+              :can-copy="meal.entries.length > 0"
+              :can-paste="clipboard.hasContent"
+              :is-source="isSource(meal.type)"
+              :busy="pastingMeal !== null"
+              @copy="copy(meal.entries, meal.type)"
+              @paste="paste(meal.type)"
+            />
             <button
               class="button button-icon button-sm dashboard__meal-add"
               :aria-label="`${meal.label} Eintrag hinzufügen`"
@@ -357,6 +368,8 @@
     </section>
 
   </div>
+
+  <MealUndoBar :date="currentDate" />
 
   <!-- FAB -->
   <Teleport to="body">
@@ -677,6 +690,9 @@ const mealSections = computed(() => {
     }
   })
 })
+
+// ─── Meal clipboard (copy / paste / undo) ───────────────────────────────────────
+const { clipboard, pastedMeal, pastingMeal, isSource, copy, paste } = useMealClipboard(currentDate)
 
 function addEntry(mealType: string) {
   navigateTo(`/diary/add?meal=${mealType}&date=${currentDate.value}`)
@@ -1358,6 +1374,24 @@ watch(currentDate, date => loadDate(date))
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--primary-text);
+}
+
+.dashboard__clip-chip {
+  align-self: flex-start;
+}
+
+// Brief accent wash after a paste so the new entries are easy to spot.
+.dashboard__meal--pasted {
+  animation: mealPasted 900ms $ease-out-soft;
+}
+
+@keyframes mealPasted {
+  0%   { box-shadow: inset 0 0 0 2px var(--accent-color); }
+  100% { box-shadow: inset 0 0 0 2px transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard__meal--pasted { animation: none; }
 }
 
 .dashboard__meal-add {

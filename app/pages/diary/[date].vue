@@ -130,12 +130,13 @@
     </section>
 
     <!-- Meal sections -->
+    <MealClipboardChip class="diary__clip-chip" />
     <section class="diary__meals" aria-label="Mahlzeiten">
       <div
         v-for="meal in mealSections"
         :key="meal.type"
         class="diary__meal"
-        :class="`diary__meal--${meal.type}`"
+        :class="[`diary__meal--${meal.type}`, { 'diary__meal--pasted': pastedMeal === meal.type }]"
       >
         <div class="diary__meal-header">
           <span class="diary__meal-name">{{ meal.label }}</span>
@@ -146,6 +147,15 @@
           >
             {{ Math.round(meal.totalKcal) }} kcal
           </span>
+          <MealClipboardActions
+            :label="meal.label"
+            :can-copy="meal.entries.length > 0"
+            :can-paste="clipboard.hasContent"
+            :is-source="isSource(meal.type)"
+            :busy="pastingMeal !== null"
+            @copy="copy(meal.entries, meal.type)"
+            @paste="paste(meal.type)"
+          />
           <button
             v-if="meal.entries.length"
             class="button button-icon button-sm diary__meal-save-recipe"
@@ -338,6 +348,8 @@
     </section>
 
   </div>
+
+  <MealUndoBar :date="date" />
 
   <!-- Save-meal-as-recipe bottom sheet -->
   <Teleport to="body">
@@ -679,6 +691,9 @@ const mealSections = computed<MealSection[]>(() =>
     }
   })
 )
+
+// ─── Meal clipboard (copy / paste / undo) ───────────────────────────────────────
+const { clipboard, pastedMeal, pastingMeal, isSource, copy, paste } = useMealClipboard(date)
 
 function addEntry(mealType: MealType): void {
   navigateTo(`/diary/add?date=${date.value}&meal=${mealType}`)
@@ -1248,6 +1263,24 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--primary-text);
+}
+
+.diary__clip-chip {
+  align-self: flex-start;
+}
+
+/* Brief accent outline after a paste so the new entries are easy to spot. */
+.diary__meal--pasted {
+  animation: diaryMealPasted 900ms $ease-out-soft;
+}
+
+@keyframes diaryMealPasted {
+  0%   { box-shadow: inset 0 0 0 2px var(--accent-color); }
+  100% { box-shadow: inset 0 0 0 2px transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diary__meal--pasted { animation: none; }
 }
 
 .diary__meal-add {

@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import type { DiaryEntry, FoodItem, WaterEntry } from '../../db'
+import type { ClipboardItem, MealType } from '../utils/mealClipboard'
 
 export type DiaryEntryWithName = DiaryEntry & { food_item_name: string; is_quick_add: boolean }
 
@@ -190,6 +191,94 @@ export const useDiaryStore = defineStore('diary', () => {
     await loadForDate(params.date)
   }
 
+  /**
+   * Pastes copied meal entries into `meal_type` on `date` (appends, never replaces).
+   * Values are the snapshot from copy time. Quick-add items get a fresh disposable
+   * FoodItem so editing/deleting one entry never affects its copy. Items whose food or
+   * recipe has since been deleted are skipped. Returns the created entry ids (for undo)
+   * and how many items were skipped.
+   */
+  async function pasteEntries(
+    items: ClipboardItem[],
+    date: string,
+    mealType: MealType,
+  ): Promise<{ ids: string[]; skipped: number }> {
+    const { db } = await import('../../db')
+    const now = new Date().toISOString()
+    const ids: string[] = []
+    let skipped = 0
+
+    await db.transaction('rw', db.diary_entries, db.food_items, db.recipes, async () => {
+      for (const item of items) {
+        let foodId = item.food_item_id
+
+        if (item.is_quick_add) {
+          foodId = crypto.randomUUID()
+          await db.food_items.add({
+            id: foodId,
+            name: item.name,
+            calories_per_100g: item.calories_total,
+            protein_per_100g: item.protein_total_g,
+            carbs_per_100g: item.carbs_total_g,
+            fat_per_100g: item.fat_total_g,
+            source: 'quick_add',
+            is_favorite: false,
+            last_used_at: now,
+            created_at: now,
+            updated_at: now,
+            sync_status: 'local',
+          })
+        } else if (foodId) {
+          const food = await db.food_items.get(foodId)
+          if (!food || food.deleted_at) { skipped++; continue }
+          await db.food_items.update(foodId, { last_used_at: now, updated_at: now, sync_status: 'dirty' })
+        } else if (item.recipe_id) {
+          const recipe = await db.recipes.get(item.recipe_id)
+          if (!recipe || recipe.deleted_at) { skipped++; continue }
+        } else {
+          skipped++
+          continue
+        }
+
+        const id = crypto.randomUUID()
+        await db.diary_entries.add({
+          id,
+          date,
+          meal_type: mealType,
+          food_item_id: foodId,
+          recipe_id: item.is_quick_add ? undefined : item.recipe_id,
+          amount_g: item.amount_g,
+          servings: item.servings,
+          calories_total: item.calories_total,
+          protein_total_g: item.protein_total_g,
+          carbs_total_g: item.carbs_total_g,
+          fat_total_g: item.fat_total_g,
+          logged_at: now,
+          created_at: now,
+          updated_at: now,
+          sync_status: 'local',
+        })
+        ids.push(id)
+      }
+    })
+
+    await loadForDate(date)
+    return { ids, skipped }
+  }
+
+  /** Soft-deletes entries created by a paste (undo). */
+  async function undoPaste(ids: string[], date: string): Promise<void> {
+    const { db } = await import('../../db')
+    const now = new Date().toISOString()
+    await db.transaction('rw', db.diary_entries, async () => {
+      for (const id of ids) {
+        const entry = await db.diary_entries.get(id)
+        if (entry) await db.diary_entries.put(markDeleted(entry, now))
+      }
+    })
+    await loadForDate(date)
+  }
+
   async function updateEntryQuantity(id: string, newQuantity: number) {
     const { db } = await import('../../db')
     const entry = await db.diary_entries.get(id)
@@ -227,7 +316,7 @@ export const useDiaryStore = defineStore('diary', () => {
       .toArray()
     if (!pastEntries.length) return null
     pastEntries.sort((a, b) => b.logged_at.localeCompare(a.logged_at))
-    return pastEntries[0].amount_g
+    return pastEntries[0]?.amount_g ?? null
   }
 
   async function deleteEntry(id: string) {
@@ -255,6 +344,8 @@ export const useDiaryStore = defineStore('diary', () => {
     addEntry,
     addQuickEntry,
     addRecipeEntry,
+    pasteEntries,
+    undoPaste,
     updateEntryQuantity,
     deleteEntry,
     getLastAmountForFood,

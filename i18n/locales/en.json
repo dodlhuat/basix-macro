@@ -43,6 +43,18 @@
     "dinner": "Dinner",
     "snack": "Snacks"
   },
+  "mealClipboard": {
+    "copy": "Copy {meal}",
+    "paste": "Paste into {meal}",
+    "copiedToast": "{meal} copied ({n})",
+    "pastedToast": "{n} pasted",
+    "pastedSkippedToast": "{n} pasted, {skipped} skipped (no longer available)",
+    "nothingPasted": "Nothing pasted – foods no longer available",
+    "undo": "Undo",
+    "undone": "Paste undone",
+    "chip": "{meal} · {n} entries · {kcal} kcal copied",
+    "discard": "Clear clipboard"
+  },
   "dashboard": {
     "dateNav": "Date navigation",
     "prevDay": "Previous day",

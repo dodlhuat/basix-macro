@@ -43,6 +43,18 @@
     "dinner": "Abendessen",
     "snack": "Snacks"
   },
+  "mealClipboard": {
+    "copy": "{meal} kopieren",
+    "paste": "In {meal} einfügen",
+    "copiedToast": "{meal} kopiert ({n})",
+    "pastedToast": "{n} eingefügt",
+    "pastedSkippedToast": "{n} eingefügt, {skipped} übersprungen (nicht mehr vorhanden)",
+    "nothingPasted": "Nichts eingefügt – Lebensmittel nicht mehr vorhanden",
+    "undo": "Rückgängig",
+    "undone": "Einfügen rückgängig gemacht",
+    "chip": "{meal} · {n} Einträge · {kcal} kcal kopiert",
+    "discard": "Zwischenablage leeren"
+  },
   "dashboard": {
     "dateNav": "Datumsnavigation",
     "prevDay": "Vorheriger Tag",
