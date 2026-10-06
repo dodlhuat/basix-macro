@@ -2,7 +2,7 @@
   <div class="activity page-content">
 
     <!-- ─── Hero: today's burned calories ────────────────────────────────────── -->
-    <section class="activity__hero" aria-label="Heute verbrannte Kalorien">
+    <section class="activity__hero" :aria-label="$t('activity.todayBurnedLabel')">
       <template v-if="entries.length">
         <div class="activity__hero-body">
           <div class="activity__value-group">
@@ -46,7 +46,7 @@
             type="text"
             enterkeyhint="next"
             :placeholder="$t('activity.namePlaceholder')"
-            aria-label="Bezeichnung der Aktivität"
+            :aria-label="$t('activity.nameLabel')"
             maxlength="60"
           >
         </div>
@@ -65,7 +65,7 @@
               min="1"
               step="1"
               placeholder="300"
-              aria-label="Verbrannte Kalorien"
+              :aria-label="$t('activity.caloriesLabel')"
               class="activity__num-input"
             >
             <span class="activity__input-unit">kcal</span>
@@ -86,7 +86,7 @@
               min="0"
               step="1"
               placeholder="30"
-              aria-label="Dauer in Minuten"
+              :aria-label="$t('activity.durationAria')"
               class="activity__num-input"
             >
             <span class="activity__input-unit">min</span>
@@ -109,13 +109,13 @@
     </section>
 
     <!-- ─── History list ──────────────────────────────────────────────────────── -->
-    <section class="activity__history" aria-label="Verlauf">
+    <section class="activity__history" :aria-label="$t('activity.history')">
       <p class="activity__section-label">{{ $t('activity.history') }}</p>
       <ul
         v-if="recentEntries.length"
         class="activity__list"
         role="list"
-        aria-label="Aktivitätseinträge"
+        :aria-label="$t('activity.entriesLabel')"
       >
         <li
           v-for="(entry, idx) in recentEntries"
@@ -135,7 +135,7 @@
             </span>
             <button
               class="button button-icon activity__item-delete"
-              :aria-label="`Eintrag ${entry.name} löschen`"
+              :aria-label="$t('entry.delete', { name: entry.name })"
               @click="handleDelete(entry.id)"
             >
               <AppIcon name="delete" size="1.125rem" />
@@ -283,7 +283,7 @@ onMounted(async () => {
   border-radius: var(--radius-xl);
   background: linear-gradient(135deg, var(--primary-bg) 0%, var(--warning-tint) 100%);
   padding: calc(#{$spacing} * 1.5) calc(#{$spacing} * 1.25) calc(#{$spacing} * 1.25);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fadeSlideUp 500ms $ease-out-soft both;
 }
 
 .activity__hero-body {
@@ -389,7 +389,7 @@ onMounted(async () => {
   background: var(--primary-bg);
   border-radius: var(--radius-xl);
   padding: calc(#{$spacing} * 1.25);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 120ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 120ms both;
 }
 
 .activity__form-row {
@@ -455,7 +455,7 @@ onMounted(async () => {
 // ─── History ──────────────────────────────────────────────────────────────────
 
 .activity__history {
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 240ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 240ms both;
 }
 
 .activity__list {
@@ -476,7 +476,7 @@ onMounted(async () => {
   gap: calc(#{$spacing} * 0.75);
   padding: calc(#{$spacing} * 0.75) calc(#{$spacing} * 1);
   background: var(--primary-bg);
-  animation: itemIn 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: itemIn 400ms $ease-out-soft both;
 
   &:first-child { border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
   &:last-child  { border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
@@ -539,7 +539,7 @@ onMounted(async () => {
   margin: -0.375rem;
   padding: 0;
   flex-shrink: 0;
-  transition: color 150ms ease;
+  transition: color $duration-fast $ease-standard;
 
   &:hover,
   &:focus-visible {

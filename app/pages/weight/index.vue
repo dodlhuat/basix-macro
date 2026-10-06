@@ -5,7 +5,7 @@
     <section
       class="weight__hero"
       :class="heroBMIClass"
-      aria-label="Aktuelles Gewicht"
+      :aria-label="$t('weight.currentLabel')"
     >
       <template v-if="latestEntry">
         <div class="weight__hero-body">
@@ -18,9 +18,9 @@
               v-if="bmi"
               class="badge"
               :class="bmiBadgeClass"
-              :aria-label="`BMI ${bmi.value}: ${bmi.label}`"
+              :aria-label="$t('weight.bmiAria', { value: bmi.value, label: bmiLabel })"
             >
-              BMI {{ bmi.value }} · {{ bmi.label }}
+              BMI {{ bmi.value }} · {{ bmiLabel }}
             </span>
             <span
               v-if="heroDelta !== null"
@@ -44,7 +44,7 @@
     <section
       ref="tabsRef"
       class="weight__chart-section weight__view-toggle tabs-container tabs-pills"
-      aria-label="Gewichtsverlauf"
+      :aria-label="$t('weight.chartLabel')"
     >
       <div class="tabs-header">
         <ul class="tabs-list">
@@ -133,7 +133,7 @@
               max="300"
               inputmode="decimal"
               placeholder="82.5"
-              aria-label="Gewicht in Kilogramm"
+              :aria-label="$t('weight.weightAria')"
               class="weight__weight-input"
             >
             <span class="weight__input-unit">kg</span>
@@ -148,7 +148,7 @@
               type="text"
               readonly
               :placeholder="$t('weight.datePlaceholder')"
-              aria-label="Datum des Eintrags"
+              :aria-label="$t('weight.dateAria')"
               aria-haspopup="dialog"
               class="weight__date-input"
             >
@@ -162,7 +162,7 @@
             type="text"
             enterkeyhint="done"
             :placeholder="$t('weight.notePlaceholder')"
-            aria-label="Notiz"
+            :aria-label="$t('weight.noteLabel')"
             maxlength="200"
           >
         </div>
@@ -182,13 +182,13 @@
     </section>
 
     <!-- ─── History list ─────────────────────────────────────────────────────── -->
-    <section class="weight__history" aria-label="Verlauf">
+    <section class="weight__history" :aria-label="$t('weight.history')">
       <p class="weight__section-label">{{ $t('weight.history') }}</p>
       <ul
         v-if="recentEntries.length"
         class="weight__list"
         role="list"
-        aria-label="Gewichtseinträge"
+        :aria-label="$t('weight.entriesLabel')"
       >
         <li
           v-for="(entry, idx) in recentEntries"
@@ -208,13 +208,13 @@
               v-if="entryDelta(idx) !== null"
               class="badge"
               :class="entryDeltaBadgeClass(idx)"
-              aria-label="Veränderung zum vorherigen Eintrag"
+              :aria-label="$t('common.deltaVsPrevious')"
             >
               {{ entryDeltaDisplay(idx) }}
             </span>
             <button
               class="button button-icon weight__item-delete"
-              :aria-label="`Eintrag vom ${formatDate(entry.date)} löschen`"
+              :aria-label="$t('common.deleteEntryOn', { date: formatDate(entry.date) })"
               @click="handleDelete(entry.id)"
             >
               <AppIcon name="delete" size="1.125rem" />
@@ -250,6 +250,8 @@ const bmi = computed(() => {
   if (!latestEntry.value || !userStore.user?.height_cm) return null
   return calcBMI(latestEntry.value.weight_kg, userStore.user.height_cm)
 })
+
+const bmiLabel = computed(() => (bmi.value ? t(`weight.bmiCategory.${bmi.value.category}`) : ''))
 
 const bmiBadgeClass = computed(() => {
   if (!bmi.value) return ''
@@ -552,7 +554,7 @@ onMounted(async () => {
   border-radius: var(--radius-xl);
   background: linear-gradient(135deg, var(--primary-bg) 0%, var(--accent-color-tint) 100%);
   padding: calc(#{$spacing} * 1.5) calc(#{$spacing} * 1.25) calc(#{$spacing} * 1.25);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fadeSlideUp 500ms $ease-out-soft both;
 
   // BMI-driven gradient tints
   &--normal {
@@ -636,7 +638,7 @@ onMounted(async () => {
   background: var(--primary-bg);
   border-radius: var(--radius-xl);
   padding: calc(#{$spacing} * 1) calc(#{$spacing} * 0.5) calc(#{$spacing} * 0.625);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 120ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 120ms both;
   overflow: hidden;
 }
 
@@ -731,7 +733,7 @@ onMounted(async () => {
   background: var(--primary-bg);
   border-radius: var(--radius-xl);
   padding: calc(#{$spacing} * 1.25);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 240ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 240ms both;
 }
 
 .weight__form-row {
@@ -792,7 +794,7 @@ onMounted(async () => {
 // ─── History ──────────────────────────────────────────────────────────────────
 
 .weight__history {
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 360ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 360ms both;
 }
 
 .weight__list {
@@ -813,7 +815,7 @@ onMounted(async () => {
   gap: calc(#{$spacing} * 0.75);
   padding: calc(#{$spacing} * 0.75) calc(#{$spacing} * 1);
   background: var(--primary-bg);
-  animation: itemIn 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: itemIn 400ms $ease-out-soft both;
 
   &:first-child { border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
   &:last-child  { border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
@@ -873,7 +875,7 @@ onMounted(async () => {
   margin: -0.375rem;
   padding: 0;
   flex-shrink: 0;
-  transition: color 150ms ease;
+  transition: color $duration-fast $ease-standard;
 
   &:hover,
   &:focus-visible {

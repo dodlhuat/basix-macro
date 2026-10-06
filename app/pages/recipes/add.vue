@@ -5,14 +5,14 @@
     <div class="recipe-add__header">
       <button
         class="button button-icon recipe-add__back"
-        aria-label="Zurück"
+        :aria-label="$t('common.back')"
         @click="handleBack"
       >
         <AppIcon name="arrow_back" size="1.25rem" />
       </button>
       <div class="recipe-add__title-group">
-        <h1 class="recipe-add__title">Neues Rezept</h1>
-        <p class="recipe-add__step-label">Schritt {{ step }} von 2</p>
+        <h1 class="recipe-add__title">{{ $t('recipes.add.title') }}</h1>
+        <p class="recipe-add__step-label">{{ $t('recipes.add.step', { step }) }}</p>
       </div>
     </div>
 
@@ -27,14 +27,14 @@
     <div v-if="step === 1" class="recipe-add__step">
 
       <div class="form-group recipe-add__form-group">
-        <label class="recipe-add__label" for="recipe-name">Name</label>
+        <label class="recipe-add__label" for="recipe-name">{{ $t('food.form.name') }}</label>
         <div class="input-group">
           <input
             id="recipe-name"
             v-model="form.name"
             type="text"
             enterkeyhint="next"
-            placeholder="z.B. Hähnchen mit Reis"
+            :placeholder="$t('recipes.add.namePlaceholder')"
             class="recipe-add__text-input"
             maxlength="100"
             autocomplete="off"
@@ -43,12 +43,12 @@
       </div>
 
       <div class="form-group recipe-add__form-group">
-        <label class="recipe-add__label" for="recipe-servings">Portionen</label>
+        <label class="recipe-add__label" for="recipe-servings">{{ $t('diary.sheet.servings') }}</label>
         <div class="recipe-add__qty-row">
           <button
             class="button button-outline recipe-add__qty-btn"
             :disabled="form.servings <= 1"
-            aria-label="Weniger Portionen"
+            :aria-label="$t('diary.sheet.portionsLess')"
             type="button"
             @click="form.servings = Math.max(1, form.servings - 1)"
           >
@@ -64,13 +64,13 @@
               min="1"
               max="99"
               class="recipe-add__qty-input"
-              aria-label="Anzahl Portionen"
+              :aria-label="$t('diary.sheet.portionsCount')"
             >
-            <span class="recipe-add__qty-unit">Portionen</span>
+            <span class="recipe-add__qty-unit">{{ $t('diary.sheet.servings') }}</span>
           </div>
           <button
             class="button button-outline recipe-add__qty-btn"
-            aria-label="Mehr Portionen"
+            :aria-label="$t('diary.sheet.portionsMore')"
             type="button"
             @click="form.servings = Math.min(99, form.servings + 1)"
           >
@@ -81,14 +81,14 @@
 
       <div class="form-group recipe-add__form-group">
         <div class="recipe-add__label-row">
-          <label class="recipe-add__label" for="recipe-desc">Beschreibung</label>
-          <span class="recipe-add__optional">optional</span>
+          <label class="recipe-add__label" for="recipe-desc">{{ $t('recipes.description') }}</label>
+          <span class="recipe-add__optional">{{ $t('common.optional') }}</span>
         </div>
         <div class="input-group">
           <textarea
             id="recipe-desc"
             v-model="form.description"
-            placeholder="Kurze Beschreibung …"
+            :placeholder="$t('recipes.descriptionPlaceholder')"
             class="recipe-add__textarea"
             maxlength="200"
             rows="3"
@@ -106,7 +106,7 @@
         >
           <span v-if="isCreating" class="loading" />
           <template v-else>
-            Weiter
+            {{ $t('common.next') }}
             <AppIcon name="arrow_forward" size="1rem" />
           </template>
         </button>
@@ -121,7 +121,7 @@
       <div class="recipe-add__recipe-chip">
         <AppIcon name="menu_book" size="0.9rem" class="recipe-add__chip-icon" />
         <span class="recipe-add__chip-name">{{ form.name }}</span>
-        <span class="recipe-add__chip-servings">· {{ form.servings }} Portion{{ form.servings === 1 ? '' : 'en' }}</span>
+        <span class="recipe-add__chip-servings">· {{ form.servings }} {{ $t('recipes.servings', form.servings) }}</span>
       </div>
 
       <!-- Food search -->
@@ -134,15 +134,15 @@
             type="search"
             enterkeyhint="search"
             class="recipe-add__search-input"
-            placeholder="Zutat suchen …"
-            aria-label="Zutat suchen"
+            :placeholder="$t('recipes.add.ingSearchPlaceholder')"
+            :aria-label="$t('recipes.add.ingSearchAria')"
             @input="handleIngSearch"
             @search="handleIngSearch"
           >
           <button
             v-if="ingSearchQuery"
             class="button button-icon recipe-add__search-clear"
-            aria-label="Suche löschen"
+            :aria-label="$t('diary.clearSearch')"
             @click="clearIngSearch"
           >
             <AppIcon name="close" size="1rem" />
@@ -155,7 +155,7 @@
         v-if="ingSearchQuery.trim() && foodStore.items.length"
         class="recipe-add__results"
         role="list"
-        aria-label="Suchergebnisse"
+        :aria-label="$t('recipes.add.results')"
       >
         <li
           v-for="(item, idx) in foodStore.items"
@@ -179,7 +179,7 @@
       <div v-if="ingSearchQuery.trim()" class="recipe-add__off">
         <div v-if="isOffLoading" class="recipe-add__off-loading">
           <span class="loading recipe-add__off-spinner" />
-          <span class="recipe-add__off-loading-text">Online suchen …</span>
+          <span class="recipe-add__off-loading-text">{{ $t('common.searchOnline') }}</span>
         </div>
         <template v-else-if="offResults.length">
           <p class="recipe-add__off-header">
@@ -213,12 +213,12 @@
         class="recipe-add__search-empty"
       >
         <AppIcon name="search_off" size="1.5rem" class="recipe-add__search-empty-icon" />
-        <p>Kein Lebensmittel gefunden.</p>
+        <p>{{ $t('recipes.noFoodFound') }}</p>
       </div>
 
       <!-- Ingredient list (when not searching) -->
       <template v-if="!ingSearchQuery.trim()">
-        <p v-if="liveIngredients.length" class="recipe-add__section-label">Zutaten</p>
+        <p v-if="liveIngredients.length" class="recipe-add__section-label">{{ $t('recipes.ingredients') }}</p>
 
         <ul v-if="liveIngredients.length" class="recipe-add__ing-list" role="list">
           <li
@@ -234,7 +234,7 @@
             </div>
             <button
               class="button button-icon recipe-add__ing-delete"
-              :aria-label="`${ing.food.name} entfernen`"
+              :aria-label="$t('recipes.removeIngredient', { name: ing.food.name })"
               @click="handleRemoveIngredient(ing)"
             >
               <AppIcon name="delete" size="1.125rem" />
@@ -245,12 +245,12 @@
         <!-- Empty ingredient prompt -->
         <div v-else class="recipe-add__ing-empty">
           <AppIcon name="add_shopping_cart" size="2rem" class="recipe-add__ing-empty-icon" />
-          <p class="recipe-add__ing-empty-hint">Suche nach Zutaten und füge sie hinzu.</p>
+          <p class="recipe-add__ing-empty-hint">{{ $t('recipes.add.ingEmptyHint') }}</p>
         </div>
 
         <!-- Live nutrition preview -->
         <div v-if="liveNutrition" class="recipe-add__nutrition card">
-          <p class="recipe-add__nutrition-title">Pro Portion</p>
+          <p class="recipe-add__nutrition-title">{{ $t('recipes.perServing') }}</p>
           <div class="recipe-add__nutrition-grid">
             <div class="recipe-add__nutrition-item">
               <span class="recipe-add__nutrition-value recipe-add__nutrition-value--cal">{{ liveNutrition.cal }}</span>
@@ -258,15 +258,15 @@
             </div>
             <div class="recipe-add__nutrition-item">
               <span class="recipe-add__nutrition-value recipe-add__nutrition-value--protein">{{ liveNutrition.protein }}g</span>
-              <span class="recipe-add__nutrition-label">Protein</span>
+              <span class="recipe-add__nutrition-label">{{ $t('common.protein') }}</span>
             </div>
             <div class="recipe-add__nutrition-item">
               <span class="recipe-add__nutrition-value recipe-add__nutrition-value--carbs">{{ liveNutrition.carbs }}g</span>
-              <span class="recipe-add__nutrition-label">Kohlenhydr.</span>
+              <span class="recipe-add__nutrition-label">{{ $t('common.carbsShort') }}</span>
             </div>
             <div class="recipe-add__nutrition-item">
               <span class="recipe-add__nutrition-value recipe-add__nutrition-value--fat">{{ liveNutrition.fat }}g</span>
-              <span class="recipe-add__nutrition-label">Fett</span>
+              <span class="recipe-add__nutrition-label">{{ $t('common.fat') }}</span>
             </div>
           </div>
         </div>
@@ -279,7 +279,7 @@
             @click="saveRecipe"
           >
             <AppIcon name="check" size="1rem" />
-            Rezept speichern
+            {{ $t('recipes.add.save') }}
           </button>
         </div>
 
@@ -301,7 +301,7 @@
         class="bottom-sheet"
         role="dialog"
         aria-modal="true"
-        aria-label="Zutat hinzufügen"
+        :aria-label="$t('recipes.addIngredient')"
       >
         <div class="bottom-sheet-handle" aria-hidden="true" />
 
@@ -314,7 +314,7 @@
           </div>
           <button
             class="close button button-icon"
-            aria-label="Schließen"
+            :aria-label="$t('common.close')"
             @click="closeIngSheet"
           >
             <AppIcon name="close" size="1.25rem" />
@@ -325,12 +325,12 @@
 
           <!-- Amount control -->
           <div class="recipe-add-sheet__section">
-            <p class="recipe-add-sheet__section-label">Menge</p>
+            <p class="recipe-add-sheet__section-label">{{ $t('diary.sheet.amount') }}</p>
             <div class="recipe-add-sheet__amount">
               <button
                 class="button button-outline recipe-add-sheet__amount-btn"
                 :disabled="ingAmount <= 10"
-                aria-label="10g weniger"
+                :aria-label="$t('diary.sheet.decrease10')"
                 @click="ingAmount = Math.max(1, ingAmount - 10)"
               >
                 <AppIcon name="remove" size="1rem" />
@@ -345,7 +345,7 @@
                     min="1"
                     max="9999"
                     step="1"
-                    aria-label="Menge in Gramm"
+                    :aria-label="$t('diary.sheet.amountAria')"
                     class="recipe-add-sheet__amount-input"
                   >
                   <span class="recipe-add-sheet__amount-unit">g</span>
@@ -353,7 +353,7 @@
               </div>
               <button
                 class="button button-outline recipe-add-sheet__amount-btn"
-                aria-label="10g mehr"
+                :aria-label="$t('diary.sheet.increase10')"
                 @click="ingAmount = Math.min(9999, ingAmount + 10)"
               >
                 <AppIcon name="add" size="1rem" />
@@ -371,19 +371,19 @@
               <span class="recipe-add-sheet__nutrition-value recipe-add-sheet__nutrition-value--protein">
                 {{ ingSheetNutrition.protein }}g
               </span>
-              <span class="recipe-add-sheet__nutrition-label">Protein</span>
+              <span class="recipe-add-sheet__nutrition-label">{{ $t('common.protein') }}</span>
             </div>
             <div class="recipe-add-sheet__nutrition-item">
               <span class="recipe-add-sheet__nutrition-value recipe-add-sheet__nutrition-value--carbs">
                 {{ ingSheetNutrition.carbs }}g
               </span>
-              <span class="recipe-add-sheet__nutrition-label">Kohlenhydrate</span>
+              <span class="recipe-add-sheet__nutrition-label">{{ $t('common.carbs') }}</span>
             </div>
             <div class="recipe-add-sheet__nutrition-item">
               <span class="recipe-add-sheet__nutrition-value recipe-add-sheet__nutrition-value--fat">
                 {{ ingSheetNutrition.fat }}g
               </span>
-              <span class="recipe-add-sheet__nutrition-label">Fett</span>
+              <span class="recipe-add-sheet__nutrition-label">{{ $t('common.fat') }}</span>
             </div>
           </div>
 
@@ -391,7 +391,7 @@
 
         <div class="bottom-sheet-footer">
           <div class="buttons">
-            <button class="button" @click="closeIngSheet">Abbrechen</button>
+            <button class="button" @click="closeIngSheet">{{ $t('common.cancel') }}</button>
             <button
               class="button button-primary"
               :disabled="isAddingIng"
@@ -400,7 +400,7 @@
               <span v-if="isAddingIng" class="loading" />
               <template v-else>
                 <AppIcon name="check" size="1rem" />
-                Hinzufügen
+                {{ $t('common.add') }}
               </template>
             </button>
           </div>
@@ -415,7 +415,7 @@
 import type { FoodItem } from '../../../db'
 import type { OFFProduct } from '../../composables/useOpenFoodFacts'
 
-definePageMeta({ title: 'Neues Rezept' })
+definePageMeta({ title: 'New Recipe' })
 
 const recipesStore = useRecipesStore()
 const foodStore = useFoodStore()
@@ -713,7 +713,7 @@ onUnmounted(() => {
   height: 100%;
   background: var(--accent-color);
   border-radius: var(--radius-full);
-  transition: width 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: width 400ms $ease-out-soft;
 }
 
 // ─── Step wrapper ─────────────────────────────────────────────────────────────
@@ -722,7 +722,7 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   gap: calc(#{$spacing} * 1);
-  animation: stepIn 350ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: stepIn 350ms $ease-out-soft both;
 }
 
 // ─── Form groups ──────────────────────────────────────────────────────────────
@@ -931,17 +931,18 @@ onUnmounted(() => {
   padding: 0;
   border: none;
   border-radius: 50%;
-  background: var(--secondary-text);
+  // Solid tints instead of element opacity: the old 45% fade left the glyph
+  // at ~1.9:1 against its disc. Rest 80% secondary-text (>=4:1), hover 100%.
+  background: color-mix(in srgb, var(--secondary-text) 80%, var(--primary-bg));
   color: var(--primary-bg);
-  opacity: 0.45;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 150ms ease;
+  transition: background-color $duration-fast $ease-standard;
 
   &:hover,
   &:focus-visible {
-    opacity: 0.75;
+    background: var(--secondary-text);
   }
 }
 
@@ -1009,8 +1010,8 @@ onUnmounted(() => {
   padding: calc(#{$spacing} * 0.7) $spacing;
   background: var(--primary-bg);
   cursor: pointer;
-  transition: background 120ms ease;
-  animation: itemIn 350ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: background $duration-fast $ease-standard;
+  animation: itemIn 350ms $ease-out-soft both;
 
   &:first-child { border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
   &:last-child  { border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
@@ -1152,7 +1153,7 @@ onUnmounted(() => {
   height: 2.75rem;
   margin: -0.375rem;
   padding: 0;
-  transition: color 150ms ease;
+  transition: color $duration-fast $ease-standard;
 
   &:hover,
   &:focus-visible { color: var(--error); }

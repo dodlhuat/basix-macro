@@ -11,7 +11,8 @@
     "settings": "Settings",
     "adminSection": "Admin",
     "adminUsers": "Users",
-    "adminFoods": "Food Submissions"
+    "adminFoods": "Food Submissions",
+    "openMenu": "Open menu"
   },
   "common": {
     "today": "Today",
@@ -35,7 +36,11 @@
     "retry": "Try again",
     "calculate": "Calculate",
     "loading": "Loading data",
-    "noData": "No data"
+    "noData": "No data",
+    "waterAdd": "Add {amount} of water",
+    "deltaVsPrevious": "Change from previous entry",
+    "deleteEntryOn": "Delete entry from {date}",
+    "carbsShort": "Carbs"
   },
   "meal": {
     "breakfast": "Breakfast",
@@ -48,7 +53,8 @@
     "restored": "Entry restored",
     "rowLabel": "{name}, {amount}, {kcal} kcal, edit",
     "rowLabelQuick": "{name}, {kcal} kcal, edit",
-    "delete": "Delete {name}"
+    "delete": "Delete {name}",
+    "addTo": "{meal} – add entry"
   },
   "mealClipboard": {
     "menu": "{meal} – more actions",
@@ -78,7 +84,6 @@
     "streakDays": "days",
     "emptyEntry": "Nothing logged yet",
     "addEntry": "Add entry",
-    "editEntry": "Edit {name}",
     "now": "Now",
     "paceMarkerLabel": "Even pace across the day: {n} kcal by now",
     "paceOnTrack": "So far, about an even pace across the day",
@@ -120,14 +125,24 @@
       "increase": "Increase",
       "logMode": "How to log?",
       "logModeRecipe": "As recipe",
-      "logModeItems": "Individual items"
+      "logModeItems": "Individual items",
+      "decrease10": "10 g less",
+      "increase10": "10 g more",
+      "amountAria": "Amount in grams",
+      "addRecipe": "Add recipe",
+      "portionsLess": "Fewer servings",
+      "portionsMore": "More servings",
+      "portionsCount": "Number of servings"
     },
     "quickAdd": {
       "title": "Quick entry",
       "caloriesLabel": "Calories",
       "nameLabel": "Label",
       "namePlaceholder": "e.g. Snack on the go",
-      "macrosToggle": "Add nutrition details"
+      "macrosToggle": "Add nutrition details",
+      "proteinAria": "Protein in grams",
+      "carbsAria": "Carbohydrates in grams",
+      "fatAria": "Fat in grams"
     },
     "diaryPage": {
       "backToDashboard": "Back to dashboard",
@@ -138,11 +153,20 @@
       "overGoalLabel": "+ {n} kcal above goal",
       "emptyEntry": "Nothing logged yet",
       "addEntry": "Add entry",
-      "editEntry": "Edit {name}",
       "saveAsRecipe": "Save as recipe",
       "saveAsRecipeName": "Recipe name",
-      "saveAsRecipeToast": "Recipe saved"
-    }
+      "saveAsRecipeToast": "Recipe saved",
+      "todayLabel": "Today",
+      "calorieSummary": "Calorie summary",
+      "calorieProgress": "Calorie progress",
+      "macrosLabel": "Macronutrients",
+      "macroProgress": "{label}: {current} of {goal} g",
+      "mealsLabel": "Meals",
+      "kcalLabel": "{n} kilocalories",
+      "waterIntake": "Water intake",
+      "waterProgress": "Water progress"
+    },
+    "recipeList": "Recipe list"
   },
   "food": {
     "title": "Foods",
@@ -190,8 +214,18 @@
       "errorName": "Name is required.",
       "errorValue": "Enter a value ≥ 0.",
       "errorSave": "Save failed. Please try again.",
-      "macroCalc": "Macros add up to {n} kcal",
-      "macroDeviation": "— deviating from {n} kcal (stated)"
+      "macroCalc": "Macros add up to",
+      "macroDeviation": "deviating from {n} kcal (stated)",
+      "namePlaceholder": "e.g. Oatmeal",
+      "brandPlaceholder": "e.g. Kaufland",
+      "errorDelete": "Delete failed."
+    },
+    "edit": {
+      "notFound": "Food not found.",
+      "title": "Edit",
+      "deleteItem": "Delete food",
+      "deleteTitle": "Delete?",
+      "deleteBody": "{name} will be permanently removed. This action cannot be undone."
     }
   },
   "scan": {
@@ -204,7 +238,9 @@
     "notFoundTitle": "Product not found",
     "rescan": "Scan again",
     "saveAndAdd": "Save & add",
-    "addManually": "Add manually"
+    "addManually": "Add manually",
+    "scannerLabel": "Barcode scanner",
+    "searchBarcode": "Search barcode"
   },
   "weight": {
     "title": "Weight",
@@ -222,7 +258,20 @@
     "notePlaceholder": "Note (optional)",
     "history": "History",
     "empty": "No entries yet",
-    "emptyHint": "Log your first weight above to get started."
+    "emptyHint": "Log your first weight above to get started.",
+    "currentLabel": "Current weight",
+    "bmiAria": "BMI {value}: {label}",
+    "bmiCategory": {
+      "underweight": "Underweight",
+      "normal": "Normal weight",
+      "overweight": "Overweight",
+      "obese": "Obese"
+    },
+    "chartLabel": "Weight trend",
+    "weightAria": "Weight in kilograms",
+    "dateAria": "Entry date",
+    "noteLabel": "Note",
+    "entriesLabel": "Weight entries"
   },
   "history": {
     "title": "Statistics",
@@ -238,7 +287,17 @@
       "7": "7 days",
       "30": "30 days",
       "90": "90 days"
-    }
+    },
+    "keyStats": "Key figures",
+    "avgCaloriesAria": "Average calories",
+    "streakAria": "Streak in days",
+    "adherenceAria": "Goal adherence in percent",
+    "chartLabel": "Calorie trend",
+    "macrosLabel": "Average macros",
+    "proteinShare": "Protein share",
+    "carbsShare": "Carbohydrate share",
+    "fatShare": "Fat share",
+    "dayList": "Daily log"
   },
   "bodyFat": {
     "title": "Body Fat",
@@ -273,7 +332,16 @@
     "saveEntry": "Save entry",
     "history": "History",
     "empty": "No entries yet",
-    "emptyHint": "Calculate and save your first measurement to get started."
+    "emptyHint": "Calculate and save your first measurement to get started.",
+    "resultLabel": "Body fat result",
+    "categoryAria": "Category: {label}",
+    "chartLabel": "Body fat trend",
+    "heightFromProfile": "Height from profile",
+    "neckAria": "Neck circumference in centimeters",
+    "waistAria": "Waist circumference in centimeters",
+    "hipAria": "Hip circumference in centimeters",
+    "categoriesLabel": "Category reference",
+    "entriesLabel": "Body fat entries"
   },
   "activity": {
     "title": "Activity",
@@ -288,7 +356,10 @@
     "durationLabel": "Duration",
     "history": "History",
     "empty": "No entries yet",
-    "emptyHint": "Log your first activity to add burned calories to your daily goal."
+    "emptyHint": "Log your first activity to add burned calories to your daily goal.",
+    "todayBurnedLabel": "Calories burned today",
+    "durationAria": "Duration in minutes",
+    "entriesLabel": "Activity entries"
   },
   "settings": {
     "title": "Settings",
@@ -394,7 +465,8 @@
     "errorName": "Please enter your name.",
     "errorBody": "Please fill in all body data.",
     "hasAccount": "Already have an account?",
-    "hasAccountLink": "Log in"
+    "hasAccountLink": "Log in",
+    "agePlaceholder": "years"
   },
   "recipes": {
     "title": "Recipes",
@@ -407,6 +479,42 @@
       "noResultsHint": "No recipe found for «{query}».",
       "title": "No recipes yet",
       "hint": "Create your first recipe."
+    },
+    "ingredientsCount": "{n} ingredient | {n} ingredients",
+    "addIngredient": "Add ingredient",
+    "removeIngredient": "Remove {name}",
+    "perServing": "Per serving",
+    "noFoodFound": "No food found.",
+    "description": "Description",
+    "descriptionPlaceholder": "Short description …",
+    "ingredients": "Ingredients",
+    "add": {
+      "title": "New recipe",
+      "step": "Step {step} of 2",
+      "namePlaceholder": "e.g. Chicken and rice",
+      "ingSearchPlaceholder": "Search ingredient …",
+      "ingSearchAria": "Search ingredient",
+      "results": "Search results",
+      "ingEmptyHint": "Search for ingredients and add them.",
+      "save": "Save recipe"
+    },
+    "edit": {
+      "titleFallback": "Recipe",
+      "details": "Recipe details",
+      "nutrition": "Nutrition",
+      "nutritionPerServing": "Nutrition per serving",
+      "editAmount": "Edit amount of {name}",
+      "noIngredients": "No ingredients yet.",
+      "logAsEntry": "Log as diary entry",
+      "delete": "Delete recipe",
+      "sheetSearch": "Search ingredient",
+      "sheetAmount": "Set amount",
+      "searchHint": "Type to search for food.",
+      "update": "Update",
+      "logTitle": "Log as entry",
+      "logConfirm": "Log",
+      "deleteTitle": "Delete recipe?",
+      "deleteBody": "“{name}” will be permanently deleted. Diary entries are kept."
     }
   },
   "camera": {

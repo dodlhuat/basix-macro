@@ -203,7 +203,7 @@
   <!-- FAB -->
   <button
     class="food__fab"
-    aria-label="Neues Lebensmittel anlegen"
+    :aria-label="$t('diary.createFood')"
     @click="navigateTo('/food/add')"
   >
     <AppIcon name="add" size="1.5rem" />
@@ -222,7 +222,7 @@
         class="bottom-sheet"
         role="dialog"
         aria-modal="true"
-        aria-label="Eintrag hinzufügen"
+        :aria-label="$t('dashboard.addEntry')"
       >
         <div class="bottom-sheet-handle" aria-hidden="true" />
 
@@ -267,7 +267,7 @@
               <button
                 class="button button-outline food-sheet__amount-btn"
                 :disabled="sheetAmount <= 10"
-                aria-label="10g weniger"
+                :aria-label="$t('diary.sheet.decrease10')"
                 @click="adjustAmount(-10)"
               >
                 <AppIcon name="remove" size="1rem" />
@@ -282,7 +282,7 @@
                     min="1"
                     max="9999"
                     step="1"
-                    aria-label="Menge in Gramm"
+                    :aria-label="$t('diary.sheet.amountAria')"
                     class="food-sheet__amount-input"
                   >
                   <span class="food-sheet__amount-unit">g</span>
@@ -290,7 +290,7 @@
               </div>
               <button
                 class="button button-outline food-sheet__amount-btn"
-                aria-label="10g mehr"
+                :aria-label="$t('diary.sheet.increase10')"
                 @click="adjustAmount(10)"
               >
                 <AppIcon name="add" size="1rem" />
@@ -753,7 +753,7 @@ onUnmounted(() => {
   color: var(--secondary-text);
   padding: 0.2rem;
   margin: -0.2rem;
-  transition: color 150ms ease;
+  transition: color $duration-fast $ease-standard;
 
   &:hover { color: var(--primary-text); }
 }
@@ -786,8 +786,8 @@ onUnmounted(() => {
   padding: calc(#{$spacing} * 0.75) calc(#{$spacing} * 1);
   background: var(--primary-bg);
   cursor: pointer;
-  transition: background 120ms ease;
-  animation: itemIn 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: background $duration-fast $ease-standard;
+  animation: itemIn 400ms $ease-out-soft both;
 
   &:first-child { border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
   &:last-child  { border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
@@ -874,7 +874,7 @@ onUnmounted(() => {
   cursor: pointer;
   border-radius: var(--radius-full);
   color: var(--secondary-text);
-  transition: color 180ms ease, transform 180ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: color $duration-base $ease-standard, transform 180ms $ease-spring;
   padding: 0;
 
   &--active {
@@ -896,7 +896,7 @@ onUnmounted(() => {
   width: 2rem;
   height: 2rem;
   padding: 0;
-  transition: color 150ms ease;
+  transition: color $duration-fast $ease-standard;
 
   &:hover,
   &:focus-visible {
@@ -967,8 +967,8 @@ onUnmounted(() => {
   box-shadow:
     0 4px 12px rgba(0, 0, 0, 0.18),
     0 1px 4px rgba(0, 0, 0, 0.12);
-  animation: fabPop 400ms cubic-bezier(0.22, 1, 0.36, 1) 200ms both;
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  animation: fabPop 400ms $ease-out-soft 200ms both;
+  transition: transform $duration-base $ease-standard, box-shadow $duration-base $ease-standard;
   z-index: 50;
 
   &:hover,

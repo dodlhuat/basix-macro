@@ -164,7 +164,7 @@ async function handleLogin() {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: auth-hero-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation: auth-hero-pop 0.5s $ease-spring both;
   }
 
   &__icon {
@@ -252,11 +252,11 @@ async function handleLogin() {
 
 // ─── Sync-hint reveal ───────────────────────────────────────────────
 .login-hint-enter-active {
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity $duration-slow $ease-standard, transform $duration-slow $ease-standard;
 }
 
 .login-hint-leave-active {
-  transition: opacity 0.15s ease;
+  transition: opacity $duration-fast $ease-standard;
 }
 
 .login-hint-enter-from {
@@ -282,7 +282,7 @@ async function handleLogin() {
 
   .login-hint-enter-active,
   .login-hint-leave-active {
-    transition: opacity 0.15s ease;
+    transition: opacity $duration-fast $ease-standard;
   }
 
   .login-hint-enter-from,

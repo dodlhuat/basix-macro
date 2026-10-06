@@ -103,10 +103,10 @@ onMounted(async () => {
 }
 
 .app-toast-enter-active {
-  transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: opacity $duration-slow $ease-standard, transform 0.35s $ease-spring;
 }
 .app-toast-leave-active {
-  transition: opacity 0.25s ease, transform 0.2s ease;
+  transition: opacity $duration-slow $ease-standard, transform $duration-base $ease-standard;
 }
 .app-toast-enter-from,
 .app-toast-leave-to {

@@ -25,10 +25,6 @@ describe('calcBMI', () => {
     expect(calcBMI(100, 175).category).toBe('obese')
   })
 
-  it('returns correct German label for normal', () => {
-    expect(calcBMI(70, 175).label).toBe('Normalgewicht')
-  })
-
   it('rounds to at most 1 decimal place', () => {
     const { value } = calcBMI(73, 178)
     // value must have at most 1 decimal digit

@@ -544,7 +544,7 @@ onUnmounted(() => {
 .admin-foods__item {
   list-style: none; // Basix `ul li` disc rule targets the li directly
   background: var(--primary-bg);
-  animation: adminFoodIn 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: adminFoodIn 400ms $ease-out-soft both;
 
   &:first-child { border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
   &:last-child  { border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
@@ -560,7 +560,7 @@ onUnmounted(() => {
 
   &--clickable {
     cursor: pointer;
-    transition: background 120ms ease;
+    transition: background $duration-fast $ease-standard;
 
     &:active { background: var(--hover); }
 
@@ -629,7 +629,7 @@ onUnmounted(() => {
 
 .admin-foods__item-chevron {
   color: var(--secondary-text);
-  transition: transform 200ms ease;
+  transition: transform $duration-base $ease-standard;
 
   &--open { transform: rotate(180deg); }
 }
@@ -795,18 +795,18 @@ onUnmounted(() => {
 // ─── Modal transition ─────────────────────────────────────────────────────────
 
 .admin-modal-enter-active {
-  transition: opacity 0.25s ease;
+  transition: opacity $duration-slow $ease-standard;
 
   .admin-foods__modal-card {
-    transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
+    transition: transform 0.32s $ease-spring, opacity $duration-slow $ease-standard;
   }
 }
 
 .admin-modal-leave-active {
-  transition: opacity 0.2s ease;
+  transition: opacity $duration-base $ease-standard;
 
   .admin-foods__modal-card {
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: transform $duration-base $ease-standard, opacity $duration-base $ease-standard;
   }
 }
 
@@ -823,10 +823,10 @@ onUnmounted(() => {
 @media (prefers-reduced-motion: reduce) {
   .admin-modal-enter-active,
   .admin-modal-leave-active {
-    transition: opacity 0.15s ease;
+    transition: opacity $duration-fast $ease-standard;
 
     .admin-foods__modal-card {
-      transition: opacity 0.15s ease;
+      transition: opacity $duration-fast $ease-standard;
     }
   }
 

@@ -592,7 +592,7 @@ onMounted(() => userStore.loadUser())
   &--action {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
-    transition: background 0.15s ease;
+    transition: background $duration-fast $ease-standard;
 
     &:active {
       background: var(--hover);
@@ -709,7 +709,7 @@ onMounted(() => userStore.loadUser())
   padding: 0.3rem 0.5rem;
   // Override Basix default box-shadow on inputs
   box-shadow: none;
-  transition: border-color 0.18s ease;
+  transition: border-color $duration-base $ease-standard;
   flex-shrink: 0;
 
   &:focus {
@@ -932,18 +932,18 @@ onMounted(() => userStore.loadUser())
 
 // ─── Modal transition ─────────────────────────────────────────────
 .settings-modal-enter-active {
-  transition: opacity 0.25s ease;
+  transition: opacity $duration-slow $ease-standard;
 
   .settings__modal-card {
-    transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
+    transition: transform 0.32s $ease-spring, opacity $duration-slow $ease-standard;
   }
 }
 
 .settings-modal-leave-active {
-  transition: opacity 0.2s ease;
+  transition: opacity $duration-base $ease-standard;
 
   .settings__modal-card {
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: transform $duration-base $ease-standard, opacity $duration-base $ease-standard;
   }
 }
 
@@ -982,10 +982,10 @@ onMounted(() => userStore.loadUser())
 
   .settings-modal-enter-active,
   .settings-modal-leave-active {
-    transition: opacity 0.15s ease;
+    transition: opacity $duration-fast $ease-standard;
 
     .settings__modal-card {
-      transition: opacity 0.15s ease;
+      transition: opacity $duration-fast $ease-standard;
     }
   }
 

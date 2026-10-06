@@ -271,8 +271,22 @@ $bleed: 0.5rem; // row tint extends past the text column by this much
   -webkit-tap-highlight-color: transparent;
   transition: background-color $duration-fast $ease-standard;
 
-  &:hover { background: var(--hover); }
-  &:active { background: color-mix(in srgb, var(--primary-text) 9%, transparent); }
+  // Text-colour tints rather than Basix --hover (4-5% black/white): on the
+  // accent-washed "current meal" section that token was nearly invisible.
+  //
+  // Meta text (amount, chevron) darkens 50% toward --primary-text while the
+  // tint is shown, so it keeps >= 4.5:1 on the tinted surface. A parent can
+  // raise the resting colour via --entry-meta-rest (the dashboard's accent-
+  // washed "current meal" does, see index.vue).
+  --entry-meta: var(--entry-meta-rest, var(--secondary-text));
+
+  &:hover,
+  &:active {
+    --entry-meta: color-mix(in srgb, var(--entry-meta-rest, var(--secondary-text)) 50%, var(--primary-text));
+  }
+
+  &:hover { background: color-mix(in srgb, var(--primary-text) 8%, transparent); }
+  &:active { background: color-mix(in srgb, var(--primary-text) 13%, transparent); }
 
   &:focus-visible {
     outline: 2px solid var(--app-accent-text);
@@ -307,7 +321,7 @@ $bleed: 0.5rem; // row tint extends past the text column by this much
 
 .meal-entry__amount {
   font-size: var(--fs-xs);
-  color: var(--secondary-text);
+  color: var(--entry-meta, var(--secondary-text));
 }
 
 .meal-entry__kcal {
@@ -325,7 +339,7 @@ $bleed: 0.5rem; // row tint extends past the text column by this much
   display: none;
   flex-shrink: 0;
   margin-inline-start: -0.35rem;
-  color: var(--secondary-text);
+  color: var(--entry-meta, var(--secondary-text));
   transition: transform $duration-fast $ease-standard, opacity $duration-fast $ease-standard;
 }
 

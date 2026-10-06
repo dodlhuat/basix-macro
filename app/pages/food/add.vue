@@ -24,7 +24,7 @@
             v-model.trim="form.name"
             type="text"
             enterkeyhint="next"
-            placeholder="z.B. Chicken Breast"
+            :placeholder="$t('food.form.namePlaceholder')"
             autocomplete="off"
             :aria-invalid="!!errors.name"
             @blur="validateField('name')"
@@ -42,7 +42,7 @@
             v-model.trim="form.brand"
             type="text"
             enterkeyhint="next"
-            placeholder="z.B. Kaufland"
+            :placeholder="$t('food.form.brandPlaceholder')"
             autocomplete="off"
           >
         </div>
@@ -162,7 +162,7 @@
           {{ $t('food.form.macroCalc') }}
           <strong>{{ macroCalories }} kcal</strong>
           <template v-if="calorieDeviation > 15">
-            — {{ $t('food.form.macroDeviation', { val: form.calories_per_100g || 0 }) }}
+            — {{ $t('food.form.macroDeviation', { n: form.calories_per_100g || 0 }) }}
           </template>
         </span>
       </div>
@@ -465,7 +465,7 @@ async function handleSave() {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  transition: background 150ms ease, transform 200ms ease;
+  transition: background $duration-fast $ease-standard, transform $duration-base $ease-standard;
 
   &:hover,
   &:focus-visible {

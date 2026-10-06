@@ -520,8 +520,8 @@ onUnmounted(() => {
   padding: calc(#{$spacing} * 0.75) calc(#{$spacing} * 1);
   background: var(--primary-bg);
   cursor: pointer;
-  transition: background 120ms ease;
-  animation: adminUserIn 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: background $duration-fast $ease-standard;
+  animation: adminUserIn 400ms $ease-out-soft both;
 
   &:first-child { border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
   &:last-child  { border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
@@ -581,7 +581,7 @@ onUnmounted(() => {
   height: 2.75rem;
   margin: -0.375rem;
   padding: 0;
-  transition: color 150ms ease;
+  transition: color $duration-fast $ease-standard;
 
   &:hover,
   &:focus-visible {
@@ -645,8 +645,8 @@ onUnmounted(() => {
   box-shadow:
     0 4px 12px rgba(0, 0, 0, 0.18),
     0 1px 4px rgba(0, 0, 0, 0.12);
-  animation: adminFabPop 400ms cubic-bezier(0.22, 1, 0.36, 1) 200ms both;
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  animation: adminFabPop 400ms $ease-out-soft 200ms both;
+  transition: transform $duration-base $ease-standard, box-shadow $duration-base $ease-standard;
   z-index: 50;
 
   &:hover,
@@ -785,18 +785,18 @@ onUnmounted(() => {
 // ─── Modal transition ─────────────────────────────────────────────────────────
 
 .admin-modal-enter-active {
-  transition: opacity 0.25s ease;
+  transition: opacity $duration-slow $ease-standard;
 
   .admin-users__modal-card {
-    transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
+    transition: transform 0.32s $ease-spring, opacity $duration-slow $ease-standard;
   }
 }
 
 .admin-modal-leave-active {
-  transition: opacity 0.2s ease;
+  transition: opacity $duration-base $ease-standard;
 
   .admin-users__modal-card {
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: transform $duration-base $ease-standard, opacity $duration-base $ease-standard;
   }
 }
 
@@ -813,10 +813,10 @@ onUnmounted(() => {
 @media (prefers-reduced-motion: reduce) {
   .admin-modal-enter-active,
   .admin-modal-leave-active {
-    transition: opacity 0.15s ease;
+    transition: opacity $duration-fast $ease-standard;
 
     .admin-users__modal-card {
-      transition: opacity 0.15s ease;
+      transition: opacity $duration-fast $ease-standard;
     }
   }
 

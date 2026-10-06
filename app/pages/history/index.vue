@@ -32,8 +32,8 @@
     </section>
 
     <!-- ─── Hero: key stats ──────────────────────────────────────────────────── -->
-    <section class="history__hero" aria-label="Schlüsselkennzahlen">
-      <div class="history__stat-card" aria-label="Durchschnittliche Kalorien">
+    <section class="history__hero" :aria-label="$t('history.keyStats')">
+      <div class="history__stat-card" :aria-label="$t('history.avgCaloriesAria')">
         <div class="history__stat-number">
           <span class="history__stat-value">{{ avg.calories }}</span>
           <span class="history__stat-unit">kcal</span>
@@ -43,7 +43,7 @@
 
       <div class="history__stat-divider" aria-hidden="true" />
 
-      <div class="history__stat-card" aria-label="Streak in Tagen">
+      <div class="history__stat-card" :aria-label="$t('history.streakAria')">
         <div class="history__stat-number">
           <span
             class="history__stat-value"
@@ -61,7 +61,7 @@
 
       <div class="history__stat-divider" aria-hidden="true" />
 
-      <div class="history__stat-card" aria-label="Zielerreichung in Prozent">
+      <div class="history__stat-card" :aria-label="$t('history.adherenceAria')">
         <div class="history__stat-number">
           <span class="history__stat-value" :class="adherenceClass">{{ adherence }}</span>
           <span class="history__stat-unit">%</span>
@@ -71,12 +71,12 @@
     </section>
 
     <!-- ─── SVG bar chart ────────────────────────────────────────────────────── -->
-    <section class="history__chart-section" aria-label="Kalorienverlauf">
+    <section class="history__chart-section" :aria-label="$t('history.chartLabel')">
       <div
         v-if="isLoading"
         class="history__chart-loader"
         aria-busy="true"
-        aria-label="Lade Daten"
+        :aria-label="$t('common.loading')"
       >
         <span class="loading" aria-hidden="true" />
       </div>
@@ -118,7 +118,7 @@
     </section>
 
     <!-- ─── Macro averages ───────────────────────────────────────────────────── -->
-    <section class="history__macros" aria-label="Durchschnittliche Makros">
+    <section class="history__macros" :aria-label="$t('history.macrosLabel')">
       <p class="history__section-label">{{ $t('history.avgMacros') }}</p>
 
       <div class="history__macro-row">
@@ -136,7 +136,7 @@
             role="progressbar"
             :aria-valuenow="avg.protein_g"
             :aria-valuemax="maxMacro"
-            aria-label="Protein-Anteil"
+            :aria-label="$t('history.proteinShare')"
           />
         </div>
       </div>
@@ -156,7 +156,7 @@
             role="progressbar"
             :aria-valuenow="avg.carbs_g"
             :aria-valuemax="maxMacro"
-            aria-label="Kohlenhydrat-Anteil"
+            :aria-label="$t('history.carbsShare')"
           />
         </div>
       </div>
@@ -176,14 +176,14 @@
             role="progressbar"
             :aria-valuenow="avg.fat_g"
             :aria-valuemax="maxMacro"
-            aria-label="Fett-Anteil"
+            :aria-label="$t('history.fatShare')"
           />
         </div>
       </div>
     </section>
 
     <!-- ─── Day list ─────────────────────────────────────────────────────────── -->
-    <section class="history__list-section" aria-label="Tagesverlauf">
+    <section class="history__list-section" :aria-label="$t('history.dayList')">
       <p class="history__section-label">{{ $t('history.history') }}</p>
 
       <!-- Empty state -->
@@ -206,7 +206,7 @@
           :style="{ animationDelay: `${Math.min(idx, 14) * 30}ms` }"
           role="button"
           tabindex="0"
-          :aria-label="`${formatDate(day.date)}: ${day.calories} kcal`"
+          ::aria-label="`${formatDate(day.date)}: ${day.calories} kcal`"
           @click="navigateTo('/diary/' + day.date)"
           @keydown.enter="navigateTo('/diary/' + day.date)"
           @keydown.space.prevent="navigateTo('/diary/' + day.date)"
@@ -391,7 +391,7 @@ onMounted(async () => {
 // ─── Period tabs ──────────────────────────────────────────────────────────────
 
 .history__tabs {
-  animation: fadeSlideUp 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fadeSlideUp 400ms $ease-out-soft both;
 }
 
 // ─── Hero stats ───────────────────────────────────────────────────────────────
@@ -403,7 +403,7 @@ onMounted(async () => {
   background: linear-gradient(135deg, var(--primary-bg) 0%, var(--accent-color-tint) 100%);
   border-radius: var(--radius-xl);
   padding: calc(#{$spacing} * 1.25) calc(#{$spacing} * 0.75);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 60ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 60ms both;
 }
 
 .history__stat-card {
@@ -469,7 +469,7 @@ onMounted(async () => {
   border-radius: var(--radius-xl);
   padding: calc(#{$spacing} * 0.875) calc(#{$spacing} * 0.5) calc(#{$spacing} * 0.5);
   overflow: hidden;
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 120ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 120ms both;
 }
 
 .history__chart {
@@ -481,7 +481,9 @@ onMounted(async () => {
 .history__chart-goal {
   stroke: var(--secondary-text);
   stroke-width: 1;
-  opacity: 0.4;
+  // Carries information (the calorie goal), so it must hold >=3:1 against the
+  // chart background: 80% -> 3.7:1 light / 6.1:1 dark (was 40% = 1.8 / 2.4).
+  opacity: 0.8;
 }
 
 .history__chart-bar--empty {
@@ -534,7 +536,7 @@ onMounted(async () => {
   background: var(--primary-bg);
   border-radius: var(--radius-xl);
   padding: calc(#{$spacing} * 1.25);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 180ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 180ms both;
 }
 
 .history__macro-row {
@@ -589,7 +591,7 @@ onMounted(async () => {
 .history__macro-bar {
   height: 6px;
   border-radius: var(--radius-full);
-  transition: width 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: width 400ms $ease-out-soft;
   min-width: 0;
 
   &--protein { background-color: var(--macro-protein); }
@@ -600,7 +602,7 @@ onMounted(async () => {
 // ─── List section ─────────────────────────────────────────────────────────────
 
 .history__list-section {
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 240ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 240ms both;
 }
 
 .history__list {
@@ -622,8 +624,8 @@ onMounted(async () => {
   padding: calc(#{$spacing} * 0.75) calc(#{$spacing} * 1);
   background: var(--primary-bg);
   cursor: pointer;
-  animation: itemIn 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
-  transition: background 150ms ease;
+  animation: itemIn 400ms $ease-out-soft both;
+  transition: background $duration-fast $ease-standard;
 
   &:hover,
   &:focus-visible {

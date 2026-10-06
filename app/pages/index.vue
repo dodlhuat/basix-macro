@@ -190,21 +190,21 @@
         <div class="dashboard__water-actions">
           <button
             class="button button-outline button-sm dashboard__water-btn"
-            aria-label="250 ml Wasser hinzufügen"
+            :aria-label="$t('common.waterAdd', { amount: '250 ml' })"
             @click="addWaterAmount(250)"
           >
             +250 ml
           </button>
           <button
             class="button button-outline button-sm dashboard__water-btn"
-            aria-label="500 ml Wasser hinzufügen"
+            :aria-label="$t('common.waterAdd', { amount: '500 ml' })"
             @click="addWaterAmount(500)"
           >
             +500 ml
           </button>
           <button
             class="button button-outline button-sm dashboard__water-btn"
-            aria-label="1 Liter Wasser hinzufügen"
+            :aria-label="$t('common.waterAdd', { amount: '1 L' })"
             @click="addWaterAmount(1000)"
           >
             +1 L
@@ -255,7 +255,7 @@
             <button
               class="button button-icon button-sm dashboard__meal-add"
               data-meal-focus
-              :aria-label="`${meal.label} Eintrag hinzufügen`"
+              :aria-label="$t('entry.addTo', { meal: meal.label })"
               @click="addEntry(meal.type)"
             >
               <AppIcon name="add" />
@@ -962,12 +962,14 @@ watch(currentDate, date => loadDate(date))
   border: none;
   font-family: inherit;
   color: var(--app-success-text);
+  border-radius: var(--radius-full);
   cursor: pointer;
-  transition: opacity 150ms ease;
+  transition: background-color $duration-fast $ease-standard;
 
-  &:hover,
-  &:focus-visible {
-    opacity: 0.75;
+  // Hover = success tint behind the icon instead of fading the icon itself
+  // (opacity 0.75 dropped the green glyph to ~3.5:1 on the hero).
+  &:hover {
+    background: var(--success-tint);
   }
 
   &:focus-visible {
@@ -1003,8 +1005,11 @@ watch(currentDate, date => loadDate(date))
   width: 2px;
   height: 12px;
   margin-left: -1px;
+  // Full-strength text colour (was 45% opacity = 2.7:1 light / 4.0:1 dark on the
+  // track). The 1px page-coloured halo keeps the tick separable where it sits
+  // on top of the progress fill (accent / error), which alone is only ~3:1.
   background: var(--primary-text);
-  opacity: 0.45;
+  box-shadow: 0 0 0 1px var(--primary-bg);
   border-radius: var(--radius-full);
   pointer-events: none;
 }
@@ -1206,6 +1211,15 @@ watch(currentDate, date => loadDate(date))
   // competing with the entries themselves.
   &--current {
     background: var(--accent-color-tint);
+    // The wash is drawn over the (divider-coloured) list container, which puts
+    // plain --secondary-text at only 3.7:1 (light). Darken the secondary text
+    // inside this section 50% toward --primary-text: 6.3:1 light / 6.7:1 dark
+    // at rest. MealEntryRow reads --entry-meta-rest for its amount/chevron.
+    --entry-meta-rest: color-mix(in srgb, var(--secondary-text) 50%, var(--primary-text));
+
+    .dashboard__meal-name {
+      color: var(--entry-meta-rest);
+    }
   }
 }
 

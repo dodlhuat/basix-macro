@@ -4,7 +4,7 @@
          same reserved top gutter the overlay's ul padding-top already
          leaves empty (see .push-menu-panel[data-level="0"] > ul below). -->
     <div class="push-menu-brand" aria-hidden="true">
-      <span class="push-menu-brand-thin">basix</span><span class="push-menu-brand-bold">makro</span>
+      <span class="push-menu-brand-thin">basix</span><span class="push-menu-brand-bold">macro</span>
     </div>
 
     <div class="push-menu-panel is-active" data-level="0">
@@ -101,11 +101,19 @@ const authStore = useAuthStore()
   gap: 0.75rem;
 }
 
+// The menu surface is Basix --primary-dark, which is dark in BOTH themes
+// (#1A1B1F light / #0C0C0E dark), so text/lines drawn on it are deliberately
+// theme-independent light-on-dark: --on-accent (always #FFF) at fixed alphas.
+// Contrast: 60% -> 7.0:1 text, 35% -> >=3:1 separator (see sidebar border).
+//
 // Uppercase label separating regular nav from the admin-only section.
 // Reuses Basix's .push-menu-panel-title text treatment (see push-menu.scss),
-// just adds the padding it needs outside of a panel header context.
+// just adds the padding it needs outside of a panel header context. Basix's
+// own 45% white lands at 4.46:1 on the light-theme surface (< 4.5), so the
+// colour is lifted to 60%.
 .push-menu-section-label {
   padding: calc($spacing * 1) calc($spacing * 1.5) calc($spacing * 0.4);
+  color: color-mix(in srgb, var(--on-accent) 60%, transparent);
   pointer-events: none;
 }
 
@@ -132,7 +140,9 @@ const authStore = useAuthStore()
     transform: none;
     width: $sidebar-width;
     box-shadow: none;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    // 35% -> 3.2:1 vs the dark menu surface, 3.05:1 vs the dark page
+    // background (the two are only 1.04:1 apart, so the line is the edge).
+    border-right: 1px solid color-mix(in srgb, var(--on-accent) 35%, transparent);
   }
 
   .push-menu-brand {
@@ -153,13 +163,13 @@ const authStore = useAuthStore()
 
   .push-menu-brand-thin {
     font-weight: 200;
-    opacity: 0.55;
-    color: #fff;
+    opacity: 0.55; // 6.0:1 (light theme) / 6.3:1 (dark) on the menu surface
+    color: var(--on-accent);
   }
 
   .push-menu-brand-bold {
     font-weight: 700;
-    color: #fff;
+    color: var(--on-accent);
     margin-left: 0.15em;
   }
 }

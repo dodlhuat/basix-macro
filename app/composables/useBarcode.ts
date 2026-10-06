@@ -94,17 +94,20 @@ async function startZxingScanner(
 }
 
 export function useBarcode() {
-  const state = ref<ScannerState>('idle')
-  const error = ref<string | null>(null)
-  let stop: StopFn | null = null
   const { t } = useI18n()
+  const state = ref<ScannerState>('idle')
+  // Store the message key, not the translated string, so the text follows the
+  // active locale (the locale is applied a moment after a cold start).
+  const errorKey = ref<'camera.denied' | 'camera.error' | null>(null)
+  const error = computed(() => (errorKey.value ? t(errorKey.value) : null))
+  let stop: StopFn | null = null
 
   async function startScanner(
     video: HTMLVideoElement,
     onDetected: (barcode: string) => void,
   ) {
     state.value = 'requesting'
-    error.value = null
+    errorKey.value = null
 
     try {
       stop = 'BarcodeDetector' in window
@@ -116,9 +119,9 @@ export function useBarcode() {
     catch (e: unknown) {
       state.value = 'error'
       const msg = e instanceof Error ? e.message : String(e)
-      error.value = /Permission|NotAllowed|NotFound/i.test(msg)
-        ? t('camera.denied')
-        : t('camera.error')
+      errorKey.value = /Permission|NotAllowed|NotFound/i.test(msg)
+        ? 'camera.denied'
+        : 'camera.error'
     }
   }
 

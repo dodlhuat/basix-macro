@@ -64,7 +64,7 @@
         <div class="onboarding__row">
           <div class="form-group">
             <label for="age">{{ $t('profile.age') }}</label>
-            <input id="age" v-model.number="form.age" type="number" inputmode="numeric" enterkeyhint="next" min="10" max="100" placeholder="Jahre" >
+            <input id="age" v-model.number="form.age" type="number" inputmode="numeric" enterkeyhint="next" min="10" max="100" :placeholder="$t('onboarding.agePlaceholder')" >
           </div>
           <div class="form-group">
             <label for="height">{{ $t('profile.height') }}</label>
@@ -469,11 +469,11 @@ async function finish() {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.25s ease;
+    transition: background $duration-slow $ease-standard;
 
     .app-icon {
       color: var(--secondary-text);
-      transition: color 0.25s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: color $duration-slow $ease-standard, transform 0.35s $ease-spring;
     }
   }
 
@@ -488,7 +488,7 @@ async function finish() {
       font-size: var(--fs-base-sm);
       font-weight: 600;
       color: var(--primary-text);
-      transition: color 0.2s ease;
+      transition: color $duration-base $ease-standard;
     }
 
     span {
@@ -512,7 +512,7 @@ async function finish() {
       width: 3px;
       border-radius: 2px;
       background: var(--divider);
-      transition: background 0.2s ease;
+      transition: background $duration-base $ease-standard;
 
       &:nth-child(1) { height: 20%; }
       &:nth-child(2) { height: 40%; }
@@ -538,7 +538,7 @@ async function finish() {
     color: inherit;
     overflow: hidden;
     -webkit-tap-highlight-color: transparent;
-    transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+    transition: transform $duration-fast $ease-standard, box-shadow $duration-base $ease-standard, background $duration-base $ease-standard;
 
     /* Left accent rail — springs in on selection */
     &::before {
@@ -552,7 +552,7 @@ async function finish() {
       background: var(--accent-color);
       transform: scaleY(0);
       transform-origin: center;
-      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: transform 0.35s $ease-spring;
     }
 
     &:active {
@@ -725,7 +725,7 @@ async function finish() {
   width: 100%;
   color: inherit;
   -webkit-tap-highlight-color: transparent;
-  transition: border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+  transition: border-color $duration-base $ease-standard, background $duration-base $ease-standard, box-shadow $duration-base $ease-standard;
 
   &:active {
     transform: scale(0.99);
@@ -735,7 +735,7 @@ async function finish() {
     font-size: var(--fs-base-sm);
     font-weight: 600;
     color: var(--primary-text);
-    transition: color 0.22s ease;
+    transition: color $duration-base $ease-standard;
   }
 
   /* Grid-row expand trick: desc collapses to 0 height without max-height hacks */
@@ -743,7 +743,7 @@ async function finish() {
     display: grid;
     grid-template-rows: 0fr;
     margin-top: 0;
-    transition: grid-template-rows 0.28s ease, margin-top 0.28s ease;
+    transition: grid-template-rows $duration-slow $ease-standard, margin-top $duration-slow $ease-standard;
   }
 
   &__desc {

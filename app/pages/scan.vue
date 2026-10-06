@@ -1,5 +1,5 @@
 <template>
-  <div class="scanner" aria-label="Barcode-Scanner">
+  <div class="scanner" :aria-label="$t('scan.scannerLabel')">
 
     <!-- Full-screen video viewfinder -->
     <video
@@ -86,14 +86,14 @@
             inputmode="numeric"
             class="scanner__manual-input"
             placeholder="EAN / GTIN …"
-            aria-label="Barcode manuell eingeben"
+            :aria-label="$t('scan.manualInput')"
             @keydown.enter="submitManual"
           >
         </div>
         <button
           class="button button-primary scanner__manual-submit"
           :disabled="!manualBarcode.trim() || isProcessing"
-          aria-label="Barcode suchen"
+          :aria-label="$t('scan.searchBarcode')"
           @click="submitManual"
         >
           <AppIcon name="search" size="1.125rem" />
@@ -503,7 +503,7 @@ onUnmounted(() => {
   border: 1px solid rgba(255, 255, 255, 0.35);
   background: rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-full);
-  transition: background 150ms ease, border-color 150ms ease;
+  transition: background $duration-fast $ease-standard, border-color $duration-fast $ease-standard;
 
   &:hover,
   &:focus-visible {
@@ -539,7 +539,7 @@ onUnmounted(() => {
   // Inset box-shadow expands outward, creating the vignette
   box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.55);
   overflow: hidden;
-  transition: box-shadow 300ms ease;
+  transition: box-shadow $duration-slow $ease-standard;
 
   &--processing {
     box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.72);
@@ -677,7 +677,7 @@ onUnmounted(() => {
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  transition: background 150ms ease, transform 150ms ease;
+  transition: background $duration-fast $ease-standard, transform $duration-fast $ease-standard;
   z-index: 10;
 
   &:hover,
@@ -719,7 +719,7 @@ onUnmounted(() => {
   font-weight: 500;
   padding: 0.55rem 1.25rem;
   cursor: pointer;
-  transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+  transition: background $duration-fast $ease-standard, border-color $duration-fast $ease-standard, color $duration-fast $ease-standard;
   letter-spacing: 0.01em;
 
   &:hover,
@@ -826,7 +826,7 @@ onUnmounted(() => {
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   padding-bottom: env(safe-area-inset-bottom, 0px);
   transform: translateY(100%);
-  transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 380ms $ease-out-soft;
 
   .is-visible & {
     transform: translateY(0);

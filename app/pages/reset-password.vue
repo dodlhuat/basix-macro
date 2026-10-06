@@ -212,7 +212,7 @@ onUnmounted(() => {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: auth-hero-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation: auth-hero-pop 0.5s $ease-spring both;
 
     &--success {
       background: var(--success-tint);
@@ -284,11 +284,11 @@ onUnmounted(() => {
 
 // ─── State swap transition ─────────────────────────────────────────
 .auth-swap-enter-active {
-  transition: opacity 0.28s ease, transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity $duration-slow $ease-standard, transform 0.32s $ease-out-soft;
 }
 
 .auth-swap-leave-active {
-  transition: opacity 0.18s ease, transform 0.2s ease;
+  transition: opacity $duration-base $ease-standard, transform $duration-base $ease-standard;
 }
 
 .auth-swap-enter-from {
@@ -312,7 +312,7 @@ onUnmounted(() => {
 
   .auth-swap-enter-active,
   .auth-swap-leave-active {
-    transition: opacity 0.15s ease;
+    transition: opacity $duration-fast $ease-standard;
   }
 
   .auth-swap-enter-from,

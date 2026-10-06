@@ -3,14 +3,14 @@
 
     <!-- Loading state -->
     <div v-if="isLoading" class="food-form__loading">
-      <span class="spinner" aria-label="Wird geladen" />
+      <span class="spinner" :aria-label="$t('common.loading')" />
     </div>
 
     <!-- Not found -->
     <div v-else-if="!food" class="food-form__not-found">
       <AppIcon name="error" size="2.5rem" class="food-form__not-found-icon" />
-      <p>Lebensmittel nicht gefunden.</p>
-      <button class="button button-outline" @click="navigateTo('/food')">Zurück</button>
+      <p>{{ $t('food.edit.notFound') }}</p>
+      <button class="button button-outline" @click="navigateTo('/food')">{{ $t('common.back') }}</button>
     </div>
 
     <template v-else>
@@ -19,15 +19,15 @@
       <div class="food-form__header">
         <button
           class="button button-icon food-form__back"
-          aria-label="Zurück"
+          :aria-label="$t('common.back')"
           @click="router.back()"
         >
           <AppIcon name="arrow_back" size="1.25rem" />
         </button>
-        <h1 class="food-form__title">Bearbeiten</h1>
+        <h1 class="food-form__title">{{ $t('food.edit.title') }}</h1>
         <button
           class="button button-icon food-form__delete-btn"
-          aria-label="Lebensmittel löschen"
+          :aria-label="$t('food.edit.deleteItem')"
           @click="showDeleteModal = true"
         >
           <AppIcon name="delete" size="1.25rem" />
@@ -38,14 +38,14 @@
 
         <!-- Name -->
         <div class="form-group" :class="{ 'food-form__field--error': errors.name }">
-          <label for="name">Name <span class="food-form__required" aria-hidden="true">*</span></label>
+          <label for="name">{{ $t('food.form.name') }} <span class="food-form__required" aria-hidden="true">*</span></label>
           <div class="input-group">
             <input
               id="name"
               v-model.trim="form.name"
               type="text"
               enterkeyhint="next"
-              placeholder="z.B. Chicken Breast"
+              :placeholder="$t('food.form.namePlaceholder')"
               autocomplete="off"
               :aria-invalid="!!errors.name"
               @blur="validateField('name')"
@@ -56,28 +56,28 @@
 
         <!-- Brand -->
         <div class="form-group">
-          <label for="brand">Marke <span class="food-form__optional">(optional)</span></label>
+          <label for="brand">{{ $t('food.form.brand') }} <span class="food-form__optional">({{ $t('common.optional') }})</span></label>
           <div class="input-group">
             <input
               id="brand"
               v-model.trim="form.brand"
               type="text"
               enterkeyhint="next"
-              placeholder="z.B. Kaufland"
+              :placeholder="$t('food.form.brandPlaceholder')"
               autocomplete="off"
             >
           </div>
         </div>
 
         <!-- Main macros grid -->
-        <p class="food-form__section-title">Nährwerte pro 100g</p>
+        <p class="food-form__section-title">{{ $t('food.form.nutrientsPer100') }}</p>
 
         <div class="food-form__macro-grid">
 
           <div class="form-group" :class="{ 'food-form__field--error': errors.calories_per_100g }">
             <label for="calories">
               <span class="food-form__macro-dot food-form__macro-dot--kcal" aria-hidden="true" />
-              Kalorien <span class="food-form__unit">kcal</span>
+              {{ $t('common.calories') }} <span class="food-form__unit">kcal</span>
               <span class="food-form__required" aria-hidden="true">*</span>
             </label>
             <div class="input-group">
@@ -102,7 +102,7 @@
           <div class="form-group" :class="{ 'food-form__field--error': errors.protein_per_100g }">
             <label for="protein">
               <span class="food-form__macro-dot food-form__macro-dot--protein" aria-hidden="true" />
-              Protein <span class="food-form__unit">g</span>
+              {{ $t('common.protein') }} <span class="food-form__unit">g</span>
               <span class="food-form__required" aria-hidden="true">*</span>
             </label>
             <div class="input-group">
@@ -127,7 +127,7 @@
           <div class="form-group" :class="{ 'food-form__field--error': errors.carbs_per_100g }">
             <label for="carbs">
               <span class="food-form__macro-dot food-form__macro-dot--carbs" aria-hidden="true" />
-              Kohlenhydrate <span class="food-form__unit">g</span>
+              {{ $t('common.carbs') }} <span class="food-form__unit">g</span>
               <span class="food-form__required" aria-hidden="true">*</span>
             </label>
             <div class="input-group">
@@ -152,7 +152,7 @@
           <div class="form-group" :class="{ 'food-form__field--error': errors.fat_per_100g }">
             <label for="fat">
               <span class="food-form__macro-dot food-form__macro-dot--fat" aria-hidden="true" />
-              Fett <span class="food-form__unit">g</span>
+              {{ $t('common.fat') }} <span class="food-form__unit">g</span>
               <span class="food-form__required" aria-hidden="true">*</span>
             </label>
             <div class="input-group">
@@ -180,20 +180,20 @@
         <div v-if="macroCalories > 0" class="food-form__preview" role="status" aria-live="polite">
           <AppIcon name="info" size="0.9rem" class="food-form__preview-icon" />
           <span>
-            Makros ergeben
+            {{ $t('food.form.macroCalc') }}
             <strong>{{ macroCalories }} kcal</strong>
             <template v-if="calorieDeviation > 15">
-              — abweichend von {{ form.calories_per_100g || 0 }} kcal (Angabe)
+              — {{ $t('food.form.macroDeviation', { n: form.calories_per_100g || 0 }) }}
             </template>
           </span>
         </div>
 
         <!-- Optional fields -->
-        <p class="food-form__section-title">Weitere Angaben <span class="food-form__optional">(optional)</span></p>
+        <p class="food-form__section-title">{{ $t('food.form.optionalTitle') }} <span class="food-form__optional">({{ $t('common.optional') }})</span></p>
 
         <div class="food-form__macro-grid">
           <div class="form-group">
-            <label for="fiber">Ballaststoffe <span class="food-form__unit">g</span></label>
+            <label for="fiber">{{ $t('food.form.fiber') }} <span class="food-form__unit">g</span></label>
             <div class="input-group">
               <input
                 id="fiber"
@@ -209,7 +209,7 @@
           </div>
 
           <div class="form-group">
-            <label for="sugar">Zucker <span class="food-form__unit">g</span></label>
+            <label for="sugar">{{ $t('food.form.sugar') }} <span class="food-form__unit">g</span></label>
             <div class="input-group">
               <input
                 id="sugar"
@@ -226,7 +226,7 @@
         </div>
 
         <div class="form-group">
-          <label for="barcode">Barcode</label>
+          <label for="barcode">{{ $t('food.form.barcode') }}</label>
           <div class="input-group">
             <input
               id="barcode"
@@ -248,13 +248,13 @@
         <!-- Actions -->
         <div class="food-form__actions">
           <button type="button" class="button food-form__cancel" @click="router.back()">
-            Abbrechen
+            {{ $t('common.cancel') }}
           </button>
           <button type="submit" class="button button-primary food-form__save" :disabled="isSaving">
             <span v-if="isSaving" class="loading" />
             <template v-else>
               <AppIcon name="check" size="1rem" />
-              Speichern
+              {{ $t('common.save') }}
             </template>
           </button>
         </div>
@@ -282,20 +282,21 @@
         <div class="food-delete-modal__icon-wrap">
           <AppIcon name="delete_forever" size="2.5rem" class="food-delete-modal__icon" />
         </div>
-        <h2 id="delete-modal-title" class="food-delete-modal__title">Löschen?</h2>
+        <h2 id="delete-modal-title" class="food-delete-modal__title">{{ $t('food.edit.deleteTitle') }}</h2>
         <p class="food-delete-modal__body">
-          <strong>{{ food?.name }}</strong> wird dauerhaft entfernt. Diese Aktion kann nicht
-          rückgängig gemacht werden.
+          <i18n-t keypath="food.edit.deleteBody" scope="global">
+            <template #name><strong>{{ food?.name }}</strong></template>
+          </i18n-t>
         </p>
         <div class="food-delete-modal__actions">
-          <button class="button" @click="showDeleteModal = false">Abbrechen</button>
+          <button class="button" @click="showDeleteModal = false">{{ $t('common.cancel') }}</button>
           <button
             class="button button-error"
             :disabled="isDeleting"
             @click="handleDelete"
           >
             <span v-if="isDeleting" class="loading" />
-            <template v-else>Löschen</template>
+            <template v-else>{{ $t('common.delete') }}</template>
           </button>
         </div>
       </div>
@@ -306,7 +307,9 @@
 <script setup lang="ts">
 import type { FoodItem } from '../../../../db'
 
-definePageMeta({ title: 'Lebensmittel bearbeiten' })
+definePageMeta({ title: 'Edit Food' })
+
+const { t } = useI18n()
 
 const route = useRoute()
 const router = useRouter()
@@ -371,12 +374,12 @@ const submitError = ref('')
 
 function validateField(field: string) {
   if (field === 'name') {
-    errors.name = form.name.trim() ? '' : 'Name ist erforderlich.'
+    errors.name = form.name.trim() ? '' : t('food.form.errorName')
   } else {
     const val = (form as Record<string, unknown>)[field]
     errors[field] = val !== null && val !== undefined && Number(val) >= 0
       ? ''
-      : 'Gib einen Wert ≥ 0 ein.'
+      : t('food.form.errorValue')
   }
 }
 
@@ -411,7 +414,7 @@ async function handleSave() {
     })
     navigateTo('/food')
   } catch {
-    submitError.value = 'Speichern fehlgeschlagen. Bitte versuche es erneut.'
+    submitError.value = t('food.form.errorSave')
   } finally {
     isSaving.value = false
   }
@@ -433,7 +436,7 @@ async function handleDelete() {
     showDeleteModal.value = false
     navigateTo('/food')
   } catch {
-    submitError.value = 'Löschen fehlgeschlagen.'
+    submitError.value = t('food.form.errorDelete')
     showDeleteModal.value = false
   } finally {
     isDeleting.value = false
@@ -479,7 +482,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
   color: var(--error);
   flex-shrink: 0;
   opacity: 0.8;
-  transition: opacity 150ms ease;
+  transition: opacity $duration-fast $ease-standard;
 
   &:hover,
   &:focus-visible {

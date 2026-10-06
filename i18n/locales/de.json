@@ -11,7 +11,8 @@
     "settings": "Einstellungen",
     "adminSection": "Verwaltung",
     "adminUsers": "Benutzer",
-    "adminFoods": "Lebensmittel-Freigaben"
+    "adminFoods": "Lebensmittel-Freigaben",
+    "openMenu": "Menü öffnen"
   },
   "common": {
     "today": "Heute",
@@ -35,7 +36,11 @@
     "retry": "Erneut versuchen",
     "calculate": "Berechnen",
     "loading": "Lade Daten",
-    "noData": "Keine Daten"
+    "noData": "Keine Daten",
+    "waterAdd": "{amount} Wasser hinzufügen",
+    "deltaVsPrevious": "Veränderung zum vorherigen Eintrag",
+    "deleteEntryOn": "Eintrag vom {date} löschen",
+    "carbsShort": "Kohlenhydr."
   },
   "meal": {
     "breakfast": "Frühstück",
@@ -48,7 +53,8 @@
     "restored": "Eintrag wiederhergestellt",
     "rowLabel": "{name}, {amount}, {kcal} kcal, bearbeiten",
     "rowLabelQuick": "{name}, {kcal} kcal, bearbeiten",
-    "delete": "{name} löschen"
+    "delete": "{name} löschen",
+    "addTo": "{meal} – Eintrag hinzufügen"
   },
   "mealClipboard": {
     "menu": "{meal} – weitere Aktionen",
@@ -78,7 +84,6 @@
     "streakDays": "Tage",
     "emptyEntry": "Noch nichts eingetragen",
     "addEntry": "Eintrag hinzufügen",
-    "editEntry": "{name} bearbeiten",
     "now": "Jetzt",
     "paceMarkerLabel": "Gleichmäßiger Tagesverlauf bis jetzt: {n} kcal",
     "paceOnTrack": "Bislang etwa im gleichmäßigen Tagesverlauf",
@@ -120,14 +125,24 @@
       "increase": "Erhöhen",
       "logMode": "Wie hinzufügen?",
       "logModeRecipe": "Als Rezept",
-      "logModeItems": "Einzelne Zutaten"
+      "logModeItems": "Einzelne Zutaten",
+      "decrease10": "10 g weniger",
+      "increase10": "10 g mehr",
+      "amountAria": "Menge in Gramm",
+      "addRecipe": "Rezept hinzufügen",
+      "portionsLess": "Weniger Portionen",
+      "portionsMore": "Mehr Portionen",
+      "portionsCount": "Anzahl Portionen"
     },
     "quickAdd": {
       "title": "Schnelleintrag",
       "caloriesLabel": "Kalorien",
       "nameLabel": "Bezeichnung",
       "namePlaceholder": "z. B. Snack unterwegs",
-      "macrosToggle": "Nährwerte hinzufügen"
+      "macrosToggle": "Nährwerte hinzufügen",
+      "proteinAria": "Protein in Gramm",
+      "carbsAria": "Kohlenhydrate in Gramm",
+      "fatAria": "Fett in Gramm"
     },
     "diaryPage": {
       "backToDashboard": "Zurück zum Dashboard",
@@ -138,11 +153,20 @@
       "overGoalLabel": "+ {n} kcal über dem Ziel",
       "emptyEntry": "Noch nichts eingetragen",
       "addEntry": "Eintrag hinzufügen",
-      "editEntry": "{name} bearbeiten",
       "saveAsRecipe": "Als Rezept speichern",
       "saveAsRecipeName": "Rezeptname",
-      "saveAsRecipeToast": "Rezept gespeichert"
-    }
+      "saveAsRecipeToast": "Rezept gespeichert",
+      "todayLabel": "Heutiger Tag",
+      "calorieSummary": "Kalorien-Zusammenfassung",
+      "calorieProgress": "Kalorienfortschritt",
+      "macrosLabel": "Makronährstoffe",
+      "macroProgress": "{label}: {current} von {goal} g",
+      "mealsLabel": "Mahlzeiten",
+      "kcalLabel": "{n} Kilokalorien",
+      "waterIntake": "Wasseraufnahme",
+      "waterProgress": "Wasserfortschritt"
+    },
+    "recipeList": "Rezeptliste"
   },
   "food": {
     "title": "Lebensmittel",
@@ -190,8 +214,18 @@
       "errorName": "Name ist erforderlich.",
       "errorValue": "Gib einen Wert ≥ 0 ein.",
       "errorSave": "Speichern fehlgeschlagen. Bitte versuche es erneut.",
-      "macroCalc": "Makros ergeben {n} kcal",
-      "macroDeviation": "— abweichend von {n} kcal (Angabe)"
+      "macroCalc": "Makros ergeben",
+      "macroDeviation": "abweichend von {n} kcal (Angabe)",
+      "namePlaceholder": "z. B. Haferflocken",
+      "brandPlaceholder": "z. B. Kaufland",
+      "errorDelete": "Löschen fehlgeschlagen."
+    },
+    "edit": {
+      "notFound": "Lebensmittel nicht gefunden.",
+      "title": "Bearbeiten",
+      "deleteItem": "Lebensmittel löschen",
+      "deleteTitle": "Löschen?",
+      "deleteBody": "{name} wird dauerhaft entfernt. Diese Aktion kann nicht rückgängig gemacht werden."
     }
   },
   "scan": {
@@ -204,7 +238,9 @@
     "notFoundTitle": "Produkt nicht gefunden",
     "rescan": "Nochmal scannen",
     "saveAndAdd": "Speichern & hinzufügen",
-    "addManually": "Manuell anlegen"
+    "addManually": "Manuell anlegen",
+    "scannerLabel": "Barcode-Scanner",
+    "searchBarcode": "Barcode suchen"
   },
   "weight": {
     "title": "Gewicht",
@@ -222,7 +258,20 @@
     "notePlaceholder": "Notiz (optional)",
     "history": "Verlauf",
     "empty": "Noch keine Einträge",
-    "emptyHint": "Trage dein erstes Gewicht oben ein, um zu starten."
+    "emptyHint": "Trage dein erstes Gewicht oben ein, um zu starten.",
+    "currentLabel": "Aktuelles Gewicht",
+    "bmiAria": "BMI {value}: {label}",
+    "bmiCategory": {
+      "underweight": "Untergewicht",
+      "normal": "Normalgewicht",
+      "overweight": "Übergewicht",
+      "obese": "Adipositas"
+    },
+    "chartLabel": "Gewichtsverlauf",
+    "weightAria": "Gewicht in Kilogramm",
+    "dateAria": "Datum des Eintrags",
+    "noteLabel": "Notiz",
+    "entriesLabel": "Gewichtseinträge"
   },
   "history": {
     "title": "Verlauf",
@@ -238,7 +287,17 @@
       "7": "7 Tage",
       "30": "30 Tage",
       "90": "90 Tage"
-    }
+    },
+    "keyStats": "Schlüsselkennzahlen",
+    "avgCaloriesAria": "Durchschnittliche Kalorien",
+    "streakAria": "Streak in Tagen",
+    "adherenceAria": "Zielerreichung in Prozent",
+    "chartLabel": "Kalorienverlauf",
+    "macrosLabel": "Durchschnittliche Makros",
+    "proteinShare": "Protein-Anteil",
+    "carbsShare": "Kohlenhydrat-Anteil",
+    "fatShare": "Fett-Anteil",
+    "dayList": "Tagesverlauf"
   },
   "bodyFat": {
     "title": "Körperfett",
@@ -273,7 +332,16 @@
     "saveEntry": "Eintrag speichern",
     "history": "Verlauf",
     "empty": "Noch keine Einträge",
-    "emptyHint": "Berechne und speichere deine erste Messung, um zu starten."
+    "emptyHint": "Berechne und speichere deine erste Messung, um zu starten.",
+    "resultLabel": "Körperfett-Ergebnis",
+    "categoryAria": "Kategorie: {label}",
+    "chartLabel": "Körperfettverlauf",
+    "heightFromProfile": "Körpergröße aus Profil",
+    "neckAria": "Halsumfang in Zentimeter",
+    "waistAria": "Taillenumfang in Zentimeter",
+    "hipAria": "Hüftumfang in Zentimeter",
+    "categoriesLabel": "Kategorie-Referenz",
+    "entriesLabel": "Körperfett-Einträge"
   },
   "activity": {
     "title": "Aktivität",
@@ -288,7 +356,10 @@
     "durationLabel": "Dauer",
     "history": "Verlauf",
     "empty": "Noch keine Einträge",
-    "emptyHint": "Erfasse deine erste Aktivität, um verbrannte Kalorien zu deinem Tagesziel zu addieren."
+    "emptyHint": "Erfasse deine erste Aktivität, um verbrannte Kalorien zu deinem Tagesziel zu addieren.",
+    "todayBurnedLabel": "Heute verbrannte Kalorien",
+    "durationAria": "Dauer in Minuten",
+    "entriesLabel": "Aktivitätseinträge"
   },
   "settings": {
     "title": "Einstellungen",
@@ -394,7 +465,8 @@
     "errorName": "Bitte gib deinen Namen ein.",
     "errorBody": "Bitte fülle alle Körperdaten aus.",
     "hasAccount": "Schon ein Konto?",
-    "hasAccountLink": "Anmelden"
+    "hasAccountLink": "Anmelden",
+    "agePlaceholder": "Jahre"
   },
   "recipes": {
     "title": "Rezepte",
@@ -407,6 +479,42 @@
       "noResultsHint": "Kein Rezept für «{query}» gefunden.",
       "title": "Noch keine Rezepte",
       "hint": "Erstelle dein erstes Rezept."
+    },
+    "ingredientsCount": "{n} Zutat | {n} Zutaten",
+    "addIngredient": "Zutat hinzufügen",
+    "removeIngredient": "{name} entfernen",
+    "perServing": "Pro Portion",
+    "noFoodFound": "Kein Lebensmittel gefunden.",
+    "description": "Beschreibung",
+    "descriptionPlaceholder": "Kurze Beschreibung …",
+    "ingredients": "Zutaten",
+    "add": {
+      "title": "Neues Rezept",
+      "step": "Schritt {step} von 2",
+      "namePlaceholder": "z. B. Hähnchen mit Reis",
+      "ingSearchPlaceholder": "Zutat suchen …",
+      "ingSearchAria": "Zutat suchen",
+      "results": "Suchergebnisse",
+      "ingEmptyHint": "Suche nach Zutaten und füge sie hinzu.",
+      "save": "Rezept speichern"
+    },
+    "edit": {
+      "titleFallback": "Rezept",
+      "details": "Rezept-Details",
+      "nutrition": "Nährwerte",
+      "nutritionPerServing": "Nährwerte pro Portion",
+      "editAmount": "{name} Menge bearbeiten",
+      "noIngredients": "Noch keine Zutaten.",
+      "logAsEntry": "Als Diary-Eintrag loggen",
+      "delete": "Rezept löschen",
+      "sheetSearch": "Zutat suchen",
+      "sheetAmount": "Menge festlegen",
+      "searchHint": "Tippe um nach Lebensmitteln zu suchen.",
+      "update": "Aktualisieren",
+      "logTitle": "Als Eintrag loggen",
+      "logConfirm": "Eintragen",
+      "deleteTitle": "Rezept löschen?",
+      "deleteBody": "„{name}“ wird unwiderruflich gelöscht. Diary-Einträge bleiben erhalten."
     }
   },
   "camera": {

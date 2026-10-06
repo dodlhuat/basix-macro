@@ -5,7 +5,7 @@
     <header class="diary__header">
       <button
         class="button button-icon diary__back-btn"
-        aria-label="Zurück zum Dashboard"
+        :aria-label="$t('diary.diaryPage.backToDashboard')"
         @click="navigateTo('/')"
       >
         <AppIcon name="arrow_back" size="1.25rem" />
@@ -18,22 +18,22 @@
           <span
             v-if="isToday"
             class="badge badge-info diary__today-badge"
-            aria-label="Heutiger Tag"
-          >Heute</span>
+            :aria-label="$t('diary.diaryPage.todayLabel')"
+          >{{ $t('common.today') }}</span>
         </Transition>
       </div>
 
-      <div class="diary__date-nav" role="navigation" aria-label="Datumsnavigation">
+      <div class="diary__date-nav" role="navigation" :aria-label="$t('dashboard.dateNav')">
         <button
           class="button button-icon diary__nav-btn"
-          aria-label="Vorheriger Tag"
+          :aria-label="$t('dashboard.prevDay')"
           @click="prevDay"
         >
           <AppIcon name="chevron_left" size="1.25rem" />
         </button>
         <button
           class="button button-icon diary__nav-btn"
-          aria-label="Nächster Tag"
+          :aria-label="$t('dashboard.nextDay')"
           @click="nextDay"
         >
           <AppIcon name="chevron_right" size="1.25rem" />
@@ -45,7 +45,7 @@
     <section
       class="diary__hero"
       :class="{ 'diary__hero--over': isOverGoal }"
-      aria-label="Kalorien-Zusammenfassung"
+      :aria-label="$t('diary.diaryPage.calorieSummary')"
     >
       <div class="diary__hero-body">
         <div class="diary__remaining">
@@ -53,7 +53,7 @@
             {{ isOverGoal ? 0 : remainingCalories }}
           </span>
           <span class="diary__remaining-label">
-            {{ isOverGoal ? 'Ziel überschritten' : 'verbleibend' }}
+            {{ isOverGoal ? $t('diary.diaryPage.overGoal') : $t('diary.diaryPage.remaining') }}
           </span>
         </div>
 
@@ -75,7 +75,7 @@
           <div class="diary__stat-sep" aria-hidden="true" />
           <div class="diary__stat">
             <span class="diary__stat-value">{{ calorieGoal }}</span>
-            <span class="diary__stat-label">Ziel</span>
+            <span class="diary__stat-label">{{ $t('diary.diaryPage.goal') }}</span>
           </div>
         </div>
       </div>
@@ -88,17 +88,17 @@
           role="progressbar"
           :aria-valuenow="Math.round(totalCalories)"
           :aria-valuemax="effectiveCalorieGoal"
-          aria-label="Kalorienfortschritt"
+          :aria-label="$t('diary.diaryPage.calorieProgress')"
         />
       </div>
 
       <p v-if="isOverGoal" class="diary__over-label">
-        + {{ Math.round(totalCalories - effectiveCalorieGoal) }} kcal über dem Ziel
+        {{ $t('diary.diaryPage.overGoalLabel', { n: Math.round(totalCalories - effectiveCalorieGoal) }) }}
       </p>
     </section>
 
     <!-- Macro bars -->
-    <section class="diary__macros" aria-label="Makronährstoffe">
+    <section class="diary__macros" :aria-label="$t('diary.diaryPage.macrosLabel')">
       <div
         v-for="macro in macros"
         :key="macro.key"
@@ -123,14 +123,14 @@
             role="progressbar"
             :aria-valuenow="Math.round(macro.current)"
             :aria-valuemax="macro.goal"
-            :aria-label="`${macro.label}: ${Math.round(macro.current)} von ${macro.goal} g`"
+            :aria-label="$t('diary.diaryPage.macroProgress', { label: macro.label, current: Math.round(macro.current), goal: macro.goal })"
           />
         </div>
       </div>
     </section>
 
     <!-- Meal sections -->
-    <section class="diary__meals" aria-label="Mahlzeiten">
+    <section class="diary__meals" :aria-label="$t('diary.diaryPage.mealsLabel')">
       <div
         v-for="meal in mealSections"
         :key="meal.type"
@@ -143,7 +143,7 @@
           <span
             v-if="meal.entries.length"
             class="diary__meal-kcal"
-            aria-label="`${Math.round(meal.totalKcal)} Kilokalorien`"
+            :aria-label="$t('diary.diaryPage.kcalLabel', { n: Math.round(meal.totalKcal) })"
           >
             {{ Math.round(meal.totalKcal) }} kcal
           </span>
@@ -159,7 +159,7 @@
           <button
             class="button button-icon button-sm diary__meal-add"
             data-meal-focus
-            :aria-label="`${meal.label} – Eintrag hinzufügen`"
+            :aria-label="$t('entry.addTo', { meal: meal.label })"
             @click="addEntry(meal.type)"
           >
             <AppIcon name="add" size="1.25rem" />
@@ -179,15 +179,15 @@
           />
         </ul>
 
-        <p v-else class="diary__meal-empty">Noch nichts eingetragen</p>
+        <p v-else class="diary__meal-empty">{{ $t('diary.diaryPage.emptyEntry') }}</p>
       </div>
     </section>
 
     <!-- Water tracker -->
-    <section class="diary__water card card-bordered" aria-label="Wasseraufnahme">
+    <section class="diary__water card card-bordered" :aria-label="$t('diary.diaryPage.waterIntake')">
       <div class="diary__water-header">
         <AppIcon name="water_drop" class="diary__water-icon" size="1.25rem" />
-        <span class="diary__water-title">Wasser</span>
+        <span class="diary__water-title">{{ $t('dashboard.water') }}</span>
         <span class="diary__water-amount">
           {{ totalWater }}<span class="diary__water-unit">ml</span>
         </span>
@@ -201,29 +201,29 @@
           role="progressbar"
           :aria-valuenow="totalWater"
           :aria-valuemax="waterGoal"
-          aria-label="Wasserfortschritt"
+          :aria-label="$t('diary.diaryPage.waterProgress')"
         />
       </div>
 
       <div class="chips diary__water-chips">
         <button
           class="chip clickable"
-          aria-label="150 ml Wasser hinzufügen"
+          :aria-label="$t('common.waterAdd', { amount: '150 ml' })"
           @click="addWaterAmount(150)"
         >+150 ml</button>
         <button
           class="chip clickable"
-          aria-label="250 ml Wasser hinzufügen"
+          :aria-label="$t('common.waterAdd', { amount: '250 ml' })"
           @click="addWaterAmount(250)"
         >+250 ml</button>
         <button
           class="chip clickable"
-          aria-label="330 ml Wasser hinzufügen"
+          :aria-label="$t('common.waterAdd', { amount: '330 ml' })"
           @click="addWaterAmount(330)"
         >+330 ml</button>
         <button
           class="chip clickable"
-          aria-label="500 ml Wasser hinzufügen"
+          :aria-label="$t('common.waterAdd', { amount: '500 ml' })"
           @click="addWaterAmount(500)"
         >+500 ml</button>
       </div>
@@ -424,7 +424,7 @@ const diaryStore = useDiaryStore()
 const userStore = useUserStore()
 const recipesStore = useRecipesStore()
 const activityStore = useActivityStore()
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const { showToast } = useToast()
 
 // ─── Date ─────────────────────────────────────────────────────────────────────
@@ -435,12 +435,14 @@ const isToday = computed(() =>
   date.value === toLocalDateStr(new Date())
 )
 
+const dateLocale = computed(() => (locale.value === 'en' ? 'en-US' : 'de-DE'))
+
 const formattedWeekday = computed(() =>
-  new Date(date.value + 'T12:00:00').toLocaleDateString('de-DE', { weekday: 'long' })
+  new Date(date.value + 'T12:00:00').toLocaleDateString(dateLocale.value, { weekday: 'long' })
 )
 
 const formattedDayMonth = computed(() =>
-  new Date(date.value + 'T12:00:00').toLocaleDateString('de-DE', {
+  new Date(date.value + 'T12:00:00').toLocaleDateString(dateLocale.value, {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
@@ -510,7 +512,7 @@ function pct(value: number, goal: number): number {
 const macros = computed(() => [
   {
     key: 'protein',
-    label: 'Protein',
+    label: t('common.protein'),
     current: totalProtein.value,
     goal: proteinGoal.value,
     color: 'var(--macro-protein)',
@@ -518,7 +520,7 @@ const macros = computed(() => [
   },
   {
     key: 'carbs',
-    label: 'Kohlenhydrate',
+    label: t('common.carbs'),
     current: totalCarbs.value,
     goal: carbsGoal.value,
     color: 'var(--macro-carbs)',
@@ -526,7 +528,7 @@ const macros = computed(() => [
   },
   {
     key: 'fat',
-    label: 'Fett',
+    label: t('common.fat'),
     current: totalFat.value,
     goal: fatGoal.value,
     color: 'var(--macro-fat)',
@@ -552,12 +554,7 @@ async function addWaterAmount(amount: number): Promise<void> {
 const MEAL_TYPES = ['breakfast', 'lunch', 'dinner', 'snack'] as const
 type MealType = (typeof MEAL_TYPES)[number]
 
-const MEAL_LABELS: Record<MealType, string> = {
-  breakfast: 'Frühstück',
-  lunch: 'Mittagessen',
-  dinner: 'Abendessen',
-  snack: 'Snack',
-}
+const mealLabel = (type: MealType): string => t(`meal.${type}`)
 
 interface MealSection {
   type: MealType
@@ -571,7 +568,7 @@ const mealSections = computed<MealSection[]>(() =>
     const entries = entryDetails.value.filter(e => e.meal_type === type)
     return {
       type,
-      label: MEAL_LABELS[type],
+      label: mealLabel(type),
       entries,
       totalKcal: entries.reduce((sum, e) => sum + e.calories_total, 0),
     }
@@ -809,7 +806,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 
 .badge-fade-enter-active,
 .badge-fade-leave-active {
-  transition: opacity 200ms ease, transform 200ms ease;
+  transition: opacity $duration-base $ease-standard, transform $duration-base $ease-standard;
 }
 
 .badge-fade-enter-from,
@@ -828,7 +825,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   );
   border-radius: var(--radius-xl);
   padding: calc(#{$spacing} * 1.25) calc(#{$spacing} * 1.5);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fadeSlideUp 500ms $ease-out-soft both;
 
   &--over {
     background: linear-gradient(
@@ -934,12 +931,14 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   border: none;
   font-family: inherit;
   color: var(--app-success-text);
+  border-radius: var(--radius-full);
   cursor: pointer;
-  transition: opacity 150ms ease;
+  transition: background-color $duration-fast $ease-standard;
 
-  &:hover,
-  &:focus-visible {
-    opacity: 0.75;
+  // Hover = success tint behind the icon instead of fading the icon itself
+  // (opacity 0.75 dropped the green glyph to ~3.5:1 on the hero).
+  &:hover {
+    background: var(--success-tint);
   }
 
   &:focus-visible {
@@ -955,7 +954,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   overflow: hidden;
 
   .progress-bar {
-    transition: width 700ms cubic-bezier(0.25, 1, 0.5, 1);
+    transition: width 700ms $ease-out-soft;
   }
 }
 
@@ -976,7 +975,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   display: flex;
   flex-direction: column;
   gap: calc(#{$spacing} * 0.9);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 80ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 80ms both;
 }
 
 .diary__macro {
@@ -1030,7 +1029,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   overflow: hidden;
 
   .progress-bar {
-    transition: width 700ms cubic-bezier(0.25, 1, 0.5, 1) 100ms;
+    transition: width 700ms $ease-out-soft 100ms;
     border-radius: var(--radius-full);
   }
 }
@@ -1044,7 +1043,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: var(--divider);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 160ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 160ms both;
 }
 
 .diary__meal {
@@ -1108,7 +1107,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   height: 2.75rem;
   margin: -0.5rem -0.35rem -0.5rem 0;
   flex-shrink: 0;
-  transition: transform 200ms ease;
+  transition: transform $duration-base $ease-standard;
 
   &:hover,
   &:focus-visible {
@@ -1139,7 +1138,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 /* ─── Water tracker ───────────────────────────────────────────────────────────── */
 
 .diary__water {
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 240ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 240ms both;
 }
 
 .diary__water-header {
@@ -1187,7 +1186,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   margin-bottom: calc(#{$spacing} * 0.875);
 
   .progress-bar {
-    transition: width 700ms cubic-bezier(0.25, 1, 0.5, 1) 200ms;
+    transition: width 700ms $ease-out-soft 200ms;
   }
 }
 

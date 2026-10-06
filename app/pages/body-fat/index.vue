@@ -5,7 +5,7 @@
     <section
       class="body-fat__hero"
       :class="heroClass"
-      aria-label="Körperfett-Ergebnis"
+      :aria-label="$t('bodyFat.resultLabel')"
     >
       <template v-if="displayResult">
         <div class="body-fat__hero-body">
@@ -20,7 +20,7 @@
             <span
               class="badge"
               :class="badgeClass"
-              :aria-label="`Kategorie: ${resultLabel}`"
+              :aria-label="$t('bodyFat.categoryAria', { label: resultLabel })"
             >
               {{ resultLabel }}
             </span>
@@ -60,7 +60,7 @@
     <template v-else>
 
       <!-- ─── SVG Chart ──────────────────────────────────────────────────────── -->
-      <section class="body-fat__chart-section" aria-label="Körperfettverlauf">
+      <section class="body-fat__chart-section" :aria-label="$t('bodyFat.chartLabel')">
         <template v-if="chartData.length >= 2">
           <svg
             class="body-fat__chart"
@@ -105,11 +105,11 @@
       </section>
 
       <!-- ─── Input form ─────────────────────────────────────────────────────── -->
-      <section class="body-fat__form" aria-label="Maße eingeben">
+      <section class="body-fat__form" :aria-label="$t('bodyFat.measurements')">
         <p class="body-fat__section-label">{{ $t('bodyFat.measurements') }}</p>
 
         <!-- Height info chip (read-only, from profile) -->
-        <div class="body-fat__height-info" aria-label="Körpergröße aus Profil">
+        <div class="body-fat__height-info" :aria-label="$t('bodyFat.heightFromProfile')">
           <AppIcon name="height" size="1rem" class="body-fat__height-icon" />
           <span class="body-fat__height-text">
             {{ $t('bodyFat.height') }}: <strong>{{ userStore.user.height_cm }}&thinsp;cm</strong>
@@ -132,7 +132,7 @@
                 max="80"
                 placeholder="37.0"
                 class="body-fat__num-input"
-                aria-label="Halsumfang in Zentimeter"
+                :aria-label="$t('bodyFat.neckAria')"
               >
               <span class="body-fat__input-unit" aria-hidden="true">cm</span>
             </div>
@@ -151,7 +151,7 @@
                 max="200"
                 placeholder="84.0"
                 class="body-fat__num-input"
-                aria-label="Taillenumfang in Zentimeter"
+                :aria-label="$t('bodyFat.waistAria')"
               >
               <span class="body-fat__input-unit" aria-hidden="true">cm</span>
             </div>
@@ -177,7 +177,7 @@
                 max="200"
                 placeholder="95.0"
                 class="body-fat__num-input"
-                aria-label="Hüftumfang in Zentimeter"
+                :aria-label="$t('bodyFat.hipAria')"
               >
               <span class="body-fat__input-unit" aria-hidden="true">cm</span>
             </div>
@@ -223,14 +223,14 @@
       </section>
 
       <!-- ─── Info card ──────────────────────────────────────────────────────── -->
-      <section class="body-fat__info" aria-label="Über die Navy-Methode">
+      <section class="body-fat__info" :aria-label="$t('bodyFat.navyTitle')">
         <p class="body-fat__section-label">{{ $t('bodyFat.navyTitle') }}</p>
         <p class="body-fat__info-text">{{ $t('bodyFat.navyDesc1') }}</p>
         <p class="body-fat__info-text body-fat__info-text--muted">{{ $t('bodyFat.navyDesc2') }}</p>
       </section>
 
       <!-- ─── Category reference table ──────────────────────────────────────── -->
-      <section class="body-fat__table-section" aria-label="Kategorie-Referenz">
+      <section class="body-fat__table-section" :aria-label="$t('bodyFat.categoriesLabel')">
         <p class="body-fat__section-label">{{ $t('bodyFat.categories') }} ({{ genderLabel }})</p>
         <ul class="body-fat__cat-list" role="list">
           <li
@@ -246,13 +246,13 @@
       </section>
 
       <!-- ─── History list ─────────────────────────────────────────────────── -->
-      <section class="body-fat__history" aria-label="Verlauf">
+      <section class="body-fat__history" :aria-label="$t('bodyFat.history')">
         <p class="body-fat__section-label">{{ $t('bodyFat.history') }}</p>
         <ul
           v-if="recentEntries.length"
           class="body-fat__list"
           role="list"
-          aria-label="Körperfett-Einträge"
+          :aria-label="$t('bodyFat.entriesLabel')"
         >
           <li
             v-for="(entry, idx) in recentEntries"
@@ -272,13 +272,13 @@
                 v-if="entryDelta(idx) !== null"
                 class="badge"
                 :class="entryDeltaBadgeClass(idx)"
-                aria-label="Veränderung zum vorherigen Eintrag"
+                :aria-label="$t('common.deltaVsPrevious')"
               >
                 {{ entryDeltaDisplay(idx) }}
               </span>
               <button
                 class="button button-icon body-fat__item-delete"
-                :aria-label="`Eintrag vom ${formatDate(entry.date)} löschen`"
+                :aria-label="$t('common.deleteEntryOn', { date: formatDate(entry.date) })"
                 @click="handleDelete(entry.id)"
               >
                 <AppIcon name="delete" size="1.125rem" />
@@ -704,7 +704,7 @@ onMounted(async () => {
   border-radius: var(--radius-xl);
   background: linear-gradient(135deg, var(--primary-bg) 0%, var(--accent-color-tint) 100%);
   padding: calc(#{$spacing} * 1.5) calc(#{$spacing} * 1.25) calc(#{$spacing} * 1.25);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fadeSlideUp 500ms $ease-out-soft both;
 
   &--good {
     background: linear-gradient(135deg, var(--primary-bg) 0%, var(--success-tint) 100%);
@@ -813,7 +813,7 @@ onMounted(async () => {
 // ─── No-profile fallback ──────────────────────────────────────────────────────
 
 .body-fat__no-profile {
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 80ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 80ms both;
 }
 
 .body-fat__profile-link {
@@ -840,7 +840,7 @@ onMounted(async () => {
   background: var(--primary-bg);
   border-radius: var(--radius-xl);
   padding: calc(#{$spacing} * 1) calc(#{$spacing} * 0.5) calc(#{$spacing} * 0.625);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 120ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 120ms both;
   overflow: hidden;
 }
 
@@ -887,7 +887,7 @@ onMounted(async () => {
   background: var(--primary-bg);
   border-radius: var(--radius-xl);
   padding: calc(#{$spacing} * 1.25);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 240ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 240ms both;
 }
 
 // Height info chip
@@ -965,11 +965,11 @@ onMounted(async () => {
 
 // Hip field transition
 .bf-hip-enter-active {
-  transition: opacity 260ms ease, transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity $duration-slow $ease-standard, transform 260ms $ease-out-soft;
 }
 
 .bf-hip-leave-active {
-  transition: opacity 180ms ease, transform 180ms ease;
+  transition: opacity $duration-base $ease-standard, transform $duration-base $ease-standard;
 }
 
 .bf-hip-enter-from,
@@ -1019,11 +1019,11 @@ onMounted(async () => {
 }
 
 .bf-save-enter-active {
-  transition: opacity 260ms ease, transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity $duration-slow $ease-standard, transform 260ms $ease-out-soft;
 }
 
 .bf-save-leave-active {
-  transition: opacity 180ms ease, transform 180ms ease;
+  transition: opacity $duration-base $ease-standard, transform $duration-base $ease-standard;
 }
 
 .bf-save-enter-from,
@@ -1038,7 +1038,7 @@ onMounted(async () => {
   background: var(--primary-bg);
   border-radius: var(--radius-xl);
   padding: calc(#{$spacing} * 1.25);
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 360ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 360ms both;
 }
 
 .body-fat__info-text {
@@ -1061,7 +1061,7 @@ onMounted(async () => {
 // ─── Category reference table ─────────────────────────────────────────────────
 
 .body-fat__table-section {
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 480ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 480ms both;
 }
 
 .body-fat__cat-list {
@@ -1085,7 +1085,7 @@ onMounted(async () => {
   background: var(--primary-bg);
   // Inset left accent for active state — no layout shift
   box-shadow: inset 3px 0 0 transparent;
-  transition: background 200ms ease, box-shadow 200ms ease;
+  transition: background $duration-base $ease-standard, box-shadow $duration-base $ease-standard;
 
   &:first-child { border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
   &:last-child  { border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
@@ -1107,7 +1107,7 @@ onMounted(async () => {
 // ─── History ──────────────────────────────────────────────────────────────────
 
 .body-fat__history {
-  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 600ms both;
+  animation: fadeSlideUp 500ms $ease-out-soft 600ms both;
 }
 
 .body-fat__list {
@@ -1128,7 +1128,7 @@ onMounted(async () => {
   gap: calc(#{$spacing} * 0.75);
   padding: calc(#{$spacing} * 0.75) calc(#{$spacing} * 1);
   background: var(--primary-bg);
-  animation: itemIn 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: itemIn 400ms $ease-out-soft both;
 
   &:first-child { border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
   &:last-child  { border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
@@ -1188,7 +1188,7 @@ onMounted(async () => {
   margin: -0.375rem;
   padding: 0;
   flex-shrink: 0;
-  transition: color 150ms ease;
+  transition: color $duration-fast $ease-standard;
 
   &:hover,
   &:focus-visible {

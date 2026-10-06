@@ -197,6 +197,8 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss" scoped>
+@use "~/assets/scss/variables" as *;
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -226,7 +228,7 @@ onBeforeUnmount(() => {
   color: var(--secondary-text);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition: background-color 160ms ease, transform 160ms ease;
+  transition: background-color $duration-fast $ease-standard, transform $duration-fast $ease-standard;
 
   &:hover {
     background: color-mix(in srgb, var(--secondary-text) 12%, transparent);

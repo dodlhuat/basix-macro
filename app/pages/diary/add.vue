@@ -70,7 +70,7 @@
       v-if="activeFilter !== 'recipes' && foodStore.items.length"
       class="diary-add__list"
       role="list"
-      aria-label="Lebensmittelliste"
+      :aria-label="$t('food.listLabel')"
     >
       <li
         v-for="(item, idx) in foodStore.items"
@@ -121,7 +121,7 @@
       v-if="activeFilter === 'recipes' && filteredRecipes.length"
       class="diary-add__list"
       role="list"
-      aria-label="Rezeptliste"
+      :aria-label="$t('diary.recipeList')"
     >
       <li
         v-for="recipe in filteredRecipes"
@@ -260,7 +260,7 @@
               <button
                 class="button button-outline da-sheet__amount-btn"
                 :disabled="sheetAmount <= 10"
-                aria-label="10g weniger"
+                :aria-label="$t('diary.sheet.decrease10')"
                 @click="adjustAmount(-10)"
               >
                 <AppIcon name="remove" size="1rem" />
@@ -275,7 +275,7 @@
                     min="1"
                     max="9999"
                     step="1"
-                    aria-label="Menge in Gramm"
+                    :aria-label="$t('diary.sheet.amountAria')"
                     class="da-sheet__amount-input"
                   >
                   <span class="da-sheet__amount-unit">g</span>
@@ -283,7 +283,7 @@
               </div>
               <button
                 class="button button-outline da-sheet__amount-btn"
-                aria-label="10g mehr"
+                :aria-label="$t('diary.sheet.increase10')"
                 @click="adjustAmount(10)"
               >
                 <AppIcon name="add" size="1rem" />
@@ -351,7 +351,7 @@
         class="bottom-sheet"
         role="dialog"
         aria-modal="true"
-        aria-label="Rezept hinzufügen"
+        :aria-label="$t('diary.sheet.addRecipe')"
       >
         <div class="bottom-sheet-handle" aria-hidden="true" />
 
@@ -400,7 +400,7 @@
                 <button
                   class="button button-outline da-sheet__amount-btn"
                   :disabled="recipePortions <= 1"
-                  aria-label="Weniger Portionen"
+                  :aria-label="$t('diary.sheet.portionsLess')"
                   @click="recipePortions = Math.max(1, recipePortions - 1)"
                 >
                   <AppIcon name="remove" size="1rem" />
@@ -415,15 +415,15 @@
                       min="1"
                       max="99"
                       step="1"
-                      aria-label="Anzahl Portionen"
+                      :aria-label="$t('diary.sheet.portionsCount')"
                       class="da-sheet__amount-input"
                     >
-                    <span class="da-sheet__amount-unit">Port.</span>
+                    <span class="da-sheet__amount-unit">{{ $t('diary.sheet.portion') }}</span>
                   </div>
                 </div>
                 <button
                   class="button button-outline da-sheet__amount-btn"
-                  aria-label="Mehr Portionen"
+                  :aria-label="$t('diary.sheet.portionsMore')"
                   @click="recipePortions = Math.min(99, recipePortions + 1)"
                 >
                   <AppIcon name="add" size="1rem" />
@@ -518,7 +518,7 @@
                   min="1"
                   step="1"
                   placeholder="250"
-                  aria-label="Kalorien"
+                  :aria-label="$t('diary.quickAdd.caloriesLabel')"
                   class="qa-sheet__calories-input"
                   autofocus
                 >
@@ -540,7 +540,7 @@
                   type="text"
                   enterkeyhint="next"
                   :placeholder="$t('diary.quickAdd.namePlaceholder')"
-                  aria-label="Bezeichnung"
+                  :aria-label="$t('diary.quickAdd.nameLabel')"
                   maxlength="60"
                 >
               </div>
@@ -571,7 +571,7 @@
                     min="0"
                     step="1"
                     placeholder="0"
-                    aria-label="Protein in Gramm"
+                    :aria-label="$t('diary.quickAdd.proteinAria')"
                   >
                 </div>
               </div>
@@ -586,7 +586,7 @@
                     min="0"
                     step="1"
                     placeholder="0"
-                    aria-label="Kohlenhydrate in Gramm"
+                    :aria-label="$t('diary.quickAdd.carbsAria')"
                   >
                 </div>
               </div>
@@ -601,7 +601,7 @@
                     min="0"
                     step="1"
                     placeholder="0"
-                    aria-label="Fett in Gramm"
+                    :aria-label="$t('diary.quickAdd.fatAria')"
                   >
                 </div>
               </div>
@@ -1139,7 +1139,7 @@ onUnmounted(() => {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  transition: background 150ms ease, transform 200ms ease;
+  transition: background $duration-fast $ease-standard, transform $duration-base $ease-standard;
 
   &:hover,
   &:focus-visible {
@@ -1196,18 +1196,19 @@ onUnmounted(() => {
   min-height: unset;
   padding: 0;
   border-radius: 50%;
-  background: var(--secondary-text);
+  // Solid tints instead of element opacity: the old 45% fade left the glyph
+  // at ~1.9:1 against its disc. Rest 80% secondary-text (>=4:1), hover 100%.
+  background: color-mix(in srgb, var(--secondary-text) 80%, var(--primary-bg));
   color: var(--primary-bg);
-  opacity: 0.45;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
-  transition: opacity 150ms ease;
+  transition: background-color $duration-fast $ease-standard;
 
   &:hover,
   &:focus-visible {
-    opacity: 0.75;
+    background: var(--secondary-text);
   }
 }
 
@@ -1238,8 +1239,8 @@ onUnmounted(() => {
   padding: calc(#{$spacing} * 0.75) calc(#{$spacing} * 1);
   background: var(--primary-bg);
   cursor: pointer;
-  transition: background 120ms ease;
-  animation: itemIn 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: background $duration-fast $ease-standard;
+  animation: itemIn 400ms $ease-out-soft both;
 
   &:first-child { border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
   &:last-child  { border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
@@ -1421,7 +1422,7 @@ onUnmounted(() => {
   cursor: pointer;
   padding: calc(#{$spacing} * 0.5) $spacing;
   border-radius: var(--radius-full);
-  transition: background 150ms ease;
+  transition: background $duration-fast $ease-standard;
 
   &:hover,
   &:focus-visible {
@@ -1645,12 +1646,12 @@ onUnmounted(() => {
 
 // Macro row expand/collapse
 .qa-macros-enter-active {
-  transition: opacity 220ms ease, transform 220ms cubic-bezier(0.22, 1, 0.36, 1), max-height 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 220ms ease, transform 220ms $ease-out-soft, max-height 220ms $ease-out-soft;
   max-height: 4rem;
 }
 
 .qa-macros-leave-active {
-  transition: opacity 160ms ease, transform 160ms ease, max-height 160ms ease;
+  transition: opacity $duration-fast $ease-standard, transform $duration-fast $ease-standard, max-height $duration-fast $ease-standard;
   max-height: 4rem;
 }
 

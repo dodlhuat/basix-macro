@@ -30,7 +30,7 @@
       v-if="filteredRecipes.length"
       class="recipe-list__items"
       role="list"
-      aria-label="Rezeptliste"
+      :aria-label="$t('diary.recipeList')"
     >
       <li
         v-for="(recipe, idx) in filteredRecipes"
@@ -215,7 +215,7 @@ onMounted(async () => {
   color: var(--secondary-text);
   padding: 0.2rem;
   margin: -0.2rem;
-  transition: color 150ms ease;
+  transition: color $duration-fast $ease-standard;
 
   &:hover { color: var(--primary-text); }
 }
@@ -241,8 +241,8 @@ onMounted(async () => {
   padding: calc(#{$spacing} * 0.875) $spacing;
   background: var(--primary-bg);
   cursor: pointer;
-  transition: background 120ms ease;
-  animation: itemIn 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: background $duration-fast $ease-standard;
+  animation: itemIn 400ms $ease-out-soft both;
 
   &:first-child { border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
   &:last-child  { border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
@@ -354,8 +354,8 @@ onMounted(async () => {
   box-shadow:
     0 4px 12px rgba(0, 0, 0, 0.18),
     0 1px 4px rgba(0, 0, 0, 0.12);
-  animation: fabPop 400ms cubic-bezier(0.22, 1, 0.36, 1) 200ms both;
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  animation: fabPop 400ms $ease-out-soft 200ms both;
+  transition: transform $duration-base $ease-standard, box-shadow $duration-base $ease-standard;
   z-index: 50;
 
   &:hover,

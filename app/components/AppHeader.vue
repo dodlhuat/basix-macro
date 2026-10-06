@@ -2,7 +2,7 @@
   <header class="main-header">
     <div>
       <div class="navigation-controls">
-        <label for="push-menu-toggle" aria-label="Menü öffnen">
+        <label for="push-menu-toggle" :aria-label="$t('nav.openMenu')">
           <AppIcon name="menu" size="1.5rem" />
         </label>
         <input id="push-menu-toggle" type="checkbox" @change="toggle" >

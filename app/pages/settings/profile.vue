@@ -281,7 +281,7 @@ watch(user, (u) => {
   width: 100%;
   color: inherit;
   -webkit-tap-highlight-color: transparent;
-  transition: border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+  transition: border-color $duration-base $ease-standard, background $duration-base $ease-standard, box-shadow $duration-base $ease-standard;
 
   &:active {
     transform: scale(0.99);
@@ -291,7 +291,7 @@ watch(user, (u) => {
     font-size: var(--fs-base-sm);
     font-weight: 600;
     color: var(--primary-text);
-    transition: color 0.22s ease;
+    transition: color $duration-base $ease-standard;
   }
 
   // Grid-row expand trick: desc collapses to 0 height without max-height hacks
@@ -299,7 +299,7 @@ watch(user, (u) => {
     display: grid;
     grid-template-rows: 0fr;
     margin-top: 0;
-    transition: grid-template-rows 0.28s ease, margin-top 0.28s ease;
+    transition: grid-template-rows $duration-slow $ease-standard, margin-top $duration-slow $ease-standard;
   }
 
   &__desc {
