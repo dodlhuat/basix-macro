@@ -34,6 +34,7 @@
             id="name"
             v-model="form.name"
             type="text"
+            enterkeyhint="next"
             :placeholder="$t('onboarding.namePlaceholder')"
             autocomplete="given-name"
             @keyup.enter="tryNext"
@@ -63,17 +64,17 @@
         <div class="onboarding__row">
           <div class="form-group">
             <label for="age">{{ $t('profile.age') }}</label>
-            <input id="age" v-model.number="form.age" type="number" min="10" max="100" placeholder="Jahre" >
+            <input id="age" v-model.number="form.age" type="number" inputmode="numeric" enterkeyhint="next" min="10" max="100" placeholder="Jahre" >
           </div>
           <div class="form-group">
             <label for="height">{{ $t('profile.height') }}</label>
-            <input id="height" v-model.number="form.height_cm" type="number" min="100" max="250" placeholder="cm" >
+            <input id="height" v-model.number="form.height_cm" type="number" inputmode="numeric" enterkeyhint="next" min="100" max="250" placeholder="cm" >
           </div>
         </div>
 
         <div class="form-group">
           <label for="weight">{{ $t('profile.weight') }}</label>
-          <input id="weight" v-model.number="form.weight_kg" type="number" min="30" max="300" step="0.1" placeholder="kg" >
+          <input id="weight" v-model.number="form.weight_kg" type="number" inputmode="decimal" enterkeyhint="done" min="30" max="300" step="0.1" placeholder="kg" >
         </div>
         <p v-if="errors.body" class="onboarding__error">{{ errors.body }}</p>
       </div>
@@ -136,6 +137,8 @@
               id="calorie-override"
               v-model.number="calorieOverride"
               type="number"
+              inputmode="numeric"
+              enterkeyhint="done"
               min="1200"
               max="6000"
               step="50"
@@ -715,7 +718,7 @@ async function finish() {
   flex-direction: column;
   padding: calc($spacing * 0.65) calc($spacing * 0.75);
   border-radius: var(--radius-md);
-  border: 1.5px solid var(--divider);
+  border: 1.5px solid var(--app-input-border);
   background: var(--primary-bg);
   cursor: pointer;
   text-align: left;

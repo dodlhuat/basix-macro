@@ -86,37 +86,37 @@
               <div class="form-group">
                 <label :for="`name-${s.id}`">{{ $t('food.form.name') }}</label>
                 <div class="input-group">
-                  <input :id="`name-${s.id}`" v-model.trim="editForm.name" type="text">
+                  <input :id="`name-${s.id}`" v-model.trim="editForm.name" type="text" enterkeyhint="next">
                 </div>
               </div>
               <div class="form-group">
                 <label :for="`brand-${s.id}`">{{ $t('food.form.brand') }}</label>
                 <div class="input-group">
-                  <input :id="`brand-${s.id}`" v-model.trim="editForm.brand" type="text">
+                  <input :id="`brand-${s.id}`" v-model.trim="editForm.brand" type="text" enterkeyhint="next">
                 </div>
               </div>
               <div class="form-group">
                 <label :for="`kcal-${s.id}`">{{ $t('common.calories') }}</label>
                 <div class="input-group">
-                  <input :id="`kcal-${s.id}`" v-model.number="editForm.calories_per_100g" type="number" min="0" step="1">
+                  <input :id="`kcal-${s.id}`" v-model.number="editForm.calories_per_100g" type="number" inputmode="numeric" enterkeyhint="next" min="0" step="1">
                 </div>
               </div>
               <div class="form-group">
                 <label :for="`protein-${s.id}`">{{ $t('common.protein') }}</label>
                 <div class="input-group">
-                  <input :id="`protein-${s.id}`" v-model.number="editForm.protein_per_100g" type="number" min="0" step="0.1">
+                  <input :id="`protein-${s.id}`" v-model.number="editForm.protein_per_100g" type="number" inputmode="decimal" enterkeyhint="next" min="0" step="0.1">
                 </div>
               </div>
               <div class="form-group">
                 <label :for="`carbs-${s.id}`">{{ $t('common.carbs') }}</label>
                 <div class="input-group">
-                  <input :id="`carbs-${s.id}`" v-model.number="editForm.carbs_per_100g" type="number" min="0" step="0.1">
+                  <input :id="`carbs-${s.id}`" v-model.number="editForm.carbs_per_100g" type="number" inputmode="decimal" enterkeyhint="next" min="0" step="0.1">
                 </div>
               </div>
               <div class="form-group">
                 <label :for="`fat-${s.id}`">{{ $t('common.fat') }}</label>
                 <div class="input-group">
-                  <input :id="`fat-${s.id}`" v-model.number="editForm.fat_per_100g" type="number" min="0" step="0.1">
+                  <input :id="`fat-${s.id}`" v-model.number="editForm.fat_per_100g" type="number" inputmode="decimal" enterkeyhint="done" min="0" step="0.1">
                 </div>
               </div>
             </div>

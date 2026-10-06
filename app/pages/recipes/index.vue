@@ -9,6 +9,7 @@
           ref="searchInput"
           v-model="localQuery"
           type="search"
+          enterkeyhint="search"
           class="recipe-list__search-input"
           :placeholder="$t('recipes.searchPlaceholder')"
           :aria-label="$t('recipes.searchPlaceholder')"
@@ -169,7 +170,7 @@ onMounted(async () => {
   border-radius: var(--radius-full) !important;
   overflow: hidden;
   background: var(--primary-bg);
-  border: 1px solid var(--divider);
+  border: 1px solid var(--app-input-border);
   padding: 0 calc(#{$spacing} * 0.75);
   gap: calc(#{$spacing} * 0.5);
   height: 2.5rem;

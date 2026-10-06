@@ -24,6 +24,7 @@
           ref="searchInput"
           v-model="localQuery"
           type="search"
+          enterkeyhint="search"
           class="diary-add__search-input"
           :placeholder="activeFilter === 'recipes' ? $t('diary.searchRecipe') : $t('diary.searchFood')"
           :aria-label="$t('diary.searchFood')"
@@ -269,6 +270,8 @@
                   <input
                     v-model.number="sheetAmount"
                     type="number"
+                    inputmode="decimal"
+                    enterkeyhint="done"
                     min="1"
                     max="9999"
                     step="1"
@@ -407,6 +410,8 @@
                     <input
                       v-model.number="recipePortions"
                       type="number"
+                      inputmode="numeric"
+                      enterkeyhint="done"
                       min="1"
                       max="99"
                       step="1"
@@ -508,6 +513,7 @@
                 <input
                   v-model="quickCaloriesStr"
                   type="number"
+                  enterkeyhint="next"
                   inputmode="numeric"
                   min="1"
                   step="1"
@@ -532,6 +538,7 @@
                 <input
                   v-model="quickName"
                   type="text"
+                  enterkeyhint="next"
                   :placeholder="$t('diary.quickAdd.namePlaceholder')"
                   aria-label="Bezeichnung"
                   maxlength="60"
@@ -559,6 +566,7 @@
                   <input
                     v-model="quickProteinStr"
                     type="number"
+                    enterkeyhint="next"
                     inputmode="decimal"
                     min="0"
                     step="1"
@@ -573,6 +581,7 @@
                   <input
                     v-model="quickCarbsStr"
                     type="number"
+                    enterkeyhint="next"
                     inputmode="decimal"
                     min="0"
                     step="1"
@@ -587,6 +596,7 @@
                   <input
                     v-model="quickFatStr"
                     type="number"
+                    enterkeyhint="done"
                     inputmode="decimal"
                     min="0"
                     step="1"
@@ -1112,7 +1122,7 @@ onUnmounted(() => {
   border-radius: var(--radius-full) !important;
   overflow: hidden;
   background: var(--primary-bg);
-  border: 1px solid var(--divider);
+  border: 1px solid var(--app-input-border);
   padding: 0 calc(#{$spacing} * 0.75);
   gap: calc(#{$spacing} * 0.5);
   height: 2.5rem;

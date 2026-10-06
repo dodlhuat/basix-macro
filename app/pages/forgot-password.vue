@@ -23,6 +23,7 @@
                   id="forgot-email"
                   v-model.trim="email"
                   type="email"
+                  enterkeyhint="go"
                   autocomplete="email"
                   inputmode="email"
                   :placeholder="$t('auth.emailPlaceholder')"

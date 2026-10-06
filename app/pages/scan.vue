@@ -82,6 +82,7 @@
             ref="manualInputEl"
             v-model="manualBarcode"
             type="text"
+            enterkeyhint="go"
             inputmode="numeric"
             class="scanner__manual-input"
             placeholder="EAN / GTIN …"

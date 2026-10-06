@@ -8,7 +8,7 @@
 
         <div class="form-group">
           <label for="name">{{ $t('profile.name') }}</label>
-          <input id="name" v-model="form.name" type="text" >
+          <input id="name" v-model="form.name" type="text" autocomplete="given-name" enterkeyhint="next" >
         </div>
 
         <div class="form-group">
@@ -25,17 +25,17 @@ v-for="g in genderOptions" :key="g.value" type="button" class="chip clickable"
         <div class="profile__row">
           <div class="form-group">
             <label for="age">{{ $t('profile.age') }}</label>
-            <input id="age" v-model.number="form.age" type="number" min="10" max="100" >
+            <input id="age" v-model.number="form.age" type="number" inputmode="numeric" enterkeyhint="next" min="10" max="100" >
           </div>
           <div class="form-group">
             <label for="height">{{ $t('profile.height') }}</label>
-            <input id="height" v-model.number="form.height_cm" type="number" min="100" max="250" >
+            <input id="height" v-model.number="form.height_cm" type="number" inputmode="numeric" enterkeyhint="next" min="100" max="250" >
           </div>
         </div>
 
         <div class="form-group">
           <label for="weight">{{ $t('profile.weight') }}</label>
-          <input id="weight" v-model.number="form.weight_kg" type="number" min="30" max="300" step="0.1" >
+          <input id="weight" v-model.number="form.weight_kg" type="number" inputmode="decimal" enterkeyhint="next" min="30" max="300" step="0.1" >
         </div>
       </div>
 
@@ -79,7 +79,7 @@ v-for="a in activityOptions" :key="a.value" type="button" class="chip clickable"
 
         <div class="form-group">
           <label for="calorie-goal">{{ $t('profile.calorieGoalLabel') }}</label>
-          <input id="calorie-goal" v-model.number="form.calorie_goal" type="number" min="1200" max="6000" step="50" >
+          <input id="calorie-goal" v-model.number="form.calorie_goal" type="number" inputmode="numeric" enterkeyhint="next" min="1200" max="6000" step="50" >
         </div>
 
         <button type="button" class="button button-outline" @click="resetToAuto">
@@ -89,15 +89,15 @@ v-for="a in activityOptions" :key="a.value" type="button" class="chip clickable"
         <div class="profile__macros">
           <div class="form-group">
             <label for="protein">{{ $t('common.protein') }} (g)</label>
-            <input id="protein" v-model.number="form.protein_goal_g" type="number" min="0" >
+            <input id="protein" v-model.number="form.protein_goal_g" type="number" inputmode="numeric" enterkeyhint="next" min="0" >
           </div>
           <div class="form-group">
             <label for="carbs">{{ $t('common.carbs') }} (g)</label>
-            <input id="carbs" v-model.number="form.carbs_goal_g" type="number" min="0" >
+            <input id="carbs" v-model.number="form.carbs_goal_g" type="number" inputmode="numeric" enterkeyhint="next" min="0" >
           </div>
           <div class="form-group">
             <label for="fat">{{ $t('common.fat') }} (g)</label>
-            <input id="fat" v-model.number="form.fat_goal_g" type="number" min="0" >
+            <input id="fat" v-model.number="form.fat_goal_g" type="number" inputmode="numeric" enterkeyhint="done" min="0" >
           </div>
         </div>
       </div>
@@ -274,7 +274,7 @@ watch(user, (u) => {
   flex-direction: column;
   padding: calc($spacing * 0.65) calc($spacing * 0.75);
   border-radius: var(--radius-md);
-  border: 1.5px solid var(--divider);
+  border: 1.5px solid var(--app-input-border);
   background: var(--primary-bg);
   cursor: pointer;
   text-align: left;

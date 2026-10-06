@@ -9,6 +9,7 @@
           ref="searchInput"
           v-model="localQuery"
           type="search"
+          enterkeyhint="search"
           class="food__search-input"
           :placeholder="$t('food.searchPlaceholder')"
           :aria-label="$t('food.searchPlaceholder')"
@@ -276,6 +277,8 @@
                   <input
                     v-model.number="sheetAmount"
                     type="number"
+                    inputmode="decimal"
+                    enterkeyhint="done"
                     min="1"
                     max="9999"
                     step="1"
@@ -702,7 +705,7 @@ onUnmounted(() => {
   border-radius: var(--radius-full) !important;
   overflow: hidden;
   background: var(--primary-bg);
-  border: 1px solid var(--divider);
+  border: 1px solid var(--app-input-border);
   padding: 0 calc(#{$spacing} * 0.75);
   gap: calc(#{$spacing} * 0.5);
   height: 2.5rem;

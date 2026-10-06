@@ -33,6 +33,7 @@
             id="recipe-name"
             v-model="form.name"
             type="text"
+            enterkeyhint="next"
             placeholder="z.B. Hähnchen mit Reis"
             class="recipe-add__text-input"
             maxlength="100"
@@ -58,6 +59,8 @@
               id="recipe-servings"
               v-model.number="form.servings"
               type="number"
+              inputmode="numeric"
+              enterkeyhint="done"
               min="1"
               max="99"
               class="recipe-add__qty-input"
@@ -129,6 +132,7 @@
             ref="ingSearchInput"
             v-model="ingSearchQuery"
             type="search"
+            enterkeyhint="search"
             class="recipe-add__search-input"
             placeholder="Zutat suchen …"
             aria-label="Zutat suchen"
@@ -336,6 +340,8 @@
                   <input
                     v-model.number="ingAmount"
                     type="number"
+                    inputmode="decimal"
+                    enterkeyhint="done"
                     min="1"
                     max="9999"
                     step="1"
@@ -876,7 +882,7 @@ onUnmounted(() => {
   border-radius: var(--radius-full) !important;
   overflow: hidden;
   background: var(--primary-bg);
-  border: 1px solid var(--divider);
+  border: 1px solid var(--app-input-border);
   padding: 0 calc(#{$spacing} * 0.75);
   gap: calc(#{$spacing} * 0.5);
   height: 2.5rem;

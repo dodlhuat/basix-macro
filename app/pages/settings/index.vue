@@ -18,6 +18,7 @@
                   id="account-email"
                   v-model.trim="loginEmail"
                   type="email"
+                  enterkeyhint="next"
                   autocomplete="email"
                   inputmode="email"
                   :placeholder="$t('auth.emailPlaceholder')"
@@ -39,6 +40,7 @@
                   id="account-password"
                   v-model="loginPassword"
                   type="password"
+                  enterkeyhint="go"
                   autocomplete="current-password"
                   :placeholder="$t('auth.passwordPlaceholder')"
                   :disabled="loggingIn"
@@ -195,6 +197,8 @@
           <input
             v-model.number="waterGoalInput"
             type="number"
+            inputmode="numeric"
+            enterkeyhint="done"
             class="settings__water-input"
             min="500"
             max="5000"
@@ -700,7 +704,7 @@ onMounted(() => userStore.loadUser())
   font-family: inherit;
   color: var(--primary-text);
   background: var(--background);
-  border: 1.5px solid var(--divider);
+  border: 1.5px solid var(--app-input-border);
   border-radius: var(--radius-md);
   padding: 0.3rem 0.5rem;
   // Override Basix default box-shadow on inputs

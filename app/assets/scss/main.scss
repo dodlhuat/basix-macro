@@ -93,8 +93,12 @@ $text-token-keep: (
 
 @mixin app-text-tokens($dark: false) {
   @each $name, $keep in $text-token-keep {
-    $base: if($name == 'water', '--water-color', '--#{$name}');
-    $out: if($name == 'water', '--water-color-text', '--#{$name}-text');
+    $base: '--#{$name}';
+    $out: '--#{$name}-text';
+    @if $name == 'water' {
+      $base: '--water-color';
+      $out: '--water-color-text';
+    }
     @if $dark {
       #{$out}: var(#{$base});
     } @else {
@@ -105,18 +109,24 @@ $text-token-keep: (
 
 :root {
   @include app-text-tokens;
-  // Accent as text/small icon. Light: 86% accent -> >=4.5:1 even on the accent
-  // tint over a card. Dark: Basix --link-color (5.08:1 on --background) lifted
+  // Accent as text/small icon. Light: 80% accent -> >=5:1 even on the accent
+  // tint over a card (86% gave only 4.62:1). Dark: Basix --link-color (5.08:1 on --background) lifted
   // 6% toward white so it also holds 4.5:1 on the accent tint over a card.
-  --app-accent-text: color-mix(in srgb, var(--accent-color) 86%, black);
+  --app-accent-text: color-mix(in srgb, var(--accent-color) 80%, black);
   // Favorite star (graphic, needs 3:1): amber darkened in light mode.
   --app-star: color-mix(in srgb, #{$star-color} 72%, black);
+  // Border of form controls (WCAG 1.4.11, >=3:1 against page bg AND card).
+  // Basix --divider is a hairline colour (1.3:1) and too weak to outline a field.
+  // --secondary-text blended into --background: 80% -> 3.7:1 on the page /
+  // 3.2:1 on cards in light mode.
+  --app-input-border: color-mix(in srgb, var(--secondary-text) 80%, var(--background));
 }
 
 [data-theme='dark'] {
   @include app-text-tokens(true);
   --app-accent-text: color-mix(in srgb, var(--link-color) 94%, white);
   --app-star: #{$star-color};
+  --app-input-border: color-mix(in srgb, var(--secondary-text) 55%, var(--background));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -124,6 +134,7 @@ $text-token-keep: (
     @include app-text-tokens(true);
     --app-accent-text: color-mix(in srgb, var(--link-color) 94%, white);
     --app-star: #{$star-color};
+    --app-input-border: color-mix(in srgb, var(--secondary-text) 55%, var(--background));
   }
 }
 
@@ -149,9 +160,39 @@ $text-token-keep: (
 // but only .input-addon gets the matching border box.
 // Restore only when followed by a span (unit label), not a button (e.g. search clear).
 .input-group:not(:has(> .input-addon)) input:not(:last-child):not(:has(~ button)) {
-  border-right: 1.5px solid var(--divider);
+  border-right: 1.5px solid var(--app-input-border);
   border-top-right-radius: calc($border-radius * 1.5);
   border-bottom-right-radius: calc($border-radius * 1.5);
+}
+
+// ─── Form control borders (WCAG 1.4.11) ────────────────────────────────────
+// Basix outlines every control with --divider (hairline, ~1.3:1). Swap only the
+// REST border for --app-input-border. Same specificity as Basix and loaded
+// after it; every state rule in Basix is more specific and keeps winning:
+// focus/error/success/disabled stay untouched. Hover is re-stated because
+// Basix derives it by mixing accent into --divider, which would now be LIGHTER
+// than the rest border. List dividers keep using --divider.
+textarea,
+select,
+.select .dropdown,
+input,
+.select-group .dropdown-selected,
+.input-group .input-addon {
+  border-color: var(--app-input-border);
+}
+
+textarea:hover:not(:focus):not(:disabled):not([readonly]),
+select:hover:not(:focus):not(:disabled):not([readonly]),
+input:hover:not(:focus):not(:disabled):not([readonly]),
+.select-group .dropdown-selected:hover {
+  border-color: color-mix(in srgb, var(--accent-color) 55%, var(--app-input-border));
+}
+
+// Checkbox box / radio ring: unchecked outline. Checked, hover, focus and
+// disabled rules in Basix are more specific and still apply.
+.styled-checkbox + label::before,
+.radio-button-container .checkmark {
+  border-color: var(--app-input-border);
 }
 
 // Global app layout

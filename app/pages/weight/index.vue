@@ -127,6 +127,7 @@
               id="weight-input"
               v-model="newWeightStr"
               type="number"
+              enterkeyhint="next"
               step="0.1"
               min="20"
               max="300"
@@ -159,6 +160,7 @@
           <input
             v-model="newNote"
             type="text"
+            enterkeyhint="done"
             :placeholder="$t('weight.notePlaceholder')"
             aria-label="Notiz"
             maxlength="200"

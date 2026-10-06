@@ -36,6 +36,7 @@
               id="edit-name"
               v-model="editName"
               type="text"
+              enterkeyhint="next"
               class="recipe-edit__text-input"
               maxlength="100"
               autocomplete="off"
@@ -61,6 +62,8 @@
                 id="edit-servings"
                 v-model.number="editServings"
                 type="number"
+                inputmode="numeric"
+                enterkeyhint="done"
                 min="1"
                 max="99"
                 class="recipe-edit__qty-input"
@@ -264,6 +267,7 @@
                   ref="sheetSearchInput"
                   v-model="ingSearchQuery"
                   type="search"
+                  enterkeyhint="search"
                   class="recipe-edit-sheet__search-input"
                   placeholder="Lebensmittel suchen …"
                   aria-label="Lebensmittel suchen"
@@ -375,6 +379,8 @@
                     <input
                       v-model.number="ingAmount"
                       type="number"
+                      inputmode="decimal"
+                      enterkeyhint="done"
                       min="1"
                       max="9999"
                       step="1"
@@ -501,6 +507,8 @@
                 <input
                   v-model.number="logServings"
                   type="number"
+                  inputmode="decimal"
+                  enterkeyhint="done"
                   min="0.5"
                   max="20"
                   step="0.5"
@@ -1294,7 +1302,7 @@ onUnmounted(() => {
   border-radius: var(--radius-full) !important;
   overflow: hidden;
   background: var(--secondary-background);
-  border: 1px solid var(--divider);
+  border: 1px solid var(--app-input-border);
   padding: 0 calc(#{$spacing} * 0.75);
   gap: calc(#{$spacing} * 0.5);
   height: 2.5rem;

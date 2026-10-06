@@ -63,28 +63,42 @@ onMounted(async () => {
   }
 }
 
+// Pinned at the TOP (below the fixed header) rather than the bottom: the bottom
+// edge is already taken by the dashboard FAB (z 50), MealUndoBar (z 1100, above
+// the FAB) and bottom sheets (z 999). Top placement can never collide with them
+// and does not cover the sync indicator, which lives inside the header itself.
+// Informational only: pointer-events none so it never blocks a tap, and it
+// auto-dismisses after 5s (see showToast).
 .app-toast {
   position: fixed;
-  bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+  top: calc(env(safe-area-inset-top, 0px) + #{$header-height} + 0.5rem);
   left: 50%;
   transform: translateX(-50%);
-  z-index: 9999;
+  z-index: 1050;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
+  width: max-content;
+  max-width: calc(100vw - 2rem);
   padding: 0.65rem 1rem;
   background: var(--primary-text);
   color: var(--background);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-lg);
   font-size: 0.875rem;
   font-weight: 500;
-  white-space: nowrap;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   pointer-events: none;
 
   &__icon {
     flex-shrink: 0;
+    margin-top: 0.1rem;
     opacity: 0.75;
+  }
+
+  &__text {
+    min-width: 0;
   }
 }
 
@@ -97,6 +111,17 @@ onMounted(async () => {
 .app-toast-enter-from,
 .app-toast-leave-to {
   opacity: 0;
-  transform: translateX(-50%) translateY(0.5rem);
+  transform: translateX(-50%) translateY(-0.5rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-toast-enter-active,
+  .app-toast-leave-active {
+    transition: opacity 0.15s linear;
+  }
+  .app-toast-enter-from,
+  .app-toast-leave-to {
+    transform: translateX(-50%);
+  }
 }
 </style>
