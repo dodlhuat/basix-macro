@@ -5,6 +5,8 @@ interface UndoState {
   ids: string[]
   date: string
   message: string
+  /** 'paste' undoes a meal paste, 'delete' restores a single deleted entry. */
+  kind: 'paste' | 'delete'
 }
 
 /**
@@ -47,7 +49,7 @@ export function useMealClipboard(date: Ref<string>) {
       const message = skipped > 0
         ? t('mealClipboard.pastedSkippedToast', { n: ids.length, skipped })
         : t('mealClipboard.pastedToast', { n: ids.length })
-      undo.value = { ids, date: date.value, message }
+      undo.value = { ids, date: date.value, message, kind: 'paste' }
 
       pastedMeal.value = type
       clearTimeout(pulseTimer)
@@ -61,8 +63,24 @@ export function useMealClipboard(date: Ref<string>) {
     const state = undo.value
     if (!state) return
     undo.value = null
+    if (state.kind === 'delete') {
+      for (const id of state.ids) await diaryStore.restoreEntry(id, state.date)
+      showToast(t('entry.restored'), 'info', 2000)
+      return
+    }
     await diaryStore.undoPaste(state.ids, state.date)
     showToast(t('mealClipboard.undone'), 'info', 2000)
+  }
+
+  /** Deletes a diary entry immediately and offers undo via the shared undo bar. */
+  async function deleteEntryWithUndo(entry: { id: string; food_item_name: string }): Promise<void> {
+    await diaryStore.deleteEntry(entry.id)
+    undo.value = {
+      ids: [entry.id],
+      date: date.value,
+      message: t('entry.deleted', { name: entry.food_item_name }),
+      kind: 'delete',
+    }
   }
 
   function dismissUndo(): void {
@@ -71,6 +89,6 @@ export function useMealClipboard(date: Ref<string>) {
 
   return {
     clipboard, undo, pastedMeal, pastingMeal,
-    isSource, copy, paste, runUndo, dismissUndo,
+    isSource, copy, paste, runUndo, dismissUndo, deleteEntryWithUndo,
   }
 }

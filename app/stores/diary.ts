@@ -329,6 +329,40 @@ export const useDiaryStore = defineStore('diary', () => {
     entryDetails.value = entryDetails.value.filter(e => e.id !== id)
   }
 
+  /** Undo for deleteEntry: clears the soft-delete flag and marks the entry dirty so it re-syncs. */
+  async function restoreEntry(id: string, date: string): Promise<void> {
+    const { db } = await import('../../db')
+    const entry = await db.diary_entries.get(id)
+    if (!entry) return
+    await db.diary_entries.put({
+      ...entry,
+      deleted_at: null,
+      updated_at: new Date().toISOString(),
+      sync_status: 'dirty',
+    })
+    await loadForDate(date)
+  }
+
+  /**
+   * Edits the kcal of a quick-add entry. Quick-add entries are logged as 100 g of a
+   * disposable FoodItem whose per-100g values equal the entry totals, so both are updated
+   * together. Macros stay as entered.
+   */
+  async function updateQuickEntryCalories(id: string, calories: number): Promise<void> {
+    if (!Number.isFinite(calories) || calories <= 0) return
+    const { db } = await import('../../db')
+    const entry = await db.diary_entries.get(id)
+    if (!entry?.food_item_id) return
+    const food = await db.food_items.get(entry.food_item_id)
+    if (!food || food.source !== 'quick_add') return
+    const now = new Date().toISOString()
+    await db.transaction('rw', db.diary_entries, db.food_items, async () => {
+      await db.food_items.update(food.id, { calories_per_100g: calories, updated_at: now, sync_status: 'dirty' })
+      await db.diary_entries.update(id, { calories_total: calories, updated_at: now, sync_status: 'dirty' })
+    })
+    await loadForDate(entry.date)
+  }
+
   return {
     entries,
     waterEntries,
@@ -348,6 +382,8 @@ export const useDiaryStore = defineStore('diary', () => {
     undoPaste,
     updateEntryQuantity,
     deleteEntry,
+    restoreEntry,
+    updateQuickEntryCalories,
     getLastAmountForFood,
   }
 })

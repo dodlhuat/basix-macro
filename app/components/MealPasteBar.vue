@@ -45,7 +45,7 @@ const ariaLabel = computed(() => t('mealClipboard.pasteAria', { ...params.value,
   border: 1.5px dashed var(--accent-color);
   border-radius: var(--radius-lg);
   background: transparent;
-  color: var(--accent-color-text);
+  color: var(--app-accent-text);
   font: inherit;
   text-align: left;
   cursor: pointer;

@@ -43,6 +43,13 @@
     "dinner": "Abendessen",
     "snack": "Snacks"
   },
+  "entry": {
+    "deleted": "„{name}“ gelöscht",
+    "restored": "Eintrag wiederhergestellt",
+    "rowLabel": "{name}, {amount}, {kcal} kcal, bearbeiten",
+    "rowLabelQuick": "{name}, {kcal} kcal, bearbeiten",
+    "delete": "{name} löschen"
+  },
   "mealClipboard": {
     "menu": "{meal} – weitere Aktionen",
     "copyAction": "Mahlzeit kopieren",

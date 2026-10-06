@@ -19,6 +19,7 @@
           v-if="open"
           ref="popEl"
           class="meal-menu__pop"
+          :class="{ 'meal-menu__pop--up': flipped }"
           role="menu"
           :style="popStyle"
           @keydown="onKeydown"
@@ -30,7 +31,7 @@
             role="menuitem"
             @click="pick('copy')"
           >
-            <AppIcon name="content_copy" size="1.25rem" />
+            <AppIcon name="content_copy" size="1.25rem" class="meal-menu__icon" />
             <span class="meal-menu__text">{{ $t('mealClipboard.copyAction') }}</span>
             <AppIcon v-if="isSource" name="check" size="1.1rem" class="meal-menu__check" />
           </button>
@@ -41,7 +42,7 @@
             role="menuitem"
             @click="pick('save-recipe')"
           >
-            <AppIcon name="bookmark_add" size="1.25rem" />
+            <AppIcon name="bookmark_add" size="1.25rem" class="meal-menu__icon" />
             <span class="meal-menu__text">{{ $t('diary.diaryPage.saveAsRecipe') }}</span>
           </button>
           <button
@@ -51,7 +52,7 @@
             role="menuitem"
             @click="pick('discard')"
           >
-            <AppIcon name="close" size="1.25rem" />
+            <AppIcon name="close" size="1.25rem" class="meal-menu__icon" />
             <span class="meal-menu__text">{{ $t('mealClipboard.discard') }}</span>
           </button>
         </div>
@@ -81,20 +82,35 @@ const open = ref(false)
 const triggerEl = ref<HTMLButtonElement>()
 const popEl = ref<HTMLElement>()
 const popStyle = ref<Record<string, string>>({})
+const flipped = ref(false)
 
 function place() {
   const r = triggerEl.value?.getBoundingClientRect()
   if (!r) return
+  flipped.value = false
   popStyle.value = {
     top: `${Math.round(r.bottom + 4)}px`,
     right: `${Math.max(8, Math.round(window.innerWidth - r.right))}px`,
   }
 }
 
+// Once rendered, flip above the trigger when the menu would run off the
+// bottom of the viewport (e.g. last meal on a short screen).
+function flipIfNeeded() {
+  const r = triggerEl.value?.getBoundingClientRect()
+  const h = popEl.value?.offsetHeight
+  if (!r || !h) return
+  const below = window.innerHeight - r.bottom - 4 - 8
+  if (h <= below || r.top - 4 - 8 < h) return
+  flipped.value = true
+  popStyle.value = { ...popStyle.value, top: `${Math.round(r.top - 4 - h)}px` }
+}
+
 async function openMenu() {
   place()
   open.value = true
   await nextTick()
+  flipIfNeeded()
   popEl.value?.querySelector<HTMLElement>('[role="menuitem"]')?.focus()
 }
 
@@ -205,6 +221,10 @@ function onDismiss() { close() }
   background: var(--primary-bg);
   box-shadow: 0 10px 32px rgb(0 0 0 / 0.18), 0 2px 6px rgb(0 0 0 / 0.08);
   transform-origin: top right;
+
+  &--up {
+    transform-origin: bottom right;
+  }
 }
 
 .meal-menu__item {
@@ -225,11 +245,19 @@ function onDismiss() { close() }
   cursor: pointer;
   transition: background-color $duration-fast $ease-standard;
 
-  &:hover,
-  &:focus-visible {
+  // --accent-color-text is Basix' "text ON accent" (light grey), not accent-
+  // coloured text, so it vanished on the tint (1.02:1). Keep full text colour
+  // and tint the icon instead. :not(:disabled) matches the specificity of
+  // Basix' `[data-theme=dark] button:hover:not(:disabled)` (bg: --divider).
+  &:hover:not(:disabled),
+  &:focus-visible:not(:disabled) {
     background: var(--accent-color-tint);
-    color: var(--accent-color-text);
+    color: var(--primary-text);
     outline: none;
+
+    .meal-menu__icon {
+      color: var(--app-accent-text);
+    }
   }
 
   &--muted {
@@ -264,6 +292,10 @@ function onDismiss() { close() }
 .meal-menu-pop-leave-to {
   opacity: 0;
   transform: scale(0.94) translateY(-4px);
+
+  &.meal-menu__pop--up {
+    transform: scale(0.94) translateY(4px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

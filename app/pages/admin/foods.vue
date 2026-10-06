@@ -542,6 +542,7 @@ onUnmounted(() => {
 }
 
 .admin-foods__item {
+  list-style: none; // Basix `ul li` disc rule targets the li directly
   background: var(--primary-bg);
   animation: adminFoodIn 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
 

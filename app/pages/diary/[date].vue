@@ -135,6 +135,7 @@
         v-for="meal in mealSections"
         :key="meal.type"
         class="diary__meal"
+        data-meal
         :class="[`diary__meal--${meal.type}`, { 'diary__meal--pasted': pastedMeal === meal.type }]"
       >
         <div class="diary__meal-header">
@@ -157,6 +158,7 @@
           />
           <button
             class="button button-icon button-sm diary__meal-add"
+            data-meal-focus
             :aria-label="`${meal.label} – Eintrag hinzufügen`"
             @click="addEntry(meal.type)"
           >
@@ -166,129 +168,15 @@
         <MealPasteBar :label="meal.label" :busy="pastingMeal !== null" @paste="paste(meal.type)" />
 
         <ul v-if="meal.entries.length" class="diary__entries" role="list">
-          <li
+          <MealEntryRow
             v-for="entry in meal.entries"
             :key="entry.id"
-            class="diary__entry"
-            :class="{
-              'diary__entry--confirming': confirmingDeleteId === entry.id,
-              'diary__entry--editing': editingEntryId === entry.id,
-            }"
-          >
-            <Transition name="entry-confirm" mode="out-in">
-              <div
-                v-if="confirmingDeleteId !== entry.id && editingEntryId !== entry.id"
-                key="normal"
-                class="diary__entry-row"
-              >
-                <div class="diary__entry-info">
-                  <span class="diary__entry-name">{{ entry.food_item_name }}</span>
-                  <span v-if="!entry.is_quick_add" class="diary__entry-amount">
-                    {{ entry.amount_g > 0 ? `${entry.amount_g} g` : `${entry.servings} Port.` }}
-                  </span>
-                </div>
-                <div class="diary__entry-right">
-                  <span class="diary__entry-kcal">{{ Math.round(entry.calories_total) }} kcal</span>
-                  <button
-                    class="button button-icon button-sm diary__entry-edit-toggle"
-                    :aria-label="$t('diary.diaryPage.editEntry', { name: entry.food_item_name })"
-                    @click="startEdit(entry)"
-                  >
-                    <AppIcon name="edit" size="1rem" />
-                  </button>
-                  <button
-                    class="button button-icon button-sm diary__entry-delete"
-                    :aria-label="`${entry.food_item_name} löschen`"
-                    @click="requestDelete(entry.id)"
-                  >
-                    <AppIcon name="delete" size="1rem" />
-                  </button>
-                </div>
-              </div>
-
-              <div
-                v-else-if="confirmingDeleteId === entry.id"
-                key="confirm"
-                class="diary__entry-confirm-row"
-              >
-                <span class="diary__entry-confirm-label">Eintrag löschen?</span>
-                <div class="diary__entry-confirm-actions">
-                  <button
-                    class="button button-sm button-error"
-                    @click="confirmDelete(entry.id)"
-                  >
-                    Löschen
-                  </button>
-                  <button
-                    class="button button-sm button-outline"
-                    @click="cancelDelete"
-                  >
-                    Abbrechen
-                  </button>
-                </div>
-              </div>
-
-              <div
-                v-else
-                key="edit"
-                class="diary__entry-edit-row"
-              >
-                <div class="diary__entry-edit-top">
-                  <span class="diary__entry-edit-label">
-                    {{ isRecipeEntry(entry) ? $t('diary.sheet.servings') : $t('diary.sheet.amount') }}
-                  </span>
-                  <div class="diary__entry-edit-stepper">
-                    <button
-                      class="button button-outline diary__entry-edit-step-btn"
-                      :disabled="editQuantity - stepFor(entry) < 1"
-                      :aria-label="$t('diary.sheet.decrease')"
-                      @click="adjustEditQuantity(entry, -stepFor(entry))"
-                    >
-                      <AppIcon name="remove" size="1rem" />
-                    </button>
-                    <div class="form-group diary__entry-edit-group">
-                      <div class="input-group">
-                        <input
-                          v-model.number="editQuantity"
-                          type="number"
-                          :inputmode="isRecipeEntry(entry) ? 'numeric' : 'decimal'"
-                          enterkeyhint="done"
-                          min="1"
-                          :max="maxFor(entry)"
-                          step="1"
-                          :aria-label="isRecipeEntry(entry) ? $t('diary.sheet.servings') : $t('diary.sheet.amount')"
-                          class="diary__entry-edit-input"
-                        >
-                        <span class="diary__entry-edit-unit">
-                          {{ isRecipeEntry(entry) ? $t('diary.sheet.portion') : 'g' }}
-                        </span>
-                      </div>
-                    </div>
-                    <button
-                      class="button button-outline diary__entry-edit-step-btn"
-                      :disabled="editQuantity + stepFor(entry) > maxFor(entry)"
-                      :aria-label="$t('diary.sheet.increase')"
-                      @click="adjustEditQuantity(entry, stepFor(entry))"
-                    >
-                      <AppIcon name="add" size="1rem" />
-                    </button>
-                  </div>
-                </div>
-                <div class="diary__entry-edit-actions">
-                  <button
-                    class="button button-sm button-primary"
-                    :disabled="!isEditQuantityValid"
-                    @click="saveEdit(entry.id)"
-                  >
-                    {{ $t('common.save') }}
-                  </button>
-                  <button class="button button-sm button-outline" @click="cancelEdit">
-                    {{ $t('common.cancel') }}
-                  </button>
-                </div>
-              </div>
-            </Transition>
-          </li>
+            :entry="entry"
+            :date="date"
+            :editing="editingEntryId === entry.id"
+            @open="editingEntryId = entry.id"
+            @close="editingEntryId = null"
+          />
         </ul>
 
         <p v-else class="diary__meal-empty">Noch nichts eingetragen</p>
@@ -756,67 +644,10 @@ async function handleSaveAsRecipe(): Promise<void> {
   }
 }
 
-// ─── Inline delete confirmation ────────────────────────────────────────────────
-
-const confirmingDeleteId = ref<string | null>(null)
-
-function requestDelete(id: string): void {
-  editingEntryId.value = null
-  confirmingDeleteId.value = id
-}
-
-async function confirmDelete(id: string): Promise<void> {
-  await diaryStore.deleteEntry(id)
-  confirmingDeleteId.value = null
-}
-
-function cancelDelete(): void {
-  confirmingDeleteId.value = null
-}
-
-// ─── Inline quantity edit ────────────────────────────────────────────────────
+// ─── Inline entry edit ─────────────────────────────────────────────────────────
+// Which entry's edit panel is open (one at a time); the panel itself lives in MealEntryRow.
 
 const editingEntryId = ref<string | null>(null)
-const editQuantity = ref<number>(0)
-
-function isRecipeEntry(entry: DiaryEntryWithName): boolean {
-  return !!entry.recipe_id
-}
-
-function stepFor(entry: DiaryEntryWithName): number {
-  return isRecipeEntry(entry) ? 1 : 10
-}
-
-function maxFor(entry: DiaryEntryWithName): number {
-  return isRecipeEntry(entry) ? 99 : 9999
-}
-
-function startEdit(entry: DiaryEntryWithName): void {
-  confirmingDeleteId.value = null
-  editingEntryId.value = entry.id
-  editQuantity.value = isRecipeEntry(entry) ? entry.servings : entry.amount_g
-}
-
-function cancelEdit(): void {
-  editingEntryId.value = null
-}
-
-function adjustEditQuantity(entry: DiaryEntryWithName, delta: number): void {
-  editQuantity.value = Math.min(
-    maxFor(entry),
-    Math.max(1, editQuantity.value + delta)
-  )
-}
-
-const isEditQuantityValid = computed(() =>
-  Number.isFinite(editQuantity.value) && editQuantity.value > 0
-)
-
-async function saveEdit(id: string): Promise<void> {
-  if (!isEditQuantityValid.value) return
-  await diaryStore.updateEntryQuantity(id, editQuantity.value)
-  editingEntryId.value = null
-}
 
 // ─── Quick-add activity bottom sheet ───────────────────────────────────────────
 // Entry point is the small `diary__activity-add` button next to the
@@ -908,12 +739,6 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   }
 
   .progress-bar {
-    transition: none !important;
-  }
-
-  .diary__entry-row,
-  .diary__entry-confirm-row,
-  .diary__entry-edit-row {
     transition: none !important;
   }
 }
@@ -1292,6 +1117,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 /* ─── Entry list ──────────────────────────────────────────────────────────────── */
+/* Row + inline edit panel styles live in components/MealEntryRow.vue. */
 
 .diary__entries {
   list-style: none;
@@ -1299,212 +1125,6 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   margin: 0.4rem 0 0;
   display: flex;
   flex-direction: column;
-}
-
-.diary__entry {
-  border-top: 1px solid var(--divider);
-  overflow: hidden;
-
-  &:first-child {
-    border-top: none;
-  }
-
-  &--confirming,
-  &--editing {
-    border-top-color: transparent;
-    border-radius: $border-radius;
-    margin: 0.15rem 0;
-  }
-}
-
-.diary__entry-row {
-  display: flex;
-  align-items: center;
-  gap: $spacing;
-  padding: 0.4rem 0;
-}
-
-.diary__entry-confirm-row {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.45rem 0.75rem;
-  background: var(--error-tint);
-  border-radius: $border-radius;
-}
-
-.diary__entry-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-  min-width: 0;
-  flex: 1;
-}
-
-.diary__entry-name {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--primary-text);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.diary__entry-amount {
-  font-size: 0.72rem;
-  color: var(--secondary-text);
-}
-
-.diary__entry-right {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-shrink: 0;
-}
-
-.diary__entry-kcal {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--primary-text);
-  white-space: nowrap;
-}
-
-.diary__entry-edit-toggle {
-  // 44px tap area; negative margin keeps the row footprint at 36px
-  color: var(--secondary-text);
-  transition: color 150ms ease;
-  width: 2.75rem;
-  height: 2.75rem;
-  padding: 0;
-  margin: -0.25rem;
-
-  &:hover,
-  &:focus-visible {
-    color: var(--app-accent-text);
-  }
-}
-
-.diary__entry-delete {
-  // 44px tap area; negative margin keeps the row footprint at 36px
-  color: var(--secondary-text);
-  transition: color 150ms ease;
-  width: 2.75rem;
-  height: 2.75rem;
-  padding: 0;
-  margin: -0.25rem;
-
-  &:hover,
-  &:focus-visible {
-    color: var(--error);
-  }
-}
-
-/* ─── Inline quantity edit row ───────────────────────────────────────────────── */
-
-.diary__entry-edit-row {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-  padding: 0.55rem 0.75rem;
-  background: var(--accent-color-tint);
-  border-radius: $border-radius;
-}
-
-.diary__entry-edit-top {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.diary__entry-edit-label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--secondary-text);
-  flex-shrink: 0;
-}
-
-.diary__entry-edit-stepper {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  flex: 1;
-  min-width: 0;
-}
-
-.diary__entry-edit-step-btn {
-  @include tap-target;
-  width: 2.25rem;
-  height: 2.25rem;
-  padding: 0;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.diary__entry-edit-group {
-  flex: 1;
-  min-width: 0;
-  margin: 0;
-
-  .input-group {
-    display: flex;
-    align-items: center;
-  }
-}
-
-.diary__entry-edit-input {
-  flex: 1;
-  min-width: 0;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.diary__entry-edit-unit {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--secondary-text);
-  padding-right: calc(#{$spacing} * 0.5);
-  flex-shrink: 0;
-}
-
-.diary__entry-edit-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.4rem;
-}
-
-.diary__entry-confirm-label {
-  flex: 1;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--error);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.diary__entry-confirm-actions {
-  display: flex;
-  gap: 0.4rem;
-  flex-shrink: 0;
-}
-
-/* ─── Entry confirm transition ────────────────────────────────────────────────── */
-
-.entry-confirm-enter-active,
-.entry-confirm-leave-active {
-  transition: opacity 160ms ease, transform 160ms ease;
-}
-
-.entry-confirm-enter-from,
-.entry-confirm-leave-to {
-  opacity: 0;
-  transform: translateX(6px);
 }
 
 /* ─── Empty meal state ────────────────────────────────────────────────────────── */

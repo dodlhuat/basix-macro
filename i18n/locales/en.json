@@ -43,6 +43,13 @@
     "dinner": "Dinner",
     "snack": "Snacks"
   },
+  "entry": {
+    "deleted": "“{name}” deleted",
+    "restored": "Entry restored",
+    "rowLabel": "{name}, {amount}, {kcal} kcal, edit",
+    "rowLabelQuick": "{name}, {kcal} kcal, edit",
+    "delete": "Delete {name}"
+  },
   "mealClipboard": {
     "menu": "{meal} – more actions",
     "copyAction": "Copy meal",
