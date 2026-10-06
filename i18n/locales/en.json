@@ -44,15 +44,17 @@
     "snack": "Snacks"
   },
   "mealClipboard": {
-    "copy": "Copy {meal}",
-    "paste": "Paste into {meal}",
+    "menu": "{meal} – more actions",
+    "copyAction": "Copy meal",
+    "pasteAction": "Paste",
+    "pasteMeta": "{meal} · {n} entries · {kcal} kcal",
+    "pasteAria": "Paste {meal}: {n} entries, {kcal} kcal, into {target}",
     "copiedToast": "{meal} copied ({n})",
     "pastedToast": "{n} pasted",
     "pastedSkippedToast": "{n} pasted, {skipped} skipped (no longer available)",
     "nothingPasted": "Nothing pasted – foods no longer available",
     "undo": "Undo",
     "undone": "Paste undone",
-    "chip": "{meal} · {n} entries · {kcal} kcal copied",
     "discard": "Clear clipboard"
   },
   "dashboard": {

@@ -1,9 +1,9 @@
 <template>
   <Transition name="undo-bar">
     <div v-if="undo" :key="undo.ids[0]" class="undo-bar" role="status" aria-live="polite">
+      <AppIcon name="check_circle" size="1.25rem" class="undo-bar__icon" />
       <span class="undo-bar__msg">{{ undo.message }}</span>
       <button type="button" class="undo-bar__action" @click="runUndo()">
-        <AppIcon name="undo" size="1.1rem" />
         {{ $t('mealClipboard.undo') }}
       </button>
       <span class="undo-bar__timer" aria-hidden="true" />
@@ -43,20 +43,26 @@ onBeforeUnmount(() => {
   z-index: 1100;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   width: max-content;
   max-width: calc(100vw - 2rem);
-  padding: 0.25rem 0.25rem 0.25rem 1rem;
+  padding: 0.25rem 0.25rem 0.25rem 0.9rem;
   overflow: hidden;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-lg);
   background: var(--primary-text);
   color: var(--background);
   box-shadow: 0 6px 24px rgb(0 0 0 / 0.25);
   font-size: 0.85rem;
 }
 
+.undo-bar__icon {
+  flex-shrink: 0;
+  color: var(--accent-color-lighten);
+}
+
 .undo-bar__msg {
   min-width: 0;
+  line-height: 1.3;
 }
 
 .undo-bar__action {
@@ -67,9 +73,12 @@ onBeforeUnmount(() => {
   min-height: 2.75rem;
   padding: 0 0.9rem;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-md);
   background: transparent;
   color: var(--accent-color-lighten);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.8rem;
   font: inherit;
   font-weight: 700;
   cursor: pointer;
@@ -77,7 +86,10 @@ onBeforeUnmount(() => {
   &:hover,
   &:focus-visible {
     background: rgb(255 255 255 / 0.12);
+    outline: none;
   }
+
+  &:active { background: rgb(255 255 255 / 0.2); }
 }
 
 // Thin countdown line along the bottom edge.

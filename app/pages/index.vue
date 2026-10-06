@@ -214,7 +214,6 @@
     </section>
 
     <!-- Meal sections -->
-    <MealClipboardChip class="dashboard__clip-chip" />
     <section class="dashboard__meals" :aria-busy="isLoading">
       <template v-if="isLoading">
         <div v-for="n in 4" :key="n" class="dashboard__meal">
@@ -245,14 +244,12 @@
             >
               {{ Math.round(meal.totalKcal) }} kcal
             </span>
-            <MealClipboardActions
+            <MealMenu
               :label="meal.label"
               :can-copy="meal.entries.length > 0"
-              :can-paste="clipboard.hasContent"
               :is-source="isSource(meal.type)"
-              :busy="pastingMeal !== null"
               @copy="copy(meal.entries, meal.type)"
-              @paste="paste(meal.type)"
+              @discard="clipboard.clear()"
             />
             <button
               class="button button-icon button-sm dashboard__meal-add"
@@ -262,6 +259,7 @@
               <AppIcon name="add" />
             </button>
           </div>
+          <MealPasteBar :label="meal.label" :busy="pastingMeal !== null" @paste="paste(meal.type)" />
 
           <ul v-if="meal.entries.length" class="dashboard__entries" role="list">
             <li
@@ -1376,10 +1374,6 @@ watch(currentDate, date => loadDate(date))
   color: var(--primary-text);
 }
 
-.dashboard__clip-chip {
-  align-self: flex-start;
-}
-
 // Brief accent wash after a paste so the new entries are easy to spot.
 .dashboard__meal--pasted {
   animation: mealPasted 900ms $ease-out-soft;
@@ -1396,7 +1390,9 @@ watch(currentDate, date => loadDate(date))
 
 .dashboard__meal-add {
   color: var(--accent-color);
-  margin: -0.25rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: -0.5rem -0.35rem -0.5rem 0;
   flex-shrink: 0;
   transition: transform $duration-base $ease-standard;
 

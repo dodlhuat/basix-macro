@@ -130,7 +130,6 @@
     </section>
 
     <!-- Meal sections -->
-    <MealClipboardChip class="diary__clip-chip" />
     <section class="diary__meals" aria-label="Mahlzeiten">
       <div
         v-for="meal in mealSections"
@@ -147,23 +146,15 @@
           >
             {{ Math.round(meal.totalKcal) }} kcal
           </span>
-          <MealClipboardActions
+          <MealMenu
             :label="meal.label"
             :can-copy="meal.entries.length > 0"
-            :can-paste="clipboard.hasContent"
+            :can-save-recipe="meal.entries.length > 0"
             :is-source="isSource(meal.type)"
-            :busy="pastingMeal !== null"
             @copy="copy(meal.entries, meal.type)"
-            @paste="paste(meal.type)"
+            @save-recipe="openSaveRecipeSheet(meal)"
+            @discard="clipboard.clear()"
           />
-          <button
-            v-if="meal.entries.length"
-            class="button button-icon button-sm diary__meal-save-recipe"
-            :aria-label="`${meal.label} – ${$t('diary.diaryPage.saveAsRecipe')}`"
-            @click="openSaveRecipeSheet(meal)"
-          >
-            <AppIcon name="bookmark_add" size="1.25rem" />
-          </button>
           <button
             class="button button-icon button-sm diary__meal-add"
             :aria-label="`${meal.label} – Eintrag hinzufügen`"
@@ -172,6 +163,7 @@
             <AppIcon name="add" size="1.25rem" />
           </button>
         </div>
+        <MealPasteBar :label="meal.label" :busy="pastingMeal !== null" @paste="paste(meal.type)" />
 
         <ul v-if="meal.entries.length" class="diary__entries" role="list">
           <li
@@ -1265,10 +1257,6 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
   color: var(--primary-text);
 }
 
-.diary__clip-chip {
-  align-self: flex-start;
-}
-
 /* Brief accent outline after a paste so the new entries are easy to spot. */
 .diary__meal--pasted {
   animation: diaryMealPasted 900ms $ease-out-soft;
@@ -1285,7 +1273,9 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 
 .diary__meal-add {
   color: var(--accent-color);
-  margin: -0.25rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: -0.5rem -0.35rem -0.5rem 0;
   flex-shrink: 0;
   transition: transform 200ms ease;
 
