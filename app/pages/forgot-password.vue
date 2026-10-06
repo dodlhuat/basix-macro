@@ -176,7 +176,7 @@ function resetForm() {
   }
 
   &__title {
-    font-size: 1.4rem;
+    font-size: var(--fs-2xl);
     font-weight: 800;
     letter-spacing: -0.02em;
     margin: 0;
@@ -184,7 +184,7 @@ function resetForm() {
   }
 
   &__subtitle {
-    font-size: 0.875rem;
+    font-size: var(--fs-base-sm);
     color: var(--secondary-text);
     line-height: 1.5;
     margin: 0;
@@ -206,7 +206,7 @@ function resetForm() {
 
   &__footer-link {
     align-self: center;
-    font-size: 0.85rem;
+    font-size: var(--fs-base-sm);
     font-weight: 500;
     color: var(--app-accent-text);
     text-decoration: none;

@@ -734,7 +734,7 @@ onMounted(async () => {
 }
 
 .body-fat__eyebrow {
-  font-size: 0.68rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.09em;
@@ -748,7 +748,7 @@ onMounted(async () => {
 }
 
 .body-fat__value {
-  font-size: clamp(2.8rem, 13vw, 3.8rem);
+  font-size: var(--fs-display);
   font-weight: 800;
   letter-spacing: -0.04em;
   color: var(--primary-text);
@@ -756,7 +756,7 @@ onMounted(async () => {
 }
 
 .body-fat__unit {
-  font-size: 1.2rem;
+  font-size: var(--fs-xl);
   font-weight: 600;
   color: var(--secondary-text);
   letter-spacing: -0.02em;
@@ -777,7 +777,7 @@ onMounted(async () => {
 // Marks the hero as showing a live, unsaved calculation rather than
 // saved history — distinct from the delta badge below, never both at once.
 .body-fat__preview-tag {
-  font-size: 0.68rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -788,7 +788,7 @@ onMounted(async () => {
 }
 
 .body-fat__delta {
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   font-weight: 700;
   letter-spacing: -0.02em;
 
@@ -804,7 +804,7 @@ onMounted(async () => {
   color: var(--secondary-text);
 
   p {
-    font-size: 1rem;
+    font-size: var(--fs-base);
     font-weight: 600;
     margin: 0;
   }
@@ -826,7 +826,7 @@ onMounted(async () => {
 // ─── Section label (shared) ───────────────────────────────────────────────────
 
 .body-fat__section-label {
-  font-size: 0.68rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.09em;
@@ -878,7 +878,7 @@ onMounted(async () => {
   justify-content: center;
   gap: calc(#{$spacing} * 0.5);
   color: var(--secondary-text);
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
 }
 
 // ─── Form ─────────────────────────────────────────────────────────────────────
@@ -907,7 +907,7 @@ onMounted(async () => {
 }
 
 .body-fat__height-text {
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   color: var(--secondary-text);
 
   strong {
@@ -934,7 +934,7 @@ onMounted(async () => {
 
 .body-fat__field-label {
   display: block;
-  font-size: 0.68rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -955,7 +955,7 @@ onMounted(async () => {
 
 .body-fat__input-unit {
   padding: 0 calc(#{$spacing} * 0.625);
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--secondary-text);
   flex-shrink: 0;
@@ -980,7 +980,7 @@ onMounted(async () => {
 
 // Validation error
 .body-fat__form-error {
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   color: var(--error);
   margin: 0 0 calc(#{$spacing} * 0.75);
 }
@@ -1013,7 +1013,7 @@ onMounted(async () => {
   justify-content: center;
   gap: 0.35rem;
   margin: calc(#{$spacing} * 0.625) 0 0;
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   font-weight: 700;
   color: var(--app-success-text);
 }
@@ -1042,14 +1042,14 @@ onMounted(async () => {
 }
 
 .body-fat__info-text {
-  font-size: 0.875rem;
+  font-size: var(--fs-base-sm);
   color: var(--primary-text);
   line-height: 1.65;
   margin: 0 0 calc(#{$spacing} * 0.5);
 
   &--muted {
     color: var(--secondary-text);
-    font-size: 0.82rem;
+    font-size: var(--fs-sm);
     margin-bottom: 0;
   }
 
@@ -1098,7 +1098,7 @@ onMounted(async () => {
 }
 
 .body-fat__cat-name {
-  font-size: 0.875rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--primary-text);
   letter-spacing: -0.01em;
@@ -1144,14 +1144,14 @@ onMounted(async () => {
 }
 
 .body-fat__item-date {
-  font-size: 0.875rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--primary-text);
   letter-spacing: -0.01em;
 }
 
 .body-fat__item-cat {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1166,7 +1166,7 @@ onMounted(async () => {
 }
 
 .body-fat__item-value {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -1174,7 +1174,7 @@ onMounted(async () => {
 }
 
 .body-fat__item-unit {
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   letter-spacing: 0;
@@ -1214,7 +1214,7 @@ onMounted(async () => {
 }
 
 .body-fat__empty-title {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -1222,7 +1222,7 @@ onMounted(async () => {
 }
 
 .body-fat__empty-hint {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
   max-width: 26ch;
   line-height: 1.5;

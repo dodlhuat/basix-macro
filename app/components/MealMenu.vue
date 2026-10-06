@@ -239,7 +239,7 @@ function onDismiss() { close() }
   background: transparent;
   color: var(--primary-text);
   font: inherit;
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   font-weight: 500;
   text-align: left;
   cursor: pointer;

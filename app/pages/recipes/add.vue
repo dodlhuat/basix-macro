@@ -682,7 +682,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__title {
-  font-size: 1.2rem;
+  font-size: var(--fs-xl);
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--primary-text);
@@ -690,7 +690,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__step-label {
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   margin-top: 0.15rem;
@@ -741,7 +741,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__label {
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -749,19 +749,19 @@ onUnmounted(() => {
 }
 
 .recipe-add__optional {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
 }
 
 .recipe-add__text-input {
   width: 100%;
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 600;
 }
 
 .recipe-add__char-count {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
   text-align: right;
   margin-top: calc(#{$spacing} * 0.15);
@@ -770,7 +770,7 @@ onUnmounted(() => {
 .recipe-add__textarea {
   width: 100%;
   resize: none;
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   line-height: 1.5;
   min-height: 5rem;
 }
@@ -804,13 +804,13 @@ onUnmounted(() => {
 .recipe-add__qty-input {
   flex: 1;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: var(--fs-lg);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
 .recipe-add__qty-unit {
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--secondary-text);
   padding-right: calc(#{$spacing} * 0.5);
@@ -850,7 +850,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__chip-name {
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   font-weight: 700;
   color: var(--app-accent-text);
   max-width: 16ch;
@@ -860,7 +860,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__chip-servings {
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--app-accent-text);
   white-space: nowrap;
@@ -905,7 +905,7 @@ onUnmounted(() => {
   background: transparent;
   color: var(--primary-text);
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   outline: none;
   min-width: 0;
 
@@ -957,7 +957,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -980,7 +980,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__off-loading-text {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
 }
 
@@ -1032,7 +1032,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__result-name {
-  font-size: 0.88rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--primary-text);
   overflow: hidden;
@@ -1042,7 +1042,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__result-brand {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1057,7 +1057,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__result-kcal {
-  font-size: 0.95rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -1065,7 +1065,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__result-kcal-unit {
-  font-size: 0.65rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   line-height: 1;
@@ -1078,7 +1078,7 @@ onUnmounted(() => {
   gap: 0.4rem;
   padding: calc(#{$spacing} * 1.5) 0;
   color: var(--secondary-text);
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   text-align: center;
 }
 
@@ -1089,7 +1089,7 @@ onUnmounted(() => {
 // ─── Section label ────────────────────────────────────────────────────────────
 
 .recipe-add__section-label {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1131,7 +1131,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__ing-name {
-  font-size: 0.88rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--primary-text);
   overflow: hidden;
@@ -1140,7 +1140,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__ing-meta {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
 }
 
@@ -1173,7 +1173,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__ing-empty-hint {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
   max-width: 24ch;
   line-height: 1.4;
@@ -1187,7 +1187,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__nutrition-title {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1209,7 +1209,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__nutrition-value {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -1222,7 +1222,7 @@ onUnmounted(() => {
 }
 
 .recipe-add__nutrition-label {
-  font-size: 0.62rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   text-transform: uppercase;
@@ -1251,7 +1251,7 @@ onUnmounted(() => {
 }
 
 .recipe-add-sheet__section-label {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1288,13 +1288,13 @@ onUnmounted(() => {
 .recipe-add-sheet__amount-input {
   flex: 1;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: var(--fs-lg);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
 .recipe-add-sheet__amount-unit {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--secondary-text);
   padding-right: calc(#{$spacing} * 0.5);
@@ -1319,7 +1319,7 @@ onUnmounted(() => {
 }
 
 .recipe-add-sheet__nutrition-value {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -1331,7 +1331,7 @@ onUnmounted(() => {
 }
 
 .recipe-add-sheet__nutrition-label {
-  font-size: 0.65rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   text-transform: uppercase;

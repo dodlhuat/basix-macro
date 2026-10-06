@@ -378,7 +378,7 @@ async function handleSave() {
 }
 
 .food-form__title {
-  font-size: 1.25rem;
+  font-size: var(--fs-xl);
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--primary-text);
@@ -394,7 +394,7 @@ async function handleSave() {
 // ─── Section title ────────────────────────────────────────────────────────────
 
 .food-form__section-title {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -414,14 +414,14 @@ async function handleSave() {
 // ─── Labels & helpers ─────────────────────────────────────────────────────────
 
 .food-form__unit {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   margin-left: 0.15rem;
 }
 
 .food-form__optional {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 400;
   color: var(--secondary-text);
 }
@@ -495,7 +495,7 @@ async function handleSave() {
 }
 
 .food-form__error-msg {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   color: var(--error);
   margin-top: 0.2rem;
 }
@@ -509,7 +509,7 @@ async function handleSave() {
   background: var(--secondary-background);
   border-radius: var(--radius-md);
   padding: calc(#{$spacing} * 0.6) calc(#{$spacing} * 0.75);
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   color: var(--secondary-text);
   line-height: 1.4;
 

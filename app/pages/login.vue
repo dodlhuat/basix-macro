@@ -172,7 +172,7 @@ async function handleLogin() {
   }
 
   &__title {
-    font-size: 1.4rem;
+    font-size: var(--fs-2xl);
     font-weight: 800;
     letter-spacing: -0.02em;
     margin: 0;
@@ -180,7 +180,7 @@ async function handleLogin() {
   }
 
   &__subtitle {
-    font-size: 0.875rem;
+    font-size: var(--fs-base-sm);
     color: var(--secondary-text);
     line-height: 1.5;
     margin: 0;
@@ -203,7 +203,7 @@ async function handleLogin() {
   }
 
   &__forgot-link {
-    font-size: 0.8rem;
+    font-size: var(--fs-sm);
     font-weight: 500;
     color: var(--app-accent-text);
     text-decoration: none;
@@ -224,7 +224,7 @@ async function handleLogin() {
     justify-content: center;
     gap: calc($spacing * 0.4);
     margin: 0;
-    font-size: 0.8rem;
+    font-size: var(--fs-sm);
     color: var(--secondary-text);
   }
 

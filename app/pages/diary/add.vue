@@ -1087,7 +1087,7 @@ onUnmounted(() => {
 }
 
 .diary-add__title {
-  font-size: 1.2rem;
+  font-size: var(--fs-xl);
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--primary-text);
@@ -1095,7 +1095,7 @@ onUnmounted(() => {
 }
 
 .diary-add__subtitle {
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   color: var(--secondary-text);
   font-weight: 500;
   margin-top: 0.15rem;
@@ -1160,7 +1160,7 @@ onUnmounted(() => {
 .diary-add__search-icon {
   color: var(--secondary-text);
   flex-shrink: 0;
-  font-size: 1.1rem;
+  font-size: var(--fs-lg);
 }
 
 .diary-add__search-input {
@@ -1170,7 +1170,7 @@ onUnmounted(() => {
   background: transparent;
   color: var(--primary-text);
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   outline: none;
   min-width: 0;
   padding: 0;
@@ -1261,7 +1261,7 @@ onUnmounted(() => {
 }
 
 .diary-add__item-name {
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--primary-text);
   overflow: hidden;
@@ -1271,7 +1271,7 @@ onUnmounted(() => {
 }
 
 .diary-add__item-brand {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1294,7 +1294,7 @@ onUnmounted(() => {
 }
 
 .diary-add__item-kcal {
-  font-size: 0.95rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -1302,7 +1302,7 @@ onUnmounted(() => {
 }
 
 .diary-add__item-kcal-unit {
-  font-size: 0.65rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   letter-spacing: 0.03em;
@@ -1333,14 +1333,14 @@ onUnmounted(() => {
 }
 
 .diary-add__empty-title {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
 }
 
 .diary-add__empty-hint {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
   max-width: 22ch;
   line-height: 1.5;
@@ -1363,7 +1363,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1386,7 +1386,7 @@ onUnmounted(() => {
 }
 
 .diary-add__off-loading-text {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
 }
 
@@ -1411,7 +1411,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.875rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   font-family: inherit;
   color: var(--app-accent-text);
@@ -1462,7 +1462,7 @@ onUnmounted(() => {
 }
 
 .da-sheet__section-label {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1499,13 +1499,13 @@ onUnmounted(() => {
 .da-sheet__amount-input {
   flex: 1;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: var(--fs-lg);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
 .da-sheet__amount-unit {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--secondary-text);
   padding-right: calc(#{$spacing} * 0.5);
@@ -1530,7 +1530,7 @@ onUnmounted(() => {
 }
 
 .da-sheet__nutrition-value {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -1543,7 +1543,7 @@ onUnmounted(() => {
 }
 
 .da-sheet__nutrition-label {
-  font-size: 0.65rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   text-transform: uppercase;
@@ -1559,7 +1559,7 @@ onUnmounted(() => {
 
 .qa-sheet__calories-input {
   text-align: center;
-  font-size: 1.4rem;
+  font-size: var(--fs-2xl);
   font-weight: 800;
   letter-spacing: -0.02em;
 
@@ -1586,7 +1586,7 @@ onUnmounted(() => {
   background: none;
   border: none;
   font-family: inherit;
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   color: var(--app-accent-text);
   cursor: pointer;
@@ -1622,7 +1622,7 @@ onUnmounted(() => {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.68rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;

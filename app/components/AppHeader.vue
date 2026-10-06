@@ -29,7 +29,7 @@ const { toggle } = usePushMenu()
 
 .wordmark {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.15rem;
+  font-size: var(--fs-lg);
   line-height: 1;
   letter-spacing: -0.035em;
   color: var(--primary-text);
@@ -83,7 +83,7 @@ const { toggle } = usePushMenu()
   }
 
   .wordmark {
-    font-size: 1.3rem;
+    font-size: var(--fs-xl);
     margin-left: calc($spacing * 1.5);
   }
 }

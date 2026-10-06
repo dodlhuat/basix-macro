@@ -543,7 +543,7 @@ onUnmounted(() => {
 }
 
 .admin-users__item-name {
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--primary-text);
   overflow: hidden;
@@ -553,7 +553,7 @@ onUnmounted(() => {
 }
 
 .admin-users__item-email {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -568,7 +568,7 @@ onUnmounted(() => {
 }
 
 .admin-users__you-badge {
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   color: var(--secondary-text);
   padding: 0 0.15rem;
@@ -613,14 +613,14 @@ onUnmounted(() => {
 }
 
 .admin-users__empty-title {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
 }
 
 .admin-users__empty-hint {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
   max-width: 24ch;
   line-height: 1.5;
@@ -680,7 +680,7 @@ onUnmounted(() => {
 }
 
 .admin-users__section-label {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -688,13 +688,13 @@ onUnmounted(() => {
 }
 
 .admin-users__optional {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 400;
   color: var(--secondary-text);
 }
 
 .admin-users__hint {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
   margin-top: 0.2rem;
 }
@@ -709,7 +709,7 @@ onUnmounted(() => {
 }
 
 .admin-users__error-msg {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   color: var(--error);
   margin-top: 0.2rem;
 }
@@ -760,14 +760,14 @@ onUnmounted(() => {
 }
 
 .admin-users__modal-title {
-  font-size: 1.1rem;
+  font-size: var(--fs-lg);
   font-weight: 700;
   margin: 0;
   color: var(--primary-text);
 }
 
 .admin-users__modal-body {
-  font-size: 0.875rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
   line-height: 1.5;
   margin: 0;

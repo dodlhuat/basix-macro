@@ -299,20 +299,20 @@ $bleed: 0.5rem; // row tint extends past the text column by this much
   line-clamp: 2;
   overflow: hidden;
   overflow-wrap: anywhere;
-  font-size: 0.9375rem;
+  font-size: var(--fs-base);
   font-weight: 500;
   line-height: 1.3;
   color: var(--primary-text);
 }
 
 .meal-entry__amount {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
 }
 
 .meal-entry__kcal {
   flex-shrink: 0;
-  font-size: 0.8125rem;
+  font-size: var(--fs-sm);
   font-weight: 500;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -370,7 +370,7 @@ $bleed: 0.5rem; // row tint extends past the text column by this much
 
 .meal-entry__edit-label {
   flex-shrink: 0;
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -411,7 +411,7 @@ $bleed: 0.5rem; // row tint extends past the text column by this much
   flex: 1;
   min-width: 0;
   text-align: center;
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   letter-spacing: -0.02em;
   appearance: textfield; // steppers are the +/- buttons, hide native spin arrows
@@ -426,7 +426,7 @@ $bleed: 0.5rem; // row tint extends past the text column by this much
 .meal-entry__unit {
   flex-shrink: 0;
   padding-right: calc(#{$spacing} * 0.5);
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--secondary-text);
 }

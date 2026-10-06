@@ -554,7 +554,7 @@ onMounted(() => userStore.loadUser())
 
 // ─── Section title (above card) ───────────────────────────────────
 .settings__section-title {
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -659,7 +659,7 @@ onMounted(() => userStore.loadUser())
 }
 
 .settings__row-label {
-  font-size: 0.925rem;
+  font-size: var(--fs-base-sm);
   font-weight: 500;
   color: var(--primary-text);
   white-space: nowrap;
@@ -668,7 +668,7 @@ onMounted(() => userStore.loadUser())
 }
 
 .settings__row-sub {
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
   line-height: 1.3;
 }
@@ -699,7 +699,7 @@ onMounted(() => userStore.loadUser())
 .settings__water-input {
   width: 5.25rem;
   text-align: right;
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 600;
   font-family: inherit;
   color: var(--primary-text);
@@ -740,12 +740,12 @@ onMounted(() => userStore.loadUser())
 
 // ─── Macro info rows ──────────────────────────────────────────────
 .settings__macro-name {
-  font-size: 0.875rem;
+  font-size: var(--fs-base-sm);
   color: var(--primary-text);
 }
 
 .settings__macro-value {
-  font-size: 0.875rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--secondary-text);
 }
@@ -755,7 +755,7 @@ onMounted(() => userStore.loadUser())
 }
 
 .settings__macro-link {
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   color: var(--app-accent-text);
   text-decoration: none;
   font-weight: 500;
@@ -774,7 +774,7 @@ onMounted(() => userStore.loadUser())
 
 // ─── Adaptive hint ────────────────────────────────────────────────
 .settings__adaptive-hint {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
   padding: 0 $spacing calc($spacing * 0.75);
 }
@@ -788,7 +788,7 @@ onMounted(() => userStore.loadUser())
 }
 
 .settings__account-intro {
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   color: var(--secondary-text);
   line-height: 1.45;
   margin: 0;
@@ -811,7 +811,7 @@ onMounted(() => userStore.loadUser())
 }
 
 .settings__account-forgot-link {
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--app-accent-text);
   text-decoration: none;
@@ -823,7 +823,7 @@ onMounted(() => userStore.loadUser())
 }
 
 .settings__account-caption {
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -841,7 +841,7 @@ onMounted(() => userStore.loadUser())
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8125rem;
+  font-size: var(--fs-sm);
   font-weight: 700;
   letter-spacing: 0.02em;
   flex-shrink: 0;
@@ -906,14 +906,14 @@ onMounted(() => userStore.loadUser())
 }
 
 .settings__modal-title {
-  font-size: 1.1rem;
+  font-size: var(--fs-lg);
   font-weight: 700;
   margin: 0;
   color: var(--primary-text);
 }
 
 .settings__modal-body {
-  font-size: 0.875rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
   line-height: 1.5;
   margin: 0;

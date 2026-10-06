@@ -236,7 +236,7 @@ onUnmounted(() => {
   }
 
   &__title {
-    font-size: 1.4rem;
+    font-size: var(--fs-2xl);
     font-weight: 800;
     letter-spacing: -0.02em;
     margin: 0;
@@ -244,7 +244,7 @@ onUnmounted(() => {
   }
 
   &__subtitle {
-    font-size: 0.875rem;
+    font-size: var(--fs-base-sm);
     color: var(--secondary-text);
     line-height: 1.5;
     margin: 0;
@@ -261,7 +261,7 @@ onUnmounted(() => {
 
   &__field-error {
     color: var(--error);
-    font-size: 0.8rem;
+    font-size: var(--fs-sm);
     margin: 0.3rem 0 0;
   }
 

@@ -224,7 +224,7 @@ watch(user, (u) => {
     gap: calc($spacing * 0.75);
 
     h2 {
-      font-size: 1rem;
+      font-size: var(--fs-base);
       font-weight: 700;
       margin: 0;
     }
@@ -244,7 +244,7 @@ watch(user, (u) => {
 
   &__hint {
     color: var(--secondary-text);
-    font-size: 0.875rem;
+    font-size: var(--fs-base-sm);
     margin: 0;
   }
 
@@ -288,7 +288,7 @@ watch(user, (u) => {
   }
 
   &__label {
-    font-size: 0.9rem;
+    font-size: var(--fs-base-sm);
     font-weight: 600;
     color: var(--primary-text);
     transition: color 0.22s ease;
@@ -305,7 +305,7 @@ watch(user, (u) => {
   &__desc {
     overflow: hidden;
     min-height: 0;
-    font-size: 0.78rem;
+    font-size: var(--fs-xs);
     color: var(--secondary-text);
     line-height: 1.4;
     white-space: break-spaces;

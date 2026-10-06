@@ -193,7 +193,7 @@ onMounted(async () => {
   background: transparent;
   color: var(--primary-text);
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   outline: none;
   min-width: 0;
 
@@ -264,7 +264,7 @@ onMounted(async () => {
 }
 
 .recipe-list__item-name {
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   font-weight: 700;
   color: var(--primary-text);
   overflow: hidden;
@@ -274,7 +274,7 @@ onMounted(async () => {
 }
 
 .recipe-list__item-desc {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -285,7 +285,7 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   gap: 0.2rem;
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   color: var(--secondary-text);
   margin-top: 0.1rem;
@@ -315,14 +315,14 @@ onMounted(async () => {
 }
 
 .recipe-list__empty-title {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
 }
 
 .recipe-list__empty-hint {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
   max-width: 22ch;
   line-height: 1.5;

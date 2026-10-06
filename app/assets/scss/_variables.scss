@@ -15,6 +15,26 @@ $breakpoint-desktop: 1280px; // tablet landscape / desktop — persistent sideba
 // visual continuity between the two nav presentations of the same component.
 $sidebar-width: 280px;
 
+// ─── Type scale ─────────────────────────────────────────────────────────────
+// Single source for every font-size in the app (Basix ships no font-size
+// tokens, only ad-hoc values per component). Hard floor: nothing below $fs-xs
+// (12px) — meta lines, badges, uppercase/letter-spaced labels and units all
+// sit on xs. main.scss exposes these as --fs-* custom properties; scoped SFC
+// styles consume `var(--fs-*)`, never raw rem values.
+$fs-xs:       0.75rem;   // 12px — meta, badges, units, uppercase labels (minimum)
+$fs-sm:       0.8125rem; // 13px — secondary text, chips, small buttons
+$fs-base-sm:  0.875rem;  // 14px — list rows, form labels, compact body
+$fs-base:     1rem;      // 16px — body, inputs
+$fs-lg:       1.125rem;  // 18px — emphasized values, small headings, icons
+$fs-xl:       1.25rem;   // 20px — section headings, large icons
+$fs-2xl:      1.5rem;    // 24px — page/hero sub-headings
+$fs-3xl:      1.75rem;   // 28px
+$fs-4xl:      2.5rem;    // 40px — onboarding hero glyph
+// Display tokens — the giant hero numbers, fluid by viewport.
+$fs-display:    clamp(2.8rem, 13vw, 3.8rem); // weight/body-fat/activity hero number
+$fs-display-sm: clamp(2.6rem, 12vw, 3.5rem); // dashboard + diary remaining kcal
+$fs-title:      clamp(1.5rem, 6vw, 2rem);    // history page headline figure
+
 // Sourced 1:1 from the PWA app icon's 3-segment ring (public/icons/icon-512.png)
 // so the app's macro colors visually match its own icon. Protein keeps its
 // original red — it was never part of the icon's palette and is out of scope.

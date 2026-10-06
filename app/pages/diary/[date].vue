@@ -774,7 +774,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .diary__date-weekday {
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -783,7 +783,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .diary__date-day {
-  font-size: 0.95rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--primary-text);
@@ -792,7 +792,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .diary__today-badge {
-  font-size: 0.62rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.04em;
   pointer-events: none;
@@ -854,7 +854,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .diary__remaining-number {
-  font-size: clamp(2.6rem, 12vw, 3.5rem);
+  font-size: var(--fs-display-sm);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
@@ -862,7 +862,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .diary__remaining-label {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   text-transform: uppercase;
@@ -886,14 +886,14 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .diary__stat-value {
-  font-size: 1.1rem;
+  font-size: var(--fs-lg);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--primary-text);
 }
 
 .diary__stat-label {
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   text-transform: uppercase;
@@ -961,7 +961,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 
 .diary__over-label {
   margin-top: calc(#{$spacing} * 0.5);
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   color: var(--error);
   text-align: right;
@@ -999,14 +999,14 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .diary__macro-label {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   font-weight: 500;
   color: var(--primary-text);
   flex: 1;
 }
 
 .diary__macro-value {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.01em;
@@ -1018,7 +1018,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .diary__macro-pct {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   font-weight: 400;
   color: var(--secondary-text);
   margin-left: 0.2rem;
@@ -1074,7 +1074,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .diary__meal-name {
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1083,7 +1083,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .diary__meal-kcal {
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--primary-text);
 }
@@ -1131,7 +1131,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 
 .diary__meal-empty {
   margin: 0.3rem 0 0;
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   color: var(--secondary-text);
   font-style: italic;
 }
@@ -1155,27 +1155,27 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .diary__water-title {
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--primary-text);
   flex: 1;
 }
 
 .diary__water-amount {
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   font-weight: 700;
   color: var(--primary-text);
 }
 
 .diary__water-unit {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   margin-left: 1px;
 }
 
 .diary__water-goal {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   font-weight: 400;
   color: var(--secondary-text);
 }
@@ -1219,7 +1219,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 }
 
 .act-sheet__section-label {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1258,7 +1258,7 @@ watch(date, newDate => diaryStore.loadForDate(newDate))
 
 .act-sheet__input-unit {
   padding: 0 calc(#{$spacing} * 0.625);
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--secondary-text);
   flex-shrink: 0;

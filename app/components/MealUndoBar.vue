@@ -52,7 +52,7 @@ onBeforeUnmount(() => {
   background: var(--primary-text);
   color: var(--background);
   box-shadow: 0 6px 24px rgb(0 0 0 / 0.25);
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
 }
 
 .undo-bar__icon {
@@ -78,7 +78,7 @@ onBeforeUnmount(() => {
   color: var(--accent-color-lighten);
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   font: inherit;
   font-weight: 700;
   cursor: pointer;

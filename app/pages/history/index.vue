@@ -429,7 +429,7 @@ onMounted(async () => {
 }
 
 .history__stat-value {
-  font-size: clamp(1.5rem, 6vw, 2rem);
+  font-size: var(--fs-title);
   font-weight: 800;
   letter-spacing: -0.04em;
   color: var(--primary-text);
@@ -446,7 +446,7 @@ onMounted(async () => {
 }
 
 .history__stat-unit {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   color: var(--secondary-text);
   padding-bottom: 0.1rem;
@@ -454,7 +454,7 @@ onMounted(async () => {
 }
 
 .history__stat-label {
-  font-size: 0.65rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -514,13 +514,13 @@ onMounted(async () => {
   justify-content: center;
   gap: calc(#{$spacing} * 0.4);
   color: var(--secondary-text);
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
 }
 
 // ─── Section label ────────────────────────────────────────────────────────────
 
 .history__section-label {
-  font-size: 0.68rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.09em;
@@ -556,7 +556,7 @@ onMounted(async () => {
 }
 
 .history__macro-name {
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   font-weight: 700;
   letter-spacing: -0.01em;
   flex-shrink: 0;
@@ -567,7 +567,7 @@ onMounted(async () => {
 }
 
 .history__macro-amount {
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--primary-text);
   text-align: right;
@@ -575,7 +575,7 @@ onMounted(async () => {
 }
 
 .history__macro-detail {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 400;
   color: var(--secondary-text);
 }
@@ -656,7 +656,7 @@ onMounted(async () => {
 }
 
 .history__list-date {
-  font-size: 0.875rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--primary-text);
   letter-spacing: -0.01em;
@@ -669,7 +669,7 @@ onMounted(async () => {
 }
 
 .history__macro-pill {
-  font-size: 0.65rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   padding: 0.1rem 0.35rem;
   border-radius: var(--radius-sm);
@@ -700,14 +700,14 @@ onMounted(async () => {
 }
 
 .history__list-cal {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
 }
 
 .history__list-cal-unit {
-  font-size: 0.68rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   padding-bottom: 0.05rem;
@@ -737,7 +737,7 @@ onMounted(async () => {
 }
 
 .history__empty-title {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -745,7 +745,7 @@ onMounted(async () => {
 }
 
 .history__empty-hint {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
   max-width: 26ch;
   line-height: 1.5;

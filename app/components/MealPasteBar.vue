@@ -80,7 +80,7 @@ const ariaLabel = computed(() => t('mealClipboard.pasteAria', { ...params.value,
 
 .paste-bar__action {
   flex-shrink: 0;
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   font-weight: 700;
 }
 
@@ -91,7 +91,7 @@ const ariaLabel = computed(() => t('mealClipboard.pasteAria', { ...params.value,
   text-overflow: ellipsis;
   white-space: nowrap;
   color: var(--secondary-text);
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   text-align: right;
 }
 

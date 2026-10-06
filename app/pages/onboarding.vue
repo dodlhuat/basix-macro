@@ -383,7 +383,7 @@ async function finish() {
   }
 
   &__title {
-    font-size: 1.75rem;
+    font-size: var(--fs-3xl);
     font-weight: 800;
     letter-spacing: -0.03em;
     margin: 0 0 calc($spacing * 0.25);
@@ -396,7 +396,7 @@ async function finish() {
 
   &__account-hint {
     color: var(--secondary-text);
-    font-size: 0.8rem;
+    font-size: var(--fs-sm);
     margin: calc($spacing * 0.5) 0 0;
   }
 
@@ -436,7 +436,7 @@ async function finish() {
     gap: $spacing;
 
     h2 {
-      font-size: 1.2rem;
+      font-size: var(--fs-xl);
       font-weight: 700;
       margin: 0 0 calc($spacing * 0.25);
     }
@@ -450,7 +450,7 @@ async function finish() {
 
   &__error {
     color: var(--error);
-    font-size: 0.875rem;
+    font-size: var(--fs-base-sm);
     margin: 0;
   }
 
@@ -485,14 +485,14 @@ async function finish() {
     min-width: 0;
 
     strong {
-      font-size: 0.9rem;
+      font-size: var(--fs-base-sm);
       font-weight: 600;
       color: var(--primary-text);
       transition: color 0.2s ease;
     }
 
     span {
-      font-size: 0.78rem;
+      font-size: var(--fs-xs);
       color: var(--secondary-text);
       white-space: nowrap;
       overflow: hidden;
@@ -611,7 +611,7 @@ async function finish() {
     gap: $spacing;
 
     &-title {
-      font-size: 0.8rem;
+      font-size: var(--fs-sm);
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -626,14 +626,14 @@ async function finish() {
     }
 
     &-value {
-      font-size: 2.5rem;
+      font-size: var(--fs-4xl);
       font-weight: 800;
       letter-spacing: -0.04em;
       color: var(--app-accent-text);
     }
 
     &-unit {
-      font-size: 1rem;
+      font-size: var(--fs-base);
       color: var(--secondary-text);
     }
   }
@@ -654,12 +654,12 @@ async function finish() {
     background: var(--secondary-background);
 
     &-value {
-      font-size: 1.1rem;
+      font-size: var(--fs-lg);
       font-weight: 700;
     }
 
     &-label {
-      font-size: 0.7rem;
+      font-size: var(--fs-xs);
       color: var(--secondary-text);
     }
   }
@@ -678,14 +678,14 @@ async function finish() {
   }
 
   &__adaptive-title {
-    font-size: 0.9rem;
+    font-size: var(--fs-base-sm);
     font-weight: 600;
     margin: 0 0 4px;
     color: var(--primary-text);
   }
 
   &__adaptive-desc {
-    font-size: 0.78rem;
+    font-size: var(--fs-xs);
     color: var(--secondary-text);
     line-height: 1.45;
     margin: 0;
@@ -732,7 +732,7 @@ async function finish() {
   }
 
   &__label {
-    font-size: 0.9rem;
+    font-size: var(--fs-base-sm);
     font-weight: 600;
     color: var(--primary-text);
     transition: color 0.22s ease;
@@ -749,7 +749,7 @@ async function finish() {
   &__desc {
     overflow: hidden;
     min-height: 0;
-    font-size: 0.78rem;
+    font-size: var(--fs-xs);
     color: var(--secondary-text);
     line-height: 1.4;
   }

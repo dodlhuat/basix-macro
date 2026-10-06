@@ -146,7 +146,7 @@ const authStore = useAuthStore()
     padding: 0 calc($spacing * 1.5);
     z-index: 2;
     font-family: 'Outfit', sans-serif;
-    font-size: 1.1rem;
+    font-size: var(--fs-lg);
     letter-spacing: -0.035em;
     pointer-events: none;
   }

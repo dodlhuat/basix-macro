@@ -260,7 +260,7 @@ onBeforeUnmount(() => {
     // Inverse of the header surface: high contrast in light and dark, neutral hue.
     background: var(--primary-text);
     color: var(--secondary-background);
-    font-size: 0.6875rem;
+    font-size: var(--fs-xs);
     font-weight: 700;
     line-height: 1rem;
     text-align: center;
@@ -314,7 +314,7 @@ onBeforeUnmount(() => {
 
   &__headline {
     margin: 0 0 0.25rem;
-    font-size: 1.0625rem;
+    font-size: var(--fs-base);
     font-weight: 600;
     color: var(--sync-tone, var(--primary-text));
   }
@@ -322,14 +322,14 @@ onBeforeUnmount(() => {
   &__description,
   &__pending {
     margin: 0 0 0.25rem;
-    font-size: 0.9375rem;
+    font-size: var(--fs-base);
     line-height: 1.45;
     color: var(--secondary-text);
   }
 
   &__error {
     margin: 0.5rem 0 0;
-    font-size: 0.875rem;
+    font-size: var(--fs-base-sm);
     line-height: 1.4;
     overflow-wrap: anywhere;
     color: var(--app-warning-text);
@@ -337,7 +337,7 @@ onBeforeUnmount(() => {
 
   &__error-label {
     display: block;
-    font-size: 0.75rem;
+    font-size: var(--fs-xs);
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -350,7 +350,7 @@ onBeforeUnmount(() => {
     margin: 1.25rem 0 0;
     padding-top: 1rem;
     border-top: 1px solid var(--divider);
-    font-size: 0.9375rem;
+    font-size: var(--fs-base);
 
     dt {
       color: var(--secondary-text);
@@ -372,7 +372,7 @@ onBeforeUnmount(() => {
 
   &__hint {
     margin: 0 0 0.75rem;
-    font-size: 0.8125rem;
+    font-size: var(--fs-sm);
     color: var(--secondary-text);
     text-align: center;
   }

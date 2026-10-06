@@ -794,7 +794,7 @@ watch(currentDate, date => loadDate(date))
 
 .dashboard__date-label {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: var(--fs-base);
   letter-spacing: -0.01em;
   color: var(--primary-text);
 }
@@ -803,7 +803,7 @@ watch(currentDate, date => loadDate(date))
   display: inline-flex;
   align-items: center;
   gap: 0.2rem;
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   padding: 0.15rem 0.55rem;
   background: var(--accent-color-tint);
@@ -818,7 +818,7 @@ watch(currentDate, date => loadDate(date))
 
 .dashboard__heute-chip {
   flex-shrink: 0;
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   margin-left: auto;
 }
@@ -872,7 +872,7 @@ watch(currentDate, date => loadDate(date))
 }
 
 .dashboard__remaining-number {
-  font-size: clamp(2.6rem, 12vw, 3.5rem);
+  font-size: var(--fs-display-sm);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
@@ -888,7 +888,7 @@ watch(currentDate, date => loadDate(date))
 }
 
 .dashboard__remaining-label {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   text-transform: uppercase;
@@ -912,7 +912,7 @@ watch(currentDate, date => loadDate(date))
 }
 
 .dashboard__stat-value {
-  font-size: 1.1rem;
+  font-size: var(--fs-lg);
   font-weight: 700;
   letter-spacing: -0.02em;
   // Calorie identity color — distinct from the giant remaining-number above,
@@ -922,7 +922,7 @@ watch(currentDate, date => loadDate(date))
 }
 
 .dashboard__stat-label {
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   text-transform: uppercase;
@@ -1022,7 +1022,7 @@ watch(currentDate, date => loadDate(date))
   // the vertical centre of the whole block.
   gap: 0.35rem;
   margin-top: calc(#{$spacing} * 0.5);
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   font-weight: 400;
   line-height: 1.4;
   color: var(--secondary-text);
@@ -1067,14 +1067,14 @@ watch(currentDate, date => loadDate(date))
 }
 
 .dashboard__macro-label {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   font-weight: 500;
   color: var(--primary-text);
   flex: 1;
 }
 
 .dashboard__macro-value {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.01em;
@@ -1086,7 +1086,7 @@ watch(currentDate, date => loadDate(date))
 }
 
 .dashboard__macro-goal {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   font-weight: 400;
   color: var(--secondary-text);
 }
@@ -1126,27 +1126,27 @@ watch(currentDate, date => loadDate(date))
 }
 
 .dashboard__water-title {
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--primary-text);
   flex: 1;
 }
 
 .dashboard__water-amount {
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   font-weight: 700;
   color: var(--primary-text);
 }
 
 .dashboard__water-unit {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   margin-left: 1px;
 }
 
 .dashboard__water-goal {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   font-weight: 400;
   color: var(--secondary-text);
 }
@@ -1170,7 +1170,7 @@ watch(currentDate, date => loadDate(date))
 .dashboard__water-btn {
   flex: 1;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
 }
 
 // ─── Meal sections ────────────────────────────────────────────────────────────
@@ -1212,34 +1212,42 @@ watch(currentDate, date => loadDate(date))
 .dashboard__meal-header {
   display: flex;
   align-items: center;
-  gap: $spacing * 0.5;
+  gap: $spacing * 0.25;
   min-height: 2rem;
 }
 
 .dashboard__meal-name {
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.05em;
   color: var(--secondary-text);
   flex: 1;
+  // Header row is crowded (name + "Jetzt" chip + kcal + menu + add): the name
+  // gives way (ellipsis) so kcal and chip never wrap onto two lines.
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .dashboard__meal-now {
   flex-shrink: 0;
-  font-size: 0.65rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   color: var(--app-accent-text);
   background: var(--primary-bg);
   border: 1px solid var(--accent-color);
   border-radius: var(--radius-full);
-  padding: 0.1rem 0.45rem;
+  padding: 0.1rem 0.4rem;
 }
 
 .dashboard__meal-kcal {
-  font-size: 0.8rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--primary-text);
 }
@@ -1287,7 +1295,7 @@ watch(currentDate, date => loadDate(date))
 
 .dashboard__meal-empty {
   margin: 0.35rem 0 0;
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   color: var(--secondary-text);
   font-style: italic;
 }
@@ -1360,7 +1368,7 @@ watch(currentDate, date => loadDate(date))
 }
 
 .act-sheet__section-label {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1400,7 +1408,7 @@ watch(currentDate, date => loadDate(date))
 
 .act-sheet__input-unit {
   padding: 0 calc(#{$spacing} * 0.625);
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--secondary-text);
   flex-shrink: 0;

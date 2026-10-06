@@ -304,7 +304,7 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 0.68rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.09em;
@@ -322,7 +322,7 @@ onMounted(async () => {
 }
 
 .activity__value {
-  font-size: clamp(2.8rem, 13vw, 3.8rem);
+  font-size: var(--fs-display);
   font-weight: 800;
   letter-spacing: -0.04em;
   color: var(--primary-text);
@@ -330,7 +330,7 @@ onMounted(async () => {
 }
 
 .activity__unit {
-  font-size: 1.2rem;
+  font-size: var(--fs-xl);
   font-weight: 600;
   color: var(--secondary-text);
   letter-spacing: -0.02em;
@@ -350,7 +350,7 @@ onMounted(async () => {
 }
 
 .activity__latest {
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   max-width: 14rem;
@@ -366,7 +366,7 @@ onMounted(async () => {
   color: var(--secondary-text);
 
   p {
-    font-size: 1rem;
+    font-size: var(--fs-base);
     font-weight: 600;
     margin: 0;
   }
@@ -375,7 +375,7 @@ onMounted(async () => {
 // ─── Section label (shared) ───────────────────────────────────────────────────
 
 .activity__section-label {
-  font-size: 0.68rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.09em;
@@ -395,6 +395,9 @@ onMounted(async () => {
 .activity__form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  // Bottom-align: a label that wraps to two lines (e.g. "Verbrannte Kalorien"
+  // at 12px on 375px) must not push its input out of line with the neighbour.
+  align-items: end;
   gap: calc(#{$spacing} * 0.75);
   margin-bottom: calc(#{$spacing} * 0.75);
 }
@@ -406,7 +409,7 @@ onMounted(async () => {
 
 .activity__field-label {
   display: block;
-  font-size: 0.68rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -433,7 +436,7 @@ onMounted(async () => {
 
 .activity__input-unit {
   padding: 0 calc(#{$spacing} * 0.625);
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--secondary-text);
   flex-shrink: 0;
@@ -489,7 +492,7 @@ onMounted(async () => {
 }
 
 .activity__item-name {
-  font-size: 0.875rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--primary-text);
   letter-spacing: -0.01em;
@@ -499,7 +502,7 @@ onMounted(async () => {
 }
 
 .activity__item-meta-text {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -514,7 +517,7 @@ onMounted(async () => {
 }
 
 .activity__item-kcal {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--macro-calories-text);
   letter-spacing: -0.02em;
@@ -522,7 +525,7 @@ onMounted(async () => {
 }
 
 .activity__item-unit {
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   letter-spacing: 0;
@@ -562,7 +565,7 @@ onMounted(async () => {
 }
 
 .activity__empty-title {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -570,7 +573,7 @@ onMounted(async () => {
 }
 
 .activity__empty-hint {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
   max-width: 26ch;
   line-height: 1.5;

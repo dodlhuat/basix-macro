@@ -719,7 +719,7 @@ onUnmounted(() => {
 .food__search-icon {
   color: var(--secondary-text);
   flex-shrink: 0;
-  font-size: 1.1rem;
+  font-size: var(--fs-lg);
 }
 
 .food__search-input {
@@ -729,7 +729,7 @@ onUnmounted(() => {
   background: transparent;
   color: var(--primary-text);
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   outline: none;
   min-width: 0;
 
@@ -813,7 +813,7 @@ onUnmounted(() => {
 }
 
 .food__item-name {
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--primary-text);
   overflow: hidden;
@@ -823,7 +823,7 @@ onUnmounted(() => {
 }
 
 .food__item-brand {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -847,7 +847,7 @@ onUnmounted(() => {
 }
 
 .food__item-kcal {
-  font-size: 0.95rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -855,7 +855,7 @@ onUnmounted(() => {
 }
 
 .food__item-kcal-unit {
-  font-size: 0.65rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   letter-spacing: 0.03em;
@@ -923,14 +923,14 @@ onUnmounted(() => {
 }
 
 .food__empty-title {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
 }
 
 .food__empty-hint {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
   max-width: 22ch;
   line-height: 1.5;
@@ -1010,7 +1010,7 @@ onUnmounted(() => {
 }
 
 .food-sheet__section-label {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1047,13 +1047,13 @@ onUnmounted(() => {
 .food-sheet__amount-input {
   flex: 1;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: var(--fs-lg);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
 .food-sheet__amount-unit {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--secondary-text);
   padding-right: calc(#{$spacing} * 0.5);
@@ -1078,7 +1078,7 @@ onUnmounted(() => {
 }
 
 .food-sheet__nutrition-value {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -1091,7 +1091,7 @@ onUnmounted(() => {
 }
 
 .food-sheet__nutrition-label {
-  font-size: 0.65rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   text-transform: uppercase;
@@ -1111,7 +1111,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1134,7 +1134,7 @@ onUnmounted(() => {
 }
 
 .food__global-loading-text {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
 }
 
@@ -1159,7 +1159,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1182,7 +1182,7 @@ onUnmounted(() => {
 }
 
 .food__off-loading-text {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
 }
 

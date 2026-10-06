@@ -84,7 +84,7 @@ onMounted(async () => {
   background: var(--primary-text);
   color: var(--background);
   border-radius: var(--radius-lg);
-  font-size: 0.875rem;
+  font-size: var(--fs-base-sm);
   font-weight: 500;
   line-height: 1.35;
   overflow-wrap: anywhere;

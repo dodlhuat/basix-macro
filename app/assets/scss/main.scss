@@ -50,6 +50,21 @@
   --radius-full: 9999px;
 }
 
+:root {
+  --fs-xs: #{$fs-xs};
+  --fs-sm: #{$fs-sm};
+  --fs-base-sm: #{$fs-base-sm};
+  --fs-base: #{$fs-base};
+  --fs-lg: #{$fs-lg};
+  --fs-xl: #{$fs-xl};
+  --fs-2xl: #{$fs-2xl};
+  --fs-3xl: #{$fs-3xl};
+  --fs-4xl: #{$fs-4xl};
+  --fs-display: #{$fs-display};
+  --fs-display-sm: #{$fs-display-sm};
+  --fs-title: #{$fs-title};
+}
+
 // Macro/meal/water color tokens as custom properties, mirroring the
 // --radius-* shim above: $macro-*/$meal-*/$water-color in _variables.scss
 // are the single canonical source, this just makes them consumable at

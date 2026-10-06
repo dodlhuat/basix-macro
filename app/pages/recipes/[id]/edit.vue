@@ -974,7 +974,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit__title {
-  font-size: 1.2rem;
+  font-size: var(--fs-xl);
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--primary-text);
@@ -985,7 +985,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit__subtitle {
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   margin-top: 0.15rem;
@@ -1008,7 +1008,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit__section-label {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1031,7 +1031,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit__label {
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -1039,21 +1039,21 @@ onUnmounted(() => {
 }
 
 .recipe-edit__optional {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
 }
 
 .recipe-edit__text-input {
   width: 100%;
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 600;
 }
 
 .recipe-edit__textarea {
   width: 100%;
   resize: none;
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   line-height: 1.5;
 }
 
@@ -1084,13 +1084,13 @@ onUnmounted(() => {
 .recipe-edit__qty-input {
   flex: 1;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: var(--fs-lg);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
 .recipe-edit__qty-unit {
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--secondary-text);
   padding-right: calc(#{$spacing} * 0.5);
@@ -1129,7 +1129,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit__nutrition-value {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -1142,7 +1142,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit__nutrition-label {
-  font-size: 0.62rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   text-transform: uppercase;
@@ -1163,7 +1163,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   flex-shrink: 0;
 }
 
@@ -1200,7 +1200,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit__ing-name {
-  font-size: 0.88rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--primary-text);
   overflow: hidden;
@@ -1209,7 +1209,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit__ing-meta {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
 }
 
@@ -1262,7 +1262,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit__ing-empty-hint {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
 }
 
@@ -1324,7 +1324,7 @@ onUnmounted(() => {
   background: transparent;
   color: var(--primary-text);
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   outline: none;
   min-width: 0;
   box-shadow: none;
@@ -1358,7 +1358,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1381,7 +1381,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit-sheet__off-loading-text {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
 }
 
@@ -1433,7 +1433,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit-sheet__result-name {
-  font-size: 0.88rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--primary-text);
   overflow: hidden;
@@ -1442,7 +1442,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit-sheet__result-brand {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1457,7 +1457,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit-sheet__result-kcal {
-  font-size: 0.95rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -1465,7 +1465,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit-sheet__result-kcal-unit {
-  font-size: 0.65rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   line-height: 1;
@@ -1474,7 +1474,7 @@ onUnmounted(() => {
 .recipe-edit-sheet__empty {
   padding: $spacing 0;
   text-align: center;
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
 }
 
@@ -1499,7 +1499,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit-sheet__section-label {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1536,13 +1536,13 @@ onUnmounted(() => {
 .recipe-edit-sheet__amount-input {
   flex: 1;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: var(--fs-lg);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
 .recipe-edit-sheet__amount-unit {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--secondary-text);
   padding-right: calc(#{$spacing} * 0.5);
@@ -1567,7 +1567,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit-sheet__nutrition-value {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -1579,7 +1579,7 @@ onUnmounted(() => {
 }
 
 .recipe-edit-sheet__nutrition-label {
-  font-size: 0.65rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   text-transform: uppercase;
@@ -1597,7 +1597,7 @@ onUnmounted(() => {
 }
 
 .recipe-log-sheet__section-label {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1606,7 +1606,7 @@ onUnmounted(() => {
 
 .recipe-log-sheet__date-input {
   width: 100%;
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
 }
 
 .recipe-log-sheet__qty-row {
@@ -1636,13 +1636,13 @@ onUnmounted(() => {
 .recipe-log-sheet__qty-input {
   flex: 1;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: var(--fs-lg);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
 .recipe-log-sheet__qty-unit {
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--secondary-text);
   padding-right: calc(#{$spacing} * 0.5);
@@ -1666,7 +1666,7 @@ onUnmounted(() => {
 }
 
 .recipe-log-sheet__preview-value {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -1679,7 +1679,7 @@ onUnmounted(() => {
 }
 
 .recipe-log-sheet__preview-label {
-  font-size: 0.65rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   text-transform: uppercase;
@@ -1690,7 +1690,7 @@ onUnmounted(() => {
 // ─── Delete sheet ─────────────────────────────────────────────────────────────
 
 .recipe-delete-sheet__message {
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
   line-height: 1.5;
   margin-bottom: calc(#{$spacing} * 0.5);

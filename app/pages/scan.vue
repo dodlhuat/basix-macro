@@ -482,7 +482,7 @@ onUnmounted(() => {
 }
 
 .scanner__state-text {
-  font-size: 0.95rem;
+  font-size: var(--fs-base);
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
   max-width: 26ch;
@@ -617,7 +617,7 @@ onUnmounted(() => {
 
 // Hint text beneath the frame
 .scanner__hint {
-  font-size: 0.825rem;
+  font-size: var(--fs-sm);
   font-weight: 500;
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.02em;
@@ -644,7 +644,7 @@ onUnmounted(() => {
   white-space: nowrap;
 
   span {
-    font-size: 0.8rem;
+    font-size: var(--fs-sm);
     font-weight: 500;
     color: rgba(255, 255, 255, 0.85);
   }
@@ -714,7 +714,7 @@ onUnmounted(() => {
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-full);
   color: rgba(255, 255, 255, 0.8);
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   font-family: inherit;
   font-weight: 500;
   padding: 0.55rem 1.25rem;
@@ -763,7 +763,7 @@ onUnmounted(() => {
   border: none;
   color: #fff;
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: var(--fs-base);
   font-weight: 500;
   outline: none;
   width: 100%;
@@ -867,7 +867,7 @@ onUnmounted(() => {
 }
 
 .scanner-sheet__product-name {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -878,7 +878,7 @@ onUnmounted(() => {
 }
 
 .scanner-sheet__product-brand {
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
   margin-top: 0.15rem;
   overflow: hidden;
@@ -908,7 +908,7 @@ onUnmounted(() => {
 }
 
 .scanner-sheet__macro-value {
-  font-size: 1.05rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -921,7 +921,7 @@ onUnmounted(() => {
 }
 
 .scanner-sheet__macro-label {
-  font-size: 0.62rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   text-transform: uppercase;
@@ -930,7 +930,7 @@ onUnmounted(() => {
 }
 
 .scanner-sheet__per-100 {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
   text-align: center;
   margin-top: calc(#{$spacing} * 0.5);

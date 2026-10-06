@@ -581,7 +581,7 @@ onMounted(async () => {
 }
 
 .weight__current-value {
-  font-size: clamp(2.8rem, 13vw, 3.8rem);
+  font-size: var(--fs-display);
   font-weight: 800;
   letter-spacing: -0.04em;
   color: var(--primary-text);
@@ -589,7 +589,7 @@ onMounted(async () => {
 }
 
 .weight__current-unit {
-  font-size: 1.2rem;
+  font-size: var(--fs-xl);
   font-weight: 600;
   color: var(--secondary-text);
   letter-spacing: -0.02em;
@@ -608,7 +608,7 @@ onMounted(async () => {
 }
 
 .weight__delta {
-  font-size: 0.9rem;
+  font-size: var(--fs-base-sm);
   font-weight: 700;
   letter-spacing: -0.02em;
 
@@ -624,7 +624,7 @@ onMounted(async () => {
   color: var(--secondary-text);
 
   p {
-    font-size: 1rem;
+    font-size: var(--fs-base);
     font-weight: 600;
     margin: 0;
   }
@@ -674,7 +674,7 @@ onMounted(async () => {
   justify-content: center;
   gap: calc(#{$spacing} * 0.5);
   color: var(--secondary-text);
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
 }
 
 // ─── View toggle (daily / weekly-average) ──────────────────────────────────────
@@ -706,7 +706,7 @@ onMounted(async () => {
 }
 
 .weight__weekly-trend-label {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
 }
 
@@ -717,7 +717,7 @@ onMounted(async () => {
 // ─── Section label ────────────────────────────────────────────────────────────
 
 .weight__section-label {
-  font-size: 0.68rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.09em;
@@ -748,7 +748,7 @@ onMounted(async () => {
 
 .weight__field-label {
   display: block;
-  font-size: 0.68rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -773,7 +773,7 @@ onMounted(async () => {
 
 .weight__input-unit {
   padding: 0 calc(#{$spacing} * 0.625);
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--secondary-text);
   flex-shrink: 0;
@@ -829,14 +829,14 @@ onMounted(async () => {
 }
 
 .weight__item-date {
-  font-size: 0.875rem;
+  font-size: var(--fs-base-sm);
   font-weight: 600;
   color: var(--primary-text);
   letter-spacing: -0.01em;
 }
 
 .weight__item-note {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   color: var(--secondary-text);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -851,7 +851,7 @@ onMounted(async () => {
 }
 
 .weight__item-weight {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -859,7 +859,7 @@ onMounted(async () => {
 }
 
 .weight__item-unit {
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   color: var(--secondary-text);
   letter-spacing: 0;
@@ -899,7 +899,7 @@ onMounted(async () => {
 }
 
 .weight__empty-title {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--primary-text);
   letter-spacing: -0.02em;
@@ -907,7 +907,7 @@ onMounted(async () => {
 }
 
 .weight__empty-hint {
-  font-size: 0.85rem;
+  font-size: var(--fs-base-sm);
   color: var(--secondary-text);
   max-width: 26ch;
   line-height: 1.5;
